@@ -50,7 +50,34 @@
   color:#7f8c97;
   font-size:9px;
 }
+
 @media(max-width:620px){
+  /* Restore the previously approved mobile typography. */
+  .logo small{font-size:7px!important;letter-spacing:1.5px!important}
+  .eyebrow{font-size:10px!important;letter-spacing:3.5px!important}
+  .lead{font-size:15px!important;line-height:1.9!important}
+  .primary{font-size:10px!important;letter-spacing:1.4px!important}
+  .needs>p{font-size:9px!important;letter-spacing:3px!important}
+  .needLink{font-size:9px!important}
+  .pillars .label{font-size:9px!important;letter-spacing:2.5px!important}
+  .pillars article>p:not(.label),.routineGrid p,.magGrid p,.standardGrid p{font-size:11px!important}
+  .pillars a,.routineGrid a,.magGrid a{font-size:9px!important;letter-spacing:1.5px!important}
+  .featureBand p,.sectionIntro,.brandIntro{font-size:12px!important}
+  .brandGrid small{font-size:7px!important;letter-spacing:1.8px!important}
+  .brandGrid em{font-size:8px!important;line-height:normal!important;color:#8a9396!important}
+  .legalBack{font-size:10px!important}
+  .legalLinks a{font-size:8px!important;color:#aab2b4!important}
+  .fineprint{font-size:8px!important;line-height:normal!important;color:#849096!important;max-width:630px!important}
+  .inverse small{font-size:7px!important;color:#ddd!important}
+  .longevityBack,.guideBack{font-size:9px!important;letter-spacing:1.2px!important}
+  .longevityLead,.ingredientLead{font-size:14px!important}
+  .reviewed{font-size:8px!important;letter-spacing:1.5px!important}
+  .techEvidenceTop span,.ingredientTop span{font-size:8px!important;letter-spacing:1.2px!important}
+  .techEvidenceDetails p,.ingredientCard p,.ingredientMethod p,.formulaMap p{font-size:10px!important}
+  .ingredientSources small{font-size:8px!important}
+  .ingredientSources a{font-size:8px!important;letter-spacing:1px!important}
+
+  /* Language controls stay slightly larger, as requested. */
   .langs button{font-size:10px!important;padding:5px 4px!important}
-  .footerLangs button{font-size:10px}
+  .footerLangs button{font-size:10px!important}
 }
