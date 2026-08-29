@@ -1,0 +1,9 @@
+@media (min-width:1001px){
+  .hero{min-height:520px!important;padding:5.5vw 8vw!important;align-items:center!important}
+  .heroContent{width:min(720px,58%)!important}
+  .hero h1{max-width:680px!important;margin:20px 0!important}
+  .primary{margin-top:20px!important}
+}
+@media (min-width:1500px){
+  .hero{min-height:540px!important;padding-top:70px!important;padding-bottom:70px!important}
+}
