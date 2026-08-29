@@ -1,0 +1,4 @@
+const labels={hu:'Vissza a termékekhez',en:'Back to products',de:'Zurück zu den Produkten'};
+function ensure(){let a=document.querySelector('.productReturnNav');if(!a){a=document.createElement('a');a.className='productReturnNav';a.href='#products';a.setAttribute('aria-label','Vissza a termékekhez');a.innerHTML='<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 18l-6-6 6-6"/><path d="M9 12h10"/></svg><span></span>';document.body.appendChild(a)}return a}
+function sync(){const a=ensure();const h=location.hash||'';const onProduct=h.startsWith('#product-');const lang=document.documentElement.lang||'hu';a.querySelector('span').textContent=labels[lang]||labels.hu;a.setAttribute('aria-label',labels[lang]||labels.hu);a.classList.toggle('isVisible',onProduct)}
+window.addEventListener('hashchange',sync);new MutationObserver(sync).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});sync();
