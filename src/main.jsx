@@ -1,6 +1,6 @@
 import React,{useEffect,useState} from 'react';
 import {createRoot} from 'react-dom/client';
-import {ArrowRight,Menu,X,Sparkles,ShieldCheck,Microscope,HeartPulse} from 'lucide-react';
+import {ArrowRight,Menu,X,ShieldCheck,Microscope,HeartPulse} from 'lucide-react';
 import {LegalPage,legalLabels} from './legal.jsx';
 import './styles.css';
 
@@ -17,7 +17,7 @@ function App(){const [lang,setLang]=useState('hu');const [open,setOpen]=useState
 <header><a className="logo" href="#top">BEAUTY <span>BY ILDY</span><small>Beauty & wellness, carefully curated.</small></a>{!legal&&<nav>{t.nav.map(([n,id])=><a href={`#${id}`} key={id}>{n}</a>)}</nav>}<div className="actions"><div className="langs">{['hu','en','de'].map(l=><button className={lang===l?'active':''} onClick={()=>setLang(l)} key={l}>{l.toUpperCase()}</button>)}</div>{!legal&&<button className="mobile" onClick={()=>setOpen(!open)}>{open?<X/>:<Menu/>}</button>}</div></header>
 {open&&!legal&&<div className="mobileNav">{t.nav.map(([n,id])=><a onClick={()=>setOpen(false)} href={`#${id}`} key={id}>{n}</a>)}</div>}
 {legal?<LegalPage lang={lang} type={legal}/>:<main id="top">
-<section className="hero"><div className="glow"></div><div className="heroContent"><p className="eyebrow">{t.eyebrow}</p><h1>{t.title}</h1><p className="lead">{t.sub}</p><a className="primary" href="#solutions">{t.cta}<ArrowRight size={17}/></a></div><div className="orb"><div className="orbInner"><Sparkles size={28}/><span>CURATED<br/>BY ILDY</span></div></div></section>
+<section className="hero"><div className="glow"></div><div className="heroContent"><p className="eyebrow">{t.eyebrow}</p><h1>{t.title}</h1><p className="lead">{t.sub}</p><a className="primary" href="#solutions">{t.cta}<ArrowRight size={17}/></a></div></section>
 <section id="solutions" className="needs"><p>{t.choose}</p><div>{t.needs.map((n,i)=><a className="needLink" href={`#${needTargets[i]}`} key={n}>{n}</a>)}</div></section>
 <section className="pillars"><article id="beauty"><span>01</span><p className="label">{t.pillars[0][0]}</p><h2>{t.pillars[0][1]}</h2><p>{t.pillars[0][2]}</p><a href="#routines">DISCOVER <ArrowRight size={15}/></a></article><article id="tech"><span>02</span><p className="label">{t.pillars[1][0]}</p><h2>{t.pillars[1][1]}</h2><p>{t.pillars[1][2]}</p><a href="#brands">DISCOVER <ArrowRight size={15}/></a></article><article id="wellness"><span>03</span><p className="label">{t.pillars[2][0]}</p><h2>{t.pillars[2][1]}</h2><p>{t.pillars[2][2]}</p><a href="#routines">DISCOVER <ArrowRight size={15}/></a></article></section>
 <section id="hair" className="featureBand"><div><h2>{t.hairTitle}</h2><p>{t.hairText}</p></div><div className="featureMark">H&S</div></section>
