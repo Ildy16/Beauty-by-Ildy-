@@ -5,9 +5,9 @@ const productLeadCopy={
 };
 
 const hubislabIntroCopy={
-  hu:'A HUBISLAB Premium Active Eternal Eye & Face Cream professzionális arc- és szemkörnyékápoló készítmény a HUBISLAB Human Bio Science alapú bőrápolási rendszeréből. Összetett formulája a hidratálást, a bőr komfortérzetének támogatását és az age-well hatóanyagokat egyesíti.',
-  en:'HUBISLAB Premium Active Eternal Eye & Face Cream is a professional face and eye-area treatment within HUBISLAB’s Human Bio Science-based skincare system. Its complex formula combines hydration, support for skin comfort and age-well actives.',
-  de:'Die HUBISLAB Premium Active Eternal Eye & Face Cream ist eine professionelle Gesichts- und Augenpflege aus dem auf Human Bio Science basierenden Hautpflegesystem von HUBISLAB. Ihre komplexe Formulierung verbindet Feuchtigkeit, Unterstützung des Hautkomforts und Age-Well-Wirkstoffe.'
+  hu:'A HUBISLAB Premium Active Eternal Eye & Face Cream professzionális arc- és szemkörnyékápoló készítmény a HUBISLAB Human Bio Science alapú bőrápolási rendszeréből. Összetett formulája intenzív hidratálást biztosít, támogatja a bőr feszesebb, teltebb és simább megjelenését, valamint célzott age-well hatóanyagokkal támogatja a finom vonalak megjelenésének csökkentését és a bőr fiatalosabb összképét.',
+  en:'HUBISLAB Premium Active Eternal Eye & Face Cream is a professional face and eye-area treatment within HUBISLAB’s Human Bio Science-based skincare system. Its complex formula provides intensive hydration, supports a firmer, plumper and smoother-looking complexion, and uses targeted age-well actives to help reduce the appearance of fine lines and promote a more youthful overall look.',
+  de:'Die HUBISLAB Premium Active Eternal Eye & Face Cream ist eine professionelle Gesichts- und Augenpflege aus dem auf Human Bio Science basierenden Hautpflegesystem von HUBISLAB. Ihre komplexe Formulierung spendet intensive Feuchtigkeit, unterstützt ein strafferes, pralleres und glatteres Hautbild und trägt mit gezielten Age-Well-Wirkstoffen dazu bei, das Erscheinungsbild feiner Linien zu mindern und die Haut insgesamt jugendlicher wirken zu lassen.'
 };
 
 function updateProductLead(){
