@@ -8,12 +8,36 @@
   .hero{min-height:540px!important;padding-top:70px!important;padding-bottom:70px!important}
 }
 
-footer>p{
-  font-size:7px!important;
-  line-height:1!important;
-  letter-spacing:.35px!important;
-  font-weight:400!important;
-  margin:0!important;
-  color:#aeb7c1!important;
-  white-space:nowrap!important;
+.langs button{
+  font-size:10px!important;
+  padding:6px 5px!important;
+  letter-spacing:.25px!important;
+}
+.footerLangs{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  margin:0;
+  white-space:nowrap;
+}
+.footerLangs button{
+  border:0;
+  background:transparent;
+  color:#cbd2d9;
+  font:400 10px Montserrat,Arial,sans-serif;
+  letter-spacing:.35px;
+  padding:4px 1px;
+  cursor:pointer;
+}
+.footerLangs button:hover,
+.footerLangs button.active{
+  color:var(--gold);
+}
+.footerLangSep{
+  color:#7f8c97;
+  font-size:9px;
+}
+@media(max-width:620px){
+  .langs button{font-size:10px!important;padding:5px 4px!important}
+  .footerLangs button{font-size:10px}
 }
