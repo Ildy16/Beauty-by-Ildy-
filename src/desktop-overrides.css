@@ -3,19 +3,6 @@
   .heroContent{width:min(720px,58%)!important}
   .hero h1{max-width:680px!important;margin:20px 0!important}
   .primary{margin-top:20px!important}
-
-  /* Desktop: clean warm champagne + ivory, without pink/grey undertones. */
-  body{background:#eee7d8!important}
-  .needs,.pillars,.featureBand,.routines,.standards,.brands,.magazine,
-  .techGuideList,.ingredientGrid,.techCompare,.formulaMap{background:#eee7d8!important}
-  .pillars article,.routineGrid article,.magGrid article,.standardGrid article,
-  .brandGrid div,.featureBand>div:first-child,.techEvidenceCard,.ingredientCard,
-  .techCompare article,.formulaMap>div,.ingredientMethod{background:#fffdf7!important}
-  .ingredientSources,.techGuideIntro{background:#faf6ec!important}
-  .ingredientCard,.techEvidenceCard,.pillars article,.routineGrid article,
-  .magGrid article,.standardGrid article,.brandGrid div,.featureBand>div:first-child{
-    border-color:#d9ccb1!important;
-  }
 }
 @media (min-width:1500px){
   .hero{min-height:540px!important;padding-top:70px!important;padding-bottom:70px!important}
