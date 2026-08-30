@@ -26,6 +26,15 @@
   font-family:Montserrat,Arial,sans-serif!important;
 }
 
+/* FOOTER LEGAL LINKS — only typography/size, matched to the normal card body copy. */
+footer .legalLinks a{
+  font-family:Montserrat,Arial,sans-serif!important;
+  font-weight:400!important;
+  font-size:12px!important;
+  line-height:1.75!important;
+  letter-spacing:0!important;
+}
+
 /* BEAUTY TECH — intro note and all explanatory copy use the normal card body type. */
 .techGuideIntro p{
   margin:0!important;
@@ -149,6 +158,9 @@
     margin:0 0 10px!important;
   }
   .legalSections p,.legalSections li{font-size:10.5px!important;line-height:1.72!important}
+
+  /* Footer legal links only. */
+  footer .legalLinks a{font-size:12px!important;line-height:1.75!important}
 
   /* Beauty Tech */
   .techGuideIntro{padding:20px!important}
