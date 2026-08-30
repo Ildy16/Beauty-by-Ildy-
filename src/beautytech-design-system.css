@@ -1,0 +1,28 @@
+.techGuidePage{background:#eee8dc;color:#17232a}
+.techGuidePage .techGuideHero{background:linear-gradient(125deg,#06172d 0%,#09264a 62%,#103a6a 100%);padding:56px 6vw 52px}
+.techGuidePage .techGuideHero>div{max-width:900px}
+.techGuidePage .techGuideHero h1{font:500 clamp(48px,5.4vw,72px)/1 'Cormorant Garamond',serif;margin:18px 0}
+.techGuidePage .longevityLead{font:300 13px/1.9 Montserrat,Arial,sans-serif;max-width:760px;color:#dce3eb}
+.techGuidePage .reviewed{font-size:9px;letter-spacing:1.4px;color:#c7a96b;margin-top:22px}
+.techGuidePage .techGuideIntro{padding:24px 6vw;background:#f6f1e7;border-bottom:1px solid #ddd3c2}
+.techGuidePage .techGuideIntro p{max-width:900px;margin:0;font:400 12px/1.8 Montserrat,Arial,sans-serif;color:#66737a}
+.techGuidePage .techGuideList{padding:52px 6vw;display:grid;gap:16px;background:#eee8dc}
+.techGuidePage .techEvidenceCard{background:#fbf8f1;border:1px solid #ddd3c2;padding:30px}
+.techGuidePage .techEvidenceTop{display:block;border-bottom:1px solid #ddd3c2;padding-bottom:20px}
+.techGuidePage .techEvidenceTop>svg{display:none!important}
+.techGuidePage .techEvidenceTop small{font:500 9px Montserrat,Arial,sans-serif;letter-spacing:1.5px;color:#c7a96b}
+.techGuidePage .techEvidenceTop h2{font:500 34px/1.05 'Cormorant Garamond',serif;margin:10px 0 12px;color:#17232a}
+.techGuidePage .techEvidenceTop span{display:inline-block;font:500 9px Montserrat,Arial,sans-serif;letter-spacing:1px;border:1px solid #c7a96b;padding:7px 9px;color:#6e5a33}
+.techGuidePage .techEvidenceDetails{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 30px}
+.techGuidePage .techEvidenceDetails>div{padding:22px 0;border-bottom:1px solid #ddd3c2}
+.techGuidePage .techEvidenceDetails h3{font:500 22px 'Cormorant Garamond',serif;margin:0 0 8px;color:#17232a}
+.techGuidePage .techEvidenceDetails p{font:400 12px/1.8 Montserrat,Arial,sans-serif;color:#66737a;margin:0}
+.techGuidePage .techEvidenceCard>a{display:inline-flex;align-items:center;gap:8px;margin-top:22px;text-decoration:none;font:500 9px Montserrat,Arial,sans-serif;letter-spacing:1.2px;color:#17232a}
+.techGuidePage .techCompare{padding:52px 6vw 60px;background:#eee8dc}
+.techGuidePage .techCompare h2{font:500 46px 'Cormorant Garamond',serif;margin:0 0 24px;color:#17232a}
+.techGuidePage .techCompare>div{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.techGuidePage .techCompare article{background:#fbf8f1;border:1px solid #ddd3c2;padding:22px;min-height:0}
+.techGuidePage .techCompare article h3{font:500 24px 'Cormorant Garamond',serif;margin:0 0 8px;color:#17232a}
+.techGuidePage .techCompare article p{font:400 11px/1.75 Montserrat,Arial,sans-serif;color:#66737a}
+@media(max-width:1000px){.techGuidePage .techCompare>div{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.techGuidePage .techGuideHero{padding:48px 20px 44px}.techGuidePage .techGuideHero h1{font-size:43px}.techGuidePage .longevityLead{font-size:13px}.techGuidePage .techGuideIntro{padding:22px 20px}.techGuidePage .techGuideIntro p{font-size:12px}.techGuidePage .techGuideList{padding:38px 20px;gap:16px}.techGuidePage .techEvidenceCard{padding:24px}.techGuidePage .techEvidenceTop h2{font-size:30px}.techGuidePage .techEvidenceDetails{grid-template-columns:1fr}.techGuidePage .techEvidenceDetails h3{font-size:21px}.techGuidePage .techEvidenceDetails p{font-size:11px}.techGuidePage .techCompare{padding:40px 20px 48px}.techGuidePage .techCompare h2{font-size:38px}.techGuidePage .techCompare>div{grid-template-columns:1fr}.techGuidePage .techCompare article{padding:20px}}
