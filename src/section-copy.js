@@ -11,13 +11,12 @@ function applySectionCopy(){
   const standards=document.querySelector('.standards h2');
   const brands=document.querySelector('.brands h2');
   const brandSub=document.querySelector('.brands .brandIntro');
-  if(routines) routines.textContent=t.routines;
-  if(standards) standards.textContent=t.standards;
-  if(brands) brands.textContent=t.brands;
-  if(brandSub) brandSub.textContent=t.brandSub;
+  if(routines&&routines.textContent!==t.routines) routines.textContent=t.routines;
+  if(standards&&standards.textContent!==t.standards) standards.textContent=t.standards;
+  if(brands&&brands.textContent!==t.brands) brands.textContent=t.brands;
+  if(brandSub&&brandSub.textContent!==t.brandSub) brandSub.textContent=t.brandSub;
 }
 
-applySectionCopy();
+requestAnimationFrame(applySectionCopy);
 window.addEventListener('hashchange',()=>setTimeout(applySectionCopy,0));
 new MutationObserver(applySectionCopy).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
-new MutationObserver(applySectionCopy).observe(document.getElementById('root'),{childList:true,subtree:true});
