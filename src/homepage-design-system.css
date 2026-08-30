@@ -1,0 +1,281 @@
+/* BEAUTY BY ILDY — HOMEPAGE DESIGN SYSTEM v1
+   Scope: homepage only (main#top), plus the global mobile menu icon colour.
+   Locked brand rules:
+   - Cormorant Garamond = editorial headings
+   - Montserrat = body, labels, navigation
+   - Mobile hamburger/menu icon is always gold
+   - No decorative technology/beauty icons inside homepage cards
+   - Card heights are content-led, not forced by arbitrary min-heights
+*/
+
+:root{
+  --bbi-navy:#071b33;
+  --bbi-gold:#c7a96b;
+  --bbi-champagne:#eee8dc;
+  --bbi-ivory:#fbf8f1;
+  --bbi-cream:#f6f1e7;
+  --bbi-ink:#17232a;
+  --bbi-muted:#66737a;
+  --bbi-line:#ddd3c2;
+  --bbi-hero-1:#06172d;
+  --bbi-hero-2:#09264a;
+  --bbi-hero-3:#103a6a;
+}
+
+/* Locked navigation rule: never blue. */
+.mobile,
+.mobile svg{
+  color:var(--bbi-gold)!important;
+  stroke:var(--bbi-gold)!important;
+}
+
+/* Homepage canvas */
+main#top{
+  background:var(--bbi-champagne);
+  color:var(--bbi-ink);
+}
+main#top .hero{
+  background:linear-gradient(125deg,var(--bbi-hero-1) 0%,var(--bbi-hero-2) 58%,var(--bbi-hero-3) 100%);
+}
+
+/* Shared homepage typography */
+main#top .hero h1{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:500;
+}
+main#top .routines h2,
+main#top .standards h2,
+main#top .brands h2,
+main#top .magazine h2{
+  font:500 48px/1.04 'Cormorant Garamond',serif;
+}
+main#top .pillars h2,
+main#top .routineGrid h3,
+main#top .standardGrid h3,
+main#top .magGrid h3{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:500;
+}
+main#top .sectionIntro,
+main#top .brandIntro,
+main#top .featureBand p{
+  font:400 13px/1.8 Montserrat,Arial,sans-serif;
+  color:var(--bbi-muted);
+}
+main#top .pillars article>p:not(.label),
+main#top .routineGrid p,
+main#top .standardGrid p,
+main#top .magGrid p{
+  font:400 12px/1.75 Montserrat,Arial,sans-serif;
+  color:var(--bbi-muted);
+}
+
+/* Shared homepage surfaces */
+main#top .needs,
+main#top .pillars,
+main#top .featureBand,
+main#top .routines,
+main#top .standards,
+main#top .brands,
+main#top .magazine{
+  background:var(--bbi-champagne);
+}
+main#top .pillars article,
+main#top .featureBand>div:first-child,
+main#top .routineGrid article,
+main#top .standardGrid article,
+main#top .brandGrid div,
+main#top .magGrid article,
+main#top .needLink{
+  background:var(--bbi-ivory);
+  border:1px solid var(--bbi-line);
+}
+
+/* Sections: one spacing system */
+main#top .pillars,
+main#top .routines,
+main#top .standards,
+main#top .brands,
+main#top .magazine{
+  padding:54px 6vw;
+}
+main#top .featureBand{
+  padding:54px 6vw;
+}
+main#top .needs{
+  padding:38px 6vw;
+  border-bottom:1px solid var(--bbi-line);
+}
+
+/* Need selector */
+main#top .needs>p{
+  margin:0;
+  font:500 10px/1.4 Montserrat,Arial,sans-serif;
+  letter-spacing:2.6px;
+  color:#8b7b5b;
+}
+main#top .needs>div{
+  gap:12px;
+  margin-top:20px;
+}
+main#top .needLink{
+  padding:10px 15px;
+  font:400 10px/1.4 Montserrat,Arial,sans-serif;
+  color:#5d686d;
+}
+
+/* Primary pillars = large information cards */
+main#top .pillars{
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:16px;
+}
+main#top .pillars article{
+  min-height:0;
+  padding:30px;
+}
+main#top .pillars .label{
+  margin-top:24px;
+}
+main#top .pillars h2{
+  font-size:28px;
+  line-height:1.08;
+}
+
+/* Hair & scalp = one large information card */
+main#top .featureBand>div:first-child{
+  max-width:620px;
+  padding:30px;
+}
+main#top .featureBand h2{
+  font:500 46px/1.04 'Cormorant Garamond',serif;
+  margin:0 0 12px;
+}
+
+/* Routines = normal cards */
+main#top .routineGrid{
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:16px;
+}
+main#top .routineGrid article{
+  min-height:0;
+  padding:26px;
+}
+main#top .routineGrid h3{
+  font-size:26px;
+  line-height:1.08;
+}
+
+/* Standards = normal cards, no decorative icons */
+main#top .standardGrid{
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:16px;
+  margin-top:26px;
+}
+main#top .standardGrid article{
+  min-height:0;
+  padding:26px;
+}
+main#top .standardGrid article>svg{
+  display:none!important;
+}
+main#top .standardGrid h3{
+  margin-top:0;
+  font-size:26px;
+  line-height:1.08;
+}
+
+/* Brand cards = compact cards */
+main#top .brandGrid{
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:12px;
+}
+main#top .brandGrid div{
+  min-height:0;
+  padding:20px;
+}
+
+/* Magazine = normal cards */
+main#top .magGrid{
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:16px;
+}
+main#top .magGrid article{
+  min-height:0;
+  padding:26px;
+}
+main#top .magGrid h3{
+  font-size:26px;
+  line-height:1.08;
+}
+
+@media(max-width:1000px){
+  main#top .pillars,
+  main#top .standardGrid,
+  main#top .magGrid{
+    grid-template-columns:1fr;
+  }
+  main#top .routineGrid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+  main#top .brandGrid{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+  }
+}
+
+@media(max-width:620px){
+  main#top .hero h1{
+    font-size:43px;
+  }
+  main#top .routines h2,
+  main#top .standards h2,
+  main#top .brands h2,
+  main#top .magazine h2{
+    font-size:38px;
+  }
+  main#top .pillars,
+  main#top .routines,
+  main#top .standards,
+  main#top .brands,
+  main#top .magazine,
+  main#top .featureBand{
+    padding:40px 20px;
+  }
+  main#top .needs{
+    padding:28px 20px;
+  }
+  main#top .pillars article,
+  main#top .routineGrid article,
+  main#top .standardGrid article,
+  main#top .magGrid article{
+    min-height:0;
+    padding:22px;
+  }
+  main#top .featureBand>div:first-child{
+    padding:24px;
+  }
+  main#top .featureBand h2{
+    font-size:38px;
+  }
+  main#top .routineGrid,
+  main#top .standardGrid,
+  main#top .magGrid{
+    grid-template-columns:1fr;
+  }
+  main#top .brandGrid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+  main#top .brandGrid div{
+    padding:18px;
+  }
+  main#top .pillars article>p:not(.label),
+  main#top .routineGrid p,
+  main#top .standardGrid p,
+  main#top .magGrid p{
+    font-size:11px;
+  }
+  main#top .sectionIntro,
+  main#top .brandIntro,
+  main#top .featureBand p{
+    font-size:12px;
+  }
+}
