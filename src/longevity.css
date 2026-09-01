@@ -1,1 +1,62 @@
-.longevityPage{background:#eee8dc;color:#17232a}.longevityHero{min-height:0;background:linear-gradient(125deg,#06172d 0%,#09264a 58%,#103a6a 100%);color:#fff;display:flex;align-items:center;padding:56px 6vw 52px}.longevityHeroInner{max-width:820px}.longevityBack{display:inline-flex;align-items:center;gap:8px;color:#d9e1e9;text-decoration:none;font:400 9px Montserrat,Arial,sans-serif;letter-spacing:1.2px;margin-bottom:32px}.longevityHero h1{font:500 clamp(48px,5.4vw,72px)/1 'Cormorant Garamond',serif;margin:18px 0}.longevityLead{font:300 13px/1.9 Montserrat,Arial,sans-serif;max-width:720px;color:#dce3eb}.reviewed{margin-top:22px;font:400 9px Montserrat,Arial,sans-serif;letter-spacing:1.4px;text-transform:uppercase;color:#c7a96b}.longevityIntro,.evidenceBlock,.researchBlock,.explainBlock,.nextGuides{padding:44px 6vw}.longevityIntro h2,.evidenceBlock h2,.researchBlock h2,.explainBlock h2,.nextGuides h2{font:500 46px/1.05 'Cormorant Garamond',serif;margin:0 0 14px}.longevityIntro>p,.explainHead>p:not(.eyebrow),.evidenceBlock>.sectionIntro{max-width:820px;font:400 12px/1.8 Montserrat,Arial,sans-serif;color:#66737a}.longevityAreas{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:26px}.longevityAreas article,.evidenceLevel,.researchGrid article,.termCard{background:#fbf8f1;border:1px solid #ddd3c2}.longevityAreas article{padding:20px 22px;min-height:0}.longevityAreas svg{display:none!important}.longevityPage .longevityAreas h3,.longevityPage .evidenceLevel h3,.longevityPage .researchGrid h3,.longevityPage .termCard h3,.longevityPage .termCard h4{font-family:'Cormorant Garamond',serif;color:#17232a}.longevityPage .longevityAreas h3,.longevityPage .evidenceLevel h3,.longevityPage .researchGrid h3,.longevityPage .termCard h3{font-size:22px;font-weight:500;line-height:1.15;margin:0 0 8px}.longevityPage .longevityAreas p,.longevityPage .evidenceLevel p,.longevityPage .researchGrid p,.longevityPage .termCard p{font:400 11px/1.7 Montserrat,Arial,sans-serif;color:#66737a}.longevityPage .longevityAreas p,.longevityPage .evidenceLevel p,.longevityPage .researchGrid p{margin:0}.evidenceBlock{background:#f6f1e7;border-top:1px solid #ddd3c2;border-bottom:1px solid #ddd3c2}.evidenceGrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:24px}.evidenceLevel{padding:20px 22px;min-height:0}.longevityPage .evidenceLevel span{display:block;font:400 14px/1.2 'Cormorant Garamond',serif;color:#c7a96b;margin:0 0 10px}.researchBlock{background:#eee8dc}.researchGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:24px}.researchGrid article{padding:20px 22px;min-height:0;display:flex;flex-direction:column}.longevityPage .researchGrid small,.longevityPage .termCard>small{display:block;font:400 9px/1.4 Montserrat,Arial,sans-serif;letter-spacing:1.2px;color:#c7a96b;margin:0 0 10px}.longevityPage .researchGrid a{display:flex;align-items:center;gap:9px;margin-top:14px;padding-top:12px;text-decoration:none;font:500 9px Montserrat,Arial,sans-serif;letter-spacing:1.1px}.explainBlock{background:#f6f1e7;border-top:1px solid #ddd3c2;border-bottom:1px solid #ddd3c2;display:grid;grid-template-columns:.8fr 1.2fr;gap:30px;align-items:start}.explainHead .eyebrow{font:500 9px Montserrat,Arial,sans-serif;letter-spacing:1.5px;color:#c7a96b}.termCard{padding:20px 22px}.longevityPage .termCard h3{margin:0 0 12px}.longevityPage .termCard h4{font-size:18px;font-weight:500;line-height:1.2;margin:12px 0 5px}.longevityPage .termCard p{margin:0}.nextGuides{background:#eee8dc}.nextGuides>div{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:20px}.nextGuides span{background:#fbf8f1;border:1px solid #ddd3c2;padding:14px 18px;font:400 10px Montserrat,Arial,sans-serif;letter-spacing:.4px}.longevityPage .eyebrow{color:#c7a96b}@media(max-width:1000px){.longevityAreas,.evidenceGrid{grid-template-columns:repeat(2,minmax(0,1fr))}.researchGrid{grid-template-columns:1fr}.explainBlock{grid-template-columns:1fr}.nextGuides>div{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:620px){.longevityHero{padding:48px 20px 44px}.longevityBack{margin-bottom:28px}.longevityHero h1{font-size:43px}.longevityLead{font-size:13px}.longevityIntro,.evidenceBlock,.researchBlock,.explainBlock,.nextGuides{padding:38px 20px}.longevityIntro h2,.evidenceBlock h2,.researchBlock h2,.explainBlock h2,.nextGuides h2{font-size:38px}.longevityAreas,.evidenceGrid,.nextGuides>div{grid-template-columns:1fr}.longevityAreas{gap:12px}.longevityAreas article,.evidenceLevel,.researchGrid article,.termCard{padding:18px 20px}.longevityPage .longevityAreas h3,.longevityPage .evidenceLevel h3,.longevityPage .researchGrid h3,.longevityPage .termCard h3{font-size:21px}.researchGrid{gap:12px}.longevityPage .termCard h4{font-size:18px}.nextGuides span{padding:13px 16px}}
+.longevityPage{background:var(--bbi-sand);color:var(--bbi-ink)}
+.longevityHero{min-height:0;background:linear-gradient(125deg,#06172d 0%,#09264a 58%,#103a6a 100%);color:#fff;display:flex;align-items:center;padding:56px 6vw 52px}
+.longevityHeroInner{max-width:820px}
+.longevityBack{display:inline-flex;align-items:center;gap:8px;color:#d9e1e9;text-decoration:none;font:400 var(--bbi-meta) Montserrat,Arial,sans-serif;letter-spacing:1.2px;margin-bottom:32px}
+.longevityHero h1{font:500 clamp(48px,5.4vw,var(--bbi-hero-title))/1 'Cormorant Garamond',serif;margin:18px 0}
+.longevityLead{font:300 var(--bbi-intro)/1.9 Montserrat,Arial,sans-serif;max-width:720px;color:#dce3eb}
+.reviewed{margin-top:22px;font:400 var(--bbi-meta) Montserrat,Arial,sans-serif;letter-spacing:1.4px;text-transform:uppercase;color:var(--bbi-gold)}
+
+.longevityIntro,.evidenceBlock,.researchBlock,.explainBlock,.nextGuides{padding:var(--bbi-section-pad-y) var(--bbi-section-pad-x)}
+.longevityIntro h2,.evidenceBlock h2,.researchBlock h2,.explainBlock h2,.nextGuides h2{font:500 var(--bbi-section-title)/1.05 'Cormorant Garamond',serif;margin:0 0 14px}
+.longevityIntro>p,.explainHead>p:not(.eyebrow),.evidenceBlock>.sectionIntro{max-width:820px;font:400 var(--bbi-intro)/1.8 Montserrat,Arial,sans-serif;color:var(--bbi-muted)}
+
+.longevityAreas{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--bbi-card-gap);margin-top:26px}
+.longevityAreas article,.evidenceLevel,.researchGrid article,.termCard{background:var(--bbi-ivory);border:1px solid var(--bbi-line)}
+.longevityAreas article{padding:var(--bbi-card-pad-y) var(--bbi-card-pad-x);min-height:0}
+.longevityAreas svg{display:none!important}
+
+.longevityPage .longevityAreas h3,.longevityPage .evidenceLevel h3,.longevityPage .researchGrid h3,.longevityPage .termCard h3,.longevityPage .termCard h4{font-family:'Cormorant Garamond',serif;color:var(--bbi-ink)}
+.longevityPage .longevityAreas h3,.longevityPage .evidenceLevel h3,.longevityPage .researchGrid h3,.longevityPage .termCard h3{font-size:var(--bbi-card-title);font-weight:500;line-height:1.08;margin:0 0 10px}
+.longevityPage .longevityAreas p,.longevityPage .evidenceLevel p,.longevityPage .researchGrid p,.longevityPage .termCard p{font:400 var(--bbi-card-body)/1.7 Montserrat,Arial,sans-serif;color:var(--bbi-muted)}
+.longevityPage .longevityAreas p,.longevityPage .evidenceLevel p,.longevityPage .researchGrid p{margin:0}
+
+.evidenceBlock{background:var(--bbi-cream);border-top:1px solid var(--bbi-line);border-bottom:1px solid var(--bbi-line)}
+.evidenceGrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--bbi-card-gap);margin-top:24px}
+.evidenceLevel{padding:var(--bbi-card-pad-y) var(--bbi-card-pad-x);min-height:0}
+.longevityPage .evidenceLevel span{display:block;font:400 14px/1.2 'Cormorant Garamond',serif;color:var(--bbi-gold);margin:0 0 10px}
+
+.researchBlock{background:var(--bbi-sand)}
+.researchGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--bbi-card-gap);margin-top:24px}
+.researchGrid article{padding:var(--bbi-card-pad-y) var(--bbi-card-pad-x);min-height:0;display:flex;flex-direction:column}
+.longevityPage .researchGrid small,.longevityPage .termCard>small{display:block;font:400 var(--bbi-meta)/1.4 Montserrat,Arial,sans-serif;letter-spacing:1.2px;color:var(--bbi-gold);margin:0 0 10px}
+.longevityPage .researchGrid a{display:flex;align-items:center;gap:9px;margin-top:14px;padding-top:12px;text-decoration:none;font:500 var(--bbi-meta) Montserrat,Arial,sans-serif;letter-spacing:1.1px}
+
+.explainBlock{background:var(--bbi-cream);border-top:1px solid var(--bbi-line);border-bottom:1px solid var(--bbi-line);display:grid;grid-template-columns:.8fr 1.2fr;gap:30px;align-items:start}
+.explainHead .eyebrow{font:500 var(--bbi-meta) Montserrat,Arial,sans-serif;letter-spacing:1.5px;color:var(--bbi-gold)}
+.termCard{padding:var(--bbi-card-pad-y) var(--bbi-card-pad-x)}
+.longevityPage .termCard h3{margin:0 0 12px}
+.longevityPage .termCard h4{font-size:var(--bbi-card-subtitle);font-weight:500;line-height:1.2;margin:12px 0 5px}
+.longevityPage .termCard p{margin:0}
+
+.nextGuides{background:var(--bbi-sand)}
+.nextGuides>div{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:20px}
+.nextGuides span{background:var(--bbi-ivory);border:1px solid var(--bbi-line);padding:14px 18px;font:400 10px Montserrat,Arial,sans-serif;letter-spacing:.4px}
+.longevityPage .eyebrow{color:var(--bbi-gold)}
+
+@media(max-width:1000px){
+  .longevityAreas,.evidenceGrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .researchGrid{grid-template-columns:1fr}
+  .explainBlock{grid-template-columns:1fr}
+  .nextGuides>div{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+@media(max-width:620px){
+  .longevityHero{padding:48px 20px 44px}
+  .longevityBack{margin-bottom:28px}
+  .longevityHero h1{font-size:var(--bbi-hero-title)}
+  .longevityLead{font-size:13px}
+  .longevityIntro,.evidenceBlock,.researchBlock,.explainBlock,.nextGuides{padding:var(--bbi-section-pad-y) var(--bbi-section-pad-x)}
+  .longevityAreas,.evidenceGrid,.nextGuides>div{grid-template-columns:1fr}
+  .longevityAreas,.researchGrid{gap:var(--bbi-card-gap)}
+  .nextGuides span{padding:13px 16px}
+}
