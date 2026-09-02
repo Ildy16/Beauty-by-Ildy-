@@ -69,7 +69,7 @@ main#top .primary {
   display: inline-flex;
   align-items: center;
   gap: 14px;
-  padding: 16px 22px;
+  padding: 12px 22px;
   border: 1px solid var(--bbi-gold);
   color: #fff;
   text-decoration: none;
