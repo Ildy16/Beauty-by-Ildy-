@@ -108,8 +108,8 @@ footer {
   grid-template-columns: auto 1fr;
   align-items: start;
   column-gap: 34px;
-  row-gap: 14px;
-  padding: 34px 6vw 20px;
+  row-gap: 10px;
+  padding: 24px 6vw 14px;
 }
 footer > div:first-child {
   grid-column: 1;
@@ -123,7 +123,7 @@ footer > div:first-child {
   display: flex;
   align-items: center;
   gap: 6px;
-  margin-top: 10px;
+  margin-top: 6px;
   white-space: nowrap;
 }
 .footerLangs button {
@@ -170,7 +170,7 @@ footer > div:first-child {
   width: 100%;
   max-width: none;
   margin: 0;
-  padding-top: 12px;
+  padding-top: 8px;
   border-top: 1px solid rgba(255, 255, 255, 0.12);
   font:
     400 8px/1.45 Montserrat,
@@ -242,12 +242,12 @@ footer > div:first-child {
     stroke: var(--gold);
   }
   .footerLangs {
-    margin-top: 8px;
+    margin-top: 6px;
   }
   footer {
     grid-template-columns: 1fr;
-    row-gap: 12px;
-    padding: 28px 22px 18px;
+    row-gap: 10px;
+    padding: 22px 20px 14px;
   }
   footer > div:first-child {
     grid-column: 1;
@@ -257,7 +257,7 @@ footer > div:first-child {
     grid-column: 1;
     grid-row: 2;
     justify-content: flex-start;
-    margin-top: 2px;
+    margin-top: 0;
   }
   .legalLinks a {
     font-size: 8px;
@@ -266,7 +266,7 @@ footer > div:first-child {
   .fineprint {
     grid-column: 1;
     grid-row: 3;
-    padding-top: 10px;
+    padding-top: 8px;
     font-size: 8px;
     color: #849096;
   }
