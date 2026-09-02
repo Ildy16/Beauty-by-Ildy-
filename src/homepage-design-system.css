@@ -24,7 +24,9 @@
 
 /* Locked navigation rule: never blue. */
 .mobile,
-.mobile svg{
+.mobile svg,
+.menuBtn,
+.menuBtn svg{
   color:var(--bbi-gold)!important;
   stroke:var(--bbi-gold)!important;
 }
@@ -38,10 +40,12 @@ main#top .hero{
   background:linear-gradient(125deg,var(--bbi-hero-1) 0%,var(--bbi-hero-2) 58%,var(--bbi-hero-3) 100%);
 }
 
-/* Shared homepage typography */
+/* Approved homepage typography */
 main#top .hero h1{
-  font-family:'Cormorant Garamond',serif;
-  font-weight:500;
+  font:500 clamp(64px,5.7vw,76px)/.98 'Cormorant Garamond',serif;
+}
+main#top .hero .lead{
+  font:300 13px/1.8 Montserrat,Arial,sans-serif;
 }
 main#top .routines h2,
 main#top .standards h2,
@@ -66,8 +70,23 @@ main#top .pillars article>p:not(.label),
 main#top .routineGrid p,
 main#top .standardGrid p,
 main#top .magGrid p{
-  font:400 12px/1.75 Montserrat,Arial,sans-serif;
+  font:400 11px/1.7 Montserrat,Arial,sans-serif;
   color:var(--bbi-muted);
+}
+main#top .pillars .label,
+main#top .routineGrid small,
+main#top .magGrid span,
+main#top .brandGrid small{
+  font-family:Montserrat,Arial,sans-serif;
+}
+main#top .brandGrid span{
+  font:500 22px/1.15 'Cormorant Garamond',serif;
+}
+main#top .brandGrid small{
+  font-size:9px;
+}
+main#top .brandGrid em{
+  font:400 10px/1.45 Montserrat,Arial,sans-serif;
 }
 
 /* Shared homepage surfaces */
@@ -226,6 +245,9 @@ main#top .magGrid h3{
   main#top .hero h1{
     font-size:43px;
   }
+  main#top .hero .lead{
+    font-size:13px;
+  }
   main#top .routines h2,
   main#top .standards h2,
   main#top .brands h2,
@@ -276,6 +298,6 @@ main#top .magGrid h3{
   main#top .sectionIntro,
   main#top .brandIntro,
   main#top .featureBand p{
-    font-size:12px;
+    font-size:13px;
   }
 }
