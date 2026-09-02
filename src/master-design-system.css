@@ -2,51 +2,86 @@
    Source of truth built from the approved homepage + approved Ingredients page.
    Page-specific styles may refine layout, but should use these shared tokens.
 */
-:root{
-  --bbi-navy:#071b33;
-  --bbi-gold:#c7a96b;
-  --bbi-sand:#eee8dc;
-  --bbi-ivory:#fbf8f1;
-  --bbi-cream:#f6f1e7;
-  --bbi-ink:#17232a;
-  --bbi-muted:#66737a;
-  --bbi-line:#ddd3c2;
+:root {
+  --bbi-navy: #071b33;
+  --bbi-gold: #c7a96b;
+  --bbi-sand: #eee8dc;
+  --bbi-ivory: #fbf8f1;
+  --bbi-cream: #f6f1e7;
+  --bbi-ink: #17232a;
+  --bbi-muted: #66737a;
+  --bbi-line: #ddd3c2;
+  --bbi-hero-1: #06172d;
+  --bbi-hero-2: #09264a;
+  --bbi-hero-3: #103a6a;
 
-  --bbi-hero-title:72px;
-  --bbi-section-title:48px;
-  --bbi-card-title:26px;
-  --bbi-card-subtitle:20px;
-  --bbi-intro:13px;
-  --bbi-body:12px;
-  --bbi-card-body:11px;
-  --bbi-meta:9px;
-  --bbi-legal:8px;
+  --bbi-hero-title: 72px;
+  --bbi-section-title: 48px;
+  --bbi-card-title: 26px;
+  --bbi-card-subtitle: 20px;
+  --bbi-intro: 13px;
+  --bbi-body: 12px;
+  --bbi-card-body: 11px;
+  --bbi-meta: 9px;
+  --bbi-legal: 8px;
 
-  --bbi-section-pad-y:54px;
-  --bbi-section-pad-x:6vw;
-  --bbi-card-pad-y:24px;
-  --bbi-card-pad-x:26px;
-  --bbi-card-gap:16px;
+  --bbi-section-pad-y: 54px;
+  --bbi-section-pad-x: 6vw;
+  --bbi-card-pad-y: 24px;
+  --bbi-card-pad-x: 26px;
+  --bbi-card-gap: 16px;
+
+  /* Compatibility aliases for existing page modules. */
+  --navy: var(--bbi-navy);
+  --gold: var(--bbi-gold);
+  --champagne: var(--bbi-sand);
+  --ivory: var(--bbi-ivory);
+  --cream: var(--bbi-cream);
+  --ink: var(--bbi-ink);
+  --muted: var(--bbi-muted);
+  --line: var(--bbi-line);
 }
 
-.bbiEditorialTitle{font-family:'Cormorant Garamond',serif;font-weight:500;color:var(--bbi-ink)}
-.bbiIntroText{font:400 var(--bbi-intro)/1.8 Montserrat,Arial,sans-serif;color:var(--bbi-muted)}
-.bbiBodyText{font:400 var(--bbi-body)/1.75 Montserrat,Arial,sans-serif;color:var(--bbi-muted)}
-.bbiCardText{font:400 var(--bbi-card-body)/1.7 Montserrat,Arial,sans-serif;color:var(--bbi-muted)}
+.bbiEditorialTitle {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  color: var(--bbi-ink);
+}
+.bbiIntroText {
+  font:
+    400 var(--bbi-intro) / 1.8 Montserrat,
+    Arial,
+    sans-serif;
+  color: var(--bbi-muted);
+}
+.bbiBodyText {
+  font:
+    400 var(--bbi-body) / 1.75 Montserrat,
+    Arial,
+    sans-serif;
+  color: var(--bbi-muted);
+}
+.bbiCardText {
+  font:
+    400 var(--bbi-card-body) / 1.7 Montserrat,
+    Arial,
+    sans-serif;
+  color: var(--bbi-muted);
+}
 
-@media(max-width:620px){
-  :root{
-    --bbi-hero-title:43px;
-    --bbi-section-title:38px;
-    --bbi-card-title:26px;
-    --bbi-card-subtitle:19px;
-    --bbi-intro:12px;
-    --bbi-body:11px;
-    --bbi-card-body:11px;
-    --bbi-section-pad-y:40px;
-    --bbi-section-pad-x:20px;
-    --bbi-card-pad-y:20px;
-    --bbi-card-pad-x:22px;
-    --bbi-card-gap:14px;
+@media (max-width: 620px) {
+  :root {
+    --bbi-hero-title: 43px;
+    --bbi-section-title: 38px;
+    --bbi-card-title: 26px;
+    --bbi-card-subtitle: 19px;
+    --bbi-intro: 12px;
+    --bbi-body: 11px;
+    --bbi-card-body: 11px;
+    --bbi-section-pad-y: 40px;
+    --bbi-section-pad-x: 20px;
+    --bbi-card-pad-y: 20px;
+    --bbi-card-pad-x: 22px;
+    --bbi-card-gap: 14px;
   }
 }
