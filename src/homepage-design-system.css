@@ -218,7 +218,8 @@ main#top .pillars article {
 main#top .pillars .label {
   margin-top: 24px;
 }
-main#top .pillars h2 {
+main#top .pillars h2,
+main#top .featureBand h2 {
   font-size: 28px;
   line-height: 1.08;
 }
@@ -248,9 +249,6 @@ main#top .featureBand > div:first-child {
   padding: 30px;
 }
 main#top .featureBand h2 {
-  font:
-    500 46px/1.04 "Cormorant Garamond",
-    serif;
   margin: 0 0 12px;
 }
 
@@ -415,9 +413,6 @@ main#top .magGrid h3 {
   }
   main#top .featureBand > div:first-child {
     padding: 24px;
-  }
-  main#top .featureBand h2 {
-    font-size: 38px;
   }
   main#top .routineGrid,
   main#top .standardGrid,
