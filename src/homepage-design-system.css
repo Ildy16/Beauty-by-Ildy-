@@ -19,11 +19,11 @@ main#top .hero {
     var(--bbi-hero-2) 58%,
     var(--bbi-hero-3) 100%
   );
-  min-height: 520px;
+  min-height: 430px;
   color: #fff;
   display: flex;
   align-items: center;
-  padding: 5.5vw 8vw;
+  padding: 48px 8vw;
   position: relative;
   overflow: hidden;
 }
@@ -355,19 +355,10 @@ main#top .magGrid h3 {
   }
 }
 
-@media (min-width: 1500px) {
-  main#top .hero {
-    min-height: 540px;
-    padding-top: 70px;
-    padding-bottom: 70px;
-  }
-}
-
 @media (max-width: 620px) {
   main#top .hero {
-    min-height: 460px;
-    align-items: flex-start;
-    padding: 62px 24px 48px;
+    min-height: 400px;
+    padding: 44px 24px;
   }
   main#top .heroContent {
     width: 100%;
