@@ -1,0 +1,358 @@
+/* Shared foundations and evidence-page primitives.
+   Homepage and application-shell rules do not belong in this file. */
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: var(--champagne);
+  color: var(--ink);
+  font-family: Montserrat, Arial, sans-serif;
+}
+section {
+  scroll-margin-top: 100px;
+}
+a {
+  color: inherit;
+}
+
+/* Legal pages */
+.legalPage {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 72px 28px 90px;
+  background: var(--ivory);
+}
+.legalBack {
+  display: inline-block;
+  margin-bottom: 38px;
+  text-decoration: none;
+  font-size: 11px;
+}
+.legalPage h1 {
+  font:
+    500 60px "Cormorant Garamond",
+    serif;
+}
+.legalSections section {
+  padding: 30px 0;
+  border-bottom: 1px solid var(--line);
+}
+.legalSections p,
+.legalSections li {
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* Shared evidence-page primitives. Page modules loaded later refine them. */
+.techGuideHero,
+.ingredientHero {
+  background: linear-gradient(125deg, #06172d, #09264a 62%, #103a6a);
+  color: white;
+  padding: 78px 7vw 70px;
+}
+.techGuideHero > div,
+.ingredientHero > div {
+  max-width: 900px;
+}
+.techGuideHero h1,
+.ingredientHero h1 {
+  font:
+    500 clamp(48px, 6vw, 76px) / 1 "Cormorant Garamond",
+    serif;
+  margin: 22px 0;
+}
+.longevityBack,
+.guideBack {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: #d7dde4;
+  margin-bottom: 36px;
+}
+.longevityLead,
+.ingredientLead {
+  font-size: 15px;
+  line-height: 1.9;
+  max-width: 760px;
+  color: #dce3eb;
+}
+.reviewed {
+  font-size: 10px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-top: 26px;
+}
+.techGuideIntro {
+  padding: 30px 7vw;
+  background: var(--ivory);
+}
+.techGuideList,
+.ingredientGrid {
+  padding: 52px 7vw;
+  display: grid;
+  gap: 18px;
+}
+.techEvidenceCard,
+.ingredientCard {
+  background: var(--ivory);
+  border: 1px solid var(--line);
+  padding: 34px;
+}
+.techEvidenceTop,
+.ingredientTop {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 18px;
+}
+.techEvidenceTop h2,
+.ingredientCard h2 {
+  font:
+    500 34px "Cormorant Garamond",
+    serif;
+  margin: 7px 0 10px;
+}
+.techEvidenceTop span,
+.ingredientTop span {
+  font-size: 9px;
+  letter-spacing: 1px;
+  border: 1px solid var(--gold);
+  padding: 6px 9px;
+  color: #77633c;
+}
+.techEvidenceDetails {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0 34px;
+}
+.techEvidenceDetails > div {
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+}
+.techEvidenceDetails h3,
+.ingredientCard h3 {
+  font:
+    500 21px "Cormorant Garamond",
+    serif;
+  margin: 18px 0 7px;
+}
+.techEvidenceDetails p,
+.ingredientCard p,
+.ingredientMethod p,
+.formulaMap p {
+  font-size: 12px;
+  line-height: 1.8;
+  color: var(--muted);
+}
+.techCompare {
+  padding: 48px 7vw 65px;
+}
+.techCompare h2,
+.ingredientMethod h2,
+.formulaMap h2,
+.ingredientSources h2 {
+  font:
+    500 46px "Cormorant Garamond",
+    serif;
+  margin: 0 0 18px;
+}
+.techCompare > div {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 13px;
+}
+.techCompare article {
+  background: var(--ivory);
+  border: 1px solid var(--line);
+  padding: 23px;
+}
+.ingredientMethod {
+  margin: 44px 7vw 0;
+  background: var(--ivory);
+  border: 1px solid var(--line);
+  padding: 30px;
+  display: flex;
+  gap: 22px;
+  align-items: flex-start;
+}
+.ingredientMethod svg,
+.formulaMap svg,
+.sourceHead svg {
+  color: var(--gold);
+  flex: none;
+}
+.ingredientMethod h2 {
+  font-size: 32px;
+}
+.ingredientMethod p {
+  max-width: 850px;
+}
+.ingredientGrid {
+  grid-template-columns: repeat(2, 1fr);
+  padding-top: 24px;
+}
+.ingredientTop small {
+  font:
+    400 25px "Cormorant Garamond",
+    serif;
+  color: var(--gold);
+}
+.ingredientCard h2 {
+  margin: 22px 0;
+  font-size: 32px;
+}
+.formulaMap {
+  padding: 0 7vw 55px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+.formulaMap > div {
+  background: var(--ivory);
+  border: 1px solid var(--line);
+  padding: 30px;
+}
+.formulaMap h2 {
+  font-size: 32px;
+  margin-top: 12px;
+}
+.ingredientSources {
+  padding: 48px 7vw 65px;
+  background: var(--ivory);
+}
+.sourceHead {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+.ingredientSources > div:last-child {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.ingredientSources article {
+  border-top: 1px solid var(--line);
+  padding: 20px 0;
+}
+.ingredientSources small {
+  font-size: 9px;
+  color: var(--gold);
+  letter-spacing: 1px;
+}
+.ingredientSources h3 {
+  font:
+    500 20px "Cormorant Garamond",
+    serif;
+  margin: 8px 0;
+}
+.ingredientSources a {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 10px;
+  letter-spacing: 0.8px;
+  text-decoration: none;
+}
+
+@media (max-width: 1000px) {
+  .techCompare > div,
+  .ingredientGrid,
+  .formulaMap {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .ingredientSources > div:last-child {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 620px) {
+  .legalBack {
+    font-size: 10px;
+  }
+  .techGuideHero,
+  .ingredientHero {
+    padding: 52px 20px;
+  }
+  .techGuideHero h1,
+  .ingredientHero h1 {
+    font-size: 43px;
+  }
+  .longevityBack,
+  .guideBack {
+    font-size: 9px;
+    letter-spacing: 1.2px;
+  }
+  .longevityLead,
+  .ingredientLead {
+    font-size: 14px;
+  }
+  .reviewed {
+    font-size: 8px;
+    letter-spacing: 1.5px;
+  }
+  .techGuideList,
+  .ingredientGrid {
+    padding: 34px 20px;
+  }
+  .techEvidenceCard,
+  .ingredientCard {
+    padding: 24px;
+  }
+  .techEvidenceDetails,
+  .techCompare > div,
+  .ingredientGrid,
+  .formulaMap,
+  .ingredientSources > div:last-child {
+    grid-template-columns: 1fr;
+  }
+  .techEvidenceTop span,
+  .ingredientTop span {
+    font-size: 8px;
+    letter-spacing: 1.2px;
+  }
+  .techEvidenceDetails p,
+  .ingredientCard p,
+  .ingredientMethod p,
+  .formulaMap p {
+    font-size: 10px;
+  }
+  .techCompare {
+    padding: 38px 20px 50px;
+  }
+  .ingredientMethod {
+    margin: 28px 20px 0;
+    padding: 24px;
+  }
+  .ingredientMethod h2,
+  .formulaMap h2 {
+    font-size: 28px;
+  }
+  .formulaMap {
+    padding: 0 20px 40px;
+  }
+  .formulaMap > div {
+    padding: 24px;
+  }
+  .ingredientSources {
+    padding: 38px 20px 50px;
+  }
+  .ingredientSources h2 {
+    font-size: 36px;
+  }
+  .ingredientSources small {
+    font-size: 8px;
+  }
+  .ingredientSources a {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+}
