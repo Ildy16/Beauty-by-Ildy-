@@ -115,6 +115,7 @@ section > h2,
 }
 
 .pillars article h2,
+.featureBand h2,
 .routineGrid article h3,
 .standardGrid article h3,
 .magGrid article h3,
@@ -156,6 +157,7 @@ section > h2,
 }
 
 .pillars article > p:not(.label),
+.featureBand p,
 .routineGrid article > p,
 .standardGrid article > p,
 .magGrid article > p,
@@ -256,12 +258,3 @@ article > a,
     --bbi-card-title: 26px;
     --bbi-card-subtitle: 19px;
     --bbi-intro: 12px;
-    --bbi-body: 11px;
-    --bbi-card-body: 11px;
-    --bbi-section-pad-y: 40px;
-    --bbi-section-pad-x: 20px;
-    --bbi-card-pad-y: 20px;
-    --bbi-card-pad-x: 22px;
-    --bbi-card-gap: 14px;
-  }
-}
