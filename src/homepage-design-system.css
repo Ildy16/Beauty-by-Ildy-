@@ -68,8 +68,8 @@ main#top .primary {
   margin-top: 20px;
   display: inline-flex;
   align-items: center;
-  gap: 14px;
-  padding: 12px 22px;
+  gap: 10px;
+  padding: 9px 14px;
   border: 1px solid var(--bbi-gold);
   color: #fff;
   text-decoration: none;
