@@ -302,6 +302,10 @@ main#top .brandGrid div {
   justify-content: center;
   text-align: center;
 }
+main#top .brandGrid strong {
+  align-self: center;
+  white-space: nowrap;
+}
 main#top .brandGrid small {
   letter-spacing: 1.4px;
   color: var(--bbi-gold);
