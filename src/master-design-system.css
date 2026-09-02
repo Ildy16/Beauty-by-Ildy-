@@ -31,6 +31,9 @@
   --bbi-card-pad-x: 26px;
   --bbi-card-gap: 16px;
 
+  --bbi-font-heading: "Cormorant Garamond", serif;
+  --bbi-font-body: Montserrat, Arial, sans-serif;
+
   /* Compatibility aliases for existing page modules. */
   --navy: var(--bbi-navy);
   --gold: var(--bbi-gold);
@@ -42,8 +45,58 @@
   --line: var(--bbi-line);
 }
 
+/* Global typography contract
+   Headings use Cormorant Garamond; reading text and controls use Montserrat.
+   Section headings are uppercase; hero and card headings keep natural casing. */
+body,
+button,
+input,
+select,
+textarea {
+  font-family: var(--bbi-font-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--bbi-font-heading);
+  font-weight: 500;
+}
+
+section > h2,
+.productCategoryHead h2,
+.detailSectionHead h2,
+.productSectionHead h2,
+.inciSection h2,
+.buyPanel h2,
+.productSources h2,
+.sciencePanel h2,
+.explainHead h2 {
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.hero h1,
+.longevityHero h1,
+.techGuideHero h1,
+.ingredientHero h1,
+.productsHero h1,
+.detailHero h1,
+.productHero h1,
+article h2,
+article h3,
+article h4,
+.brandGrid strong,
+.scoreCard strong {
+  text-transform: none;
+  letter-spacing: normal;
+}
+
 .bbiEditorialTitle {
-  font-family: "Cormorant Garamond", serif;
+  font-family: var(--bbi-font-heading);
   font-weight: 500;
   color: var(--bbi-ink);
 }
