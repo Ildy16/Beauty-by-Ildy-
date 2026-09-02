@@ -163,12 +163,12 @@ main#top .needLink {
 }
 
 /* Sections: one spacing system */
-main#top .pillars,
-main#top .magazine {
+main#top .pillars {
   padding: 54px 6vw;
 }
 main#top .standards,
-main#top .brands {
+main#top .brands,
+main#top .magazine {
   padding: 38px 6vw;
 }
 main#top .routines {
@@ -258,7 +258,7 @@ main#top .routineGrid a {
   margin-top: 16px;
 }
 main#top .magGrid a {
-  margin-top: 22px;
+  margin-top: 16px;
 }
 
 /* Hair & scalp = one large information card */
@@ -363,20 +363,30 @@ main#top .brandGrid small {
 }
 
 /* Magazine = normal cards */
+main#top .magazine > h2 {
+  margin: 0;
+}
 main#top .magGrid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
-  margin-top: 26px;
+  margin-top: 20px;
 }
 main#top .magGrid article {
   min-height: 0;
-  padding: 26px;
+  padding: 20px;
+}
+main#top .magGrid small {
+  display: block;
+  margin: 0;
 }
 main#top .magGrid h3 {
   font-size: 26px;
   line-height: 1.08;
-  margin: 15px 0 10px;
+  margin: 10px 0 0;
+}
+main#top .magGrid p {
+  margin: 8px 0 0;
 }
 
 @media (max-width: 1000px) {
@@ -438,12 +448,12 @@ main#top .magGrid h3 {
   main#top .magazine h2 {
     font-size: 38px;
   }
-  main#top .pillars,
-  main#top .magazine {
+  main#top .pillars {
     padding: 40px 20px;
   }
   main#top .standards,
-  main#top .brands {
+  main#top .brands,
+  main#top .magazine {
     padding: 28px 20px;
   }
   main#top .routines {
@@ -465,7 +475,7 @@ main#top .magGrid h3 {
   }
   main#top .magGrid article {
     min-height: 0;
-    padding: 22px;
+    padding: 18px;
   }
   main#top .standardGrid article {
     min-height: 0;
