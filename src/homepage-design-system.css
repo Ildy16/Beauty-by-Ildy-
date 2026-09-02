@@ -164,10 +164,12 @@ main#top .needLink {
 
 /* Sections: one spacing system */
 main#top .pillars,
-main#top .standards,
-main#top .brands,
 main#top .magazine {
   padding: 54px 6vw;
+}
+main#top .standards,
+main#top .brands {
+  padding: 38px 6vw;
 }
 main#top .routines {
   padding: 48px 6vw;
@@ -301,26 +303,42 @@ main#top .routineGrid p {
 }
 
 /* Standards = normal cards, no decorative icons */
+main#top .standards > h2 {
+  margin: 0;
+}
 main#top .standardGrid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
-  margin-top: 26px;
+  margin-top: 20px;
 }
 main#top .standardGrid article {
   min-height: 0;
-  padding: 26px;
+  padding: 20px;
 }
 main#top .standardGrid article > svg {
   display: none;
 }
+main#top .standardGrid article > span:first-child {
+  display: block;
+  margin: 0;
+}
 main#top .standardGrid h3 {
-  margin-top: 0;
+  margin: 10px 0 0;
   font-size: 26px;
   line-height: 1.08;
 }
+main#top .standardGrid p {
+  margin: 8px 0 0;
+}
 
 /* Brand cards = compact cards */
+main#top .brands > h2 {
+  margin: 0;
+}
+main#top .brands .brandIntro {
+  margin: 8px 0 20px;
+}
 main#top .brandGrid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -328,7 +346,7 @@ main#top .brandGrid {
 }
 main#top .brandGrid div {
   min-height: 0;
-  padding: 20px;
+  padding: 14px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -421,10 +439,12 @@ main#top .magGrid h3 {
     font-size: 38px;
   }
   main#top .pillars,
-  main#top .standards,
-  main#top .brands,
   main#top .magazine {
     padding: 40px 20px;
+  }
+  main#top .standards,
+  main#top .brands {
+    padding: 28px 20px;
   }
   main#top .routines {
     padding: 32px 20px;
@@ -443,10 +463,13 @@ main#top .magGrid h3 {
     min-height: 0;
     padding: 18px;
   }
-  main#top .standardGrid article,
   main#top .magGrid article {
     min-height: 0;
     padding: 22px;
+  }
+  main#top .standardGrid article {
+    min-height: 0;
+    padding: 18px;
   }
   main#top .featureBand > div:first-child {
     padding: 18px;
@@ -460,7 +483,7 @@ main#top .magGrid h3 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   main#top .brandGrid div {
-    padding: 18px;
+    padding: 14px;
   }
   main#top .brandGrid small {
     font-size: 7px;
