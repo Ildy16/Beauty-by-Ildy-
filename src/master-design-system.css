@@ -115,6 +115,7 @@ section > h2,
 }
 
 .pillars article h2,
+.featureBand h2,
 .routineGrid article h3,
 .standardGrid article h3,
 .magGrid article h3,
@@ -156,6 +157,7 @@ section > h2,
 }
 
 .pillars article > p:not(.label),
+.featureBand p,
 .routineGrid article > p,
 .standardGrid article > p,
 .magGrid article > p,
