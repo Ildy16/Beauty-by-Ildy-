@@ -171,7 +171,7 @@ main#top .magazine {
   padding: 54px 6vw;
 }
 main#top .featureBand {
-  padding: 54px 6vw;
+  padding: 30px 6vw;
 }
 main#top .needs {
   padding: 38px 6vw;
@@ -258,10 +258,13 @@ main#top .magGrid a {
 /* Hair & scalp = one large information card */
 main#top .featureBand > div:first-child {
   max-width: 620px;
-  padding: 30px;
+  padding: 26px;
 }
 main#top .featureBand h2 {
-  margin: 0 0 12px;
+  margin: 0;
+}
+main#top .featureBand p {
+  margin: 8px 0 0;
 }
 
 /* Routines = normal cards */
@@ -404,9 +407,11 @@ main#top .magGrid h3 {
   main#top .routines,
   main#top .standards,
   main#top .brands,
-  main#top .magazine,
-  main#top .featureBand {
+  main#top .magazine {
     padding: 40px 20px;
+  }
+  main#top .featureBand {
+    padding: 24px 20px;
   }
   main#top .needs {
     padding: 28px 20px;
@@ -422,7 +427,7 @@ main#top .magGrid h3 {
     padding: 22px;
   }
   main#top .featureBand > div:first-child {
-    padding: 24px;
+    padding: 18px;
   }
   main#top .routineGrid,
   main#top .standardGrid,
