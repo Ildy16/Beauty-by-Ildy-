@@ -1,6 +1,5 @@
 /* Beauty by Ildy — single stylesheet entry point. */
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap");
-@import "./master-design-system.css";
 @import "./base.css";
 @import "./product.css";
 @import "./products.css";
@@ -9,4 +8,5 @@
 @import "./beautytech-design-system.css";
 @import "./ingredients-design-system.css";
 @import "./homepage-design-system.css";
+@import "./master-design-system.css";
 @import "./app-shell.css";
