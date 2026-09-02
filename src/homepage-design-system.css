@@ -213,15 +213,21 @@ main#top .pillars {
 }
 main#top .pillars article {
   min-height: 0;
-  padding: 30px;
+  padding: 26px;
 }
 main#top .pillars .label {
-  margin-top: 24px;
+  margin: 14px 0 0;
 }
 main#top .pillars h2,
 main#top .featureBand h2 {
   font-size: 28px;
   line-height: 1.08;
+}
+main#top .pillars h2 {
+  margin: 10px 0 0;
+}
+main#top .pillars article > p:not(.label) {
+  margin: 10px 0 0;
 }
 main#top .pillars article > span,
 main#top .routineGrid small,
@@ -240,6 +246,12 @@ main#top .magGrid a {
   text-decoration: none;
   font-size: 10px;
   letter-spacing: 1.2px;
+}
+main#top .pillars a {
+  margin-top: 16px;
+}
+main#top .routineGrid a,
+main#top .magGrid a {
   margin-top: 22px;
 }
 
@@ -408,7 +420,10 @@ main#top .magGrid h3 {
   main#top .needs {
     padding: 28px 20px;
   }
-  main#top .pillars article,
+  main#top .pillars article {
+    min-height: 0;
+    padding: 18px;
+  }
   main#top .routineGrid article,
   main#top .standardGrid article,
   main#top .magGrid article {
