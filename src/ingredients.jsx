@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect,useRef} from 'react';
 import {ArrowLeft} from 'lucide-react';
 
 const itemsHu=[
@@ -41,5 +41,6 @@ const copy={
 
 export function IngredientsPage({lang='hu'}){
  const t=copy[lang]||copy.hu; const items=mapItems(lang);
- return <main className="ingredientsPage"><section className="ingredientHero"><div><a className="guideBack" href="#top"><ArrowLeft size={14}/>{t.back}</a><p className="eyebrow">{t.eye}</p><h1>{t.title}</h1><p className="ingredientLead">{t.lead}</p><p className="reviewed">{t.updated}</p></div></section><section className="ingredientGrid">{items.map(([name,a,b,c,status])=><article className="ingredientCard" key={name}><div className="ingredientTop"><h2>{name}</h2><span>{status}</span></div><h3>{t.labels[0]}</h3><p>{a}</p><h3>{t.labels[1]}</h3><p>{b}</p><h3>{t.labels[2]}</h3><p>{c}</p></article>)}</section></main>;
+ const cards=useRef([]); useEffect(()=>{const target=window.location.hash.split('/')[1];const targets=['ingredient-retinol','ingredient-pdrn'];const index=targets.indexOf(target);if(index>=0)cards.current[index]?.scrollIntoView()},[]);
+ return <main className="ingredientsPage"><section className="ingredientHero"><div><a className="guideBack" href="#top"><ArrowLeft size={14}/>{t.back}</a><p className="eyebrow">{t.eye}</p><h1>{t.title}</h1><p className="ingredientLead">{t.lead}</p><p className="reviewed">{t.updated}</p></div></section><section className="ingredientGrid">{items.map(([name,a,b,c,status],i)=><article className="ingredientCard" id={i===0?'ingredient-retinol':i===1?'ingredient-pdrn':undefined} ref={i<2?node=>cards.current[i]=node:undefined} key={name}><div className="ingredientTop"><h2>{name}</h2><span>{status}</span></div><h3>{t.labels[0]}</h3><p>{a}</p><h3>{t.labels[1]}</h3><p>{b}</p><h3>{t.labels[2]}</h3><p>{c}</p></article>)}</section></main>;
 }

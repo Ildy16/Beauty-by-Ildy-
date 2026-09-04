@@ -62,6 +62,7 @@
 }
 
 .techGuidePage .techEvidenceCard {
+  scroll-margin-top: 100px;
   padding: 22px var(--bbi-card-pad-x) 20px;
   border: 1px solid var(--bbi-line);
   background: var(--bbi-ivory);

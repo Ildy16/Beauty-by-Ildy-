@@ -24,6 +24,7 @@ const content={
 
 export function LongevityPage({lang='hu'}){
   const t=content[lang]||content.hu;
+  const guideTargets=['beauty-tech-guide/tech-rf','beauty-tech-guide/tech-led-nir','beauty-tech-guide/tech-laser','beauty-tech-guide/tech-microcurrent','ingredients/ingredient-retinol','ingredients/ingredient-pdrn'];
   return <main className="longevityPage">
     <section className="longevityHero">
       <div className="longevityHeroInner"><a className="longevityBack" href="#top"><ArrowLeft size={14}/>{t.back}</a><p className="eyebrow">{t.eyebrow}</p><h1>{t.title}</h1><p className="longevityLead">{t.lead}</p><p className="reviewed">{t.updated}</p></div>
@@ -32,6 +33,6 @@ export function LongevityPage({lang='hu'}){
     <section className="evidenceBlock"><h2>{t.evidenceTitle}</h2><p className="sectionIntro">{t.evidenceIntro}</p><div className="evidenceGrid">{t.levels.map((l,i)=><article className={`evidenceLevel level${i+1}`} key={l[0]}><span>0{i+1}</span><h3>{l[0]}</h3><p>{l[1]}</p></article>)}</div></section>
     <section className="researchBlock"><h2>{t.featuredTitle}</h2><div className="researchGrid">{t.studies.map(s=><article key={s[1]}><small>{s[0]}</small><h3>{s[1]}</h3><p>{s[2]}</p><a href={s[3]} target="_blank" rel="noreferrer">{t.read}<ArrowRight size={14}/></a></article>)}</div></section>
     <section className="explainBlock"><div className="explainHead"><p className="eyebrow">BEAUTY BY ILDY KNOWLEDGE</p><h2>{t.explainTitle}</h2><p>{t.explainSub}</p></div><article className="termCard"><small>01 · BEAUTY TECH</small><h3>{t.termTitle}</h3><h4>{t.termLead}</h4><p>{t.termBody}</p><h4>{t.termUse}</h4><p>{t.termUseBody}</p><h4>{t.termEvidence}</h4><p>{t.termEvidenceBody}</p></article></section>
-    <section className="nextGuides"><h2>{t.nextTitle}</h2><div>{t.next.map((n,i)=><span key={n}>0{i+1} · {n}</span>)}</div></section>
+    <section className="nextGuides"><h2>{t.nextTitle}</h2><div>{t.next.map((n,i)=><a href={`#${guideTargets[i]}`} key={n}>0{i+1} · {n}</a>)}</div></section>
   </main>
 }
