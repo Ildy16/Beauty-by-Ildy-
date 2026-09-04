@@ -16,7 +16,14 @@
   max-width: 900px;
 }
 .ingredientsPage .guideBack {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   margin-bottom: 28px;
+  color: #d7dde4;
+  font: 400 var(--bbi-meta) var(--bbi-font-body);
+  letter-spacing: 1.2px;
+  text-decoration: none;
 }
 .ingredientsPage .ingredientHero h1 {
   margin: 16px 0;
