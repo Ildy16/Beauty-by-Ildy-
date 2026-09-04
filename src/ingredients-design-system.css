@@ -1,14 +1,129 @@
-.ingredientHero{background:linear-gradient(125deg,#06172d 0%,#09264a 62%,#103a6a 100%);padding:56px 6vw 52px;color:#fff}
-.ingredientHero>div{max-width:900px}
-.ingredientHero h1{font:500 clamp(48px,5.4vw,72px)/1 'Cormorant Garamond',serif;margin:18px 0}
-.ingredientLead{font:300 13px/1.9 Montserrat,Arial,sans-serif;max-width:760px;color:#dce3eb}
-.ingredientHero .reviewed{font-size:9px;letter-spacing:1.4px;color:#c7a96b;margin-top:22px}
-.ingredientGrid{padding:44px 6vw 52px;background:#eee8dc;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-.ingredientCard{background:#fbf8f1!important;border:1px solid #ddd3c2!important;padding:24px 26px!important;min-height:0!important}
-.ingredientTop{display:block!important;border-bottom:1px solid #ddd3c2!important;padding-bottom:12px!important}
-.ingredientTop h2{font:500 30px/1.08 'Cormorant Garamond',serif!important;margin:0 0 10px!important;color:#17232a}
-.ingredientTop span{display:inline-block;font:400 9px Montserrat,Arial,sans-serif!important;letter-spacing:1px;border:1px solid #c7a96b!important;padding:6px 9px!important;color:#8a744c!important}
-.ingredientCard h3{font:500 20px 'Cormorant Garamond',serif!important;margin:14px 0 5px!important;color:#17232a}
-.ingredientCard p{font:400 11px/1.7 Montserrat,Arial,sans-serif!important;color:#66737a!important;margin:0 0 8px!important}
-@media(max-width:900px){.ingredientGrid{grid-template-columns:1fr}}
-@media(max-width:620px){.ingredientHero{padding:48px 20px 44px}.ingredientHero h1{font-size:43px}.ingredientLead{font-size:13px}.ingredientGrid{padding:34px 20px 44px;gap:14px}.ingredientCard{padding:20px 22px!important}.ingredientTop h2{font-size:28px!important}.ingredientCard h3{font-size:19px!important}.ingredientCard p{font-size:11px!important}}
+.ingredientsPage {
+  background: var(--bbi-sand);
+}
+
+.ingredientsPage .ingredientHero {
+  padding: 48px 6vw 44px;
+  background: linear-gradient(
+    125deg,
+    var(--bbi-hero-1) 0%,
+    var(--bbi-hero-2) 62%,
+    var(--bbi-hero-3) 100%
+  );
+  color: #fff;
+}
+.ingredientsPage .ingredientHero > div {
+  max-width: 900px;
+}
+.ingredientsPage .guideBack {
+  margin-bottom: 28px;
+}
+.ingredientsPage .ingredientHero h1 {
+  margin: 16px 0;
+  font: 500 clamp(48px, 5.4vw, var(--bbi-hero-title)) / 1
+    var(--bbi-font-heading);
+}
+.ingredientsPage .ingredientLead {
+  max-width: 760px;
+  color: #dce3eb;
+  font: 300 var(--bbi-intro) / 1.9 var(--bbi-font-body);
+}
+.ingredientsPage .ingredientHero .reviewed {
+  margin-top: 18px;
+  color: var(--bbi-gold);
+  font-size: var(--bbi-meta);
+  letter-spacing: 1.4px;
+}
+
+.ingredientsPage .ingredientGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--bbi-card-gap);
+  padding: 38px var(--bbi-section-pad-x) 46px;
+  background: var(--bbi-sand);
+}
+.ingredientsPage .ingredientCard {
+  min-height: 0;
+  padding: 22px var(--bbi-card-pad-x);
+  background: var(--bbi-ivory);
+  border: 1px solid var(--bbi-line);
+}
+.ingredientsPage .ingredientTop {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--bbi-line);
+}
+.ingredientsPage .ingredientTop h2 {
+  margin: 0;
+  color: var(--bbi-ink);
+  font: 500 var(--bbi-card-title) / 1.08 var(--bbi-font-heading);
+  text-transform: uppercase;
+}
+.ingredientsPage .ingredientTop span {
+  display: inline-block;
+  justify-self: end;
+  max-width: 205px;
+  padding: 5px 8px;
+  border: 1px solid var(--bbi-gold);
+  color: #8a744c;
+  font: 500 var(--bbi-meta) / 1.3 var(--bbi-font-body);
+  letter-spacing: 1px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.ingredientsPage .ingredientCard > h3 {
+  margin: 12px 0 4px;
+  color: var(--bbi-ink);
+  font: 500 var(--bbi-card-subtitle) / 1.15 var(--bbi-font-heading);
+  text-transform: uppercase;
+}
+.ingredientsPage .ingredientCard > p {
+  margin: 0 0 6px;
+  color: var(--bbi-muted);
+  font: 400 var(--bbi-card-body) / 1.7 var(--bbi-font-body);
+}
+
+@media (max-width: 900px) {
+  .ingredientsPage .ingredientGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .ingredientsPage .ingredientHero {
+    padding: 42px 20px 38px;
+  }
+  .ingredientsPage .guideBack {
+    margin-bottom: 24px;
+  }
+  .ingredientsPage .ingredientHero h1 {
+    margin: 14px 0;
+    font-size: var(--bbi-hero-title);
+  }
+  .ingredientsPage .ingredientHero .reviewed {
+    margin-top: 16px;
+  }
+  .ingredientsPage .ingredientGrid {
+    gap: var(--bbi-card-gap);
+    padding: 30px var(--bbi-section-pad-x) 40px;
+  }
+  .ingredientsPage .ingredientCard {
+    padding: var(--bbi-card-pad-y) var(--bbi-card-pad-x);
+  }
+  .ingredientsPage .ingredientTop {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .ingredientsPage .ingredientTop h2 {
+    font-size: var(--bbi-card-title);
+  }
+  .ingredientsPage .ingredientTop span {
+    max-width: 100%;
+  }
+  .ingredientsPage .ingredientCard > h3 {
+    font-size: var(--bbi-card-subtitle);
+  }
+}

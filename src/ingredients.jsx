@@ -41,5 +41,5 @@ const copy={
 
 export function IngredientsPage({lang='hu'}){
  const t=copy[lang]||copy.hu; const items=mapItems(lang);
- return <main><section className="ingredientHero"><div><a className="guideBack" href="#top"><ArrowLeft size={14}/>{t.back}</a><p className="eyebrow">{t.eye}</p><h1>{t.title}</h1><p className="ingredientLead">{t.lead}</p><p className="reviewed">{t.updated}</p></div></section><section className="ingredientGrid">{items.map(([name,a,b,c,status])=><article className="ingredientCard" key={name}><div className="ingredientTop"><h2>{name}</h2><span>{status}</span></div><h3>{t.labels[0]}</h3><p>{a}</p><h3>{t.labels[1]}</h3><p>{b}</p><h3>{t.labels[2]}</h3><p>{c}</p></article>)}</section></main>;
+ return <main className="ingredientsPage"><section className="ingredientHero"><div><a className="guideBack" href="#top"><ArrowLeft size={14}/>{t.back}</a><p className="eyebrow">{t.eye}</p><h1>{t.title}</h1><p className="ingredientLead">{t.lead}</p><p className="reviewed">{t.updated}</p></div></section><section className="ingredientGrid">{items.map(([name,a,b,c,status])=><article className="ingredientCard" key={name}><div className="ingredientTop"><h2>{name}</h2><span>{status}</span></div><h3>{t.labels[0]}</h3><p>{a}</p><h3>{t.labels[1]}</h3><p>{b}</p><h3>{t.labels[2]}</h3><p>{c}</p></article>)}</section></main>;
 }
