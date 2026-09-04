@@ -120,13 +120,6 @@
   background: var(--bbi-sand);
 }
 
-.longevityPage .evidenceLevel span {
-  display: block;
-  margin: 0 0 9px;
-  color: var(--bbi-gold);
-  font: 400 30px / 1 var(--bbi-font-heading);
-}
-
 .longevityPage .researchGrid article {
   display: flex;
   flex-direction: column;
