@@ -1,5 +1,5 @@
 import React from 'react';
-import {ArrowLeft,ArrowRight,BookOpen,FlaskConical,HeartPulse,ScanFace} from 'lucide-react';
+import {ArrowLeft,ArrowRight} from 'lucide-react';
 
 const content={
   hu:{
@@ -24,12 +24,11 @@ const content={
 
 export function LongevityPage({lang='hu'}){
   const t=content[lang]||content.hu;
-  const icons=[ScanFace,FlaskConical,HeartPulse,BookOpen];
   return <main className="longevityPage">
     <section className="longevityHero">
       <div className="longevityHeroInner"><a className="longevityBack" href="#top"><ArrowLeft size={14}/>{t.back}</a><p className="eyebrow">{t.eyebrow}</p><h1>{t.title}</h1><p className="longevityLead">{t.lead}</p><p className="reviewed">{t.updated}</p></div>
     </section>
-    <section className="longevityIntro"><h2>{t.introTitle}</h2><p>{t.intro}</p><div className="longevityAreas">{t.areas.map((a,i)=>{const Icon=icons[i];return <article key={a[0]}><Icon size={23}/><h3>{a[0]}</h3><p>{a[1]}</p></article>})}</div></section>
+    <section className="longevityIntro"><h2>{t.introTitle}</h2><p>{t.intro}</p><div className="longevityAreas">{t.areas.map(a=><article key={a[0]}><h3>{a[0]}</h3><p>{a[1]}</p></article>)}</div></section>
     <section className="evidenceBlock"><h2>{t.evidenceTitle}</h2><p className="sectionIntro">{t.evidenceIntro}</p><div className="evidenceGrid">{t.levels.map((l,i)=><article className={`evidenceLevel level${i+1}`} key={l[0]}><span>0{i+1}</span><h3>{l[0]}</h3><p>{l[1]}</p></article>)}</div></section>
     <section className="researchBlock"><h2>{t.featuredTitle}</h2><div className="researchGrid">{t.studies.map(s=><article key={s[1]}><small>{s[0]}</small><h3>{s[1]}</h3><p>{s[2]}</p><a href={s[3]} target="_blank" rel="noreferrer">{t.read}<ArrowRight size={14}/></a></article>)}</div></section>
     <section className="explainBlock"><div className="explainHead"><p className="eyebrow">BEAUTY BY ILDY KNOWLEDGE</p><h2>{t.explainTitle}</h2><p>{t.explainSub}</p></div><article className="termCard"><small>01 · BEAUTY TECH</small><h3>{t.termTitle}</h3><h4>{t.termLead}</h4><p>{t.termBody}</p><h4>{t.termUse}</h4><p>{t.termUseBody}</p><h4>{t.termEvidence}</h4><p>{t.termEvidenceBody}</p></article></section>
