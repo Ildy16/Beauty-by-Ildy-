@@ -446,7 +446,8 @@ main#top .magGrid p {
   main#top .standards h2,
   main#top .brands h2,
   main#top .magazine h2 {
-    font-size: 38px;
+    font-size: var(--bbi-section-title);
+    line-height: 0.96;
   }
   main#top .pillars {
     padding: 40px 20px;

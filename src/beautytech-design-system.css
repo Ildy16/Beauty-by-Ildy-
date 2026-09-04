@@ -189,5 +189,6 @@
   .techGuidePage .techEvidenceDetails,
   .techGuidePage .techCompare > div { grid-template-columns: 1fr; }
   .techGuidePage .techCompare { padding: 30px 20px 40px; }
+  .techGuidePage .techCompare h2 { line-height: 0.96; }
   .techGuidePage .techCompare article { padding: 16px 18px; }
 }

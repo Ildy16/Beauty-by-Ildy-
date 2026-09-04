@@ -254,7 +254,7 @@ article > a,
 @media (max-width: 620px) {
   :root {
     --bbi-hero-title: 43px;
-    --bbi-section-title: 38px;
+    --bbi-section-title: 34px;
     --bbi-card-title: 26px;
     --bbi-card-subtitle: 19px;
     --bbi-intro: 12px;
