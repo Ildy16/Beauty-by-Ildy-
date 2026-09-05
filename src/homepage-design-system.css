@@ -365,6 +365,8 @@ main#top .brandGrid small {
 /* Magazine = normal cards */
 main#top .magazine > h2 {
   margin: 0;
+  font-size: 30px;
+  line-height: 1;
 }
 main#top .magGrid {
   display: grid;
@@ -374,16 +376,23 @@ main#top .magGrid {
 }
 main#top .magGrid article {
   min-height: 0;
-  padding: 20px;
+  padding: 18px 20px;
 }
-main#top .magGrid small {
+main#top .magGrid article > small:first-child {
   display: block;
   margin: 0;
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: 9px;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
 }
 main#top .magGrid h3 {
-  font-size: 26px;
+  font-size: 24px;
   line-height: 1.08;
-  margin: 10px 0 0;
+  margin: 8px 0 0;
+  text-transform: none;
 }
 main#top .magGrid p {
   margin: 8px 0 0;
