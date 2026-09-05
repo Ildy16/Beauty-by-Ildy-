@@ -1,29 +1,651 @@
-import React,{useEffect,useState} from 'react';
-import {createRoot} from 'react-dom/client';
-import {ArrowRight,Menu,X,ShieldCheck,Microscope,HeartPulse} from 'lucide-react';
-import {LegalPage,legalLabels} from './legal.jsx';
-import {LongevityPage} from './longevity.jsx';
-import {BeautyTechPage} from './beautytech.jsx';
-import {IngredientsPage} from './ingredients.jsx';
-import {MedicubePdrnProduct} from './product.jsx';
-import {ProductsPage,ProductDetail} from './products.jsx';
-import './styles.css';
+import React, { useEffect, useState } from "react";
+import { createRoot } from "react-dom/client";
+import {
+  ArrowRight,
+  Menu,
+  X,
+  ShieldCheck,
+  Microscope,
+  HeartPulse,
+} from "lucide-react";
+import { LegalPage, legalLabels } from "./legal.jsx";
+import { LongevityPage } from "./longevity.jsx";
+import { WellnessPage } from "./wellness.jsx";
+import { BeautyTechPage } from "./beautytech.jsx";
+import { IngredientsPage } from "./ingredients.jsx";
+import { MedicubePdrnProduct } from "./product.jsx";
+import { ProductsPage, ProductDetail } from "./products.jsx";
+import "./styles.css";
 
-const copy={
- hu:{nav:[['SZÉPSÉG','ingredients'],['BEAUTY TECH','beauty-tech-guide'],['WELLNESS','wellness'],['LONGEVITY','longevity'],['MEGOLDÁSOK','solutions'],['TERMÉKEK','products'],['MÁRKÁK','brands'],['MAGAZIN','magazine']],eyebrow:'BEAUTY • TECHNOLOGY • WELLNESS',title:'A szépség új dimenziója.',sub:'Bőrápolás, innovatív technológia és wellness – kívül-belül.',cta:'Fedezd fel a válogatást',choose:'MIRE VAN SZÜKSÉGED?',needs:['Ráncok & feszesség','Hidratálás','Barrier & érzékenység','Pigmentáció','Pórusok','Problémás bőr','Haj & fejbőr','Energia & vitalitás'],pillars:[['BEAUTY','Tudatos bőrápolás','Hatóanyagok, formulák és célzott megoldások a bőr különböző igényeire.'],['BEAUTY TECH','Technológia otthon','RF (rádiófrekvencia), LED, lézer, mikroáram és más innovatív otthoni beauty technológiák.'],['WELLNESS','Belső egyensúly','Vitaminok, étrend-kiegészítők és wellness megoldások a mindennapi vitalitás támogatására.']],hairTitle:'Haj & fejbőr',hairText:'Célzott haj- és fejbőrápolás, gondosan válogatott formulákkal és technológiákkal.',routines:'VÁLOGATOTT RUTINOK',routineSub:'Egymásra épülő megoldások a bőrápolástól a beauty technológián át a wellnessig.',routineCards:[['RAGYOGÁS RUTIN','Fény, hidratáltság, egységesebb bőrérzet.'],['AGE-WELL RUTIN','Retinoid, peptidek és célzott beauty tech.'],['BARRIER HELYREÁLLÍTÁS','Kímélő, barrier-központú rutin érzékenyebb időszakokra.'],['ENERGIA RESET','Mindennapi vitalitást támogató wellness-válogatás.']],standards:'MI ALAPJÁN VÁLOGATUNK?',standardCards:[['Hatékonyság','Összetétel, hatóanyagok, technológia és elérhető vizsgálatok.'],['Biztonság','INCI, irritációs kockázat, használati korlátok és ésszerű állítások.'],['Valódi érték','Minőség, használhatóság és ár-érték arány – a partnerkapcsolatoktól függetlenül.']],brands:'VÁLOGATOTT MÁRKÁK',brandSub:'Innováció, minőség és valódi hozzáadott érték alapján válogatott márkák.',magTitle:'MAGAZIN & ÚTMUTATÓK',magCards:[['Retinol vagy retinal?','Mi a különbség, kinek melyik lehet jobb, és hogyan érdemes bevezetni?'],['RF, LED, lézer vagy mikroáram?','Mit tudnak valójában az otthoni beauty eszközök — és mit nem?'],['Termékelemzés: Medicube PDRN krém','Mi van benne, mit mond a tudomány, és mit ér valójában a teljes formula?']],discover:'FEDEZD FEL',explore:'MEGNÉZEM',editorial:'SZERKESZTŐI TARTALOM',readGuide:'ÚTMUTATÓ MEGNYITÁSA',footer:'Beauty. Technology. Wellness.',disclaimer:'Egyes linkek partnerlinkek lehetnek. A vásárlás a partner weboldalán történik; a válogatás ettől független.'},
- en:{nav:[['BEAUTY','ingredients'],['BEAUTY TECH','beauty-tech-guide'],['WELLNESS','wellness'],['LONGEVITY','longevity'],['SOLUTIONS','solutions'],['PRODUCTS','products'],['BRANDS','brands'],['MAGAZINE','magazine']],eyebrow:'BEAUTY • TECHNOLOGY • WELLNESS',title:'A new dimension of beauty.',sub:'Skincare, innovative technology and wellness – inside and out.',cta:'Explore the edit',choose:'WHAT DO YOU NEED?',needs:['Wrinkles & firmness','Hydration','Barrier & sensitivity','Pigmentation','Pores','Blemish-prone skin','Hair & scalp','Energy & vitality'],pillars:[['BEAUTY','Intentional skincare','Actives, formulas and targeted solutions for different skin needs.'],['BEAUTY TECH','Technology at home','RF (radiofrequency), LED, laser, microcurrent and other innovative at-home beauty technologies.'],['WELLNESS','Inner balance','Vitamins, supplements and wellness solutions to support everyday vitality.']],hairTitle:'Hair & scalp',hairText:'Targeted hair and scalp care with carefully selected formulas and technologies.',routines:'CURATED ROUTINES',routineSub:'Complementary solutions spanning skincare, beauty technology and wellness.',routineCards:[['GLOW ROUTINE','Radiance, hydration and a more even-looking complexion.'],['AGE-WELL ROUTINE','Retinoids, peptides and targeted beauty tech.'],['BARRIER RESET','A gentle barrier-focused routine for sensitive periods.'],['ENERGY RESET','A wellness edit for everyday vitality.']],standards:'HOW WE CURATE',standardCards:[['Efficacy','Formulation, actives, technology and available evidence.'],['Safety','INCI, irritation potential, use limitations and responsible claims.'],['Real value','Quality, usability and value for money — independent of partner relationships.']],brands:'CURATED BRANDS',brandSub:'Brands selected for innovation, quality and meaningful added value.',magTitle:'MAGAZINE & GUIDES',magCards:[['Retinol or retinal?','What is the difference, who may prefer which, and how to introduce them?'],['RF, LED, laser or microcurrent?','What at-home beauty devices can realistically do — and what they cannot?'],['Product review: Medicube PDRN Cream','What is inside, what does the science say, and how strong is the full formula?']],discover:'DISCOVER',explore:'EXPLORE',editorial:'EDITORIAL',readGuide:'READ GUIDE',footer:'Beauty. Technology. Wellness.',disclaimer:'Some links may be affiliate links. Purchases take place on partner websites; curation remains independent.'},
- de:{nav:[['BEAUTY','ingredients'],['BEAUTY TECH','beauty-tech-guide'],['WELLNESS','wellness'],['LONGEVITY','longevity'],['LÖSUNGEN','solutions'],['PRODUKTE','products'],['MARKEN','brands'],['MAGAZIN','magazine']],eyebrow:'BEAUTY • TECHNOLOGIE • WELLNESS',title:'Eine neue Dimension der Schönheit.',sub:'Hautpflege, innovative Technologie und Wellness – von innen und außen.',cta:'Auswahl entdecken',choose:'WAS BRAUCHST DU?',needs:['Falten & Festigkeit','Feuchtigkeit','Barriere & Sensibilität','Pigmentierung','Poren','Unreine Haut','Haar & Kopfhaut','Energie & Vitalität'],pillars:[['BEAUTY','Bewusste Hautpflege','Wirkstoffe, Formulierungen und gezielte Lösungen für unterschiedliche Hautbedürfnisse.'],['BEAUTY TECH','Technologie für zu Hause','RF (Radiofrequenz), LED, Laser, Mikrostrom und weitere innovative Beauty-Technologien für zu Hause.'],['WELLNESS','Innere Balance','Vitamine, Nahrungsergänzungsmittel und Wellness-Lösungen zur Unterstützung der täglichen Vitalität.']],hairTitle:'Haar & Kopfhaut',hairText:'Gezielte Haar- und Kopfhautpflege mit sorgfältig ausgewählten Formulierungen und Technologien.',routines:'KURATIERTE ROUTINEN',routineSub:'Aufeinander abgestimmte Lösungen von Hautpflege über Beauty-Technologie bis Wellness.',routineCards:[['GLOW-ROUTINE','Ausstrahlung, Feuchtigkeit und ein ebenmäßigeres Hautbild.'],['AGE-WELL-ROUTINE','Retinoide, Peptide und gezielte Beauty-Technologie.'],['BARRIERE-RESET','Sanfte, barrierestärkende Routine für sensible Phasen.'],['ENERGIE-RESET','Wellness-Auswahl für tägliche Vitalität.']],standards:'WIE WIR AUSWÄHLEN',standardCards:[['Wirksamkeit','Formulierung, Wirkstoffe, Technologie und verfügbare Evidenz.'],['Sicherheit','INCI, Reizpotenzial, Anwendungsgrenzen und verantwortungsvolle Aussagen.'],['Echter Wert','Qualität, Anwendbarkeit und Preis-Leistungs-Verhältnis — unabhängig von Partnerbeziehungen.']],brands:'KURATIERTE MARKEN',brandSub:'Ausgewählte Marken mit Fokus auf Innovation, Qualität und echten Mehrwert.',magTitle:'MAGAZIN & GUIDES',magCards:[['Retinol oder Retinal?','Unterschiede, Einsatzbereiche und ein sinnvoller Einstieg.'],['RF, LED, Laser oder Mikrostrom?','Was Beauty-Geräte für zu Hause realistisch leisten können — und was nicht?'],['Produktanalyse: Medicube PDRN Creme','Was ist enthalten, was sagt die Wissenschaft und wie gut ist die Gesamtformel?']],discover:'ENTDECKEN',explore:'ANSEHEN',editorial:'REDAKTION',readGuide:'GUIDE ÖFFNEN',footer:'Beauty. Technology. Wellness.',disclaimer:'Einige Links können Partnerlinks sein. Der Kauf erfolgt auf Partnerseiten; die Auswahl bleibt unabhängig.'}
+const copy = {
+  hu: {
+    nav: [
+      ["SZÉPSÉG", "ingredients"],
+      ["BEAUTY TECH", "beauty-tech-guide"],
+      ["WELLNESS", "wellness"],
+      ["LONGEVITY", "longevity"],
+      ["MEGOLDÁSOK", "solutions"],
+      ["TERMÉKEK", "products"],
+      ["MÁRKÁK", "brands"],
+      ["MAGAZIN", "magazine"],
+    ],
+    eyebrow: "BEAUTY • TECHNOLOGY • WELLNESS",
+    title: "A szépség új dimenziója.",
+    sub: "Bőrápolás, innovatív technológia és wellness – kívül-belül.",
+    cta: "Fedezd fel a válogatást",
+    choose: "MIRE VAN SZÜKSÉGED?",
+    needs: [
+      "Ráncok & feszesség",
+      "Hidratálás",
+      "Barrier & érzékenység",
+      "Pigmentáció",
+      "Pórusok",
+      "Problémás bőr",
+      "Haj & fejbőr",
+      "Energia & vitalitás",
+    ],
+    pillars: [
+      [
+        "BEAUTY",
+        "Tudatos bőrápolás",
+        "Hatóanyagok, formulák és célzott megoldások a bőr különböző igényeire.",
+      ],
+      [
+        "BEAUTY TECH",
+        "Technológia otthon",
+        "RF (rádiófrekvencia), LED, lézer, mikroáram és más innovatív otthoni beauty technológiák.",
+      ],
+      [
+        "WELLNESS",
+        "Belső egyensúly",
+        "Vitaminok, étrend-kiegészítők és wellness megoldások a mindennapi vitalitás támogatására.",
+      ],
+    ],
+    hairTitle: "Haj & fejbőr",
+    hairText:
+      "Célzott haj- és fejbőrápolás, gondosan válogatott formulákkal és technológiákkal.",
+    routines: "VÁLOGATOTT RUTINOK",
+    routineSub:
+      "Egymásra épülő megoldások a bőrápolástól a beauty technológián át a wellnessig.",
+    routineCards: [
+      ["RAGYOGÁS RUTIN", "Fény, hidratáltság, egységesebb bőrérzet."],
+      ["AGE-WELL RUTIN", "Retinoid, peptidek és célzott beauty tech."],
+      [
+        "BARRIER HELYREÁLLÍTÁS",
+        "Kímélő, barrier-központú rutin érzékenyebb időszakokra.",
+      ],
+      ["ENERGIA RESET", "Mindennapi vitalitást támogató wellness-válogatás."],
+    ],
+    standards: "MI ALAPJÁN VÁLOGATUNK?",
+    standardCards: [
+      [
+        "Hatékonyság",
+        "Összetétel, hatóanyagok, technológia és elérhető vizsgálatok.",
+      ],
+      [
+        "Biztonság",
+        "INCI, irritációs kockázat, használati korlátok és ésszerű állítások.",
+      ],
+      [
+        "Valódi érték",
+        "Minőség, használhatóság és ár-érték arány – a partnerkapcsolatoktól függetlenül.",
+      ],
+    ],
+    brands: "VÁLOGATOTT MÁRKÁK",
+    brandSub:
+      "Innováció, minőség és valódi hozzáadott érték alapján válogatott márkák.",
+    magTitle: "MAGAZIN & ÚTMUTATÓK",
+    magCards: [
+      [
+        "Retinol vagy retinal?",
+        "Mi a különbség, kinek melyik lehet jobb, és hogyan érdemes bevezetni?",
+      ],
+      [
+        "RF, LED, lézer vagy mikroáram?",
+        "Mit tudnak valójában az otthoni beauty eszközök — és mit nem?",
+      ],
+      [
+        "Termékelemzés: Medicube PDRN krém",
+        "Mi van benne, mit mond a tudomány, és mit ér valójában a teljes formula?",
+      ],
+    ],
+    discover: "FEDEZD FEL",
+    explore: "MEGNÉZEM",
+    editorial: "SZERKESZTŐI TARTALOM",
+    readGuide: "ÚTMUTATÓ MEGNYITÁSA",
+    footer: "Beauty. Technology. Wellness.",
+    disclaimer:
+      "Egyes linkek partnerlinkek lehetnek. A vásárlás a partner weboldalán történik; a válogatás ettől független.",
+  },
+  en: {
+    nav: [
+      ["BEAUTY", "ingredients"],
+      ["BEAUTY TECH", "beauty-tech-guide"],
+      ["WELLNESS", "wellness"],
+      ["LONGEVITY", "longevity"],
+      ["SOLUTIONS", "solutions"],
+      ["PRODUCTS", "products"],
+      ["BRANDS", "brands"],
+      ["MAGAZINE", "magazine"],
+    ],
+    eyebrow: "BEAUTY • TECHNOLOGY • WELLNESS",
+    title: "A new dimension of beauty.",
+    sub: "Skincare, innovative technology and wellness – inside and out.",
+    cta: "Explore the edit",
+    choose: "WHAT DO YOU NEED?",
+    needs: [
+      "Wrinkles & firmness",
+      "Hydration",
+      "Barrier & sensitivity",
+      "Pigmentation",
+      "Pores",
+      "Blemish-prone skin",
+      "Hair & scalp",
+      "Energy & vitality",
+    ],
+    pillars: [
+      [
+        "BEAUTY",
+        "Intentional skincare",
+        "Actives, formulas and targeted solutions for different skin needs.",
+      ],
+      [
+        "BEAUTY TECH",
+        "Technology at home",
+        "RF (radiofrequency), LED, laser, microcurrent and other innovative at-home beauty technologies.",
+      ],
+      [
+        "WELLNESS",
+        "Inner balance",
+        "Vitamins, supplements and wellness solutions to support everyday vitality.",
+      ],
+    ],
+    hairTitle: "Hair & scalp",
+    hairText:
+      "Targeted hair and scalp care with carefully selected formulas and technologies.",
+    routines: "CURATED ROUTINES",
+    routineSub:
+      "Complementary solutions spanning skincare, beauty technology and wellness.",
+    routineCards: [
+      [
+        "GLOW ROUTINE",
+        "Radiance, hydration and a more even-looking complexion.",
+      ],
+      ["AGE-WELL ROUTINE", "Retinoids, peptides and targeted beauty tech."],
+      [
+        "BARRIER RESET",
+        "A gentle barrier-focused routine for sensitive periods.",
+      ],
+      ["ENERGY RESET", "A wellness edit for everyday vitality."],
+    ],
+    standards: "HOW WE CURATE",
+    standardCards: [
+      ["Efficacy", "Formulation, actives, technology and available evidence."],
+      [
+        "Safety",
+        "INCI, irritation potential, use limitations and responsible claims.",
+      ],
+      [
+        "Real value",
+        "Quality, usability and value for money — independent of partner relationships.",
+      ],
+    ],
+    brands: "CURATED BRANDS",
+    brandSub:
+      "Brands selected for innovation, quality and meaningful added value.",
+    magTitle: "MAGAZINE & GUIDES",
+    magCards: [
+      [
+        "Retinol or retinal?",
+        "What is the difference, who may prefer which, and how to introduce them?",
+      ],
+      [
+        "RF, LED, laser or microcurrent?",
+        "What at-home beauty devices can realistically do — and what they cannot?",
+      ],
+      [
+        "Product review: Medicube PDRN Cream",
+        "What is inside, what does the science say, and how strong is the full formula?",
+      ],
+    ],
+    discover: "DISCOVER",
+    explore: "EXPLORE",
+    editorial: "EDITORIAL",
+    readGuide: "READ GUIDE",
+    footer: "Beauty. Technology. Wellness.",
+    disclaimer:
+      "Some links may be affiliate links. Purchases take place on partner websites; curation remains independent.",
+  },
+  de: {
+    nav: [
+      ["BEAUTY", "ingredients"],
+      ["BEAUTY TECH", "beauty-tech-guide"],
+      ["WELLNESS", "wellness"],
+      ["LONGEVITY", "longevity"],
+      ["LÖSUNGEN", "solutions"],
+      ["PRODUKTE", "products"],
+      ["MARKEN", "brands"],
+      ["MAGAZIN", "magazine"],
+    ],
+    eyebrow: "BEAUTY • TECHNOLOGIE • WELLNESS",
+    title: "Eine neue Dimension der Schönheit.",
+    sub: "Hautpflege, innovative Technologie und Wellness – von innen und außen.",
+    cta: "Auswahl entdecken",
+    choose: "WAS BRAUCHST DU?",
+    needs: [
+      "Falten & Festigkeit",
+      "Feuchtigkeit",
+      "Barriere & Sensibilität",
+      "Pigmentierung",
+      "Poren",
+      "Unreine Haut",
+      "Haar & Kopfhaut",
+      "Energie & Vitalität",
+    ],
+    pillars: [
+      [
+        "BEAUTY",
+        "Bewusste Hautpflege",
+        "Wirkstoffe, Formulierungen und gezielte Lösungen für unterschiedliche Hautbedürfnisse.",
+      ],
+      [
+        "BEAUTY TECH",
+        "Technologie für zu Hause",
+        "RF (Radiofrequenz), LED, Laser, Mikrostrom und weitere innovative Beauty-Technologien für zu Hause.",
+      ],
+      [
+        "WELLNESS",
+        "Innere Balance",
+        "Vitamine, Nahrungsergänzungsmittel und Wellness-Lösungen zur Unterstützung der täglichen Vitalität.",
+      ],
+    ],
+    hairTitle: "Haar & Kopfhaut",
+    hairText:
+      "Gezielte Haar- und Kopfhautpflege mit sorgfältig ausgewählten Formulierungen und Technologien.",
+    routines: "KURATIERTE ROUTINEN",
+    routineSub:
+      "Aufeinander abgestimmte Lösungen von Hautpflege über Beauty-Technologie bis Wellness.",
+    routineCards: [
+      [
+        "GLOW-ROUTINE",
+        "Ausstrahlung, Feuchtigkeit und ein ebenmäßigeres Hautbild.",
+      ],
+      [
+        "AGE-WELL-ROUTINE",
+        "Retinoide, Peptide und gezielte Beauty-Technologie.",
+      ],
+      [
+        "BARRIERE-RESET",
+        "Sanfte, barrierestärkende Routine für sensible Phasen.",
+      ],
+      ["ENERGIE-RESET", "Wellness-Auswahl für tägliche Vitalität."],
+    ],
+    standards: "WIE WIR AUSWÄHLEN",
+    standardCards: [
+      [
+        "Wirksamkeit",
+        "Formulierung, Wirkstoffe, Technologie und verfügbare Evidenz.",
+      ],
+      [
+        "Sicherheit",
+        "INCI, Reizpotenzial, Anwendungsgrenzen und verantwortungsvolle Aussagen.",
+      ],
+      [
+        "Echter Wert",
+        "Qualität, Anwendbarkeit und Preis-Leistungs-Verhältnis — unabhängig von Partnerbeziehungen.",
+      ],
+    ],
+    brands: "KURATIERTE MARKEN",
+    brandSub:
+      "Ausgewählte Marken mit Fokus auf Innovation, Qualität und echten Mehrwert.",
+    magTitle: "MAGAZIN & GUIDES",
+    magCards: [
+      [
+        "Retinol oder Retinal?",
+        "Unterschiede, Einsatzbereiche und ein sinnvoller Einstieg.",
+      ],
+      [
+        "RF, LED, Laser oder Mikrostrom?",
+        "Was Beauty-Geräte für zu Hause realistisch leisten können — und was nicht?",
+      ],
+      [
+        "Produktanalyse: Medicube PDRN Creme",
+        "Was ist enthalten, was sagt die Wissenschaft und wie gut ist die Gesamtformel?",
+      ],
+    ],
+    discover: "ENTDECKEN",
+    explore: "ANSEHEN",
+    editorial: "REDAKTION",
+    readGuide: "GUIDE ÖFFNEN",
+    footer: "Beauty. Technology. Wellness.",
+    disclaimer:
+      "Einige Links können Partnerlinks sein. Der Kauf erfolgt auf Partnerseiten; die Auswahl bleibt unabhängig.",
+  },
 };
 
-const brands={
- hu:[['Nu Skin','MÁR ELÉRHETŐ','Beauty tech + bőrápolás + wellness'],['Neumi','MÁR ELÉRHETŐ','Hatóanyag-beviteli technológia + wellness'],['HubisLab','VÁLOGATOTT','Professzionális K-beauty'],['Biodance','VÁLOGATOTT','K-beauty + PDRN'],['Aestura','VÁLOGATOTT','Barrier-ápolás'],['NIRA','VÁLOGATOTT','Otthoni lézertechnológia'],['CurrentBody','VÁLOGATOTT','LED + beauty tech'],['Medicube','VÁLOGATOTT','K-beauty + készülékek'],['IOPE','VÁLOGATOTT','Koreai kutatásalapú bőrápolás'],['Sulwhasoo','VÁLOGATOTT','Prémium koreai bőrápolás'],['Genabelle','VÁLOGATOTT','Klinikai hátterű PDRN bőrápolás']],
- en:[['Nu Skin','AVAILABLE NOW','Beauty tech + skincare + wellness'],['Neumi','AVAILABLE NOW','Delivery technology + wellness'],['HubisLab','CURATED','Professional K-beauty'],['Biodance','CURATED','K-beauty + PDRN'],['Aestura','CURATED','Barrier care'],['NIRA','CURATED','At-home laser'],['CurrentBody','CURATED','LED + beauty tech'],['Medicube','CURATED','K-beauty + devices'],['IOPE','CURATED','Korean R&D skincare'],['Sulwhasoo','CURATED','Premium Korean skincare'],['Genabelle','CURATED','Clinic-born PDRN skincare']],
- de:[['Nu Skin','JETZT VERFÜGBAR','Beauty Tech + Hautpflege + Wellness'],['Neumi','JETZT VERFÜGBAR','Delivery-Technologie + Wellness'],['HubisLab','AUSGEWÄHLT','Professionelle K-Beauty'],['Biodance','AUSGEWÄHLT','K-Beauty + PDRN'],['Aestura','AUSGEWÄHLT','Barrierpflege'],['NIRA','AUSGEWÄHLT','Laser für zu Hause'],['CurrentBody','AUSGEWÄHLT','LED + Beauty Tech'],['Medicube','AUSGEWÄHLT','K-Beauty + Geräte'],['IOPE','AUSGEWÄHLT','Koreanische R&D-Hautpflege'],['Sulwhasoo','AUSGEWÄHLT','Premium-Hautpflege aus Korea'],['Genabelle','AUSGEWÄHLT','Klinisch inspirierte PDRN-Hautpflege']]
+const brands = {
+  hu: [
+    ["Nu Skin", "MÁR ELÉRHETŐ", "Beauty tech + bőrápolás + wellness"],
+    ["Neumi", "MÁR ELÉRHETŐ", "Hatóanyag-beviteli technológia + wellness"],
+    ["HubisLab", "VÁLOGATOTT", "Professzionális K-beauty"],
+    ["Biodance", "VÁLOGATOTT", "K-beauty + PDRN"],
+    ["Aestura", "VÁLOGATOTT", "Barrier-ápolás"],
+    ["NIRA", "VÁLOGATOTT", "Otthoni lézertechnológia"],
+    ["CurrentBody", "VÁLOGATOTT", "LED + beauty tech"],
+    ["Medicube", "VÁLOGATOTT", "K-beauty + készülékek"],
+    ["IOPE", "VÁLOGATOTT", "Koreai kutatásalapú bőrápolás"],
+    ["Sulwhasoo", "VÁLOGATOTT", "Prémium koreai bőrápolás"],
+    ["Genabelle", "VÁLOGATOTT", "Klinikai hátterű PDRN bőrápolás"],
+  ],
+  en: [
+    ["Nu Skin", "AVAILABLE NOW", "Beauty tech + skincare + wellness"],
+    ["Neumi", "AVAILABLE NOW", "Delivery technology + wellness"],
+    ["HubisLab", "CURATED", "Professional K-beauty"],
+    ["Biodance", "CURATED", "K-beauty + PDRN"],
+    ["Aestura", "CURATED", "Barrier care"],
+    ["NIRA", "CURATED", "At-home laser"],
+    ["CurrentBody", "CURATED", "LED + beauty tech"],
+    ["Medicube", "CURATED", "K-beauty + devices"],
+    ["IOPE", "CURATED", "Korean R&D skincare"],
+    ["Sulwhasoo", "CURATED", "Premium Korean skincare"],
+    ["Genabelle", "CURATED", "Clinic-born PDRN skincare"],
+  ],
+  de: [
+    ["Nu Skin", "JETZT VERFÜGBAR", "Beauty Tech + Hautpflege + Wellness"],
+    ["Neumi", "JETZT VERFÜGBAR", "Delivery-Technologie + Wellness"],
+    ["HubisLab", "AUSGEWÄHLT", "Professionelle K-Beauty"],
+    ["Biodance", "AUSGEWÄHLT", "K-Beauty + PDRN"],
+    ["Aestura", "AUSGEWÄHLT", "Barrierpflege"],
+    ["NIRA", "AUSGEWÄHLT", "Laser für zu Hause"],
+    ["CurrentBody", "AUSGEWÄHLT", "LED + Beauty Tech"],
+    ["Medicube", "AUSGEWÄHLT", "K-Beauty + Geräte"],
+    ["IOPE", "AUSGEWÄHLT", "Koreanische R&D-Hautpflege"],
+    ["Sulwhasoo", "AUSGEWÄHLT", "Premium-Hautpflege aus Korea"],
+    ["Genabelle", "AUSGEWÄHLT", "Klinisch inspirierte PDRN-Hautpflege"],
+  ],
 };
 
-const needTargets=['routines','routines','routines','routines','routines','routines','hair','wellness'];
-const legalTypes=['imprint','privacy','cookies','terms','affiliate','health'];
-function currentLegal(){const h=window.location.hash.replace('#','');return h.startsWith('legal-')?h.slice(6):null}
-function currentPage(){const h=window.location.hash.replace('#','').split('/')[0];if(['longevity','beauty-tech-guide','ingredients','products','product-medicube-pdrn'].includes(h))return h;if(h.startsWith('product-'))return h;return null}
-function App(){const [lang,setLang]=useState('hu');const [open,setOpen]=useState(false);const [legal,setLegal]=useState(currentLegal());const [page,setPage]=useState(currentPage());const t=copy[lang];const labels=legalLabels[lang];useEffect(()=>{document.documentElement.lang=lang},[lang]);useEffect(()=>{const fn=()=>{const nextLegal=currentLegal();const nextPage=currentPage();const hash=window.location.hash.replace('#','');setLegal(nextLegal);setPage(nextPage);setOpen(false);if(nextLegal||nextPage||hash==='top'){window.scrollTo(0,0);return}requestAnimationFrame(()=>document.getElementById(hash)?.scrollIntoView({block:'start'}))};window.addEventListener('hashchange',fn);return()=>window.removeEventListener('hashchange',fn)},[]);let content;if(legal)content=<LegalPage lang={lang} type={legal}/>;else if(page==='longevity')content=<LongevityPage lang={lang}/>;else if(page==='beauty-tech-guide')content=<BeautyTechPage lang={lang}/>;else if(page==='ingredients')content=<IngredientsPage lang={lang}/>;else if(page==='products')content=<ProductsPage lang={lang}/>;else if(page==='product-medicube-pdrn')content=<MedicubePdrnProduct lang={lang}/>;else if(page&&page.startsWith('product-'))content=<ProductDetail lang={lang} slug={page.slice(8)}/>;else content=<main id="top"><section className="hero"><div className="glow"></div><div className="heroContent"><p className="eyebrow">{t.eyebrow}</p><h1>{t.title}</h1><p className="lead">{t.sub}</p><a className="primary" href="#products">{t.cta}<ArrowRight size={17}/></a></div></section><section id="solutions" className="needs"><p>{t.choose}</p><div>{t.needs.map((n,i)=><a className="needLink" href={`#${needTargets[i]}`} key={n}>{n}</a>)}</div></section><section className="pillars"><article id="beauty"><p className="label">{t.pillars[0][0]}</p><h2>{t.pillars[0][1]}</h2><p>{t.pillars[0][2]}</p><a href="#ingredients">{t.discover}<ArrowRight size={15}/></a></article><article id="tech"><p className="label">{t.pillars[1][0]}</p><h2>{t.pillars[1][1]}</h2><p>{t.pillars[1][2]}</p><a href="#beauty-tech-guide">{t.discover}<ArrowRight size={15}/></a></article><article id="wellness"><p className="label">{t.pillars[2][0]}</p><h2>{t.pillars[2][1]}</h2><p>{t.pillars[2][2]}</p><a href="#routines">{t.discover}<ArrowRight size={15}/></a></article></section><section id="hair" className="featureBand"><div><h2>{t.hairTitle}</h2><p>{t.hairText}</p></div></section><section id="routines" className="routines"><h2>{t.routines}</h2><p className="sectionIntro">{t.routineSub}</p><div className="routineGrid">{t.routineCards.map(r=><article key={r[0]}><h3>{r[0]}</h3><p>{r[1]}</p><a href="#products">{t.explore}<ArrowRight size={14}/></a></article>)}</div></section><section className="standards"><h2>{t.standards}</h2><div className="standardGrid">{t.standardCards.map(s=><article key={s[0]}><h3>{s[0]}</h3><p>{s[1]}</p></article>)}</div></section><section id="brands" className="brands"><h2>{t.brands}</h2><p className="brandIntro">{t.brandSub}</p><div className="brandGrid">{brands[lang].map(b=><div key={b[0]}><strong>{b[0]}</strong><small>{b[1]}</small><em>{b[2]}</em></div>)}</div></section><section id="magazine" className="magazine"><h2>{t.magTitle}</h2><div className="magGrid">{t.magCards.map((m,i)=><article key={m[0]}><small>{t.editorial}</small><h3>{m[0]}</h3><p>{m[1]}</p><a href={i===1?'#beauty-tech-guide':i===2?'#product-medicube-pdrn':'#ingredients'}>{t.readGuide}<ArrowRight size={14}/></a></article>)}</div></section></main>;return <><header className="topbar"><a className="logo" href="#top"><span>BEAUTY BY ILDY</span><small>BEAUTY. TECHNOLOGY. WELLNESS.</small></a><nav>{t.nav.map(n=><a key={n[0]} href={`#${n[1]}`}>{n[0]}</a>)}</nav><div className="langs">{['hu','en','de'].map(l=><button key={l} className={lang===l?'active':''} onClick={()=>setLang(l)}>{l.toUpperCase()}</button>)}</div><button className="menuBtn" onClick={()=>setOpen(!open)}>{open?<X/>:<Menu/>}</button></header>{open&&<div className="mobileMenu">{t.nav.map(n=><a key={n[0]} href={`#${n[1]}`}>{n[0]}</a>)}<div className="mobileLangs">{['hu','en','de'].map(l=><button key={l} onClick={()=>setLang(l)}>{l.toUpperCase()}</button>)}</div></div>}{content}<footer><div><a className="logo inverse" href="#top"><span>BEAUTY BY ILDY</span><small>{t.footer}</small></a><div className="footerLangs">{['hu','en','de'].map((l,i)=><React.Fragment key={l}><button className={lang===l?'active':''} onClick={()=>setLang(l)}>{l.toUpperCase()}</button>{i<2&&<span className="footerLangSep">•</span>}</React.Fragment>)}</div></div><div className="legalLinks">{legalTypes.map(x=><a key={x} href={`#legal-${x}`}>{labels[x]}</a>)}</div><p className="fineprint">{t.disclaimer}</p></footer></>}
-createRoot(document.getElementById('root')).render(<App/>);
+const needTargets = [
+  "routines",
+  "routines",
+  "routines",
+  "routines",
+  "routines",
+  "routines",
+  "hair",
+  "wellness",
+];
+const legalTypes = [
+  "imprint",
+  "privacy",
+  "cookies",
+  "terms",
+  "affiliate",
+  "health",
+];
+function currentLegal() {
+  const h = window.location.hash.replace("#", "");
+  return h.startsWith("legal-") ? h.slice(6) : null;
+}
+function currentPage() {
+  const h = window.location.hash.replace("#", "").split("/")[0];
+  if (
+    [
+      "longevity",
+      "wellness",
+      "beauty-tech-guide",
+      "ingredients",
+      "products",
+      "product-medicube-pdrn",
+    ].includes(h)
+  )
+    return h;
+  if (h.startsWith("product-")) return h;
+  return null;
+}
+function App() {
+  const [lang, setLang] = useState("hu");
+  const [open, setOpen] = useState(false);
+  const [legal, setLegal] = useState(currentLegal());
+  const [page, setPage] = useState(currentPage());
+  const t = copy[lang];
+  const labels = legalLabels[lang];
+  useEffect(() => {
+    document.documentElement.lang = lang;
+  }, [lang]);
+  useEffect(() => {
+    const fn = () => {
+      const nextLegal = currentLegal();
+      const nextPage = currentPage();
+      const hash = window.location.hash.replace("#", "");
+      setLegal(nextLegal);
+      setPage(nextPage);
+      setOpen(false);
+      if (nextLegal || nextPage || hash === "top") {
+        window.scrollTo(0, 0);
+        return;
+      }
+      requestAnimationFrame(() =>
+        document.getElementById(hash)?.scrollIntoView({ block: "start" }),
+      );
+    };
+    window.addEventListener("hashchange", fn);
+    return () => window.removeEventListener("hashchange", fn);
+  }, []);
+  let content;
+  if (legal) content = <LegalPage lang={lang} type={legal} />;
+  else if (page === "longevity") content = <LongevityPage lang={lang} />;
+  else if (page === "wellness") content = <WellnessPage lang={lang} />;
+  else if (page === "beauty-tech-guide")
+    content = <BeautyTechPage lang={lang} />;
+  else if (page === "ingredients") content = <IngredientsPage lang={lang} />;
+  else if (page === "products") content = <ProductsPage lang={lang} />;
+  else if (page === "product-medicube-pdrn")
+    content = <MedicubePdrnProduct lang={lang} />;
+  else if (page && page.startsWith("product-"))
+    content = <ProductDetail lang={lang} slug={page.slice(8)} />;
+  else
+    content = (
+      <main id="top">
+        <section className="hero">
+          <div className="glow"></div>
+          <div className="heroContent">
+            <p className="eyebrow">{t.eyebrow}</p>
+            <h1>{t.title}</h1>
+            <p className="lead">{t.sub}</p>
+            <a className="primary" href="#products">
+              {t.cta}
+              <ArrowRight size={17} />
+            </a>
+          </div>
+        </section>
+        <section id="solutions" className="needs">
+          <p>{t.choose}</p>
+          <div>
+            {t.needs.map((n, i) => (
+              <a className="needLink" href={`#${needTargets[i]}`} key={n}>
+                {n}
+              </a>
+            ))}
+          </div>
+        </section>
+        <section className="pillars">
+          <article id="beauty">
+            <p className="label">{t.pillars[0][0]}</p>
+            <h2>{t.pillars[0][1]}</h2>
+            <p>{t.pillars[0][2]}</p>
+            <a href="#ingredients">
+              {t.discover}
+              <ArrowRight size={15} />
+            </a>
+          </article>
+          <article id="tech">
+            <p className="label">{t.pillars[1][0]}</p>
+            <h2>{t.pillars[1][1]}</h2>
+            <p>{t.pillars[1][2]}</p>
+            <a href="#beauty-tech-guide">
+              {t.discover}
+              <ArrowRight size={15} />
+            </a>
+          </article>
+          <article id="wellness">
+            <p className="label">{t.pillars[2][0]}</p>
+            <h2>{t.pillars[2][1]}</h2>
+            <p>{t.pillars[2][2]}</p>
+            <a href="#wellness">
+              {t.discover}
+              <ArrowRight size={15} />
+            </a>
+          </article>
+        </section>
+        <section id="hair" className="featureBand">
+          <div>
+            <h2>{t.hairTitle}</h2>
+            <p>{t.hairText}</p>
+          </div>
+        </section>
+        <section id="routines" className="routines">
+          <h2>{t.routines}</h2>
+          <p className="sectionIntro">{t.routineSub}</p>
+          <div className="routineGrid">
+            {t.routineCards.map((r) => (
+              <article key={r[0]}>
+                <h3>{r[0]}</h3>
+                <p>{r[1]}</p>
+                <a href="#products">
+                  {t.explore}
+                  <ArrowRight size={14} />
+                </a>
+              </article>
+            ))}
+          </div>
+        </section>
+        <section className="standards">
+          <h2>{t.standards}</h2>
+          <div className="standardGrid">
+            {t.standardCards.map((s) => (
+              <article key={s[0]}>
+                <h3>{s[0]}</h3>
+                <p>{s[1]}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+        <section id="brands" className="brands">
+          <h2>{t.brands}</h2>
+          <p className="brandIntro">{t.brandSub}</p>
+          <div className="brandGrid">
+            {brands[lang].map((b) => (
+              <div key={b[0]}>
+                <strong>{b[0]}</strong>
+                <small>{b[1]}</small>
+                <em>{b[2]}</em>
+              </div>
+            ))}
+          </div>
+        </section>
+        <section id="magazine" className="magazine">
+          <h2>{t.magTitle}</h2>
+          <div className="magGrid">
+            {t.magCards.map((m, i) => (
+              <article key={m[0]}>
+                <small>{t.editorial}</small>
+                <h3>{m[0]}</h3>
+                <p>{m[1]}</p>
+                <a
+                  href={
+                    i === 1
+                      ? "#beauty-tech-guide"
+                      : i === 2
+                        ? "#product-medicube-pdrn"
+                        : "#ingredients"
+                  }
+                >
+                  {t.readGuide}
+                  <ArrowRight size={14} />
+                </a>
+              </article>
+            ))}
+          </div>
+        </section>
+      </main>
+    );
+  return (
+    <>
+      <header className="topbar">
+        <a className="logo" href="#top">
+          <span>BEAUTY BY ILDY</span>
+          <small>BEAUTY. TECHNOLOGY. WELLNESS.</small>
+        </a>
+        <nav>
+          {t.nav.map((n) => (
+            <a key={n[0]} href={`#${n[1]}`}>
+              {n[0]}
+            </a>
+          ))}
+        </nav>
+        <div className="langs">
+          {["hu", "en", "de"].map((l) => (
+            <button
+              key={l}
+              className={lang === l ? "active" : ""}
+              onClick={() => setLang(l)}
+            >
+              {l.toUpperCase()}
+            </button>
+          ))}
+        </div>
+        <button className="menuBtn" onClick={() => setOpen(!open)}>
+          {open ? <X /> : <Menu />}
+        </button>
+      </header>
+      {open && (
+        <div className="mobileMenu">
+          {t.nav.map((n) => (
+            <a key={n[0]} href={`#${n[1]}`}>
+              {n[0]}
+            </a>
+          ))}
+          <div className="mobileLangs">
+            {["hu", "en", "de"].map((l) => (
+              <button key={l} onClick={() => setLang(l)}>
+                {l.toUpperCase()}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+      {content}
+      <footer>
+        <div>
+          <a className="logo inverse" href="#top">
+            <span>BEAUTY BY ILDY</span>
+            <small>{t.footer}</small>
+          </a>
+          <div className="footerLangs">
+            {["hu", "en", "de"].map((l, i) => (
+              <React.Fragment key={l}>
+                <button
+                  className={lang === l ? "active" : ""}
+                  onClick={() => setLang(l)}
+                >
+                  {l.toUpperCase()}
+                </button>
+                {i < 2 && <span className="footerLangSep">•</span>}
+              </React.Fragment>
+            ))}
+          </div>
+        </div>
+        <div className="legalLinks">
+          {legalTypes.map((x) => (
+            <a key={x} href={`#legal-${x}`}>
+              {labels[x]}
+            </a>
+          ))}
+        </div>
+        <p className="fineprint">{t.disclaimer}</p>
+      </footer>
+    </>
+  );
+}
+createRoot(document.getElementById("root")).render(<App />);
