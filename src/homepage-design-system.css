@@ -412,7 +412,7 @@ main#top .magGrid p {
     width: 100%;
   }
   main#top .hero h1 {
-    font-size: 43px;
+    font-size: var(--bbi-hero-title);
   }
   main#top .hero .lead {
     font-size: 13px;
