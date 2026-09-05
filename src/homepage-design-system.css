@@ -45,7 +45,7 @@ main#top .glow {
 /* Approved homepage typography */
 main#top .hero h1 {
   font:
-    500 clamp(64px, 5.7vw, 76px) / 0.98 "Cormorant Garamond",
+    500 var(--bbi-hero-title) / 0.98 "Cormorant Garamond",
     serif;
   max-width: 680px;
   margin: 20px 0;
@@ -58,7 +58,7 @@ main#top .eyebrow {
 }
 main#top .hero .lead {
   font:
-    300 13px/1.8 Montserrat,
+    300 var(--bbi-intro) / 1.8 Montserrat,
     Arial,
     sans-serif;
   max-width: 620px;
@@ -81,7 +81,7 @@ main#top .standards h2,
 main#top .brands h2,
 main#top .magazine h2 {
   font:
-    500 48px/1.04 "Cormorant Garamond",
+    500 var(--bbi-section-title) / 1.04 "Cormorant Garamond",
     serif;
   margin: 10px 0;
 }
@@ -96,7 +96,7 @@ main#top .sectionIntro,
 main#top .brandIntro,
 main#top .featureBand p {
   font:
-    400 13px/1.8 Montserrat,
+    400 var(--bbi-intro) / 1.8 Montserrat,
     Arial,
     sans-serif;
   color: var(--bbi-muted);
@@ -224,7 +224,7 @@ main#top .pillars .label {
 }
 main#top .pillars h2,
 main#top .featureBand h2 {
-  font-size: 28px;
+  font-size: var(--bbi-card-title);
   line-height: 1.08;
 }
 main#top .pillars h2 {
@@ -415,7 +415,7 @@ main#top .magGrid p {
     font-size: var(--bbi-hero-title);
   }
   main#top .hero .lead {
-    font-size: 13px;
+    font-size: var(--bbi-intro);
   }
   main#top .eyebrow {
     font-size: 10px;
@@ -468,22 +468,22 @@ main#top .magGrid p {
   }
   main#top .pillars article {
     min-height: 0;
-    padding: 18px;
+    padding: var(--bbi-card-pad-y) var(--bbi-card-pad-x);
   }
   main#top .routineGrid article {
     min-height: 0;
-    padding: 18px;
+    padding: var(--bbi-card-pad-y) var(--bbi-card-pad-x);
   }
   main#top .magGrid article {
     min-height: 0;
-    padding: 18px;
+    padding: var(--bbi-card-pad-y) var(--bbi-card-pad-x);
   }
   main#top .standardGrid article {
     min-height: 0;
-    padding: 18px;
+    padding: var(--bbi-card-pad-y) var(--bbi-card-pad-x);
   }
   main#top .featureBand > div:first-child {
-    padding: 18px;
+    padding: var(--bbi-card-pad-y) var(--bbi-card-pad-x);
   }
   main#top .routineGrid,
   main#top .standardGrid,
@@ -514,6 +514,6 @@ main#top .magGrid p {
   main#top .sectionIntro,
   main#top .brandIntro,
   main#top .featureBand p {
-    font-size: 13px;
+    font-size: var(--bbi-intro);
   }
 }
