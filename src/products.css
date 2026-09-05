@@ -8,4 +8,14 @@
   .productsPage .productCategoryHead h2 {
     font-size: 30px;
   }
+  .productsPage .productMonogram {
+    width: auto;
+    aspect-ratio: auto;
+    border-radius: 0;
+    justify-self: stretch;
+    background-position: center;
+    background-size: contain;
+    background-color: #fff;
+    background-repeat: no-repeat;
+  }
 }
