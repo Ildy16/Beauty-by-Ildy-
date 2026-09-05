@@ -19,11 +19,11 @@ main#top .hero {
     var(--bbi-hero-2) 58%,
     var(--bbi-hero-3) 100%
   );
-  min-height: 430px;
+  min-height: 520px;
   color: #fff;
   display: flex;
   align-items: center;
-  padding: 48px 8vw;
+  padding: 5.5vw 8vw;
   position: relative;
   overflow: hidden;
 }
@@ -45,7 +45,7 @@ main#top .glow {
 /* Approved homepage typography */
 main#top .hero h1 {
   font:
-    500 var(--bbi-hero-title) / 0.98 "Cormorant Garamond",
+    500 clamp(64px, 5.7vw, 76px) / 0.98 "Cormorant Garamond",
     serif;
   max-width: 680px;
   margin: 20px 0;
@@ -58,7 +58,7 @@ main#top .eyebrow {
 }
 main#top .hero .lead {
   font:
-    300 var(--bbi-intro) / 1.8 Montserrat,
+    300 13px/1.8 Montserrat,
     Arial,
     sans-serif;
   max-width: 620px;
@@ -68,8 +68,8 @@ main#top .primary {
   margin-top: 20px;
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 9px 14px;
+  gap: 14px;
+  padding: 16px 22px;
   border: 1px solid var(--bbi-gold);
   color: #fff;
   text-decoration: none;
@@ -81,9 +81,10 @@ main#top .standards h2,
 main#top .brands h2,
 main#top .magazine h2 {
   font:
-    500 var(--bbi-section-title) / 1.04 "Cormorant Garamond",
+    500 30px/1.04 "Cormorant Garamond",
     serif;
   margin: 10px 0;
+  letter-spacing: 0;
 }
 main#top .pillars h2,
 main#top .routineGrid h3,
@@ -96,7 +97,7 @@ main#top .sectionIntro,
 main#top .brandIntro,
 main#top .featureBand p {
   font:
-    400 var(--bbi-intro) / 1.8 Montserrat,
+    400 13px/1.8 Montserrat,
     Arial,
     sans-serif;
   color: var(--bbi-muted);
@@ -163,19 +164,15 @@ main#top .needLink {
 }
 
 /* Sections: one spacing system */
-main#top .pillars {
-  padding: 54px 6vw;
-}
+main#top .pillars,
+main#top .routines,
 main#top .standards,
 main#top .brands,
 main#top .magazine {
-  padding: 38px 6vw;
-}
-main#top .routines {
-  padding: 48px 6vw;
+  padding: 54px 6vw;
 }
 main#top .featureBand {
-  padding: 30px 6vw;
+  padding: 54px 6vw;
 }
 main#top .needs {
   padding: 38px 6vw;
@@ -217,21 +214,14 @@ main#top .pillars {
 }
 main#top .pillars article {
   min-height: 0;
-  padding: 26px;
+  padding: 30px;
 }
 main#top .pillars .label {
-  margin: 14px 0 0;
-}
-main#top .pillars h2,
-main#top .featureBand h2 {
-  font-size: var(--bbi-card-title);
-  line-height: 1.08;
+  margin-top: 24px;
 }
 main#top .pillars h2 {
-  margin: 10px 0 0;
-}
-main#top .pillars article > p:not(.label) {
-  margin: 10px 0 0;
+  font-size: 28px;
+  line-height: 1.08;
 }
 main#top .pillars article > span,
 main#top .routineGrid small,
@@ -250,36 +240,22 @@ main#top .magGrid a {
   text-decoration: none;
   font-size: 10px;
   letter-spacing: 1.2px;
-}
-main#top .pillars a {
-  margin-top: 16px;
-}
-main#top .routineGrid a {
-  margin-top: 16px;
-}
-main#top .magGrid a {
-  margin-top: 16px;
+  margin-top: 22px;
 }
 
 /* Hair & scalp = one large information card */
 main#top .featureBand > div:first-child {
   max-width: 620px;
-  padding: 26px;
+  padding: 30px;
 }
 main#top .featureBand h2 {
-  margin: 0;
-}
-main#top .featureBand p {
-  margin: 8px 0 0;
+  font:
+    500 46px/1.04 "Cormorant Garamond",
+    serif;
+  margin: 0 0 12px;
 }
 
 /* Routines = normal cards */
-main#top .routines > h2 {
-  margin: 0;
-}
-main#top .routines .sectionIntro {
-  margin: 8px 0 20px;
-}
 main#top .routineGrid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -287,58 +263,35 @@ main#top .routineGrid {
 }
 main#top .routineGrid article {
   min-height: 0;
-  padding: 24px;
-}
-main#top .routineGrid small {
-  display: block;
-  margin: 0;
+  padding: 26px;
 }
 main#top .routineGrid h3 {
   font-size: 26px;
   line-height: 1.08;
-  margin: 10px 0 0;
-}
-main#top .routineGrid p {
-  margin: 8px 0 0;
+  margin: 15px 0 10px;
 }
 
 /* Standards = normal cards, no decorative icons */
-main#top .standards > h2 {
-  margin: 0;
-}
 main#top .standardGrid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
-  margin-top: 20px;
+  margin-top: 26px;
 }
 main#top .standardGrid article {
   min-height: 0;
-  padding: 20px;
+  padding: 26px;
 }
 main#top .standardGrid article > svg {
   display: none;
 }
-main#top .standardGrid article > span:first-child {
-  display: block;
-  margin: 0;
-}
 main#top .standardGrid h3 {
-  margin: 10px 0 0;
+  margin-top: 0;
   font-size: 26px;
   line-height: 1.08;
 }
-main#top .standardGrid p {
-  margin: 8px 0 0;
-}
 
 /* Brand cards = compact cards */
-main#top .brands > h2 {
-  margin: 0;
-}
-main#top .brands .brandIntro {
-  margin: 8px 0 20px;
-}
 main#top .brandGrid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -346,15 +299,11 @@ main#top .brandGrid {
 }
 main#top .brandGrid div {
   min-height: 0;
-  padding: 14px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
-}
-main#top .brandGrid strong {
-  align-self: center;
-  white-space: nowrap;
 }
 main#top .brandGrid small {
   letter-spacing: 1.4px;
@@ -363,30 +312,20 @@ main#top .brandGrid small {
 }
 
 /* Magazine = normal cards */
-main#top .magazine > h2 {
-  margin: 0;
-}
 main#top .magGrid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
-  margin-top: 20px;
+  margin-top: 26px;
 }
 main#top .magGrid article {
   min-height: 0;
-  padding: 20px;
-}
-main#top .magGrid small {
-  display: block;
-  margin: 0;
+  padding: 26px;
 }
 main#top .magGrid h3 {
   font-size: 26px;
   line-height: 1.08;
-  margin: 10px 0 0;
-}
-main#top .magGrid p {
-  margin: 8px 0 0;
+  margin: 15px 0 10px;
 }
 
 @media (max-width: 1000px) {
@@ -403,19 +342,28 @@ main#top .magGrid p {
   }
 }
 
+@media (min-width: 1500px) {
+  main#top .hero {
+    min-height: 540px;
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+}
+
 @media (max-width: 620px) {
   main#top .hero {
-    min-height: 400px;
-    padding: 44px 24px;
+    min-height: 460px;
+    align-items: flex-start;
+    padding: 62px 24px 48px;
   }
   main#top .heroContent {
     width: 100%;
   }
   main#top .hero h1 {
-    font-size: var(--bbi-hero-title);
+    font-size: 43px;
   }
   main#top .hero .lead {
-    font-size: var(--bbi-intro);
+    font-size: 13px;
   }
   main#top .eyebrow {
     font-size: 10px;
@@ -446,44 +394,31 @@ main#top .magGrid p {
   main#top .standards h2,
   main#top .brands h2,
   main#top .magazine h2 {
-    font-size: var(--bbi-section-title);
-    line-height: 0.96;
+    font-size: 38px;
   }
-  main#top .pillars {
-    padding: 40px 20px;
-  }
+  main#top .pillars,
+  main#top .routines,
   main#top .standards,
   main#top .brands,
-  main#top .magazine {
-    padding: 28px 20px;
-  }
-  main#top .routines {
-    padding: 32px 20px;
-  }
+  main#top .magazine,
   main#top .featureBand {
-    padding: 24px 20px;
+    padding: 40px 20px;
   }
   main#top .needs {
     padding: 28px 20px;
   }
-  main#top .pillars article {
-    min-height: 0;
-    padding: var(--bbi-card-pad-y) var(--bbi-card-pad-x);
-  }
-  main#top .routineGrid article {
-    min-height: 0;
-    padding: var(--bbi-card-pad-y) var(--bbi-card-pad-x);
-  }
+  main#top .pillars article,
+  main#top .routineGrid article,
+  main#top .standardGrid article,
   main#top .magGrid article {
     min-height: 0;
-    padding: var(--bbi-card-pad-y) var(--bbi-card-pad-x);
-  }
-  main#top .standardGrid article {
-    min-height: 0;
-    padding: var(--bbi-card-pad-y) var(--bbi-card-pad-x);
+    padding: 22px;
   }
   main#top .featureBand > div:first-child {
-    padding: var(--bbi-card-pad-y) var(--bbi-card-pad-x);
+    padding: 24px;
+  }
+  main#top .featureBand h2 {
+    font-size: 38px;
   }
   main#top .routineGrid,
   main#top .standardGrid,
@@ -494,7 +429,7 @@ main#top .magGrid p {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   main#top .brandGrid div {
-    padding: 14px;
+    padding: 18px;
   }
   main#top .brandGrid small {
     font-size: 7px;
@@ -514,6 +449,6 @@ main#top .magGrid p {
   main#top .sectionIntro,
   main#top .brandIntro,
   main#top .featureBand p {
-    font-size: var(--bbi-intro);
+    font-size: 13px;
   }
 }
