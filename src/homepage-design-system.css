@@ -457,6 +457,35 @@ main#top .magGrid p {
   main#top .magazine {
     padding: 28px 20px;
   }
+  main#top .magazine > h2 {
+    font-size: 28px;
+    line-height: 1;
+  }
+  main#top .magGrid {
+    gap: 12px;
+    margin-top: 16px;
+  }
+  main#top .magGrid article {
+    padding: 18px 20px;
+  }
+  main#top .magGrid article > small:first-child {
+    font-family: Montserrat, Arial, sans-serif;
+    font-size: 9px;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+  }
+  main#top .magGrid h3 {
+    margin-top: 8px;
+    font-size: 23px;
+    line-height: 1.08;
+    text-transform: none;
+  }
+  main#top .magGrid p {
+    margin-top: 7px;
+    font-size: 11px;
+  }
   main#top .routines {
     padding: 32px 20px;
   }

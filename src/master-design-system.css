@@ -251,6 +251,12 @@ article > a,
   color: var(--bbi-muted);
 }
 
+/* Product names are titles, not editorial all-caps labels. */
+.productsPage .productCard h2 {
+  text-transform: none;
+  letter-spacing: normal;
+}
+
 @media (max-width: 620px) {
   :root {
     --bbi-hero-title: 39px;
@@ -265,5 +271,21 @@ article > a,
     --bbi-card-pad-y: 20px;
     --bbi-card-pad-x: 22px;
     --bbi-card-gap: 14px;
+  }
+  .productsPage .productCategoryHead h2 {
+    font-size: 26px;
+  }
+  .productsPage .productMonogram {
+    height: 120px;
+  }
+  .productsPage .productCardBody {
+    padding: 16px 18px 18px;
+  }
+  .productsPage .productCard h2 {
+    font-size: 22px;
+  }
+  .productsPage .productFocus {
+    margin-bottom: 14px;
+    font-size: 10px;
   }
 }
