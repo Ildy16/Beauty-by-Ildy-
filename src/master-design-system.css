@@ -15,7 +15,7 @@
   --bbi-hero-2: #09264a;
   --bbi-hero-3: #103a6a;
 
-  --bbi-hero-title: 72px;
+  --bbi-hero-title: 64px;
   --bbi-section-title: 30px;
   --bbi-card-title: 26px;
   --bbi-card-subtitle: 20px;
@@ -31,6 +31,9 @@
   --bbi-card-pad-x: 26px;
   --bbi-card-gap: 16px;
 
+  --bbi-font-heading: "Cormorant Garamond", serif;
+  --bbi-font-body: Montserrat, Arial, sans-serif;
+
   /* Compatibility aliases for existing page modules. */
   --navy: var(--bbi-navy);
   --gold: var(--bbi-gold);
@@ -42,8 +45,187 @@
   --line: var(--bbi-line);
 }
 
+/* Global typography contract.
+   This file is loaded after page modules, so typography has one authority. */
+body,
+button,
+input,
+select,
+textarea {
+  font-family: var(--bbi-font-body);
+}
+
+p,
+li,
+label,
+button,
+input,
+select,
+textarea {
+  font-family: var(--bbi-font-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--bbi-font-heading);
+  font-weight: 500;
+}
+
+section > h2,
+.productCategoryHead h2,
+.detailSectionHead h2,
+.productSectionHead h2,
+.inciSection h2,
+.buyPanel h2,
+.productSources h2,
+.sciencePanel h2,
+.explainHead h2 {
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+
+.hero h1,
+.longevityHero h1,
+.techGuideHero h1,
+.ingredientHero h1,
+.productsHero h1,
+.detailHero h1,
+.productHero h1 {
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+/* Card pattern: gold marker → uppercase editorial title → body → action. */
+.pillars article > span,
+.routineGrid article > small:first-child,
+.standardGrid article > span:first-child,
+.evidenceLevel > span,
+.hubiCardNo,
+.activeReviewGrid article > span {
+  font-family: var(--bbi-font-heading);
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: normal;
+  color: var(--bbi-gold);
+}
+
+.pillars article h2,
+.featureBand h2,
+.routineGrid article h3,
+.standardGrid article h3,
+.magGrid article h3,
+.brandGrid strong,
+.ingredientTop h2,
+.techEvidenceTop h2,
+.techCompare article h3,
+.longevityAreas article h3,
+.evidenceGrid article h3,
+.researchGrid article h3,
+.termCard > h3,
+.productCard h2,
+.detailIntro article h2,
+.detailSplit article h2,
+.formulaCards article h3,
+.hubiCard h3,
+.hubiStep h3,
+.formulaMap article h4,
+.activeReviewGrid article h3,
+.scoreCard strong {
+  font-family: var(--bbi-font-heading);
+  font-size: var(--bbi-card-title);
+  font-weight: 500;
+  line-height: 1.08;
+  text-transform: uppercase;
+  letter-spacing: normal;
+  color: var(--bbi-ink);
+}
+
+.ingredientCard > h3,
+.techEvidenceDetails h3,
+.termCard > h4 {
+  font-family: var(--bbi-font-heading);
+  font-size: var(--bbi-card-subtitle);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: normal;
+  color: var(--bbi-ink);
+}
+
+.pillars article > p:not(.label),
+.featureBand p,
+.routineGrid article > p,
+.standardGrid article > p,
+.magGrid article > p,
+.ingredientCard > p,
+.techEvidenceDetails p,
+.techCompare article p,
+.longevityAreas article p,
+.evidenceGrid article p,
+.researchGrid article p,
+.termCard > p,
+.productCard .productFocus,
+.detailIntro article p,
+.detailSplit article p,
+.formulaCards article p,
+.hubiCard p,
+.hubiStep p,
+.formulaMap article p,
+.activeReviewGrid article p,
+.scoreCard p {
+  font-family: var(--bbi-font-body);
+  font-size: var(--bbi-card-body);
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--bbi-muted);
+}
+
+article > a,
+.pillars article > a,
+.routineGrid article > a,
+.magGrid article > a,
+.techEvidenceCard > a,
+.researchGrid article > a,
+.productCard a,
+.hubiCard a {
+  font-family: var(--bbi-font-body);
+  font-size: var(--bbi-meta);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+}
+
+.pillars .label,
+.brandGrid small,
+.brandGrid em,
+.productMeta,
+.detailTags,
+.reviewed,
+.eyebrow {
+  font-family: var(--bbi-font-body);
+}
+
+.magGrid article > small:first-child,
+.techEvidenceTop small,
+.ingredientTop span,
+.productBrand,
+.productMeta,
+.hubiEvidenceBadge,
+.scoreCard small {
+  font-family: var(--bbi-font-body);
+  font-size: var(--bbi-meta);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  color: var(--bbi-gold);
+}
+
 .bbiEditorialTitle {
-  font-family: "Cormorant Garamond", serif;
+  font-family: var(--bbi-font-heading);
   font-weight: 500;
   color: var(--bbi-ink);
 }
@@ -71,7 +253,7 @@
 
 @media (max-width: 620px) {
   :root {
-    --bbi-hero-title: 43px;
+    --bbi-hero-title: 39px;
     --bbi-section-title: 28px;
     --bbi-card-title: 26px;
     --bbi-card-subtitle: 19px;
