@@ -9,7 +9,7 @@ const C={
  hu:{
   back:'Vissza a főoldalra',eyebrow:'BEAUTY BY ILDY · SZEMÉLYRE SZABOTT ÚTVONAL',title:'Találd meg, ami neked való',
   lead:'Néhány rövid kérdés alapján segítünk átláthatóbbá tenni a számodra releváns bőrápolási, hajápolási, wellness- és beauty tech lehetőségeket.',
-  start:'BEAUTY FINDER INDÍTÁSA',note:'Kb. 1–2 perc · ingyenes · regisztráció nélkül',privacy:'A válaszok ebben a verzióban csak a böngészőben maradnak, nem kerülnek az URL-be, és nem készítünk belőlük egészségprofilt.',
+  start:'BEAUTY ÚTVONAL INDÍTÁSA',note:'Kb. 1–2 perc · ingyenes · regisztráció nélkül',privacy:'A válaszok ebben a verzióban csak a böngészőben maradnak, nem kerülnek az URL-be, és nem készítünk belőlük egészségprofilt.',
   howTitle:'Hogyan működik?',howSteps:['Válaszd ki, miben szeretnél segítséget.','Mondd el a fő célodat és néhány fontos szempontot.','A Finder ezek alapján állít össze egy személyre szabott útvonalat.'],
   journey:'Miben szeretnél segítséget?',journeySub:'Válaszd ki azt a területet, ami most a leginkább érdekel.',
   journeys:{skin:['ARCÁPOLÁS & SLOW-AGING','Ráncok, feszesség, hidratálás, pigmentáció és barrier.'],hair:['HAJ & FEJBŐR','Hajhossz, simaság, fejbőr és kondicionálás.'],wellness:['WELLNESS','Külön biztonsági szűréssel kezelt wellness-termékek.'],device:['BEAUTY KÉSZÜLÉKEK','LED, mikroáram, RF, galvanic és más otthoni technológiák.']},
