@@ -25,3 +25,14 @@
 .finderCompareGrid dd{margin:0;font:400 10px/1.55 Montserrat;color:var(--muted)}
 .finderCompareGrid a{display:inline-flex;align-items:center;gap:7px;margin-top:10px;font:600 9px Montserrat;letter-spacing:.8px;text-decoration:none}
 @media(max-width:900px){.finderCompareGrid{grid-template-columns:1fr}}
+
+.finderResultNav{position:sticky;top:92px;z-index:5;display:flex;justify-content:center;gap:22px;padding:11px 6vw;background:rgba(247,243,235,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.finderResultNav a{font:600 8px Montserrat;letter-spacing:1px;text-decoration:none;color:#675b45}
+.finderResultNav a:hover,.finderResultNav a:focus-visible{color:var(--gold)}
+#finder-route,#finder-compare,#finder-why-not{scroll-margin-top:145px}
+@media(max-width:760px){
+  .finderResultNav{top:72px;justify-content:flex-start;gap:10px;overflow-x:auto;padding:9px 20px;scrollbar-width:none}
+  .finderResultNav::-webkit-scrollbar{display:none}
+  .finderResultNav a{flex:none;border:1px solid var(--line);background:var(--ivory);padding:9px 11px}
+  #finder-route,#finder-compare,#finder-why-not{scroll-margin-top:125px}
+}
