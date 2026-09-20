@@ -97,7 +97,7 @@ function roleScore(x,role,answers={}){
     const foundationGoals=['barrier','hydration','soothing'];
     const foundationMatch=foundationGoals.some(g=>has(x.meta.goals,g)||has(x.meta.secondary,g));
     if(foundationMatch)s+=12;
-    if((answers.sensitive===true||answers.irritated===true||answers.currentRetinoid===true)&&foundationMatch)s+=18;
+    if((answers.sensitive===true||answers.irritated===true||answers.currentRetinoid===true||answers.prescription===true)&&foundationMatch)s+=18;
     if(has(x.meta.goals,answers.primaryGoal)&&!foundationMatch)s-=8;
   }
   if(role==='targeted'&&has(x.meta.goals,answers.primaryGoal))s+=15;
@@ -107,7 +107,7 @@ function roleScore(x,role,answers={}){
 
 function chooseRole(candidates,role,usedSlugs,usedBrands,answers={},limitSameBrand=2){
   let pool=candidates.filter(x=>has(x.meta.roles,role)&&!usedSlugs.has(x.product.slug));
-  if(role==='base'&&(answers.sensitive===true||answers.irritated===true||answers.currentRetinoid===true)){
+  if(role==='base'&&(answers.sensitive===true||answers.irritated===true||answers.currentRetinoid===true||answers.prescription===true)){
     const barrierFirst=pool.filter(x=>['barrier','soothe'].includes(x.meta.category));
     if(barrierFirst.length)pool=barrierFirst;
   }
