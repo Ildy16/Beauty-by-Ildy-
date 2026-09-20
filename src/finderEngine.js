@@ -68,8 +68,25 @@ export function scoreProduct(product,meta,answers={}){
   return {...safety,score:Math.max(0,Math.round(score*10)/10),reasons};
 }
 
-function chooseRole(candidates,role,usedSlugs,usedBrands,limitSameBrand=2){
-  const valid=candidates.filter(x=>has(x.meta.roles,role)&&!usedSlugs.has(x.product.slug));
+function roleScore(x,role,answers={}){
+  let s=x.score;
+  if(role==='base'){
+    const foundationGoals=['barrier','hydration','soothing'];
+    const foundationMatch=foundationGoals.some(g=>has(x.meta.goals,g)||has(x.meta.secondary,g));
+    if(foundationMatch)s+=12;
+    if((answers.sensitive===true||answers.irritated===true||answers.currentRetinoid===true)&&foundationMatch)s+=18;
+    if(has(x.meta.goals,answers.primaryGoal)&&!foundationMatch)s-=8;
+  }
+  if(role==='targeted'&&has(x.meta.goals,answers.primaryGoal))s+=15;
+  if(role==='extra'&&x.meta.routineLevels.includes('advanced')&&answers.routineLevel==='essential')s-=15;
+  return s;
+}
+
+function chooseRole(candidates,role,usedSlugs,usedBrands,answers={},limitSameBrand=2){
+  const valid=candidates
+    .filter(x=>has(x.meta.roles,role)&&!usedSlugs.has(x.product.slug))
+    .map(x=>({...x,roleScore:roleScore(x,role,answers)}))
+    .sort((a,b)=>b.roleScore-a.roleScore);
   for(const x of valid){
     if((usedBrands.get(x.product.brand)||0)<limitSameBrand) return x;
   }
@@ -97,12 +114,12 @@ export function recommend(products,answers={}){
   };
 
   if(answers.journey==='wellness'){
-    add(chooseRole(evaluated,'targeted',usedSlugs,usedBrands),'targeted');
-    add(chooseRole(evaluated,'extra',usedSlugs,usedBrands),'extra');
+    add(chooseRole(evaluated,'targeted',usedSlugs,usedBrands,answers),'targeted');
+    add(chooseRole(evaluated,'extra',usedSlugs,usedBrands,answers),'extra');
   }else{
-    add(chooseRole(evaluated,'base',usedSlugs,usedBrands),'base');
-    add(chooseRole(evaluated,'targeted',usedSlugs,usedBrands),'targeted');
-    add(chooseRole(evaluated,'extra',usedSlugs,usedBrands),'extra');
+    add(chooseRole(evaluated,'base',usedSlugs,usedBrands,answers),'base');
+    add(chooseRole(evaluated,'targeted',usedSlugs,usedBrands,answers),'targeted');
+    add(chooseRole(evaluated,'extra',usedSlugs,usedBrands,answers),'extra');
   }
 
   const alternatives=evaluated.filter(x=>!usedSlugs.has(x.product.slug)).slice(0,2);
