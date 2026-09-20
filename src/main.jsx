@@ -17,6 +17,7 @@ import { MedicubePdrnProduct } from "./product.jsx";
 import { ProductsPage, ProductDetail } from "./products.jsx";
 import { BeautyFinder } from "./beautyFinder.jsx";
 import { NuSkinPage, NeumiPage } from "./brandPages.jsx";
+import { MagazinePage } from "./magazine.jsx";
 import "./styles.css";
 
 const copy = {
@@ -410,6 +411,7 @@ function currentPage() {
       "beauty-finder",
       "nuskin",
       "neumi",
+      "magazine",
       "product-medicube-pdrn",
     ].includes(h)
   )
@@ -457,6 +459,7 @@ function App() {
   else if (page === "beauty-finder") content = <BeautyFinder lang={lang} />;
   else if (page === "nuskin") content = <NuSkinPage lang={lang} />;
   else if (page === "neumi") content = <NeumiPage lang={lang} />;
+  else if (page === "magazine") content = <MagazinePage lang={lang} />;
   else if (page === "product-medicube-pdrn")
     content = <MedicubePdrnProduct lang={lang} />;
   else if (page && page.startsWith("product-"))
