@@ -1,6 +1,6 @@
 import React from 'react';
 
-const business={name:'Devecz Ildikó',address:'Hauptstraße 13, 8380 Jennersdorf, Austria',uid:'ATU78435757',gisa:'35410898',trade:'Büroservice',email:'travel.by.ildy@gmail.com'};
+const business={name:'Devecz Ildikó',address:'Hauptstraße 13, 8380 Jennersdorf, Austria',uid:'ATU78435757',gisa:'35410898',trade:'Büroservice',email:'beauty@beautybyildy.com'};
 
 export const legalLabels={
  hu:{imprint:'Impresszum',privacy:'Adatkezelési tájékoztató',cookies:'Süti tájékoztató',terms:'Felhasználási feltételek',affiliate:'Affiliate nyilatkozat',health:'Egészségügyi és termékjogi nyilatkozat',back:'Vissza a főoldalra',updated:'Utolsó frissítés: 2026. augusztus'},
