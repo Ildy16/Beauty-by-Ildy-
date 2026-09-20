@@ -1,6 +1,6 @@
 import React,{useMemo,useState} from 'react';
 import {ArrowLeft,ArrowRight,Check,Info,RotateCcw,ShieldCheck,Sparkles} from 'lucide-react';
-import {products} from './products.jsx';
+import {products,localIngredient} from './products.jsx';
 import {goalLabels} from './finderData.js';
 import {recommend} from './finderEngine.js';
 import './beautyFinder.css';
@@ -88,12 +88,16 @@ function AnswerSummary({a,t,lang}){
  const price=t.priceOptions?.[priceKey]?.[0]||a.pricePreference;
  const safety=[];
  if(a.currentRetinoid)safety.push(t.currentRetinoid);
+ if(a.multipleAcids)safety.push(t.multipleAcids);
  if(a.sensitive)safety.push(t.sensitive);
+ if(a.eyeSensitive)safety.push(t.eyeSensitive);
  if(a.irritated)safety.push(t.irritated);
  if(a.prescription)safety.push(t.prescription);
  if(a.pregnancy)safety.push(t.pregnancy);
  if(a.caffeineSensitive)safety.push(t.caffeine);
  if(a.medication)safety.push(t.medication);
+ if(a.wellnessPregnancy)safety.push(t.wellnessPregnancy);
+ if(a.hormonalConcern)safety.push(t.hormonal);
  return <section className="finderSummary"><h2>{t.summaryTitle}</h2><div className="finderSummaryGrid">
   <div><span>{t.summary.journey}</span><strong>{journey}</strong></div>
   <div><span>{t.summary.primary}</span><strong>{primary}</strong></div>
@@ -118,7 +122,7 @@ function ProductResult({item,t,lang}){
   <div className="finderResultTop"><div><small>{item.product.brand}</small><h3>{item.product.name}</h3></div><div className="finderResultBadges"><span className="finderConfidence">{t.confidence[confidence]}</span><span className={'finderStatus '+item.status.toLowerCase()}>{t.warnings[item.status]}</span></div></div>
   <p className="finderWhy"><strong>{t.why}</strong> {why.map(x=>t.reasons[x]).join(' · ')||t.reasons.profile_match}</p>
   {!!cautions.length&&<div className="finderCaution"><strong>{t.attention}</strong><span>{cautions.map(x=>t.reasons[x]).join(' · ')}</span></div>}
-  <div className="finderIngredients">{item.product.ingredients.slice(0,4).map(x=><span key={x}>{x}</span>)}</div>
+  <div className="finderIngredients">{item.product.ingredients.slice(0,4).map(x=><span key={x}>{localIngredient(x,lang)}</span>)}</div>
   <a className="finderLink" href={'#product-'+item.product.slug}>{t.details}<ArrowRight size={14}/></a>
  </article>
 }
