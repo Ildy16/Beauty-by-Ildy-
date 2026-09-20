@@ -12,3 +12,16 @@
   .finderResultTop h3{font-size:25px}
   .finderRole>h2,.finderAlt>h2,.finderEmpty h2{font-size:28px}
 }
+.finderCompare{margin-top:46px}
+.finderCompare>h2{font:500 32px 'Cormorant Garamond';margin:0 0 8px}
+.finderCompare>p{font:400 10px/1.7 Montserrat;color:var(--muted);max-width:720px}
+.finderCompareGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+.finderCompareGrid article{background:var(--ivory);border:1px solid var(--line);padding:20px}
+.finderCompareGrid small{font:600 8px Montserrat;letter-spacing:1px;color:#6a7479}
+.finderCompareGrid h3{font:500 23px/1.05 'Cormorant Garamond';margin:6px 0 15px}
+.finderCompareGrid dl{margin:0}
+.finderCompareGrid dl>div{border-top:1px solid var(--line);padding:10px 0}
+.finderCompareGrid dt{font:600 8px Montserrat;letter-spacing:.7px;color:#8c774d;margin-bottom:4px}
+.finderCompareGrid dd{margin:0;font:400 10px/1.55 Montserrat;color:var(--muted)}
+.finderCompareGrid a{display:inline-flex;align-items:center;gap:7px;margin-top:10px;font:600 9px Montserrat;letter-spacing:.8px;text-decoration:none}
+@media(max-width:900px){.finderCompareGrid{grid-template-columns:1fr}}
