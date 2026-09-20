@@ -1,6 +1,6 @@
 import React,{useEffect,useMemo,useState} from 'react';
 import {ArrowLeft,ArrowRight,Check,Info,RotateCcw,ShieldCheck,Sparkles} from 'lucide-react';
-import {products,localIngredient} from './products.jsx';
+import {publicProducts,localIngredient} from './products.jsx';
 import {goalLabels} from './finderData.js';
 import {recommend} from './finderEngine.js';
 import './beautyFinder.css';
@@ -149,7 +149,7 @@ export function BeautyFinder({lang='hu'}){
  const [started,setStarted]=useState(false),[step,setStep]=useState(0),[showResult,setShowResult]=useState(false);
  const [a,setA]=useState({journey:null,primaryGoal:null,secondaryGoals:[],skinType:null,ageBand:null,routineLevel:'balanced',pricePreference:'best-match',currentRetinoid:false,sensitive:false,irritated:false,prescription:false,pregnancy:false,sunscreen:false,adult:null,medication:false,wellnessPregnancy:false,caffeineSensitive:false,hormonalConcern:false,eyeSensitive:false,multipleAcids:false});
  const goals=a.journey&&GOALS[a.journey]?GOALS[a.journey]:[];
- const results=useMemo(()=>showResult?recommend(products,a):null,[showResult,a]);
+ const results=useMemo(()=>showResult?recommend(publicProducts,a):null,[showResult,a]);
  const resultComparisonCount=results?[...(results.primary||[]),...(results.alternatives||[])].slice(0,3).length:0;
  const maxStep=a.journey==='device'?0:a.journey==='wellness'?2:a.journey==='hair'?3:5;
  const canNext=step===0?!!a.journey:step===1?!!a.primaryGoal:step===2?(a.journey==='skin'?!!a.skinType:(a.journey==='wellness'?a.adult!==null:true)):true;
