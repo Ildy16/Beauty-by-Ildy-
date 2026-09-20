@@ -3,9 +3,9 @@ import React from 'react';
 const business={name:'Devecz Ildikó',address:'Hauptstraße 13, 8380 Jennersdorf, Austria',uid:'ATU78435757',gisa:'35410898',trade:'Büroservice',email:'beauty@beautybyildy.com'};
 
 export const legalLabels={
- hu:{imprint:'Impresszum',privacy:'Adatkezelési tájékoztató',cookies:'Süti tájékoztató',terms:'Felhasználási feltételek',affiliate:'Affiliate nyilatkozat',health:'Egészségügyi és termékjogi nyilatkozat',back:'Vissza a főoldalra',updated:'Utolsó frissítés: 2026. augusztus'},
- en:{imprint:'Imprint',privacy:'Privacy Policy',cookies:'Cookie Policy',terms:'Terms of Use',affiliate:'Affiliate Disclosure',health:'Health & Product Disclaimer',back:'Back to homepage',updated:'Last updated: August 2026'},
- de:{imprint:'Impressum',privacy:'Datenschutzerklärung',cookies:'Cookie-Hinweis',terms:'Nutzungsbedingungen',affiliate:'Affiliate-Offenlegung',health:'Gesundheits- & Produkthinweis',back:'Zurück zur Startseite',updated:'Zuletzt aktualisiert: August 2026'}
+ hu:{imprint:'Impresszum',privacy:'Adatkezelési tájékoztató',cookies:'Süti tájékoztató',terms:'Felhasználási feltételek',affiliate:'Affiliate nyilatkozat',health:'Egészségügyi és termékjogi nyilatkozat',back:'Vissza a főoldalra',updated:'Utolsó frissítés: 2026. szeptember'},
+ en:{imprint:'Imprint',privacy:'Privacy Policy',cookies:'Cookie Policy',terms:'Terms of Use',affiliate:'Affiliate Disclosure',health:'Health & Product Disclaimer',back:'Back to homepage',updated:'Last updated: September 2026'},
+ de:{imprint:'Impressum',privacy:'Datenschutzerklärung',cookies:'Cookie-Hinweis',terms:'Nutzungsbedingungen',affiliate:'Affiliate-Offenlegung',health:'Gesundheits- & Produkthinweis',back:'Zurück zur Startseite',updated:'Zuletzt aktualisiert: September 2026'}
 };
 
 const docs={
