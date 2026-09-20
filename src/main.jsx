@@ -38,7 +38,7 @@ const copy = {
     title: "A szépség új dimenziója.",
     sub: "Bőrápolás, innovatív technológia és wellness – kívül-belül.",
     cta: "Fedezd fel a válogatást",
-    finderCta: "PRÓBÁLD KI A BEAUTY FINDERT",
+    finderCta: "PRÓBÁLD KI A BEAUTY ÚTVONALAT",
     choose: "MIRE VAN SZÜKSÉGED?",
     needs: [
       "Ráncok & feszesség",
