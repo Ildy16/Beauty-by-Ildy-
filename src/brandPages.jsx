@@ -66,7 +66,7 @@ const NUSKIN = [
   ["R² Day + Night","PHARMANEX · VITALITÁS","A nappali és esti R² rendszer együttes, hivatalos Nu Skin összeállítása.","https://www.nuskin.com/content/products/85/43/39/85433901/hu.html"],
   ["ReishiMax GLp","PHARMANEX · WELLNESS","Reishigomba-kivonatot tartalmazó étrend-kiegészítő.","https://www.nuskin.com/content/products/85/43/35/85433519/hu.html"],
   ["ageLOC Vitality","PHARMANEX · VITALITÁS","Cordyceps, gránátalma és Panax ginseng alapú vitalitásfókuszú étrend-kiegészítő.","https://www.nuskin.com/content/dam/eu-library/pdf/vitality_order_forms/vitality_orderform_HU.pdf"],
-  ["LifePak elements","PHARMANEX · VITAMINOK","Több vitaminból, ásványi anyagból és növényi eredetű összetevőből álló napi tápanyag-kiegészítés.","https://www.nuskin.com/hu_HU/products/pharmanex/shop_all_categories/prysm-io-products.html.html"],
+  ["LifePak elements","PHARMANEX · VITAMINOK","Több vitaminból, ásványi anyagból és növényi eredetű összetevőből álló napi tápanyag-kiegészítés.","https://www.nuskin.com/hu_HU/products/pharmanex/shop_all_categories/prysm-io-products.html"],
   ["CordyMax CS-4","PHARMANEX · VITALITÁS","Cordyceps sinensis micéliumot tartalmazó étrend-kiegészítő.","https://www.nuskin.com/products/85/43/34/85433441.html"],
   ["Pro-B","PHARMANEX · EMÉSZTÉS","Lactobacillus fermentum PCC™ probiotikus kultúrát tartalmazó étrend-kiegészítő.","https://www.nuskin.com/content/dam/eu-library/website-content/products/business-tools/product-guidebook-new/nu-skin-product-guidebook-en.pdf"],
   ["TRME MyGOAL","TRME · BODY BALANCE","A Nu Skin aktuális TRME Body Balance rendszerének egyik étrend-kiegészítője.","https://www.nuskin.com/hu/hu/site/product/eua-ageloc-trme-landing-page"],
