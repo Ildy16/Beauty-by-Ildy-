@@ -121,8 +121,9 @@ export function recommend(products,answers={}){
   };
 
   if(answers.journey==='wellness'){
-    add(chooseRole(evaluated,'targeted',usedSlugs,usedBrands,answers),'targeted');
-    add(chooseRole(evaluated,'extra',usedSlugs,usedBrands,answers),'extra');
+    const targeted=chooseRole(evaluated,'targeted',usedSlugs,usedBrands,answers);
+    add(targeted,'targeted');
+    if(targeted)add(chooseRole(evaluated,'extra',usedSlugs,usedBrands,answers),'extra');
   }else{
     add(chooseRole(evaluated,'base',usedSlugs,usedBrands,answers),'base');
     add(chooseRole(evaluated,'targeted',usedSlugs,usedBrands,answers),'targeted');
