@@ -67,3 +67,25 @@ test('wellness extra must match the selected goal',()=>{
  assert.equal(r.primary.length,1);
  assert.equal(r.primary[0].product.slug,'neumi-neuro');
 });
+
+test('irrelevant extra is omitted from a simple pigmentation route',()=>{
+ const products=[
+  p('axis-y-dark-spot','AXIS-Y'),
+  p('aestura-hydro-soothing-cream','AESTURA'),
+  p('biodance-caviar-pdrn-eye-patch','BIODANCE'),
+  p('thesaem-aloe-99','THE SAEM')
+ ];
+ const r=recommend(products,{journey:'skin',primaryGoal:'pigmentation',secondaryGoals:[],skinType:'combination',routineLevel:'essential',sunscreen:false});
+ assert.equal(r.primary.some(x=>x.recommendationRole==='extra'),false);
+});
+
+test('whyNot exposes relevant retinoid exclusion reason',()=>{
+ const products=[
+  p('iope-retinol-rx-2','IOPE'),
+  p('aestura-atobarrier365-cream','AESTURA')
+ ];
+ const r=recommend(products,{journey:'skin',primaryGoal:'lines',secondaryGoals:[],skinType:'dry',routineLevel:'balanced',pregnancy:true});
+ const blocked=r.whyNot.find(x=>x.product.slug==='iope-retinol-rx-2');
+ assert.ok(blocked);
+ assert.ok(blocked.reasons.includes('pregnancy_retinoid'));
+});
