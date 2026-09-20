@@ -43,3 +43,27 @@ test('primary routine contains no duplicate slug',()=>{
  const r=recommend(products,{journey:'skin',primaryGoal:'hydration',skinType:'dry',routineLevel:'balanced'});
  assert.equal(new Set(r.primary.map(x=>x.product.slug)).size,r.primary.length);
 });
+
+test('wellness caffeine sensitivity does not substitute unrelated products',()=>{
+ const products=[
+  p('neumi-neumist-energy','NEUMI'),
+  p('neumi-neuro','NEUMI'),
+  p('neumi-nutriswish','NEUMI'),
+  p('neumi-hers','NEUMI'),
+  p('neumi-neumist-immunity','NEUMI'),
+  p('neumi-neumist-relax','NEUMI')
+ ];
+ const r=recommend(products,{journey:'wellness',primaryGoal:'energy_support',secondaryGoals:[],routineLevel:'wellness',adult:true,caffeineSensitive:true});
+ assert.equal(r.primary.length,0);
+ assert.equal(r.alternatives.length,0);
+});
+
+test('wellness extra must match the selected goal',()=>{
+ const products=[
+  p('neumi-neuro','NEUMI'),
+  p('neumi-neumist-energy','NEUMI')
+ ];
+ const r=recommend(products,{journey:'wellness',primaryGoal:'focus_support',secondaryGoals:[],routineLevel:'wellness',adult:true,caffeineSensitive:false});
+ assert.equal(r.primary.length,1);
+ assert.equal(r.primary[0].product.slug,'neumi-neuro');
+});
