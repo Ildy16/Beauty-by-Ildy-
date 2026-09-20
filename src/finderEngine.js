@@ -88,7 +88,7 @@ function chooseRole(candidates,role,usedSlugs,usedBrands,answers={},limitSameBra
     const barrierFirst=pool.filter(x=>['barrier','soothe'].includes(x.meta.category));
     if(barrierFirst.length)pool=barrierFirst;
   }
-  if(role==='targeted'&&answers.journey==='wellness'){
+  if(answers.journey==='wellness'&&(role==='targeted'||role==='extra')){
     pool=pool.filter(x=>has(x.meta.goals,answers.primaryGoal));
   }
   const valid=pool
