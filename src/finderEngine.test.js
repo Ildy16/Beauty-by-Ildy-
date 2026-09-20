@@ -128,3 +128,22 @@ test('prescription skin treatment prioritizes a barrier base',()=>{
  const base=r.primary.find(x=>x.recommendationRole==='base');
  assert.equal(base?.product.slug,'aestura-atobarrier365-cream');
 });
+
+test('sensitive skin type alone activates sensitive retinoid protection',()=>{
+ const products=[p('iope-retinol-rx-2','IOPE'),p('aestura-atobarrier365-cream','AESTURA')];
+ const r=recommend(products,{journey:'skin',primaryGoal:'lines',secondaryGoals:[],skinType:'sensitive',routineLevel:'balanced',currentRetinoid:true,sensitive:false});
+ assert.ok(r.whyNot.some(x=>x.product.slug==='iope-retinol-rx-2'&&x.reasons.includes('retinoid_stack_sensitive')));
+});
+
+test('severe irritation recovery mode returns base only and no alternatives',()=>{
+ const products=[
+  p('aestura-atobarrier365-cream','AESTURA'),
+  p('hubislab-eternal','HUBISLAB'),
+  p('iope-retinol-rx-2','IOPE')
+ ];
+ const r=recommend(products,{journey:'skin',primaryGoal:'lines',secondaryGoals:['hydration'],skinType:'sensitive',routineLevel:'balanced',currentRetinoid:true,multipleAcids:true,irritated:true,prescription:true});
+ assert.equal(r.recoveryOnly,true);
+ assert.equal(r.primary.length,1);
+ assert.equal(r.primary[0].recommendationRole,'base');
+ assert.equal(r.alternatives.length,0);
+});
