@@ -36,3 +36,34 @@
   .finderResultNav a{flex:none;border:1px solid var(--line);background:var(--ivory);padding:9px 11px}
   #finder-route,#finder-compare,#finder-why-not{scroll-margin-top:125px}
 }
+@media(max-width:760px){
+  .finderSummaryGrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .finderSummaryGrid>div.wide{grid-column:1/-1}
+
+  .finderCompareGrid,
+  .finderAltGrid,
+  .finderWhyNotGrid{
+    display:grid;
+    grid-auto-flow:column;
+    grid-auto-columns:minmax(82vw,1fr);
+    grid-template-columns:none;
+    overflow-x:auto;
+    gap:12px;
+    padding-bottom:8px;
+    scroll-snap-type:x mandatory;
+    overscroll-behavior-inline:contain;
+    scrollbar-width:none
+  }
+  .finderCompareGrid::-webkit-scrollbar,
+  .finderAltGrid::-webkit-scrollbar,
+  .finderWhyNotGrid::-webkit-scrollbar{display:none}
+  .finderCompareGrid>article,
+  .finderAltGrid>.finderResultCard,
+  .finderWhyNotGrid>article{scroll-snap-align:start}
+
+  .finderAlt,.finderWhyNot,.finderCompare{margin-top:38px}
+}
+@media(max-width:360px){
+  .finderSummaryGrid{grid-template-columns:1fr}
+  .finderSummaryGrid>div.wide{grid-column:auto}
+}
