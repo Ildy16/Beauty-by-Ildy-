@@ -47,3 +47,8 @@ Do not activate Nu Skin product/business integration until:
 
 ## Production rule
 No merge or deployment to `main` without explicit approval.
+
+
+## Vercel preview trigger
+
+Recovery-branch preview validation trigger after reconnecting the dedicated Vercel recovery project. This note does not authorize production deployment or changes to `main`.
