@@ -130,7 +130,13 @@ export function recommend(products,answers={}){
     add(chooseRole(evaluated,'extra',usedSlugs,usedBrands,answers),'extra');
   }
 
-  const alternatives=evaluated.filter(x=>!usedSlugs.has(x.product.slug)).slice(0,2);
+  let alternatives=evaluated.filter(x=>!usedSlugs.has(x.product.slug));
+  if(answers.journey==='wellness'){
+    const hasTargeted=primary.some(x=>x.recommendationRole==='targeted');
+    alternatives=hasTargeted?alternatives.filter(x=>has(x.meta.goals,answers.primaryGoal)).slice(0,2):[];
+  }else{
+    alternatives=alternatives.slice(0,2);
+  }
   const education=[];
   if(answers.primaryGoal==='pigmentation'&&answers.sunscreen!==true) education.push('spf_first');
   if(answers.irritated===true) education.push('barrier_first');
