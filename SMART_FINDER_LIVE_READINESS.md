@@ -15,18 +15,11 @@ Status: **PREVIEW-READY CANDIDATE, NOT APPROVED FOR PRODUCTION YET**
 - Product/catalog integrity checks
 - Finder engine + UI structure + compliance gate tests
 
-## Public catalog gate
+## Partner/compliance review
 ### Neumi
-Current Neumi policy requires Associate-created promotional tools/websites to exclusively promote Neumi and to redirect sales/enrollment to the Associate replicated site.
+Current implementation intentionally keeps all 8 Neumi products in the multi-brand Beauty by Ildy catalog and Smart Finder, with purchases routed to the verified personal Neumi shopping page.
 
-Beauty by Ildy is a multi-brand platform.
-
-Therefore:
-- all Neumi records remain in the internal product catalog;
-- Neumi is currently hidden from public product pages;
-- Neumi is currently excluded from public Finder recommendations;
-- direct Neumi purchase links remain stored internally but are not publicly exposed;
-- do not enable `NEUMI_PUBLIC_ENABLED` without written compliance clearance or an approved separate Neumi-only implementation.
+Before production, recheck the exact current Neumi rules against this implementation and preserve the external Neumi checkout route.
 
 ### Nu Skin
 Do not activate Nu Skin product/business integration until:
@@ -49,7 +42,7 @@ Do not activate Nu Skin product/business integration until:
    - under-18 wellness
    - caffeine avoidance
 8. Confirm no production-only analytics collect health-sensitive Finder answers.
-9. Recheck public partner/compliance gates.
+9. Recheck current partner/compliance rules against the intended public implementation.
 10. Only then consider merge/push to `main`.
 
 ## Production rule
