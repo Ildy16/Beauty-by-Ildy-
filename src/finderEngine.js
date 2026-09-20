@@ -4,6 +4,29 @@ const evidenceBonus={A:5,B:3,C:0,U:-5};
 const has=(arr,x)=>Array.isArray(arr)&&arr.includes(x);
 const overlap=(a=[],b=[])=>a.filter(x=>b.includes(x)).length;
 
+export function validateFinderCatalog(products=[]){
+  const issues=[];
+  const seen=new Set();
+  const allowedTypes=new Set(['skincare','hair','wellness','device']);
+  const allowedRoles=new Set(['base','targeted','extra']);
+  const allowedEvidence=new Set(['A','B','C','U']);
+  for(const product of products){
+    if(seen.has(product.slug))issues.push({slug:product.slug,code:'duplicate_product_slug'});
+    seen.add(product.slug);
+    const meta=finderMeta[product.slug];
+    if(!meta){issues.push({slug:product.slug,code:'missing_metadata'});continue}
+    if(!allowedTypes.has(meta.type))issues.push({slug:product.slug,code:'invalid_type'});
+    if(!Array.isArray(meta.goals)||meta.goals.length===0)issues.push({slug:product.slug,code:'missing_goals'});
+    if(!Array.isArray(meta.roles)||meta.roles.length===0)issues.push({slug:product.slug,code:'missing_roles'});
+    else for(const role of meta.roles)if(!allowedRoles.has(role))issues.push({slug:product.slug,code:'invalid_role',value:role});
+    if(!allowedEvidence.has(meta.evidence))issues.push({slug:product.slug,code:'invalid_evidence'});
+  }
+  for(const slug of Object.keys(finderMeta)){
+    if(!seen.has(slug))issues.push({slug,code:'orphan_metadata'});
+  }
+  return {ok:issues.length===0,issues,productCount:products.length,metadataCount:Object.keys(finderMeta).length};
+}
+
 export function evaluateSafety(meta,answers={}){
   let status='GREEN', penalty=0;
   const reasons=[];
