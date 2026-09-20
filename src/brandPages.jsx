@@ -1,6 +1,6 @@
 import React from "react";
 import { ArrowLeft, ArrowRight, ExternalLink } from "lucide-react";
-import { products } from "./products.jsx";
+import { products, localIngredient } from "./products.jsx";
 import "./brandPages.css";
 
 const NUSKIN = [
@@ -37,6 +37,24 @@ const NUSKIN = [
   ["ageLOC Nutriol Scalp & Hair Shampoo","HAIR & SCALP","Sampon vékony szálú, sérült és öregedő hajra és fejbőrre.","https://www.nuskin.com/hu_HU/products/nuskin/shop_all_products.html"],
   ["ageLOC Nutriol Scalp & Hair Conditioner","HAIR & SCALP","Fejbőr- és hajápoló kondicionáló az ageLOC Nutriol rendszerből.","https://www.nuskin.com/hu_HU/products/nuskin/shop_all_products.html"],
   ["ageLOC Nutriol Intensive Scalp & Hair Serum","HAIR & SCALP","Intenzív fejbőr- és hajszérum az ageLOC Nutriol rendszerből.","https://www.nuskin.com/hu_HU/products/nuskin/shop_all_products.html"],
+  ["Nu Skin 180° Anti-Aging Skin Therapy System","NU SKIN 180°","Komplex Nu Skin 180° arcápolási rendszer.","https://www.nuskin.com/hu_HU/products/nuskin/shop_all_products/face_care.html"],
+  ["Epoch Glacial Marine Mud","EPOCH","Etnobotanikai ihletésű iszappakolás.","https://www.nuskin.com/content/nuskin/hu_HU/products/nuskin/shop_all_products/epoch/epoch-sustainably-minded-ethnobotanical-skin-care.html"],
+  ["Epoch Baobab Body Butter","EPOCH","Gazdag, baobabfókuszú testvaj.","https://www.nuskin.com/content/products/97/00/19/97001985/hu.html"],
+  ["Epoch IceDancer","EPOCH","Frissítő lábápoló zselé.","https://www.nuskin.com/content/nuskin/hu_HU/products/nuskin/shop_all_products/epoch/epoch-sustainably-minded-ethnobotanical-skin-care.html"],
+  ["Epoch Hand Cream","EPOCH","Kéz- és körömápoló krém.","https://www.nuskin.com/content/nuskin/hu_HU/products/nuskin/shop_all_products/epoch/epoch-sustainably-minded-ethnobotanical-skin-care.html"],
+  ["Epoch Polishing Bar","EPOCH","Szappanmentes testradírozó tömb.","https://www.nuskin.com/content/nuskin/hu_HU/products/nuskin/shop_all_products/epoch/epoch-sustainably-minded-ethnobotanical-skin-care.html"],
+  ["Epoch Sole Solution","EPOCH","Célzott lábfejápoló krém.","https://www.nuskin.com/content/nuskin/hu_HU/products/nuskin/shop_all_products/epoch/epoch-sustainably-minded-ethnobotanical-skin-care.html"],
+  ["Epoch Ava Puhi Moni Shampoo","EPOCH · HAIR","Epoch hajápoló sampon.","https://www.nuskin.com/content/nuskin/hu_HU/products/nuskin/shop_all_products/epoch/epoch-sustainably-minded-ethnobotanical-skin-care.html"],
+  ["Epoch Ava Puhi Moni Light Conditioner","EPOCH · HAIR","Epoch könnyű hajbalzsam.","https://www.nuskin.com/content/nuskin/hu_HU/products/nuskin/shop_all_products/epoch/epoch-sustainably-minded-ethnobotanical-skin-care.html"],
+  ["Sunright Insta Glow","SUNRIGHT","Önbarnító gél arcra és testre.","https://www.nuskin.com/hu_HU/products/nuskin/shop_all_products/face_care.html"],
+  ["Liquid Body Lufra","BODY CARE","Testradírozó tusolóformula.","https://www.nuskin.com/content/nuskin/en_HU/products/nuskin/shop_all_products/body_care.html"],
+  ["Perennial Intense Body Moisturizer","BODY CARE","Intenzív testhidratáló.","https://www.nuskin.com/content/nuskin/en_HU/products/nuskin/shop_all_products/body_care.html"],
+  ["NaPCA Moisture Mist","BODY CARE","Hidratáló permet arcra és testre.","https://www.nuskin.com/content/nuskin/en_HU/products/nuskin/shop_all_products/body_care.html"],
+  ["ageLOC Body Shaping Gel","BODY CARE","Testápoló gél az ageLOC testápolási rendszerhez.","https://www.nuskin.com/content/nuskin/en_HU/products/nuskin/shop_all_products/body_care.html"],
+  ["ageLOC Dermatic Effects","BODY CARE","Hidratáló testápoló az ageLOC testápolási rendszerhez.","https://www.nuskin.com/content/nuskin/en_HU/products/nuskin/shop_all_products/body_care.html"],
+  ["ReNu Hair Mask","HAIR CARE","Intenzív hajpakolás.","https://www.nuskin.com/content/products/97/13/88/97138862/en.html"],
+  ["AP 24 Whitening Fluoride Toothpaste","ORAL CARE","Fluoridos fogkrém fehérítő fókuszú formulával.","https://www.nuskin.com/content/products/97/00/16/97001647/hu.html"],
+  ["AP 24 Anti-Plaque Fluoride Toothpaste","ORAL CARE","Fluoridos fogkrém lepedék elleni fókuszú formulával.","https://www.nuskin.com/content/products/97/00/16/97001648/hu.html"],
   ["Pharmanex LifePak+","PHARMANEX · VITAMINOK","Komplex étrend-kiegészítő 13 vitaminnal, 9 ásványi anyaggal és növényi kivonatokkal.","https://www.nuskin.com/content/products/85/43/37/85433743/hu.html"],
   ["Pharmanex Marine Omega","PHARMANEX · OMEGA-3","Hal- és krillolajból származó omega-3 zsírsavakat tartalmazó étrend-kiegészítő.","https://www.nuskin.com/content/products/97/13/72/97137249/hu.html"],
   ["Pharmanex Tēgreen","PHARMANEX · ANTIOXIDÁNS","Zöldtea-kivonatot tartalmazó étrend-kiegészítő.","https://www.nuskin.com/content/products/85/49/35/85493529/hu.html"],
@@ -100,6 +118,79 @@ const copy = {
   }
 };
 
+const groupLabels={
+  hu:{
+    "BEAUTY TECH":"BEAUTY TECH","SKINCARE":"BŐRÁPOLÁS","TRU FACE":"TRU FACE","NUTRICENTIALS":"NUTRICENTIALS",
+    "HAIR & SCALP":"HAJ & FEJBŐR","NU SKIN 180°":"NU SKIN 180°","EPOCH":"EPOCH","EPOCH · HAIR":"EPOCH · HAJ",
+    "SUNRIGHT":"SUNRIGHT","BODY CARE":"TESTÁPOLÁS","HAIR CARE":"HAJÁPOLÁS","ORAL CARE":"SZÁJÁPOLÁS",
+    "PHARMANEX · VITAMINOK":"PHARMANEX · VITAMINOK","PHARMANEX · OMEGA-3":"PHARMANEX · OMEGA-3",
+    "PHARMANEX · ANTIOXIDÁNS":"PHARMANEX · ANTIOXIDÁNS","PHARMANEX · VITAMINITAL":"PHARMANEX · VITAMINITAL",
+    "PHARMANEX · BEAUTY":"PHARMANEX · BEAUTY","PHARMANEX · VITALITÁS":"PHARMANEX · VITALITÁS",
+    "PHARMANEX · WELLNESS":"PHARMANEX · WELLNESS","PHARMANEX · EMÉSZTÉS":"PHARMANEX · EMÉSZTÉS",
+    "TRME · BODY BALANCE":"TRME · BODY BALANCE","WELLNESS":"WELLNESS","WELLNESS TECH":"WELLNESS TECH"
+  },
+  en:{
+    "BEAUTY TECH":"BEAUTY TECH","SKINCARE":"SKINCARE","TRU FACE":"TRU FACE","NUTRICENTIALS":"NUTRICENTIALS",
+    "HAIR & SCALP":"HAIR & SCALP","NU SKIN 180°":"NU SKIN 180°","EPOCH":"EPOCH","EPOCH · HAIR":"EPOCH · HAIR",
+    "SUNRIGHT":"SUNRIGHT","BODY CARE":"BODY CARE","HAIR CARE":"HAIR CARE","ORAL CARE":"ORAL CARE",
+    "PHARMANEX · VITAMINOK":"PHARMANEX · VITAMINS","PHARMANEX · OMEGA-3":"PHARMANEX · OMEGA-3",
+    "PHARMANEX · ANTIOXIDÁNS":"PHARMANEX · ANTIOXIDANT","PHARMANEX · VITAMINITAL":"PHARMANEX · NUTRITION",
+    "PHARMANEX · BEAUTY":"PHARMANEX · BEAUTY","PHARMANEX · VITALITÁS":"PHARMANEX · VITALITY",
+    "PHARMANEX · WELLNESS":"PHARMANEX · WELLNESS","PHARMANEX · EMÉSZTÉS":"PHARMANEX · DIGESTIVE",
+    "TRME · BODY BALANCE":"TRME · BODY BALANCE","WELLNESS":"WELLNESS","WELLNESS TECH":"WELLNESS TECH"
+  },
+  de:{
+    "BEAUTY TECH":"BEAUTY TECH","SKINCARE":"HAUTPFLEGE","TRU FACE":"TRU FACE","NUTRICENTIALS":"NUTRICENTIALS",
+    "HAIR & SCALP":"HAAR & KOPFHAUT","NU SKIN 180°":"NU SKIN 180°","EPOCH":"EPOCH","EPOCH · HAIR":"EPOCH · HAAR",
+    "SUNRIGHT":"SUNRIGHT","BODY CARE":"KÖRPERPFLEGE","HAIR CARE":"HAARPFLEGE","ORAL CARE":"MUNDPFLEGE",
+    "PHARMANEX · VITAMINOK":"PHARMANEX · VITAMINE","PHARMANEX · OMEGA-3":"PHARMANEX · OMEGA-3",
+    "PHARMANEX · ANTIOXIDÁNS":"PHARMANEX · ANTIOXIDANTIEN","PHARMANEX · VITAMINITAL":"PHARMANEX · NÄHRSTOFFE",
+    "PHARMANEX · BEAUTY":"PHARMANEX · BEAUTY","PHARMANEX · VITALITÁS":"PHARMANEX · VITALITÄT",
+    "PHARMANEX · WELLNESS":"PHARMANEX · WELLNESS","PHARMANEX · EMÉSZTÉS":"PHARMANEX · VERDAUUNG",
+    "TRME · BODY BALANCE":"TRME · BODY BALANCE","WELLNESS":"WELLNESS","WELLNESS TECH":"WELLNESS TECH"
+  }
+};
+
+const groupDescriptions={
+  hu:{
+    "BEAUTY TECH":"Otthoni beauty technológia és a hozzá kapcsolódó rendszerek.",
+    "SKINCARE":"Célzott Nu Skin bőrápolás.","TRU FACE":"Prémium age-well bőrápolás.","NUTRICENTIALS":"Mindennapi arctisztítás, hidratálás és célzott kiegészítő ápolás.",
+    "HAIR & SCALP":"Célzott haj- és fejbőrápolás.","NU SKIN 180°":"Komplex, több lépéses age-well arcápolási rendszer.",
+    "EPOCH":"Etnobotanikai ihletésű bőr- és testápolás.","EPOCH · HAIR":"Etnobotanikai ihletésű hajápolás.",
+    "SUNRIGHT":"Napfényhez és barnított megjelenéshez kapcsolódó bőrápolás.","BODY CARE":"Testápolás és hidratálás.",
+    "HAIR CARE":"Hajápolás és intenzív kondicionálás.","ORAL CARE":"Mindennapi szájápolás.",
+    "PHARMANEX · VITAMINOK":"Vitamin- és ásványianyag-alapú étrend-kiegészítés.","PHARMANEX · OMEGA-3":"Omega-3 zsírsavakat tartalmazó étrend-kiegészítés.",
+    "PHARMANEX · ANTIOXIDÁNS":"Antioxidáns fókuszú étrend-kiegészítés.","PHARMANEX · VITAMINITAL":"Növényi és vitaminfókuszú étrend-kiegészítés.",
+    "PHARMANEX · BEAUTY":"Szépségápolást belülről támogató étrend-kiegészítők.","PHARMANEX · VITALITÁS":"Vitalitásfókuszú étrend-kiegészítés.",
+    "PHARMANEX · WELLNESS":"Általános wellnessfókuszú étrend-kiegészítés.","PHARMANEX · EMÉSZTÉS":"Emésztőrendszeri wellnessfókuszú étrend-kiegészítés.",
+    "TRME · BODY BALANCE":"A TRME Body Balance rendszer termékei.","WELLNESS":"Nu Skin wellnessrendszer.","WELLNESS TECH":"Okos wellness technológia."
+  },
+  en:{
+    "BEAUTY TECH":"At-home beauty technology and its supporting systems.","SKINCARE":"Targeted Nu Skin skincare.","TRU FACE":"Premium age-well skincare.",
+    "NUTRICENTIALS":"Daily cleansing, hydration and targeted skincare support.","HAIR & SCALP":"Targeted hair and scalp care.",
+    "NU SKIN 180°":"A multi-step age-well facial care system.","EPOCH":"Ethnobotanical-inspired skin and body care.","EPOCH · HAIR":"Ethnobotanical-inspired haircare.",
+    "SUNRIGHT":"Sun and sunless-tanning focused skincare.","BODY CARE":"Body cleansing, smoothing and hydration.","HAIR CARE":"Haircare and intensive conditioning.",
+    "ORAL CARE":"Everyday oral care.","PHARMANEX · VITAMINOK":"Vitamin and mineral supplementation.","PHARMANEX · OMEGA-3":"Omega-3 supplementation.",
+    "PHARMANEX · ANTIOXIDÁNS":"Antioxidant-focused supplementation.","PHARMANEX · VITAMINITAL":"Plant- and vitamin-focused supplementation.",
+    "PHARMANEX · BEAUTY":"Beauty-focused supplements from within.","PHARMANEX · VITALITÁS":"Vitality-focused supplementation.",
+    "PHARMANEX · WELLNESS":"General wellness supplementation.","PHARMANEX · EMÉSZTÉS":"Digestive wellness supplementation.",
+    "TRME · BODY BALANCE":"Products from the TRME Body Balance system.","WELLNESS":"Nu Skin wellness system.","WELLNESS TECH":"Smart wellness technology."
+  },
+  de:{
+    "BEAUTY TECH":"Beauty-Technologie für zu Hause und die dazugehörigen Systeme.","SKINCARE":"Gezielte Nu-Skin-Hautpflege.","TRU FACE":"Premium-Age-Well-Hautpflege.",
+    "NUTRICENTIALS":"Tägliche Reinigung, Feuchtigkeit und gezielte Hautpflege.","HAIR & SCALP":"Gezielte Haar- und Kopfhautpflege.",
+    "NU SKIN 180°":"Mehrstufiges Age-Well-Gesichtspflegesystem.","EPOCH":"Ethnobotanisch inspirierte Haut- und Körperpflege.","EPOCH · HAIR":"Ethnobotanisch inspirierte Haarpflege.",
+    "SUNRIGHT":"Hautpflege rund um Sonne und sonnenlose Bräune.","BODY CARE":"Körperreinigung, Glättung und Feuchtigkeitspflege.","HAIR CARE":"Haarpflege und intensive Konditionierung.",
+    "ORAL CARE":"Tägliche Mundpflege.","PHARMANEX · VITAMINOK":"Vitamin- und Mineralstoffergänzung.","PHARMANEX · OMEGA-3":"Omega-3-Ergänzung.",
+    "PHARMANEX · ANTIOXIDÁNS":"Antioxidativ ausgerichtete Nahrungsergänzung.","PHARMANEX · VITAMINITAL":"Pflanzen- und vitaminorientierte Nahrungsergänzung.",
+    "PHARMANEX · BEAUTY":"Beauty-Nahrungsergänzung von innen.","PHARMANEX · VITALITÁS":"Vitalitätsorientierte Nahrungsergänzung.",
+    "PHARMANEX · WELLNESS":"Allgemeine Wellness-Nahrungsergänzung.","PHARMANEX · EMÉSZTÉS":"Verdauungsorientierte Wellness-Nahrungsergänzung.",
+    "TRME · BODY BALANCE":"Produkte des TRME Body-Balance-Systems.","WELLNESS":"Nu-Skin-Wellness-System.","WELLNESS TECH":"Smarte Wellness-Technologie."
+  }
+};
+const localGroup=(group,lang)=>(groupLabels[lang]||groupLabels.hu)[group]||group;
+const localGroupDescription=(group,lang)=>(groupDescriptions[lang]||groupDescriptions.hu)[group]||"";
+
 function BrandHero({title,lead,note,t}) {
   return <section className="brandPageHero"><div>
     <a className="brandPageBack" href="#top"><ArrowLeft size={14}/>{t.back}</a>
@@ -116,11 +207,16 @@ export function NuSkinPage({lang="hu"}) {
     <BrandHero title={t.nuskinTitle} lead={t.nuskinLead} note={t.nuskinNote} t={t}/>
     <section className="brandPageBody">
       <div className="brandPageMeta"><span>{NUSKIN.length} {t.products}</span><small>{t.verified}</small></div>
-      <div className="brandProductGrid">
-        {NUSKIN.map(([name,group,desc,url])=><article className="brandProductCard" key={name}>
-          <span>{group}</span><h2>{name}</h2><p>{desc}</p>
-          <a href={url} target="_blank" rel="noopener noreferrer">{t.official}<ExternalLink size={13}/></a>
-        </article>)}
+      <div className="brandGroups">
+        {[...new Set(NUSKIN.map(([,group])=>group))].map(group=><section className="brandGroup" key={group}>
+          <div className="brandGroupHead"><h2>{localGroup(group,lang)}</h2><span>{NUSKIN.filter(([,g])=>g===group).length}</span></div>
+          <div className="brandProductGrid">
+            {NUSKIN.filter(([,g])=>g===group).map(([name,,desc,url])=><article className="brandProductCard" key={name}>
+              <span>{localGroup(group,lang)}</span><h2>{name}</h2><p>{localGroupDescription(group,lang)}</p>
+              <a href={url} target="_blank" rel="noopener noreferrer">{t.official}<ExternalLink size={13}/></a>
+            </article>)}
+          </div>
+        </section>)}
       </div>
     </section>
   </main>;
@@ -135,7 +231,7 @@ export function NeumiPage({lang="hu"}) {
       <div className="brandPageMeta"><span>{neumi.length} {t.products}</span><small>{t.verified}</small></div>
       <div className="brandProductGrid">
         {neumi.map(p=><article className="brandProductCard" key={p.slug}>
-          <span>{p.category.toUpperCase()}</span><h2>{p.name}</h2><p>{p.ingredients.slice(0,4).join(" · ")}</p>
+          <span>{p.category.toUpperCase()}</span><h2>{p.name}</h2><p>{p.ingredients.slice(0,4).map(i=>localIngredient(i,lang)).join(" · ")}</p>
           <a href={`#product-${p.slug}`}>{t.details}<ArrowRight size={13}/></a>
         </article>)}
       </div>
