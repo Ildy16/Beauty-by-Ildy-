@@ -27,7 +27,7 @@ const copy = {
       ["HOSSZÚ ÉLET", "longevity"],
       ["MEGOLDÁSOK", "solutions"],
       ["TERMÉKEK", "products"],
-      ["SZÉPSÉGKERESŐ", "beauty-finder"],
+      ["BEAUTY ÚTVONAL", "beauty-finder"],
       ["MÁRKÁK", "brands"],
       ["MAGAZIN", "magazine"],
     ],
