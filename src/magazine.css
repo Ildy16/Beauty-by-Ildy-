@@ -1,0 +1,16 @@
+.magPage{min-height:100vh;background:var(--champagne);color:var(--ink)}
+.magHero{background:linear-gradient(125deg,#07172c 0%,#0b294e 62%,#123d6c 100%);color:#fff;padding:60px 6vw 54px}
+.magHero>div{max-width:1060px;margin:0 auto}
+.magBack{display:inline-flex;align-items:center;gap:8px;text-decoration:none;color:#dce3eb;font:500 9px Montserrat;letter-spacing:1px;margin-bottom:28px}
+.magHero .eyebrow{font:500 9px Montserrat;letter-spacing:2.2px;color:var(--gold);margin:0}
+.magHero h1{font:500 clamp(46px,6vw,74px)/.96 "Cormorant Garamond",serif;margin:14px 0 16px}
+.magHero>div>p:last-child{max-width:760px;font:400 12px/1.8 Montserrat;color:#dce3eb}
+.magBody{max-width:1060px;margin:0 auto;padding:44px 6vw 84px;display:flex;flex-direction:column;gap:22px}
+.magArticle{background:var(--ivory);border:1px solid var(--line);padding:30px}
+.magArticleHead{display:flex;justify-content:space-between;gap:20px;font:600 8px/1.4 Montserrat;letter-spacing:1.4px;color:#8a7040}
+.magArticle h2{font:500 clamp(30px,4vw,46px)/1.03 "Cormorant Garamond",serif;margin:14px 0 12px;max-width:860px}
+.magDek{font:400 12px/1.75 Montserrat;color:#55636a;max-width:880px;margin:0 0 22px}
+.magArticleText{max-width:850px}
+.magArticleText p{font:400 11px/1.85 Montserrat;color:#39464d;margin:0 0 12px}
+.magSource{display:inline-flex;align-items:center;gap:7px;margin-top:10px;font:600 8px/1.4 Montserrat;letter-spacing:1px;color:#6f5a33;text-decoration:none}
+@media(max-width:620px){.magHero{padding:40px 20px 38px}.magHero h1{font-size:46px}.magBody{padding:26px 20px 60px}.magArticle{padding:22px 20px}.magArticle h2{font-size:30px}.magDek{font-size:11px}.magArticleText p{font-size:11px}}
