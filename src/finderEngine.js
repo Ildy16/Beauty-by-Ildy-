@@ -139,6 +139,26 @@ function meaningfulExtra(x,answers={}){
   return relevant && (x.roleScore??x.score)>=45;
 }
 
+function pickAlternatives(candidates,usedSlugs,limit=2){
+  const picked=[];
+  const brands=new Set();
+  for(const x of candidates){
+    if(usedSlugs.has(x.product.slug))continue;
+    if(brands.has(x.product.brand))continue;
+    picked.push(x);
+    brands.add(x.product.brand);
+    if(picked.length>=limit)break;
+  }
+  if(picked.length<limit){
+    for(const x of candidates){
+      if(usedSlugs.has(x.product.slug)||picked.some(p=>p.product.slug===x.product.slug))continue;
+      picked.push(x);
+      if(picked.length>=limit)break;
+    }
+  }
+  return picked;
+}
+
 export function explainNotRecommended(product,answers={}){
   const meta=finderMeta[product.slug];
   if(!meta)return null;
@@ -193,14 +213,15 @@ export function recommend(products,answers={}){
     if(meaningfulExtra(extra,answers))add(extra,'extra');
   }
 
-  let alternatives=evaluated.filter(x=>!usedSlugs.has(x.product.slug));
+  let alternatives=[];
   if(severeRecovery){
     alternatives=[];
   }else if(answers.journey==='wellness'){
     const hasTargeted=primary.some(x=>x.recommendationRole==='targeted');
-    alternatives=hasTargeted?alternatives.filter(x=>has(x.meta.goals,answers.primaryGoal)).slice(0,2):[];
+    const pool=hasTargeted?evaluated.filter(x=>has(x.meta.goals,answers.primaryGoal)):[];
+    alternatives=pickAlternatives(pool,usedSlugs,2);
   }else{
-    alternatives=alternatives.slice(0,2);
+    alternatives=pickAlternatives(evaluated,usedSlugs,2);
   }
   const education=[];
   if(answers.primaryGoal==='pigmentation'&&answers.sunscreen!==true) education.push('spf_first');
