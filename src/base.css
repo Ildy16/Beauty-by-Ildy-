@@ -25,51 +25,61 @@ a {
   margin: 0 auto;
   padding: 72px 28px 90px;
   background: var(--ivory);
-}
-.legalBack {
-  display: inline-block;
-  margin-bottom: 38px;
-  text-decoration: none;
-  font-size: 11px;
-}
-.legalPage h1 {
-  font:
-    500 60px "Cormorant Garamond",
-    serif;
-}
-.legalSections section {
-  padding: 24px 0;
-  border-bottom: 1px solid var(--line);
-}
-
-/* Legal body typography intentionally matches the compact homepage card copy
-   (e.g. “Retinoid, peptidek és célzott beauty tech.”). */
-.legalPage,
-.legalPage .legalUpdated,
-.legalSections section > div,
-.legalSections p,
-.legalSections li,
-.legalSections a {
   font-family: Montserrat, Arial, sans-serif;
   font-size: 11px;
   font-weight: 400;
   line-height: 1.7;
   letter-spacing: 0;
 }
-
-.legalSections h2 {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 26px;
-  font-weight: 500;
-  line-height: 1.08;
-  margin: 0 0 12px;
-}
-
-.legalPage .eyebrow,
 .legalBack {
+  display: inline-block;
+  margin-bottom: 38px;
+  text-decoration: none;
   font-family: Montserrat, Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.7;
+  letter-spacing: 0;
 }
-
+.legalPage .eyebrow,
+.legalPage h1,
+.legalPage .legalUpdated,
+.legalSections h2,
+.legalSections section > div,
+.legalSections p,
+.legalSections li,
+.legalSections a {
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: 11px;
+  line-height: 1.7;
+  letter-spacing: 0;
+}
+.legalPage h1 {
+  font-weight: 500;
+  margin: 18px 0 18px;
+}
+.legalPage .eyebrow {
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.legalPage .legalUpdated {
+  font-weight: 400;
+}
+.legalSections section {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line);
+}
+.legalSections h2 {
+  font-weight: 500;
+  margin: 0 0 12px;
+  text-transform: uppercase;
+}
+.legalSections section > div,
+.legalSections p,
+.legalSections li,
+.legalSections a {
+  font-weight: 400;
+}
 @media (max-width: 620px) {
   .legalBack {
     font-size: 10px;
