@@ -205,3 +205,85 @@
   .finderResultHero{padding:40px 20px 38px}
   .finderResultHero h1{font-size:44px}
 }
+
+/* Unified editorial hero — match Knowledge Base header */
+.finderLanding .finderHero{
+  min-height:auto;
+  padding:48px 6vw 44px;
+  background:linear-gradient(125deg,var(--bbi-hero-1) 0%,var(--bbi-hero-2) 62%,var(--bbi-hero-3) 100%);
+  color:#fff;
+  border-bottom:0;
+}
+.finderLanding .finderHeroInner{
+  width:auto;
+  max-width:900px;
+  margin:0;
+  display:block;
+}
+.finderLanding .finderHeroCopy{max-width:900px}
+.finderLanding .finderBack{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  margin-bottom:28px;
+  color:#d7dde4;
+  font:400 var(--bbi-meta) var(--bbi-font-body);
+  letter-spacing:1.2px;
+  text-decoration:none;
+}
+.finderLanding .eyebrow{
+  color:#fff;
+  font-family:var(--bbi-font-heading);
+  font-size:18px;
+  font-weight:500;
+  line-height:1.2;
+  letter-spacing:.4px;
+  margin:0;
+}
+.finderLanding .finderHero h1{
+  max-width:900px;
+  margin:16px 0;
+  color:#fff;
+  font:500 clamp(48px,5.4vw,var(--bbi-hero-title))/1 var(--bbi-font-heading);
+  letter-spacing:0;
+}
+.finderLanding .finderHeroLead{
+  max-width:760px;
+  margin:0;
+  color:#dce3eb;
+  font:300 var(--bbi-intro)/1.9 var(--bbi-font-body);
+}
+.finderLanding .finderHeroActions{margin-top:22px}
+.finderLanding .finderPrimary{
+  background:transparent;
+  border:1px solid var(--bbi-gold);
+  color:#fff;
+}
+.finderLanding .finderPrimary:hover{background:#ffffff0d}
+.finderLanding .finderHeroActions small{color:#b9c3ce}
+.finderLanding .finderIntroCard{
+  max-width:760px;
+  margin-top:26px;
+  padding:20px 22px;
+  background:#ffffff0a;
+  border:1px solid #ffffff24;
+}
+.finderLanding .finderIntroTitle{
+  color:#fff;
+  font:500 22px/1.05 var(--bbi-font-heading);
+}
+.finderLanding .finderIntroCard li{border-top:1px solid #ffffff1f}
+.finderLanding .finderIntroCard li p{color:#dce3eb}
+.finderLanding .finderPrivacy{
+  border-top:1px solid #ffffff1f;
+  color:#b9c3ce;
+}
+@media(max-width:760px){
+  .finderLanding .finderHero{padding:42px 20px 38px}
+  .finderLanding .finderBack{margin-bottom:24px}
+  .finderLanding .eyebrow{font-size:17px;letter-spacing:.3px}
+  .finderLanding .finderHero h1{margin:14px 0;font-size:var(--bbi-hero-title)}
+  .finderLanding .finderHeroActions{align-items:flex-start}
+  .finderLanding .finderHeroActions .finderPrimary{width:auto}
+  .finderLanding .finderIntroCard{margin-top:22px;padding:18px 18px}
+}
