@@ -1,6 +1,6 @@
 import React from "react";
 import { ArrowLeft, ArrowRight, ExternalLink } from "lucide-react";
-import { products, localIngredient } from "./products.jsx";
+import { products } from "./products.jsx";
 import "./brandPages.css";
 
 const NUSKIN = [
@@ -65,10 +65,10 @@ const NUSKIN = [
   ["R² Night","PHARMANEX · VITALITÁS","Szelént és növényi kivonatokat tartalmazó esti étrend-kiegészítő.","https://www.nuskin.com/content/products/85/43/38/85433894/hu.html"],
   ["R² Day + Night","PHARMANEX · VITALITÁS","A nappali és esti R² rendszer együttes, hivatalos Nu Skin összeállítása.","https://www.nuskin.com/content/products/85/43/39/85433901/hu.html"],
   ["ReishiMax GLp","PHARMANEX · WELLNESS","Reishigomba-kivonatot tartalmazó étrend-kiegészítő.","https://www.nuskin.com/content/products/85/43/35/85433519/hu.html"],
-  ["ageLOC Vitality","PHARMANEX · VITALITÁS","Cordyceps, gránátalma és Panax ginseng alapú vitalitásfókuszú étrend-kiegészítő.","https://www.nuskin.com/content/dam/eu-library/pdf/vitality_order_forms/vitality_orderform_HU.pdf"],
+  ["ageLOC Vitality","PHARMANEX · VITALITÁS","Cordyceps, gránátalma és Panax ginseng alapú vitalitásfókuszú étrend-kiegészítő.","https://www.nuskin.com/hu_HU/products/pharmanex/shop_all_categories.html"],
   ["LifePak elements","PHARMANEX · VITAMINOK","Több vitaminból, ásványi anyagból és növényi eredetű összetevőből álló napi tápanyag-kiegészítés.","https://www.nuskin.com/hu_HU/products/pharmanex/shop_all_categories/prysm-io-products.html"],
   ["CordyMax CS-4","PHARMANEX · VITALITÁS","Cordyceps sinensis micéliumot tartalmazó étrend-kiegészítő.","https://www.nuskin.com/products/85/43/34/85433441.html"],
-  ["Pro-B","PHARMANEX · EMÉSZTÉS","Lactobacillus fermentum PCC™ probiotikus kultúrát tartalmazó étrend-kiegészítő.","https://www.nuskin.com/content/dam/eu-library/website-content/products/business-tools/product-guidebook-new/nu-skin-product-guidebook-en.pdf"],
+  ["Pro-B","PHARMANEX · EMÉSZTÉS","Lactobacillus fermentum PCC™ probiotikus kultúrát tartalmazó étrend-kiegészítő.","https://www.nuskin.com/hu_HU/products/pharmanex/shop_all_categories.html"],
   ["TRME MyGOAL","TRME · BODY BALANCE","A Nu Skin aktuális TRME Body Balance rendszerének egyik étrend-kiegészítője.","https://www.nuskin.com/hu/hu/site/product/eua-ageloc-trme-landing-page"],
   ["TRME MyEDGE","TRME · BODY BALANCE","A Nu Skin aktuális TRME Body Balance rendszerének egyik étrend-kiegészítője.","https://www.nuskin.com/hu/hu/site/product/eua-ageloc-trme-landing-page"],
   ["TRME InnerNU","TRME · BODY BALANCE","Gyömbér- és articsóka-kivonatot tartalmazó TRME étrend-kiegészítő.","https://www.nuskin.com/hu/hu/site/product/eua-ageloc-trme-landing-page"],
@@ -190,6 +190,18 @@ const groupDescriptions={
 };
 const localGroup=(group,lang)=>(groupLabels[lang]||groupLabels.hu)[group]||group;
 const localGroupDescription=(group,lang)=>(groupDescriptions[lang]||groupDescriptions.hu)[group]||"";
+const neumiCategoryLabels={
+  hu:{agewell:"AGE-WELL / BŐRÁPOLÁS",hair:"HAJ & FEJBŐR",wellness:"WELLNESS"},
+  en:{agewell:"AGE-WELL / SKINCARE",hair:"HAIR & SCALP",wellness:"WELLNESS"},
+  de:{agewell:"AGE-WELL / HAUTPFLEGE",hair:"HAAR & KOPFHAUT",wellness:"WELLNESS"}
+};
+const neumiCategoryText={
+  hu:{agewell:"Célzott, hidratáló és age-well bőrápolás.",hair:"Leave-in haj- és fejbőrápolás.",wellness:"Neumi wellness- és étrend-kiegészítő termék."},
+  en:{agewell:"Targeted hydrating and age-well skincare.",hair:"Leave-in hair and scalp care.",wellness:"Neumi wellness and supplement product."},
+  de:{agewell:"Gezielte feuchtigkeitsspendende Age-Well-Hautpflege.",hair:"Leave-in-Haar- und Kopfhautpflege.",wellness:"Neumi Wellness- und Nahrungsergänzungsprodukt."}
+};
+const localNeumiCategory=(cat,lang)=>(neumiCategoryLabels[lang]||neumiCategoryLabels.hu)[cat]||cat.toUpperCase();
+const localNeumiText=(cat,lang)=>(neumiCategoryText[lang]||neumiCategoryText.hu)[cat]||"";
 
 function BrandHero({title,lead,note,t}) {
   return <section className="brandPageHero"><div>
@@ -231,7 +243,7 @@ export function NeumiPage({lang="hu"}) {
       <div className="brandPageMeta"><span>{neumi.length} {t.products}</span><small>{t.verified}</small></div>
       <div className="brandProductGrid">
         {neumi.map(p=><article className="brandProductCard" key={p.slug}>
-          <span>{p.category.toUpperCase()}</span><h2>{p.name}</h2><p>{p.ingredients.slice(0,4).map(i=>localIngredient(i,lang)).join(" · ")}</p>
+          <span>{localNeumiCategory(p.category,lang)}</span><h2>{p.name}</h2><p>{localNeumiText(p.category,lang)}</p>
           <a href={`#product-${p.slug}`}>{t.details}<ArrowRight size={13}/></a>
         </article>)}
       </div>
