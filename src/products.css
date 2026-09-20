@@ -98,3 +98,37 @@
   .productsPage .productsHero>div>.eyebrow{font-size:17px;letter-spacing:.3px}
   .productsPage .productsHero h1{margin:14px 0;font-size:var(--bbi-hero-title)}
 }
+
+
+/* Full-site QA: unify product-detail hero with Knowledge Base */
+.productDetailPage .detailHero{
+  padding:48px 6vw 44px;
+  background:linear-gradient(125deg,var(--bbi-hero-1) 0%,var(--bbi-hero-2) 62%,var(--bbi-hero-3) 100%);
+}
+.productDetailPage .detailHero>div{max-width:900px}
+.productDetailPage .productBack{
+  margin-bottom:28px;
+  color:#d7dde4;
+  font:400 var(--bbi-meta) var(--bbi-font-body);
+  letter-spacing:1.2px;
+}
+.productDetailPage .detailHero .eyebrow{
+  margin:0;
+  color:#fff;
+  font-family:var(--bbi-font-heading);
+  font-size:18px;
+  font-weight:500;
+  line-height:1.2;
+  letter-spacing:.4px;
+}
+.productDetailPage .detailHero h1{
+  margin:16px 0;
+  font:500 clamp(48px,5.4vw,var(--bbi-hero-title))/1 var(--bbi-font-heading);
+}
+@media(max-width:620px){
+  .productDetailPage .detailHero{padding:42px 20px 38px}
+  .productDetailPage .productBack{margin-bottom:24px}
+  .productDetailPage .detailHero .eyebrow{font-size:17px;letter-spacing:.3px}
+  .productDetailPage .detailHero h1{margin:14px 0;font-size:var(--bbi-hero-title)}
+}
+
