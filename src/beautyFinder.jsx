@@ -150,6 +150,7 @@ export function BeautyFinder({lang='hu'}){
  const [a,setA]=useState({journey:null,primaryGoal:null,secondaryGoals:[],skinType:null,ageBand:null,routineLevel:'balanced',pricePreference:'best-match',currentRetinoid:false,sensitive:false,irritated:false,prescription:false,pregnancy:false,sunscreen:false,adult:null,medication:false,wellnessPregnancy:false,caffeineSensitive:false,hormonalConcern:false,eyeSensitive:false,multipleAcids:false});
  const goals=a.journey&&GOALS[a.journey]?GOALS[a.journey]:[];
  const results=useMemo(()=>showResult?recommend(products,a):null,[showResult,a]);
+ const resultComparisonCount=results?[...(results.primary||[]),...(results.alternatives||[])].slice(0,3).length:0;
  const maxStep=a.journey==='device'?0:(a.journey==='wellness'||a.journey==='hair')?2:3;
  const canNext=step===0?!!a.journey:step===1?!!a.primaryGoal:step===2?(a.journey==='skin'?!!a.skinType:(a.journey==='wellness'?a.adult!==null:true)):true;
  const patch=(x)=>setA(v=>({...v,...x}));
@@ -185,7 +186,7 @@ export function BeautyFinder({lang='hu'}){
   if(a.journey==='device')return <main className="finderPage"><section className="finderResultHero"><p className="eyebrow">{t.eyebrow}</p><h1>{t.deviceTitle}</h1><p>{t.deviceText}</p><a className="finderPrimary" href="#beauty-tech-guide">{t.deviceCta}<ArrowRight size={16}/></a><button className="finderGhost" onClick={restart}><RotateCcw size={15}/>{t.restart}</button></section></main>;
   return <main className="finderPage">
    <section className="finderResultHero"><p className="eyebrow">{t.eyebrow}</p><h1>{t.resultTitle}</h1><p>{t.resultLead}</p><button className="finderGhost" onClick={()=>{setShowResult(false);setStep(maxStep)}}><ArrowLeft size={15}/>{t.modify}</button><button className="finderGhost" onClick={restart}><RotateCcw size={15}/>{t.restart}</button></section>
-   <nav className="finderResultNav" aria-label={t.resultTitle}><a href="#finder-route">{t.resultNav.route}</a><a href="#finder-compare">{t.resultNav.compare}</a>{results?.whyNot?.length>0&&<a href="#finder-why-not">{t.resultNav.whyNot}</a>}</nav>
+   <nav className="finderResultNav" aria-label={t.resultTitle}><a href="#finder-route">{t.resultNav.route}</a>{resultComparisonCount>=2&&<a href="#finder-compare">{t.resultNav.compare}</a>}{results?.whyNot?.length>0&&<a href="#finder-why-not">{t.resultNav.whyNot}</a>}</nav>
    <section className="finderResults" id="finder-route" aria-live="polite">
     <AnswerSummary a={a} t={t} lang={lang}/>
     {results?.education?.map(x=><div className="finderEducation" key={x}><Info size={18}/><span>{t.education[x]}</span></div>)}
