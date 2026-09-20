@@ -207,5 +207,5 @@ export function recommend(products,answers={}){
   if(answers.irritated===true) education.push('barrier_first');
   if(answers.currentRetinoid===true) education.push('avoid_unnecessary_retinoid_stacking');
 
-  return {version:'1.0',primary,alternatives,education,evaluated,whyNot};
+  return {version:'1.0',primary,alternatives,education,evaluated,whyNot,recoveryOnly:severeRecovery};
 }
