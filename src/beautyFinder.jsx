@@ -18,7 +18,7 @@ const C={
   safety:'Rövid biztonsági ellenőrzés',safetySub:'Ezek a válaszok csak azt döntik el, mit ne tegyünk automatikusan az ajánlások közé.',
   currentRetinoid:'Használok retinolt / retinalt / retinoidot',multipleAcids:'Többféle AHA/BHA/PHA hámlasztót használok',sensitive:'A bőröm érzékeny',eyeSensitive:'A szemkörnyékem különösen érzékeny',irritated:'Most csíp, ég, hámlik vagy erősen irritált',prescription:'Bőrgyógyász által felírt kezelést használok',pregnancy:'Várandós vagyok / fennállhat terhesség',
   sunscreen:'Rendszeresen használok fényvédőt',adult:'18 éves vagy idősebb vagy?',yes:'IGEN',no:'NEM',medication:'Rendszeresen szedek gyógyszert',wellnessPregnancy:'Várandós vagyok vagy szoptatok',caffeine:'Kerülöm / rosszul tolerálom a koffeint',hormonal:'Hormonális/endokrin betegség vagy kezelés érint',
-  next:'TOVÁBB',prev:'VISSZA',result:'MUTASD AZ ÚTVONALAMAT',restart:'ÚJRAKEZDEM',
+  next:'TOVÁBB',prev:'VISSZA',result:'MUTASD AZ ÚTVONALAMAT',restart:'ÚJRAKEZDEM',modify:'VÁLASZAIM MÓDOSÍTÁSA',
   resultTitle:'A TE BEAUTY ÚTVONALAD',resultLead:'Nem egy „nyertes” terméket választunk. A Finder szerepek szerint épít rutint, és a partneri jutalék nem része a rangsorolásnak.',summaryTitle:'A VÁLASZAID RÖVIDEN',summary:{journey:'Terület',primary:'Fő cél',secondary:'További célok',skin:'Bőrprofil',routine:'Rutin',price:'Preferencia',safety:'Figyelembe vett szempontok'},noExtra:'MOST NEM SZÜKSÉGES EXTRA LÉPÉS',noExtraText:'A válaszaid alapján nem látunk olyan kiegészítő lépést, amely érdemben javítaná a rutint.',whyNotTitle:'MIÉRT NEM KERÜLT ELŐRÉBB?',whyNotLead:'Ezek a termékek relevánsak lehetnek a célodhoz, de a megadott biztonsági vagy tolerálhatósági szempontok miatt nem kerültek a fő ajánlások közé.',
   roles:{base:'1. ALAP',targeted:'2. CÉLZOTT LÉPÉS',extra:'3. EXTRA – CSAK HA SZERETNÉD'},
   why:'MIÉRT EZT?',details:'RÉSZLETES ADATLAP',alternatives:'TOVÁBBI RELEVÁNS LEHETŐSÉGEK',
@@ -40,7 +40,7 @@ const C={
   safety:'Quick safety check',safetySub:'These answers only help decide what should not be automatically recommended.',
   currentRetinoid:'I use retinol / retinal / another retinoid',multipleAcids:'I use several AHA/BHA/PHA exfoliants',sensitive:'My skin is sensitive',eyeSensitive:'My eye area is especially sensitive',irritated:'My skin is currently burning, stinging, peeling or very irritated',prescription:'I use prescription dermatology treatment',pregnancy:'I am pregnant / pregnancy may be possible',
   sunscreen:'I regularly use sunscreen',adult:'Are you 18 or older?',yes:'YES',no:'NO',medication:'I regularly take medication',wellnessPregnancy:'I am pregnant or breastfeeding',caffeine:'I avoid / poorly tolerate caffeine',hormonal:'An endocrine/hormonal condition or treatment is relevant',
-  next:'NEXT',prev:'BACK',result:'SHOW MY ROUTE',restart:'START AGAIN',
+  next:'NEXT',prev:'BACK',result:'SHOW MY ROUTE',restart:'START AGAIN',modify:'EDIT MY ANSWERS',
   resultTitle:'YOUR BEAUTY ROUTE',resultLead:'We do not pick a single “winner”. The Finder builds roles into a routine, and partner commission is not part of ranking.',summaryTitle:'YOUR ANSWERS AT A GLANCE',summary:{journey:'Area',primary:'Main goal',secondary:'Other goals',skin:'Skin profile',routine:'Routine',price:'Preference',safety:'Factors considered'},noExtra:'NO EXTRA STEP NEEDED RIGHT NOW',noExtraText:'Based on your answers, we do not see an additional step that meaningfully improves the routine.',whyNotTitle:'WHY WASN’T THIS PRIORITISED?',whyNotLead:'These products may relate to your goal, but your safety or tolerance answers kept them out of the main recommendations.',
   roles:{base:'1. BASE',targeted:'2. TARGETED STEP',extra:'3. EXTRA – ONLY IF YOU WANT IT'},
   why:'WHY THIS?',details:'DETAILED PROFILE',alternatives:'OTHER RELEVANT OPTIONS',
@@ -60,7 +60,7 @@ const C={
   safety:'Kurzer Sicherheitscheck',safetySub:'Diese Antworten entscheiden nur, was nicht automatisch empfohlen werden sollte.',
   currentRetinoid:'Ich verwende Retinol / Retinal / ein anderes Retinoid',multipleAcids:'Ich verwende mehrere AHA/BHA/PHA-Peelings',sensitive:'Meine Haut ist sensibel',eyeSensitive:'Meine Augenpartie ist besonders sensibel',irritated:'Meine Haut brennt, sticht, schuppt oder ist stark gereizt',prescription:'Ich verwende eine verschreibungspflichtige dermatologische Behandlung',pregnancy:'Ich bin schwanger / eine Schwangerschaft ist möglich',
   sunscreen:'Ich verwende regelmäßig Sonnenschutz',adult:'Bist du 18 oder älter?',yes:'JA',no:'NEIN',medication:'Ich nehme regelmäßig Medikamente',wellnessPregnancy:'Ich bin schwanger oder stille',caffeine:'Ich meide / vertrage Koffein schlecht',hormonal:'Eine hormonelle/endokrine Erkrankung oder Behandlung ist relevant',
-  next:'WEITER',prev:'ZURÜCK',result:'MEINE ROUTE ZEIGEN',restart:'NEU STARTEN',
+  next:'WEITER',prev:'ZURÜCK',result:'MEINE ROUTE ZEIGEN',restart:'NEU STARTEN',modify:'ANTWORTEN ÄNDERN',
   resultTitle:'DEINE BEAUTY-ROUTE',resultLead:'Wir wählen keinen einzelnen „Sieger“. Der Finder baut Rollen in eine Routine ein; Partnerprovisionen beeinflussen das Ranking nicht.',summaryTitle:'DEINE ANTWORTEN AUF EINEN BLICK',summary:{journey:'Bereich',primary:'Hauptziel',secondary:'Weitere Ziele',skin:'Hautprofil',routine:'Routine',price:'Präferenz',safety:'Berücksichtigte Punkte'},noExtra:'AKTUELL IST KEIN EXTRA-SCHRITT NÖTIG',noExtraText:'Aus deinen Antworten ergibt sich derzeit kein zusätzlicher Schritt mit klarem Mehrwert.',whyNotTitle:'WARUM NICHT WEITER VORN?',whyNotLead:'Diese Produkte können zu deinem Ziel passen, wurden aber aufgrund deiner Sicherheits- oder Verträglichkeitsangaben nicht priorisiert.',
   roles:{base:'1. BASIS',targeted:'2. GEZIELTER SCHRITT',extra:'3. EXTRA – NUR WENN DU MÖCHTEST'},
   why:'WARUM DIESES?',details:'DETAILPROFIL',alternatives:'WEITERE PASSENDE OPTIONEN',
@@ -143,7 +143,7 @@ export function BeautyFinder({lang='hu'}){
  if(showResult){
   if(a.journey==='device')return <main className="finderPage"><section className="finderResultHero"><p className="eyebrow">{t.eyebrow}</p><h1>{t.deviceTitle}</h1><p>{t.deviceText}</p><a className="finderPrimary" href="#beauty-tech-guide">{t.deviceCta}<ArrowRight size={16}/></a><button className="finderGhost" onClick={restart}><RotateCcw size={15}/>{t.restart}</button></section></main>;
   return <main className="finderPage">
-   <section className="finderResultHero"><p className="eyebrow">{t.eyebrow}</p><h1>{t.resultTitle}</h1><p>{t.resultLead}</p><button className="finderGhost" onClick={restart}><RotateCcw size={15}/>{t.restart}</button></section>
+   <section className="finderResultHero"><p className="eyebrow">{t.eyebrow}</p><h1>{t.resultTitle}</h1><p>{t.resultLead}</p><button className="finderGhost" onClick={()=>{setShowResult(false);setStep(maxStep)}}><ArrowLeft size={15}/>{t.modify}</button><button className="finderGhost" onClick={restart}><RotateCcw size={15}/>{t.restart}</button></section>
    <section className="finderResults">
     <AnswerSummary a={a} t={t} lang={lang}/>
     {results?.education?.map(x=><div className="finderEducation" key={x}><Info size={18}/><span>{t.education[x]}</span></div>)}
