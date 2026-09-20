@@ -5,7 +5,7 @@ Status: **PREVIEW-READY CANDIDATE, NOT APPROVED FOR PRODUCTION YET**
 ## Already implemented
 - Smart Finder HU / EN / DE
 - Skin, hair and device routes
-- Wellness route code is retained, but hidden automatically when there is no public wellness catalog
+- Wellness route is enabled and remains part of the four public Finder journeys
 - Safety Gate, recovery-only mode and explainability
 - Routine builder: base / targeted / optional extra
 - Brand-diverse alternatives
@@ -13,13 +13,13 @@ Status: **PREVIEW-READY CANDIDATE, NOT APPROVED FOR PRODUCTION YET**
 - Mobile step flow and swipe result cards
 - Accessibility improvements
 - Product/catalog integrity checks
-- Finder engine + UI structure + compliance gate tests
+- Finder engine + UI structure tests, including guards that keep all four journeys and the full product catalog available
 
 ## Partner/compliance review
 ### Neumi
 Current implementation intentionally keeps all 8 Neumi products in the multi-brand Beauty by Ildy catalog and Smart Finder, with purchases routed to the verified personal Neumi shopping page.
 
-Before production, recheck the exact current Neumi rules against this implementation and preserve the external Neumi checkout route.
+Written Neumi Compliance approval has been requested for this exact multi-brand setup. While awaiting the response, development continues with all 8 Neumi products retained and the external Neumi checkout route preserved.
 
 ### Nu Skin
 Do not activate Nu Skin product/business integration until:
