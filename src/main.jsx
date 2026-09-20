@@ -35,6 +35,7 @@ const copy = {
     title: "A szépség új dimenziója.",
     sub: "Bőrápolás, innovatív technológia és wellness – kívül-belül.",
     cta: "Fedezd fel a válogatást",
+    finderCta: "PRÓBÁLD KI A BEAUTY FINDERT",
     choose: "MIRE VAN SZÜKSÉGED?",
     needs: [
       "Ráncok & feszesség",
@@ -135,6 +136,7 @@ const copy = {
     title: "A new dimension of beauty.",
     sub: "Skincare, innovative technology and wellness – inside and out.",
     cta: "Explore the edit",
+    finderCta: "TRY THE BEAUTY FINDER",
     choose: "WHAT DO YOU NEED?",
     needs: [
       "Wrinkles & firmness",
@@ -235,6 +237,7 @@ const copy = {
     title: "Eine neue Dimension der Schönheit.",
     sub: "Hautpflege, innovative Technologie und Wellness – von innen und außen.",
     cta: "Auswahl entdecken",
+    finderCta: "BEAUTY FINDER TESTEN",
     choose: "WAS BRAUCHST DU?",
     needs: [
       "Falten & Festigkeit",
@@ -459,10 +462,16 @@ function App() {
             <p className="eyebrow">{t.eyebrow}</p>
             <h1>{t.title}</h1>
             <p className="lead">{t.sub}</p>
-            <a className="primary" href="#products">
-              {t.cta}
-              <ArrowRight size={17} />
-            </a>
+            <div className="heroActions">
+              <a className="primary" href="#products">
+                {t.cta}
+                <ArrowRight size={17} />
+              </a>
+              <a className="primary finderHeroCta" href="#beauty-finder">
+                {t.finderCta}
+                <ArrowRight size={17} />
+              </a>
+            </div>
           </div>
         </section>
         <section id="solutions" className="needs">
