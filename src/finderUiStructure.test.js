@@ -35,3 +35,14 @@ test('result navigation hides sections that do not exist',()=>{
  assert.ok(source.includes("resultComparisonCount>=2"));
  assert.ok(source.includes("results?.whyNot?.length>0"));
 });
+
+test('all four Finder journeys remain visible',()=>{
+ assert.ok(source.includes("Object.entries(t.journeys).map(([key,v])=>"));
+ assert.equal(source.includes("filter(([key])=>journeyAvailable(key))"),false);
+});
+
+test('Neumi remains available to Smart Finder through the full product catalog',()=>{
+ assert.ok(source.includes("import {products,localIngredient} from './products.jsx';"));
+ assert.ok(source.includes("recommend(products,a)"));
+ assert.equal(source.includes("recommend(publicProducts,a)"),false);
+});
