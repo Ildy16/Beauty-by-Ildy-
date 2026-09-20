@@ -44,7 +44,6 @@ const NUSKIN = [
   ["LifePak elements","PHARMANEX · VITAMINOK","Több vitaminból, ásványi anyagból és növényi eredetű összetevőből álló napi tápanyag-kiegészítés.","https://www.nuskin.com/hu_HU/products/pharmanex/shop_all_categories/prysm-io-products.html.html"],
   ["CordyMax CS-4","PHARMANEX · VITALITÁS","Cordyceps sinensis micéliumot tartalmazó étrend-kiegészítő.","https://www.nuskin.com/products/85/43/34/85433441.html"],
   ["Pro-B","PHARMANEX · EMÉSZTÉS","Lactobacillus fermentum PCC™ probiotikus kultúrát tartalmazó étrend-kiegészítő.","https://www.nuskin.com/content/dam/eu-library/website-content/products/business-tools/product-guidebook-new/nu-skin-product-guidebook-en.pdf"],
-  ["TRthrive Focus Tea","PHARMANEX · FÓKUSZ","Guarana-kivonatból származó koffeint és teakeveréket tartalmazó instant gyógynövényes ital.","https://www.nuskin.com/content/dam/eu-library/website-content/products/business-tools/product-guidebook-new/nu-skin-product-guidebook-en.pdf"],
   ["TRME MyGOAL","TRME · BODY BALANCE","A Nu Skin aktuális TRME Body Balance rendszerének egyik étrend-kiegészítője.","https://www.nuskin.com/hu/hu/site/product/eua-ageloc-trme-landing-page"],
   ["TRME MyEDGE","TRME · BODY BALANCE","A Nu Skin aktuális TRME Body Balance rendszerének egyik étrend-kiegészítője.","https://www.nuskin.com/hu/hu/site/product/eua-ageloc-trme-landing-page"],
   ["TRME InnerNU","TRME · BODY BALANCE","Gyömbér- és articsóka-kivonatot tartalmazó TRME étrend-kiegészítő.","https://www.nuskin.com/hu/hu/site/product/eua-ageloc-trme-landing-page"],
