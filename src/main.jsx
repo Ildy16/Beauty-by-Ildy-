@@ -22,12 +22,12 @@ const copy = {
   hu: {
     nav: [
       ["SZÉPSÉG", "ingredients"],
-      ["BEAUTY TECH", "beauty-tech-guide"],
-      ["WELLNESS", "wellness"],
-      ["LONGEVITY", "longevity"],
+      ["SZÉPSÉGTECH", "beauty-tech-guide"],
+      ["JÓLLÉT", "wellness"],
+      ["HOSSZÚ ÉLET", "longevity"],
       ["MEGOLDÁSOK", "solutions"],
       ["TERMÉKEK", "products"],
-      ["BEAUTY FINDER", "beauty-finder"],
+      ["SZÉPSÉGKERESŐ", "beauty-finder"],
       ["MÁRKÁK", "brands"],
       ["MAGAZIN", "magazine"],
     ],
