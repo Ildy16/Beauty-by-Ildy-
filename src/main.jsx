@@ -16,6 +16,7 @@ import { IngredientsPage } from "./ingredients.jsx";
 import { MedicubePdrnProduct } from "./product.jsx";
 import { ProductsPage, ProductDetail } from "./products.jsx";
 import { BeautyFinder } from "./beautyFinder.jsx";
+import { NuSkinPage, NeumiPage } from "./brandPages.jsx";
 import "./styles.css";
 
 const copy = {
@@ -28,7 +29,8 @@ const copy = {
       ["MEGOLDÁSOK", "solutions"],
       ["TERMÉKEK", "products"],
       ["BEAUTY ÚTVONAL", "beauty-finder"],
-      ["MÁRKÁK", "brands"],
+      ["NU SKIN", "nuskin"],
+      ["NEUMI", "neumi"],
       ["MAGAZIN", "magazine"],
     ],
     eyebrow: "BEAUTY • TECHNOLOGY • WELLNESS",
@@ -129,7 +131,8 @@ const copy = {
       ["SOLUTIONS", "solutions"],
       ["PRODUCTS", "products"],
       ["BEAUTY FINDER", "beauty-finder"],
-      ["BRANDS", "brands"],
+      ["NU SKIN", "nuskin"],
+      ["NEUMI", "neumi"],
       ["MAGAZINE", "magazine"],
     ],
     eyebrow: "BEAUTY • TECHNOLOGY • WELLNESS",
@@ -230,7 +233,8 @@ const copy = {
       ["LÖSUNGEN", "solutions"],
       ["PRODUKTE", "products"],
       ["BEAUTY FINDER", "beauty-finder"],
-      ["MARKEN", "brands"],
+      ["NU SKIN", "nuskin"],
+      ["NEUMI", "neumi"],
       ["MAGAZIN", "magazine"],
     ],
     eyebrow: "BEAUTY • TECHNOLOGIE • WELLNESS",
@@ -404,6 +408,8 @@ function currentPage() {
       "ingredients",
       "products",
       "beauty-finder",
+      "nuskin",
+      "neumi",
       "product-medicube-pdrn",
     ].includes(h)
   )
@@ -449,6 +455,8 @@ function App() {
   else if (page === "ingredients") content = <IngredientsPage lang={lang} />;
   else if (page === "products") content = <ProductsPage lang={lang} />;
   else if (page === "beauty-finder") content = <BeautyFinder lang={lang} />;
+  else if (page === "nuskin") content = <NuSkinPage lang={lang} />;
+  else if (page === "neumi") content = <NeumiPage lang={lang} />;
   else if (page === "product-medicube-pdrn")
     content = <MedicubePdrnProduct lang={lang} />;
   else if (page && page.startsWith("product-"))
