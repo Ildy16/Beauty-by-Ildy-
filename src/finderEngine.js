@@ -100,17 +100,46 @@ function chooseRole(candidates,role,usedSlugs,usedBrands,answers={},limitSameBra
   return valid[0]||null;
 }
 
+function relevantToAnswers(meta,answers={}){
+  const goals=[answers.primaryGoal,...(answers.secondaryGoals||[])].filter(Boolean);
+  return goals.some(g=>has(meta.goals,g)||has(meta.secondary,g));
+}
+
+function meaningfulExtra(x,answers={}){
+  if(!x)return false;
+  if(answers.journey==='wellness') return has(x.meta.goals,answers.primaryGoal);
+  const relevant=relevantToAnswers(x.meta,answers);
+  return relevant && (x.roleScore??x.score)>=45;
+}
+
+export function explainNotRecommended(product,answers={}){
+  const meta=finderMeta[product.slug];
+  if(!meta)return null;
+  const safety=evaluateSafety(meta,answers);
+  if(safety.status==='RED') return {product,meta,status:'RED',reasons:safety.reasons,kind:'safety'};
+  return null;
+}
+
 export function recommend(products,answers={}){
-  const evaluated=products
+  const allEvaluated=products
     .map(product=>{
       const meta=finderMeta[product.slug];
       if(!meta)return null;
       const result=scoreProduct(product,meta,answers);
       return {product,meta,...result};
     })
-    .filter(Boolean)
+    .filter(Boolean);
+
+  const evaluated=allEvaluated
     .filter(x=>Number.isFinite(x.score))
     .sort((a,b)=>b.score-a.score);
+
+  const whyNot=allEvaluated
+    .filter(x=>x.status==='RED')
+    .filter(x=>x.meta.type===answers.journey || (answers.journey==='skin'&&x.meta.type==='skincare'))
+    .filter(x=>relevantToAnswers(x.meta,answers))
+    .slice(0,3)
+    .map(x=>({product:x.product,meta:x.meta,status:x.status,reasons:x.reasons,kind:'safety'}));
 
   const usedSlugs=new Set(), usedBrands=new Map(), primary=[];
   const add=(x,role)=>{
@@ -123,11 +152,15 @@ export function recommend(products,answers={}){
   if(answers.journey==='wellness'){
     const targeted=chooseRole(evaluated,'targeted',usedSlugs,usedBrands,answers);
     add(targeted,'targeted');
-    if(targeted)add(chooseRole(evaluated,'extra',usedSlugs,usedBrands,answers),'extra');
+    if(targeted){
+      const extra=chooseRole(evaluated,'extra',usedSlugs,usedBrands,answers);
+      if(meaningfulExtra(extra,answers))add(extra,'extra');
+    }
   }else{
     add(chooseRole(evaluated,'base',usedSlugs,usedBrands,answers),'base');
     add(chooseRole(evaluated,'targeted',usedSlugs,usedBrands,answers),'targeted');
-    add(chooseRole(evaluated,'extra',usedSlugs,usedBrands,answers),'extra');
+    const extra=chooseRole(evaluated,'extra',usedSlugs,usedBrands,answers);
+    if(meaningfulExtra(extra,answers))add(extra,'extra');
   }
 
   let alternatives=evaluated.filter(x=>!usedSlugs.has(x.product.slug));
@@ -142,5 +175,5 @@ export function recommend(products,answers={}){
   if(answers.irritated===true) education.push('barrier_first');
   if(answers.currentRetinoid===true) education.push('avoid_unnecessary_retinoid_stacking');
 
-  return {version:'1.0',primary,alternatives,education,evaluated};
+  return {version:'1.0',primary,alternatives,education,evaluated,whyNot};
 }
