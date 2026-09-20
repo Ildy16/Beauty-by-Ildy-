@@ -25,7 +25,9 @@ test('wellness requires explicit age confirmation before results',()=>{
 });
 
 test('restart clears age and safety-sensitive state',()=>{
- const restart=source.match(/const restart=()=>{[^\n]+/s)?.[0]||'';
+ const start=source.indexOf("const restart=()=>{");
+ const end=source.indexOf("\n\n if(!started)",start);
+ const restart=start>=0&&end>start?source.slice(start,end):'';
  assert.ok(restart.includes("ageBand:null"));
  assert.ok(restart.includes("currentRetinoid:false"));
  assert.ok(restart.includes("medication:false"));
