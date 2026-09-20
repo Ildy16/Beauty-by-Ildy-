@@ -15,6 +15,7 @@ import { BeautyTechPage } from "./beautytech.jsx";
 import { IngredientsPage } from "./ingredients.jsx";
 import { MedicubePdrnProduct } from "./product.jsx";
 import { ProductsPage, ProductDetail } from "./products.jsx";
+import { BeautyFinder } from "./beautyFinder.jsx";
 import "./styles.css";
 
 const copy = {
@@ -26,6 +27,7 @@ const copy = {
       ["LONGEVITY", "longevity"],
       ["MEGOLDÁSOK", "solutions"],
       ["TERMÉKEK", "products"],
+      ["BEAUTY FINDER", "beauty-finder"],
       ["MÁRKÁK", "brands"],
       ["MAGAZIN", "magazine"],
     ],
@@ -125,6 +127,7 @@ const copy = {
       ["LONGEVITY", "longevity"],
       ["SOLUTIONS", "solutions"],
       ["PRODUCTS", "products"],
+      ["BEAUTY FINDER", "beauty-finder"],
       ["BRANDS", "brands"],
       ["MAGAZINE", "magazine"],
     ],
@@ -224,6 +227,7 @@ const copy = {
       ["LONGEVITY", "longevity"],
       ["LÖSUNGEN", "solutions"],
       ["PRODUKTE", "products"],
+      ["BEAUTY FINDER", "beauty-finder"],
       ["MARKEN", "brands"],
       ["MAGAZIN", "magazine"],
     ],
@@ -396,6 +400,7 @@ function currentPage() {
       "beauty-tech-guide",
       "ingredients",
       "products",
+      "beauty-finder",
       "product-medicube-pdrn",
     ].includes(h)
   )
@@ -440,6 +445,7 @@ function App() {
     content = <BeautyTechPage lang={lang} />;
   else if (page === "ingredients") content = <IngredientsPage lang={lang} />;
   else if (page === "products") content = <ProductsPage lang={lang} />;
+  else if (page === "beauty-finder") content = <BeautyFinder lang={lang} />;
   else if (page === "product-medicube-pdrn")
     content = <MedicubePdrnProduct lang={lang} />;
   else if (page && page.startsWith("product-"))
