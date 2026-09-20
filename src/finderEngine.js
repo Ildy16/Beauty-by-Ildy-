@@ -28,7 +28,7 @@ export function validateFinderCatalog(products=[]){
 }
 
 export function evaluateSafety(meta,answers={}){
-  const isSensitive=isSensitive||answers.skinType==='sensitive';
+  const isSensitive=answers.sensitive===true||answers.skinType==='sensitive';
   let status='GREEN', penalty=0;
   const reasons=[];
   const flags=meta.flags||[];
