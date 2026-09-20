@@ -83,8 +83,15 @@ function roleScore(x,role,answers={}){
 }
 
 function chooseRole(candidates,role,usedSlugs,usedBrands,answers={},limitSameBrand=2){
-  const valid=candidates
-    .filter(x=>has(x.meta.roles,role)&&!usedSlugs.has(x.product.slug))
+  let pool=candidates.filter(x=>has(x.meta.roles,role)&&!usedSlugs.has(x.product.slug));
+  if(role==='base'&&(answers.sensitive===true||answers.irritated===true||answers.currentRetinoid===true)){
+    const barrierFirst=pool.filter(x=>['barrier','soothe'].includes(x.meta.category));
+    if(barrierFirst.length)pool=barrierFirst;
+  }
+  if(role==='targeted'&&answers.journey==='wellness'){
+    pool=pool.filter(x=>has(x.meta.goals,answers.primaryGoal));
+  }
+  const valid=pool
     .map(x=>({...x,roleScore:roleScore(x,role,answers)}))
     .sort((a,b)=>b.roleScore-a.roleScore);
   for(const x of valid){
