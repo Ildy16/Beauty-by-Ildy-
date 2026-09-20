@@ -28,3 +28,9 @@ jobs:
         run: npm run test:finder
       - name: Production build
         run: npm run build
+      - name: Upload preview artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: beauty-by-ildy-preview
+          path: dist
+          retention-days: 7
