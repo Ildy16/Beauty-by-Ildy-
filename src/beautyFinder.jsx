@@ -19,7 +19,7 @@ const C={
   currentRetinoid:'Használok retinolt / retinalt / retinoidot',multipleAcids:'Többféle AHA/BHA/PHA hámlasztót használok',sensitive:'A bőröm érzékeny',eyeSensitive:'A szemkörnyékem különösen érzékeny',irritated:'Most csíp, ég, hámlik vagy erősen irritált',prescription:'Bőrgyógyász által felírt kezelést használok',pregnancy:'Várandós vagyok / fennállhat terhesség',
   sunscreen:'Rendszeresen használok fényvédőt',adult:'18 éves vagy idősebb vagy?',yes:'IGEN',no:'NEM',medication:'Rendszeresen szedek gyógyszert',wellnessPregnancy:'Várandós vagyok vagy szoptatok',caffeine:'Kerülöm / rosszul tolerálom a koffeint',hormonal:'Hormonális/endokrin betegség vagy kezelés érint',
   next:'TOVÁBB',prev:'VISSZA',result:'MUTASD AZ ÚTVONALAMAT',restart:'ÚJRAKEZDEM',modify:'VÁLASZAIM MÓDOSÍTÁSA',
-  resultTitle:'A TE BEAUTY ÚTVONALAD',resultLead:'Nem egy „nyertes” terméket választunk. A Finder szerepek szerint épít rutint, és a partneri jutalék nem része a rangsorolásnak.',summaryTitle:'A VÁLASZAID RÖVIDEN',summary:{journey:'Terület',primary:'Fő cél',secondary:'További célok',skin:'Bőrprofil',routine:'Rutin',price:'Preferencia',safety:'Figyelembe vett szempontok'},noExtra:'MOST NEM SZÜKSÉGES EXTRA LÉPÉS',noExtraText:'A válaszaid alapján nem látunk olyan kiegészítő lépést, amely érdemben javítaná a rutint.',whyNotTitle:'MIÉRT NEM KERÜLT ELŐRÉBB?',whyNotLead:'Ezek a termékek relevánsak lehetnek a célodhoz, de a megadott biztonsági vagy tolerálhatósági szempontok miatt nem kerültek a fő ajánlások közé.',
+  resultTitle:'A TE BEAUTY ÚTVONALAD',resultLead:'Nem egy „nyertes” terméket választunk. A Finder szerepek szerint épít rutint, és a partneri jutalék nem része a rangsorolásnak.',summaryTitle:'A VÁLASZAID RÖVIDEN',summary:{journey:'Terület',primary:'Fő cél',secondary:'További célok',skin:'Bőrprofil',routine:'Rutin',price:'Preferencia',safety:'Figyelembe vett szempontok'},noExtra:'MOST NEM SZÜKSÉGES EXTRA LÉPÉS',noExtraText:'A válaszaid alapján nem látunk olyan kiegészítő lépést, amely érdemben javítaná a rutint.',whyNotTitle:'MIÉRT NEM KERÜLT ELŐRÉBB?',whyNotLead:'Ezek a termékek relevánsak lehetnek a célodhoz, de a megadott biztonsági vagy tolerálhatósági szempontok miatt nem kerültek a fő ajánlások közé.',disclaimer:'A Beauty Finder kozmetikai és wellness tájékoztató eszköz, nem diagnózis és nem helyettesít orvosi vagy gyógyszerészi tanácsot.',
   roles:{base:'1. ALAP',targeted:'2. CÉLZOTT LÉPÉS',extra:'3. EXTRA – CSAK HA SZERETNÉD'},
   why:'MIÉRT EZT?',details:'RÉSZLETES ADATLAP',alternatives:'TOVÁBBI RELEVÁNS LEHETŐSÉGEK',
   empty:'A megadott válaszok alapján most nem adunk automatikus termékajánlást.',emptySub:'Ez tudatos eredmény: bizonytalan vagy biztonsági szempontból összetettebb helyzetben inkább nem találunk ki választ.',
@@ -41,7 +41,7 @@ const C={
   currentRetinoid:'I use retinol / retinal / another retinoid',multipleAcids:'I use several AHA/BHA/PHA exfoliants',sensitive:'My skin is sensitive',eyeSensitive:'My eye area is especially sensitive',irritated:'My skin is currently burning, stinging, peeling or very irritated',prescription:'I use prescription dermatology treatment',pregnancy:'I am pregnant / pregnancy may be possible',
   sunscreen:'I regularly use sunscreen',adult:'Are you 18 or older?',yes:'YES',no:'NO',medication:'I regularly take medication',wellnessPregnancy:'I am pregnant or breastfeeding',caffeine:'I avoid / poorly tolerate caffeine',hormonal:'An endocrine/hormonal condition or treatment is relevant',
   next:'NEXT',prev:'BACK',result:'SHOW MY ROUTE',restart:'START AGAIN',modify:'EDIT MY ANSWERS',
-  resultTitle:'YOUR BEAUTY ROUTE',resultLead:'We do not pick a single “winner”. The Finder builds roles into a routine, and partner commission is not part of ranking.',summaryTitle:'YOUR ANSWERS AT A GLANCE',summary:{journey:'Area',primary:'Main goal',secondary:'Other goals',skin:'Skin profile',routine:'Routine',price:'Preference',safety:'Factors considered'},noExtra:'NO EXTRA STEP NEEDED RIGHT NOW',noExtraText:'Based on your answers, we do not see an additional step that meaningfully improves the routine.',whyNotTitle:'WHY WASN’T THIS PRIORITISED?',whyNotLead:'These products may relate to your goal, but your safety or tolerance answers kept them out of the main recommendations.',
+  resultTitle:'YOUR BEAUTY ROUTE',resultLead:'We do not pick a single “winner”. The Finder builds roles into a routine, and partner commission is not part of ranking.',summaryTitle:'YOUR ANSWERS AT A GLANCE',summary:{journey:'Area',primary:'Main goal',secondary:'Other goals',skin:'Skin profile',routine:'Routine',price:'Preference',safety:'Factors considered'},noExtra:'NO EXTRA STEP NEEDED RIGHT NOW',noExtraText:'Based on your answers, we do not see an additional step that meaningfully improves the routine.',whyNotTitle:'WHY WASN’T THIS PRIORITISED?',whyNotLead:'These products may relate to your goal, but your safety or tolerance answers kept them out of the main recommendations.',disclaimer:'Beauty Finder is a cosmetic and wellness information tool, not a diagnosis and not a substitute for medical or pharmacist advice.',
   roles:{base:'1. BASE',targeted:'2. TARGETED STEP',extra:'3. EXTRA – ONLY IF YOU WANT IT'},
   why:'WHY THIS?',details:'DETAILED PROFILE',alternatives:'OTHER RELEVANT OPTIONS',
   empty:'We are not making an automatic product recommendation from these answers.',emptySub:'That is intentional: where the context is uncertain or safety-sensitive, the Finder should not guess.',
@@ -61,7 +61,7 @@ const C={
   currentRetinoid:'Ich verwende Retinol / Retinal / ein anderes Retinoid',multipleAcids:'Ich verwende mehrere AHA/BHA/PHA-Peelings',sensitive:'Meine Haut ist sensibel',eyeSensitive:'Meine Augenpartie ist besonders sensibel',irritated:'Meine Haut brennt, sticht, schuppt oder ist stark gereizt',prescription:'Ich verwende eine verschreibungspflichtige dermatologische Behandlung',pregnancy:'Ich bin schwanger / eine Schwangerschaft ist möglich',
   sunscreen:'Ich verwende regelmäßig Sonnenschutz',adult:'Bist du 18 oder älter?',yes:'JA',no:'NEIN',medication:'Ich nehme regelmäßig Medikamente',wellnessPregnancy:'Ich bin schwanger oder stille',caffeine:'Ich meide / vertrage Koffein schlecht',hormonal:'Eine hormonelle/endokrine Erkrankung oder Behandlung ist relevant',
   next:'WEITER',prev:'ZURÜCK',result:'MEINE ROUTE ZEIGEN',restart:'NEU STARTEN',modify:'ANTWORTEN ÄNDERN',
-  resultTitle:'DEINE BEAUTY-ROUTE',resultLead:'Wir wählen keinen einzelnen „Sieger“. Der Finder baut Rollen in eine Routine ein; Partnerprovisionen beeinflussen das Ranking nicht.',summaryTitle:'DEINE ANTWORTEN AUF EINEN BLICK',summary:{journey:'Bereich',primary:'Hauptziel',secondary:'Weitere Ziele',skin:'Hautprofil',routine:'Routine',price:'Präferenz',safety:'Berücksichtigte Punkte'},noExtra:'AKTUELL IST KEIN EXTRA-SCHRITT NÖTIG',noExtraText:'Aus deinen Antworten ergibt sich derzeit kein zusätzlicher Schritt mit klarem Mehrwert.',whyNotTitle:'WARUM NICHT WEITER VORN?',whyNotLead:'Diese Produkte können zu deinem Ziel passen, wurden aber aufgrund deiner Sicherheits- oder Verträglichkeitsangaben nicht priorisiert.',
+  resultTitle:'DEINE BEAUTY-ROUTE',resultLead:'Wir wählen keinen einzelnen „Sieger“. Der Finder baut Rollen in eine Routine ein; Partnerprovisionen beeinflussen das Ranking nicht.',summaryTitle:'DEINE ANTWORTEN AUF EINEN BLICK',summary:{journey:'Bereich',primary:'Hauptziel',secondary:'Weitere Ziele',skin:'Hautprofil',routine:'Routine',price:'Präferenz',safety:'Berücksichtigte Punkte'},noExtra:'AKTUELL IST KEIN EXTRA-SCHRITT NÖTIG',noExtraText:'Aus deinen Antworten ergibt sich derzeit kein zusätzlicher Schritt mit klarem Mehrwert.',whyNotTitle:'WARUM NICHT WEITER VORN?',whyNotLead:'Diese Produkte können zu deinem Ziel passen, wurden aber aufgrund deiner Sicherheits- oder Verträglichkeitsangaben nicht priorisiert.',disclaimer:'Der Beauty Finder ist ein kosmetisches und Wellness-Informationswerkzeug, keine Diagnose und kein Ersatz für ärztlichen oder pharmazeutischen Rat.',
   roles:{base:'1. BASIS',targeted:'2. GEZIELTER SCHRITT',extra:'3. EXTRA – NUR WENN DU MÖCHTEST'},
   why:'WARUM DIESES?',details:'DETAILPROFIL',alternatives:'WEITERE PASSENDE OPTIONEN',
   empty:'Aus diesen Antworten geben wir aktuell keine automatische Produktempfehlung.',emptySub:'Das ist bewusst so: Bei Unsicherheit oder erhöhtem Sicherheitsbedarf soll der Finder nicht raten.',
@@ -76,7 +76,7 @@ const GOALS={
  wellness:['general_wellness','focus_support','womens_wellness','energy_support','relaxation_support']
 };
 
-function Toggle({active,onClick,children}){return <button type="button" className={'finderChoice '+(active?'active':'')} onClick={onClick}>{active&&<Check size={16}/>}<span>{children}</span></button>}
+function Toggle({active,onClick,children}){return <button type="button" aria-pressed={active} className={'finderChoice '+(active?'active':'')} onClick={onClick}>{active&&<Check size={16}/>}<span>{children}</span></button>}
 
 function AnswerSummary({a,t,lang}){
  const journey=t.journeys[a.journey]?.[0]||a.journey;
@@ -136,6 +136,28 @@ export function BeautyFinder({lang='hu'}){
  const maxStep=a.journey==='device'?0:a.journey==='wellness'?2:3;
  const canNext=step===0?!!a.journey:step===1?!!a.primaryGoal:step===2?(a.journey==='skin'?!!a.skinType:(a.journey==='wellness'?a.adult!==null:true)):true;
  const patch=(x)=>setA(v=>({...v,...x}));
+ const selectJourney=(journey)=>setA(v=>({
+   ...v,
+   journey,
+   primaryGoal:null,
+   secondaryGoals:[],
+   skinType:null,
+   routineLevel:'balanced',
+   pricePreference:'best-match',
+   currentRetinoid:false,
+   sensitive:false,
+   irritated:false,
+   prescription:false,
+   pregnancy:false,
+   sunscreen:false,
+   adult:null,
+   medication:false,
+   wellnessPregnancy:false,
+   caffeineSensitive:false,
+   hormonalConcern:false,
+   eyeSensitive:false,
+   multipleAcids:false
+ }));
  const restart=()=>{setStarted(false);setStep(0);setShowResult(false);setA({journey:null,primaryGoal:null,secondaryGoals:[],skinType:null,routineLevel:'balanced',pricePreference:'best-match',currentRetinoid:false,sensitive:false,irritated:false,prescription:false,pregnancy:false,sunscreen:false,adult:null,medication:false,wellnessPregnancy:false,caffeineSensitive:false,hormonalConcern:false,eyeSensitive:false,multipleAcids:false})};
 
  if(!started)return <main className="finderPage"><section className="finderHero"><a href="#top" className="finderBack"><ArrowLeft size={14}/>{t.back}</a><p className="eyebrow">{t.eyebrow}</p><h1>{t.title}</h1><p>{t.lead}</p><button className="finderPrimary" onClick={()=>setStarted(true)}>{t.start}<ArrowRight size={16}/></button><small>{t.note}</small><div className="finderPrivacy"><ShieldCheck size={18}/><span>{t.privacy}</span></div></section></main>;
@@ -151,13 +173,14 @@ export function BeautyFinder({lang='hu'}){
     {a.journey!=='wellness'&&results?.primary?.length&&!results.primary.some(x=>x.recommendationRole==='extra')&&<div className="finderNoExtra"><Check size={18}/><div><strong>{t.noExtra}</strong><p>{t.noExtraText}</p></div></div>}
     {!!results?.alternatives?.length&&<div className="finderAlt"><h2>{t.alternatives}</h2><div className="finderAltGrid">{results.alternatives.map(item=><ProductResult key={item.product.slug} item={item} t={t} lang={lang}/>)}</div></div>}
     <WhyNot items={results?.whyNot} t={t}/>
+    <div className="finderDisclaimer"><ShieldCheck size={16}/><span>{t.disclaimer}</span></div>
    </section>
   </main>
  }
 
  return <main className="finderPage"><section className="finderFlow">
-  <div className="finderProgress"><span style={{width:((step+1)/(maxStep+1))*100+'%'}}></span></div>
-  {step===0&&<><p className="eyebrow">{t.eyebrow}</p><h1>{t.journey}</h1><p className="finderSub">{t.journeySub}</p><div className="finderJourneyGrid">{Object.entries(t.journeys).map(([key,v])=><button key={key} className={'finderJourney '+(a.journey===key?'active':'')} onClick={()=>patch({journey:key,primaryGoal:null})}><Sparkles size={20}/><strong>{v[0]}</strong><span>{v[1]}</span></button>)}</div></>}
+  <div className="finderProgress" role="progressbar" aria-valuemin="1" aria-valuemax={maxStep+1} aria-valuenow={step+1}><span style={{width:((step+1)/(maxStep+1))*100+'%'}}></span></div>
+  {step===0&&<><p className="eyebrow">{t.eyebrow}</p><h1>{t.journey}</h1><p className="finderSub">{t.journeySub}</p><div className="finderJourneyGrid">{Object.entries(t.journeys).map(([key,v])=><button key={key} className={'finderJourney '+(a.journey===key?'active':'')} aria-pressed={a.journey===key} onClick={()=>selectJourney(key)}><Sparkles size={20}/><strong>{v[0]}</strong><span>{v[1]}</span></button>)}</div></>}
   {step===1&&<><h1>{t.goal}</h1><p className="finderSub">{t.goalSub}</p><div className="finderChoiceGrid">{goals.map(g=><Toggle key={g} active={a.primaryGoal===g} onClick={()=>patch({primaryGoal:g,secondaryGoals:(a.secondaryGoals||[]).filter(x=>x!==g)})}>{goalLabels[lang]?.[g]||g}</Toggle>)}</div>{a.primaryGoal&&<><h2 className="finderMiniTitle">{t.secondaryGoal}</h2><p className="finderSub">{t.secondaryGoalSub}</p><div className="finderChoiceGrid">{goals.filter(g=>g!==a.primaryGoal).map(g=>{const active=(a.secondaryGoals||[]).includes(g);return <Toggle key={g} active={active} onClick={()=>{const cur=a.secondaryGoals||[];patch({secondaryGoals:active?cur.filter(x=>x!==g):(cur.length<2?[...cur,g]:cur)})}}>{goalLabels[lang]?.[g]||g}</Toggle>})}</div></>}</>}
   {step===2&&a.journey==='skin'&&<><h1>{t.skinType}</h1><div className="finderChoiceGrid">{Object.entries(t.skinTypes).map(([k,v])=><Toggle key={k} active={a.skinType===k} onClick={()=>patch({skinType:k,sensitive:k==='sensitive'})}>{v}</Toggle>)}</div><h2 className="finderMiniTitle">{t.routine}</h2><div className="finderJourneyGrid three">{Object.entries(t.routineOptions).map(([k,v])=><button key={k} className={'finderJourney '+(a.routineLevel===k?'active':'')} onClick={()=>patch({routineLevel:k})}><strong>{v[0]}</strong><span>{v[1]}</span></button>)}</div><h2 className="finderMiniTitle">{t.price}</h2><div className="finderJourneyGrid three">{Object.entries(t.priceOptions).map(([k,v])=><button key={k} className={'finderJourney '+((k==='best'&&a.pricePreference==='best-match')||a.pricePreference===k?'active':'')} onClick={()=>patch({pricePreference:k==='best'?'best-match':k})}><strong>{v[0]}</strong><span>{v[1]}</span></button>)}</div></>}
   {step===2&&a.journey==='hair'&&<><h1>{t.routine}</h1><div className="finderJourneyGrid three">{Object.entries(t.routineOptions).map(([k,v])=><button key={k} className={'finderJourney '+(a.routineLevel===k?'active':'')} onClick={()=>patch({routineLevel:k})}><strong>{v[0]}</strong><span>{v[1]}</span></button>)}</div><h2 className="finderMiniTitle">{t.price}</h2><div className="finderJourneyGrid three">{Object.entries(t.priceOptions).map(([k,v])=><button key={k} className={'finderJourney '+((k==='best'&&a.pricePreference==='best-match')||a.pricePreference===k?'active':'')} onClick={()=>patch({pricePreference:k==='best'?'best-match':k})}><strong>{v[0]}</strong><span>{v[1]}</span></button>)}</div></>}
