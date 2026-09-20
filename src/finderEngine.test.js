@@ -116,3 +116,15 @@ test('prescription dermatology treatment excludes retinoid candidates',()=>{
  const r=recommend(products,{journey:'skin',primaryGoal:'lines',secondaryGoals:[],skinType:'dry',routineLevel:'balanced',prescription:true});
  assert.ok(r.whyNot.some(x=>x.product.slug==='iope-retinol-rx-2'&&x.reasons.includes('prescription_active')));
 });
+
+test('prescription skin treatment prioritizes a barrier base',()=>{
+ const products=[
+  p('aestura-atobarrier365-cream','AESTURA'),
+  p('sulwhasoo-ginseng-cream','SULWHASOO'),
+  p('hubislab-eternal','HUBISLAB'),
+  p('iope-retinol-rx-2','IOPE')
+ ];
+ const r=recommend(products,{journey:'skin',primaryGoal:'lines',secondaryGoals:['hydration'],skinType:'dry',routineLevel:'balanced',prescription:true});
+ const base=r.primary.find(x=>x.recommendationRole==='base');
+ assert.equal(base?.product.slug,'aestura-atobarrier365-cream');
+});
