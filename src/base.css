@@ -38,13 +38,36 @@ a {
     serif;
 }
 .legalSections section {
-  padding: 30px 0;
+  padding: 24px 0;
   border-bottom: 1px solid var(--line);
 }
+
+/* Legal body typography intentionally matches the compact homepage card copy
+   (e.g. “Retinoid, peptidek és célzott beauty tech.”). */
+.legalPage,
+.legalPage .legalUpdated,
+.legalSections section > div,
 .legalSections p,
-.legalSections li {
-  font-size: 13px;
-  line-height: 1.8;
+.legalSections li,
+.legalSections a {
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.7;
+  letter-spacing: 0;
+}
+
+.legalSections h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 1.08;
+  margin: 0 0 12px;
+}
+
+.legalPage .eyebrow,
+.legalBack {
+  font-family: Montserrat, Arial, sans-serif;
 }
 
 @media (max-width: 620px) {
