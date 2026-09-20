@@ -49,3 +49,52 @@
     background-repeat: no-repeat;
   }
 }
+
+/* Unified editorial hero — match Knowledge Base header */
+.productsPage .productsHero{
+  padding:48px 6vw 44px;
+  background:linear-gradient(125deg,var(--bbi-hero-1) 0%,var(--bbi-hero-2) 62%,var(--bbi-hero-3) 100%);
+  color:#fff;
+}
+.productsPage .productsHero>div{max-width:900px}
+.productsPage .productBack{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  margin-bottom:28px;
+  color:#d7dde4;
+  font:400 var(--bbi-meta) var(--bbi-font-body);
+  letter-spacing:1.2px;
+  text-decoration:none;
+}
+.productsPage .productsHero>div>.eyebrow{
+  font-family:var(--bbi-font-heading);
+  font-size:18px;
+  font-weight:500;
+  letter-spacing:.4px;
+  margin:0;
+}
+.productsPage .productsHero h1{
+  margin:16px 0;
+  font:500 clamp(48px,5.4vw,var(--bbi-hero-title))/1 var(--bbi-font-heading);
+  text-transform:none;
+}
+.productsPage .productsHero>div>p:not(.eyebrow){
+  max-width:760px;
+  margin:0;
+  color:#dce3eb;
+  font:300 var(--bbi-intro)/1.9 var(--bbi-font-body);
+}
+.productsPage .productsHero>div>span{
+  display:inline-block;
+  margin-top:18px;
+  color:var(--bbi-gold);
+  font-size:var(--bbi-meta);
+  letter-spacing:1.4px;
+}
+@media(max-width:620px){
+  .productsPage .productsHero{padding:42px 20px 38px}
+  .productsPage .productBack{margin-bottom:24px}
+  .productsPage .productsHero>div>.eyebrow{font-size:17px;letter-spacing:.3px}
+  .productsPage .productsHero h1{margin:14px 0;font-size:var(--bbi-hero-title)}
+}
