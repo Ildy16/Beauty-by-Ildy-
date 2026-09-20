@@ -147,3 +147,16 @@ test('severe irritation recovery mode returns base only and no alternatives',()=
  assert.equal(r.primary[0].recommendationRole,'base');
  assert.equal(r.alternatives.length,0);
 });
+
+test('alternatives prefer brand diversity when possible',()=>{
+ const products=[
+  p('aestura-atobarrier365-cream','AESTURA'),
+  p('aestura-hydro-soothing-cream','AESTURA'),
+  p('aestura-cera-ha-serum','AESTURA'),
+  p('axis-y-panthenol-10','AXIS-Y'),
+  p('skin1004-centella-ampoule','SKIN1004')
+ ];
+ const r=recommend(products,{journey:'skin',primaryGoal:'hydration',secondaryGoals:['barrier'],skinType:'dry',routineLevel:'balanced'});
+ const brands=r.alternatives.map(x=>x.product.brand);
+ assert.equal(new Set(brands).size,brands.length);
+});
