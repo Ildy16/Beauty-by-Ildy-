@@ -1,6 +1,6 @@
 import React,{useEffect,useMemo,useState} from 'react';
 import {ArrowLeft,ArrowRight,Check,Info,RotateCcw,ShieldCheck,Sparkles} from 'lucide-react';
-import {publicProducts,localIngredient} from './products.jsx';
+import {products,localIngredient} from './products.jsx';
 import {goalLabels} from './finderData.js';
 import {recommend} from './finderEngine.js';
 import './beautyFinder.css';
@@ -149,14 +149,7 @@ export function BeautyFinder({lang='hu'}){
  const [started,setStarted]=useState(false),[step,setStep]=useState(0),[showResult,setShowResult]=useState(false);
  const [a,setA]=useState({journey:null,primaryGoal:null,secondaryGoals:[],skinType:null,ageBand:null,routineLevel:'balanced',pricePreference:'best-match',currentRetinoid:false,sensitive:false,irritated:false,prescription:false,pregnancy:false,sunscreen:false,adult:null,medication:false,wellnessPregnancy:false,caffeineSensitive:false,hormonalConcern:false,eyeSensitive:false,multipleAcids:false});
  const goals=a.journey&&GOALS[a.journey]?GOALS[a.journey]:[];
- const journeyAvailable=(key)=>{
-   if(key==='device')return true;
-   if(key==='hair')return publicProducts.some(p=>p.category==='hair');
-   if(key==='wellness')return publicProducts.some(p=>p.category==='wellness');
-   if(key==='skin')return publicProducts.some(p=>!['hair','wellness'].includes(p.category));
-   return false;
- };
- const results=useMemo(()=>showResult?recommend(publicProducts,a):null,[showResult,a]);
+ const results=useMemo(()=>showResult?recommend(products,a):null,[showResult,a]);
  const resultComparisonCount=results?[...(results.primary||[]),...(results.alternatives||[])].slice(0,3).length:0;
  const maxStep=a.journey==='device'?0:a.journey==='wellness'?2:a.journey==='hair'?3:5;
  const canNext=step===0?!!a.journey:step===1?!!a.primaryGoal:step===2?(a.journey==='skin'?!!a.skinType:(a.journey==='wellness'?a.adult!==null:true)):true;
@@ -210,7 +203,7 @@ export function BeautyFinder({lang='hu'}){
 
  return <main className="finderPage"><section className="finderFlow">
   <div className="finderProgressWrap"><div className="finderProgressLabel"><span>{t.stepLabel}</span><strong>{step+1} / {maxStep+1}</strong></div><div className="finderProgress" role="progressbar" aria-valuemin="1" aria-valuemax={maxStep+1} aria-valuenow={step+1}><span style={{width:((step+1)/(maxStep+1))*100+'%'}}></span></div></div>
-  {step===0&&<><p className="eyebrow">{t.eyebrow}</p><h1>{t.journey}</h1><p className="finderSub">{t.journeySub}</p><div className="finderJourneyGrid">{Object.entries(t.journeys).filter(([key])=>journeyAvailable(key)).map(([key,v])=><button key={key} className={'finderJourney '+(a.journey===key?'active':'')} aria-pressed={a.journey===key} onClick={()=>selectJourney(key)}><Sparkles size={20}/><strong>{v[0]}</strong><span>{v[1]}</span></button>)}</div></>}
+  {step===0&&<><p className="eyebrow">{t.eyebrow}</p><h1>{t.journey}</h1><p className="finderSub">{t.journeySub}</p><div className="finderJourneyGrid">{Object.entries(t.journeys).map(([key,v])=><button key={key} className={'finderJourney '+(a.journey===key?'active':'')} aria-pressed={a.journey===key} onClick={()=>selectJourney(key)}><Sparkles size={20}/><strong>{v[0]}</strong><span>{v[1]}</span></button>)}</div></>}
   {step===1&&<><h1>{t.goal}</h1><p className="finderSub">{t.goalSub}</p><div className="finderChoiceGrid">{goals.map(g=><Toggle key={g} active={a.primaryGoal===g} onClick={()=>patch({primaryGoal:g,secondaryGoals:(a.secondaryGoals||[]).filter(x=>x!==g)})}>{goalLabels[lang]?.[g]||g}</Toggle>)}</div>{a.primaryGoal&&<><h2 className="finderMiniTitle">{t.secondaryGoal}</h2><p className="finderSub">{t.secondaryGoalSub}</p><div className="finderChoiceGrid">{goals.filter(g=>g!==a.primaryGoal).map(g=>{const active=(a.secondaryGoals||[]).includes(g);return <Toggle key={g} active={active} onClick={()=>{const cur=a.secondaryGoals||[];patch({secondaryGoals:active?cur.filter(x=>x!==g):(cur.length<2?[...cur,g]:cur)})}}>{goalLabels[lang]?.[g]||g}</Toggle>})}</div></>}</>}
   {step===2&&a.journey==='skin'&&<><h1>{t.skinType}</h1><div className="finderChoiceGrid">{Object.entries(t.skinTypes).map(([k,v])=><Toggle key={k} active={a.skinType===k} onClick={()=>patch({skinType:k,sensitive:k==='sensitive'})}>{v}</Toggle>)}</div></>}
   {step===3&&a.journey==='skin'&&<><h1>{t.age}</h1><p className="finderSub">{t.ageSub}</p><div className="finderChoiceGrid">{Object.entries(t.ageBands).map(([k,v])=><Toggle key={k} active={a.ageBand===k} onClick={()=>patch({ageBand:k})}>{v}</Toggle>)}</div></>}
