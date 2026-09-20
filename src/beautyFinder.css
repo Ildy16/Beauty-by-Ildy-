@@ -67,3 +67,141 @@
   .finderSummaryGrid{grid-template-columns:1fr}
   .finderSummaryGrid>div.wide{grid-column:auto}
 }
+
+/* Beauty Finder landing redesign — aligned with Beauty by Ildy editorial system */
+.finderLanding{min-height:auto;background:var(--champagne)}
+.finderLanding .finderHero{
+  min-height:auto;
+  padding:54px 6vw 64px;
+  background:var(--champagne);
+  color:var(--ink);
+  border-bottom:1px solid var(--line);
+  display:block;
+}
+.finderHeroInner{
+  width:min(1180px,100%);
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:minmax(0,1.35fr) minmax(320px,.65fr);
+  gap:64px;
+  align-items:center;
+}
+.finderHeroCopy{max-width:720px}
+.finderLanding .finderBack{
+  color:#7b756b;
+  margin-bottom:36px;
+  font-size:9px;
+  letter-spacing:1.2px;
+}
+.finderLanding .eyebrow{
+  color:var(--gold);
+  font:500 10px/1.4 Montserrat,Arial,sans-serif;
+  letter-spacing:2.7px;
+  margin:0 0 16px;
+}
+.finderLanding .finderHero h1{
+  color:var(--ink);
+  font:500 clamp(46px,5vw,68px)/.98 'Cormorant Garamond',serif;
+  letter-spacing:-.02em;
+  margin:0 0 22px;
+  max-width:720px;
+}
+.finderHeroLead{
+  max-width:660px;
+  margin:0;
+  color:var(--muted);
+  font:400 13px/1.85 Montserrat,Arial,sans-serif;
+}
+.finderHeroActions{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  flex-wrap:wrap;
+  margin-top:30px;
+}
+.finderLanding .finderPrimary{
+  margin-top:0;
+  padding:13px 17px;
+  background:var(--navy);
+  color:#fff;
+  border:1px solid var(--navy);
+}
+.finderLanding .finderPrimary:hover{background:#0d2848}
+.finderHeroActions small{
+  color:#8a8377;
+  font:400 9px/1.55 Montserrat,Arial,sans-serif;
+}
+.finderIntroCard{
+  background:var(--ivory);
+  border:1px solid var(--line);
+  padding:30px 30px 28px;
+}
+.finderIntroTitle{
+  margin:0 0 16px;
+  color:var(--ink);
+  font:500 28px/1.05 'Cormorant Garamond',serif;
+}
+.finderIntroCard ol{list-style:none;padding:0;margin:0}
+.finderIntroCard li{
+  display:grid;
+  grid-template-columns:34px 1fr;
+  gap:12px;
+  align-items:start;
+  padding:14px 0;
+  border-top:1px solid var(--line);
+}
+.finderIntroCard li>span{
+  color:var(--gold);
+  font:600 9px/1.6 Montserrat,Arial,sans-serif;
+  letter-spacing:1px;
+}
+.finderIntroCard li p{
+  margin:0;
+  color:#586267;
+  font:400 11px/1.65 Montserrat,Arial,sans-serif;
+}
+.finderLanding .finderPrivacy{
+  margin:18px 0 0;
+  padding:14px 0 0;
+  border:0;
+  border-top:1px solid var(--line);
+  background:transparent;
+  color:#7a817f;
+  font-size:9px;
+  line-height:1.65;
+}
+.finderLanding .finderPrivacy svg{color:var(--gold);width:16px;height:16px}
+
+/* Refined Finder flow typography and spacing */
+.finderFlow{max-width:980px;padding:48px 6vw 72px}
+.finderFlow h1{font-size:clamp(38px,4.6vw,56px);line-height:1;margin-bottom:16px}
+.finderFlow .eyebrow{font-size:9px;letter-spacing:2.2px}
+.finderJourney{padding:22px;min-height:138px}
+.finderJourney strong{font-size:22px;line-height:1.08}
+.finderChoice{background:#fffdf8}
+.finderResultHero{padding:54px 6vw 50px}
+.finderResultHero h1{font-size:clamp(42px,5vw,64px)}
+.finderResults{max-width:980px}
+.finderRole>h2,.finderAlt>h2,.finderEmpty h2,.finderCompare>h2{font-size:30px}
+
+@media(max-width:900px){
+  .finderHeroInner{grid-template-columns:1fr;gap:34px}
+  .finderHeroCopy{max-width:none}
+  .finderIntroCard{max-width:none}
+}
+@media(max-width:760px){
+  .finderLanding .finderHero{padding:34px 20px 42px}
+  .finderHeroInner{gap:28px}
+  .finderLanding .finderBack{margin-bottom:26px}
+  .finderLanding .finderHero h1{font-size:44px}
+  .finderHeroLead{font-size:12px}
+  .finderHeroActions{align-items:stretch;gap:10px}
+  .finderHeroActions .finderPrimary{width:100%}
+  .finderHeroActions small{width:100%}
+  .finderIntroCard{padding:24px 20px}
+  .finderIntroTitle{font-size:26px}
+  .finderFlow{padding:32px 20px 58px}
+  .finderFlow h1{font-size:40px}
+  .finderResultHero{padding:40px 20px 38px}
+  .finderResultHero h1{font-size:44px}
+}
