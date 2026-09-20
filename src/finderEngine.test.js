@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {finderMeta} from './finderData.js';
-import {evaluateSafety,recommend} from './finderEngine.js';
+import {evaluateSafety,recommend,validateFinderCatalog} from './finderEngine.js';
 
 const p=(slug,brand='TEST')=>({slug,brand,name:slug,ingredients:[]});
 
@@ -88,4 +88,31 @@ test('whyNot exposes relevant retinoid exclusion reason',()=>{
  const blocked=r.whyNot.find(x=>x.product.slug==='iope-retinol-rx-2');
  assert.ok(blocked);
  assert.ok(blocked.reasons.includes('pregnancy_retinoid'));
+});
+
+test('catalog validator accepts a one-to-one product metadata set',()=>{
+ const products=Object.keys(finderMeta).map(slug=>p(slug));
+ const r=validateFinderCatalog(products);
+ assert.equal(r.ok,true);
+ assert.equal(r.productCount,r.metadataCount);
+});
+
+test('catalog validator reports missing metadata',()=>{
+ const products=[...Object.keys(finderMeta).map(slug=>p(slug)),p('unknown-product')];
+ const r=validateFinderCatalog(products);
+ assert.equal(r.ok,false);
+ assert.ok(r.issues.some(x=>x.code==='missing_metadata'&&x.slug==='unknown-product'));
+});
+
+test('under-18 wellness route blocks supplements',()=>{
+ const products=[p('neumi-nutriswish','NEUMI'),p('neumi-neuro','NEUMI')];
+ const r=recommend(products,{journey:'wellness',primaryGoal:'general_wellness',secondaryGoals:[],routineLevel:'wellness',adult:false});
+ assert.equal(r.primary.length,0);
+ assert.ok(r.whyNot.some(x=>x.reasons.includes('under_18_supplement')));
+});
+
+test('prescription dermatology treatment excludes retinoid candidates',()=>{
+ const products=[p('iope-retinol-rx-2','IOPE'),p('aestura-atobarrier365-cream','AESTURA')];
+ const r=recommend(products,{journey:'skin',primaryGoal:'lines',secondaryGoals:[],skinType:'dry',routineLevel:'balanced',prescription:true});
+ assert.ok(r.whyNot.some(x=>x.product.slug==='iope-retinol-rx-2'&&x.reasons.includes('prescription_active')));
 });
