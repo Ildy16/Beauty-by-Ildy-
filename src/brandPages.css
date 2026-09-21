@@ -261,3 +261,48 @@
     background:#09264a;
   }
 }
+
+
+/* Neumi premium brand page */
+.neumiGroups{gap:34px}
+.neumiCard{
+  position:relative;
+  min-height:236px;
+  border-color:rgba(170,150,115,.22);
+}
+.neumiCard:before{
+  content:"";
+  position:absolute;
+  inset:0 auto 0 0;
+  width:1px;
+  background:linear-gradient(180deg,rgba(180,145,78,.82),rgba(180,145,78,.10));
+}
+.neumiCard h2{
+  margin-top:14px;
+  font-size:27px;
+  line-height:1.03;
+}
+.neumiCard p{
+  max-width:92%;
+  font-size:10.5px;
+  line-height:1.72;
+}
+.neumiCard .brandCardActions{
+  gap:8px;
+}
+.neumiCard .brandDetailsLink{
+  background:transparent;
+  color:#6f5a33;
+  border-color:rgba(138,120,84,.22);
+}
+.neumiCard .brandDetailsLink:hover{
+  background:#f7f2e9;
+  border-color:var(--gold);
+}
+@media(max-width:620px){
+  .neumiGroups{gap:28px}
+  .neumiCard{min-height:0}
+  .neumiCard h2{font-size:25px}
+  .neumiCard .brandCardActions{width:100%}
+  .neumiCard .brandCardActions>a{width:auto}
+}
