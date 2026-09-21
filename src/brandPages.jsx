@@ -66,7 +66,7 @@ const NUSKIN = [
   ["R² Day + Night","PHARMANEX · VITALITÁS","A nappali és esti R² rendszer együttes, hivatalos Nu Skin összeállítása.","https://mysite.mynuskin.com/catalog/hu/hu/product/85433901?store=beautybyildy"],
   ["ReishiMax GLp","PHARMANEX · WELLNESS","Reishigomba-kivonatot tartalmazó étrend-kiegészítő.","https://mysite.mynuskin.com/catalog/hu/hu/product/85433519?store=beautybyildy"],
   ["ageLOC Vitality","PHARMANEX · VITALITÁS","Cordyceps, gránátalma és Panax ginseng alapú vitalitásfókuszú étrend-kiegészítő.","https://mysite.mynuskin.com/catalog/hu/hu/product/97137705?store=beautybyildy"],
-  ["LifePak elements","PHARMANEX · VITAMINOK","Több vitaminból, ásványi anyagból és növényi eredetű összetevőből álló napi tápanyag-kiegészítés.","https://www.nuskin.com/hu_HU/products/pharmanex/shop_all_categories/prysm-io-products.html"],
+  ["LifePak elements","PHARMANEX · VITAMINOK","Prysm-kvalifikált, napi vitamin- és ásványianyag-kiegészítés. A Nu Skin magyar Prysm iO pénzvisszafizetési garancia oldalán külön, név szerint szerepel LifePak elements termékként.","https://www.nuskin.com/content/nuskin/hu_HU/opportunity/business-tools/prysm-io/prysm-io-money-back-guarantee/prysm-io-guarantee-form/prysm-io-refund-form.html"],
   ["CordyMax CS-4","PHARMANEX · VITALITÁS","Cordyceps sinensis micéliumot tartalmazó étrend-kiegészítő.","https://mysite.mynuskin.com/catalog/hu/hu/product/85433441?store=beautybyildy"],
   ["Pro-B","PHARMANEX · EMÉSZTÉS","Lactobacillus fermentum PCC™ probiotikus kultúrát tartalmazó étrend-kiegészítő.","https://mysite.mynuskin.com/catalog/hu/hu/product/85433520?store=beautybyildy"],
   ["TRME MyGOAL","TRME · BODY BALANCE","A Nu Skin aktuális TRME Body Balance rendszerének egyik étrend-kiegészítője.","https://mysite.mynuskin.com/catalog/hu/hu/product/85542536?store=beautybyildy"],
@@ -75,8 +75,8 @@ const NUSKIN = [
   ["TRME REALMe","TRME · BODY BALANCE","A Nu Skin aktuális TRME Body Balance rendszerének egyik étrend-kiegészítője.","https://mysite.mynuskin.com/catalog/hu/hu/product/85542537?store=beautybyildy"],
   ["TRME M-Bar","TRME · BODY BALANCE","A TRME rendszerhez tartozó étkezéshelyettesítő szelet.","https://mysite.mynuskin.com/catalog/hu/hu/product/97139726?store=beautybyildy"],
   ["TRME Weight Management Kit","TRME · BODY BALANCE","InnerNU, MyEDGE, MyGOAL és REALMe termékeket tartalmazó hivatalos TRME csomag.","https://mysite.mynuskin.com/catalog/hu/hu/product/97139798?store=beautybyildy"],
-  ["ageLOC TRMe","WELLNESS","Body-balance system highlighted by Nu Skin Science.","https://www.nuskin.com/hu/hu/site/science/nu-skin-science"],
-  ["Prysm iO","WELLNESS TECH","2026 smart wellness device for at-home carotenoid tracking.","https://www.nuskin.com/hu/hu/site/science/nu-skin-science"],
+  ["ageLOC TRMe","WELLNESS","A Nu Skin magyar oldalán bemutatott, személyre szabható Body Balance rendszer, amely a MyGOAL, InnerNU, REALMe, MyEDGE és M-Bar termékeket, valamint TRME csomagokat foglalja össze.","https://www.nuskin.com/hu/hu/site/product/eua-ageloc-trme-landing-page"],
+  ["Prysm iO","WELLNESS TECH","A Nu Skin magyar oldalán bemutatott, nem invazív wellness mérőeszköz, amely 15 másodperc alatt követi a bőr karotinoidszintjét és Prysm-pontszámot ad.","https://www.nuskin.com/hu/hu/site/product/eua-meet-prysm-io-the-future-of-measurable-nutritional-wellness"],
 ];
 
 const copy = {
