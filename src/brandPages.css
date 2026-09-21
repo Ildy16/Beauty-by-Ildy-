@@ -218,3 +218,46 @@
   .nuskinCard h2{font-size:25px}
   .brandProductCard .brandCardActions>a{min-height:42px}
 }
+
+
+/* Nu Skin mobile polish: lighter frames + visible site navy */
+.nuskinCard{
+  border-width:1px;
+  border-color:rgba(170,150,115,.22);
+}
+.nuskinCard.isPurchasable{
+  border-color:rgba(170,137,72,.28);
+}
+.nuskinCard.isPurchasable:before{
+  width:1px;
+  background:linear-gradient(180deg,rgba(180,145,78,.88),rgba(180,145,78,.12));
+}
+.brandCardTopline>em{
+  border-width:1px;
+  border-color:rgba(138,120,84,.18);
+}
+.brandPageBody>.brandPageNote{
+  border-width:1px;
+  border-color:rgba(138,120,84,.18);
+}
+.brandProductCard .brandShopLink{
+  background:#09264a;
+  border-color:#b79a5b;
+  color:#fff;
+}
+.brandProductCard .brandShopLink:hover{
+  background:#103a6a;
+}
+@media(max-width:620px){
+  .nuskinCard{
+    border-color:rgba(170,150,115,.20);
+  }
+  .nuskinCard.isPurchasable{
+    border-color:rgba(170,137,72,.24);
+  }
+  .brandProductCard .brandShopLink{
+    min-height:40px;
+    padding:0 14px;
+    background:#09264a;
+  }
+}
