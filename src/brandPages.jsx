@@ -93,6 +93,7 @@ const copy = {
     archive:"HIVATALOS INFORMÁCIÓ",
     details:"RÉSZLETES ADATLAP",
     verified:"Hivatalos termékforrások alapján · folyamatosan frissítve",
+    localeNote:"A közvetlen Beauty by Ildy My Site vásárlási útvonal jelenleg a magyar piacon ellenőrzött. Más nyelvi/piaci nézetben a hivatalos Nu Skin helyi oldalát használjuk addig, amíg az adott My Site útvonalat külön nem teszteltük.",
     products:"termék",
   },
   en: {
@@ -108,6 +109,7 @@ const copy = {
     archive:"OFFICIAL INFORMATION",
     details:"DETAILED PROFILE",
     verified:"Based on official product sources · continuously updated",
+    localeNote:"The direct Beauty by Ildy My Site purchase flow has been verified for the Hungarian market. For other language/market views we use the official local Nu Skin site until the corresponding My Site route is separately tested.",
     products:"products",
   },
   de: {
@@ -123,6 +125,7 @@ const copy = {
     archive:"OFFIZIELLE INFORMATION",
     details:"DETAILPROFIL",
     verified:"Auf Basis offizieller Produktquellen · laufend aktualisiert",
+    localeNote:"Der direkte Beauty-by-Ildy-My-Site-Kaufablauf ist derzeit für den ungarischen Markt geprüft. In anderen Sprach-/Marktansichten verwenden wir bis zur separaten Prüfung die offizielle lokale Nu-Skin-Seite.",
     products:"Produkte",
   }
 };
@@ -212,6 +215,18 @@ const neumiCategoryText={
 };
 const localNeumiCategory=(cat,lang)=>(neumiCategoryLabels[lang]||neumiCategoryLabels.hu)[cat]||cat.toUpperCase();
 const localNeumiText=(cat,lang)=>(neumiCategoryText[lang]||neumiCategoryText.hu)[cat]||"";
+const localizedNuSkinUrl=(url,lang)=>{
+  if(lang==="hu") return url;
+  if(!url.includes("mysite.mynuskin.com")) return url;
+  if(lang==="de") return "https://www.nuskin.com/at/de/site/product/eua-digital-product-catalogue";
+  return "https://www.nuskin.com/en_GB/product-lines/nuskin.html";
+};
+const localizedNuSkinCta=(name,url,lang,t)=>{
+  if(archivedNuSkin.has(name)) return t.archive;
+  if(name==="ageLOC TRMe") return t.system;
+  if(lang==="hu" && url.includes("mysite.mynuskin.com")) return t.buyOfficial;
+  return t.official;
+};
 
 function BrandHero({title,lead,note,t}) {
   return <section className="brandPageHero"><div>
@@ -228,14 +243,14 @@ export function NuSkinPage({lang="hu"}) {
   return <main className="brandPage">
     <BrandHero title={t.nuskinTitle} lead={t.nuskinLead} note={t.nuskinNote} t={t}/>
     <section className="brandPageBody">
-      <div className="brandPageMeta"><span>{NUSKIN.length} {t.products}</span><small>{t.verified}</small></div>
+      <div className="brandPageMeta"><span>{NUSKIN.length} {t.products}</span><small>{t.verified}</small></div><p className="brandPageNote">{t.localeNote}</p>
       <div className="brandGroups">
         {[...new Set(NUSKIN.map(([,group])=>group))].map(group=><section className="brandGroup" key={group}>
           <div className="brandGroupHead"><h2>{localGroup(group,lang)}</h2><span>{NUSKIN.filter(([,g])=>g===group).length}</span></div>
           <div className="brandProductGrid">
             {NUSKIN.filter(([,g])=>g===group).map(([name,,desc,url])=><article className="brandProductCard" key={name}>
               <span>{localGroup(group,lang)}</span><h2>{name}</h2><p>{localGroupDescription(group,lang)}</p>
-              <a href={url} target="_blank" rel="noopener noreferrer">{archivedNuSkin.has(name)?t.archive:(url.includes("mysite.mynuskin.com")?t.buyOfficial:(name==="ageLOC TRMe"?t.system:t.official))}<ExternalLink size={13}/></a>
+              <a href={localizedNuSkinUrl(url,lang)} target="_blank" rel="noopener noreferrer">{localizedNuSkinCta(name,url,lang,t)}<ExternalLink size={13}/></a>
             </article>)}
           </div>
         </section>)}
