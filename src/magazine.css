@@ -53,3 +53,8 @@
   .magHero h1{margin:14px 0;font-size:var(--bbi-hero-title)}
 }
 
+
+.magFilters{max-width:1060px;margin:0 auto;padding:24px 6vw 0;display:flex;flex-wrap:wrap;gap:8px}
+.magFilters button{border:1px solid var(--line);background:var(--ivory);padding:8px 11px;font:600 8px Montserrat;letter-spacing:1px;color:#5f686d;cursor:pointer}
+.magFilters button.active{border-color:var(--gold);color:#7a663d;background:#fff}
+@media(max-width:620px){.magFilters{padding:18px 20px 0;gap:6px}.magFilters button{padding:7px 9px;font-size:7px}}
