@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { ArrowLeft, ArrowRight, ExternalLink } from "lucide-react";
 import "./magazine.css";
 
@@ -342,14 +342,30 @@ const ARTICLES = {
 };
 
 const COPY={
- hu:{back:"Vissza a főoldalra",eyebrow:"BEAUTY BY ILDY · MAGAZIN",title:"Friss beauty radar",lead:"Új technológiák, friss kutatások és valóban érdekes piaci mozgások — nem sajtóközleményként, hanem értelmezve.",source:"FORRÁS"},
- en:{back:"Back to home",eyebrow:"BEAUTY BY ILDY · MAGAZINE",title:"Fresh beauty radar",lead:"New technology, fresh research and market shifts worth watching — interpreted rather than repeated.",source:"SOURCE"},
- de:{back:"Zurück zur Startseite",eyebrow:"BEAUTY BY ILDY · MAGAZIN",title:"Fresh Beauty Radar",lead:"Neue Technologien, aktuelle Forschung und relevante Marktbewegungen — eingeordnet statt nur wiederholt.",source:"QUELLE"}
+ hu:{back:"Vissza a főoldalra",eyebrow:"BEAUTY BY ILDY · MAGAZIN",title:"Friss beauty radar",lead:"Új technológiák, friss kutatások és valóban érdekes piaci mozgások — nem sajtóközleményként, hanem értelmezve.",source:"FORRÁS",all:"MIND",cats:["LONGEVITY","BEAUTY TECH","MENOPAUZA 40+/50+","NEW SCIENCE","TREND RADAR"]},
+ en:{back:"Back to home",eyebrow:"BEAUTY BY ILDY · MAGAZINE",title:"Fresh beauty radar",lead:"New technology, fresh research and market shifts worth watching — interpreted rather than repeated.",source:"SOURCE",all:"ALL",cats:["LONGEVITY","BEAUTY TECH","MENOPAUSE 40+/50+","NEW SCIENCE","TREND RADAR"]},
+ de:{back:"Zurück zur Startseite",eyebrow:"BEAUTY BY ILDY · MAGAZIN",title:"Fresh Beauty Radar",lead:"Neue Technologien, aktuelle Forschung und relevante Marktbewegungen — eingeordnet statt nur wiederholt.",source:"QUELLE",all:"ALLE",cats:["LONGEVITY","BEAUTY TECH","MENOPAUSE 40+/50+","NEW SCIENCE","TREND RADAR"]}
 };
+
+const CATEGORY_BY_INDEX=[
+  "NEW SCIENCE",      // exosome
+  "TREND RADAR",      // Prysm iO
+  "BEAUTY TECH",      // awards / devices
+  "LONGEVITY",        // skin biomarker
+  "LONGEVITY",        // NAD+
+  "LONGEVITY",        // lifestyle / skin
+  "TREND RADAR",      // collagen evidence debate
+  "MENOPAUSE 40+/50+",// estrogen / menopause
+  "BEAUTY TECH"       // home device evidence
+];
 
 export function MagazinePage({lang="hu"}){
   const t=COPY[lang]||COPY.hu;
   const articles=ARTICLES[lang]||ARTICLES.hu;
+  const [active,setActive]=useState("ALL");
+  const filtered=articles
+    .map((a,i)=>({...a,_cat:CATEGORY_BY_INDEX[i]||"TREND RADAR"}))
+    .filter(a=>active==="ALL"||a._cat===active);
   return <main className="magPage">
     <section className="magHero">
       <div>
@@ -359,9 +375,16 @@ export function MagazinePage({lang="hu"}){
         <p>{t.lead}</p>
       </div>
     </section>
+    <nav className="magFilters" aria-label="Magazine categories">
+      <button className={active==="ALL"?"active":""} onClick={()=>setActive("ALL")}>{t.all}</button>
+      {t.cats.map((label,i)=>{
+        const cat=["LONGEVITY","BEAUTY TECH","MENOPAUSE 40+/50+","NEW SCIENCE","TREND RADAR"][i];
+        return <button key={cat} className={active===cat?"active":""} onClick={()=>setActive(cat)}>{label}</button>
+      })}
+    </nav>
     <section className="magBody">
-      {articles.map((a,i)=><article className="magArticle" key={a.title} id={`mag-${i+1}`}>
-        <div className="magArticleHead"><span>{a.tag}</span><span>0{i+1}</span></div>
+      {filtered.map((a,i)=><article className="magArticle" key={a.title} id={`mag-${i+1}`}>
+        <div className="magArticleHead"><span>{a._cat} · {a.tag}</span><span>{String(i+1).padStart(2,"0")}</span></div>
         <h2>{a.title}</h2>
         <p className="magDek">{a.dek}</p>
         <div className="magArticleText">{a.body.map((p,idx)=><p key={idx}>{p}</p>)}</div>
