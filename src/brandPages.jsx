@@ -16,7 +16,7 @@ const NUSKIN = [
   ["ageLOC Tru Face Uplifting Rich Cream","TRU FACE","Rich moisturising cream focused on firmness and visible lines.","https://www.nuskin.com/hu/hu/site/product/eua-ageloc-tru-face-landing-page"],
   ["ageLOC Tru Face Refining Toner","TRU FACE","Preparatory toner designed to support the next steps of the skincare routine.","https://www.nuskin.com/hu/hu/site/product/eua-ageloc-tru-face-landing-page"],
   ["ageLOC Tru Face Peptide Retinol Complex","TRU FACE","Retinol and peptide-focused age-well serum.","https://www.nuskin.com/hu/hu/site/product/eua-ageloc-tru-face-landing-page"],
-  ["ageLOC Tru Face Essence Ultra","TRU FACE","Firming-focused treatment for a more defined-looking facial contour.","https://www.nuskin.com/hu/hu/site/product/eua-ageloc-tru-face-landing-page"],
+  ["ageLOC Tru Face Essence Ultra","TRU FACE","Firming-focused treatment for a more defined-looking facial contour.","https://mysite.mynuskin.com/catalog/hu/hu/product/97004293?store=beautybyildy"],
   ["Nutricentials Pumps Vitamin C + Collagen","NUTRICENTIALS","Current Nutricentials supplement-style beauty product listed in the Hungarian range.","https://www.nuskin.com/hu_HU/products/nuskin/shop_all_products/nutricentials.html"],
   ["HydraClean Creamy Cleansing Lotion","NUTRICENTIALS","Creamy facial cleanser.","https://www.nuskin.com/hu_HU/products/nuskin/shop_all_products/nutricentials.html"],
   ["To Be Clear Pure Cleansing Gel","NUTRICENTIALS","Gel facial cleanser.","https://www.nuskin.com/hu_HU/products/nuskin/shop_all_products/nutricentials.html"],
@@ -84,10 +84,11 @@ const copy = {
     back:"Vissza a főoldalra",
     nuskinTitle:"NU SKIN",
     nuskinLead:"Külön Nu Skin válogatás: beauty tech, bőrápolás, hajápolás, vitaminok és Pharmanex wellness egy helyen. A termékadatokat a hivatalos magyar és EMEA Nu Skin források alapján építjük fel.",
-    nuskinNote:"A Nu Skin Brand Affiliate státusz aktív. A vásárlási linket csak a kifejezetten vásárlói / Retail Customer megosztási link azonosítása után kapcsoljuk be. Addig a termékkártyák a hivatalos Nu Skin termékoldalakra vezetnek.",
+    nuskinNote:"A Nu Skin My Site vásárlói útvonalát ellenőriztük. A már tesztelt termékek közvetlenül a Beauty by Ildy My Site termékoldalára vezetnek; a többi terméknél addig a hivatalos Nu Skin információs oldal marad, amíg a konkrét vásárlói linket külön nem ellenőriztük.",
     neumiTitle:"NEUMI",
     neumiLead:"A Beauty by Ildy Neumi válogatása külön márkaoldalon, a jelenlegi nyolc termékkel. A vásárlás továbbra is a hivatalos Neumi oldalon történik.",
     official:"HIVATALOS TERMÉKOLDAL",
+    buyOfficial:"VÁSÁRLÁS A NU SKIN OLDALÁN",
     details:"RÉSZLETES ADATLAP",
     verified:"Hivatalos termékforrások alapján · folyamatosan frissítve",
     products:"termék",
@@ -96,10 +97,11 @@ const copy = {
     back:"Back to home",
     nuskinTitle:"NU SKIN",
     nuskinLead:"A dedicated Nu Skin edit covering beauty tech, skincare, haircare, vitamins and Pharmanex wellness, built from current official Hungarian and EMEA Nu Skin sources.",
-    nuskinNote:"Nu Skin Brand Affiliate status is active. The shopping link will only be enabled once the dedicated customer / Retail Customer sharing link is confirmed. Until then, product cards link to official Nu Skin product pages.",
+    nuskinNote:"The Nu Skin My Site customer purchase flow has been verified for the Hungarian market. Products with a tested direct link open the Beauty by Ildy My Site product page; other products remain on official Nu Skin information pages until their direct purchase link is separately verified.",
     neumiTitle:"NEUMI",
     neumiLead:"A dedicated Beauty by Ildy Neumi page with the current eight products. Purchases continue on the official Neumi website.",
     official:"OFFICIAL PRODUCT PAGE",
+    buyOfficial:"SHOP ON NU SKIN",
     details:"DETAILED PROFILE",
     verified:"Based on official product sources · continuously updated",
     products:"products",
@@ -108,10 +110,11 @@ const copy = {
     back:"Zurück zur Startseite",
     nuskinTitle:"NU SKIN",
     nuskinLead:"Eine eigene Nu-Skin-Auswahl mit Beauty Tech, Hautpflege, Haarpflege, Vitaminen und Pharmanex-Wellness auf Basis aktueller offizieller ungarischer und EMEA-Nu-Skin-Quellen.",
-    nuskinNote:"Der Nu-Skin-Brand-Affiliate-Status ist aktiv. Der Einkaufslink wird erst nach Bestätigung des speziellen Kunden-/Retail-Customer-Sharing-Links aktiviert. Bis dahin führen die Produktkarten zu offiziellen Nu-Skin-Produktseiten.",
+    nuskinNote:"Der Nu-Skin-My-Site-Kaufablauf wurde für den ungarischen Markt geprüft. Produkte mit getestetem Direktlink führen zur Beauty-by-Ildy-My-Site-Produktseite; andere Produkte bleiben auf offiziellen Nu-Skin-Informationsseiten, bis ihr direkter Kauflink separat geprüft wurde.",
     neumiTitle:"NEUMI",
     neumiLead:"Eine eigene Beauty-by-Ildy-Neumi-Seite mit den aktuellen acht Produkten. Der Kauf erfolgt weiterhin auf der offiziellen Neumi-Website.",
     official:"OFFIZIELLE PRODUKTSEITE",
+    buyOfficial:"BEI NU SKIN KAUFEN",
     details:"DETAILPROFIL",
     verified:"Auf Basis offizieller Produktquellen · laufend aktualisiert",
     products:"Produkte",
@@ -225,7 +228,7 @@ export function NuSkinPage({lang="hu"}) {
           <div className="brandProductGrid">
             {NUSKIN.filter(([,g])=>g===group).map(([name,,desc,url])=><article className="brandProductCard" key={name}>
               <span>{localGroup(group,lang)}</span><h2>{name}</h2><p>{localGroupDescription(group,lang)}</p>
-              <a href={url} target="_blank" rel="noopener noreferrer">{t.official}<ExternalLink size={13}/></a>
+              <a href={url} target="_blank" rel="noopener noreferrer">{url.includes("mysite.mynuskin.com")?t.buyOfficial:t.official}<ExternalLink size={13}/></a>
             </article>)}
           </div>
         </section>)}
