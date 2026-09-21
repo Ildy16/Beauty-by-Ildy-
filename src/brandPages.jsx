@@ -37,41 +37,41 @@ const NUSKIN = [
   ["ageLOC Nutriol Scalp & Hair Shampoo","HAIR & SCALP","Sampon vékony szálú, sérült és öregedő hajra és fejbőrre.","https://mysite.mynuskin.com/catalog/hu/hu/product/97002106?store=beautybyildy"],
   ["ageLOC Nutriol Scalp & Hair Conditioner","HAIR & SCALP","Fejbőr- és hajápoló kondicionáló az ageLOC Nutriol rendszerből.","https://mysite.mynuskin.com/catalog/hu/hu/product/97002107?store=beautybyildy"],
   ["ageLOC Nutriol Intensive Scalp & Hair Serum","HAIR & SCALP","Intenzív fejbőr- és hajszérum az ageLOC Nutriol rendszerből.","https://mysite.mynuskin.com/catalog/hu/hu/product/97002149?store=beautybyildy"],
-  ["Nu Skin 180° Anti-Aging Skin Therapy System","NU SKIN 180°","Komplex Nu Skin 180° arcápolási rendszer.","https://mysite.mynuskin.com/catalog/hu/hu/product/97101255?store=beautybyildy"],
+  ["Nu Skin 180° Anti-Aging Skin Therapy System","NU SKIN 180°","Korábbi, több lépéses Nu Skin 180° arcápolási rendszer; az EU-ban 2024 októberében kivezetésre került.","https://www.nuskin.com/content/dam/eu-library/office/documents/product-discontinuation-overview/nu-skin-product-discontinuation-overview-2024-q4.pdf"],
   ["Epoch Glacial Marine Mud","EPOCH","Etnobotanikai ihletésű iszappakolás.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001987?store=beautybyildy"],
   ["Epoch Baobab Body Butter","EPOCH","Gazdag, baobabfókuszú testvaj.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001985?store=beautybyildy"],
   ["Epoch IceDancer","EPOCH","Frissítő lábápoló zselé.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001986?store=beautybyildy"],
-  ["Epoch Hand Cream","EPOCH","Kéz- és körömápoló krém.","https://mysite.mynuskin.com/catalog/hu/hu/product/97002592?store=beautybyildy"],
+  ["Epoch Hand Cream","EPOCH","Korábbi Epoch kéz- és körömápoló krém; a magyar piacon kivezetett státuszú.","https://www.nuskin.com/products/97/00/25/97002592.html"],
   ["Epoch Polishing Bar","EPOCH","Szappanmentes testradírozó tömb.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001994?store=beautybyildy"],
   ["Epoch Sole Solution","EPOCH","Célzott lábfejápoló krém.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001988?store=beautybyildy"],
   ["Epoch Ava Puhi Moni Shampoo","EPOCH · HAIR","Epoch hajápoló sampon.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001990?store=beautybyildy"],
-  ["Epoch Ava Puhi Moni Light Conditioner","EPOCH · HAIR","Epoch könnyű hajbalzsam.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001996?store=beautybyildy"],
+  ["Epoch Ava Puhi Moni Light Conditioner","EPOCH · HAIR","Korábbi Epoch hajkondicionáló; az EU-ban 2024 januárjában kivezetésre került.","https://www.nuskin.com/content/dam/eu-library/office/documents/product-discontinuation-overview/nu-skin-product-discontinuation-overview-2024-q1.pdf"],
   ["Sunright Insta Glow","SUNRIGHT","Önbarnító gél arcra és testre.","https://mysite.mynuskin.com/catalog/hu/hu/product/97002009?store=beautybyildy"],
-  ["Liquid Body Lufra","BODY CARE","Testradírozó tusolóformula.","https://mysite.mynuskin.com/catalog/hu/hu/product/97102717?store=beautybyildy"],
-  ["Perennial Intense Body Moisturizer","BODY CARE","Intenzív testhidratáló.","https://mysite.mynuskin.com/catalog/hu/hu/product/97100875?store=beautybyildy"],
+  ["Liquid Body Lufra","BODY CARE","Korábbi testradírozó tusolóformula; az EU-ban 2026 márciusában kivezetésre került.","https://www.nuskin.com/content/dam/eu-library/office/documents/product-discontinuation-overview/nu-skin-product-discontinuation-overview-2026-q1.pdf"],
+  ["Perennial Body Lotion","BODY CARE","Mindennapi testápoló és hidratáló lotion.","https://mysite.mynuskin.com/catalog/hu/hu/product/97100875?store=beautybyildy"],
   ["NaPCA Moisture Mist","BODY CARE","Hidratáló permet arcra és testre.","https://mysite.mynuskin.com/catalog/hu/hu/product/97138860?store=beautybyildy"],
   ["ageLOC Body Shaping Gel","BODY CARE","Testápoló gél az ageLOC testápolási rendszerhez.","https://mysite.mynuskin.com/catalog/hu/hu/product/97003902?store=beautybyildy"],
   ["ageLOC Dermatic Effects","BODY CARE","Hidratáló testápoló az ageLOC testápolási rendszerhez.","https://mysite.mynuskin.com/catalog/hu/hu/product/97003903?store=beautybyildy"],
-  ["ReNu Hair Mask","HAIR CARE","Intenzív hajpakolás.","https://mysite.mynuskin.com/catalog/hu/hu/product/97138862?store=beautybyildy"],
+  ["ReNu Hair Mask","HAIR CARE","Korábbi intenzív hajpakolás. A Nu Skin terméktörzse a magyar piacon kivezetett státuszt jelez a ReNu Hair Mask EU-változatára.","https://www.nuskin.com/products/97/10/13/97101356.html"],
   ["AP 24 Whitening Fluoride Toothpaste","ORAL CARE","Fluoridos fogkrém fehérítő fókuszú formulával.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001647?store=beautybyildy"],
-  ["AP 24 Anti-Plaque Fluoride Toothpaste","ORAL CARE","Fluoridos fogkrém lepedék elleni fókuszú formulával.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001648?store=beautybyildy"],
+  ["AP 24 Anti-Plaque Fluoride Toothpaste","ORAL CARE","Korábbi, lepedék elleni fluoridos fogkrém; a magyar piacon már kivezetett státuszú.","https://www.nuskin.com/content/products/97/00/16/97001648/hu.html"],
   ["Pharmanex LifePak+","PHARMANEX · VITAMINOK","Komplex étrend-kiegészítő 13 vitaminnal, 9 ásványi anyaggal és növényi kivonatokkal.","https://mysite.mynuskin.com/catalog/hu/hu/product/85433743?store=beautybyildy"],
-  ["Pharmanex Marine Omega","PHARMANEX · OMEGA-3","Hal- és krillolajból származó omega-3 zsírsavakat tartalmazó étrend-kiegészítő.","https://mysite.mynuskin.com/catalog/hu/hu/product/97137249?store=beautybyildy"],
+  ["LifePak+ & Marine Omega ADR-csomag","PHARMANEX · OMEGA-3","LifePak+ és Marine Omega termékeket tartalmazó magyar ADR-csomag. A Nu Skin magyar ADR-oldala jelenleg készlethiányosként jelzi.","https://www.nuskin.com/hu_HU/adr_packages.html"],
   ["Pharmanex Tēgreen","PHARMANEX · ANTIOXIDÁNS","Zöldtea-kivonatot tartalmazó étrend-kiegészítő.","https://mysite.mynuskin.com/catalog/hu/hu/product/85493529?store=beautybyildy"],
   ["JVi","PHARMANEX · VITAMINITAL","12 gyümölcs és zöldség keveréke; C-vitamin-forrás.","https://mysite.mynuskin.com/catalog/hu/hu/product/97003762?store=beautybyildy"],
   ["Beauty Focus MultiBeauty","PHARMANEX · BEAUTY","Többféle tápanyagot tartalmazó szépségápolási étrend-kiegészítő haj, köröm és bőr támogatására.","https://mysite.mynuskin.com/catalog/hu/hu/product/85432267?store=beautybyildy"],
   ["Beauty Focus Collagen+","PHARMANEX · BEAUTY","Kollagénhidrolizátumot, búzaolaj-kivonatot és luteint tartalmazó szépségápolási étrend-kiegészítő.","https://mysite.mynuskin.com/catalog/hu/hu/product/85892208?store=beautybyildy"],
   ["R² Day","PHARMANEX · VITALITÁS","Cordyceps sinensis, gránátalma és Panax ginseng alapú nappali étrend-kiegészítő.","https://mysite.mynuskin.com/catalog/hu/hu/product/85433895?store=beautybyildy"],
   ["R² Night","PHARMANEX · VITALITÁS","Szelént és növényi kivonatokat tartalmazó esti étrend-kiegészítő.","https://mysite.mynuskin.com/catalog/hu/hu/product/85433894?store=beautybyildy"],
-  ["R² Day + Night","PHARMANEX · VITALITÁS","A nappali és esti R² rendszer együttes, hivatalos Nu Skin összeállítása.","https://mysite.mynuskin.com/catalog/hu/hu/product/85433901?store=beautybyildy"],
+  ["R² Day + Night","PHARMANEX · VITALITÁS","A korábbi kombinált R² Day + Night összeállítás; a magyar piacon kivezetett státuszú. Az R² Day és R² Night külön termékként szerepel.","https://www.nuskin.com/products/85/43/39/85433901.html"],
   ["ReishiMax GLp","PHARMANEX · WELLNESS","Reishigomba-kivonatot tartalmazó étrend-kiegészítő.","https://mysite.mynuskin.com/catalog/hu/hu/product/85433519?store=beautybyildy"],
   ["ageLOC Vitality","PHARMANEX · VITALITÁS","Cordyceps, gránátalma és Panax ginseng alapú vitalitásfókuszú étrend-kiegészítő.","https://mysite.mynuskin.com/catalog/hu/hu/product/97137705?store=beautybyildy"],
   ["LifePak elements","PHARMANEX · VITAMINOK","Prysm-kvalifikált, napi vitamin- és ásványianyag-kiegészítés. A Nu Skin magyar Prysm iO pénzvisszafizetési garancia oldalán külön, név szerint szerepel LifePak elements termékként.","https://www.nuskin.com/content/nuskin/hu_HU/opportunity/business-tools/prysm-io/prysm-io-money-back-guarantee/prysm-io-guarantee-form/prysm-io-refund-form.html"],
-  ["CordyMax CS-4","PHARMANEX · VITALITÁS","Cordyceps sinensis micéliumot tartalmazó étrend-kiegészítő.","https://mysite.mynuskin.com/catalog/hu/hu/product/85433441?store=beautybyildy"],
-  ["Pro-B","PHARMANEX · EMÉSZTÉS","Lactobacillus fermentum PCC™ probiotikus kultúrát tartalmazó étrend-kiegészítő.","https://mysite.mynuskin.com/catalog/hu/hu/product/85433520?store=beautybyildy"],
+  ["CordyMax CS-4","PHARMANEX · VITALITÁS","Korábbi Cordyceps sinensis micéliumot tartalmazó étrend-kiegészítő; az EU-ban 2025 januárjában kivezetésre került.","https://www.nuskin.com/content/dam/eu-library/office/documents/product-discontinuation-overview/nu-skin-product-discontinuation-overview-2025-q1.pdf"],
+  ["Pro-B","PHARMANEX · EMÉSZTÉS","Korábbi Lactobacillus fermentum PCC™ probiotikus kultúrát tartalmazó étrend-kiegészítő; az EU-ban 2024 októberében kivezetésre került.","https://www.nuskin.com/content/dam/eu-library/office/documents/product-discontinuation-overview/nu-skin-product-discontinuation-overview-2024-q4.pdf"],
   ["TRME MyGOAL","TRME · BODY BALANCE","A Nu Skin aktuális TRME Body Balance rendszerének egyik étrend-kiegészítője.","https://mysite.mynuskin.com/catalog/hu/hu/product/85542536?store=beautybyildy"],
   ["TRME MyEDGE","TRME · BODY BALANCE","A Nu Skin aktuális TRME Body Balance rendszerének egyik étrend-kiegészítője.","https://mysite.mynuskin.com/catalog/hu/hu/product/97139804?store=beautybyildy"],
-  ["TRME InnerNU","TRME · BODY BALANCE","Gyömbér- és articsóka-kivonatot tartalmazó TRME étrend-kiegészítő.","https://mysite.mynuskin.com/catalog/hu/hu/product/97139803?store=beautybyildy"],
+  ["TRME InnerNU","TRME · BODY BALANCE","Gyömbér- és articsóka-kivonatot tartalmazó TRME étrend-kiegészítő.","https://mysite.mynuskin.com/catalog/hu/hu/product/85552525?store=beautybyildy"],
   ["TRME REALMe","TRME · BODY BALANCE","A Nu Skin aktuális TRME Body Balance rendszerének egyik étrend-kiegészítője.","https://mysite.mynuskin.com/catalog/hu/hu/product/85542537?store=beautybyildy"],
   ["TRME M-Bar","TRME · BODY BALANCE","A TRME rendszerhez tartozó étkezéshelyettesítő szelet.","https://mysite.mynuskin.com/catalog/hu/hu/product/97139726?store=beautybyildy"],
   ["TRME Weight Management Kit","TRME · BODY BALANCE","InnerNU, MyEDGE, MyGOAL és REALMe termékeket tartalmazó hivatalos TRME csomag.","https://mysite.mynuskin.com/catalog/hu/hu/product/97139798?store=beautybyildy"],
@@ -90,6 +90,7 @@ const copy = {
     official:"HIVATALOS TERMÉKOLDAL",
     buyOfficial:"VÁSÁRLÁS A NU SKIN OLDALÁN",
     system:"RENDSZER MEGTEKINTÉSE",
+    archive:"HIVATALOS INFORMÁCIÓ",
     details:"RÉSZLETES ADATLAP",
     verified:"Hivatalos termékforrások alapján · folyamatosan frissítve",
     products:"termék",
@@ -104,6 +105,7 @@ const copy = {
     official:"OFFICIAL PRODUCT PAGE",
     buyOfficial:"SHOP ON NU SKIN",
     system:"VIEW SYSTEM",
+    archive:"OFFICIAL INFORMATION",
     details:"DETAILED PROFILE",
     verified:"Based on official product sources · continuously updated",
     products:"products",
@@ -118,6 +120,7 @@ const copy = {
     official:"OFFIZIELLE PRODUKTSEITE",
     buyOfficial:"BEI NU SKIN KAUFEN",
     system:"SYSTEM ANSEHEN",
+    archive:"OFFIZIELLE INFORMATION",
     details:"DETAILPROFIL",
     verified:"Auf Basis offizieller Produktquellen · laufend aktualisiert",
     products:"Produkte",
@@ -195,6 +198,7 @@ const groupDescriptions={
   }
 };
 const localGroup=(group,lang)=>(groupLabels[lang]||groupLabels.hu)[group]||group;
+const archivedNuSkin=new Set(["Nu Skin 180° Anti-Aging Skin Therapy System","Epoch Hand Cream","Epoch Ava Puhi Moni Light Conditioner","Liquid Body Lufra","ReNu Hair Mask","AP 24 Anti-Plaque Fluoride Toothpaste","R² Day + Night","CordyMax CS-4","Pro-B","LifePak+ & Marine Omega ADR-csomag"]);
 const localGroupDescription=(group,lang)=>(groupDescriptions[lang]||groupDescriptions.hu)[group]||"";
 const neumiCategoryLabels={
   hu:{agewell:"AGE-WELL / BŐRÁPOLÁS",hair:"HAJ & FEJBŐR",wellness:"WELLNESS"},
@@ -231,7 +235,7 @@ export function NuSkinPage({lang="hu"}) {
           <div className="brandProductGrid">
             {NUSKIN.filter(([,g])=>g===group).map(([name,,desc,url])=><article className="brandProductCard" key={name}>
               <span>{localGroup(group,lang)}</span><h2>{name}</h2><p>{localGroupDescription(group,lang)}</p>
-              <a href={url} target="_blank" rel="noopener noreferrer">{url.includes("mysite.mynuskin.com")?t.buyOfficial:(name==="ageLOC TRMe"?t.system:t.official)}<ExternalLink size={13}/></a>
+              <a href={url} target="_blank" rel="noopener noreferrer">{archivedNuSkin.has(name)?t.archive:(url.includes("mysite.mynuskin.com")?t.buyOfficial:(name==="ageLOC TRMe"?t.system:t.official))}<ExternalLink size={13}/></a>
             </article>)}
           </div>
         </section>)}
