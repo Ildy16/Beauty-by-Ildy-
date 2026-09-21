@@ -109,7 +109,7 @@ const copy = {
     archive:"OFFICIAL INFORMATION",
     details:"DETAILED PROFILE",
     verified:"Based on official product sources · continuously updated",
-    localeNote:"The direct Beauty by Ildy My Site purchase flow has been verified for the Hungarian market. For other language/market views we use the official local Nu Skin site until the corresponding My Site route is separately tested.",
+    localeNote:"The direct Beauty by Ildy My Site purchase flow has been verified for Hungary, Austria/German and Ireland/English. Purchases open the official Nu Skin checkout for the selected market.",
     products:"products",
   },
   de: {
@@ -218,13 +218,13 @@ const localNeumiText=(cat,lang)=>(neumiCategoryText[lang]||neumiCategoryText.hu)
 const localizedNuSkinUrl=(url,lang)=>{
   if(!url.includes("mysite.mynuskin.com")) return url;
   if(lang==="de") return url.replace("/catalog/hu/hu/","/catalog/at/de/");
-  if(lang==="hu") return url;
-  return "https://www.nuskin.com/en_GB/product-lines/nuskin.html";
+  if(lang==="en") return url.replace("/catalog/hu/hu/","/catalog/ie/en/");
+  return url;
 };
 const localizedNuSkinCta=(name,url,lang,t)=>{
   if(archivedNuSkin.has(name)) return t.archive;
   if(name==="ageLOC TRMe") return t.system;
-  if((lang==="hu"||lang==="de") && url.includes("mysite.mynuskin.com")) return t.buyOfficial;
+  if(["hu","de","en"].includes(lang) && url.includes("mysite.mynuskin.com")) return t.buyOfficial;
   return t.official;
 };
 
