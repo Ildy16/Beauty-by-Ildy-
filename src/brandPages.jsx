@@ -89,6 +89,7 @@ const copy = {
     neumiLead:"A Beauty by Ildy Neumi válogatása külön márkaoldalon, a jelenlegi nyolc termékkel. A vásárlás továbbra is a hivatalos Neumi oldalon történik.",
     official:"HIVATALOS TERMÉKOLDAL",
     buyOfficial:"VÁSÁRLÁS A NU SKIN OLDALÁN",
+    system:"RENDSZER MEGTEKINTÉSE",
     details:"RÉSZLETES ADATLAP",
     verified:"Hivatalos termékforrások alapján · folyamatosan frissítve",
     products:"termék",
@@ -102,6 +103,7 @@ const copy = {
     neumiLead:"A dedicated Beauty by Ildy Neumi page with the current eight products. Purchases continue on the official Neumi website.",
     official:"OFFICIAL PRODUCT PAGE",
     buyOfficial:"SHOP ON NU SKIN",
+    system:"VIEW SYSTEM",
     details:"DETAILED PROFILE",
     verified:"Based on official product sources · continuously updated",
     products:"products",
@@ -115,6 +117,7 @@ const copy = {
     neumiLead:"Eine eigene Beauty-by-Ildy-Neumi-Seite mit den aktuellen acht Produkten. Der Kauf erfolgt weiterhin auf der offiziellen Neumi-Website.",
     official:"OFFIZIELLE PRODUKTSEITE",
     buyOfficial:"BEI NU SKIN KAUFEN",
+    system:"SYSTEM ANSEHEN",
     details:"DETAILPROFIL",
     verified:"Auf Basis offizieller Produktquellen · laufend aktualisiert",
     products:"Produkte",
@@ -228,7 +231,7 @@ export function NuSkinPage({lang="hu"}) {
           <div className="brandProductGrid">
             {NUSKIN.filter(([,g])=>g===group).map(([name,,desc,url])=><article className="brandProductCard" key={name}>
               <span>{localGroup(group,lang)}</span><h2>{name}</h2><p>{localGroupDescription(group,lang)}</p>
-              <a href={url} target="_blank" rel="noopener noreferrer">{url.includes("mysite.mynuskin.com")?t.buyOfficial:t.official}<ExternalLink size={13}/></a>
+              <a href={url} target="_blank" rel="noopener noreferrer">{url.includes("mysite.mynuskin.com")?t.buyOfficial:(name==="ageLOC TRMe"?t.system:t.official)}<ExternalLink size={13}/></a>
             </article>)}
           </div>
         </section>)}
