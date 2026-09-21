@@ -3,8 +3,6 @@ import { ArrowLeft, ArrowRight, ExternalLink } from "lucide-react";
 import { products } from "./products.jsx";
 import "./brandPages.css";
 
-const NUSKIN_SHOP = "https://nskn.co/VJrwVF";
-
 const NUSKIN = [
   ["ageLOC LumiSpa iO System","BEAUTY TECH","Connected cleansing system designed to pair with the Nu Skin Vera app.","https://www.nuskin.com/hu_HU/products/nuskin/shop_all_products/ageloc-lumispa-io.html"],
   ["ageLOC WellSpa iO System","BEAUTY TECH","Nu Skin beauty and wellness device system.","https://www.nuskin.com/hu_HU/products/nuskin/shop_all_products/ageloc-wellspa-io.html"],
@@ -86,11 +84,10 @@ const copy = {
     back:"Vissza a főoldalra",
     nuskinTitle:"NU SKIN",
     nuskinLead:"Külön Nu Skin válogatás: beauty tech, bőrápolás, hajápolás, vitaminok és Pharmanex wellness egy helyen. A termékadatokat a hivatalos magyar és EMEA Nu Skin források alapján építjük fel.",
-    nuskinNote:"A vásárlás a hivatalos Nu Skin oldalon történik. A Beauty by Ildy nem kezel fizetést vagy rendelést.",
+    nuskinNote:"A Nu Skin Brand Affiliate státusz aktív. A vásárlási linket csak a kifejezetten vásárlói / Retail Customer megosztási link azonosítása után kapcsoljuk be. Addig a termékkártyák a hivatalos Nu Skin termékoldalakra vezetnek.",
     neumiTitle:"NEUMI",
     neumiLead:"A Beauty by Ildy Neumi válogatása külön márkaoldalon, a jelenlegi nyolc termékkel. A vásárlás továbbra is a hivatalos Neumi oldalon történik.",
     official:"HIVATALOS TERMÉKOLDAL",
-    shop:"VÁSÁRLÁS A NU SKIN OLDALÁN",
     details:"RÉSZLETES ADATLAP",
     verified:"Hivatalos termékforrások alapján · folyamatosan frissítve",
     products:"termék",
@@ -99,11 +96,10 @@ const copy = {
     back:"Back to home",
     nuskinTitle:"NU SKIN",
     nuskinLead:"A dedicated Nu Skin edit covering beauty tech, skincare, haircare, vitamins and Pharmanex wellness, built from current official Hungarian and EMEA Nu Skin sources.",
-    nuskinNote:"Purchases take place on the official Nu Skin website. Beauty by Ildy does not process payment or orders.",
+    nuskinNote:"Nu Skin Brand Affiliate status is active. The shopping link will only be enabled once the dedicated customer / Retail Customer sharing link is confirmed. Until then, product cards link to official Nu Skin product pages.",
     neumiTitle:"NEUMI",
     neumiLead:"A dedicated Beauty by Ildy Neumi page with the current eight products. Purchases continue on the official Neumi website.",
     official:"OFFICIAL PRODUCT PAGE",
-    shop:"SHOP ON NU SKIN",
     details:"DETAILED PROFILE",
     verified:"Based on official product sources · continuously updated",
     products:"products",
@@ -112,11 +108,10 @@ const copy = {
     back:"Zurück zur Startseite",
     nuskinTitle:"NU SKIN",
     nuskinLead:"Eine eigene Nu-Skin-Auswahl mit Beauty Tech, Hautpflege, Haarpflege, Vitaminen und Pharmanex-Wellness auf Basis aktueller offizieller ungarischer und EMEA-Nu-Skin-Quellen.",
-    nuskinNote:"Der Kauf erfolgt auf der offiziellen Nu-Skin-Website. Beauty by Ildy verarbeitet weder Zahlung noch Bestellung.",
+    nuskinNote:"Der Nu-Skin-Brand-Affiliate-Status ist aktiv. Der Einkaufslink wird erst nach Bestätigung des speziellen Kunden-/Retail-Customer-Sharing-Links aktiviert. Bis dahin führen die Produktkarten zu offiziellen Nu-Skin-Produktseiten.",
     neumiTitle:"NEUMI",
     neumiLead:"Eine eigene Beauty-by-Ildy-Neumi-Seite mit den aktuellen acht Produkten. Der Kauf erfolgt weiterhin auf der offiziellen Neumi-Website.",
     official:"OFFIZIELLE PRODUKTSEITE",
-    shop:"AUF NU SKIN KAUFEN",
     details:"DETAILPROFIL",
     verified:"Auf Basis offizieller Produktquellen · laufend aktualisiert",
     products:"Produkte",
@@ -222,7 +217,6 @@ export function NuSkinPage({lang="hu"}) {
   const t=copy[lang]||copy.hu;
   return <main className="brandPage">
     <BrandHero title={t.nuskinTitle} lead={t.nuskinLead} note={t.nuskinNote} t={t}/>
-    <section className="brandShopBar"><a href={NUSKIN_SHOP} target="_blank" rel="noopener noreferrer">{t.shop}<ArrowRight size={14}/></a></section>
     <section className="brandPageBody">
       <div className="brandPageMeta"><span>{NUSKIN.length} {t.products}</span><small>{t.verified}</small></div>
       <div className="brandGroups">
@@ -231,10 +225,7 @@ export function NuSkinPage({lang="hu"}) {
           <div className="brandProductGrid">
             {NUSKIN.filter(([,g])=>g===group).map(([name,,desc,url])=><article className="brandProductCard" key={name}>
               <span>{localGroup(group,lang)}</span><h2>{name}</h2><p>{localGroupDescription(group,lang)}</p>
-              <div className="brandCardActions">
-                <a href={url} target="_blank" rel="noopener noreferrer">{t.official}<ExternalLink size={13}/></a>
-                <a className="brandShopLink" href={NUSKIN_SHOP} target="_blank" rel="noopener noreferrer">{t.shop}<ArrowRight size={13}/></a>
-              </div>
+              <a href={url} target="_blank" rel="noopener noreferrer">{t.official}<ExternalLink size={13}/></a>
             </article>)}
           </div>
         </section>)}
