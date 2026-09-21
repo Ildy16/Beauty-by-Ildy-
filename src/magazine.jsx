@@ -25,8 +25,8 @@ const ARTICLES = {
         "Ez nem vérvizsgálat és nem diagnosztikai eszköz. Inkább egy trendkövető mérés: arra lehet érdekes, hogy ugyanazon embernél időben hogyan változik egy biomarker-jellegű érték a táplálkozás, életmód és kiegészítők mellett.",
         "A technológia azért különösen érdekes, mert jól mutatja, merre tart a wellness: egyszeri termékajánlás helyett folyamatos mérés, visszajelzés és személyre szabottabb digitális élmény felé."
       ],
-      source:"Nu Skin Enterprises · 2026.04.02 / 2026.09.03",
-      url:"https://ir.nuskin.com/news-releases/news-release-details/nu-skin-launches-prysmiotm-revolutionary-ai-powered-platform"
+      source:"Nu Skin Enterprises · 2026.04.02",
+      url:"https://ir.nuskin.com/news-releases/news-release-details/nu-skin-launches-prysm-iotm-revolutionary-ai-powered-platform"
     },
     {
       tag:"BEAUTY TECH RADAR · 2026. SZEPTEMBER",
@@ -63,8 +63,8 @@ const ARTICLES = {
         "It is not a blood test and it is not a diagnostic device. Its more realistic role is longitudinal tracking: observing how the same person’s reading changes over time alongside diet, lifestyle and supplementation.",
         "The bigger story is the direction of wellness technology: from one-off product recommendations toward repeated measurement, feedback loops and more personalised digital experiences."
       ],
-      source:"Nu Skin Enterprises · 2026-04-02 / 2026-09-03",
-      url:"https://ir.nuskin.com/news-releases/news-release-details/nu-skin-launches-prysmiotm-revolutionary-ai-powered-platform"
+      source:"Nu Skin Enterprises · 2026-04-02",
+      url:"https://ir.nuskin.com/news-releases/news-release-details/nu-skin-launches-prysm-iotm-revolutionary-ai-powered-platform"
     },
     {
       tag:"BEAUTY TECH RADAR · SEPTEMBER 2026",
@@ -101,8 +101,8 @@ const ARTICLES = {
         "Es ist weder Bluttest noch Diagnosegerät. Sinnvoller ist es als Verlaufswert zu verstehen: Wie verändert sich der Messwert derselben Person im Zeitverlauf zusammen mit Ernährung, Lebensstil und Supplementierung?",
         "Das Spannende ist die Richtung der Branche: weg von einmaligen Produktempfehlungen, hin zu wiederholter Messung, Feedback und stärker personalisierten digitalen Wellness-Erlebnissen."
       ],
-      source:"Nu Skin Enterprises · 02.04.2026 / 03.09.2026",
-      url:"https://ir.nuskin.com/news-releases/news-release-details/nu-skin-launches-prysmiotm-revolutionary-ai-powered-platform"
+      source:"Nu Skin Enterprises · 02.04.2026",
+      url:"https://ir.nuskin.com/news-releases/news-release-details/nu-skin-launches-prysm-iotm-revolutionary-ai-powered-platform"
     },
     {
       tag:"BEAUTY TECH RADAR · SEPTEMBER 2026",
