@@ -95,6 +95,8 @@ const copy = {
     verified:"Hivatalos termékforrások alapján · folyamatosan frissítve",
     localeNote:"HU · Magyarország · HUF  |  DE · Ausztria · EUR  |  EN · Írország · EUR",
     products:"termék",
+    available:"KÖZVETLEN VÁSÁRLÁS",
+    infoOnly:"INFORMÁCIÓ",
   },
   en: {
     back:"Back to home",
@@ -111,6 +113,8 @@ const copy = {
     verified:"Based on official product sources · continuously updated",
     localeNote:"HU · Hungary · HUF  |  DE · Austria · EUR  |  EN · Ireland · EUR",
     products:"products",
+    available:"DIRECT PURCHASE",
+    infoOnly:"INFORMATION",
   },
   de: {
     back:"Zurück zur Startseite",
@@ -127,6 +131,8 @@ const copy = {
     verified:"Auf Basis offizieller Produktquellen · laufend aktualisiert",
     localeNote:"HU · Ungarn · HUF  |  DE · Österreich · EUR  |  EN · Irland · EUR",
     products:"Produkte",
+    available:"DIREKT KAUFEN",
+    infoOnly:"INFORMATION",
   }
 };
 
@@ -248,10 +254,17 @@ export function NuSkinPage({lang="hu"}) {
         {[...new Set(NUSKIN.map(([,group])=>group))].map(group=><section className="brandGroup" key={group}>
           <div className="brandGroupHead"><h2>{localGroup(group,lang)}</h2><span>{NUSKIN.filter(([,g])=>g===group).length}</span></div>
           <div className="brandProductGrid">
-            {NUSKIN.filter(([,g])=>g===group).map(([name,,desc,url])=><article className="brandProductCard" key={name}>
-              <span>{localGroup(group,lang)}</span><h2>{name}</h2><p>{localGroupDescription(group,lang)}</p>
-              <a href={localizedNuSkinUrl(url,lang)} target="_blank" rel="noopener noreferrer">{localizedNuSkinCta(name,url,lang,t)}<ExternalLink size={13}/></a>
-            </article>)}
+            {NUSKIN.filter(([,g])=>g===group).map(([name,,desc,url])=>{
+              const direct=url.includes("mysite.mynuskin.com");
+              const special=archivedNuSkin.has(name)||name==="ageLOC TRMe"||!direct;
+              return <article className={`brandProductCard nuskinCard ${direct&&!special?"isPurchasable":"isInfo"}`} key={name}>
+                <div className="brandCardTopline"><span>{localGroup(group,lang)}</span><em>{direct&&!special?t.available:t.infoOnly}</em></div>
+                <h2>{name}</h2><p>{desc||localGroupDescription(group,lang)}</p>
+                <div className="brandCardActions">
+                  <a className={direct&&!special?"brandShopLink":""} href={localizedNuSkinUrl(url,lang)} target="_blank" rel="noopener noreferrer">{localizedNuSkinCta(name,url,lang,t)}<ExternalLink size={13}/></a>
+                </div>
+              </article>
+            })}
           </div>
         </section>)}
       </div>
