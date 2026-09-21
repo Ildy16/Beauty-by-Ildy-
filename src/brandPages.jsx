@@ -125,7 +125,7 @@ const copy = {
     archive:"OFFIZIELLE INFORMATION",
     details:"DETAILPROFIL",
     verified:"Auf Basis offizieller Produktquellen · laufend aktualisiert",
-    localeNote:"Der direkte Beauty-by-Ildy-My-Site-Kaufablauf ist derzeit für den ungarischen Markt geprüft. In anderen Sprach-/Marktansichten verwenden wir bis zur separaten Prüfung die offizielle lokale Nu-Skin-Seite.",
+    localeNote:"Der direkte Beauty-by-Ildy-My-Site-Kaufablauf ist für den ungarischen und den österreichisch-deutschen Markt geprüft. Der Kauf erfolgt im offiziellen Nu-Skin-Checkout; für andere Sprach-/Marktansichten verwenden wir bis zur separaten Prüfung die offizielle lokale Nu-Skin-Seite.",
     products:"Produkte",
   }
 };
@@ -216,15 +216,15 @@ const neumiCategoryText={
 const localNeumiCategory=(cat,lang)=>(neumiCategoryLabels[lang]||neumiCategoryLabels.hu)[cat]||cat.toUpperCase();
 const localNeumiText=(cat,lang)=>(neumiCategoryText[lang]||neumiCategoryText.hu)[cat]||"";
 const localizedNuSkinUrl=(url,lang)=>{
-  if(lang==="hu") return url;
   if(!url.includes("mysite.mynuskin.com")) return url;
-  if(lang==="de") return "https://www.nuskin.com/at/de/site/product/eua-digital-product-catalogue";
+  if(lang==="de") return url.replace("/catalog/hu/hu/","/catalog/at/de/");
+  if(lang==="hu") return url;
   return "https://www.nuskin.com/en_GB/product-lines/nuskin.html";
 };
 const localizedNuSkinCta=(name,url,lang,t)=>{
   if(archivedNuSkin.has(name)) return t.archive;
   if(name==="ageLOC TRMe") return t.system;
-  if(lang==="hu" && url.includes("mysite.mynuskin.com")) return t.buyOfficial;
+  if((lang==="hu"||lang==="de") && url.includes("mysite.mynuskin.com")) return t.buyOfficial;
   return t.official;
 };
 
