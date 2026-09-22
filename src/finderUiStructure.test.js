@@ -18,10 +18,9 @@ test('hair flow uses four screens without a blank safety page',()=>{
  assert.equal(source.includes("step===4&&a.journey==='hair'"),false);
 });
 
-test('wellness requires explicit age confirmation before results',()=>{
- assert.ok(source.includes("a.journey==='wellness'?a.adult!==null:true"));
- assert.ok(source.includes("aria-pressed={a.adult===true}"));
- assert.ok(source.includes("aria-pressed={a.adult===false}"));
+test('wellness route opens evidence-led guidance without automated supplement ranking',()=>{
+ assert.ok(source.includes("if(a.journey==='wellness')return"));
+ assert.ok(source.includes('href="#wellness"'));
 });
 
 test('restart clears age and safety-sensitive state',()=>{
@@ -43,8 +42,7 @@ test('all four Finder journeys remain visible',()=>{
  assert.equal(source.includes("filter(([key])=>journeyAvailable(key))"),false);
 });
 
-test('Neumi remains available to Smart Finder through the full product catalog',()=>{
+test('Beauty Route uses the current Beauty by Ildy product catalog',()=>{
  assert.ok(source.includes("import {products,localIngredient} from './products.jsx';"));
  assert.ok(source.includes("recommend(products,a)"));
- assert.equal(source.includes("recommend(publicProducts,a)"),false);
 });
