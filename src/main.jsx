@@ -101,18 +101,9 @@ const copy = {
       "Innováció, minőség és valódi hozzáadott érték alapján válogatott márkák.",
     magTitle: "MAGAZIN & ÚTMUTATÓK",
     magCards: [
-      [
-        "Retinol vagy retinal?",
-        "Mi a különbség, kinek melyik lehet jobb, és hogyan érdemes bevezetni?",
-      ],
-      [
-        "RF, LED, lézer vagy mikroáram?",
-        "Mit tudnak valójában az otthoni beauty eszközök — és mit nem?",
-      ],
-      [
-        "Termékelemzés: Medicube PDRN krém",
-        "Mi van benne, mit mond a tudomány, és mit ér valójában a teljes formula?",
-      ],
+      ["Hőhullámok világszerte","2026. szeptemberi metaanalízis arról, mennyire gyakoriak a menopauzális vazomotoros tünetek."],
+      ["Exoszóma-hype után: minőségellenőrzés","Friss áttekintés arról, miért fontosabb a forrás és a standardizálás, mint maga az „exoszóma” szó."],
+      ["Otthoni beauty készülékek: hol a legerősebb evidencia?","A 2026-os GRADE-alapú áttekintés különbséget tesz lézer, LED, RF és más technológiák között."],
     ],
     discover: "FEDEZD FEL",
     explore: "MEGNÉZEM",
@@ -202,18 +193,9 @@ const copy = {
       "Brands selected for innovation, quality and meaningful added value.",
     magTitle: "MAGAZINE & GUIDES",
     magCards: [
-      [
-        "Retinol or retinal?",
-        "What is the difference, who may prefer which, and how to introduce them?",
-      ],
-      [
-        "RF, LED, laser or microcurrent?",
-        "What at-home beauty devices can realistically do — and what they cannot?",
-      ],
-      [
-        "Product review: Medicube PDRN Cream",
-        "What is inside, what does the science say, and how strong is the full formula?",
-      ],
+      ["Hot flushes worldwide","A September 2026 meta-analysis maps the global prevalence of menopausal vasomotor symptoms."],
+      ["After the exosome hype: quality control","A fresh review asks why source, characterisation and standardisation matter more than the fashionable keyword itself."],
+      ["At-home beauty devices: where is the evidence strongest?","A 2026 GRADE-based review distinguishes laser, LED, RF and other technologies by evidence level."],
     ],
     discover: "DISCOVER",
     explore: "EXPLORE",
@@ -309,18 +291,9 @@ const copy = {
       "Ausgewählte Marken mit Fokus auf Innovation, Qualität und echten Mehrwert.",
     magTitle: "MAGAZIN & GUIDES",
     magCards: [
-      [
-        "Retinol oder Retinal?",
-        "Unterschiede, Einsatzbereiche und ein sinnvoller Einstieg.",
-      ],
-      [
-        "RF, LED, Laser oder Mikrostrom?",
-        "Was Beauty-Geräte für zu Hause realistisch leisten können — und was nicht?",
-      ],
-      [
-        "Produktanalyse: Medicube PDRN Creme",
-        "Was ist enthalten, was sagt die Wissenschaft und wie gut ist die Gesamtformel?",
-      ],
+      ["Hitzewallungen weltweit","Eine Metaanalyse vom September 2026 untersucht die globale Häufigkeit menopausaler vasomotorischer Symptome."],
+      ["Nach dem Exosomen-Hype: Qualitätskontrolle","Ein aktueller Review zeigt, warum Quelle, Charakterisierung und Standardisierung wichtiger sind als das Trendwort allein."],
+      ["Home-Beauty-Geräte: Wo ist die Evidenz am stärksten?","Ein GRADE-basierter Review von 2026 unterscheidet Laser, LED, RF und weitere Technologien nach Evidenzniveau."],
     ],
     discover: "ENTDECKEN",
     explore: "ANSEHEN",
@@ -571,13 +544,7 @@ function App() {
                 <h3>{m[0]}</h3>
                 <p>{m[1]}</p>
                 <a
-                  href={
-                    i === 1
-                      ? "#beauty-tech-guide"
-                      : i === 2
-                        ? "#product-medicube-pdrn"
-                        : "#ingredients"
-                  }
+                  href="#magazine"
                 >
                   {t.readGuide}
                   <ArrowRight size={14} />
