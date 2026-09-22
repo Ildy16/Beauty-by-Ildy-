@@ -35,14 +35,6 @@ export const finderMeta={
 'labo-h-scalp-strengthening':M('hair','hair',['scalp_care','cleansing'],[],['all'],['essential'],['base'],'C'),
 'mise-en-scene-perfect-serum':M('hair','hair',['smoothing','shine'],['dry_hair','manageability'],['all'],['essential'],['targeted'],'B'),
 'abib-pdrn-retinal-eye-patch':M('skincare','eye',['eye','hydration','glow'],['firmness','lines'],['all'],['advanced'],['extra'],'C',['retinoid','eye_area','strong_active']),
-'neumi-skin':M('skincare','agewell',['hydration','firmness'],['glow','texture'],['dry','normal','combination'],['balanced'],['targeted'],'C',['partner','fish_source','marketing_caution']),
-'neumi-hair':M('hair','hair',['conditioning','scalp_care'],['smoothing','fullness_appearance'],['all'],['balanced'],['targeted'],'C',['partner','marketing_caution']),
-'neumi-nutriswish':M('wellness','wellness',['general_wellness'],[],['adult'],['wellness'],['targeted'],'C',['supplement','partner']),
-'neumi-neuro':M('wellness','wellness',['focus_support'],['general_wellness'],['adult'],['wellness'],['targeted'],'C',['supplement','caffeine','partner']),
-'neumi-hers':M('wellness','wellness',['womens_wellness'],[],['adult'],['wellness'],['targeted'],'C',['supplement','herbal_hormonal_context','partner']),
-'neumi-neumist-energy':M('wellness','wellness',['energy_support'],[],['adult'],['wellness'],['extra'],'U',['supplement','caffeine','partner','needs_verification']),
-'neumi-neumist-immunity':M('wellness','wellness',['general_wellness'],[],['adult'],['wellness'],['extra'],'U',['supplement','partner','needs_verification']),
-'neumi-neumist-relax':M('wellness','wellness',['relaxation_support'],[],['adult'],['wellness'],['extra'],'U',['supplement','partner','needs_verification'])
 };
 
 export const goalLabels={
