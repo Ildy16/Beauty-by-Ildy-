@@ -597,7 +597,7 @@ function App() {
         </a>
         <nav>
           {t.nav.map((n) => (
-            <a key={n[0]} href={`#${n[1]}`}>
+            <a key={n[0]} href={`#${n[1]}`} onClick={() => setOpen(false)}>
               {n[0]}
             </a>
           ))}
@@ -613,7 +613,12 @@ function App() {
             </button>
           ))}
         </div>
-        <button className="menuBtn" onClick={() => setOpen(!open)}>
+        <button
+          className="menuBtn"
+          onClick={() => setOpen(!open)}
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
+        >
           {open ? <X /> : <Menu />}
         </button>
       </header>
@@ -626,7 +631,11 @@ function App() {
           ))}
           <div className="mobileLangs">
             {["hu", "en", "de"].map((l) => (
-              <button key={l} onClick={() => setLang(l)}>
+              <button
+                key={l}
+                className={lang === l ? "active" : ""}
+                onClick={() => { setLang(l); setOpen(false); }}
+              >
                 {l.toUpperCase()}
               </button>
             ))}
@@ -660,6 +669,9 @@ function App() {
               {labels[x]}
             </a>
           ))}
+        </div>
+        <div className="footerContact">
+          <a href="mailto:beauty@beautybyildy.com">beauty@beautybyildy.com</a>
         </div>
         <p className="fineprint">{t.disclaimer}</p>
       </footer>
