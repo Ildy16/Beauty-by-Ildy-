@@ -28,3 +28,29 @@
  .wellnessPage .wellnessHero h1{margin:14px 0;font-size:var(--bbi-hero-title)}
 }
 
+
+
+/* Final partner section after Neumi separation */
+.wellnessPartnerGrid{grid-template-columns:minmax(0,620px)}
+.wellnessPartnerGrid article{border-color:rgba(170,150,115,.24)}
+.wellnessPartnerCta{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:max-content;
+  margin-top:18px;
+  min-height:40px;
+  padding:0 15px;
+  border:1px solid #b79a5b;
+  background:#09264a;
+  color:#fff;
+  text-decoration:none;
+  font:600 8px/1 Montserrat,Arial,sans-serif;
+  letter-spacing:1px;
+}
+.wellnessPartnerCta:hover,
+.wellnessPartnerCta:focus-visible{background:#103a6a}
+@media(max-width:620px){
+  .wellnessPartnerGrid{grid-template-columns:1fr}
+  .wellnessPartnerCta{min-height:42px}
+}
