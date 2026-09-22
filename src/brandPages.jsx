@@ -1,6 +1,5 @@
 import React from "react";
-import { ArrowLeft, ArrowRight, ExternalLink } from "lucide-react";
-import { products } from "./products.jsx";
+import { ArrowLeft, ExternalLink } from "lucide-react";
 import "./brandPages.css";
 
 const NUSKIN = [
@@ -85,10 +84,6 @@ const copy = {
     nuskinTitle:"NU SKIN",
     nuskinLead:"Külön Nu Skin válogatás: beauty tech, bőrápolás, hajápolás, vitaminok és Pharmanex wellness egy helyen. A termékadatokat a hivatalos magyar és EMEA Nu Skin források alapján építjük fel.",
     nuskinNote:"A vásárlás minden esetben a Nu Skin hivatalos rendszerében történik. A vásárolható termékek közvetlenül a megfelelő Nu Skin termékoldalra vezetnek; a rendszer-, információs vagy már nem forgalmazott tételeknél külön jelöljük, ha nincs közvetlen vásárlás.",
-    neumiTitle:"NEUMI",
-    neumiLead:"A Beauty by Ildy Neumi válogatása külön márkaoldalon: bőrápolás, hajápolás és wellness egy letisztult, könnyen áttekinthető rendszerben. A vásárlás a Neumi hivatalos oldalán történik.",
-    neumiShop:"VÁSÁRLÁS A NEUMI OLDALÁN",
-    neumiDirect:"HIVATALOS VÁSÁRLÁS",
     official:"HIVATALOS TERMÉKOLDAL",
     buyOfficial:"VÁSÁRLÁS A NU SKIN OLDALÁN",
     system:"RENDSZER MEGTEKINTÉSE",
@@ -105,10 +100,6 @@ const copy = {
     nuskinTitle:"NU SKIN",
     nuskinLead:"A dedicated Nu Skin edit covering beauty tech, skincare, haircare, vitamins and Pharmanex wellness, built from current official Hungarian and EMEA Nu Skin sources.",
     nuskinNote:"Purchases are completed entirely within Nu Skin’s official system. Products available for purchase open the relevant Nu Skin product page directly; system, informational or discontinued items are clearly marked when direct purchase is not available.",
-    neumiTitle:"NEUMI",
-    neumiLead:"A dedicated Beauty by Ildy Neumi edit bringing skincare, haircare and wellness into one clear, curated experience. Purchases continue on the official Neumi website.",
-    neumiShop:"SHOP ON NEUMI",
-    neumiDirect:"OFFICIAL SHOP",
     official:"OFFICIAL PRODUCT PAGE",
     buyOfficial:"SHOP ON NU SKIN",
     system:"VIEW SYSTEM",
@@ -125,10 +116,6 @@ const copy = {
     nuskinTitle:"NU SKIN",
     nuskinLead:"Eine eigene Nu-Skin-Auswahl mit Beauty Tech, Hautpflege, Haarpflege, Vitaminen und Pharmanex-Wellness auf Basis aktueller offizieller ungarischer und EMEA-Nu-Skin-Quellen.",
     nuskinNote:"Der Kauf erfolgt vollständig im offiziellen Nu-Skin-System. Kaufbare Produkte führen direkt zur jeweiligen Nu-Skin-Produktseite; System-, Informations- oder nicht mehr verfügbare Artikel werden klar gekennzeichnet, wenn kein direkter Kauf möglich ist.",
-    neumiTitle:"NEUMI",
-    neumiLead:"Eine eigene Beauty-by-Ildy-Neumi-Auswahl mit Hautpflege, Haarpflege und Wellness in einer klaren, kuratierten Übersicht. Der Kauf erfolgt auf der offiziellen Neumi-Website.",
-    neumiShop:"BEI NEUMI KAUFEN",
-    neumiDirect:"OFFIZIELLER SHOP",
     official:"OFFIZIELLE PRODUKTSEITE",
     buyOfficial:"BEI NU SKIN KAUFEN",
     system:"SYSTEM ANSEHEN",
@@ -215,93 +202,3 @@ const groupDescriptions={
 const localGroup=(group,lang)=>(groupLabels[lang]||groupLabels.hu)[group]||group;
 const archivedNuSkin=new Set(["Nu Skin 180° Anti-Aging Skin Therapy System","Epoch Hand Cream","Epoch Ava Puhi Moni Light Conditioner","Liquid Body Lufra","ReNu Hair Mask","AP 24 Anti-Plaque Fluoride Toothpaste","R² Day + Night","CordyMax CS-4","Pro-B","LifePak+ & Marine Omega ADR-csomag"]);
 const localGroupDescription=(group,lang)=>(groupDescriptions[lang]||groupDescriptions.hu)[group]||"";
-const neumiCategoryLabels={
-  hu:{agewell:"AGE-WELL / BŐRÁPOLÁS",hair:"HAJ & FEJBŐR",wellness:"WELLNESS"},
-  en:{agewell:"AGE-WELL / SKINCARE",hair:"HAIR & SCALP",wellness:"WELLNESS"},
-  de:{agewell:"AGE-WELL / HAUTPFLEGE",hair:"HAAR & KOPFHAUT",wellness:"WELLNESS"}
-};
-const neumiCategoryText={
-  hu:{agewell:"Célzott, hidratáló és age-well bőrápolás.",hair:"Leave-in haj- és fejbőrápolás.",wellness:"Neumi wellness- és étrend-kiegészítő termék."},
-  en:{agewell:"Targeted hydrating and age-well skincare.",hair:"Leave-in hair and scalp care.",wellness:"Neumi wellness and supplement product."},
-  de:{agewell:"Gezielte feuchtigkeitsspendende Age-Well-Hautpflege.",hair:"Leave-in-Haar- und Kopfhautpflege.",wellness:"Neumi Wellness- und Nahrungsergänzungsprodukt."}
-};
-const localNeumiCategory=(cat,lang)=>(neumiCategoryLabels[lang]||neumiCategoryLabels.hu)[cat]||cat.toUpperCase();
-const localNeumiText=(cat,lang)=>(neumiCategoryText[lang]||neumiCategoryText.hu)[cat]||"";
-const localizedNuSkinUrl=(url,lang)=>{
-  if(!url.includes("mysite.mynuskin.com")) return url;
-  if(lang==="de") return url.replace("/catalog/hu/hu/","/catalog/at/de/");
-  if(lang==="en") return url.replace("/catalog/hu/hu/","/catalog/ie/en/");
-  return url;
-};
-const localizedNuSkinCta=(name,url,lang,t)=>{
-  if(archivedNuSkin.has(name)) return t.archive;
-  if(name==="ageLOC TRMe") return t.system;
-  if(["hu","de","en"].includes(lang) && url.includes("mysite.mynuskin.com")) return t.buyOfficial;
-  return t.official;
-};
-
-function BrandHero({title,lead,note,t}) {
-  return <section className="brandPageHero"><div>
-    <a className="brandPageBack" href="#top"><ArrowLeft size={14}/>{t.back}</a>
-    <p className="eyebrow">BEAUTY BY ILDY · BRAND EDIT</p>
-    <h1>{title}</h1>
-    <p className="brandPageLead">{lead}</p>
-    {note && <p className="brandPageNote">{note}</p>}
-  </div></section>;
-}
-
-export function NuSkinPage({lang="hu"}) {
-  const t=copy[lang]||copy.hu;
-  return <main className="brandPage">
-    <BrandHero title={t.nuskinTitle} lead={t.nuskinLead} note={t.nuskinNote} t={t}/>
-    <section className="brandPageBody">
-      <div className="brandPageMeta"><span>{NUSKIN.length} {t.products}</span><small>{t.verified}</small></div><p className="brandPageNote">{t.localeNote}</p>
-      <div className="brandGroups">
-        {[...new Set(NUSKIN.map(([,group])=>group))].map(group=><section className="brandGroup" key={group}>
-          <div className="brandGroupHead"><h2>{localGroup(group,lang)}</h2><span>{NUSKIN.filter(([,g])=>g===group).length}</span></div>
-          <div className="brandProductGrid">
-            {NUSKIN.filter(([,g])=>g===group).map(([name,,desc,url])=>{
-              const direct=url.includes("mysite.mynuskin.com");
-              const special=archivedNuSkin.has(name)||name==="ageLOC TRMe"||!direct;
-              return <article className={`brandProductCard nuskinCard ${direct&&!special?"isPurchasable":"isInfo"}`} key={name}>
-                <div className="brandCardTopline"><span>{localGroup(group,lang)}</span><em>{direct&&!special?t.available:t.infoOnly}</em></div>
-                <h2>{name}</h2><p>{desc||localGroupDescription(group,lang)}</p>
-                <div className="brandCardActions">
-                  <a className={direct&&!special?"brandShopLink":""} href={localizedNuSkinUrl(url,lang)} target="_blank" rel="noopener noreferrer">{localizedNuSkinCta(name,url,lang,t)}<ExternalLink size={13}/></a>
-                </div>
-              </article>
-            })}
-          </div>
-        </section>)}
-      </div>
-    </section>
-  </main>;
-}
-
-export function NeumiPage({lang="hu"}) {
-  const t=copy[lang]||copy.hu;
-  const neumi=products.filter(p=>p.brand==="NEUMI");
-  const categories=[...new Set(neumi.map(p=>p.category))];
-  return <main className="brandPage">
-    <BrandHero title={t.neumiTitle} lead={t.neumiLead} t={t}/>
-    <section className="brandPageBody">
-      <div className="brandPageMeta"><span>{neumi.length} {t.products}</span><small>{t.verified}</small></div>
-      <div className="brandGroups neumiGroups">
-        {categories.map(category=><section className="brandGroup" key={category}>
-          <div className="brandGroupHead"><h2>{localNeumiCategory(category,lang)}</h2><span>{neumi.filter(p=>p.category===category).length}</span></div>
-          <div className="brandProductGrid">
-            {neumi.filter(p=>p.category===category).map(p=><article className="brandProductCard neumiCard" key={p.slug}>
-              <div className="brandCardTopline"><span>{localNeumiCategory(p.category,lang)}</span><em>{t.neumiDirect}</em></div>
-              <h2>{p.name}</h2>
-              <p>{localNeumiText(p.category,lang)}</p>
-              <div className="brandCardActions">
-                {p.buyUrl&&<a className="brandShopLink" href={p.buyUrl} target="_blank" rel="noopener noreferrer">{t.neumiShop}<ExternalLink size={13}/></a>}
-                <a className="brandDetailsLink" href={`#product-${p.slug}`}>{t.details}<ArrowRight size={13}/></a>
-              </div>
-            </article>)}
-          </div>
-        </section>)}
-      </div>
-    </section>
-  </main>;
-}
