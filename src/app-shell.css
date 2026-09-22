@@ -97,8 +97,12 @@
   padding: 5px 4px;
 }
 .mobileLangs button:hover,
-.mobileLangs button:focus-visible {
+.mobileLangs button:focus-visible,
+.mobileLangs button.active {
   color: var(--gold);
+}
+.mobileLangs button.active {
+  border-bottom: 1px solid var(--gold);
 }
 
 footer {
@@ -163,6 +167,22 @@ footer > div:first-child {
     sans-serif;
   text-decoration: none;
   color: #b8c0c6;
+}
+.footerContact {
+  grid-column: 2;
+  grid-row: 2;
+  justify-self: end;
+  margin-top: 2px;
+}
+.footerContact a {
+  color: #cbd2d9;
+  text-decoration: none;
+  font: 400 9px Montserrat, Arial, sans-serif;
+  letter-spacing: .35px;
+}
+.footerContact a:hover,
+.footerContact a:focus-visible {
+  color: var(--gold);
 }
 .fineprint {
   grid-column: 1/-1;
@@ -263,9 +283,18 @@ footer > div:first-child {
     font-size: 8px;
     color: #aab2b4;
   }
-  .fineprint {
+  .footerContact {
     grid-column: 1;
     grid-row: 3;
+    justify-self: start;
+    margin-top: 0;
+  }
+  .footerContact a {
+    font-size: 8px;
+  }
+  .fineprint {
+    grid-column: 1;
+    grid-row: 4;
     padding-top: 8px;
     font-size: 8px;
     color: #849096;
