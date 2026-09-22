@@ -287,3 +287,17 @@
   .finderLanding .finderHeroActions .finderPrimary{width:auto}
   .finderLanding .finderIntroCard{margin-top:22px;padding:18px 18px}
 }
+
+
+/* Final brand consistency: deep navy for primary interactive states */
+.finderFlow .finderPrimary,
+.finderResults .finderPrimary{
+  background:#09264a;
+  color:#fff;
+  border:1px solid #09264a;
+}
+.finderFlow .finderPrimary:hover,
+.finderResults .finderPrimary:hover{
+  background:#103a6a;
+  border-color:#103a6a;
+}
