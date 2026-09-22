@@ -16,7 +16,7 @@ import { IngredientsPage } from "./ingredients.jsx";
 import { MedicubePdrnProduct } from "./product.jsx";
 import { ProductsPage, ProductDetail } from "./products.jsx";
 import { BeautyFinder } from "./beautyFinder.jsx";
-import { NuSkinPage, NeumiPage } from "./brandPages.jsx";
+import { NuSkinPage } from "./brandPages.jsx";
 import { MagazinePage } from "./magazine.jsx";
 import "./styles.css";
 
@@ -31,7 +31,6 @@ const copy = {
       ["TERMÉKEK", "products"],
       ["BEAUTY ÚTVONAL", "beauty-finder"],
       ["NU SKIN", "nuskin"],
-      ["NEUMI", "neumi"],
       ["MAGAZIN", "magazine"],
     ],
     eyebrow: "BEAUTY • TECHNOLOGY • WELLNESS",
@@ -133,7 +132,6 @@ const copy = {
       ["PRODUCTS", "products"],
       ["BEAUTY FINDER", "beauty-finder"],
       ["NU SKIN", "nuskin"],
-      ["NEUMI", "neumi"],
       ["MAGAZINE", "magazine"],
     ],
     eyebrow: "BEAUTY • TECHNOLOGY • WELLNESS",
@@ -235,7 +233,6 @@ const copy = {
       ["PRODUKTE", "products"],
       ["BEAUTY FINDER", "beauty-finder"],
       ["NU SKIN", "nuskin"],
-      ["NEUMI", "neumi"],
       ["MAGAZIN", "magazine"],
     ],
     eyebrow: "BEAUTY • TECHNOLOGIE • WELLNESS",
@@ -338,7 +335,6 @@ const copy = {
 const brands = {
   hu: [
     ["Nu Skin", "MÁR ELÉRHETŐ", "Beauty tech + bőrápolás + wellness"],
-    ["Neumi", "MÁR ELÉRHETŐ", "Hatóanyag-beviteli technológia + wellness"],
     ["HubisLab", "VÁLOGATOTT", "Professzionális K-beauty"],
     ["Biodance", "VÁLOGATOTT", "K-beauty + PDRN"],
     ["Aestura", "VÁLOGATOTT", "Barrier-ápolás"],
@@ -351,7 +347,6 @@ const brands = {
   ],
   en: [
     ["Nu Skin", "AVAILABLE NOW", "Beauty tech + skincare + wellness"],
-    ["Neumi", "AVAILABLE NOW", "Delivery technology + wellness"],
     ["HubisLab", "CURATED", "Professional K-beauty"],
     ["Biodance", "CURATED", "K-beauty + PDRN"],
     ["Aestura", "CURATED", "Barrier care"],
@@ -364,7 +359,6 @@ const brands = {
   ],
   de: [
     ["Nu Skin", "JETZT VERFÜGBAR", "Beauty Tech + Hautpflege + Wellness"],
-    ["Neumi", "JETZT VERFÜGBAR", "Delivery-Technologie + Wellness"],
     ["HubisLab", "AUSGEWÄHLT", "Professionelle K-Beauty"],
     ["Biodance", "AUSGEWÄHLT", "K-Beauty + PDRN"],
     ["Aestura", "AUSGEWÄHLT", "Barrierpflege"],
@@ -410,7 +404,6 @@ function currentPage() {
       "products",
       "beauty-finder",
       "nuskin",
-      "neumi",
       "magazine",
       "product-medicube-pdrn",
     ].includes(h)
@@ -458,7 +451,6 @@ function App() {
   else if (page === "products") content = <ProductsPage lang={lang} />;
   else if (page === "beauty-finder") content = <BeautyFinder lang={lang} />;
   else if (page === "nuskin") content = <NuSkinPage lang={lang} />;
-  else if (page === "neumi") content = <NeumiPage lang={lang} />;
   else if (page === "magazine") content = <MagazinePage lang={lang} />;
   else if (page === "product-medicube-pdrn")
     content = <MedicubePdrnProduct lang={lang} />;
