@@ -5,6 +5,18 @@ import "./magazine.css";
 const ARTICLES = {
   hu: [
     {
+      tag:"MENOPAUZA 40+/50+ · 2026. SZEPTEMBER",
+      title:"Hőhullámok világszerte: egy új metaanalízis megmutatja, mennyire gyakoriak valójában",
+      dek:"A Climacteric folyóiratban 2026. szeptember 16-án megjelent szisztematikus áttekintés és metaanalízis a menopauzális vazomotoros tünetek globális előfordulását vizsgálta.",
+      body:[
+        "A hőhullámok és az éjszakai izzadás a menopauza legismertebb tünetei közé tartoznak, de gyakoriságuk régiónként, életkoronként és a menopauza szakasza szerint is eltérhet. Az új összegzés célja az volt, hogy több ország adataiból átfogóbb képet adjon.",
+        "Az ilyen metaanalízisek azért fontosak, mert nem egyetlen klinika vagy ország tapasztalatát emelik általános érvényűvé. Ugyanakkor az eltérő kérdőívek, definíciók és vizsgált populációk miatt a számokat mindig a módszertani háttérrel együtt kell értelmezni.",
+        "Beauty by Ildy-szempontból a tanulság egyszerű: a menopauzás jóllét nem rétegtéma. A tünetek gyakoriak, de az egyéni terhelés nagyon különböző lehet, ezért a wellness-tartalmaknál különválasztjuk az életmódtámogatást, a nem hormonális lehetőségeket és az orvosi kezelést."
+      ],
+      source:"Climacteric / PubMed · 2026.09.16",
+      url:"https://pubmed.ncbi.nlm.nih.gov/42747278/"
+    },
+    {
       tag:"FRISS TUDOMÁNY · 2026. SZEPTEMBER",
       title:"Exoszóma-hype után: most jön a minőségellenőrzés korszaka?",
       dek:"Egy 2026. szeptember 9-én megjelent szakirodalmi áttekintés szerint a bőrre szánt mikrobiom-eredetű vezikulák körül a marketingnyelv gyorsabban fejlődött, mint az egységes azonosítási és minőségbiztosítási szabályok.",
@@ -117,6 +129,18 @@ const ARTICLES = {
   ],
   en: [
     {
+      tag:"MENOPAUSE 40+/50+ · SEPTEMBER 2026",
+      title:"Hot flushes worldwide: a new meta-analysis maps how common vasomotor symptoms really are",
+      dek:"A systematic review and meta-analysis published in Climacteric on September 16, 2026 examined the global prevalence of menopausal vasomotor symptoms.",
+      body:[
+        "Hot flushes and night sweats are among the best-known menopause symptoms, but prevalence can vary by region, age and stage of the menopause transition. The new synthesis set out to combine data across populations for a broader picture.",
+        "Meta-analyses like this matter because they reduce the temptation to generalise from one clinic or country. At the same time, differences in questionnaires, definitions and study populations mean prevalence figures still need methodological context.",
+        "For Beauty by Ildy, the practical message is that menopausal wellbeing is not a niche topic. Symptoms are common, but burden varies widely, so we separate lifestyle support, non-hormonal options and medical treatment in our wellness coverage."
+      ],
+      source:"Climacteric / PubMed · 2026-09-16",
+      url:"https://pubmed.ncbi.nlm.nih.gov/42747278/"
+    },
+    {
       tag:"NEW SCIENCE · SEPTEMBER 2026",
       title:"After the exosome hype: is quality control becoming the real story?",
       dek:"A review published on September 9, 2026 argues that terminology around microbiome-derived vesicles in skin-directed cosmetics has moved faster than harmonised identity and quality standards.",
@@ -228,6 +252,18 @@ const ARTICLES = {
     }
   ],
   de: [
+    {
+      tag:"MENOPAUSE 40+/50+ · SEPTEMBER 2026",
+      title:"Hitzewallungen weltweit: Eine neue Metaanalyse zeigt, wie häufig vasomotorische Symptome wirklich sind",
+      dek:"Eine am 16. September 2026 in Climacteric veröffentlichte systematische Übersichtsarbeit und Metaanalyse untersuchte die globale Häufigkeit menopausaler vasomotorischer Symptome.",
+      body:[
+        "Hitzewallungen und nächtliches Schwitzen gehören zu den bekanntesten Menopausesymptomen, ihre Häufigkeit kann jedoch je nach Region, Alter und Phase der Menopause variieren. Die neue Analyse bündelt Daten aus unterschiedlichen Populationen.",
+        "Solche Metaanalysen sind wichtig, weil sie verhindern, dass Erfahrungen aus einer einzelnen Klinik oder einem Land verallgemeinert werden. Unterschiedliche Fragebögen, Definitionen und Studienpopulationen müssen bei der Interpretation dennoch berücksichtigt werden.",
+        "Für Beauty by Ildy ist die praktische Botschaft klar: Menopausales Wohlbefinden ist kein Nischenthema. Die Symptome sind häufig, ihre Belastung aber sehr individuell; deshalb trennen wir Lifestyle-Unterstützung, nicht-hormonelle Optionen und medizinische Behandlung klar voneinander."
+      ],
+      source:"Climacteric / PubMed · 16.09.2026",
+      url:"https://pubmed.ncbi.nlm.nih.gov/42747278/"
+    },
     {
       tag:"NEUE FORSCHUNG · SEPTEMBER 2026",
       title:"Nach dem Exosomen-Hype: Wird Qualitätskontrolle jetzt zum wichtigsten Thema?",
@@ -348,6 +384,7 @@ const COPY={
 };
 
 const CATEGORY_BY_INDEX=[
+  "MENOPAUSE 40+/50+", // global vasomotor symptoms meta-analysis
   "NEW SCIENCE",      // exosome
   "TREND RADAR",      // Prysm iO
   "BEAUTY TECH",      // awards / devices
