@@ -4,23 +4,21 @@ import {readFile} from 'node:fs/promises';
 
 const productsSource=await readFile(new URL('./products.jsx',import.meta.url),'utf8');
 const finderSource=await readFile(new URL('./beautyFinder.jsx',import.meta.url),'utf8');
+const mainSource=await readFile(new URL('./main.jsx',import.meta.url),'utf8');
+const finderDataSource=await readFile(new URL('./finderData.js',import.meta.url),'utf8');
 
-test('Neumi public gate is disabled on the multi-brand site',()=>{
- assert.ok(productsSource.includes('export const NEUMI_PUBLIC_ENABLED=false;'));
- assert.ok(productsSource.includes("publicProducts=products.filter(p=>NEUMI_PUBLIC_ENABLED||p.brand!=='NEUMI')"));
+test('Neumi is fully separated from the Beauty by Ildy public experience',()=>{
+ assert.equal(/NEUMI|Neumi|neumi-/.test(productsSource),false);
+ assert.equal(/NEUMI|Neumi|neumi-/.test(mainSource),false);
+ assert.equal(/NEUMI|Neumi|neumi-/.test(finderDataSource),false);
 });
 
-test('public product pages use the gated catalog',()=>{
- assert.ok(productsSource.includes('publicProducts.filter('));
- assert.ok(productsSource.includes('publicProducts.find(x=>x.slug===slug)'));
+test('Beauty Route uses the current Beauty by Ildy product catalogue',()=>{
+ assert.ok(finderSource.includes("import {products,localIngredient} from './products.jsx';"));
+ assert.ok(finderSource.includes('recommend(products,a)'));
 });
 
-test('Smart Finder uses the gated public catalog',()=>{
- assert.ok(finderSource.includes("import {publicProducts,localIngredient} from './products.jsx';"));
- assert.ok(finderSource.includes('recommend(publicProducts,a)'));
-});
-
-test('Finder hides journeys with no public products',()=>{
- assert.ok(finderSource.includes("if(key==='wellness')return publicProducts.some(p=>p.category==='wellness')"));
- assert.ok(finderSource.includes('filter(([key])=>journeyAvailable(key))'));
+test('wellness route points to editorial guidance instead of automated supplement ranking',()=>{
+ assert.ok(finderSource.includes("if(a.journey==='wellness')return"));
+ assert.ok(finderSource.includes('href="#wellness"'));
 });
