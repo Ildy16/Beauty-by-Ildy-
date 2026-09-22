@@ -202,3 +202,53 @@ const groupDescriptions={
 const localGroup=(group,lang)=>(groupLabels[lang]||groupLabels.hu)[group]||group;
 const archivedNuSkin=new Set(["Nu Skin 180° Anti-Aging Skin Therapy System","Epoch Hand Cream","Epoch Ava Puhi Moni Light Conditioner","Liquid Body Lufra","ReNu Hair Mask","AP 24 Anti-Plaque Fluoride Toothpaste","R² Day + Night","CordyMax CS-4","Pro-B","LifePak+ & Marine Omega ADR-csomag"]);
 const localGroupDescription=(group,lang)=>(groupDescriptions[lang]||groupDescriptions.hu)[group]||"";
+const localizedNuSkinUrl=(url,lang)=>{
+  if(!url.includes("mysite.mynuskin.com")) return url;
+  if(lang==="de") return url.replace("/catalog/hu/hu/","/catalog/at/de/");
+  if(lang==="en") return url.replace("/catalog/hu/hu/","/catalog/ie/en/");
+  return url;
+};
+const localizedNuSkinCta=(name,url,lang,t)=>{
+  if(archivedNuSkin.has(name)) return t.archive;
+  if(name==="ageLOC TRMe") return t.system;
+  if(["hu","de","en"].includes(lang) && url.includes("mysite.mynuskin.com")) return t.buyOfficial;
+  return t.official;
+};
+
+function BrandHero({title,lead,note,t}) {
+  return <section className="brandPageHero"><div>
+    <a className="brandPageBack" href="#top"><ArrowLeft size={14}/>{t.back}</a>
+    <p className="eyebrow">BEAUTY BY ILDY · BRAND EDIT</p>
+    <h1>{title}</h1>
+    <p className="brandPageLead">{lead}</p>
+    {note && <p className="brandPageNote">{note}</p>}
+  </div></section>;
+}
+
+export function NuSkinPage({lang="hu"}) {
+  const t=copy[lang]||copy.hu;
+  return <main className="brandPage">
+    <BrandHero title={t.nuskinTitle} lead={t.nuskinLead} note={t.nuskinNote} t={t}/>
+    <section className="brandPageBody">
+      <div className="brandPageMeta"><span>{NUSKIN.length} {t.products}</span><small>{t.verified}</small></div><p className="brandPageNote">{t.localeNote}</p>
+      <div className="brandGroups">
+        {[...new Set(NUSKIN.map(([,group])=>group))].map(group=><section className="brandGroup" key={group}>
+          <div className="brandGroupHead"><h2>{localGroup(group,lang)}</h2><span>{NUSKIN.filter(([,g])=>g===group).length}</span></div>
+          <div className="brandProductGrid">
+            {NUSKIN.filter(([,g])=>g===group).map(([name,,desc,url])=>{
+              const direct=url.includes("mysite.mynuskin.com");
+              const special=archivedNuSkin.has(name)||name==="ageLOC TRMe"||!direct;
+              return <article className={`brandProductCard nuskinCard ${direct&&!special?"isPurchasable":"isInfo"}`} key={name}>
+                <div className="brandCardTopline"><span>{localGroup(group,lang)}</span><em>{direct&&!special?t.available:t.infoOnly}</em></div>
+                <h2>{name}</h2><p>{desc||localGroupDescription(group,lang)}</p>
+                <div className="brandCardActions">
+                  <a className={direct&&!special?"brandShopLink":""} href={localizedNuSkinUrl(url,lang)} target="_blank" rel="noopener noreferrer">{localizedNuSkinCta(name,url,lang,t)}<ExternalLink size={13}/></a>
+                </div>
+              </article>
+            })}
+          </div>
+        </section>)}
+      </div>
+    </section>
+  </main>;
+}
