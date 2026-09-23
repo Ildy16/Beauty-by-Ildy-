@@ -43,7 +43,7 @@ const docs={
  affiliate:{title:'Affiliate nyilatkozat',sections:[
   ['1. Kereskedelmi affiliate tevékenység',<>A Beauty by Ildy kereskedelmi célú beauty-, beauty-tech- és wellness-tartalomplatform. Egyes gombok, termékajánlások és kimenő linkek affiliate, referral vagy más partneri hivatkozások lehetnek.</>],
   ['2. Hogyan működik a jutalék',<>Ha jogosult partnerlinken keresztül megfelelő vásárlás vagy más minősített tranzakció történik, a Beauty by Ildy jutalékot vagy más partneri díjazást kaphat. Ez jellemzően nem növeli a partner által a vásárlónak felszámított árat.</>],
-  ['3. Partnerpéldák',<>Aktív vagy tervezett partneri kapcsolatok között szerepelhet Nu Skin, HubisLab, Biodance, Aestura, NIRA, CurrentBody, Medicube, IOPE, Sulwhasoo, Genabelle és más szolgáltató. Egy márka megjelenése önmagában nem jelenti azt, hogy minden hozzá vezető link jutalékos.</>],
+  ['3. Partnerpéldák',<>Aktív vagy tervezett partneri kapcsolatok között szerepelhet Nu Skin, doTERRA, HubisLab, Biodance, Aestura, NIRA, CurrentBody, Medicube, IOPE, Sulwhasoo, Genabelle és más szolgáltató. Egy márka megjelenése önmagában nem jelenti azt, hogy minden hozzá vezető link jutalékos.</>],
   ['4. Független válogatás',<>Az affiliate kapcsolat önmagában nem garantál pozitív értékelést vagy kiemelést. A Beauty by Ildy célja, hogy a válogatásnál a formula, technológia, biztonság, bizonyítékok és valódi felhasználói érték elsőbbséget élvezzen a jutalékkal szemben.</>],
   ['5. Ajándékba kapott teszttermékek',<>Ha egy terméket vagy eszközt tesztelésre ingyenesen kapunk, vagy fizetett együttműködés része, ezt a kapcsolódó tartalomnál egyértelműen jelöljük. Az ajándék vagy díjazás nem jelent automatikusan pozitív véleményt.</>]
  ]},
