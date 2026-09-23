@@ -58,3 +58,27 @@
 .magFilters button{border:1px solid var(--line);background:var(--ivory);padding:8px 11px;font:600 8px Montserrat;letter-spacing:1px;color:#5f686d;cursor:pointer}
 .magFilters button.active{border-color:#09264a;color:#fff;background:#09264a}
 @media(max-width:620px){.magFilters{padding:18px 20px 0;gap:6px}.magFilters button{padding:7px 9px;font-size:7px}}
+
+
+/* Final polish — slim editorial filter controls */
+.magFilters{
+  padding-top:18px;
+  gap:6px;
+}
+.magFilters button{
+  min-height:28px;
+  padding:5px 9px;
+  font-size:7.5px;
+  letter-spacing:.8px;
+}
+@media(max-width:620px){
+  .magFilters{
+    padding:14px 20px 0;
+    gap:5px;
+  }
+  .magFilters button{
+    min-height:27px;
+    padding:5px 8px;
+    font-size:7px;
+  }
+}
