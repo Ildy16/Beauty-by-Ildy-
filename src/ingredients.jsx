@@ -86,9 +86,9 @@ const mapItems=(lang)=>{
 };
 
 const copy={
- hu:{back:'Vissza a főoldalra',eye:'BEAUTY BY ILDY • TUDÁSTÁR',title:'Kozmetikai összetevők, érthetően.',lead:'Nem csak azt nézzük, mi szerepel az INCI-listán. A formát, koncentrációt — ha ismert —, formulát, tolerálhatóságot és tudományos hátteret is külön értékeljük.',updated:'Utoljára szakmailag frissítve: 2026. augusztus',labels:['MIT JELENT?','MIT TUDUNK RÓLA?','MIRE FIGYELÜNK?']},
- en:{back:'Back to home',eye:'BEAUTY BY ILDY • KNOWLEDGE BASE',title:'Cosmetic ingredients, explained.',lead:'We look beyond the INCI list and assess form, disclosed concentration, formulation, tolerability and scientific evidence separately.',updated:'Last scientifically reviewed: August 2026',labels:['WHAT IS IT?','WHAT DO WE KNOW?','WHAT DO WE CHECK?']},
- de:{back:'Zurück zur Startseite',eye:'BEAUTY BY ILDY • WISSENSBASIS',title:'Kosmetische Inhaltsstoffe, verständlich erklärt.',lead:'Wir betrachten mehr als die INCI-Liste und bewerten Form, bekannte Konzentration, Formulierung, Verträglichkeit und wissenschaftliche Evidenz getrennt.',updated:'Zuletzt wissenschaftlich geprüft: August 2026',labels:['WAS IST DAS?','WAS WISSEN WIR?','WORAUF ACHTEN WIR?']}
+ hu:{back:'Vissza a főoldalra',eye:'BEAUTY BY ILDY • TUDÁSTÁR',title:'Kozmetikai összetevők, érthetően.',lead:'Nem csak azt nézzük, mi szerepel az INCI-listán. A formát, koncentrációt — ha ismert —, formulát, tolerálhatóságot és tudományos hátteret is külön értékeljük.',updated:'Utoljára szakmailag frissítve: 2026. szeptember',labels:['MIT JELENT?','MIT TUDUNK RÓLA?','MIRE FIGYELÜNK?']},
+ en:{back:'Back to home',eye:'BEAUTY BY ILDY • KNOWLEDGE BASE',title:'Cosmetic ingredients, explained.',lead:'We look beyond the INCI list and assess form, disclosed concentration, formulation, tolerability and scientific evidence separately.',updated:'Last scientifically reviewed: September 2026',labels:['WHAT IS IT?','WHAT DO WE KNOW?','WHAT DO WE CHECK?']},
+ de:{back:'Zurück zur Startseite',eye:'BEAUTY BY ILDY • WISSENSBASIS',title:'Kosmetische Inhaltsstoffe, verständlich erklärt.',lead:'Wir betrachten mehr als die INCI-Liste und bewerten Form, bekannte Konzentration, Formulierung, Verträglichkeit und wissenschaftliche Evidenz getrennt.',updated:'Zuletzt wissenschaftlich geprüft: September 2026',labels:['WAS IST DAS?','WAS WISSEN WIR?','WORAUF ACHTEN WIR?']}
 };
 
 export function IngredientsPage({lang='hu'}){
