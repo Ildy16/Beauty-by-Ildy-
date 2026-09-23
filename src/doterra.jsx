@@ -4,6 +4,21 @@ import "./brandPages.css";
 
 const DOTERRA_SITE = "https://office.doterra.com/beautybyildy/#/";
 
+const FEATURED = [
+  ["Lavender / Levendula","SINGLE OIL","Lágy, virágos aromájú alapolaj esti és otthoni aromás rutinokhoz."],
+  ["Lemon / Citrom","SINGLE OIL","Friss, citrusos illatprofil a könnyed, tiszta hangulatú aromás rutinokhoz."],
+  ["Peppermint / Borsmenta","SINGLE OIL","Élénk, mentás aromájú klasszikus a frissítő illatélményhez."],
+  ["Wild Orange / Vadnarancs","SINGLE OIL","Meleg, édes-citrusos illatprofil otthoni diffúzoros rutinokhoz."],
+  ["Tea Tree / Teafa","SINGLE OIL","Karakteres, gyógynövényes illatú esszenciális olaj többféle kozmetikai és aromás rutinban."],
+  ["Copaiba","SINGLE OIL","Meleg, fás-balzsamos aromájú olaj nyugodt, kiegyensúlyozott hangulatú rituálékhoz."],
+  ["dōTERRA Air™","BLEND","Friss, mentás-eukaliptuszos aromájú keverék a könnyedebb otthoni illatélményhez."],
+  ["dōTERRA Serenity™","BLEND","Lágy, nyugtató hangulatú aromás keverék esti rutinokhoz."],
+  ["On Guard™","BLEND","Meleg, fűszeres-citrusos illatú keverék és az egyik legismertebb doTERRA termékcsalád."],
+  ["Deep Blue™ Rub","BODY CARE","Hűsítő érzetű masszázskrém sportolás vagy megterhelő nap utáni testápolási rutinhoz."],
+  ["Essential Skin Care Hydrating Cream","SKINCARE","Gazdagabb hidratálókrém a doTERRA Essential Skin Care termékcsaládból."],
+  ["Essential Skin Care Firming Serum","SKINCARE","Feszességfókuszú arcszérum az Essential Skin Care termékcsaládból."]
+];
+
 const copy = {
   hu: {
     back: "Vissza a főoldalra",
@@ -13,6 +28,8 @@ const copy = {
     note: "A Beauty by Ildy független, többmárkás szerkesztőségi oldal. Nem a doTERRA hivatalos vállalati weboldala. A vásárlás és a rendelés kezelése a doTERRA hivatalos rendszerében történik.",
     shop: "HIVATALOS DOTERRA OLDAL MEGNYITÁSA",
     heading: "MIRE HASZNÁLNÁD?",
+    featured: "KIEMELT TERMÉKEK",
+    productCta: "MEGNÉZEM A HIVATALOS KÍNÁLATBAN",
     cards: [
       ["AROMÁS RUTINOK", "Illatok és egyszerű otthoni rituálék relaxáló, frissítő vagy fókuszált hangulathoz."],
       ["DIFFÚZOR & OTTHON", "Diffúzorok és illatélmények a lakótér személyes hangulatának kialakításához."],
@@ -29,6 +46,8 @@ const copy = {
     note: "Beauty by Ildy is an independent multi-brand editorial website and is not an official doTERRA corporate website. Purchases and orders are completed in doTERRA’s official system.",
     shop: "OPEN OFFICIAL DOTERRA SITE",
     heading: "WHAT ARE YOU LOOKING FOR?",
+    featured: "FEATURED PRODUCTS",
+    productCta: "VIEW IN THE OFFICIAL SHOP",
     cards: [
       ["AROMATIC ROUTINES", "Scents and simple at-home rituals for a relaxing, refreshing or focused atmosphere."],
       ["DIFFUSERS & HOME", "Diffusers and aromatic experiences for shaping the mood of your space."],
@@ -45,6 +64,8 @@ const copy = {
     note: "Beauty by Ildy ist eine unabhängige, markenübergreifende redaktionelle Website und keine offizielle Unternehmenswebsite von doTERRA. Käufe und Bestellungen werden im offiziellen doTERRA-System abgeschlossen.",
     shop: "OFFIZIELLE DOTERRA-SEITE ÖFFNEN",
     heading: "WONACH SUCHST DU?",
+    featured: "AUSGEWÄHLTE PRODUKTE",
+    productCta: "IM OFFIZIELLEN SHOP ANSEHEN",
     cards: [
       ["AROMATISCHE ROUTINEN", "Düfte und einfache Rituale für zu Hause für eine entspannte, frische oder fokussierte Atmosphäre."],
       ["DIFFUSER & ZUHAUSE", "Diffuser und Dufterlebnisse für die persönliche Atmosphäre in deinen Räumen."],
@@ -86,6 +107,23 @@ export function DoterraPage({ lang = "hu" }) {
               </div>
             </article>
           ))}
+        </div>
+        <div className="brandGroup doterraFeatured">
+          <div className="brandGroupHead"><h2>{t.featured}</h2><span>{FEATURED.length}</span></div>
+          <div className="brandProductGrid">
+            {FEATURED.map(([name, group, desc]) => (
+              <article className="brandProductCard isInfo" key={name}>
+                <div className="brandCardTopline"><span>{group}</span><em>CURATED</em></div>
+                <h2>{name}</h2>
+                <p>{desc}</p>
+                <div className="brandCardActions">
+                  <a href={DOTERRA_SITE} target="_blank" rel="sponsored noopener noreferrer">
+                    {t.productCta}<ExternalLink size={13}/>
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
         <p className="brandPageNote">{t.pending}</p>
       </section>
