@@ -43,7 +43,7 @@ const NUSKIN = [
   ["Epoch Hand Cream","EPOCH","Korábbi Epoch kéz- és körömápoló krém; a magyar piacon kivezetett státuszú.","https://www.nuskin.com/products/97/00/25/97002592.html"],
   ["Epoch Polishing Bar","EPOCH","Szappanmentes testradírozó tömb.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001994?store=beautybyildy"],
   ["Epoch Sole Solution","EPOCH","Célzott lábfejápoló krém.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001988?store=beautybyildy"],
-  ["Epoch Ava Puhi Moni Shampoo","EPOCH · HAIR","Epoch hajápoló sampon.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001990?store=beautybyildy"],
+  ["Epoch Ava Puhi Moni Shampoo","EPOCH · HAIR","Korábbi Epoch hajápoló sampon; az EU-ban 2025 februárjában kivezetésre került.","https://www.nuskin.com/content/dam/eu-library/office/documents/product-discontinuation-overview/nu-skin-product-discontinuation-overview-2025-q1.pdf"],
   ["Epoch Ava Puhi Moni Light Conditioner","EPOCH · HAIR","Korábbi Epoch hajkondicionáló; az EU-ban 2024 januárjában kivezetésre került.","https://www.nuskin.com/content/dam/eu-library/office/documents/product-discontinuation-overview/nu-skin-product-discontinuation-overview-2024-q1.pdf"],
   ["Sunright Insta Glow","SUNRIGHT","Önbarnító gél arcra és testre.","https://mysite.mynuskin.com/catalog/hu/hu/product/97002009?store=beautybyildy"],
   ["Liquid Body Lufra","BODY CARE","Korábbi testradírozó tusolóformula; az EU-ban 2026 márciusában kivezetésre került.","https://www.nuskin.com/content/dam/eu-library/office/documents/product-discontinuation-overview/nu-skin-product-discontinuation-overview-2026-q1.pdf"],
@@ -200,8 +200,9 @@ const groupDescriptions={
   }
 };
 const localGroup=(group,lang)=>(groupLabels[lang]||groupLabels.hu)[group]||group;
-const archivedNuSkin=new Set(["Nu Skin 180° Anti-Aging Skin Therapy System","Epoch Hand Cream","Epoch IceDancer","Epoch Ava Puhi Moni Light Conditioner","Liquid Body Lufra","ReNu Hair Mask","AP 24 Anti-Plaque Fluoride Toothpaste","R² Day + Night","CordyMax CS-4","Pro-B","LifePak+ & Marine Omega ADR-csomag"]);
+const archivedNuSkin=new Set(["Nu Skin 180° Anti-Aging Skin Therapy System","Epoch Hand Cream","Epoch IceDancer","Epoch Ava Puhi Moni Shampoo","Epoch Ava Puhi Moni Light Conditioner","Liquid Body Lufra","ReNu Hair Mask","AP 24 Anti-Plaque Fluoride Toothpaste","R² Day + Night","CordyMax CS-4","Pro-B","LifePak+ & Marine Omega ADR-csomag"]);
 const localGroupDescription=(group,lang)=>(groupDescriptions[lang]||groupDescriptions.hu)[group]||"";
+// Purchase-route audit: 2026-09-23. Direct My Site links are retained only for current products; known discontinued/unstable routes are information-only.
 const localizedNuSkinUrl=(url,lang)=>{
   if(!url.includes("mysite.mynuskin.com")) return url;
   if(lang==="de") return url.replace("/catalog/hu/hu/","/catalog/at/de/");
