@@ -200,13 +200,19 @@ main#top .needs > div {
   margin-top: 20px;
 }
 main#top .needLink {
-  padding: 10px 15px;
+  min-height: 31px;
+  padding: 6px 11px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font:
-    400 10px/1.4 Montserrat,
+    400 9px/1.2 Montserrat,
     Arial,
     sans-serif;
+  letter-spacing: .15px;
   color: #5d686d;
   text-decoration: none;
+  border-width: 1px;
 }
 
 /* Primary pillars = large information cards */
@@ -439,7 +445,9 @@ main#top .magGrid p {
     letter-spacing: 3px;
   }
   main#top .needLink {
-    font-size: 9px;
+    min-height: 30px;
+    padding: 5px 10px;
+    font-size: 8.5px;
   }
   main#top .pillars .label {
     font-size: 9px;
@@ -556,9 +564,33 @@ main#top .magGrid p {
   }
 }
 
-main#top .heroActions{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:20px}
-main#top .heroActions .primary{box-sizing:border-box;width:230px;min-height:37px;justify-content:center;gap:7px;margin-top:0;font-size:9px;letter-spacing:1.1px;white-space:nowrap}
-main#top .heroActions .primary svg{flex:0 0 auto;width:14px;height:14px}
+main#top .heroActions{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:18px}
+main#top .heroActions .primary{
+  box-sizing:border-box;
+  width:218px;
+  min-height:34px;
+  justify-content:center;
+  gap:6px;
+  margin-top:0;
+  padding:0 12px;
+  font-size:8px;
+  font-weight:500;
+  letter-spacing:.9px;
+  line-height:1;
+  white-space:nowrap;
+  border-width:1px;
+}
+main#top .heroActions .primary svg{flex:0 0 auto;width:12px;height:12px;stroke-width:1.7}
 main#top .finderHeroCta{background:var(--bbi-gold);color:#07172c}
 main#top .finderHeroCta:hover{filter:brightness(1.03)}
-@media(max-width:700px){main#top .heroActions{align-items:flex-start;flex-direction:column;gap:8px}main#top .heroActions .primary{width:230px;max-width:100%;min-height:42px;padding:0 14px}}
+@media(max-width:700px){
+  main#top .heroActions{align-items:flex-start;flex-direction:column;gap:7px;margin-top:18px}
+  main#top .heroActions .primary{
+    width:218px;
+    max-width:100%;
+    min-height:34px;
+    padding:0 12px;
+    font-size:8px;
+    letter-spacing:.85px;
+  }
+}
