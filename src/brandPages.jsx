@@ -39,7 +39,7 @@ const NUSKIN = [
   ["Nu Skin 180° Anti-Aging Skin Therapy System","NU SKIN 180°","Korábbi, több lépéses Nu Skin 180° arcápolási rendszer; az EU-ban 2024 októberében kivezetésre került.","https://www.nuskin.com/content/dam/eu-library/office/documents/product-discontinuation-overview/nu-skin-product-discontinuation-overview-2024-q4.pdf"],
   ["Epoch Glacial Marine Mud","EPOCH","Etnobotanikai ihletésű iszappakolás.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001987?store=beautybyildy"],
   ["Epoch Baobab Body Butter","EPOCH","Gazdag, baobabfókuszú testvaj.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001985?store=beautybyildy"],
-  ["Epoch IceDancer","EPOCH","Frissítő lábápoló zselé.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001986?store=beautybyildy"],
+  ["Epoch IceDancer","EPOCH","Frissítő lábápoló zselé.","https://www.nuskin.com/content/products/02/10/28/02102803/en.html"],
   ["Epoch Hand Cream","EPOCH","Korábbi Epoch kéz- és körömápoló krém; a magyar piacon kivezetett státuszú.","https://www.nuskin.com/products/97/00/25/97002592.html"],
   ["Epoch Polishing Bar","EPOCH","Szappanmentes testradírozó tömb.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001994?store=beautybyildy"],
   ["Epoch Sole Solution","EPOCH","Célzott lábfejápoló krém.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001988?store=beautybyildy"],
@@ -200,7 +200,7 @@ const groupDescriptions={
   }
 };
 const localGroup=(group,lang)=>(groupLabels[lang]||groupLabels.hu)[group]||group;
-const archivedNuSkin=new Set(["Nu Skin 180° Anti-Aging Skin Therapy System","Epoch Hand Cream","Epoch Ava Puhi Moni Light Conditioner","Liquid Body Lufra","ReNu Hair Mask","AP 24 Anti-Plaque Fluoride Toothpaste","R² Day + Night","CordyMax CS-4","Pro-B","LifePak+ & Marine Omega ADR-csomag"]);
+const archivedNuSkin=new Set(["Nu Skin 180° Anti-Aging Skin Therapy System","Epoch Hand Cream","Epoch IceDancer","Epoch Ava Puhi Moni Light Conditioner","Liquid Body Lufra","ReNu Hair Mask","AP 24 Anti-Plaque Fluoride Toothpaste","R² Day + Night","CordyMax CS-4","Pro-B","LifePak+ & Marine Omega ADR-csomag"]);
 const localGroupDescription=(group,lang)=>(groupDescriptions[lang]||groupDescriptions.hu)[group]||"";
 const localizedNuSkinUrl=(url,lang)=>{
   if(!url.includes("mysite.mynuskin.com")) return url;
