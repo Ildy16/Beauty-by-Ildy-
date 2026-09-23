@@ -32,7 +32,7 @@ const copy = {
       ["TERMÉKEK", "products"],
       ["BEAUTY ÚTVONAL", "beauty-finder"],
       ["NU SKIN", "nuskin"],
-      ["doTERRA", "doterra"],
+      ["ILLÓOLAJOK", "doterra"],
       ["MAGAZIN", "magazine"],
     ],
     eyebrow: "BEAUTY • TECHNOLOGY • WELLNESS",
@@ -125,7 +125,7 @@ const copy = {
       ["PRODUCTS", "products"],
       ["BEAUTY FINDER", "beauty-finder"],
       ["NU SKIN", "nuskin"],
-      ["doTERRA", "doterra"],
+      ["ESSENTIAL OILS", "doterra"],
       ["MAGAZINE", "magazine"],
     ],
     eyebrow: "BEAUTY • TECHNOLOGY • WELLNESS",
@@ -218,7 +218,7 @@ const copy = {
       ["PRODUKTE", "products"],
       ["BEAUTY FINDER", "beauty-finder"],
       ["NU SKIN", "nuskin"],
-      ["doTERRA", "doterra"],
+      ["ÄTHERISCHE ÖLE", "doterra"],
       ["MAGAZIN", "magazine"],
     ],
     eyebrow: "BEAUTY • TECHNOLOGIE • WELLNESS",
@@ -403,7 +403,7 @@ const seoCopy={
     products:["Válogatott termékek | Beauty by Ildy","Gondosan válogatott bőrápolási, hajápolási és beauty termékek formula- és evidenciaszemlélettel."],
     "beauty-finder":["Beauty Útvonal | Beauty by Ildy","Személyre szabott Beauty Útvonal bőrápolási, hajápolási és beauty tech lehetőségek áttekintéséhez."],
     nuskin:["Nu Skin válogatás | Beauty by Ildy","Beauty by Ildy Nu Skin és Pharmanex válogatás közvetlen hivatalos My Site vásárlási útvonalakkal."],
-    doterra:["doTERRA válogatás | Beauty by Ildy","Illóolajok, aromaterápiás wellness és otthoni rituálék hivatalos doTERRA vásárlási útvonallal."],
+    doterra:["Illóolajok & aromás wellness | Beauty by Ildy","Illóolajok, aromás wellness és otthoni rituálék független szerkesztői válogatásban, hivatalos partneri vásárlási útvonallal."],
     magazine:["Beauty Magazin | Beauty by Ildy","Friss beauty, beauty tech, menopauza és longevity kutatások értelmezve, forrásokkal."]
   },
   en:{
@@ -415,7 +415,7 @@ const seoCopy={
     products:["Curated Products | Beauty by Ildy","Curated skincare, haircare and beauty products reviewed through formulation and evidence."],
     "beauty-finder":["Beauty Finder | Beauty by Ildy","A personalised Beauty Finder for organising relevant skincare, haircare and beauty-tech options."],
     nuskin:["Nu Skin Edit | Beauty by Ildy","Beauty by Ildy Nu Skin and Pharmanex edit with direct official My Site purchase routes."],
-    doterra:["doTERRA Edit | Beauty by Ildy","Essential oils, aromatherapy-inspired wellness and at-home rituals with an official doTERRA purchase route."],
+    doterra:["Essential Oils & Aromatic Wellness | Beauty by Ildy","An independent editorial edit of essential oils, aromatic wellness and at-home rituals with an official partner purchase route."],
     magazine:["Beauty Magazine | Beauty by Ildy","Fresh beauty, beauty-tech, menopause and longevity research interpreted with sources."]
   },
   de:{
@@ -427,7 +427,7 @@ const seoCopy={
     products:["Ausgewählte Produkte | Beauty by Ildy","Kuratierte Hautpflege-, Haarpflege- und Beauty-Produkte mit Fokus auf Formulierung und Evidenz."],
     "beauty-finder":["Beauty Finder | Beauty by Ildy","Ein personalisierter Beauty Finder zur Orientierung bei Hautpflege, Haarpflege und Beauty Tech."],
     nuskin:["Nu Skin Auswahl | Beauty by Ildy","Beauty by Ildy Nu Skin und Pharmanex Auswahl mit direkten offiziellen My-Site-Kaufwegen."],
-    doterra:["doTERRA Auswahl | Beauty by Ildy","Ätherische Öle, aromatherapeutisch inspirierte Wellness-Routinen und ein offizieller doTERRA-Kaufweg."],
+    doterra:["Ätherische Öle & aromatisches Wellness | Beauty by Ildy","Eine unabhängige redaktionelle Auswahl zu ätherischen Ölen, aromatischem Wellness und Ritualen für zu Hause mit offiziellem Partner-Kaufweg."],
     magazine:["Beauty Magazin | Beauty by Ildy","Aktuelle Beauty-, Beauty-Tech-, Menopause- und Longevity-Forschung eingeordnet und mit Quellen."]
   }
 };
@@ -588,13 +588,17 @@ function App() {
           <h2>{t.brands}</h2>
           <p className="brandIntro">{t.brandSub}</p>
           <div className="brandGrid">
-            {brands[lang].map((b) => (
-              <div key={b[0]}>
+            {brands[lang].map((b) => {
+              const target=b[0]==="Nu Skin"?"#nuskin":b[0]==="doTERRA"?"#doterra":null;
+              const card=<>
                 <strong>{b[0]}</strong>
                 <small>{b[1]}</small>
                 <em>{b[2]}</em>
-              </div>
-            ))}
+              </>;
+              return target
+                ? <a className="brandCardLink" href={target} key={b[0]}>{card}</a>
+                : <div key={b[0]}>{card}</div>;
+            })}
           </div>
         </section>
         <section id="magazine" className="magazine">
