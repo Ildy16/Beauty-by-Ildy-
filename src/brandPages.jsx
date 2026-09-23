@@ -242,7 +242,7 @@ export function NuSkinPage({lang="hu"}) {
                 <div className="brandCardTopline"><span>{localGroup(group,lang)}</span><em>{direct&&!special?t.available:t.infoOnly}</em></div>
                 <h2>{name}</h2><p>{localGroupDescription(group,lang)||desc}</p>
                 <div className="brandCardActions">
-                  <a className={direct&&!special?"brandShopLink":""} href={localizedNuSkinUrl(url,lang)} target="_blank" rel="sponsored noopener noreferrer">{localizedNuSkinCta(name,url,lang,t)}<ExternalLink size={13}/></a>
+                  <a className={direct&&!special?"brandShopLink":""} href={localizedNuSkinUrl(url,lang)} target="_blank" rel={direct&&!special?"sponsored noopener noreferrer":"noopener noreferrer"}>{localizedNuSkinCta(name,url,lang,t)}<ExternalLink size={13}/></a>
                 </div>
               </article>
             })}
