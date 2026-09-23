@@ -186,7 +186,7 @@ footer > div:first-child {
 }
 .fineprint {
   grid-column: 1/-1;
-  grid-row: 2;
+  grid-row: 3;
   width: 100%;
   max-width: none;
   margin: 0;
@@ -222,6 +222,9 @@ footer > div:first-child {
     flex-direction: column;
     gap: 18px;
     box-shadow: 0 10px 30px rgba(7, 27, 51, 0.08);
+    max-height: calc(100vh - 92px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
   }
   .mobileMenu a {
     text-decoration: none;
@@ -253,6 +256,7 @@ footer > div:first-child {
   .mobileMenu {
     top: 78px;
     padding: 22px 20px 26px;
+    max-height: calc(100vh - 78px);
   }
   .menuBtn {
     padding: 6px;
