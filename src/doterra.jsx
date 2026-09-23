@@ -8,8 +8,8 @@ const copy = {
   hu: {
     back: "Vissza a főoldalra",
     eyebrow: "WELLNESS • AROMATERÁPIA • OTTHONI RITUÁLÉK",
-    title: "doTERRA",
-    lead: "Illóolajok és aromaterápiás wellness-rutinok a Beauty by Ildy szerkesztői válogatásában.",
+    title: "Illóolajok & aromás wellness",
+    lead: "Illóolajok és aromás wellness-rutinok a Beauty by Ildy szerkesztői válogatásában. A kínálatban doTERRA termékekhez is adunk hivatalos vásárlási útvonalat."
     note: "A Beauty by Ildy független, többmárkás szerkesztőségi oldal. Nem a doTERRA hivatalos vállalati weboldala. A vásárlás és a rendelés kezelése a doTERRA hivatalos rendszerében történik.",
     shop: "HIVATALOS DOTERRA OLDAL MEGNYITÁSA",
     heading: "MIRE HASZNÁLNÁD?",
@@ -24,8 +24,8 @@ const copy = {
   en: {
     back: "Back to home",
     eyebrow: "WELLNESS • AROMATHERAPY • AT-HOME RITUALS",
-    title: "doTERRA",
-    lead: "Essential oils and aromatherapy-inspired wellness routines in the Beauty by Ildy editorial edit.",
+    title: "Essential oils & aromatic wellness",
+    lead: "Essential oils and aromatherapy-inspired wellness routines in the Beauty by Ildy editorial edit, including an official purchase route for doTERRA products."
     note: "Beauty by Ildy is an independent multi-brand editorial website and is not an official doTERRA corporate website. Purchases and orders are completed in doTERRA’s official system.",
     shop: "OPEN OFFICIAL DOTERRA SITE",
     heading: "WHAT ARE YOU LOOKING FOR?",
@@ -40,8 +40,8 @@ const copy = {
   de: {
     back: "Zurück zur Startseite",
     eyebrow: "WELLNESS • AROMATHERAPIE • RITUALE FÜR ZU HAUSE",
-    title: "doTERRA",
-    lead: "Ätherische Öle und aromatherapeutisch inspirierte Wellness-Routinen in der redaktionellen Beauty-by-Ildy-Auswahl.",
+    title: "Ätherische Öle & aromatisches Wellness",
+    lead: "Ätherische Öle und aromatherapeutisch inspirierte Wellness-Routinen in der redaktionellen Beauty-by-Ildy-Auswahl, einschließlich eines offiziellen Kaufwegs für doTERRA-Produkte."
     note: "Beauty by Ildy ist eine unabhängige, markenübergreifende redaktionelle Website und keine offizielle Unternehmenswebsite von doTERRA. Käufe und Bestellungen werden im offiziellen doTERRA-System abgeschlossen.",
     shop: "OFFIZIELLE DOTERRA-SEITE ÖFFNEN",
     heading: "WONACH SUCHST DU?",
@@ -74,11 +74,11 @@ export function DoterraPage({ lang = "hu" }) {
         </a>
       </div>
       <section className="brandPageBody">
-        <div className="brandPageMeta"><span>{t.heading}</span><small>Beauty by Ildy × doTERRA</small></div>
+        <div className="brandPageMeta"><span>{t.heading}</span><small>Independent wellness edit</small></div>
         <div className="brandProductGrid">
           {t.cards.map(([name, desc]) => (
             <article className="brandProductCard isInfo" key={name}>
-              <div className="brandCardTopline"><span>doTERRA</span><em>EDITORIAL</em></div>
+              <div className="brandCardTopline"><span>BEAUTY BY ILDY</span><em>EDITORIAL</em></div>
               <h2>{name}</h2>
               <p>{desc}</p>
               <div className="brandCardActions">
