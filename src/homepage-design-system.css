@@ -156,6 +156,7 @@ main#top .featureBand > div:first-child,
 main#top .routineGrid article,
 main#top .standardGrid article,
 main#top .brandGrid div,
+main#top .brandGrid .brandCardLink,
 main#top .magGrid article,
 main#top .needLink {
   background: var(--bbi-ivory);
@@ -350,13 +351,24 @@ main#top .brandGrid {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 12px;
 }
-main#top .brandGrid div {
+main#top .brandGrid div,
+main#top .brandGrid .brandCardLink {
   min-height: 0;
   padding: 14px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
+}
+main#top .brandGrid .brandCardLink{
+  color:inherit;
+  text-decoration:none;
+  transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease;
+}
+main#top .brandGrid .brandCardLink:hover{
+  transform:translateY(-1px);
+  border-color:rgba(183,154,91,.52);
+  box-shadow:0 8px 20px rgba(7,23,44,.05);
 }
 main#top .brandGrid strong {
   align-self: center;
@@ -539,7 +551,8 @@ main#top .magGrid p {
   main#top .brandGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  main#top .brandGrid div {
+  main#top .brandGrid div,
+  main#top .brandGrid .brandCardLink {
     padding: 14px;
   }
   main#top .brandGrid small {
