@@ -59,16 +59,20 @@ export function DoterraPage({ lang = "hu" }) {
   const t = copy[lang] || copy.hu;
   return (
     <main className="brandPage">
-      <section className="brandHero">
-        <a className="brandBack" href="#top"><ArrowLeft size={14}/>{t.back}</a>
-        <p className="brandEyebrow">{t.eyebrow}</p>
-        <h1>{t.title}</h1>
-        <p className="brandLead">{t.lead}</p>
-        <p className="brandHeroNote">{t.note}</p>
-        <a className="brandHeroCta" href={DOTERRA_SITE} target="_blank" rel="sponsored noopener noreferrer">
+      <section className="brandPageHero">
+        <div>
+          <a className="brandPageBack" href="#top"><ArrowLeft size={14}/>{t.back}</a>
+          <p className="eyebrow">{t.eyebrow}</p>
+          <h1>{t.title}</h1>
+          <p className="brandPageLead">{t.lead}</p>
+          <p className="brandPageNote">{t.note}</p>
+        </div>
+      </section>
+      <div className="brandShopBar">
+        <a href={DOTERRA_SITE} target="_blank" rel="sponsored noopener noreferrer">
           {t.shop}<ExternalLink size={13}/>
         </a>
-      </section>
+      </div>
       <section className="brandPageBody">
         <div className="brandPageMeta"><span>{t.heading}</span><small>Beauty by Ildy × doTERRA</small></div>
         <div className="brandProductGrid">
