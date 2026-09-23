@@ -385,6 +385,42 @@ function currentPage() {
   if (h.startsWith("product-")) return h;
   return null;
 }
+const seoCopy={
+  hu:{
+    home:["Beauty by Ildy — Beauty, Technology & Wellness","Válogatott bőrápolás, beauty tech, wellness, longevity és bizonyítékokra épülő útmutatók."],
+    ingredients:["Kozmetikai összetevők | Beauty by Ildy","Retinol, PDRN, ceramidok, peptidek és más kozmetikai összetevők érthetően, bizonyítékokra építve."],
+    "beauty-tech-guide":["Beauty Tech útmutató | Beauty by Ildy","RF, LED, lézer, mikroáram és más otthoni beauty technológiák előnyei, korlátai és biztonsági szempontjai."],
+    wellness:["Wellness & női jóllét | Beauty by Ildy","Wellness, menopauza, healthy aging, mikrotápanyagok és mindennapi jóllét túlzó ígéretek nélkül."],
+    longevity:["Longevity | Beauty by Ildy","Longevity, skin longevity és healthy aging témák tudományos háttérrel és reális értelmezéssel."],
+    products:["Válogatott termékek | Beauty by Ildy","Gondosan válogatott bőrápolási, hajápolási és beauty termékek formula- és evidenciaszemlélettel."],
+    "beauty-finder":["Beauty Útvonal | Beauty by Ildy","Személyre szabott Beauty Útvonal bőrápolási, hajápolási és beauty tech lehetőségek áttekintéséhez."],
+    nuskin:["Nu Skin válogatás | Beauty by Ildy","Beauty by Ildy Nu Skin és Pharmanex válogatás közvetlen hivatalos My Site vásárlási útvonalakkal."],
+    magazine:["Beauty Magazin | Beauty by Ildy","Friss beauty, beauty tech, menopauza és longevity kutatások értelmezve, forrásokkal."]
+  },
+  en:{
+    home:["Beauty by Ildy — Beauty, Technology & Wellness","Curated skincare, beauty tech, wellness, longevity and evidence-led beauty guidance."],
+    ingredients:["Cosmetic Ingredients | Beauty by Ildy","Retinol, PDRN, ceramides, peptides and other cosmetic ingredients explained with an evidence-led approach."],
+    "beauty-tech-guide":["Beauty Tech Guide | Beauty by Ildy","RF, LED, laser, microcurrent and other at-home beauty technologies: benefits, limits and safety considerations."],
+    wellness:["Wellness & Women's Wellbeing | Beauty by Ildy","Wellness, menopause, healthy aging, micronutrients and everyday wellbeing without exaggerated promises."],
+    longevity:["Longevity | Beauty by Ildy","Longevity, skin longevity and healthy aging with scientific context and realistic interpretation."],
+    products:["Curated Products | Beauty by Ildy","Curated skincare, haircare and beauty products reviewed through formulation and evidence."],
+    "beauty-finder":["Beauty Finder | Beauty by Ildy","A personalised Beauty Finder for organising relevant skincare, haircare and beauty-tech options."],
+    nuskin:["Nu Skin Edit | Beauty by Ildy","Beauty by Ildy Nu Skin and Pharmanex edit with direct official My Site purchase routes."],
+    magazine:["Beauty Magazine | Beauty by Ildy","Fresh beauty, beauty-tech, menopause and longevity research interpreted with sources."]
+  },
+  de:{
+    home:["Beauty by Ildy — Beauty, Technology & Wellness","Kuratierte Hautpflege, Beauty Tech, Wellness, Longevity und evidenzbasierte Beauty-Guides."],
+    ingredients:["Kosmetische Inhaltsstoffe | Beauty by Ildy","Retinol, PDRN, Ceramide, Peptide und weitere kosmetische Inhaltsstoffe verständlich und evidenzbasiert erklärt."],
+    "beauty-tech-guide":["Beauty-Tech-Guide | Beauty by Ildy","RF, LED, Laser, Mikrostrom und weitere Home-Beauty-Technologien: Nutzen, Grenzen und Sicherheit."],
+    wellness:["Wellness & Wohlbefinden von Frauen | Beauty by Ildy","Wellness, Menopause, Healthy Aging, Mikronährstoffe und tägliches Wohlbefinden ohne übertriebene Versprechen."],
+    longevity:["Longevity | Beauty by Ildy","Longevity, Skin Longevity und Healthy Aging mit wissenschaftlichem Kontext und realistischer Einordnung."],
+    products:["Ausgewählte Produkte | Beauty by Ildy","Kuratierte Hautpflege-, Haarpflege- und Beauty-Produkte mit Fokus auf Formulierung und Evidenz."],
+    "beauty-finder":["Beauty Finder | Beauty by Ildy","Ein personalisierter Beauty Finder zur Orientierung bei Hautpflege, Haarpflege und Beauty Tech."],
+    nuskin:["Nu Skin Auswahl | Beauty by Ildy","Beauty by Ildy Nu Skin und Pharmanex Auswahl mit direkten offiziellen My-Site-Kaufwegen."],
+    magazine:["Beauty Magazin | Beauty by Ildy","Aktuelle Beauty-, Beauty-Tech-, Menopause- und Longevity-Forschung eingeordnet und mit Quellen."]
+  }
+};
+
 function App() {
   const [lang, setLang] = useState("hu");
   const [open, setOpen] = useState(false);
@@ -395,6 +431,20 @@ function App() {
   useEffect(() => {
     document.documentElement.lang = lang;
   }, [lang]);
+  useEffect(() => {
+    const key=page&&page.startsWith("product-")?"products":(page||"home");
+    const [title,description]=(seoCopy[lang]?.[key]||seoCopy[lang]?.home||seoCopy.hu.home);
+    document.title=title;
+    const setMeta=(selector,attr,value)=>{
+      const node=document.querySelector(selector);
+      if(node)node.setAttribute(attr,value);
+    };
+    setMeta('meta[name="description"]',"content",description);
+    setMeta('meta[property="og:title"]',"content",title);
+    setMeta('meta[property="og:description"]',"content",description);
+    setMeta('meta[name="twitter:title"]',"content",title);
+    setMeta('meta[name="twitter:description"]',"content",description);
+  }, [lang,page]);
   useEffect(() => {
     const fn = () => {
       const nextLegal = currentLegal();
