@@ -633,7 +633,7 @@ function App() {
         <button
           className="menuBtn"
           onClick={() => setOpen(!open)}
-          aria-label={open ? "Close menu" : "Open menu"}
+          aria-label={open ? (lang==="hu"?"Menü bezárása":lang==="de"?"Menü schließen":"Close menu") : (lang==="hu"?"Menü megnyitása":lang==="de"?"Menü öffnen":"Open menu")}
           aria-expanded={open}
         >
           {open ? <X /> : <Menu />}
@@ -642,7 +642,7 @@ function App() {
       {open && (
         <div className="mobileMenu">
           {t.nav.map((n) => (
-            <a key={n[0]} href={`#${n[1]}`}>
+            <a key={n[0]} href={`#${n[1]}`} onClick={() => setOpen(false)}>
               {n[0]}
             </a>
           ))}
