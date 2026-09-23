@@ -240,7 +240,7 @@ export function NuSkinPage({lang="hu"}) {
               const special=archivedNuSkin.has(name)||name==="ageLOC TRMe"||!direct;
               return <article className={`brandProductCard nuskinCard ${direct&&!special?"isPurchasable":"isInfo"}`} key={name}>
                 <div className="brandCardTopline"><span>{localGroup(group,lang)}</span><em>{direct&&!special?t.available:t.infoOnly}</em></div>
-                <h2>{name}</h2><p>{desc||localGroupDescription(group,lang)}</p>
+                <h2>{name}</h2><p>{localGroupDescription(group,lang)||desc}</p>
                 <div className="brandCardActions">
                   <a className={direct&&!special?"brandShopLink":""} href={localizedNuSkinUrl(url,lang)} target="_blank" rel="sponsored noopener noreferrer">{localizedNuSkinCta(name,url,lang,t)}<ExternalLink size={13}/></a>
                 </div>
