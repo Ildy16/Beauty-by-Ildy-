@@ -5,18 +5,54 @@ import "./brandPages.css";
 const DOTERRA_SITE = "https://office.doterra.com/beautybyildy/#/";
 
 const FEATURED = [
-  ["Lavender / Levendula","SINGLE OIL","Lágy, virágos aromájú alapolaj esti és otthoni aromás rutinokhoz."],
-  ["Lemon / Citrom","SINGLE OIL","Friss, citrusos illatprofil a könnyed, tiszta hangulatú aromás rutinokhoz."],
-  ["Peppermint / Borsmenta","SINGLE OIL","Élénk, mentás aromájú klasszikus a frissítő illatélményhez."],
-  ["Wild Orange / Vadnarancs","SINGLE OIL","Meleg, édes-citrusos illatprofil otthoni diffúzoros rutinokhoz."],
-  ["Tea Tree / Teafa","SINGLE OIL","Karakteres, gyógynövényes illatú esszenciális olaj többféle kozmetikai és aromás rutinban."],
-  ["Copaiba","SINGLE OIL","Meleg, fás-balzsamos aromájú olaj nyugodt, kiegyensúlyozott hangulatú rituálékhoz."],
-  ["dōTERRA Air™","BLEND","Friss, mentás-eukaliptuszos aromájú keverék a könnyedebb otthoni illatélményhez."],
-  ["dōTERRA Serenity™","BLEND","Lágy, nyugtató hangulatú aromás keverék esti rutinokhoz."],
-  ["On Guard™","BLEND","Meleg, fűszeres-citrusos illatú keverék és az egyik legismertebb doTERRA termékcsalád."],
-  ["Deep Blue™ Rub","BODY CARE","Hűsítő érzetű masszázskrém sportolás vagy megterhelő nap utáni testápolási rutinhoz."],
-  ["Essential Skin Care Hydrating Cream","SKINCARE","Gazdagabb hidratálókrém a doTERRA Essential Skin Care termékcsaládból."],
-  ["Essential Skin Care Firming Serum","SKINCARE","Feszességfókuszú arcszérum az Essential Skin Care termékcsaládból."]
+  ["Lavender / Levendula","SINGLE OIL",
+    "Lágy, virágos aromájú alapolaj esti és otthoni aromás rutinokhoz.",
+    "A soft, floral essential oil for evening and at-home aromatic routines.",
+    "Ein sanftes, blumiges ätherisches Öl für abendliche und aromatische Routinen zu Hause."],
+  ["Lemon / Citrom","SINGLE OIL",
+    "Friss, citrusos illatprofil a könnyed, tiszta hangulatú aromás rutinokhoz.",
+    "A bright citrus aroma for fresh, light-feeling aromatic routines.",
+    "Ein frisches Zitrusaroma für leichte, klare Duft-Routinen."],
+  ["Peppermint / Borsmenta","SINGLE OIL",
+    "Élénk, mentás aromájú klasszikus a frissítő illatélményhez.",
+    "A vivid mint aroma for a crisp, refreshing scent experience.",
+    "Ein lebendiges Minzaroma für ein klares, erfrischendes Dufterlebnis."],
+  ["Wild Orange / Vadnarancs","SINGLE OIL",
+    "Meleg, édes-citrusos illatprofil otthoni diffúzoros rutinokhoz.",
+    "A warm, sweet-citrus aroma for at-home diffuser routines.",
+    "Ein warmes, süß-zitrisches Aroma für Diffuser-Routinen zu Hause."],
+  ["Tea Tree / Teafa","SINGLE OIL",
+    "Karakteres, gyógynövényes illatú esszenciális olaj aromás és kozmetikai rutinokhoz.",
+    "A distinctive herbal essential oil for aromatic and cosmetic routines.",
+    "Ein markant kräuteriges ätherisches Öl für aromatische und kosmetische Routinen."],
+  ["Copaiba","SINGLE OIL",
+    "Meleg, fás-balzsamos aromájú olaj nyugodt hangulatú rituálékhoz.",
+    "A warm, woody-balsamic aroma for calm-feeling rituals.",
+    "Ein warmes, holzig-balsamisches Aroma für ruhige Rituale."],
+  ["dōTERRA Air™","BLEND",
+    "Friss, mentás-eukaliptuszos aromájú keverék könnyed otthoni illatélményhez.",
+    "A fresh mint-and-eucalyptus aromatic blend for a light at-home scent experience.",
+    "Eine frische Minz-Eukalyptus-Aromamischung für ein leichtes Dufterlebnis zu Hause."],
+  ["dōTERRA Serenity™","BLEND",
+    "Lágy, nyugodt hangulatú aromás keverék esti rutinokhoz.",
+    "A soft aromatic blend suited to calm-feeling evening routines.",
+    "Eine sanfte Aromamischung für ruhige Abendroutinen."],
+  ["On Guard™","BLEND",
+    "Meleg, fűszeres-citrusos illatú aromás keverék.",
+    "A warm, spicy-citrus aromatic blend.",
+    "Eine warme, würzig-zitrische Aromamischung."],
+  ["Deep Blue™ Rub","BODY CARE",
+    "Hűsítő érzetű masszázskrém testápolási és masszázsrutinokhoz.",
+    "A cooling-feel massage rub for body-care and massage routines.",
+    "Eine Massagecreme mit kühlendem Hautgefühl für Körperpflege- und Massageroutinen."],
+  ["Essential Skin Care Hydrating Cream","SKINCARE",
+    "Gazdagabb hidratálókrém a doTERRA Essential Skin Care termékcsaládból.",
+    "A richer moisturising cream from the doTERRA Essential Skin Care range.",
+    "Eine reichhaltigere Feuchtigkeitscreme aus der doTERRA Essential Skin Care Linie."],
+  ["Essential Skin Care Firming Serum","SKINCARE",
+    "Feszességfókuszú arcszérum az Essential Skin Care termékcsaládból.",
+    "A firming-focused facial serum from the Essential Skin Care range.",
+    "Ein auf Festigkeit ausgerichtetes Gesichtsserum aus der Essential Skin Care Linie."]
 ];
 
 const copy = {
@@ -36,6 +72,7 @@ const copy = {
       ["TESTÁPOLÁS & MASSZÁZS", "Kozmetikai és masszázsrutinokhoz illeszthető, megfelelően hígított aromás megoldások."],
       ["NŐI WELLNESS", "Szerkesztői wellness-tartalmak és mindennapi rituálék túlzó egészségügyi ígéretek nélkül."]
     ],
+    safety: "Használat előtt mindig kövesd a hivatalos termékcímke és a doTERRA használati útmutatójának előírásait; az illóolajok alkalmazása termékenként eltérhet.",
     pending: "A termékspecifikus doTERRA vásárlási linkeket külön ellenőrizzük, mielőtt közvetlen termékgombokat teszünk ki."
   },
   en: {
@@ -54,6 +91,7 @@ const copy = {
       ["BODY CARE & MASSAGE", "Aromatic options suitable for cosmetic and massage routines when used as directed and appropriately diluted."],
       ["WOMEN'S WELLNESS", "Editorial wellbeing content and everyday rituals without exaggerated health claims."]
     ],
+    safety: "Always follow the official product label and doTERRA directions for use; essential-oil use can differ by product.",
     pending: "Product-specific doTERRA purchase links will be verified separately before direct product buttons are published."
   },
   de: {
@@ -72,6 +110,7 @@ const copy = {
       ["KÖRPERPFLEGE & MASSAGE", "Aromatische Optionen für Kosmetik- und Massageroutinen bei sachgemäßer Anwendung und Verdünnung."],
       ["WELLNESS FÜR FRAUEN", "Redaktionelle Wellbeing-Inhalte und Alltagsrituale ohne übertriebene Gesundheitsversprechen."]
     ],
+    safety: "Befolge immer das offizielle Produktetikett und die doTERRA-Anwendungshinweise; die Verwendung ätherischer Öle kann je nach Produkt unterschiedlich sein.",
     pending: "Produktspezifische doTERRA-Kauflinks werden separat geprüft, bevor direkte Produktbuttons veröffentlicht werden."
   }
 };
@@ -111,7 +150,9 @@ export function DoterraPage({ lang = "hu" }) {
         <div className="brandGroup doterraFeatured">
           <div className="brandGroupHead"><h2>{t.featured}</h2><span>{FEATURED.length}</span></div>
           <div className="brandProductGrid">
-            {FEATURED.map(([name, group, desc]) => (
+            {FEATURED.map(([name, group, huDesc, enDesc, deDesc]) => {
+              const desc=lang==="de"?deDesc:lang==="en"?enDesc:huDesc;
+              return (
               <article className="brandProductCard isInfo" key={name}>
                 <div className="brandCardTopline"><span>{group}</span><em>CURATED</em></div>
                 <h2>{name}</h2>
@@ -122,9 +163,11 @@ export function DoterraPage({ lang = "hu" }) {
                   </a>
                 </div>
               </article>
-            ))}
+              );
+            })}
           </div>
         </div>
+        <p className="brandPageNote">{t.safety}</p>
         <p className="brandPageNote">{t.pending}</p>
       </section>
     </main>
