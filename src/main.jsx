@@ -17,6 +17,7 @@ import { MedicubePdrnProduct } from "./product.jsx";
 import { ProductsPage, ProductDetail } from "./products.jsx";
 import { BeautyFinder } from "./beautyFinder.jsx";
 import { NuSkinPage } from "./brandPages.jsx";
+import { DoterraPage } from "./doterra.jsx";
 import { MagazinePage } from "./magazine.jsx";
 import "./styles.css";
 
@@ -31,6 +32,7 @@ const copy = {
       ["TERMÉKEK", "products"],
       ["BEAUTY ÚTVONAL", "beauty-finder"],
       ["NU SKIN", "nuskin"],
+      ["doTERRA", "doterra"],
       ["MAGAZIN", "magazine"],
     ],
     eyebrow: "BEAUTY • TECHNOLOGY • WELLNESS",
@@ -123,6 +125,7 @@ const copy = {
       ["PRODUCTS", "products"],
       ["BEAUTY FINDER", "beauty-finder"],
       ["NU SKIN", "nuskin"],
+      ["doTERRA", "doterra"],
       ["MAGAZINE", "magazine"],
     ],
     eyebrow: "BEAUTY • TECHNOLOGY • WELLNESS",
@@ -215,6 +218,7 @@ const copy = {
       ["PRODUKTE", "products"],
       ["BEAUTY FINDER", "beauty-finder"],
       ["NU SKIN", "nuskin"],
+      ["doTERRA", "doterra"],
       ["MAGAZIN", "magazine"],
     ],
     eyebrow: "BEAUTY • TECHNOLOGIE • WELLNESS",
@@ -308,6 +312,7 @@ const copy = {
 const brands = {
   hu: [
     ["Nu Skin", "MÁR ELÉRHETŐ", "Beauty tech + bőrápolás + wellness"],
+    ["doTERRA", "MÁR ELÉRHETŐ", "Illóolajok + aromás wellness"],
     ["HubisLab", "VÁLOGATOTT", "Professzionális K-beauty"],
     ["Biodance", "VÁLOGATOTT", "K-beauty + PDRN"],
     ["Aestura", "VÁLOGATOTT", "Barrier-ápolás"],
@@ -320,6 +325,7 @@ const brands = {
   ],
   en: [
     ["Nu Skin", "AVAILABLE NOW", "Beauty tech + skincare + wellness"],
+    ["doTERRA", "AVAILABLE NOW", "Essential oils + aromatic wellness"],
     ["HubisLab", "CURATED", "Professional K-beauty"],
     ["Biodance", "CURATED", "K-beauty + PDRN"],
     ["Aestura", "CURATED", "Barrier care"],
@@ -332,6 +338,7 @@ const brands = {
   ],
   de: [
     ["Nu Skin", "JETZT VERFÜGBAR", "Beauty Tech + Hautpflege + Wellness"],
+    ["doTERRA", "JETZT VERFÜGBAR", "Ätherische Öle + aromatisches Wellness"],
     ["HubisLab", "AUSGEWÄHLT", "Professionelle K-Beauty"],
     ["Biodance", "AUSGEWÄHLT", "K-Beauty + PDRN"],
     ["Aestura", "AUSGEWÄHLT", "Barrierpflege"],
@@ -377,6 +384,7 @@ function currentPage() {
       "products",
       "beauty-finder",
       "nuskin",
+      "doterra",
       "magazine",
       "product-medicube-pdrn",
     ].includes(h)
@@ -395,6 +403,7 @@ const seoCopy={
     products:["Válogatott termékek | Beauty by Ildy","Gondosan válogatott bőrápolási, hajápolási és beauty termékek formula- és evidenciaszemlélettel."],
     "beauty-finder":["Beauty Útvonal | Beauty by Ildy","Személyre szabott Beauty Útvonal bőrápolási, hajápolási és beauty tech lehetőségek áttekintéséhez."],
     nuskin:["Nu Skin válogatás | Beauty by Ildy","Beauty by Ildy Nu Skin és Pharmanex válogatás közvetlen hivatalos My Site vásárlási útvonalakkal."],
+    doterra:["doTERRA válogatás | Beauty by Ildy","Illóolajok, aromaterápiás wellness és otthoni rituálék hivatalos doTERRA vásárlási útvonallal."],
     magazine:["Beauty Magazin | Beauty by Ildy","Friss beauty, beauty tech, menopauza és longevity kutatások értelmezve, forrásokkal."]
   },
   en:{
@@ -406,6 +415,7 @@ const seoCopy={
     products:["Curated Products | Beauty by Ildy","Curated skincare, haircare and beauty products reviewed through formulation and evidence."],
     "beauty-finder":["Beauty Finder | Beauty by Ildy","A personalised Beauty Finder for organising relevant skincare, haircare and beauty-tech options."],
     nuskin:["Nu Skin Edit | Beauty by Ildy","Beauty by Ildy Nu Skin and Pharmanex edit with direct official My Site purchase routes."],
+    doterra:["doTERRA Edit | Beauty by Ildy","Essential oils, aromatherapy-inspired wellness and at-home rituals with an official doTERRA purchase route."],
     magazine:["Beauty Magazine | Beauty by Ildy","Fresh beauty, beauty-tech, menopause and longevity research interpreted with sources."]
   },
   de:{
@@ -417,6 +427,7 @@ const seoCopy={
     products:["Ausgewählte Produkte | Beauty by Ildy","Kuratierte Hautpflege-, Haarpflege- und Beauty-Produkte mit Fokus auf Formulierung und Evidenz."],
     "beauty-finder":["Beauty Finder | Beauty by Ildy","Ein personalisierter Beauty Finder zur Orientierung bei Hautpflege, Haarpflege und Beauty Tech."],
     nuskin:["Nu Skin Auswahl | Beauty by Ildy","Beauty by Ildy Nu Skin und Pharmanex Auswahl mit direkten offiziellen My-Site-Kaufwegen."],
+    doterra:["doTERRA Auswahl | Beauty by Ildy","Ätherische Öle, aromatherapeutisch inspirierte Wellness-Routinen und ein offizieller doTERRA-Kaufweg."],
     magazine:["Beauty Magazin | Beauty by Ildy","Aktuelle Beauty-, Beauty-Tech-, Menopause- und Longevity-Forschung eingeordnet und mit Quellen."]
   }
 };
@@ -474,6 +485,7 @@ function App() {
   else if (page === "products") content = <ProductsPage lang={lang} />;
   else if (page === "beauty-finder") content = <BeautyFinder lang={lang} />;
   else if (page === "nuskin") content = <NuSkinPage lang={lang} />;
+  else if (page === "doterra") content = <DoterraPage lang={lang} />;
   else if (page === "magazine") content = <MagazinePage lang={lang} />;
   else if (page === "product-medicube-pdrn")
     content = <MedicubePdrnProduct lang={lang} />;
