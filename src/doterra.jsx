@@ -9,7 +9,7 @@ const copy = {
     back: "Vissza a főoldalra",
     eyebrow: "WELLNESS • AROMATERÁPIA • OTTHONI RITUÁLÉK",
     title: "Illóolajok & aromás wellness",
-    lead: "Illóolajok és aromás wellness-rutinok a Beauty by Ildy szerkesztői válogatásában. A kínálatban doTERRA termékekhez is adunk hivatalos vásárlási útvonalat."
+    lead: "Illóolajok és aromás wellness-rutinok a Beauty by Ildy szerkesztői válogatásában. A kínálatban doTERRA termékekhez is adunk hivatalos vásárlási útvonalat.",
     note: "A Beauty by Ildy független, többmárkás szerkesztőségi oldal. Nem a doTERRA hivatalos vállalati weboldala. A vásárlás és a rendelés kezelése a doTERRA hivatalos rendszerében történik.",
     shop: "HIVATALOS DOTERRA OLDAL MEGNYITÁSA",
     heading: "MIRE HASZNÁLNÁD?",
@@ -25,7 +25,7 @@ const copy = {
     back: "Back to home",
     eyebrow: "WELLNESS • AROMATHERAPY • AT-HOME RITUALS",
     title: "Essential oils & aromatic wellness",
-    lead: "Essential oils and aromatherapy-inspired wellness routines in the Beauty by Ildy editorial edit, including an official purchase route for doTERRA products."
+    lead: "Essential oils and aromatherapy-inspired wellness routines in the Beauty by Ildy editorial edit, including an official purchase route for doTERRA products.",
     note: "Beauty by Ildy is an independent multi-brand editorial website and is not an official doTERRA corporate website. Purchases and orders are completed in doTERRA’s official system.",
     shop: "OPEN OFFICIAL DOTERRA SITE",
     heading: "WHAT ARE YOU LOOKING FOR?",
@@ -41,7 +41,7 @@ const copy = {
     back: "Zurück zur Startseite",
     eyebrow: "WELLNESS • AROMATHERAPIE • RITUALE FÜR ZU HAUSE",
     title: "Ätherische Öle & aromatisches Wellness",
-    lead: "Ätherische Öle und aromatherapeutisch inspirierte Wellness-Routinen in der redaktionellen Beauty-by-Ildy-Auswahl, einschließlich eines offiziellen Kaufwegs für doTERRA-Produkte."
+    lead: "Ätherische Öle und aromatherapeutisch inspirierte Wellness-Routinen in der redaktionellen Beauty-by-Ildy-Auswahl, einschließlich eines offiziellen Kaufwegs für doTERRA-Produkte.",
     note: "Beauty by Ildy ist eine unabhängige, markenübergreifende redaktionelle Website und keine offizielle Unternehmenswebsite von doTERRA. Käufe und Bestellungen werden im offiziellen doTERRA-System abgeschlossen.",
     shop: "OFFIZIELLE DOTERRA-SEITE ÖFFNEN",
     heading: "WONACH SUCHST DU?",
