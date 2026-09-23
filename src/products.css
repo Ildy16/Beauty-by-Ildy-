@@ -132,3 +132,65 @@
   .productDetailPage .detailHero h1{margin:14px 0;font-size:var(--bbi-hero-title)}
 }
 
+
+
+/* Final polish — slim, elegant search and filter controls */
+.productsPage .productToolbar{
+  padding-top:18px;
+  padding-bottom:20px;
+}
+.productsPage .productSearch{
+  width:min(360px,100%);
+  max-width:360px;
+  min-height:34px;
+  margin-bottom:12px;
+  padding:0 10px;
+  gap:7px;
+  background:#fbf8f1;
+  border:1px solid rgba(183,154,91,.34);
+}
+.productsPage .productSearch svg{
+  width:12px;
+  height:12px;
+}
+.productsPage .productSearch input{
+  min-height:32px;
+  padding:5px 0;
+  font-size:10px;
+  line-height:1.1;
+}
+.productsPage .productFilters{
+  gap:6px;
+}
+.productsPage .productFilters button{
+  min-height:30px;
+  padding:6px 9px;
+  font-size:8px;
+  letter-spacing:.7px;
+}
+@media(max-width:620px){
+  .productsPage .productToolbar{
+    padding:14px 20px 16px;
+  }
+  .productsPage .productSearch{
+    width:min(340px,100%);
+    max-width:340px;
+    min-height:34px;
+    margin-bottom:10px;
+    padding:0 9px;
+  }
+  .productsPage .productSearch input{
+    min-height:32px;
+    padding:4px 0;
+    font-size:16px; /* prevents iOS zoom while keeping the field visually slim */
+    line-height:1;
+  }
+  .productsPage .productFilters{
+    gap:5px;
+  }
+  .productsPage .productFilters button{
+    min-height:28px;
+    padding:5px 8px;
+    font-size:7px;
+  }
+}
