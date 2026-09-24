@@ -341,3 +341,33 @@
   .doterraInfo{gap:7px}
   .doterraInfo p{font-size:11.5px}
 }
+
+
+/* Keep doTERRA catalogue buttons visually identical after switching from hash links */
+.brandShopBar button,
+.brandProductCard .brandCardActions button{
+  appearance:none;
+  -webkit-appearance:none;
+  font:inherit;
+  cursor:pointer;
+}
+.brandShopBar button{
+  min-height:34px;
+  padding:0 14px;
+  border:1px solid rgba(183,154,91,.72);
+  background:transparent;
+  color:inherit;
+  letter-spacing:inherit;
+}
+.brandProductCard .brandCardActions button{
+  min-height:34px;
+  padding:0 12px;
+  border:1px solid rgba(138,120,84,.28);
+  background:transparent;
+  color:#6f5a33;
+  letter-spacing:.08em;
+}
+.brandProductCard .brandCardActions button:hover{
+  background:#f7f2e9;
+  border-color:var(--gold);
+}
