@@ -62,10 +62,10 @@ const copy = {
     title: "Illóolajok & aromás wellness",
     lead: "Illóolajok és aromás wellness-rutinok a Beauty by Ildy szerkesztői válogatásában. A kínálatban doTERRA termékekhez is adunk hivatalos vásárlási útvonalat.",
     note: "A Beauty by Ildy független, többmárkás szerkesztőségi oldal. Nem a doTERRA hivatalos vállalati weboldala. A vásárlás és a rendelés kezelése a doTERRA hivatalos rendszerében történik.",
-    shop: "HIVATALOS DOTERRA OLDAL MEGNYITÁSA",
+    shop: "FEDEZD FEL A TELJES DOTERRA KÍNÁLATOT",
     heading: "MIRE HASZNÁLNÁD?",
     featured: "KIEMELT TERMÉKEK",
-    productCta: "MEGNÉZEM A HIVATALOS KÍNÁLATBAN",
+    productCta: "TELJES KÍNÁLAT MEGNYITÁSA",
     groupNames: {"SINGLE OIL":"EGYEDI ILLÓOLAJOK","BLEND":"OLAJKEVERÉKEK","BODY CARE":"TESTÁPOLÁS","SKINCARE":"BŐRÁPOLÁS"},
     cards: [
       ["AROMÁS RUTINOK", "Illatok és egyszerű otthoni rituálék relaxáló, frissítő vagy fókuszált hangulathoz."],
@@ -74,7 +74,7 @@ const copy = {
       ["NŐI WELLNESS", "Szerkesztői wellness-tartalmak és mindennapi rituálék túlzó egészségügyi ígéretek nélkül."]
     ],
     safety: "Használat előtt mindig kövesd a hivatalos termékcímke és a doTERRA használati útmutatójának előírásait; az illóolajok alkalmazása termékenként eltérhet.",
-    pending: "A termékspecifikus doTERRA vásárlási linkeket külön ellenőrizzük, mielőtt közvetlen termékgombokat teszünk ki."
+    routeNote: "A vásárlási gombok a Beauty by Ildy saját, doTERRA által biztosított oldalára vezetnek. Ott a teljes aktuális kínálatból választhatsz."
   },
   en: {
     back: "Back to home",
@@ -82,10 +82,10 @@ const copy = {
     title: "Essential oils & aromatic wellness",
     lead: "Essential oils and aromatherapy-inspired wellness routines in the Beauty by Ildy editorial edit, including an official purchase route for doTERRA products.",
     note: "Beauty by Ildy is an independent multi-brand editorial website and is not an official doTERRA corporate website. Purchases and orders are completed in doTERRA’s official system.",
-    shop: "OPEN OFFICIAL DOTERRA SITE",
+    shop: "EXPLORE THE FULL DOTERRA RANGE",
     heading: "WHAT ARE YOU LOOKING FOR?",
     featured: "FEATURED PRODUCTS",
-    productCta: "VIEW IN THE OFFICIAL SHOP",
+    productCta: "OPEN FULL RANGE",
     groupNames: {"SINGLE OIL":"SINGLE ESSENTIAL OILS","BLEND":"ESSENTIAL OIL BLENDS","BODY CARE":"BODY CARE","SKINCARE":"SKINCARE"},
     cards: [
       ["AROMATIC ROUTINES", "Scents and simple at-home rituals for a relaxing, refreshing or focused atmosphere."],
@@ -94,7 +94,7 @@ const copy = {
       ["WOMEN'S WELLNESS", "Editorial wellbeing content and everyday rituals without exaggerated health claims."]
     ],
     safety: "Always follow the official product label and doTERRA directions for use; essential-oil use can differ by product.",
-    pending: "Product-specific doTERRA purchase links will be verified separately before direct product buttons are published."
+    routeNote: "Purchase buttons open Beauty by Ildy’s doTERRA-provided replicated site, where visitors can choose from the current full range."
   },
   de: {
     back: "Zurück zur Startseite",
@@ -102,10 +102,10 @@ const copy = {
     title: "Ätherische Öle & aromatisches Wellness",
     lead: "Ätherische Öle und aromatherapeutisch inspirierte Wellness-Routinen in der redaktionellen Beauty-by-Ildy-Auswahl, einschließlich eines offiziellen Kaufwegs für doTERRA-Produkte.",
     note: "Beauty by Ildy ist eine unabhängige, markenübergreifende redaktionelle Website und keine offizielle Unternehmenswebsite von doTERRA. Käufe und Bestellungen werden im offiziellen doTERRA-System abgeschlossen.",
-    shop: "OFFIZIELLE DOTERRA-SEITE ÖFFNEN",
+    shop: "DAS GESAMTE DOTERRA-SORTIMENT ENTDECKEN",
     heading: "WONACH SUCHST DU?",
     featured: "AUSGEWÄHLTE PRODUKTE",
-    productCta: "IM OFFIZIELLEN SHOP ANSEHEN",
+    productCta: "GESAMTES SORTIMENT ÖFFNEN",
     groupNames: {"SINGLE OIL":"ÄTHERISCHE EINZELÖLE","BLEND":"ÖLMISCHUNGEN","BODY CARE":"KÖRPERPFLEGE","SKINCARE":"HAUTPFLEGE"},
     cards: [
       ["AROMATISCHE ROUTINEN", "Düfte und einfache Rituale für zu Hause für eine entspannte, frische oder fokussierte Atmosphäre."],
@@ -114,7 +114,7 @@ const copy = {
       ["WELLNESS FÜR FRAUEN", "Redaktionelle Wellbeing-Inhalte und Alltagsrituale ohne übertriebene Gesundheitsversprechen."]
     ],
     safety: "Befolge immer das offizielle Produktetikett und die doTERRA-Anwendungshinweise; die Verwendung ätherischer Öle kann je nach Produkt unterschiedlich sein.",
-    pending: "Produktspezifische doTERRA-Kauflinks werden separat geprüft, bevor direkte Produktbuttons veröffentlicht werden."
+    routeNote: "Die Kaufbuttons öffnen die von doTERRA bereitgestellte Beauty-by-Ildy-Seite. Dort kann aus dem aktuellen Gesamtsortiment gewählt werden."
   }
 };
 
@@ -179,7 +179,7 @@ export function DoterraPage({ lang = "hu" }) {
           ))}
         </div>
         <p className="brandPageNote">{t.safety}</p>
-        <p className="brandPageNote">{t.pending}</p>
+        <p className="brandPageNote">{t.routeNote}</p>
       </section>
     </main>
   );
