@@ -697,6 +697,34 @@ function getProductInfo(name, group, lang){
   return CATEGORY_INFO[lang]?.default || CATEGORY_INFO.en.default;
 }
 
+function getEditorialDescription(name, group, lang){
+  const info=getProductInfo(name,group,lang);
+  if(lang==="hu"){
+    const intro={
+      "SINGLE OIL": `${name} egy jellegzetes aromaprofilú doTERRA esszenciális olaj. `,
+      "BLEND": `${name} több esszenciális olaj tudatosan összeállított keveréke. `,
+      "ROLL-ON / TOUCH": `${name} praktikus, golyós kiszerelésű termék célzott külsőleges használatra. `,
+      "BODY CARE": `${name} testápolási és masszázsrutinokba illeszthető doTERRA termék. `,
+      "SKINCARE": `${name} a mindennapi vagy célzott bőrápolási rutin része lehet. `,
+      "PERSONAL CARE": `${name} a mindennapi személyes ápolásra készült. `,
+      "ON GUARD": `${name} az On Guard termékcsalád egyik célzott darabja. `,
+      "SUPPLEMENT": `${name} a doTERRA étrend-kiegészítő kínálatának része. `,
+      "KIDS": `${name} gyermekek számára kialakított aromás termék. `,
+      "KIDS & BABY": `${name} baba- és gyermekápolási rutinokra készült. `,
+      "KIDS SUPPLEMENT": `${name} gyermekeknek készült étrend-kiegészítő. `,
+      "SUN CARE": `${name} napvédelmi és ajakápolási rutinokhoz készült. `,
+      "HAIR CARE": `${name} haj- és fejbőrápolási rutinba illeszthető. `,
+      "WOMEN": `${name} női wellness-rutinok kiegészítésére készült. `,
+      "TARGETED": `${name} célzott, praktikus mindennapi használatra készült. `,
+      "DIFFUSER": `${name} otthoni aromás használatra tervezett készülék vagy készlet. `,
+      "ACCESSORY": `${name} a doTERRA aromaterápiás használatát segítő kiegészítő. `
+    }[group] || "";
+    return `${intro}${info[0]} ${info[1]} Használatakor mindig a konkrét termék aktuális címkéje és hivatalos doTERRA útmutatója az irányadó.`;
+  }
+  if(lang==="de") return `${name}: ${info[0]} ${info[1]} Bitte immer das aktuelle Produktetikett und die offiziellen doTERRA-Anwendungshinweise beachten.`;
+  return `${name}: ${info[0]} ${info[1]} Always follow the current product label and official doTERRA directions for use.`;
+}
+
 
 
 const copy = {
@@ -712,6 +740,7 @@ const copy = {
     productCta: "TERMÉK MEGNYITÁSA",
     productDesc: "Közvetlen doTERRA referral link a kiválasztott termékhez.",
     infoLabels: ["MIRE VALÓ?", "FŐ ÖSSZETEVŐK / ÖSSZETÉTEL", "HASZNÁLAT"],
+    descriptionLabel: "TERMÉKLEÍRÁS",
     groupNames: {"SINGLE OIL":"EGYEDI ILLÓOLAJOK","BLEND":"OLAJKEVERÉKEK","ROLL-ON / TOUCH":"TOUCH / GOLYÓS","BODY CARE":"TESTÁPOLÁS","SKINCARE":"BŐRÁPOLÁS","PERSONAL CARE":"SZEMÉLYES ÁPOLÁS","ON GUARD":"ON GUARD TERMÉKEK","SUPPLEMENT":"ÉTREND-KIEGÉSZÍTŐK","ACCESSORY":"KIEGÉSZÍTŐK","KIDS":"GYEREK TERMÉKEK","KIDS & BABY":"BABA & GYEREK","KIDS SUPPLEMENT":"GYEREK ÉTREND-KIEGÉSZÍTŐK","SUN CARE":"NAPVÉDELEM","HAIR CARE":"HAJÁPOLÁS","WOMEN":"NŐI WELLNESS","TARGETED":"CÉLZOTT TERMÉKEK","DIFFUSER":"PÁROLOGTATÓK"},
     cards: [
       ["AROMÁS RUTINOK", "Illatok és egyszerű otthoni rituálék relaxáló, frissítő vagy fókuszált hangulathoz."],
@@ -734,6 +763,7 @@ const copy = {
     productCta: "OPEN PRODUCT",
     productDesc: "Direct doTERRA referral link for the selected product.",
     infoLabels: ["WHAT IS IT FOR?", "MAIN INGREDIENTS / COMPOSITION", "HOW TO USE"],
+    descriptionLabel: "PRODUCT DESCRIPTION",
     groupNames: {"SINGLE OIL":"SINGLE ESSENTIAL OILS","BLEND":"ESSENTIAL OIL BLENDS","ROLL-ON / TOUCH":"TOUCH / ROLL-ON","BODY CARE":"BODY CARE","SKINCARE":"SKINCARE","PERSONAL CARE":"PERSONAL CARE","ON GUARD":"ON GUARD PRODUCTS","SUPPLEMENT":"SUPPLEMENTS","ACCESSORY":"ACCESSORIES","KIDS":"KIDS","KIDS & BABY":"BABY & KIDS","KIDS SUPPLEMENT":"KIDS SUPPLEMENTS","SUN CARE":"SUN CARE","HAIR CARE":"HAIR CARE","WOMEN":"WOMEN’S WELLNESS","TARGETED":"TARGETED PRODUCTS","DIFFUSER":"DIFFUSERS"},
     cards: [
       ["AROMATIC ROUTINES", "Scents and simple at-home rituals for a relaxing, refreshing or focused atmosphere."],
@@ -756,6 +786,7 @@ const copy = {
     productCta: "PRODUKT ÖFFNEN",
     productDesc: "Direkter doTERRA-Empfehlungslink zum ausgewählten Produkt.",
     infoLabels: ["WOFÜR?", "HAUPTINHALTSSTOFFE / ZUSAMMENSETZUNG", "ANWENDUNG"],
+    descriptionLabel: "PRODUKTBESCHREIBUNG",
     groupNames: {"SINGLE OIL":"ÄTHERISCHE EINZELÖLE","BLEND":"ÖLMISCHUNGEN","ROLL-ON / TOUCH":"TOUCH / ROLL-ON","BODY CARE":"KÖRPERPFLEGE","SKINCARE":"HAUTPFLEGE","PERSONAL CARE":"KÖRPER- & ALLTAGSPFLEGE","ON GUARD":"ON GUARD PRODUKTE","SUPPLEMENT":"NAHRUNGSERGÄNZUNG","ACCESSORY":"ZUBEHÖR","KIDS":"KINDER","KIDS & BABY":"BABY & KINDER","KIDS SUPPLEMENT":"NAHRUNGSERGÄNZUNG FÜR KINDER","SUN CARE":"SONNENSCHUTZ","HAIR CARE":"HAARPFLEGE","WOMEN":"WELLNESS FÜR FRAUEN","TARGETED":"GEZIELTE PRODUKTE","DIFFUSER":"DIFFUSER"},
     cards: [
       ["AROMATISCHE ROUTINEN", "Düfte und einfache Rituale für zu Hause für eine entspannte, frische oder fokussierte Atmosphäre."],
@@ -815,11 +846,17 @@ export function DoterraPage({ lang = "hu" }) {
                     <h2>{name}</h2>
                     {(() => {
                       const info=getProductInfo(name,group,lang);
-                      return <div className="doterraInfo">
-                        <p><strong>{t.infoLabels[0]}</strong>{info[0]}</p>
-                        <p><strong>{t.infoLabels[1]}</strong>{info[1]}</p>
-                        <p><strong>{t.infoLabels[2]}</strong>{info[2]}</p>
-                      </div>;
+                      return <>
+                        <div className="doterraDescription">
+                          <span>{t.descriptionLabel}</span>
+                          <p>{getEditorialDescription(name,group,lang)}</p>
+                        </div>
+                        <div className="doterraInfo">
+                          <p><strong>{t.infoLabels[0]}</strong>{info[0]}</p>
+                          <p><strong>{t.infoLabels[1]}</strong>{info[1]}</p>
+                          <p><strong>{t.infoLabels[2]}</strong>{info[2]}</p>
+                        </div>
+                      </>;
                     })()}
                     <div className="brandCardActions">
                       <a href={url} target="_blank" rel="sponsored noopener noreferrer">
