@@ -484,3 +484,41 @@
   .doterraDescription p{font-size:11px;line-height:1.68}
   .doterraInfo p{font-size:10.5px}
 }
+
+
+/* doTERRA editorial CTA — match the slim homepage button language */
+.brandPageBody > .brandProductGrid .brandCardActions{
+  align-items:flex-start;
+}
+.brandPageBody > .brandProductGrid .brandCardActions button{
+  box-sizing:border-box;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:auto;
+  max-width:100%;
+  min-height:34px;
+  padding:0 12px;
+  border:1px solid rgba(183,154,91,.46);
+  background:transparent;
+  color:#6f5a33;
+  font:500 8px/1 Montserrat;
+  letter-spacing:.9px;
+  white-space:nowrap;
+}
+.brandPageBody > .brandProductGrid .brandCardActions button:hover{
+  background:#f7f2e9;
+  border-color:#b79a5b;
+}
+@media(max-width:620px){
+  .brandPageBody > .brandProductGrid .brandCardActions button{
+    width:auto;
+    max-width:230px;
+    min-height:34px;
+    padding:0 12px;
+    font-size:8px;
+    line-height:1;
+    letter-spacing:.8px;
+    white-space:nowrap;
+  }
+}
