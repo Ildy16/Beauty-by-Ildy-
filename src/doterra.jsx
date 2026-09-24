@@ -552,6 +552,8 @@ const PRODUCTS = [
   ]
 ];
 
+const DUPLICATE_PRODUCT_URLS = new Set(PRODUCTS.filter((p,i,a)=>a.findIndex(x=>x[2]===p[2])!==i || a.findLastIndex(x=>x[2]===p[2])!==i).map(p=>p[2]));
+
 const PRODUCT_INFO_HU = {
   "Lavender / Levendula": ["Nyugodt esti, diffúzoros és bőrápolási rutinokhoz.", "Levendula esszenciális olaj.", "Aromásan és a címke szerint külsőleg használható; bőrön szükség szerint hígítva."],
   "Lemon / Citrom": ["Friss, tiszta illatélményhez és diffúzoros rutinokhoz.", "Citromhéjból nyert esszenciális olaj.", "Aromás használatra; bőrön a citrusolajokra vonatkozó fényérzékenységi előírásokat követni kell."],
@@ -765,6 +767,7 @@ const copy = {
     heading: "MIRE HASZNÁLNÁD?",
     featured: "DOTERRA TERMÉKEK",
     productCta: "TERMÉK MEGNYITÁSA",
+    linkCheck: "LINK ELLENŐRZÉS ALATT",
     productDesc: "Közvetlen doTERRA referral link a kiválasztott termékhez.",
     infoLabels: ["MIRE VALÓ?", "FŐ ÖSSZETEVŐK / ÖSSZETÉTEL", "HASZNÁLAT"],
     descriptionLabel: "TERMÉKLEÍRÁS",
@@ -789,6 +792,7 @@ const copy = {
     heading: "WHAT ARE YOU LOOKING FOR?",
     featured: "DOTERRA PRODUCTS",
     productCta: "OPEN PRODUCT",
+    linkCheck: "LINK UNDER REVIEW",
     productDesc: "Direct doTERRA referral link for the selected product.",
     infoLabels: ["WHAT IS IT FOR?", "MAIN INGREDIENTS / COMPOSITION", "HOW TO USE"],
     descriptionLabel: "PRODUCT DESCRIPTION",
@@ -813,6 +817,7 @@ const copy = {
     heading: "WONACH SUCHST DU?",
     featured: "DOTERRA PRODUKTE",
     productCta: "PRODUKT ÖFFNEN",
+    linkCheck: "LINK WIRD GEPRÜFT",
     productDesc: "Direkter doTERRA-Empfehlungslink zum ausgewählten Produkt.",
     infoLabels: ["WOFÜR?", "HAUPTINHALTSSTOFFE / ZUSAMMENSETZUNG", "ANWENDUNG"],
     descriptionLabel: "PRODUKTBESCHREIBUNG",
@@ -890,9 +895,13 @@ export function DoterraPage({ lang = "hu" }) {
                       </>;
                     })()}
                     <div className="brandCardActions">
-                      <a href={url} target="_blank" rel="sponsored noopener noreferrer">
-                        {t.productCta}<ExternalLink size={12}/>
-                      </a>
+                      {DUPLICATE_PRODUCT_URLS.has(url) ? (
+                        <span className="doterraLinkCheck">{t.linkCheck}</span>
+                      ) : (
+                        <a href={url} target="_blank" rel="sponsored noopener noreferrer">
+                          {t.productCta}<ExternalLink size={12}/>
+                        </a>
+                      )}
                     </div>
                   </article>
                 ))}
