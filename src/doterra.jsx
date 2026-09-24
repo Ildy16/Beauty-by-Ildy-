@@ -552,6 +552,89 @@ const PRODUCTS = [
   ]
 ];
 
+const PRODUCT_INFO_HU = {
+  "Lavender / Levendula": ["Nyugodt esti, diffúzoros és bőrápolási rutinokhoz.", "Levendula esszenciális olaj.", "Aromásan és a címke szerint külsőleg használható; bőrön szükség szerint hígítva."],
+  "Lemon / Citrom": ["Friss, tiszta illatélményhez és diffúzoros rutinokhoz.", "Citromhéjból nyert esszenciális olaj.", "Aromás használatra; bőrön a citrusolajokra vonatkozó fényérzékenységi előírásokat követni kell."],
+  "Peppermint / Borsmenta": ["Frissítő, élénkítő aromás rutinokhoz.", "Borsmenta esszenciális olaj.", "Aromásan vagy a címke szerint külsőleg; érzékeny bőrön hígítva."],
+  "Wild Orange / Vadnarancs": ["Meleg, édes citrusos illatélményhez és diffúzorba.", "Vadnarancshéjból nyert esszenciális olaj.", "Elsősorban aromás használatra; külső használatnál kövesd a címke fényérzékenységi útmutatását."],
+  "Tea Tree (Melaleuca) / Teafa": ["Bőrápolási, fejbőr- és aromás rutinokhoz.", "Teafa esszenciális olaj.", "Kozmetikai célú külső használatra a címke szerint, szükség esetén hígítva."],
+  "Copaiba": ["Fás-balzsamos aromás rutinokhoz és kozmetikai használathoz.", "Copaiba gyantából nyert esszenciális olaj.", "Aromásan vagy külsőleg a címke szerint."],
+  "Frankincense / Tömjén": ["Prémium aromás és bőrápolási rutinokhoz.", "Tömjén gyantából nyert esszenciális olaj.", "Aromásan és a címke szerint külsőleg, bőrápolási rutinba keverve is használható."],
+  "Eucalyptus / Eukaliptusz": ["Friss, tiszta illatú diffúzoros és aromás rutinokhoz.", "Eukaliptusz esszenciális olaj.", "Elsősorban aromás használatra; külső használatnál kövesd a címkét."],
+  "Lemongrass / Indiai citromfű": ["Friss, citrusos-gyógynövényes aromás rutinokhoz.", "Indiai citromfű esszenciális olaj.", "Diffúzorban vagy külsőleg a címke szerint; bőrön általában hígítva."],
+  "Bergamot / Bergamott": ["Lágy citrusos aromás rutinokhoz és személyes illatélményhez.", "Bergamott héjából nyert esszenciális olaj.", "Aromásan; bőrön csak a címke fényérzékenységi útmutatása szerint."],
+  "Black Pepper / Fekete bors": ["Meleg, fűszeres aromás és masszázsrutinokhoz.", "Fekete bors esszenciális olaj.", "Aromásan vagy jól hígítva külsőleg a címke szerint."],
+  "Black Spruce / Kanadai fekete luc": ["Fás, erdei aromás rutinokhoz.", "Kanadai fekete luc esszenciális olaj.", "Diffúzorban vagy hígítva külsőleg a címke szerint."],
+  "Blue Tansy / Kék varádics": ["Prémium aromás és kozmetikai rutinokhoz.", "Kék varádics esszenciális olaj.", "Kis mennyiségben, a címke szerint; természetes kék színe miatt textíliát elszínezhet."],
+  "Cardamom / Kardamom": ["Meleg, fűszeres aromás rutinokhoz.", "Kardamom esszenciális olaj.", "Aromásan vagy a címke szerint külsőleg."],
+  "Cassia / Kasszia": ["Intenzív, meleg-fűszeres illatélményhez.", "Kasszia esszenciális olaj.", "Nagyon intenzív olaj; külső használatnál mindig erősen hígítva és a címke szerint."],
+  "Cedarwood / Vörös cédrus": ["Fás, nyugodt hangulatú esti és diffúzoros rutinokhoz.", "Vörös cédrus esszenciális olaj.", "Aromásan vagy hígítva külsőleg."],
+  "Citronella": ["Friss, citrusos-füves kültéri és diffúzoros illatrutinokhoz.", "Citronella esszenciális olaj.", "Aromásan vagy hígítva külsőleg a címke szerint."],
+  "dōTERRA Air™": ["Friss, mentás-eukaliptuszos aromás keverék otthoni diffúzorhoz.", "Többféle menta-, eukaliptusz- és aromás esszenciális olajból álló keverék; a pontos összetétel a címkén.", "Diffúzorban vagy a címke szerint külsőleg."],
+  "dōTERRA Serenity™": ["Esti, nyugodt hangulatú aromás rutinokhoz.", "Nyugtató illatprofilú esszenciális olajkeverék; a pontos összetétel a címkén.", "Elsősorban diffúzorban vagy a címke szerint külsőleg."],
+  "On Guard™": ["Meleg, fűszeres-citrusos aromás keverék otthoni rutinokhoz.", "Citrusos és fűszeres esszenciális olajok szabadalmazott keveréke; a pontos összetétel a címkén.", "Aromás vagy a konkrét kiszerelés címkéje szerinti használatra."],
+  "Deep Blue™": ["Sport utáni és masszázsrutinokhoz, hűsítő érzetre.", "Növényi kivonatok és esszenciális olajok keveréke, többek között copaiba és rozmaring; a teljes összetétel a címkén.", "Külsőleg, célzott masszázshoz a címke szerint."],
+  "Deep Blue™ Touch": ["Praktikus, előhígított Deep Blue külsőleges használatra.", "Deep Blue keverék frakcionált kókuszolajban.", "Golyós adagolóval, külsőleg."],
+  "Deep Blue™ golyós kiszerelés": ["Koncentráltabb Deep Blue golyós kiszerelés célzott külsőleges használatra.", "Deep Blue esszenciális olajkeverék; nem azonos a Touch előhígított változattal.", "Külsőleg, kis mennyiségben a címke szerint."],
+  "Deep Blue™ Rub / enyhítő krém": ["Hűsítő érzetű testápoló és masszázskrém sport utáni vagy esti rutinokhoz.", "Krémalap Deep Blue esszenciális olajkeverékkel és növényi összetevőkkel.", "Csak külsőleg, az érintett testfelületre masszírozva."],
+  "dōTERRA Balance™": ["Fás-földes aromás keverék nyugodt, kiegyensúlyozott hangulathoz.", "Többféle fás és aromás esszenciális olaj keveréke; pontos összetétel a címkén.", "Diffúzorban vagy a címke szerint külsőleg."],
+  "ClaryCalm™": ["Női aromás wellness-rutinokhoz készült Touch jellegű keverék.", "Több esszenciális olaj és hordozóolaj kombinációja; pontos összetétel a címkén.", "Külsőleg, a címke szerint."],
+  "Correct-X™": ["Célzott bőrápoló balzsam kisebb, száraz vagy igénybevett bőrterületekre.", "Kozmetikai balzsam esszenciális olajokkal és bőrápoló összetevőkkel.", "Csak külsőleg, kis területen."],
+  "Yarrow|Pom testmegújító szérum": ["Tápláló, prémium testápolási rutinokhoz.", "Yarrow|Pom komplexet és bőrápoló olajokat tartalmazó testápoló szérum.", "Külsőleg, testápolóként."],
+  "dōTERRA védősampon": ["Mindennapi haj- és fejbőrtisztításhoz.", "Samponalap növényi és aromás összetevőkkel; teljes INCI a termékcímkén.", "Nedves hajon habosítva, majd leöblítve."],
+  "dōTERRA napi kondicionáló": ["Mindennapi hajkondicionáláshoz, a haj simább érzetéért.", "Kondicionáló alap növényi és aromás összetevőkkel; teljes INCI a termékcímkén.", "Samponozás után a hajhosszra, majd leöblítve."],
+  "Öregedésgátló szemkrém": ["A szemkörnyék hidratálására és ápolására.", "Kozmetikai szemkörnyékápoló formula növényi és bőrápoló összetevőkkel.", "Kis mennyiségben a szemkörnyékre, a szembe jutást kerülve."],
+  "Öregedésgátló hidratálókrém": ["Gazdagabb arckrém szárazabb, érettebb bőr napi ápolására.", "Hidratáló krémalap növényi és aromás összetevőkkel.", "Arctisztítás után, nappal vagy este."],
+  "Arctisztító": ["Mindennapi arctisztításhoz.", "Lemosó alap bőrkondicionáló és növényi összetevőkkel.", "Nedves bőrön, majd alaposan leöblítve."],
+  "Hidratálókrém": ["Mindennapi arcbőr-hidratáláshoz.", "Hidratáló krémalap bőrápoló összetevőkkel.", "Arctisztítás után."],
+  "dōTERRA™ sun ajakbalzsam SPF 15": ["Ajakápolás és mindennapi fényvédelem kombinációja.", "Ajakbalzsam UV-szűrőkkel és ápoló összetevőkkel.", "A címke szerint, napozás előtt és szükség szerint újrakenve."],
+  "dōTERRA SPA tápláló testvaj": ["Gazdag testápolás szárazabb bőrre.", "Testvaj alap növényi vajakkal/olajokkal és aromás összetevőkkel.", "Tiszta bőrre masszírozva."],
+  "Alpha CRS™+": ["Napi étrend-kiegészítő formula a doTERRA vitalitási rendszerében.", "Többféle növényi kivonatot és mikrotápanyagot tartalmazó kapszulás formula; pontos hatóanyaglista a címkén.", "A napi adagolást kizárólag a címke szerint kövesd."],
+  "Microplex VMz™": ["Napi vitamin- és ásványianyag-pótlást célzó étrend-kiegészítő.", "Vitaminokat, ásványi anyagokat és kapcsolódó tápanyagokat tartalmaz; pontos mennyiségek a címkén.", "A címke szerinti napi adagban."],
+  "Deep Blue™ Polyphenol Complex": ["A Deep Blue termékcsalád belsőleges étrend-kiegészítője.", "Polifenolokat és növényi eredetű összetevőket tartalmazó kapszulás formula; pontos összetétel a címkén.", "Csak a címke szerinti adagolással."],
+  "PB Restore™": ["Bélflóra-fókuszú étrend-kiegészítő formula.", "Probiotikus mikroorganizmusokat és kapcsolódó összetevőket tartalmazó kapszulás termék; pontos törzsek/mennyiségek a címkén.", "A címke szerinti adagolással."],
+  "PB Assist+™": ["Probiotikus étrend-kiegészítő tasakos kiszerelésben.", "Probiotikus kultúrákat és kiegészítő összetevőket tartalmaz; pontos törzsek/mennyiségek a címkén.", "A címke szerinti napi adagban."],
+  "dōTERRA Rostkeverék": ["Élelmirost-bevitel kiegészítésére.", "Oldható és/vagy növényi rostforrásokat tartalmazó por; pontos összetétel a címkén.", "Folyadékba vagy ételbe keverve a címke szerint."],
+  "Esszenciális csont tápanyag komplex": ["Nők számára összeállított ásványianyag- és mikrotápanyag-kiegészítő.", "Csontanyagcserében szerepet játszó vitaminokat és ásványi anyagokat tartalmaz; pontos mennyiségek a címkén.", "A címke szerinti napi adagban."],
+  "Esszenciális fitoösztrogén komplex": ["Női wellness célú növényi étrend-kiegészítő.", "Növényi eredetű fitoösztrogén-forrásokat és kiegészítő tápanyagokat tartalmaz; pontos összetétel a címkén.", "A címke szerinti adagban; hormonérzékeny állapot vagy gyógyszeres kezelés esetén orvossal egyeztetendő."],
+  "Petal 2.0 párologtató": ["Ultrahangos illóolaj-párologtató otthoni aromás használathoz.", "Elektromos párologtató készülék víztartállyal.", "Víz és a címke szerint adagolt illóolaj használatával."],
+  "Lumo párologtató + dōTERRA Serenity™": ["Párologtató és Serenity aromás keverék egy csomagban.", "Lumo párologtató + Serenity esszenciális olajkeverék.", "Otthoni aromás használatra a készülék útmutatója szerint."]
+};
+
+const CATEGORY_INFO = {
+  hu: {
+    "SINGLE OIL": ["Aromás és – a címke szerint – külsőleges rutinokhoz.", "Egyetlen növényi forrásból származó esszenciális olaj.", "A pontos használati módot és hígítást mindig a termékcímke alapján kövesd."],
+    "BLEND": ["Célzott aromás rutinokhoz összeállított doTERRA-keverék.", "Több esszenciális olaj szabadalmazott kombinációja; a pontos összetétel a címkén.", "Diffúzorban vagy a konkrét termék címkéje szerint."],
+    "ROLL-ON / TOUCH": ["Praktikus, célzott külsőleges használatra.", "A megnevezett esszenciális olaj/keverék; Touch változatoknál jellemzően frakcionált kókuszolajjal hígítva.", "Golyós adagolóval, külsőleg, a címke szerint."],
+    "BODY CARE": ["Testápolási vagy masszázsrutinokhoz.", "Kozmetikai alap és aromás/bőrápoló összetevők; teljes INCI a címkén.", "Csak külsőleg."],
+    "SKINCARE": ["Mindennapi vagy célzott arcbőrápolási rutinokhoz.", "Kozmetikai formula bőrápoló és aromás összetevőkkel; teljes INCI a címkén.", "A termék típusának megfelelően, külsőleg."],
+    "PERSONAL CARE": ["Mindennapi személyes ápolási rutinokhoz.", "Kozmetikai/higiéniai formula; pontos összetétel a címkén.", "Kizárólag a termékcímke szerint."],
+    "ON GUARD": ["Az On Guard termékcsalád mindennapi ápolási és aromás rutinjaihoz.", "On Guard keveréket és a terméktípustól függő további összetevőket tartalmaz.", "A konkrét kiszerelés címkéje szerint."],
+    "SUPPLEMENT": ["Étrend-kiegészítő, célja a napi tápanyag- vagy wellness-rutin kiegészítése.", "A pontos hatóanyagok és mennyiségek termékenként eltérnek; a címke az irányadó.", "Csak a címke szerinti adagolással."],
+    "ACCESSORY": ["Aromaterápiás vagy termékhasználati kiegészítő.", "Nem fogyasztási célú kiegészítő termék.", "A rendeltetésének megfelelően."],
+    "KIDS": ["Gyermekeknek kialakított aromás termék.", "Gyermekbarát, előre összeállított aromás formula; pontos összetétel a címkén.", "Csak a korosztályra vonatkozó címkeutasítás szerint."],
+    "KIDS & BABY": ["Baba- és gyermekápolási rutinokhoz.", "Kímélő ápoló formula; teljes összetétel a címkén.", "Csak a címke szerinti életkorban és módon."],
+    "KIDS SUPPLEMENT": ["Gyermekeknek készült étrend-kiegészítő.", "Vitaminokat, zsírsavakat vagy egyéb tápanyagokat tartalmazó formula; pontos összetétel a címkén.", "Csak a címke szerinti életkorban és adagban."],
+    "SUN CARE": ["Mindennapi napvédelmi rutinokhoz.", "UV-szűrőket és ápoló összetevőket tartalmazó formula.", "A címke szerint, megfelelő mennyiségben és szükség szerinti újrakenéssel."],
+    "HAIR CARE": ["Haj- és fejbőrápolási rutinokhoz.", "Hajápoló alap növényi és aromás összetevőkkel.", "A termékcímke szerint."],
+    "WOMEN": ["Női wellness-rutinok kiegészítésére.", "Növényi kivonatokat, vitaminokat és/vagy ásványi anyagokat tartalmazó formula; pontos összetétel a címkén.", "A címke szerinti adagban."],
+    "TARGETED": ["Célzott, praktikus mindennapi használatra.", "A terméktípustól függő aromás vagy wellness formula.", "A címke szerint."],
+    "DIFFUSER": ["Otthoni aromás használatra szolgáló készülék vagy készlet.", "Párologtató készülék és/vagy aromás termék.", "A készülék használati útmutatója szerint."]
+  },
+  en: {
+    default: ["Designed for the product category shown.", "See the current official doTERRA label for the exact ingredient list.", "Always follow the product label and directions for use."]
+  },
+  de: {
+    default: ["Für die angegebene Produktkategorie entwickelt.", "Die genaue Zutatenliste findest du auf dem aktuellen offiziellen doTERRA-Etikett.", "Immer Etikett und Anwendungshinweise beachten."]
+  }
+};
+
+function getProductInfo(name, group, lang){
+  if(lang==="hu") return PRODUCT_INFO_HU[name] || CATEGORY_INFO.hu[group] || CATEGORY_INFO.hu["TARGETED"];
+  return CATEGORY_INFO[lang]?.default || CATEGORY_INFO.en.default;
+}
+
+
 
 const copy = {
   hu: {
@@ -565,6 +648,7 @@ const copy = {
     featured: "DOTERRA TERMÉKEK",
     productCta: "TERMÉK MEGNYITÁSA",
     productDesc: "Közvetlen doTERRA referral link a kiválasztott termékhez.",
+    infoLabels: ["MIRE VALÓ?", "MIT TARTALMAZ?", "HASZNÁLAT"],
     groupNames: {"SINGLE OIL":"EGYEDI ILLÓOLAJOK","BLEND":"OLAJKEVERÉKEK","ROLL-ON / TOUCH":"TOUCH / GOLYÓS","BODY CARE":"TESTÁPOLÁS","SKINCARE":"BŐRÁPOLÁS","PERSONAL CARE":"SZEMÉLYES ÁPOLÁS","ON GUARD":"ON GUARD TERMÉKEK","SUPPLEMENT":"ÉTREND-KIEGÉSZÍTŐK","ACCESSORY":"KIEGÉSZÍTŐK","KIDS":"GYEREK TERMÉKEK","KIDS & BABY":"BABA & GYEREK","KIDS SUPPLEMENT":"GYEREK ÉTREND-KIEGÉSZÍTŐK","SUN CARE":"NAPVÉDELEM","HAIR CARE":"HAJÁPOLÁS","WOMEN":"NŐI WELLNESS","TARGETED":"CÉLZOTT TERMÉKEK","DIFFUSER":"PÁROLOGTATÓK"},
     cards: [
       ["AROMÁS RUTINOK", "Illatok és egyszerű otthoni rituálék relaxáló, frissítő vagy fókuszált hangulathoz."],
@@ -586,6 +670,7 @@ const copy = {
     featured: "DOTERRA PRODUCTS",
     productCta: "OPEN PRODUCT",
     productDesc: "Direct doTERRA referral link for the selected product.",
+    infoLabels: ["WHAT IS IT FOR?", "WHAT DOES IT CONTAIN?", "HOW TO USE"],
     groupNames: {"SINGLE OIL":"SINGLE ESSENTIAL OILS","BLEND":"ESSENTIAL OIL BLENDS","ROLL-ON / TOUCH":"TOUCH / ROLL-ON","BODY CARE":"BODY CARE","SKINCARE":"SKINCARE","PERSONAL CARE":"PERSONAL CARE","ON GUARD":"ON GUARD PRODUCTS","SUPPLEMENT":"SUPPLEMENTS","ACCESSORY":"ACCESSORIES","KIDS":"KIDS","KIDS & BABY":"BABY & KIDS","KIDS SUPPLEMENT":"KIDS SUPPLEMENTS","SUN CARE":"SUN CARE","HAIR CARE":"HAIR CARE","WOMEN":"WOMEN’S WELLNESS","TARGETED":"TARGETED PRODUCTS","DIFFUSER":"DIFFUSERS"},
     cards: [
       ["AROMATIC ROUTINES", "Scents and simple at-home rituals for a relaxing, refreshing or focused atmosphere."],
@@ -607,6 +692,7 @@ const copy = {
     featured: "DOTERRA PRODUKTE",
     productCta: "PRODUKT ÖFFNEN",
     productDesc: "Direkter doTERRA-Empfehlungslink zum ausgewählten Produkt.",
+    infoLabels: ["WOFÜR?", "WAS ENTHÄLT ES?", "ANWENDUNG"],
     groupNames: {"SINGLE OIL":"ÄTHERISCHE EINZELÖLE","BLEND":"ÖLMISCHUNGEN","ROLL-ON / TOUCH":"TOUCH / ROLL-ON","BODY CARE":"KÖRPERPFLEGE","SKINCARE":"HAUTPFLEGE","PERSONAL CARE":"KÖRPER- & ALLTAGSPFLEGE","ON GUARD":"ON GUARD PRODUKTE","SUPPLEMENT":"NAHRUNGSERGÄNZUNG","ACCESSORY":"ZUBEHÖR","KIDS":"KINDER","KIDS & BABY":"BABY & KINDER","KIDS SUPPLEMENT":"NAHRUNGSERGÄNZUNG FÜR KINDER","SUN CARE":"SONNENSCHUTZ","HAIR CARE":"HAARPFLEGE","WOMEN":"WELLNESS FÜR FRAUEN","TARGETED":"GEZIELTE PRODUKTE","DIFFUSER":"DIFFUSER"},
     cards: [
       ["AROMATISCHE ROUTINEN", "Düfte und einfache Rituale für zu Hause für eine entspannte, frische oder fokussierte Atmosphäre."],
@@ -664,7 +750,14 @@ export function DoterraPage({ lang = "hu" }) {
                   <article className="brandProductCard doterraCard isInfo" key={name}>
                     <div className="brandCardTopline"><span>{t.groupNames[group] || group}</span><em>DIRECT LINK</em></div>
                     <h2>{name}</h2>
-                    <p>{t.productDesc}</p>
+                    {(() => {
+                      const info=getProductInfo(name,group,lang);
+                      return <div className="doterraInfo">
+                        <p><strong>{t.infoLabels[0]}</strong>{info[0]}</p>
+                        <p><strong>{t.infoLabels[1]}</strong>{info[1]}</p>
+                        <p><strong>{t.infoLabels[2]}</strong>{info[2]}</p>
+                      </div>;
+                    })()}
                     <div className="brandCardActions">
                       <a href={url} target="_blank" rel="sponsored noopener noreferrer">
                         {t.productCta}<ExternalLink size={12}/>
