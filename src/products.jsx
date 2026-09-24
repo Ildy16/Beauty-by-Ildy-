@@ -51,7 +51,8 @@ export const localIngredient=(name,lang)=>lang==='hu'?name:(ingredientLabels[lan
 const categoryOrder=['agewell','pdrn','barrier','pigment','soothe','eye','hair','wellness'];
 
 export function ProductsPage({lang='hu'}){
- const t=T[lang]||T.hu; const [cat,setCat]=useState('all'); const [q,setQ]=useState('');
+ const initialCategory=typeof window!=='undefined'&&window.location.hash.startsWith('#products/')?window.location.hash.split('/')[1]:'all';
+ const t=T[lang]||T.hu; const [cat,setCat]=useState(categoryOrder.includes(initialCategory)?initialCategory:'all'); const [q,setQ]=useState('');
  const availableCategories=useMemo(()=>categoryOrder.filter(c=>products.some(p=>p.category===c)),[]);
  const filtered=useMemo(()=>products.filter(p=>(cat==='all'||p.category===cat)&&(`${p.brand} ${p.name}`.toLowerCase().includes(q.trim().toLowerCase()))),[cat,q]);
  const groups=availableCategories.map(c=>[c,filtered.filter(p=>p.category===c)]).filter(([,arr])=>arr.length);
