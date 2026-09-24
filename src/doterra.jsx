@@ -304,6 +304,251 @@ const PRODUCTS = [
     "Vietnámi eukaliptusz",
     "SINGLE OIL",
     "https://doterra.me/wwcycA"
+  ],
+  [
+    "Óriás tuja",
+    "SINGLE OIL",
+    "https://doterra.me/-uypYZ"
+  ],
+  [
+    "Copaiba Touch",
+    "ROLL-ON / TOUCH",
+    "https://doterra.me/SKuLJu"
+  ],
+  [
+    "Tömjén Touch",
+    "ROLL-ON / TOUCH",
+    "https://doterra.me/a8l5kF"
+  ],
+  [
+    "HD Clear™ helyi használatra való keverék",
+    "ROLL-ON / TOUCH",
+    "https://doterra.me/LAAuoA"
+  ],
+  [
+    "Olasz szalmagyopár Touch",
+    "ROLL-ON / TOUCH",
+    "https://doterra.me/WO8KVP"
+  ],
+  [
+    "InTune™",
+    "ROLL-ON / TOUCH",
+    "https://doterra.me/lNsquJ"
+  ],
+  [
+    "Jázmin Touch",
+    "ROLL-ON / TOUCH",
+    "https://doterra.me/b-aGGB"
+  ],
+  [
+    "dōTERRA Cheer™ Touch",
+    "ROLL-ON / TOUCH",
+    "https://doterra.me/r9E8NO"
+  ],
+  [
+    "dōTERRA Passion™ Touch",
+    "ROLL-ON / TOUCH",
+    "https://doterra.me/U54pAg"
+  ],
+  [
+    "dōTERRA Forgive™ Touch",
+    "ROLL-ON / TOUCH",
+    "https://doterra.me/waru66"
+  ],
+  [
+    "dōTERRA Peace™ Touch",
+    "ROLL-ON / TOUCH",
+    "https://doterra.me/Lvro9v"
+  ],
+  [
+    "dōTERRA Adaptiv™ Touch",
+    "ROLL-ON / TOUCH",
+    "https://doterra.me/bzb3Ru"
+  ],
+  [
+    "dōTERRA Hope™ Touch",
+    "ROLL-ON / TOUCH",
+    "https://doterra.me/AJjT5y"
+  ],
+  [
+    "Thinker™",
+    "KIDS",
+    "https://doterra.me/nqd4fu"
+  ],
+  [
+    "dōTERRA Rescuer™",
+    "KIDS",
+    "https://doterra.me/51sZEu"
+  ],
+  [
+    "dōTERRA Steady™",
+    "KIDS",
+    "https://doterra.me/puMAS5"
+  ],
+  [
+    "Stronger™",
+    "KIDS",
+    "https://doterra.me/2xpIaN"
+  ],
+  [
+    "Tamer™",
+    "KIDS",
+    "https://doterra.me/lhrJzO"
+  ],
+  [
+    "dōTERRA popsikenőcs babáknak",
+    "KIDS & BABY",
+    "https://doterra.me/7BubBo"
+  ],
+  [
+    "dōTERRA a2z Chewable™ rágótabletta",
+    "KIDS SUPPLEMENT",
+    "https://doterra.me/vZu_u-"
+  ],
+  [
+    "IQ Mega™",
+    "KIDS SUPPLEMENT",
+    "https://doterra.me/7qjCuQ"
+  ],
+  [
+    "Öregedésgátló szemkrém",
+    "SKINCARE",
+    "https://doterra.me/3lDins"
+  ],
+  [
+    "Öregedésgátló hidratálókrém",
+    "SKINCARE",
+    "https://doterra.me/7wNnqs"
+  ],
+  [
+    "Arctisztító",
+    "SKINCARE",
+    "https://doterra.me/Lg1zvN"
+  ],
+  [
+    "Hidratálókrém",
+    "SKINCARE",
+    "https://doterra.me/7wNnqs"
+  ],
+  [
+    "dōTERRA™ sun ajakbalzsam SPF 15",
+    "SUN CARE",
+    "https://doterra.me/CyL46h"
+  ],
+  [
+    "dōTERRA SPA tápláló testvaj",
+    "BODY CARE",
+    "https://doterra.me/OLFvDc"
+  ],
+  [
+    "dōTERRA védősampon",
+    "HAIR CARE",
+    "https://doterra.me/ESWcnB"
+  ],
+  [
+    "dōTERRA napi kondicionáló",
+    "HAIR CARE",
+    "https://doterra.me/Q68l5e"
+  ],
+  [
+    "Alpha CRS™+",
+    "SUPPLEMENT",
+    "https://doterra.me/FwDnTR"
+  ],
+  [
+    "Microplex VMz™",
+    "SUPPLEMENT",
+    "https://doterra.me/6kjONB"
+  ],
+  [
+    "dōTERRA™ Csokoládés növényi fehérje",
+    "SUPPLEMENT",
+    "https://doterra.me/VASlW9"
+  ],
+  [
+    "Deep Blue™ Polyphenol Complex",
+    "SUPPLEMENT",
+    "https://doterra.me/kMCwb0"
+  ],
+  [
+    "ZenGest DigestTab™",
+    "SUPPLEMENT",
+    "https://doterra.me/0uZm8k"
+  ],
+  [
+    "ZenGest™ lágyzselatin kapszula",
+    "SUPPLEMENT",
+    "https://doterra.me/-CpdZ8"
+  ],
+  [
+    "ZenGest™ Touch",
+    "ROLL-ON / TOUCH",
+    "https://doterra.me/W_uovf"
+  ],
+  [
+    "TriEase™ lágyzselatin kapszula",
+    "SUPPLEMENT",
+    "https://doterra.me/43zTrq"
+  ],
+  [
+    "PB Assist+™",
+    "SUPPLEMENT",
+    "https://doterra.me/w0dt0T"
+  ],
+  [
+    "MetaPWR™ Mito2Max™",
+    "SUPPLEMENT",
+    "https://doterra.me/VdwDI6"
+  ],
+  [
+    "MetaPWR™ Advantage",
+    "SUPPLEMENT",
+    "https://doterra.me/spwOcC"
+  ],
+  [
+    "Esszenciális csont tápanyag komplex",
+    "WOMEN",
+    "https://doterra.me/TlKNkR"
+  ],
+  [
+    "Esszenciális fitoösztrogén komplex",
+    "WOMEN",
+    "https://doterra.me/JsAARp"
+  ],
+  [
+    "dōTERRA™ Gyömbéres cukorka",
+    "TARGETED",
+    "https://doterra.me/6POU7c"
+  ],
+  [
+    "Lumo párologtató + dōTERRA Serenity™",
+    "DIFFUSER",
+    "https://doterra.me/e7LzCS"
+  ],
+  [
+    "Petal 2.0 párologtató",
+    "DIFFUSER",
+    "https://doterra.me/4QRNz9"
+  ],
+  [
+    "Hármas csomag Petal™ párologtatóval",
+    "DIFFUSER",
+    "https://doterra.me/qd3YfW"
+  ],
+  [
+    "10 ml-es borostyánszínű golyós üvegek – 6 db",
+    "ACCESSORY",
+    "https://doterra.me/ov3Gdc"
+  ],
+  [
+    "30 ml-es szórófejes flakon – 3 db",
+    "ACCESSORY",
+    "https://doterra.me/13EACX"
+  ],
+  [
+    "2 ml-es mintaüvegek – 72 db",
+    "ACCESSORY",
+    "https://doterra.me/xldFbm"
   ]
 ];
 
@@ -320,7 +565,7 @@ const copy = {
     featured: "DOTERRA TERMÉKEK",
     productCta: "TERMÉK MEGNYITÁSA",
     productDesc: "Közvetlen doTERRA referral link a kiválasztott termékhez.",
-    groupNames: {"SINGLE OIL":"EGYEDI ILLÓOLAJOK","BLEND":"OLAJKEVERÉKEK","ROLL-ON / TOUCH":"TOUCH / GOLYÓS","BODY CARE":"TESTÁPOLÁS","SKINCARE":"BŐRÁPOLÁS","PERSONAL CARE":"SZEMÉLYES ÁPOLÁS","ON GUARD":"ON GUARD TERMÉKEK","SUPPLEMENT":"ÉTREND-KIEGÉSZÍTŐK","ACCESSORY":"KIEGÉSZÍTŐK"},
+    groupNames: {"SINGLE OIL":"EGYEDI ILLÓOLAJOK","BLEND":"OLAJKEVERÉKEK","ROLL-ON / TOUCH":"TOUCH / GOLYÓS","BODY CARE":"TESTÁPOLÁS","SKINCARE":"BŐRÁPOLÁS","PERSONAL CARE":"SZEMÉLYES ÁPOLÁS","ON GUARD":"ON GUARD TERMÉKEK","SUPPLEMENT":"ÉTREND-KIEGÉSZÍTŐK","ACCESSORY":"KIEGÉSZÍTŐK","KIDS":"GYEREK TERMÉKEK","KIDS & BABY":"BABA & GYEREK","KIDS SUPPLEMENT":"GYEREK ÉTREND-KIEGÉSZÍTŐK","SUN CARE":"NAPVÉDELEM","HAIR CARE":"HAJÁPOLÁS","WOMEN":"NŐI WELLNESS","TARGETED":"CÉLZOTT TERMÉKEK","DIFFUSER":"PÁROLOGTATÓK"},
     cards: [
       ["AROMÁS RUTINOK", "Illatok és egyszerű otthoni rituálék relaxáló, frissítő vagy fókuszált hangulathoz."],
       ["DIFFÚZOR & OTTHON", "Diffúzorok és illatélmények a lakótér személyes hangulatának kialakításához."],
@@ -341,7 +586,7 @@ const copy = {
     featured: "DOTERRA PRODUCTS",
     productCta: "OPEN PRODUCT",
     productDesc: "Direct doTERRA referral link for the selected product.",
-    groupNames: {"SINGLE OIL":"SINGLE ESSENTIAL OILS","BLEND":"ESSENTIAL OIL BLENDS","ROLL-ON / TOUCH":"TOUCH / ROLL-ON","BODY CARE":"BODY CARE","SKINCARE":"SKINCARE","PERSONAL CARE":"PERSONAL CARE","ON GUARD":"ON GUARD PRODUCTS","SUPPLEMENT":"SUPPLEMENTS","ACCESSORY":"ACCESSORIES"},
+    groupNames: {"SINGLE OIL":"SINGLE ESSENTIAL OILS","BLEND":"ESSENTIAL OIL BLENDS","ROLL-ON / TOUCH":"TOUCH / ROLL-ON","BODY CARE":"BODY CARE","SKINCARE":"SKINCARE","PERSONAL CARE":"PERSONAL CARE","ON GUARD":"ON GUARD PRODUCTS","SUPPLEMENT":"SUPPLEMENTS","ACCESSORY":"ACCESSORIES","KIDS":"KIDS","KIDS & BABY":"BABY & KIDS","KIDS SUPPLEMENT":"KIDS SUPPLEMENTS","SUN CARE":"SUN CARE","HAIR CARE":"HAIR CARE","WOMEN":"WOMEN’S WELLNESS","TARGETED":"TARGETED PRODUCTS","DIFFUSER":"DIFFUSERS"},
     cards: [
       ["AROMATIC ROUTINES", "Scents and simple at-home rituals for a relaxing, refreshing or focused atmosphere."],
       ["DIFFUSERS & HOME", "Diffusers and aromatic experiences for shaping the mood of your space."],
@@ -362,7 +607,7 @@ const copy = {
     featured: "DOTERRA PRODUKTE",
     productCta: "PRODUKT ÖFFNEN",
     productDesc: "Direkter doTERRA-Empfehlungslink zum ausgewählten Produkt.",
-    groupNames: {"SINGLE OIL":"ÄTHERISCHE EINZELÖLE","BLEND":"ÖLMISCHUNGEN","ROLL-ON / TOUCH":"TOUCH / ROLL-ON","BODY CARE":"KÖRPERPFLEGE","SKINCARE":"HAUTPFLEGE","PERSONAL CARE":"KÖRPER- & ALLTAGSPFLEGE","ON GUARD":"ON GUARD PRODUKTE","SUPPLEMENT":"NAHRUNGSERGÄNZUNG","ACCESSORY":"ZUBEHÖR"},
+    groupNames: {"SINGLE OIL":"ÄTHERISCHE EINZELÖLE","BLEND":"ÖLMISCHUNGEN","ROLL-ON / TOUCH":"TOUCH / ROLL-ON","BODY CARE":"KÖRPERPFLEGE","SKINCARE":"HAUTPFLEGE","PERSONAL CARE":"KÖRPER- & ALLTAGSPFLEGE","ON GUARD":"ON GUARD PRODUKTE","SUPPLEMENT":"NAHRUNGSERGÄNZUNG","ACCESSORY":"ZUBEHÖR","KIDS":"KINDER","KIDS & BABY":"BABY & KINDER","KIDS SUPPLEMENT":"NAHRUNGSERGÄNZUNG FÜR KINDER","SUN CARE":"SONNENSCHUTZ","HAIR CARE":"HAARPFLEGE","WOMEN":"WELLNESS FÜR FRAUEN","TARGETED":"GEZIELTE PRODUKTE","DIFFUSER":"DIFFUSER"},
     cards: [
       ["AROMATISCHE ROUTINEN", "Düfte und einfache Rituale für zu Hause für eine entspannte, frische oder fokussierte Atmosphäre."],
       ["DIFFUSER & ZUHAUSE", "Diffuser und Dufterlebnisse für die persönliche Atmosphäre in deinen Räumen."],
