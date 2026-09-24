@@ -261,3 +261,36 @@
     background:#09264a;
   }
 }
+
+
+/* doTERRA editorial page: slim, premium grouping */
+.doterraFeatured{margin-top:34px}
+.doterraGroup{margin-top:24px}
+.doterraGroupHead{
+  display:flex;align-items:end;justify-content:space-between;gap:16px;
+  margin:0 0 12px;padding:0 0 9px;border-bottom:1px solid var(--line)
+}
+.doterraGroupHead h3{
+  margin:0;font:500 21px/1.05 "Cormorant Garamond",serif;letter-spacing:.1px
+}
+.doterraGroupHead span{
+  font:600 8px Montserrat;letter-spacing:1px;color:#8a7854
+}
+.doterraCard{min-height:205px}
+.doterraCard .brandCardTopline>em{font-size:6.5px;padding:4px 6px 3px}
+.doterraCard h2{font-size:24px;margin-top:12px}
+.doterraCard p{font-size:10px;line-height:1.68}
+.doterraCard .brandCardActions>a{
+  min-height:34px;padding:0 11px;font-size:7.5px;letter-spacing:1px
+}
+.brandShopBar a{
+  min-height:34px;padding:0 13px;font-size:8px;letter-spacing:1px
+}
+@media(max-width:620px){
+  .doterraFeatured{margin-top:28px}
+  .doterraGroup{margin-top:20px}
+  .doterraGroupHead h3{font-size:20px}
+  .doterraCard{min-height:0}
+  .doterraCard .brandCardActions>a{min-height:36px;padding:0 11px}
+  .brandShopBar a{min-height:36px;padding:0 12px}
+}
