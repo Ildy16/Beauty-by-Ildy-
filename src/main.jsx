@@ -15,24 +15,31 @@ import { BeautyTechPage } from "./beautytech.jsx";
 import { IngredientsPage } from "./ingredients.jsx";
 import { MedicubePdrnProduct } from "./product.jsx";
 import { ProductsPage, ProductDetail } from "./products.jsx";
+import { BeautyFinder } from "./beautyFinder.jsx";
+import { NuSkinPage } from "./brandPages.jsx";
+import { DoterraPage } from "./doterra.jsx";
+import { MagazinePage } from "./magazine.jsx";
 import "./styles.css";
 
 const copy = {
   hu: {
     nav: [
       ["SZÉPSÉG", "ingredients"],
-      ["BEAUTY TECH", "beauty-tech-guide"],
-      ["WELLNESS", "wellness"],
-      ["LONGEVITY", "longevity"],
+      ["SZÉPSÉGTECH", "beauty-tech-guide"],
+      ["JÓLLÉT", "wellness"],
+      ["HOSSZÚ ÉLET", "longevity"],
       ["MEGOLDÁSOK", "solutions"],
       ["TERMÉKEK", "products"],
-      ["MÁRKÁK", "brands"],
+      ["BEAUTY ÚTVONAL", "beauty-finder"],
+      ["NU SKIN", "nuskin"],
+      ["ILLÓOLAJOK", "doterra"],
       ["MAGAZIN", "magazine"],
     ],
     eyebrow: "BEAUTY • TECHNOLOGY • WELLNESS",
-    title: "A szépség új dimenziója.",
+    title: "A szépség új dimenziója / Megoldások",
     sub: "Bőrápolás, innovatív technológia és wellness – kívül-belül.",
     cta: "Fedezd fel a válogatást",
+    finderCta: "PRÓBÁLD KI A BEAUTY ÚTVONALAT",
     choose: "MIRE VAN SZÜKSÉGED?",
     needs: [
       "Ráncok & feszesség",
@@ -96,18 +103,9 @@ const copy = {
       "Innováció, minőség és valódi hozzáadott érték alapján válogatott márkák.",
     magTitle: "MAGAZIN & ÚTMUTATÓK",
     magCards: [
-      [
-        "Retinol vagy retinal?",
-        "Mi a különbség, kinek melyik lehet jobb, és hogyan érdemes bevezetni?",
-      ],
-      [
-        "RF, LED, lézer vagy mikroáram?",
-        "Mit tudnak valójában az otthoni beauty eszközök — és mit nem?",
-      ],
-      [
-        "Termékelemzés: Medicube PDRN krém",
-        "Mi van benne, mit mond a tudomány, és mit ér valójában a teljes formula?",
-      ],
+      ["Hőhullámok világszerte","2026. szeptemberi metaanalízis arról, mennyire gyakoriak a menopauzális vazomotoros tünetek."],
+      ["Exoszóma-hype után: minőségellenőrzés","Friss áttekintés arról, miért fontosabb a forrás és a standardizálás, mint maga az „exoszóma” szó."],
+      ["Otthoni beauty készülékek: hol a legerősebb evidencia?","A 2026-os GRADE-alapú áttekintés különbséget tesz lézer, LED, RF és más technológiák között."],
     ],
     discover: "FEDEZD FEL",
     explore: "MEGNÉZEM",
@@ -125,13 +123,16 @@ const copy = {
       ["LONGEVITY", "longevity"],
       ["SOLUTIONS", "solutions"],
       ["PRODUCTS", "products"],
-      ["BRANDS", "brands"],
+      ["BEAUTY FINDER", "beauty-finder"],
+      ["NU SKIN", "nuskin"],
+      ["ESSENTIAL OILS", "doterra"],
       ["MAGAZINE", "magazine"],
     ],
     eyebrow: "BEAUTY • TECHNOLOGY • WELLNESS",
-    title: "A new dimension of beauty.",
+    title: "A new dimension of beauty / Solutions",
     sub: "Skincare, innovative technology and wellness – inside and out.",
     cta: "Explore the edit",
+    finderCta: "TRY THE BEAUTY FINDER",
     choose: "WHAT DO YOU NEED?",
     needs: [
       "Wrinkles & firmness",
@@ -195,18 +196,9 @@ const copy = {
       "Brands selected for innovation, quality and meaningful added value.",
     magTitle: "MAGAZINE & GUIDES",
     magCards: [
-      [
-        "Retinol or retinal?",
-        "What is the difference, who may prefer which, and how to introduce them?",
-      ],
-      [
-        "RF, LED, laser or microcurrent?",
-        "What at-home beauty devices can realistically do — and what they cannot?",
-      ],
-      [
-        "Product review: Medicube PDRN Cream",
-        "What is inside, what does the science say, and how strong is the full formula?",
-      ],
+      ["Hot flushes worldwide","A September 2026 meta-analysis maps the global prevalence of menopausal vasomotor symptoms."],
+      ["After the exosome hype: quality control","A fresh review asks why source, characterisation and standardisation matter more than the fashionable keyword itself."],
+      ["At-home beauty devices: where is the evidence strongest?","A 2026 GRADE-based review distinguishes laser, LED, RF and other technologies by evidence level."],
     ],
     discover: "DISCOVER",
     explore: "EXPLORE",
@@ -224,13 +216,16 @@ const copy = {
       ["LONGEVITY", "longevity"],
       ["LÖSUNGEN", "solutions"],
       ["PRODUKTE", "products"],
-      ["MARKEN", "brands"],
+      ["BEAUTY FINDER", "beauty-finder"],
+      ["NU SKIN", "nuskin"],
+      ["ÄTHERISCHE ÖLE", "doterra"],
       ["MAGAZIN", "magazine"],
     ],
     eyebrow: "BEAUTY • TECHNOLOGIE • WELLNESS",
-    title: "Eine neue Dimension der Schönheit.",
+    title: "Eine neue Dimension der Schönheit / Lösungen",
     sub: "Hautpflege, innovative Technologie und Wellness – von innen und außen.",
     cta: "Auswahl entdecken",
+    finderCta: "BEAUTY FINDER TESTEN",
     choose: "WAS BRAUCHST DU?",
     needs: [
       "Falten & Festigkeit",
@@ -300,18 +295,9 @@ const copy = {
       "Ausgewählte Marken mit Fokus auf Innovation, Qualität und echten Mehrwert.",
     magTitle: "MAGAZIN & GUIDES",
     magCards: [
-      [
-        "Retinol oder Retinal?",
-        "Unterschiede, Einsatzbereiche und ein sinnvoller Einstieg.",
-      ],
-      [
-        "RF, LED, Laser oder Mikrostrom?",
-        "Was Beauty-Geräte für zu Hause realistisch leisten können — und was nicht?",
-      ],
-      [
-        "Produktanalyse: Medicube PDRN Creme",
-        "Was ist enthalten, was sagt die Wissenschaft und wie gut ist die Gesamtformel?",
-      ],
+      ["Hitzewallungen weltweit","Eine Metaanalyse vom September 2026 untersucht die globale Häufigkeit menopausaler vasomotorischer Symptome."],
+      ["Nach dem Exosomen-Hype: Qualitätskontrolle","Ein aktueller Review zeigt, warum Quelle, Charakterisierung und Standardisierung wichtiger sind als das Trendwort allein."],
+      ["Home-Beauty-Geräte: Wo ist die Evidenz am stärksten?","Ein GRADE-basierter Review von 2026 unterscheidet Laser, LED, RF und weitere Technologien nach Evidenzniveau."],
     ],
     discover: "ENTDECKEN",
     explore: "ANSEHEN",
@@ -326,7 +312,7 @@ const copy = {
 const brands = {
   hu: [
     ["Nu Skin", "MÁR ELÉRHETŐ", "Beauty tech + bőrápolás + wellness"],
-    ["Neumi", "MÁR ELÉRHETŐ", "Hatóanyag-beviteli technológia + wellness"],
+    ["doTERRA", "MÁR ELÉRHETŐ", "Illóolajok + aromás wellness"],
     ["HubisLab", "VÁLOGATOTT", "Professzionális K-beauty"],
     ["Biodance", "VÁLOGATOTT", "K-beauty + PDRN"],
     ["Aestura", "VÁLOGATOTT", "Barrier-ápolás"],
@@ -339,7 +325,7 @@ const brands = {
   ],
   en: [
     ["Nu Skin", "AVAILABLE NOW", "Beauty tech + skincare + wellness"],
-    ["Neumi", "AVAILABLE NOW", "Delivery technology + wellness"],
+    ["doTERRA", "AVAILABLE NOW", "Essential oils + aromatic wellness"],
     ["HubisLab", "CURATED", "Professional K-beauty"],
     ["Biodance", "CURATED", "K-beauty + PDRN"],
     ["Aestura", "CURATED", "Barrier care"],
@@ -352,7 +338,7 @@ const brands = {
   ],
   de: [
     ["Nu Skin", "JETZT VERFÜGBAR", "Beauty Tech + Hautpflege + Wellness"],
-    ["Neumi", "JETZT VERFÜGBAR", "Delivery-Technologie + Wellness"],
+    ["doTERRA", "JETZT VERFÜGBAR", "Ätherische Öle + aromatisches Wellness"],
     ["HubisLab", "AUSGEWÄHLT", "Professionelle K-Beauty"],
     ["Biodance", "AUSGEWÄHLT", "K-Beauty + PDRN"],
     ["Aestura", "AUSGEWÄHLT", "Barrierpflege"],
@@ -396,6 +382,10 @@ function currentPage() {
       "beauty-tech-guide",
       "ingredients",
       "products",
+      "beauty-finder",
+      "nuskin",
+      "doterra",
+      "magazine",
       "product-medicube-pdrn",
     ].includes(h)
   )
@@ -403,6 +393,45 @@ function currentPage() {
   if (h.startsWith("product-")) return h;
   return null;
 }
+const seoCopy={
+  hu:{
+    home:["Beauty by Ildy — Beauty, Technology & Wellness","Válogatott bőrápolás, beauty tech, wellness, longevity és bizonyítékokra épülő útmutatók."],
+    ingredients:["Kozmetikai összetevők | Beauty by Ildy","Retinol, PDRN, ceramidok, peptidek és más kozmetikai összetevők érthetően, bizonyítékokra építve."],
+    "beauty-tech-guide":["Beauty Tech útmutató | Beauty by Ildy","RF, LED, lézer, mikroáram és más otthoni beauty technológiák előnyei, korlátai és biztonsági szempontjai."],
+    wellness:["Wellness & női jóllét | Beauty by Ildy","Wellness, menopauza, healthy aging, mikrotápanyagok és mindennapi jóllét túlzó ígéretek nélkül."],
+    longevity:["Longevity | Beauty by Ildy","Longevity, skin longevity és healthy aging témák tudományos háttérrel és reális értelmezéssel."],
+    products:["Válogatott termékek | Beauty by Ildy","Gondosan válogatott bőrápolási, hajápolási és beauty termékek formula- és evidenciaszemlélettel."],
+    "beauty-finder":["Beauty Útvonal | Beauty by Ildy","Személyre szabott Beauty Útvonal bőrápolási, hajápolási és beauty tech lehetőségek áttekintéséhez."],
+    nuskin:["Nu Skin válogatás | Beauty by Ildy","Beauty by Ildy Nu Skin és Pharmanex válogatás közvetlen hivatalos My Site vásárlási útvonalakkal."],
+    doterra:["Illóolajok & aromás wellness | Beauty by Ildy","Illóolajok, aromás wellness és otthoni rituálék független szerkesztői válogatásban, hivatalos partneri vásárlási útvonallal."],
+    magazine:["Beauty Magazin | Beauty by Ildy","Friss beauty, beauty tech, menopauza és longevity kutatások értelmezve, forrásokkal."]
+  },
+  en:{
+    home:["Beauty by Ildy — Beauty, Technology & Wellness","Curated skincare, beauty tech, wellness, longevity and evidence-led beauty guidance."],
+    ingredients:["Cosmetic Ingredients | Beauty by Ildy","Retinol, PDRN, ceramides, peptides and other cosmetic ingredients explained with an evidence-led approach."],
+    "beauty-tech-guide":["Beauty Tech Guide | Beauty by Ildy","RF, LED, laser, microcurrent and other at-home beauty technologies: benefits, limits and safety considerations."],
+    wellness:["Wellness & Women's Wellbeing | Beauty by Ildy","Wellness, menopause, healthy aging, micronutrients and everyday wellbeing without exaggerated promises."],
+    longevity:["Longevity | Beauty by Ildy","Longevity, skin longevity and healthy aging with scientific context and realistic interpretation."],
+    products:["Curated Products | Beauty by Ildy","Curated skincare, haircare and beauty products reviewed through formulation and evidence."],
+    "beauty-finder":["Beauty Finder | Beauty by Ildy","A personalised Beauty Finder for organising relevant skincare, haircare and beauty-tech options."],
+    nuskin:["Nu Skin Edit | Beauty by Ildy","Beauty by Ildy Nu Skin and Pharmanex edit with direct official My Site purchase routes."],
+    doterra:["Essential Oils & Aromatic Wellness | Beauty by Ildy","An independent editorial edit of essential oils, aromatic wellness and at-home rituals with an official partner purchase route."],
+    magazine:["Beauty Magazine | Beauty by Ildy","Fresh beauty, beauty-tech, menopause and longevity research interpreted with sources."]
+  },
+  de:{
+    home:["Beauty by Ildy — Beauty, Technology & Wellness","Kuratierte Hautpflege, Beauty Tech, Wellness, Longevity und evidenzbasierte Beauty-Guides."],
+    ingredients:["Kosmetische Inhaltsstoffe | Beauty by Ildy","Retinol, PDRN, Ceramide, Peptide und weitere kosmetische Inhaltsstoffe verständlich und evidenzbasiert erklärt."],
+    "beauty-tech-guide":["Beauty-Tech-Guide | Beauty by Ildy","RF, LED, Laser, Mikrostrom und weitere Home-Beauty-Technologien: Nutzen, Grenzen und Sicherheit."],
+    wellness:["Wellness & Wohlbefinden von Frauen | Beauty by Ildy","Wellness, Menopause, Healthy Aging, Mikronährstoffe und tägliches Wohlbefinden ohne übertriebene Versprechen."],
+    longevity:["Longevity | Beauty by Ildy","Longevity, Skin Longevity und Healthy Aging mit wissenschaftlichem Kontext und realistischer Einordnung."],
+    products:["Ausgewählte Produkte | Beauty by Ildy","Kuratierte Hautpflege-, Haarpflege- und Beauty-Produkte mit Fokus auf Formulierung und Evidenz."],
+    "beauty-finder":["Beauty Finder | Beauty by Ildy","Ein personalisierter Beauty Finder zur Orientierung bei Hautpflege, Haarpflege und Beauty Tech."],
+    nuskin:["Nu Skin Auswahl | Beauty by Ildy","Beauty by Ildy Nu Skin und Pharmanex Auswahl mit direkten offiziellen My-Site-Kaufwegen."],
+    doterra:["Ätherische Öle & aromatisches Wellness | Beauty by Ildy","Eine unabhängige redaktionelle Auswahl zu ätherischen Ölen, aromatischem Wellness und Ritualen für zu Hause mit offiziellem Partner-Kaufweg."],
+    magazine:["Beauty Magazin | Beauty by Ildy","Aktuelle Beauty-, Beauty-Tech-, Menopause- und Longevity-Forschung eingeordnet und mit Quellen."]
+  }
+};
+
 function App() {
   const [lang, setLang] = useState("hu");
   const [open, setOpen] = useState(false);
@@ -413,6 +442,20 @@ function App() {
   useEffect(() => {
     document.documentElement.lang = lang;
   }, [lang]);
+  useEffect(() => {
+    const key=page&&page.startsWith("product-")?"products":(page||"home");
+    const [title,description]=(seoCopy[lang]?.[key]||seoCopy[lang]?.home||seoCopy.hu.home);
+    document.title=title;
+    const setMeta=(selector,attr,value)=>{
+      const node=document.querySelector(selector);
+      if(node)node.setAttribute(attr,value);
+    };
+    setMeta('meta[name="description"]',"content",description);
+    setMeta('meta[property="og:title"]',"content",title);
+    setMeta('meta[property="og:description"]',"content",description);
+    setMeta('meta[name="twitter:title"]',"content",title);
+    setMeta('meta[name="twitter:description"]',"content",description);
+  }, [lang,page]);
   useEffect(() => {
     const fn = () => {
       const nextLegal = currentLegal();
@@ -440,6 +483,10 @@ function App() {
     content = <BeautyTechPage lang={lang} />;
   else if (page === "ingredients") content = <IngredientsPage lang={lang} />;
   else if (page === "products") content = <ProductsPage lang={lang} />;
+  else if (page === "beauty-finder") content = <BeautyFinder lang={lang} />;
+  else if (page === "nuskin") content = <NuSkinPage lang={lang} />;
+  else if (page === "doterra") content = <DoterraPage lang={lang} />;
+  else if (page === "magazine") content = <MagazinePage lang={lang} />;
   else if (page === "product-medicube-pdrn")
     content = <MedicubePdrnProduct lang={lang} />;
   else if (page && page.startsWith("product-"))
@@ -453,10 +500,16 @@ function App() {
             <p className="eyebrow">{t.eyebrow}</p>
             <h1>{t.title}</h1>
             <p className="lead">{t.sub}</p>
-            <a className="primary" href="#products">
-              {t.cta}
-              <ArrowRight size={17} />
-            </a>
+            <div className="heroActions">
+              <a className="primary" href="#products">
+                {t.cta}
+                <ArrowRight size={17} />
+              </a>
+              <a className="primary finderHeroCta" href="#beauty-finder">
+                {t.finderCta}
+                <ArrowRight size={17} />
+              </a>
+            </div>
           </div>
         </section>
         <section id="solutions" className="needs">
@@ -502,6 +555,10 @@ function App() {
           <div>
             <h2>{t.hairTitle}</h2>
             <p>{t.hairText}</p>
+            <a href="#products/hair">
+              {t.discover}
+              <ArrowRight size={14} />
+            </a>
           </div>
         </section>
         <section id="routines" className="routines">
@@ -535,13 +592,17 @@ function App() {
           <h2>{t.brands}</h2>
           <p className="brandIntro">{t.brandSub}</p>
           <div className="brandGrid">
-            {brands[lang].map((b) => (
-              <div key={b[0]}>
+            {brands[lang].map((b) => {
+              const target=b[0]==="Nu Skin"?"#nuskin":b[0]==="doTERRA"?"#doterra":null;
+              const card=<>
                 <strong>{b[0]}</strong>
                 <small>{b[1]}</small>
                 <em>{b[2]}</em>
-              </div>
-            ))}
+              </>;
+              return target
+                ? <a className="brandCardLink" href={target} key={b[0]}>{card}</a>
+                : <div key={b[0]}>{card}</div>;
+            })}
           </div>
         </section>
         <section id="magazine" className="magazine">
@@ -553,13 +614,7 @@ function App() {
                 <h3>{m[0]}</h3>
                 <p>{m[1]}</p>
                 <a
-                  href={
-                    i === 1
-                      ? "#beauty-tech-guide"
-                      : i === 2
-                        ? "#product-medicube-pdrn"
-                        : "#ingredients"
-                  }
+                  href="#magazine"
                 >
                   {t.readGuide}
                   <ArrowRight size={14} />
@@ -579,7 +634,7 @@ function App() {
         </a>
         <nav>
           {t.nav.map((n) => (
-            <a key={n[0]} href={`#${n[1]}`}>
+            <a key={n[0]} href={`#${n[1]}`} onClick={() => setOpen(false)}>
               {n[0]}
             </a>
           ))}
@@ -595,20 +650,29 @@ function App() {
             </button>
           ))}
         </div>
-        <button className="menuBtn" onClick={() => setOpen(!open)}>
+        <button
+          className="menuBtn"
+          onClick={() => setOpen(!open)}
+          aria-label={open ? (lang==="hu"?"Menü bezárása":lang==="de"?"Menü schließen":"Close menu") : (lang==="hu"?"Menü megnyitása":lang==="de"?"Menü öffnen":"Open menu")}
+          aria-expanded={open}
+        >
           {open ? <X /> : <Menu />}
         </button>
       </header>
       {open && (
         <div className="mobileMenu">
           {t.nav.map((n) => (
-            <a key={n[0]} href={`#${n[1]}`}>
+            <a key={n[0]} href={`#${n[1]}`} onClick={() => setOpen(false)}>
               {n[0]}
             </a>
           ))}
           <div className="mobileLangs">
             {["hu", "en", "de"].map((l) => (
-              <button key={l} onClick={() => setLang(l)}>
+              <button
+                key={l}
+                className={lang === l ? "active" : ""}
+                onClick={() => { setLang(l); setOpen(false); }}
+              >
                 {l.toUpperCase()}
               </button>
             ))}
@@ -642,6 +706,9 @@ function App() {
               {labels[x]}
             </a>
           ))}
+        </div>
+        <div className="footerContact">
+          <a href="mailto:beauty@beautybyildy.com">beauty@beautybyildy.com</a>
         </div>
         <p className="fineprint">{t.disclaimer}</p>
       </footer>

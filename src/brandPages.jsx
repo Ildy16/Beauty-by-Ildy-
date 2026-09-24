@@ -1,0 +1,255 @@
+import React from "react";
+import { ArrowLeft, ExternalLink } from "lucide-react";
+import "./brandPages.css";
+
+const NUSKIN = [
+  ["ageLOC LumiSpa iO System","BEAUTY TECH","Connected cleansing system designed to pair with the Nu Skin Vera app.","https://mysite.mynuskin.com/catalog/hu/hu/product/97139603?store=beautybyildy"],
+  ["ageLOC WellSpa iO System","BEAUTY TECH","Nu Skin beauty and wellness device system.","https://mysite.mynuskin.com/catalog/hu/hu/product/97139757?store=beautybyildy"],
+  ["ageLOC Boost System","BEAUTY TECH","At-home skin-vitalising device system.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001951?store=beautybyildy"],
+  ["ageLOC Galvanic Spa","BEAUTY TECH","Galvanic at-home beauty device with face, body and scalp applications.","https://mysite.mynuskin.com/catalog/hu/hu/product/97310060?store=beautybyildy"],
+  ["Galvanic Spa Facial Gels with ageLOC","SKINCARE","Facial gels developed for use with the Galvanic Spa facial conductor.","https://mysite.mynuskin.com/catalog/hu/hu/product/97004433?store=beautybyildy"],
+  ["ageLOC Tru Face Future Serum","TRU FACE","Premium age-well serum focused on firmness, smoothness, tone and hydration.","https://mysite.mynuskin.com/catalog/hu/hu/product/97004260?store=beautybyildy"],
+  ["ageLOC Tru Face Line Corrector","TRU FACE","Targeted care for the appearance of fine lines, especially around the mouth and eyes.","https://mysite.mynuskin.com/catalog/hu/hu/product/97004263?store=beautybyildy"],
+  ["ageLOC Tru Face Radiant Day","TRU FACE","Daytime moisturising care focused on radiance and uneven-looking tone.","https://mysite.mynuskin.com/catalog/hu/hu/product/97004268?store=beautybyildy"],
+  ["ageLOC Tru Face Transforming Gel Cream","TRU FACE","Gel-cream moisturiser focused on hydration, smoothness and visible pores.","https://mysite.mynuskin.com/catalog/hu/hu/product/97004266?store=beautybyildy"],
+  ["ageLOC Tru Face Uplifting Rich Cream","TRU FACE","Rich moisturising cream focused on firmness and visible lines.","https://mysite.mynuskin.com/catalog/hu/hu/product/97004291?store=beautybyildy"],
+  ["ageLOC Tru Face Refining Toner","TRU FACE","Preparatory toner designed to support the next steps of the skincare routine.","https://mysite.mynuskin.com/catalog/hu/hu/product/97004294?store=beautybyildy"],
+  ["ageLOC Tru Face Peptide Retinol Complex","TRU FACE","Retinol and peptide-focused age-well serum.","https://mysite.mynuskin.com/catalog/hu/hu/product/97004312?store=beautybyildy"],
+  ["ageLOC Tru Face Essence Ultra","TRU FACE","Firming-focused treatment for a more defined-looking facial contour.","https://mysite.mynuskin.com/catalog/hu/hu/product/97004293?store=beautybyildy"],
+  ["Nutricentials Pumps Vitamin C + Collagen","NUTRICENTIALS","Current Nutricentials supplement-style beauty product listed in the Hungarian range.","https://mysite.mynuskin.com/catalog/hu/hu/product/97002527?store=beautybyildy"],
+  ["HydraClean Creamy Cleansing Lotion","NUTRICENTIALS","Creamy facial cleanser.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001780?store=beautybyildy"],
+  ["To Be Clear Pure Cleansing Gel","NUTRICENTIALS","Gel facial cleanser.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001781?store=beautybyildy"],
+  ["Nutricentials Here You Glow","NUTRICENTIALS","Current Nutricentials exfoliating/renewal product in the Hungarian range.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001783?store=beautybyildy"],
+  ["In Balance pH Balance Toner","NUTRICENTIALS","pH-kiegyensúlyozó arctonik a jelenlegi magyar Nutricentials kínálatból.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001784?store=beautybyildy"],
+  ["Nutricentials Eye Love Bright Eyes Illuminating Eye Cream","NUTRICENTIALS","Szemkörnyékápoló krém a jelenlegi magyar Nutricentials kínálatból.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001795?store=beautybyildy"],
+  ["Nutricentials Ceramides + Postbiotics Pump","NUTRICENTIALS","Ceramid- és posztbiotikum-fókuszú booster a jelenlegi magyar Nutricentials kínálatból.","https://mysite.mynuskin.com/catalog/hu/hu/product/97002405?store=beautybyildy"],
+  ["Nutricentials Celltrex Always Right Recovery Fluid","NUTRICENTIALS","Regeneráló szérum/folyadék a jelenlegi magyar Nutricentials kínálatból.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001791?store=beautybyildy"],
+  ["Day Dream Protective Cream SPF 30","NUTRICENTIALS","Creamy daytime moisturiser with SPF 30.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001785?store=beautybyildy"],
+  ["Day Dream Protective Lotion SPF 30","NUTRICENTIALS","Lightweight daytime moisturiser with SPF 30.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001786?store=beautybyildy"],
+  ["Thirst Fix Hydrating Gel Cream","NUTRICENTIALS","Light hydrating gel cream.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001787?store=beautybyildy"],
+  ["Moisturize Me Intense Hydrating Cream","NUTRICENTIALS","Rich moisturising cream.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001793?store=beautybyildy"],
+  ["Nutricentials Dew All Day Moisture Restore Cream","NUTRICENTIALS","Moisture-restoring facial cream.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001788?store=beautybyildy"],
+  ["Pillow Glow Sleeping Mask","NUTRICENTIALS","Overnight moisturising mask.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001796?store=beautybyildy"],
+  ["Brighter Day Exfoliant Scrub","NUTRICENTIALS","Exfoliating facial scrub.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001789?store=beautybyildy"],
+  ["Spa Day Creamy Hydrating Masque","NUTRICENTIALS","Creamy hydrating facial mask.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001790?store=beautybyildy"],
+  ["ageLOC Nutriol Scalp & Hair System","HAIR & SCALP","Scalp and hair care system in the ageLOC range.","https://mysite.mynuskin.com/catalog/hu/hu/product/97139428?store=beautybyildy"],
+  ["ageLOC Nutriol Scalp & Hair Shampoo","HAIR & SCALP","Sampon vékony szálú, sérült és öregedő hajra és fejbőrre.","https://mysite.mynuskin.com/catalog/hu/hu/product/97002106?store=beautybyildy"],
+  ["ageLOC Nutriol Scalp & Hair Conditioner","HAIR & SCALP","Fejbőr- és hajápoló kondicionáló az ageLOC Nutriol rendszerből.","https://mysite.mynuskin.com/catalog/hu/hu/product/97002107?store=beautybyildy"],
+  ["ageLOC Nutriol Intensive Scalp & Hair Serum","HAIR & SCALP","Intenzív fejbőr- és hajszérum az ageLOC Nutriol rendszerből.","https://mysite.mynuskin.com/catalog/hu/hu/product/97002149?store=beautybyildy"],
+  ["Nu Skin 180° Anti-Aging Skin Therapy System","NU SKIN 180°","Korábbi, több lépéses Nu Skin 180° arcápolási rendszer; az EU-ban 2024 októberében kivezetésre került.","https://www.nuskin.com/content/dam/eu-library/office/documents/product-discontinuation-overview/nu-skin-product-discontinuation-overview-2024-q4.pdf"],
+  ["Epoch Glacial Marine Mud","EPOCH","Etnobotanikai ihletésű iszappakolás.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001987?store=beautybyildy"],
+  ["Epoch Baobab Body Butter","EPOCH","Gazdag, baobabfókuszú testvaj.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001985?store=beautybyildy"],
+  ["Epoch IceDancer","EPOCH","Frissítő lábápoló zselé.","https://www.nuskin.com/content/products/02/10/28/02102803/en.html"],
+  ["Epoch Hand Cream","EPOCH","Korábbi Epoch kéz- és körömápoló krém; a magyar piacon kivezetett státuszú.","https://www.nuskin.com/products/97/00/25/97002592.html"],
+  ["Epoch Polishing Bar","EPOCH","Szappanmentes testradírozó tömb.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001994?store=beautybyildy"],
+  ["Epoch Sole Solution","EPOCH","Célzott lábfejápoló krém.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001988?store=beautybyildy"],
+  ["Epoch Ava Puhi Moni Shampoo","EPOCH · HAIR","Korábbi Epoch hajápoló sampon; az EU-ban 2025 februárjában kivezetésre került.","https://www.nuskin.com/content/dam/eu-library/office/documents/product-discontinuation-overview/nu-skin-product-discontinuation-overview-2025-q1.pdf"],
+  ["Epoch Ava Puhi Moni Light Conditioner","EPOCH · HAIR","Korábbi Epoch hajkondicionáló; az EU-ban 2024 januárjában kivezetésre került.","https://www.nuskin.com/content/dam/eu-library/office/documents/product-discontinuation-overview/nu-skin-product-discontinuation-overview-2024-q1.pdf"],
+  ["Sunright Insta Glow","SUNRIGHT","Önbarnító gél arcra és testre.","https://mysite.mynuskin.com/catalog/hu/hu/product/97002009?store=beautybyildy"],
+  ["Liquid Body Lufra","BODY CARE","Korábbi testradírozó tusolóformula; az EU-ban 2026 márciusában kivezetésre került.","https://www.nuskin.com/content/dam/eu-library/office/documents/product-discontinuation-overview/nu-skin-product-discontinuation-overview-2026-q1.pdf"],
+  ["Perennial Body Lotion","BODY CARE","Mindennapi testápoló és hidratáló lotion.","https://mysite.mynuskin.com/catalog/hu/hu/product/97100875?store=beautybyildy"],
+  ["NaPCA Moisture Mist","BODY CARE","Hidratáló permet arcra és testre.","https://mysite.mynuskin.com/catalog/hu/hu/product/97138860?store=beautybyildy"],
+  ["ageLOC Body Shaping Gel","BODY CARE","Testápoló gél az ageLOC testápolási rendszerhez.","https://mysite.mynuskin.com/catalog/hu/hu/product/97003902?store=beautybyildy"],
+  ["ageLOC Dermatic Effects","BODY CARE","Hidratáló testápoló az ageLOC testápolási rendszerhez.","https://mysite.mynuskin.com/catalog/hu/hu/product/97003903?store=beautybyildy"],
+  ["ReNu Hair Mask","HAIR CARE","Korábbi intenzív hajpakolás. A Nu Skin terméktörzse a magyar piacon kivezetett státuszt jelez a ReNu Hair Mask EU-változatára.","https://www.nuskin.com/products/97/10/13/97101356.html"],
+  ["AP 24 Whitening Fluoride Toothpaste","ORAL CARE","Fluoridos fogkrém fehérítő fókuszú formulával.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001647?store=beautybyildy"],
+  ["AP 24 Anti-Plaque Fluoride Toothpaste","ORAL CARE","Korábbi, lepedék elleni fluoridos fogkrém; a magyar piacon már kivezetett státuszú.","https://www.nuskin.com/content/products/97/00/16/97001648/hu.html"],
+  ["Pharmanex LifePak+","PHARMANEX · VITAMINOK","Komplex étrend-kiegészítő 13 vitaminnal, 9 ásványi anyaggal és növényi kivonatokkal.","https://mysite.mynuskin.com/catalog/hu/hu/product/85433743?store=beautybyildy"],
+  ["LifePak+ & Marine Omega ADR-csomag","PHARMANEX · OMEGA-3","LifePak+ és Marine Omega termékeket tartalmazó magyar ADR-csomag. A Nu Skin magyar ADR-oldala jelenleg készlethiányosként jelzi.","https://www.nuskin.com/hu_HU/adr_packages.html"],
+  ["Pharmanex Tēgreen","PHARMANEX · ANTIOXIDÁNS","Zöldtea-kivonatot tartalmazó étrend-kiegészítő.","https://mysite.mynuskin.com/catalog/hu/hu/product/85493529?store=beautybyildy"],
+  ["JVi","PHARMANEX · VITAMINITAL","12 gyümölcs és zöldség keveréke; C-vitamin-forrás.","https://mysite.mynuskin.com/catalog/hu/hu/product/97003762?store=beautybyildy"],
+  ["Beauty Focus MultiBeauty","PHARMANEX · BEAUTY","Többféle tápanyagot tartalmazó szépségápolási étrend-kiegészítő haj, köröm és bőr támogatására.","https://mysite.mynuskin.com/catalog/hu/hu/product/85432267?store=beautybyildy"],
+  ["Beauty Focus Collagen+","PHARMANEX · BEAUTY","Kollagénhidrolizátumot, búzaolaj-kivonatot és luteint tartalmazó szépségápolási étrend-kiegészítő.","https://mysite.mynuskin.com/catalog/hu/hu/product/85892208?store=beautybyildy"],
+  ["R² Day","PHARMANEX · VITALITÁS","Cordyceps sinensis, gránátalma és Panax ginseng alapú nappali étrend-kiegészítő.","https://mysite.mynuskin.com/catalog/hu/hu/product/85433895?store=beautybyildy"],
+  ["R² Night","PHARMANEX · VITALITÁS","Szelént és növényi kivonatokat tartalmazó esti étrend-kiegészítő.","https://mysite.mynuskin.com/catalog/hu/hu/product/85433894?store=beautybyildy"],
+  ["R² Day + Night","PHARMANEX · VITALITÁS","A korábbi kombinált R² Day + Night összeállítás; a magyar piacon kivezetett státuszú. Az R² Day és R² Night külön termékként szerepel.","https://www.nuskin.com/products/85/43/39/85433901.html"],
+  ["ReishiMax GLp","PHARMANEX · WELLNESS","Reishigomba-kivonatot tartalmazó étrend-kiegészítő.","https://mysite.mynuskin.com/catalog/hu/hu/product/85433519?store=beautybyildy"],
+  ["ageLOC Vitality","PHARMANEX · VITALITÁS","Cordyceps, gránátalma és Panax ginseng alapú vitalitásfókuszú étrend-kiegészítő.","https://mysite.mynuskin.com/catalog/hu/hu/product/97137705?store=beautybyildy"],
+  ["LifePak elements","PHARMANEX · VITAMINOK","Prysm-kvalifikált, napi vitamin- és ásványianyag-kiegészítés. A Nu Skin magyar Prysm iO pénzvisszafizetési garancia oldalán külön, név szerint szerepel LifePak elements termékként.","https://www.nuskin.com/content/nuskin/hu_HU/opportunity/business-tools/prysm-io/prysm-io-money-back-guarantee/prysm-io-guarantee-form/prysm-io-refund-form.html"],
+  ["CordyMax CS-4","PHARMANEX · VITALITÁS","Korábbi Cordyceps sinensis micéliumot tartalmazó étrend-kiegészítő; az EU-ban 2025 januárjában kivezetésre került.","https://www.nuskin.com/content/dam/eu-library/office/documents/product-discontinuation-overview/nu-skin-product-discontinuation-overview-2025-q1.pdf"],
+  ["Pro-B","PHARMANEX · EMÉSZTÉS","Korábbi Lactobacillus fermentum PCC™ probiotikus kultúrát tartalmazó étrend-kiegészítő; az EU-ban 2024 októberében kivezetésre került.","https://www.nuskin.com/content/dam/eu-library/office/documents/product-discontinuation-overview/nu-skin-product-discontinuation-overview-2024-q4.pdf"],
+  ["TRME MyGOAL","TRME · BODY BALANCE","A Nu Skin aktuális TRME Body Balance rendszerének egyik étrend-kiegészítője.","https://mysite.mynuskin.com/catalog/hu/hu/product/85542536?store=beautybyildy"],
+  ["TRME MyEDGE","TRME · BODY BALANCE","A Nu Skin aktuális TRME Body Balance rendszerének egyik étrend-kiegészítője.","https://mysite.mynuskin.com/catalog/hu/hu/product/97139804?store=beautybyildy"],
+  ["TRME InnerNU","TRME · BODY BALANCE","Gyömbér- és articsóka-kivonatot tartalmazó TRME étrend-kiegészítő.","https://mysite.mynuskin.com/catalog/hu/hu/product/85552525?store=beautybyildy"],
+  ["TRME REALMe","TRME · BODY BALANCE","A Nu Skin aktuális TRME Body Balance rendszerének egyik étrend-kiegészítője.","https://mysite.mynuskin.com/catalog/hu/hu/product/85542537?store=beautybyildy"],
+  ["TRME M-Bar","TRME · BODY BALANCE","A TRME rendszerhez tartozó étkezéshelyettesítő szelet.","https://mysite.mynuskin.com/catalog/hu/hu/product/97139726?store=beautybyildy"],
+  ["TRME Weight Management Kit","TRME · BODY BALANCE","InnerNU, MyEDGE, MyGOAL és REALMe termékeket tartalmazó hivatalos TRME csomag.","https://mysite.mynuskin.com/catalog/hu/hu/product/97139798?store=beautybyildy"],
+  ["ageLOC TRMe","WELLNESS","A Nu Skin magyar oldalán bemutatott, személyre szabható Body Balance rendszer, amely a MyGOAL, InnerNU, REALMe, MyEDGE és M-Bar termékeket, valamint TRME csomagokat foglalja össze.","https://www.nuskin.com/hu/hu/site/product/eua-ageloc-trme-landing-page"],
+  ["Prysm iO","WELLNESS TECH","A Nu Skin magyar oldalán bemutatott, nem invazív wellness mérőeszköz, amely 15 másodperc alatt követi a bőr karotinoidszintjét és Prysm-pontszámot ad.","https://www.nuskin.com/hu/hu/site/product/eua-meet-prysm-io-the-future-of-measurable-nutritional-wellness"],
+];
+
+const copy = {
+  hu: {
+    back:"Vissza a főoldalra",
+    nuskinTitle:"NU SKIN",
+    nuskinLead:"Külön Nu Skin válogatás: beauty tech, bőrápolás, hajápolás, vitaminok és Pharmanex wellness egy helyen. A termékadatokat a hivatalos magyar és EMEA Nu Skin források alapján építjük fel.",
+    nuskinNote:"A vásárlás minden esetben a Nu Skin hivatalos rendszerében történik. A vásárolható termékek közvetlenül a megfelelő Nu Skin termékoldalra vezetnek; a rendszer-, információs vagy már nem forgalmazott tételeknél külön jelöljük, ha nincs közvetlen vásárlás.",
+    official:"HIVATALOS TERMÉKOLDAL",
+    buyOfficial:"VÁSÁRLÁS A NU SKIN OLDALÁN",
+    system:"RENDSZER MEGTEKINTÉSE",
+    archive:"HIVATALOS INFORMÁCIÓ",
+    details:"RÉSZLETES ADATLAP",
+    verified:"Hivatalos termékforrások alapján · folyamatosan frissítve",
+    localeNote:"HU · Magyarország · HUF  |  DE · Ausztria · EUR  |  EN · Írország · EUR",
+    products:"termék",
+    available:"KÖZVETLEN VÁSÁRLÁS",
+    infoOnly:"INFORMÁCIÓ",
+  },
+  en: {
+    back:"Back to home",
+    nuskinTitle:"NU SKIN",
+    nuskinLead:"A dedicated Nu Skin edit covering beauty tech, skincare, haircare, vitamins and Pharmanex wellness, built from current official Hungarian and EMEA Nu Skin sources.",
+    nuskinNote:"Purchases are completed entirely within Nu Skin’s official system. Products available for purchase open the relevant Nu Skin product page directly; system, informational or discontinued items are clearly marked when direct purchase is not available.",
+    official:"OFFICIAL PRODUCT PAGE",
+    buyOfficial:"SHOP ON NU SKIN",
+    system:"VIEW SYSTEM",
+    archive:"OFFICIAL INFORMATION",
+    details:"DETAILED PROFILE",
+    verified:"Based on official product sources · continuously updated",
+    localeNote:"HU · Hungary · HUF  |  DE · Austria · EUR  |  EN · Ireland · EUR",
+    products:"products",
+    available:"DIRECT PURCHASE",
+    infoOnly:"INFORMATION",
+  },
+  de: {
+    back:"Zurück zur Startseite",
+    nuskinTitle:"NU SKIN",
+    nuskinLead:"Eine eigene Nu-Skin-Auswahl mit Beauty Tech, Hautpflege, Haarpflege, Vitaminen und Pharmanex-Wellness auf Basis aktueller offizieller ungarischer und EMEA-Nu-Skin-Quellen.",
+    nuskinNote:"Der Kauf erfolgt vollständig im offiziellen Nu-Skin-System. Kaufbare Produkte führen direkt zur jeweiligen Nu-Skin-Produktseite; System-, Informations- oder nicht mehr verfügbare Artikel werden klar gekennzeichnet, wenn kein direkter Kauf möglich ist.",
+    official:"OFFIZIELLE PRODUKTSEITE",
+    buyOfficial:"BEI NU SKIN KAUFEN",
+    system:"SYSTEM ANSEHEN",
+    archive:"OFFIZIELLE INFORMATION",
+    details:"DETAILPROFIL",
+    verified:"Auf Basis offizieller Produktquellen · laufend aktualisiert",
+    localeNote:"HU · Ungarn · HUF  |  DE · Österreich · EUR  |  EN · Irland · EUR",
+    products:"Produkte",
+    available:"DIREKT KAUFEN",
+    infoOnly:"INFORMATION",
+  }
+};
+
+const groupLabels={
+  hu:{
+    "BEAUTY TECH":"BEAUTY TECH","SKINCARE":"BŐRÁPOLÁS","TRU FACE":"TRU FACE","NUTRICENTIALS":"NUTRICENTIALS",
+    "HAIR & SCALP":"HAJ & FEJBŐR","NU SKIN 180°":"NU SKIN 180°","EPOCH":"EPOCH","EPOCH · HAIR":"EPOCH · HAJ",
+    "SUNRIGHT":"SUNRIGHT","BODY CARE":"TESTÁPOLÁS","HAIR CARE":"HAJÁPOLÁS","ORAL CARE":"SZÁJÁPOLÁS",
+    "PHARMANEX · VITAMINOK":"PHARMANEX · VITAMINOK","PHARMANEX · OMEGA-3":"PHARMANEX · OMEGA-3",
+    "PHARMANEX · ANTIOXIDÁNS":"PHARMANEX · ANTIOXIDÁNS","PHARMANEX · VITAMINITAL":"PHARMANEX · VITAMINITAL",
+    "PHARMANEX · BEAUTY":"PHARMANEX · BEAUTY","PHARMANEX · VITALITÁS":"PHARMANEX · VITALITÁS",
+    "PHARMANEX · WELLNESS":"PHARMANEX · WELLNESS","PHARMANEX · EMÉSZTÉS":"PHARMANEX · EMÉSZTÉS",
+    "TRME · BODY BALANCE":"TRME · BODY BALANCE","WELLNESS":"WELLNESS","WELLNESS TECH":"WELLNESS TECH"
+  },
+  en:{
+    "BEAUTY TECH":"BEAUTY TECH","SKINCARE":"SKINCARE","TRU FACE":"TRU FACE","NUTRICENTIALS":"NUTRICENTIALS",
+    "HAIR & SCALP":"HAIR & SCALP","NU SKIN 180°":"NU SKIN 180°","EPOCH":"EPOCH","EPOCH · HAIR":"EPOCH · HAIR",
+    "SUNRIGHT":"SUNRIGHT","BODY CARE":"BODY CARE","HAIR CARE":"HAIR CARE","ORAL CARE":"ORAL CARE",
+    "PHARMANEX · VITAMINOK":"PHARMANEX · VITAMINS","PHARMANEX · OMEGA-3":"PHARMANEX · OMEGA-3",
+    "PHARMANEX · ANTIOXIDÁNS":"PHARMANEX · ANTIOXIDANT","PHARMANEX · VITAMINITAL":"PHARMANEX · NUTRITION",
+    "PHARMANEX · BEAUTY":"PHARMANEX · BEAUTY","PHARMANEX · VITALITÁS":"PHARMANEX · VITALITY",
+    "PHARMANEX · WELLNESS":"PHARMANEX · WELLNESS","PHARMANEX · EMÉSZTÉS":"PHARMANEX · DIGESTIVE",
+    "TRME · BODY BALANCE":"TRME · BODY BALANCE","WELLNESS":"WELLNESS","WELLNESS TECH":"WELLNESS TECH"
+  },
+  de:{
+    "BEAUTY TECH":"BEAUTY TECH","SKINCARE":"HAUTPFLEGE","TRU FACE":"TRU FACE","NUTRICENTIALS":"NUTRICENTIALS",
+    "HAIR & SCALP":"HAAR & KOPFHAUT","NU SKIN 180°":"NU SKIN 180°","EPOCH":"EPOCH","EPOCH · HAIR":"EPOCH · HAAR",
+    "SUNRIGHT":"SUNRIGHT","BODY CARE":"KÖRPERPFLEGE","HAIR CARE":"HAARPFLEGE","ORAL CARE":"MUNDPFLEGE",
+    "PHARMANEX · VITAMINOK":"PHARMANEX · VITAMINE","PHARMANEX · OMEGA-3":"PHARMANEX · OMEGA-3",
+    "PHARMANEX · ANTIOXIDÁNS":"PHARMANEX · ANTIOXIDANTIEN","PHARMANEX · VITAMINITAL":"PHARMANEX · NÄHRSTOFFE",
+    "PHARMANEX · BEAUTY":"PHARMANEX · BEAUTY","PHARMANEX · VITALITÁS":"PHARMANEX · VITALITÄT",
+    "PHARMANEX · WELLNESS":"PHARMANEX · WELLNESS","PHARMANEX · EMÉSZTÉS":"PHARMANEX · VERDAUUNG",
+    "TRME · BODY BALANCE":"TRME · BODY BALANCE","WELLNESS":"WELLNESS","WELLNESS TECH":"WELLNESS TECH"
+  }
+};
+
+const groupDescriptions={
+  hu:{
+    "BEAUTY TECH":"Otthoni beauty technológia és a hozzá kapcsolódó rendszerek.",
+    "SKINCARE":"Célzott Nu Skin bőrápolás.","TRU FACE":"Prémium age-well bőrápolás.","NUTRICENTIALS":"Mindennapi arctisztítás, hidratálás és célzott kiegészítő ápolás.",
+    "HAIR & SCALP":"Célzott haj- és fejbőrápolás.","NU SKIN 180°":"Komplex, több lépéses age-well arcápolási rendszer.",
+    "EPOCH":"Etnobotanikai ihletésű bőr- és testápolás.","EPOCH · HAIR":"Etnobotanikai ihletésű hajápolás.",
+    "SUNRIGHT":"Napfényhez és barnított megjelenéshez kapcsolódó bőrápolás.","BODY CARE":"Testápolás és hidratálás.",
+    "HAIR CARE":"Hajápolás és intenzív kondicionálás.","ORAL CARE":"Mindennapi szájápolás.",
+    "PHARMANEX · VITAMINOK":"Vitamin- és ásványianyag-alapú étrend-kiegészítés.","PHARMANEX · OMEGA-3":"Omega-3 zsírsavakat tartalmazó étrend-kiegészítés.",
+    "PHARMANEX · ANTIOXIDÁNS":"Antioxidáns fókuszú étrend-kiegészítés.","PHARMANEX · VITAMINITAL":"Növényi és vitaminfókuszú étrend-kiegészítés.",
+    "PHARMANEX · BEAUTY":"Szépségápolást belülről támogató étrend-kiegészítők.","PHARMANEX · VITALITÁS":"Vitalitásfókuszú étrend-kiegészítés.",
+    "PHARMANEX · WELLNESS":"Általános wellnessfókuszú étrend-kiegészítés.","PHARMANEX · EMÉSZTÉS":"Emésztőrendszeri wellnessfókuszú étrend-kiegészítés.",
+    "TRME · BODY BALANCE":"A TRME Body Balance rendszer termékei.","WELLNESS":"Nu Skin wellnessrendszer.","WELLNESS TECH":"Okos wellness technológia."
+  },
+  en:{
+    "BEAUTY TECH":"At-home beauty technology and its supporting systems.","SKINCARE":"Targeted Nu Skin skincare.","TRU FACE":"Premium age-well skincare.",
+    "NUTRICENTIALS":"Daily cleansing, hydration and targeted skincare support.","HAIR & SCALP":"Targeted hair and scalp care.",
+    "NU SKIN 180°":"A multi-step age-well facial care system.","EPOCH":"Ethnobotanical-inspired skin and body care.","EPOCH · HAIR":"Ethnobotanical-inspired haircare.",
+    "SUNRIGHT":"Sun and sunless-tanning focused skincare.","BODY CARE":"Body cleansing, smoothing and hydration.","HAIR CARE":"Haircare and intensive conditioning.",
+    "ORAL CARE":"Everyday oral care.","PHARMANEX · VITAMINOK":"Vitamin and mineral supplementation.","PHARMANEX · OMEGA-3":"Omega-3 supplementation.",
+    "PHARMANEX · ANTIOXIDÁNS":"Antioxidant-focused supplementation.","PHARMANEX · VITAMINITAL":"Plant- and vitamin-focused supplementation.",
+    "PHARMANEX · BEAUTY":"Beauty-focused supplements from within.","PHARMANEX · VITALITÁS":"Vitality-focused supplementation.",
+    "PHARMANEX · WELLNESS":"General wellness supplementation.","PHARMANEX · EMÉSZTÉS":"Digestive wellness supplementation.",
+    "TRME · BODY BALANCE":"Products from the TRME Body Balance system.","WELLNESS":"Nu Skin wellness system.","WELLNESS TECH":"Smart wellness technology."
+  },
+  de:{
+    "BEAUTY TECH":"Beauty-Technologie für zu Hause und die dazugehörigen Systeme.","SKINCARE":"Gezielte Nu-Skin-Hautpflege.","TRU FACE":"Premium-Age-Well-Hautpflege.",
+    "NUTRICENTIALS":"Tägliche Reinigung, Feuchtigkeit und gezielte Hautpflege.","HAIR & SCALP":"Gezielte Haar- und Kopfhautpflege.",
+    "NU SKIN 180°":"Mehrstufiges Age-Well-Gesichtspflegesystem.","EPOCH":"Ethnobotanisch inspirierte Haut- und Körperpflege.","EPOCH · HAIR":"Ethnobotanisch inspirierte Haarpflege.",
+    "SUNRIGHT":"Hautpflege rund um Sonne und sonnenlose Bräune.","BODY CARE":"Körperreinigung, Glättung und Feuchtigkeitspflege.","HAIR CARE":"Haarpflege und intensive Konditionierung.",
+    "ORAL CARE":"Tägliche Mundpflege.","PHARMANEX · VITAMINOK":"Vitamin- und Mineralstoffergänzung.","PHARMANEX · OMEGA-3":"Omega-3-Ergänzung.",
+    "PHARMANEX · ANTIOXIDÁNS":"Antioxidativ ausgerichtete Nahrungsergänzung.","PHARMANEX · VITAMINITAL":"Pflanzen- und vitaminorientierte Nahrungsergänzung.",
+    "PHARMANEX · BEAUTY":"Beauty-Nahrungsergänzung von innen.","PHARMANEX · VITALITÁS":"Vitalitätsorientierte Nahrungsergänzung.",
+    "PHARMANEX · WELLNESS":"Allgemeine Wellness-Nahrungsergänzung.","PHARMANEX · EMÉSZTÉS":"Verdauungsorientierte Wellness-Nahrungsergänzung.",
+    "TRME · BODY BALANCE":"Produkte des TRME Body-Balance-Systems.","WELLNESS":"Nu-Skin-Wellness-System.","WELLNESS TECH":"Smarte Wellness-Technologie."
+  }
+};
+const localGroup=(group,lang)=>(groupLabels[lang]||groupLabels.hu)[group]||group;
+const archivedNuSkin=new Set(["Nu Skin 180° Anti-Aging Skin Therapy System","Epoch Hand Cream","Epoch IceDancer","Epoch Ava Puhi Moni Shampoo","Epoch Ava Puhi Moni Light Conditioner","Liquid Body Lufra","ReNu Hair Mask","AP 24 Anti-Plaque Fluoride Toothpaste","R² Day + Night","CordyMax CS-4","Pro-B","LifePak+ & Marine Omega ADR-csomag"]);
+const localGroupDescription=(group,lang)=>(groupDescriptions[lang]||groupDescriptions.hu)[group]||"";
+// Purchase-route audit: 2026-09-23. Direct My Site links are retained only for current products; known discontinued/unstable routes are information-only.
+const localizedNuSkinUrl=(url,lang)=>{
+  if(!url.includes("mysite.mynuskin.com")) return url;
+  if(lang==="de") return url.replace("/catalog/hu/hu/","/catalog/at/de/");
+  if(lang==="en") return url.replace("/catalog/hu/hu/","/catalog/ie/en/");
+  return url;
+};
+const localizedNuSkinCta=(name,url,lang,t)=>{
+  if(archivedNuSkin.has(name)) return t.archive;
+  if(name==="ageLOC TRMe") return t.system;
+  if(["hu","de","en"].includes(lang) && url.includes("mysite.mynuskin.com")) return t.buyOfficial;
+  return t.official;
+};
+
+function BrandHero({title,lead,note,t}) {
+  return <section className="brandPageHero"><div>
+    <a className="brandPageBack" href="#top"><ArrowLeft size={14}/>{t.back}</a>
+    <p className="eyebrow">BEAUTY BY ILDY · BRAND EDIT</p>
+    <h1>{title}</h1>
+    <p className="brandPageLead">{lead}</p>
+    {note && <p className="brandPageNote">{note}</p>}
+  </div></section>;
+}
+
+export function NuSkinPage({lang="hu"}) {
+  const t=copy[lang]||copy.hu;
+  return <main className="brandPage">
+    <BrandHero title={t.nuskinTitle} lead={t.nuskinLead} note={t.nuskinNote} t={t}/>
+    <section className="brandPageBody">
+      <div className="brandPageMeta"><span>{NUSKIN.length} {t.products}</span><small>{t.verified}</small></div><p className="brandPageNote">{t.localeNote}</p>
+      <div className="brandGroups">
+        {[...new Set(NUSKIN.map(([,group])=>group))].map(group=><section className="brandGroup" key={group}>
+          <div className="brandGroupHead"><h2>{localGroup(group,lang)}</h2><span>{NUSKIN.filter(([,g])=>g===group).length}</span></div>
+          <div className="brandProductGrid">
+            {NUSKIN.filter(([,g])=>g===group).map(([name,,desc,url])=>{
+              const direct=url.includes("mysite.mynuskin.com");
+              const special=archivedNuSkin.has(name)||name==="ageLOC TRMe"||!direct;
+              return <article className={`brandProductCard nuskinCard ${direct&&!special?"isPurchasable":"isInfo"}`} key={name}>
+                <div className="brandCardTopline"><span>{localGroup(group,lang)}</span><em>{direct&&!special?t.available:t.infoOnly}</em></div>
+                <h2>{name}</h2><p>{localGroupDescription(group,lang)||desc}</p>
+                <div className="brandCardActions">
+                  <a className={direct&&!special?"brandShopLink":""} href={localizedNuSkinUrl(url,lang)} target="_blank" rel={direct&&!special?"sponsored noopener noreferrer":"noopener noreferrer"}>{localizedNuSkinCta(name,url,lang,t)}<ExternalLink size={13}/></a>
+                </div>
+              </article>
+            })}
+          </div>
+        </section>)}
+      </div>
+    </section>
+  </main>;
+}

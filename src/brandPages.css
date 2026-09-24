@@ -1,0 +1,584 @@
+.brandPage{min-height:100vh;background:var(--champagne);color:var(--ink)}
+.brandPageHero{background:linear-gradient(125deg,#06172d 0%,#09264a 60%,#103a6a 100%);color:#fff;padding:58px 6vw 52px}
+.brandPageHero>div{max-width:980px;margin:0 auto}
+.brandPageBack{display:inline-flex;align-items:center;gap:8px;color:#d9e0e8;text-decoration:none;font:500 9px Montserrat;letter-spacing:1px;margin-bottom:28px}
+.brandPageHero .eyebrow{color:var(--gold);font:500 9px Montserrat;letter-spacing:2.2px}
+.brandPageHero h1{font:500 clamp(48px,6vw,72px)/.95 'Cormorant Garamond',serif;margin:14px 0 18px}
+.brandPageLead{max-width:780px;color:#dce3eb;font:400 13px/1.85 Montserrat}
+.brandPageNote{max-width:760px;margin-top:20px;padding-top:16px;border-top:1px solid #ffffff26;color:#bfc9d3;font:400 10px/1.7 Montserrat}
+.brandPageBody{max-width:1180px;margin:0 auto;padding:44px 6vw 76px}
+.brandPageMeta{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:22px}
+.brandPageMeta span{font:500 28px/1 'Cormorant Garamond',serif}
+.brandPageMeta small{font:500 8px Montserrat;letter-spacing:1px;color:#8a7854;text-transform:uppercase}
+.brandProductGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.brandProductCard{background:var(--ivory);border:1px solid var(--line);padding:22px;min-height:220px;display:flex;flex-direction:column}
+.brandProductCard>span{font:600 8px Montserrat;letter-spacing:1.3px;color:var(--gold)}
+.brandProductCard h2{font:500 25px/1.06 'Cormorant Garamond',serif;margin:10px 0 12px;text-transform:none}
+.brandProductCard p{font:400 10px/1.72 Montserrat;color:var(--muted);margin:0 0 20px}
+.brandProductCard a{margin-top:auto;display:inline-flex;align-items:center;gap:7px;text-decoration:none;font:600 8px Montserrat;letter-spacing:1.2px;color:#6f5a33}
+@media(max-width:1000px){.brandProductGrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){
+ .brandPageHero{padding:38px 20px 36px}
+ .brandPageHero h1{font-size:46px}
+ .brandPageLead{font-size:12px}
+ .brandPageBody{padding:28px 20px 58px}
+ .brandPageMeta{align-items:flex-start;flex-direction:column;gap:7px}
+ .brandProductGrid{grid-template-columns:1fr;gap:10px}
+ .brandProductCard{min-height:0;padding:20px}
+ .brandProductCard h2{font-size:24px}
+}
+
+.brandGroups{display:flex;flex-direction:column;gap:36px}
+.brandGroup{padding-top:4px}
+.brandGroupHead{display:flex;align-items:end;justify-content:space-between;gap:20px;margin:0 0 14px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+.brandGroupHead h2{margin:0;font:500 24px/1.05 "Cormorant Garamond",serif;letter-spacing:.2px}
+.brandGroupHead span{font:600 8px Montserrat;letter-spacing:1px;color:#8a7854}
+@media(max-width:620px){
+ .brandGroups{gap:28px}
+ .brandGroupHead{margin-bottom:10px}
+ .brandGroupHead h2{font-size:22px}
+}
+
+
+/* Full-site QA: unify brand-page hero with Knowledge Base */
+.brandPageHero{
+  padding:48px 6vw 44px;
+  background:linear-gradient(125deg,var(--bbi-hero-1) 0%,var(--bbi-hero-2) 62%,var(--bbi-hero-3) 100%);
+}
+.brandPageHero>div{max-width:900px;margin:0}
+.brandPageBack{
+  margin-bottom:28px;
+  color:#d7dde4;
+  font:400 var(--bbi-meta) var(--bbi-font-body);
+  letter-spacing:1.2px;
+}
+.brandPageHero .eyebrow{
+  margin:0;
+  color:#fff;
+  font-family:var(--bbi-font-heading);
+  font-size:18px;
+  font-weight:500;
+  line-height:1.2;
+  letter-spacing:.4px;
+}
+.brandPageHero h1{
+  margin:16px 0;
+  font:500 clamp(48px,5.4vw,var(--bbi-hero-title))/1 var(--bbi-font-heading);
+}
+.brandPageLead{
+  max-width:760px;
+  margin:0;
+  color:#dce3eb;
+  font:300 var(--bbi-intro)/1.9 var(--bbi-font-body);
+}
+@media(max-width:620px){
+  .brandPageHero{padding:42px 20px 38px}
+  .brandPageBack{margin-bottom:24px}
+  .brandPageHero .eyebrow{font-size:17px;letter-spacing:.3px}
+  .brandPageHero h1{margin:14px 0;font-size:var(--bbi-hero-title)}
+}
+
+
+.brandShopBar{max-width:1180px;margin:0 auto;padding:20px 6vw 0}
+.brandShopBar a{
+  display:inline-flex;align-items:center;gap:8px;
+  min-height:42px;padding:0 18px;
+  border:1px solid var(--gold);background:var(--navy);color:#fff;
+  text-decoration:none;font:600 9px Montserrat;letter-spacing:1.1px
+}
+.brandCardActions{margin-top:auto;display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.brandProductCard .brandCardActions>a{margin-top:0}
+.brandProductCard .brandShopLink{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:10px 12px;border:1px solid var(--gold);
+  color:#fff;background:var(--navy)
+}
+@media(max-width:620px){
+  .brandShopBar{padding:16px 20px 0}
+  .brandShopBar a{width:auto;min-height:42px}
+}
+
+
+/* Nu Skin premium merchandising pass */
+.brandPageBody>.brandPageNote{
+  max-width:none;
+  margin:0 0 34px;
+  padding:12px 16px;
+  border:1px solid rgba(138,120,84,.22);
+  background:rgba(255,255,255,.42);
+  color:#766b5b;
+  font:500 9px/1.6 Montserrat;
+  letter-spacing:.45px;
+  text-transform:uppercase;
+}
+.brandGroup{scroll-margin-top:110px}
+.brandGroupHead{
+  position:relative;
+  padding:0 0 12px;
+  margin-bottom:16px;
+}
+.brandGroupHead:after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-1px;
+  width:72px;
+  height:1px;
+  background:var(--gold);
+}
+.nuskinCard{
+  position:relative;
+  overflow:hidden;
+  min-height:238px;
+  transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease;
+}
+.nuskinCard:hover{
+  transform:translateY(-2px);
+  box-shadow:0 14px 34px rgba(27,34,45,.08);
+}
+.nuskinCard.isPurchasable{border-color:rgba(170,137,72,.32)}
+.nuskinCard.isPurchasable:before{
+  content:"";
+  position:absolute;
+  inset:0 auto 0 0;
+  width:2px;
+  background:linear-gradient(180deg,var(--gold),rgba(170,137,72,.15));
+}
+.brandCardTopline{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+.brandCardTopline>span{
+  font:600 8px Montserrat;
+  letter-spacing:1.3px;
+  color:var(--gold);
+}
+.brandCardTopline>em{
+  flex:0 0 auto;
+  padding:5px 7px 4px;
+  border:1px solid rgba(138,120,84,.22);
+  background:#fffdfa;
+  color:#806f4f;
+  font:600 7px Montserrat;
+  letter-spacing:.8px;
+  text-transform:uppercase;
+  font-style:normal;
+}
+.nuskinCard.isInfo .brandCardTopline>em{
+  border-color:rgba(77,87,101,.16);
+  color:#7b8188;
+  background:#f6f7f8;
+}
+.nuskinCard h2{
+  max-width:94%;
+  margin-top:14px;
+  font-size:27px;
+  line-height:1.02;
+}
+.nuskinCard p{
+  max-width:92%;
+  font-size:10.5px;
+  line-height:1.72;
+}
+.brandCardActions{width:100%;padding-top:4px}
+.brandProductCard .brandCardActions>a{
+  min-height:38px;
+  padding:0 13px;
+  border:1px solid rgba(138,120,84,.32);
+  transition:background .18s ease,color .18s ease,border-color .18s ease;
+}
+.brandProductCard .brandCardActions>a:not(.brandShopLink):hover{
+  background:#f7f2e9;
+  border-color:var(--gold);
+}
+.brandProductCard .brandShopLink{
+  min-height:40px;
+  padding:0 15px;
+  border-color:var(--gold);
+  background:var(--navy);
+  color:#fff;
+  box-shadow:0 5px 14px rgba(6,23,45,.08);
+}
+.brandProductCard .brandShopLink:hover{background:#0d2d54}
+@media(max-width:1000px){
+  .nuskinCard{min-height:220px}
+}
+@media(max-width:620px){
+  .brandPageBody>.brandPageNote{
+    margin-bottom:24px;
+    padding:11px 12px;
+    font-size:8px;
+    line-height:1.55;
+  }
+  .nuskinCard{min-height:0}
+  .brandCardTopline{align-items:flex-start}
+  .brandCardTopline>em{font-size:6.5px}
+  .nuskinCard h2{font-size:25px}
+  .brandProductCard .brandCardActions>a{min-height:42px}
+}
+
+
+/* Nu Skin mobile polish: lighter frames + visible site navy */
+.nuskinCard{
+  border-width:1px;
+  border-color:rgba(170,150,115,.22);
+}
+.nuskinCard.isPurchasable{
+  border-color:rgba(170,137,72,.28);
+}
+.nuskinCard.isPurchasable:before{
+  width:1px;
+  background:linear-gradient(180deg,rgba(180,145,78,.88),rgba(180,145,78,.12));
+}
+.brandCardTopline>em{
+  border-width:1px;
+  border-color:rgba(138,120,84,.18);
+}
+.brandPageBody>.brandPageNote{
+  border-width:1px;
+  border-color:rgba(138,120,84,.18);
+}
+.brandProductCard .brandShopLink{
+  background:#09264a;
+  border-color:#b79a5b;
+  color:#fff;
+}
+.brandProductCard .brandShopLink:hover{
+  background:#103a6a;
+}
+@media(max-width:620px){
+  .nuskinCard{
+    border-color:rgba(170,150,115,.20);
+  }
+  .nuskinCard.isPurchasable{
+    border-color:rgba(170,137,72,.24);
+  }
+  .brandProductCard .brandShopLink{
+    min-height:42px;
+    padding:0 14px;
+    background:#09264a;
+  }
+}
+
+
+/* doTERRA editorial page: slim, premium grouping */
+.doterraFeatured{margin-top:34px}
+.doterraGroup{margin-top:24px}
+.doterraGroupHead{
+  display:flex;align-items:end;justify-content:space-between;gap:16px;
+  margin:0 0 12px;padding:0 0 9px;border-bottom:1px solid var(--line)
+}
+.doterraGroupHead h3{
+  margin:0;font:500 21px/1.05 "Cormorant Garamond",serif;letter-spacing:.1px
+}
+.doterraGroupHead span{
+  font:600 8px Montserrat;letter-spacing:1px;color:#8a7854
+}
+.doterraCard{min-height:205px}
+.doterraCard .brandCardTopline>em{font-size:6.5px;padding:4px 6px 3px}
+.doterraCard h2{font-size:24px;margin-top:12px}
+.doterraCard p{font-size:10px;line-height:1.68}
+.doterraCard .brandCardActions>a{
+  min-height:34px;padding:0 11px;font-size:7.5px;letter-spacing:1px
+}
+.brandShopBar a{
+  min-height:34px;padding:0 13px;font-size:8px;letter-spacing:1px
+}
+@media(max-width:620px){
+  .doterraFeatured{margin-top:28px}
+  .doterraGroup{margin-top:20px}
+  .doterraGroupHead h3{font-size:20px}
+  .doterraCard{min-height:0}
+  .doterraCard .brandCardActions>a{min-height:36px;padding:0 11px}
+  .brandShopBar a{min-height:36px;padding:0 12px}
+}
+
+
+/* doTERRA full-catalog CTA emphasis */
+.doterraFeatured + .brandPageNote{margin-top:18px}
+.brandShopBar a{
+  border-color:rgba(183,154,91,.72);
+  box-shadow:0 5px 16px rgba(7,23,44,.06);
+}
+.brandShopBar a:hover{
+  background:#103a6a;
+}
+.doterraCard .brandCardActions>a{
+  background:transparent;
+  color:#6f5a33;
+  border-color:rgba(138,120,84,.28);
+  box-shadow:none;
+}
+.doterraCard .brandCardActions>a:hover{
+  background:#f7f2e9;
+  border-color:var(--gold);
+}
+
+
+/* doTERRA product information */
+.doterraInfo{
+  display:grid;
+  gap:8px;
+  margin:12px 0 2px;
+}
+.doterraInfo p{
+  margin:0;
+  font-size:12px;
+  line-height:1.55;
+  color:var(--ink-soft,#4d5664);
+}
+.doterraInfo strong{
+  display:block;
+  margin-bottom:2px;
+  font-size:9px;
+  line-height:1.3;
+  letter-spacing:.12em;
+  color:var(--navy,#0b2747);
+}
+@media (max-width:640px){
+  .doterraInfo{gap:7px}
+  .doterraInfo p{font-size:11.5px}
+}
+
+
+/* Keep doTERRA catalogue buttons visually identical after switching from hash links */
+.brandShopBar button,
+.brandProductCard .brandCardActions button{
+  appearance:none;
+  -webkit-appearance:none;
+  font:inherit;
+  cursor:pointer;
+}
+.brandShopBar button{
+  min-height:34px;
+  padding:0 14px;
+  border:1px solid rgba(183,154,91,.72);
+  background:transparent;
+  color:inherit;
+  letter-spacing:inherit;
+}
+.brandProductCard .brandCardActions button{
+  min-height:34px;
+  padding:0 12px;
+  border:1px solid rgba(138,120,84,.28);
+  background:transparent;
+  color:#6f5a33;
+  letter-spacing:.08em;
+}
+.brandProductCard .brandCardActions button:hover{
+  background:#f7f2e9;
+  border-color:var(--gold);
+}
+
+
+/* doTERRA desktop catalogue redesign */
+.brandPageBody > .brandProductGrid{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:22px;
+  max-width:980px;
+  margin:0 auto;
+}
+.brandPageBody > .brandProductGrid .brandProductCard{
+  min-height:0;
+  padding:24px 24px 22px;
+}
+.brandPageBody > .brandProductGrid .brandProductCard h2{
+  font-size:26px;
+  margin-bottom:10px;
+}
+.brandPageBody > .brandProductGrid .brandCardActions button{
+  min-height:36px;
+  width:auto;
+  padding:0 15px;
+  white-space:nowrap;
+}
+
+.doterraFeatured{
+  margin-top:56px;
+}
+.doterraGroup{
+  margin-top:34px;
+}
+.doterraGroup .brandProductGrid{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:20px;
+}
+.doterraCard{
+  min-height:0;
+  padding:24px;
+}
+.doterraCard h2{
+  font-size:28px;
+  line-height:1.02;
+  margin:14px 0 12px;
+}
+.doterraDescription{
+  margin:0 0 16px;
+  padding:0 0 15px;
+  border-bottom:1px solid rgba(138,120,84,.16);
+}
+.doterraDescription>span{
+  display:block;
+  margin-bottom:7px;
+  color:#8a7854;
+  font:600 8px/1.3 Montserrat;
+  letter-spacing:.14em;
+}
+.doterraDescription p{
+  margin:0;
+  color:#4f5967;
+  font:400 11.5px/1.75 Montserrat;
+}
+.doterraInfo{
+  grid-template-columns:1fr;
+  gap:10px;
+  margin:0 0 16px;
+}
+.doterraInfo p{
+  padding:0;
+  font-size:10.5px;
+  line-height:1.65;
+}
+.doterraInfo strong{
+  margin-bottom:4px;
+}
+.doterraCard .brandCardActions{
+  margin-top:auto;
+}
+.doterraCard .brandCardActions>a{
+  min-height:36px;
+  padding:0 14px;
+  background:#09264a;
+  border-color:#b79a5b;
+  color:#fff;
+}
+.doterraCard .brandCardActions>a:hover{
+  background:#103a6a;
+  color:#fff;
+}
+
+@media(max-width:900px){
+  .brandPageBody > .brandProductGrid,
+  .doterraGroup .brandProductGrid{
+    grid-template-columns:1fr;
+  }
+}
+@media(max-width:620px){
+  .brandPageBody > .brandProductGrid{
+    gap:12px;
+  }
+  .brandPageBody > .brandProductGrid .brandProductCard{
+    padding:19px;
+  }
+  .brandPageBody > .brandProductGrid .brandCardActions button{
+    white-space:normal;
+    line-height:1.25;
+    min-height:38px;
+  }
+  .doterraFeatured{margin-top:38px}
+  .doterraGroup{margin-top:26px}
+  .doterraCard{padding:19px}
+  .doterraCard h2{font-size:25px}
+  .doterraDescription p{font-size:11px;line-height:1.68}
+  .doterraInfo p{font-size:10.5px}
+}
+
+
+/* doTERRA editorial CTA — match the slim homepage button language */
+.brandPageBody > .brandProductGrid .brandCardActions{
+  align-items:flex-start;
+}
+.brandPageBody > .brandProductGrid .brandCardActions button{
+  box-sizing:border-box;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:auto;
+  max-width:100%;
+  min-height:34px;
+  padding:0 12px;
+  border:1px solid rgba(183,154,91,.46);
+  background:transparent;
+  color:#6f5a33;
+  font:500 8px/1 Montserrat;
+  letter-spacing:.9px;
+  white-space:nowrap;
+}
+.brandPageBody > .brandProductGrid .brandCardActions button:hover{
+  background:#f7f2e9;
+  border-color:#b79a5b;
+}
+@media(max-width:620px){
+  .brandPageBody > .brandProductGrid .brandCardActions button{
+    width:auto;
+    max-width:230px;
+    min-height:34px;
+    padding:0 12px;
+    font-size:8px;
+    line-height:1;
+    letter-spacing:.8px;
+    white-space:nowrap;
+  }
+}
+
+
+/* doTERRA extended guidance */
+.doterraInfo .doterraExtra{
+  margin-top:2px;
+  padding-top:10px;
+  border-top:1px solid rgba(138,120,84,.14);
+}
+
+
+/* Brand page desktop alignment hardening */
+.brandPage{
+  width:100%;
+  max-width:100%;
+  overflow-x:hidden;
+}
+.brandPageHero{
+  width:100%;
+  box-sizing:border-box;
+}
+.brandPageHero>div{
+  width:100%;
+  max-width:1180px;
+  margin:0 auto;
+  box-sizing:border-box;
+}
+.brandShopBar,
+.brandPageBody{
+  width:100%;
+  max-width:1180px;
+  box-sizing:border-box;
+  margin-left:auto;
+  margin-right:auto;
+}
+@media(min-width:901px){
+  .brandPageHero{padding-left:6vw;padding-right:6vw}
+  .brandShopBar,
+  .brandPageBody{padding-left:6vw;padding-right:6vw}
+}
+@media(max-width:900px){
+  .brandPageHero>div,
+  .brandShopBar,
+  .brandPageBody{
+    max-width:100%;
+  }
+}
+
+
+/* doTERRA launch QA: duplicate-link safeguard */
+.doterraLinkCheck{
+  display:inline-flex;
+  align-items:center;
+  min-height:34px;
+  padding:0 12px;
+  border:1px solid rgba(138,120,84,.22);
+  background:#f7f2e9;
+  color:#7a6a4b;
+  font:600 7.5px/1 Montserrat;
+  letter-spacing:1px;
+}

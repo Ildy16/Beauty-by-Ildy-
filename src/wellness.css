@@ -6,3 +6,51 @@
 .wellnessGrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--bbi-card-gap);margin-top:22px}.wellnessGrid article,.wellnessPartnerGrid article{min-height:0;padding:22px var(--bbi-card-pad-x);border:1px solid var(--bbi-line);background:var(--bbi-ivory)}.wellnessGrid h3,.wellnessPartnerGrid h3{margin:0 0 8px;color:var(--bbi-ink);font:500 var(--bbi-card-title)/1.08 var(--bbi-font-heading);text-transform:uppercase}.wellnessGrid p,.wellnessPartnerGrid p{margin:0;color:var(--bbi-muted);font:400 var(--bbi-card-body)/1.7 var(--bbi-font-body)}
 .wellnessPartnerHead .eyebrow{margin:0 0 12px;color:var(--bbi-gold)}.wellnessPartnerGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--bbi-card-gap);margin-top:22px}.wellnessPartnerGrid article{display:flex;flex-direction:column}.wellnessPartnerGrid small{display:block;margin-top:16px;color:var(--bbi-gold);font:500 var(--bbi-meta)/1.4 var(--bbi-font-body);letter-spacing:1.2px}.wellnessNote{background:var(--bbi-ivory)}.wellnessNote h2{font-size:var(--bbi-card-title)}.wellnessPage .eyebrow{color:var(--bbi-gold)}
 @media(max-width:1000px){.wellnessGrid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:620px){.wellnessHero{padding:42px 20px 38px}.wellnessBack{margin-bottom:24px}.wellnessHero h1{margin:14px 0;font-size:var(--bbi-hero-title)}.wellnessPage .reviewed{margin-top:16px}.wellnessFocus,.wellnessIntro,.wellnessStandards,.wellnessTopics,.wellnessPartners,.wellnessNote{padding:var(--bbi-section-pad-y) var(--bbi-section-pad-x)}.wellnessFocus h2,.wellnessIntro h2,.wellnessStandards h2,.wellnessTopics h2,.wellnessPartners h2{line-height:.96}.wellnessFocusGrid,.wellnessGrid,.wellnessPartnerGrid{grid-template-columns:1fr}.wellnessFocusGrid article,.wellnessGrid article,.wellnessPartnerGrid article{padding:var(--bbi-card-pad-y) var(--bbi-card-pad-x)}}
+
+
+/* Full-site QA: align inner-page hero with Knowledge Base */
+.wellnessPage .wellnessHero{padding:48px 6vw 44px}
+.wellnessPage .wellnessHeroInner{max-width:900px}
+.wellnessPage .wellnessBack{margin-bottom:28px;color:#d7dde4;font:400 var(--bbi-meta) var(--bbi-font-body);letter-spacing:1.2px}
+.wellnessPage .wellnessHero>.eyebrow,
+.wellnessPage .wellnessHeroInner>.eyebrow,
+.wellnessPage .wellnessHero>div>.eyebrow{
+  margin:0;color:#fff;font-family:var(--bbi-font-heading);font-size:18px;font-weight:500;line-height:1.2;letter-spacing:.4px
+}
+.wellnessPage .wellnessHero h1{margin:16px 0;font:500 clamp(48px,5.4vw,var(--bbi-hero-title))/1 var(--bbi-font-heading)}
+.wellnessPage .wellnessLead{max-width:760px;margin:0;color:#dce3eb;font:300 var(--bbi-intro)/1.9 var(--bbi-font-body)}
+@media(max-width:620px){
+ .wellnessPage .wellnessHero{padding:42px 20px 38px}
+ .wellnessPage .wellnessBack{margin-bottom:24px}
+ .wellnessPage .wellnessHero>.eyebrow,
+ .wellnessPage .wellnessHeroInner>.eyebrow,
+ .wellnessPage .wellnessHero>div>.eyebrow{font-size:17px;letter-spacing:.3px}
+ .wellnessPage .wellnessHero h1{margin:14px 0;font-size:var(--bbi-hero-title)}
+}
+
+
+
+/* Final partner section after Neumi separation */
+.wellnessPartnerGrid{grid-template-columns:minmax(0,620px)}
+.wellnessPartnerGrid article{border-color:rgba(170,150,115,.24)}
+.wellnessPartnerCta{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:max-content;
+  margin-top:18px;
+  min-height:40px;
+  padding:0 15px;
+  border:1px solid #b79a5b;
+  background:#09264a;
+  color:#fff;
+  text-decoration:none;
+  font:600 8px/1 Montserrat,Arial,sans-serif;
+  letter-spacing:1px;
+}
+.wellnessPartnerCta:hover,
+.wellnessPartnerCta:focus-visible{background:#103a6a}
+@media(max-width:620px){
+  .wellnessPartnerGrid{grid-template-columns:1fr}
+  .wellnessPartnerCta{min-height:42px}
+}

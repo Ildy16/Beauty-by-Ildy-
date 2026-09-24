@@ -21,34 +21,103 @@ a {
 
 /* Legal pages */
 .legalPage {
-  max-width: 900px;
+  max-width: 920px;
   margin: 0 auto;
-  padding: 72px 28px 90px;
+  padding: 70px 42px 90px;
   background: var(--ivory);
+  color: var(--ink);
 }
 .legalBack {
-  display: inline-block;
-  margin-bottom: 38px;
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 34px;
+  color: #5f6b72;
   text-decoration: none;
-  font-size: 11px;
+  font: 500 10px/1.5 Montserrat, Arial, sans-serif;
+  letter-spacing: .8px;
+}
+.legalBack:hover,
+.legalBack:focus-visible {
+  color: var(--gold);
+}
+.legalPage .eyebrow {
+  margin: 0 0 12px;
+  color: var(--gold);
+  font: 600 10px/1.4 Montserrat, Arial, sans-serif;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
 }
 .legalPage h1 {
-  font:
-    500 60px "Cormorant Garamond",
-    serif;
+  margin: 0 0 10px;
+  color: var(--ink);
+  font: 500 44px/1.02 "Cormorant Garamond", serif;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.legalPage .legalUpdated {
+  margin: 0 0 34px;
+  color: #7a858a;
+  font: 400 11px/1.6 Montserrat, Arial, sans-serif;
 }
 .legalSections section {
-  padding: 30px 0;
+  padding: 24px 0 26px;
+  border-top: 1px solid var(--line);
+}
+.legalSections section:last-child {
   border-bottom: 1px solid var(--line);
 }
-.legalSections p,
-.legalSections li {
-  font-size: 13px;
-  line-height: 1.8;
+.legalSections h2 {
+  margin: 0 0 10px;
+  color: var(--ink);
+  font: 500 19px/1.15 "Cormorant Garamond", serif;
+  letter-spacing: 0;
+  text-transform: none;
 }
-
+.legalSections section > div,
+.legalSections p,
+.legalSections li,
+.legalSections a {
+  color: #58656b;
+  font: 400 12px/1.75 Montserrat, Arial, sans-serif;
+  letter-spacing: 0;
+}
+.legalSections a {
+  color: #334f68;
+  text-underline-offset: 2px;
+}
+.legalSections strong {
+  color: var(--ink);
+  font-weight: 600;
+}
 @media (max-width: 620px) {
+  .legalPage {
+    padding: 42px 20px 60px;
+  }
   .legalBack {
+    margin-bottom: 26px;
+    font-size: 9px;
+  }
+  .legalPage .eyebrow {
+    font-size: 9px;
+  }
+  .legalPage h1 {
+    font-size: 36px;
+  }
+  .legalPage .legalUpdated {
+    margin-bottom: 26px;
     font-size: 10px;
+  }
+  .legalSections section {
+    padding: 20px 0 22px;
+  }
+  .legalSections h2 {
+    font-size: 18px;
+  }
+  .legalSections section > div,
+  .legalSections p,
+  .legalSections li,
+  .legalSections a {
+    font-size: 11px;
+    line-height: 1.72;
   }
 }

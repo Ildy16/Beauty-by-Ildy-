@@ -1,0 +1,232 @@
+import {finderMeta} from './finderData.js';
+
+const evidenceBonus={A:5,B:3,C:0,U:-5};
+const has=(arr,x)=>Array.isArray(arr)&&arr.includes(x);
+const overlap=(a=[],b=[])=>a.filter(x=>b.includes(x)).length;
+
+export function validateFinderCatalog(products=[]){
+  const issues=[];
+  const seen=new Set();
+  const allowedTypes=new Set(['skincare','hair','wellness','device']);
+  const allowedRoles=new Set(['base','targeted','extra']);
+  const allowedEvidence=new Set(['A','B','C','U']);
+  for(const product of products){
+    if(seen.has(product.slug))issues.push({slug:product.slug,code:'duplicate_product_slug'});
+    seen.add(product.slug);
+    const meta=finderMeta[product.slug];
+    if(!meta){issues.push({slug:product.slug,code:'missing_metadata'});continue}
+    if(!allowedTypes.has(meta.type))issues.push({slug:product.slug,code:'invalid_type'});
+    if(!Array.isArray(meta.goals)||meta.goals.length===0)issues.push({slug:product.slug,code:'missing_goals'});
+    if(!Array.isArray(meta.roles)||meta.roles.length===0)issues.push({slug:product.slug,code:'missing_roles'});
+    else for(const role of meta.roles)if(!allowedRoles.has(role))issues.push({slug:product.slug,code:'invalid_role',value:role});
+    if(!allowedEvidence.has(meta.evidence))issues.push({slug:product.slug,code:'invalid_evidence'});
+  }
+  for(const slug of Object.keys(finderMeta)){
+    if(!seen.has(slug))issues.push({slug,code:'orphan_metadata'});
+  }
+  return {ok:issues.length===0,issues,productCount:products.length,metadataCount:Object.keys(finderMeta).length};
+}
+
+export function evaluateSafety(meta,answers={}){
+  const isSensitive=answers.sensitive===true||answers.skinType==='sensitive';
+  let status='GREEN', penalty=0;
+  const reasons=[];
+  const flags=meta.flags||[];
+  const red=(reason)=>{status='RED'; reasons.push(reason)};
+  const amber=(reason,p=15)=>{if(status!=='RED')status='AMBER'; penalty=Math.max(penalty,p); reasons.push(reason)};
+
+  if(flags.includes('retinoid')){
+    if(answers.pregnancy===true) red('pregnancy_retinoid');
+    else if(answers.prescription===true) red('prescription_active');
+    else if(answers.irritated===true) red('irritated_retinoid');
+    else if(answers.currentRetinoid===true && isSensitive) red('retinoid_stack_sensitive');
+    else if(answers.currentRetinoid===true) amber('retinoid_stack');
+    else if(isSensitive) amber('sensitive_retinoid');
+  }
+  if(flags.includes('strong_active') && answers.multipleAcids===true && answers.irritated===true) red('active_overload');
+  if(flags.includes('eye_area') && answers.eyeSensitive===true) amber('eye_sensitivity',12);
+  if(flags.includes('mechanical_irritation') && isSensitive) amber('mechanical_irritation',10);
+  if(flags.includes('fragrance') && isSensitive) amber('fragrance_sensitivity',10);
+  if(flags.includes('needs_verification')) amber('verification_pending',10);
+  if(flags.includes('supplement')){
+    if(answers.adult===false) red('under_18_supplement');
+    if(answers.wellnessPregnancy===true) red('pregnancy_supplement');
+    if(answers.medication===true) amber('medication_interaction_check',15);
+  }
+  if(flags.includes('caffeine') && answers.caffeineSensitive===true) red('caffeine_avoidance');
+  if(flags.includes('herbal_hormonal_context') && (answers.medication===true||answers.hormonalConcern===true||answers.wellnessPregnancy===true)) red('herbal_hormonal_context');
+
+  return {status,penalty,reasons};
+}
+
+export function scoreProduct(product,meta,answers={}){
+  const isSensitive=answers.sensitive===true||answers.skinType==='sensitive';
+  const safety=evaluateSafety(meta,answers);
+  if(safety.status==='RED') return {...safety,score:-Infinity,reasons:safety.reasons};
+
+  let score=0;
+  const reasons=[...safety.reasons];
+  if(meta.type!==answers.journey && !(answers.journey==='skin'&&meta.type==='skincare')) return {...safety,score:-Infinity,reasons:['journey_mismatch']};
+
+  if(has(meta.goals,answers.primaryGoal)){score+=35; reasons.push('primary_goal_match')}
+  const secondary=overlap(meta.goals.concat(meta.secondary||[]),answers.secondaryGoals||[]);
+  score+=Math.min(secondary*7.5,15);
+  if(secondary) reasons.push('secondary_goal_match');
+
+  if(!answers.skinType || has(meta.skinTypes,'all') || has(meta.skinTypes,answers.skinType)){score+=15; reasons.push('profile_match')}
+  else if(meta.type==='skincare') score-=5;
+
+  if(!answers.routineLevel || has(meta.routineLevels,answers.routineLevel)){score+=10; reasons.push('routine_fit')}
+  else if(answers.routineLevel==='essential'&&has(meta.routineLevels,'advanced')) score-=10;
+
+  if(isSensitive && (has(meta.skinTypes,'sensitive')||has(meta.skinTypes,'all'))) score+=10;
+  else if(isSensitive && meta.flags?.includes('sensitive_conditional')) score-=5;
+  else score+=5;
+
+  if(answers.pricePreference==='premium' && meta.flags?.includes('premium')) score+=5;
+  if(answers.pricePreference==='smart' && meta.flags?.includes('premium')) score-=5;
+
+  score+=(evidenceBonus[meta.evidence]??0);
+  score-=safety.penalty;
+
+  if(meta.flags?.includes('partner')) reasons.push('partner_link_ignored_for_ranking');
+  return {...safety,score:Math.max(0,Math.round(score*10)/10),reasons};
+}
+
+function roleScore(x,role,answers={}){
+  const isSensitive=answers.sensitive===true||answers.skinType==='sensitive';
+  let s=x.score;
+  if(role==='base'){
+    const foundationGoals=['barrier','hydration','soothing'];
+    const foundationMatch=foundationGoals.some(g=>has(x.meta.goals,g)||has(x.meta.secondary,g));
+    if(foundationMatch)s+=12;
+    if((isSensitive||answers.irritated===true||answers.currentRetinoid===true||answers.prescription===true)&&foundationMatch)s+=18;
+    if(has(x.meta.goals,answers.primaryGoal)&&!foundationMatch)s-=8;
+  }
+  if(role==='targeted'&&has(x.meta.goals,answers.primaryGoal))s+=15;
+  if(role==='extra'&&x.meta.routineLevels.includes('advanced')&&answers.routineLevel==='essential')s-=15;
+  return s;
+}
+
+function chooseRole(candidates,role,usedSlugs,usedBrands,answers={},limitSameBrand=2){
+  const isSensitive=answers.sensitive===true||answers.skinType==='sensitive';
+  let pool=candidates.filter(x=>has(x.meta.roles,role)&&!usedSlugs.has(x.product.slug));
+  if(role==='base'&&(isSensitive||answers.irritated===true||answers.currentRetinoid===true||answers.prescription===true)){
+    const barrierFirst=pool.filter(x=>['barrier','soothe'].includes(x.meta.category));
+    if(barrierFirst.length)pool=barrierFirst;
+  }
+  if(answers.journey==='wellness'&&(role==='targeted'||role==='extra')){
+    pool=pool.filter(x=>has(x.meta.goals,answers.primaryGoal));
+  }
+  const valid=pool
+    .map(x=>({...x,roleScore:roleScore(x,role,answers)}))
+    .sort((a,b)=>b.roleScore-a.roleScore);
+  for(const x of valid){
+    if((usedBrands.get(x.product.brand)||0)<limitSameBrand) return x;
+  }
+  return valid[0]||null;
+}
+
+function relevantToAnswers(meta,answers={}){
+  const goals=[answers.primaryGoal,...(answers.secondaryGoals||[])].filter(Boolean);
+  return goals.some(g=>has(meta.goals,g)||has(meta.secondary,g));
+}
+
+function meaningfulExtra(x,answers={}){
+  if(!x)return false;
+  if(answers.journey==='wellness') return has(x.meta.goals,answers.primaryGoal);
+  const relevant=relevantToAnswers(x.meta,answers);
+  return relevant && (x.roleScore??x.score)>=45;
+}
+
+function pickAlternatives(candidates,usedSlugs,limit=2){
+  const picked=[];
+  const brands=new Set();
+  for(const x of candidates){
+    if(usedSlugs.has(x.product.slug))continue;
+    if(brands.has(x.product.brand))continue;
+    picked.push(x);
+    brands.add(x.product.brand);
+    if(picked.length>=limit)break;
+  }
+  if(picked.length<limit){
+    for(const x of candidates){
+      if(usedSlugs.has(x.product.slug)||picked.some(p=>p.product.slug===x.product.slug))continue;
+      picked.push(x);
+      if(picked.length>=limit)break;
+    }
+  }
+  return picked;
+}
+
+export function explainNotRecommended(product,answers={}){
+  const meta=finderMeta[product.slug];
+  if(!meta)return null;
+  const safety=evaluateSafety(meta,answers);
+  if(safety.status==='RED') return {product,meta,status:'RED',reasons:safety.reasons,kind:'safety'};
+  return null;
+}
+
+export function recommend(products,answers={}){
+  const allEvaluated=products
+    .map(product=>{
+      const meta=finderMeta[product.slug];
+      if(!meta)return null;
+      const result=scoreProduct(product,meta,answers);
+      return {product,meta,...result};
+    })
+    .filter(Boolean);
+
+  const evaluated=allEvaluated
+    .filter(x=>Number.isFinite(x.score))
+    .sort((a,b)=>b.score-a.score);
+
+  const whyNot=allEvaluated
+    .filter(x=>x.status==='RED')
+    .filter(x=>x.meta.type===answers.journey || (answers.journey==='skin'&&x.meta.type==='skincare'))
+    .filter(x=>relevantToAnswers(x.meta,answers))
+    .slice(0,3)
+    .map(x=>({product:x.product,meta:x.meta,status:x.status,reasons:x.reasons,kind:'safety'}));
+
+  const usedSlugs=new Set(), usedBrands=new Map(), primary=[];
+  const severeRecovery=answers.journey==='skin'&&answers.irritated===true&&(answers.prescription===true||(answers.currentRetinoid===true&&answers.multipleAcids===true));
+  const add=(x,role)=>{
+    if(!x)return;
+    primary.push({...x,recommendationRole:role});
+    usedSlugs.add(x.product.slug);
+    usedBrands.set(x.product.brand,(usedBrands.get(x.product.brand)||0)+1);
+  };
+
+  if(severeRecovery){
+    add(chooseRole(evaluated,'base',usedSlugs,usedBrands,answers),'base');
+  }else if(answers.journey==='wellness'){
+    const targeted=chooseRole(evaluated,'targeted',usedSlugs,usedBrands,answers);
+    add(targeted,'targeted');
+    if(targeted){
+      const extra=chooseRole(evaluated,'extra',usedSlugs,usedBrands,answers);
+      if(meaningfulExtra(extra,answers))add(extra,'extra');
+    }
+  }else{
+    add(chooseRole(evaluated,'base',usedSlugs,usedBrands,answers),'base');
+    add(chooseRole(evaluated,'targeted',usedSlugs,usedBrands,answers),'targeted');
+    const extra=chooseRole(evaluated,'extra',usedSlugs,usedBrands,answers);
+    if(meaningfulExtra(extra,answers))add(extra,'extra');
+  }
+
+  let alternatives=[];
+  if(severeRecovery){
+    alternatives=[];
+  }else if(answers.journey==='wellness'){
+    const hasTargeted=primary.some(x=>x.recommendationRole==='targeted');
+    const pool=hasTargeted?evaluated.filter(x=>has(x.meta.goals,answers.primaryGoal)):[];
+    alternatives=pickAlternatives(pool,usedSlugs,2);
+  }else{
+    alternatives=pickAlternatives(evaluated,usedSlugs,2);
+  }
+  const education=[];
+  if(answers.primaryGoal==='pigmentation'&&answers.sunscreen!==true) education.push('spf_first');
+  if(answers.irritated===true) education.push('barrier_first');
+  if(answers.currentRetinoid===true) education.push('avoid_unnecessary_retinoid_stacking');
+
+  return {version:'1.0',primary,alternatives,education,evaluated,whyNot,recoveryOnly:severeRecovery};
+}

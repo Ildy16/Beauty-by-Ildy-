@@ -1,0 +1,303 @@
+.finderPage{min-height:100vh;background:var(--champagne);color:var(--ink)}.finderHero,.finderResultHero{background:linear-gradient(125deg,#06172d 0%,#09264a 62%,#103a6a 100%);color:white;padding:78px 7vw 70px}.finderHero{min-height:70vh;display:flex;flex-direction:column;align-items:flex-start;justify-content:center}.finderHero h1,.finderResultHero h1,.finderFlow h1{font:500 clamp(42px,6vw,76px)/.96 'Cormorant Garamond',serif;margin:14px 0 22px;max-width:900px}.finderHero>p:not(.eyebrow),.finderResultHero>p:not(.eyebrow),.finderSub{font:400 13px/1.9 Montserrat,sans-serif;max-width:760px;color:#dce3eb}.finderBack,.finderLink{display:inline-flex;align-items:center;gap:8px;text-decoration:none}.finderBack{font:500 9px Montserrat;letter-spacing:1px;color:#d9e0e8;margin-bottom:34px}.finderPrimary,.finderGhost{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:0;cursor:pointer;text-decoration:none;font:600 9px Montserrat;letter-spacing:1.2px;padding:14px 18px}.finderPrimary{background:var(--gold);color:#07172c;margin-top:28px}.finderPrimary:disabled{opacity:.35;cursor:not-allowed}.finderGhost{background:transparent;color:inherit;border:1px solid currentColor}.finderHero>small{margin-top:13px;font:400 9px/1.5 Montserrat;color:#bfc8d1}.finderPrivacy{display:flex;gap:10px;align-items:flex-start;margin-top:28px;max-width:760px;padding:14px 16px;border:1px solid #ffffff2b;background:#ffffff0c;font:400 10px/1.7 Montserrat;color:#d5dde6}.finderFlow{max-width:1040px;margin:0 auto;padding:56px 6vw 74px}.finderFlow .eyebrow{color:#94763f}.finderFlow .finderSub{color:var(--muted)}.finderProgress{height:3px;background:#d9d0c2;margin-bottom:48px;overflow:hidden}.finderProgress span{display:block;height:100%;background:var(--gold);transition:width .25s ease}.finderJourneyGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:28px 0}.finderJourneyGrid.three{grid-template-columns:repeat(3,1fr)}.finderJourney{min-height:155px;text-align:left;border:1px solid var(--line);background:var(--ivory);padding:24px;display:flex;flex-direction:column;align-items:flex-start;gap:10px;cursor:pointer;color:var(--ink)}.finderJourney svg{color:var(--gold)}.finderJourney strong{font:500 24px/1.05 'Cormorant Garamond'}.finderJourney span{font:400 10px/1.7 Montserrat;color:var(--muted)}.finderJourney.active{border-color:var(--gold);box-shadow:inset 0 0 0 1px var(--gold)}.finderChoiceGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:28px 0}.finderChoice{min-height:54px;border:1px solid var(--line);background:var(--ivory);padding:14px 16px;display:flex;align-items:center;gap:10px;text-align:left;font:500 11px/1.5 Montserrat;color:var(--ink);cursor:pointer}.finderChoice.active{border-color:var(--gold);color:#765f31}.finderChoice svg{color:var(--gold);flex:none}.finderMiniTitle{font:500 30px 'Cormorant Garamond';margin:42px 0 4px}.finderCheckList{display:grid;gap:10px;margin:30px 0}.finderCheckList label{display:flex;align-items:flex-start;gap:12px;border:1px solid var(--line);background:var(--ivory);padding:16px;font:400 11px/1.6 Montserrat;cursor:pointer}.finderCheckList input{margin-top:2px;accent-color:#9b8150}.finderActions{display:flex;justify-content:space-between;gap:12px;margin-top:42px}.finderActions .finderPrimary{margin-top:0}.finderActions .finderGhost{color:#59666b}.finderResultHero{padding-bottom:54px}.finderResultHero .finderGhost{margin-left:10px}.finderResults{max-width:1050px;margin:0 auto;padding:38px 6vw 80px}.finderEducation{display:flex;gap:12px;align-items:flex-start;background:#f7f2e8;border:1px solid #d8c8a8;padding:16px 18px;margin-bottom:10px;font:400 11px/1.7 Montserrat;color:#63583f}.finderEducation svg{color:var(--gold);flex:none}.finderRole{margin:34px 0}.finderRole>h2,.finderAlt>h2,.finderEmpty h2{font:500 32px 'Cormorant Garamond';margin:0 0 14px}.finderResultCard{background:var(--ivory);border:1px solid var(--line);padding:26px}.finderResultTop{display:flex;justify-content:space-between;gap:20px}.finderResultTop small{font:600 9px Montserrat;letter-spacing:1.4px;color:#6a7479}.finderResultTop h3{font:500 28px/1.05 'Cormorant Garamond';margin:7px 0 0}.finderStatus{height:max-content;padding:7px 9px;font:600 8px Montserrat;letter-spacing:.7px;border:1px solid var(--line)}.finderStatus.green{color:#35633b;background:#edf5ec}.finderStatus.amber{color:#806324;background:#fff7df}.finderWhy{font:400 11px/1.8 Montserrat;color:var(--muted);margin:18px 0}.finderWhy strong{font-weight:600;color:var(--ink)}.finderIngredients{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:20px}.finderIngredients span{font:500 9px Montserrat;border:1px solid var(--line);padding:8px 9px;background:#fbf8f2;color:#5e686d}.finderLink{font:600 9px Montserrat;letter-spacing:1px}.finderAlt{margin-top:46px}.finderAltGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.finderEmpty{background:var(--ivory);border:1px solid var(--line);padding:32px}.finderEmpty svg{color:var(--gold)}.finderEmpty p{font:400 11px/1.8 Montserrat;color:var(--muted)}@media(max-width:760px){.finderHero,.finderResultHero{padding:48px 20px 44px}.finderHero{min-height:0}.finderHero h1,.finderResultHero h1,.finderFlow h1{font-size:46px}.finderFlow{padding:34px 20px 56px}.finderJourneyGrid,.finderJourneyGrid.three,.finderChoiceGrid,.finderAltGrid{grid-template-columns:1fr}.finderJourney{min-height:0}.finderActions{position:sticky;bottom:0;background:linear-gradient(180deg,transparent 0%,var(--champagne) 28%);padding-top:30px;z-index:3}.finderActions>*{flex:1}.finderResultTop{display:block}.finderStatus{display:inline-block;margin-top:12px}.finderResultHero .finderGhost{margin:12px 0 0}.finderResults{padding:28px 20px 60px}.finderPrimary,.finderGhost{min-height:46px}}.finderResultBadges{display:flex;flex-direction:column;align-items:flex-end;gap:7px}.finderConfidence{padding:7px 9px;font:600 8px Montserrat;letter-spacing:.7px;border:1px solid #cdbb95;color:#765f31;background:#fbf6eb}.finderCaution{display:flex;gap:10px;align-items:flex-start;margin:0 0 18px;padding:12px 14px;border:1px solid #e2cf9d;background:#fff8e8;font:400 10px/1.65 Montserrat;color:#6f5c2b}.finderCaution strong{font-size:8px;letter-spacing:.8px;white-space:nowrap}.finderCaution span{color:#6b6356}@media(max-width:760px){.finderResultBadges{align-items:flex-start;margin-top:12px}.finderCaution{display:block}.finderCaution strong{display:block;margin-bottom:5px}}.finderYesNo{display:flex;gap:10px;margin:14px 0 26px}.finderYesNo button{min-width:110px;border:1px solid var(--line);background:var(--ivory);padding:13px 18px;font:600 9px Montserrat;letter-spacing:1px;color:var(--ink);cursor:pointer}.finderYesNo button.active{border-color:var(--gold);box-shadow:inset 0 0 0 1px var(--gold);color:#765f31}.finderSummary{background:var(--ivory);border:1px solid var(--line);padding:24px;margin-bottom:24px}.finderSummary h2,.finderWhyNot>h2{font:500 30px 'Cormorant Garamond';margin:0 0 16px}.finderSummaryGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.finderSummaryGrid>div{border-top:1px solid var(--line);padding-top:10px}.finderSummaryGrid>div.wide{grid-column:1/-1}.finderSummaryGrid span{display:block;font:600 8px Montserrat;letter-spacing:.8px;color:#8c774d;margin-bottom:5px}.finderSummaryGrid strong{font:500 11px/1.6 Montserrat;color:var(--ink)}.finderNoExtra{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);background:#f6f1e8;padding:18px 20px;margin:30px 0}.finderNoExtra svg{color:var(--gold);flex:none}.finderNoExtra strong{font:600 9px Montserrat;letter-spacing:.8px;color:#5d5035}.finderNoExtra p{font:400 10px/1.7 Montserrat;color:var(--muted);margin:5px 0 0}.finderWhyNot{margin-top:48px}.finderWhyNot>p{font:400 11px/1.8 Montserrat;color:var(--muted);max-width:760px}.finderWhyNotGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:16px}.finderWhyNotGrid article{background:var(--ivory);border:1px solid var(--line);padding:22px}.finderWhyNotGrid small{font:600 8px Montserrat;letter-spacing:1px;color:#6a7479}.finderWhyNotGrid h3{font:500 24px/1.05 'Cormorant Garamond';margin:6px 0 10px}.finderWhyNotGrid p{font:400 10px/1.7 Montserrat;color:#7a6030}.finderWhyNotGrid a{display:inline-flex;align-items:center;gap:7px;font:600 9px Montserrat;letter-spacing:.8px;text-decoration:none}@media(max-width:760px){.finderSummaryGrid,.finderWhyNotGrid{grid-template-columns:1fr}.finderSummaryGrid>div.wide{grid-column:auto}}.finderDisclaimer{display:flex;gap:10px;align-items:flex-start;margin-top:48px;padding-top:18px;border-top:1px solid var(--line);font:400 9px/1.7 Montserrat;color:var(--muted)}.finderDisclaimer svg{color:var(--gold);flex:none}.finderChoice:focus-visible,.finderJourney:focus-visible,.finderPrimary:focus-visible,.finderGhost:focus-visible,.finderYesNo button:focus-visible,.finderLink:focus-visible,.finderWhyNotGrid a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}.finderChoice,.finderJourney,.finderYesNo button{transition:border-color .18s ease,box-shadow .18s ease,transform .18s ease}.finderChoice:hover,.finderJourney:hover,.finderYesNo button:hover{border-color:#b69c66}@media(prefers-reduced-motion:reduce){.finderProgress span,.finderChoice,.finderJourney,.finderYesNo button{transition:none}}.finderRecovery{display:flex;gap:12px;align-items:flex-start;border:1px solid #d6c49b;background:#f8f2e5;padding:18px 20px;margin:28px 0}.finderRecovery svg{color:var(--gold);flex:none}.finderRecovery strong{display:block;font:600 9px Montserrat;letter-spacing:.8px;color:#5d5035}.finderRecovery p{font:400 10px/1.75 Montserrat;color:var(--muted);margin:5px 0 0}
+.finderProgressWrap{margin-bottom:48px}
+.finderProgressLabel{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;font:600 8px Montserrat;letter-spacing:1px;color:#86724a}
+.finderProgressLabel strong{font-weight:600;color:#5f5544}
+.finderProgressWrap .finderProgress{margin-bottom:0}
+@media(max-width:760px){
+  .finderProgressWrap{margin-bottom:30px}
+  .finderActions{padding-bottom:calc(10px + env(safe-area-inset-bottom))}
+  .finderFlow{padding-bottom:calc(80px + env(safe-area-inset-bottom))}
+  .finderChoice,.finderJourney,.finderYesNo button{min-height:48px}
+  .finderSummary,.finderResultCard,.finderWhyNotGrid article{padding:20px}
+  .finderResultTop h3{font-size:25px}
+  .finderRole>h2,.finderAlt>h2,.finderEmpty h2{font-size:28px}
+}
+.finderCompare{margin-top:46px}
+.finderCompare>h2{font:500 32px 'Cormorant Garamond';margin:0 0 8px}
+.finderCompare>p{font:400 10px/1.7 Montserrat;color:var(--muted);max-width:720px}
+.finderCompareGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+.finderCompareGrid article{background:var(--ivory);border:1px solid var(--line);padding:20px}
+.finderCompareGrid small{font:600 8px Montserrat;letter-spacing:1px;color:#6a7479}
+.finderCompareGrid h3{font:500 23px/1.05 'Cormorant Garamond';margin:6px 0 15px}
+.finderCompareGrid dl{margin:0}
+.finderCompareGrid dl>div{border-top:1px solid var(--line);padding:10px 0}
+.finderCompareGrid dt{font:600 8px Montserrat;letter-spacing:.7px;color:#8c774d;margin-bottom:4px}
+.finderCompareGrid dd{margin:0;font:400 10px/1.55 Montserrat;color:var(--muted)}
+.finderCompareGrid a{display:inline-flex;align-items:center;gap:7px;margin-top:10px;font:600 9px Montserrat;letter-spacing:.8px;text-decoration:none}
+@media(max-width:900px){.finderCompareGrid{grid-template-columns:1fr}}
+
+.finderResultNav{position:sticky;top:92px;z-index:5;display:flex;justify-content:center;gap:22px;padding:11px 6vw;background:rgba(247,243,235,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.finderResultNav a{font:600 8px Montserrat;letter-spacing:1px;text-decoration:none;color:#675b45}
+.finderResultNav a:hover,.finderResultNav a:focus-visible{color:var(--gold)}
+#finder-route,#finder-compare,#finder-why-not{scroll-margin-top:145px}
+@media(max-width:760px){
+  .finderResultNav{top:78px;justify-content:flex-start;gap:10px;overflow-x:auto;padding:9px 20px;scrollbar-width:none}
+  .finderResultNav::-webkit-scrollbar{display:none}
+  .finderResultNav a{flex:none;border:1px solid var(--line);background:var(--ivory);padding:9px 11px}
+  #finder-route,#finder-compare,#finder-why-not{scroll-margin-top:125px}
+}
+@media(max-width:760px){
+  .finderSummaryGrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .finderSummaryGrid>div.wide{grid-column:1/-1}
+
+  .finderCompareGrid,
+  .finderAltGrid,
+  .finderWhyNotGrid{
+    display:grid;
+    grid-auto-flow:column;
+    grid-auto-columns:minmax(82vw,1fr);
+    grid-template-columns:none;
+    overflow-x:auto;
+    gap:12px;
+    padding-bottom:8px;
+    scroll-snap-type:x mandatory;
+    overscroll-behavior-inline:contain;
+    scrollbar-width:none
+  }
+  .finderCompareGrid::-webkit-scrollbar,
+  .finderAltGrid::-webkit-scrollbar,
+  .finderWhyNotGrid::-webkit-scrollbar{display:none}
+  .finderCompareGrid>article,
+  .finderAltGrid>.finderResultCard,
+  .finderWhyNotGrid>article{scroll-snap-align:start}
+
+  .finderAlt,.finderWhyNot,.finderCompare{margin-top:38px}
+}
+@media(max-width:360px){
+  .finderSummaryGrid{grid-template-columns:1fr}
+  .finderSummaryGrid>div.wide{grid-column:auto}
+}
+
+/* Beauty Finder landing redesign — aligned with Beauty by Ildy editorial system */
+.finderLanding{min-height:auto;background:var(--champagne)}
+.finderLanding .finderHero{
+  min-height:auto;
+  padding:54px 6vw 64px;
+  background:var(--champagne);
+  color:var(--ink);
+  border-bottom:1px solid var(--line);
+  display:block;
+}
+.finderHeroInner{
+  width:min(1180px,100%);
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:minmax(0,1.35fr) minmax(320px,.65fr);
+  gap:64px;
+  align-items:center;
+}
+.finderHeroCopy{max-width:720px}
+.finderLanding .finderBack{
+  color:#7b756b;
+  margin-bottom:36px;
+  font-size:9px;
+  letter-spacing:1.2px;
+}
+.finderLanding .eyebrow{
+  color:var(--gold);
+  font:500 10px/1.4 Montserrat,Arial,sans-serif;
+  letter-spacing:2.7px;
+  margin:0 0 16px;
+}
+.finderLanding .finderHero h1{
+  color:var(--ink);
+  font:500 clamp(46px,5vw,68px)/.98 'Cormorant Garamond',serif;
+  letter-spacing:-.02em;
+  margin:0 0 22px;
+  max-width:720px;
+}
+.finderHeroLead{
+  max-width:660px;
+  margin:0;
+  color:var(--muted);
+  font:400 13px/1.85 Montserrat,Arial,sans-serif;
+}
+.finderHeroActions{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  flex-wrap:wrap;
+  margin-top:30px;
+}
+.finderLanding .finderPrimary{
+  margin-top:0;
+  padding:13px 17px;
+  background:var(--navy);
+  color:#fff;
+  border:1px solid var(--navy);
+}
+.finderLanding .finderPrimary:hover{background:#0d2848}
+.finderHeroActions small{
+  color:#8a8377;
+  font:400 9px/1.55 Montserrat,Arial,sans-serif;
+}
+.finderIntroCard{
+  background:var(--ivory);
+  border:1px solid var(--line);
+  padding:30px 30px 28px;
+}
+.finderIntroTitle{
+  margin:0 0 16px;
+  color:var(--ink);
+  font:500 28px/1.05 'Cormorant Garamond',serif;
+}
+.finderIntroCard ol{list-style:none;padding:0;margin:0}
+.finderIntroCard li{
+  display:grid;
+  grid-template-columns:34px 1fr;
+  gap:12px;
+  align-items:start;
+  padding:14px 0;
+  border-top:1px solid var(--line);
+}
+.finderIntroCard li>span{
+  color:var(--gold);
+  font:600 9px/1.6 Montserrat,Arial,sans-serif;
+  letter-spacing:1px;
+}
+.finderIntroCard li p{
+  margin:0;
+  color:#586267;
+  font:400 11px/1.65 Montserrat,Arial,sans-serif;
+}
+.finderLanding .finderPrivacy{
+  margin:18px 0 0;
+  padding:14px 0 0;
+  border:0;
+  border-top:1px solid var(--line);
+  background:transparent;
+  color:#7a817f;
+  font-size:9px;
+  line-height:1.65;
+}
+.finderLanding .finderPrivacy svg{color:var(--gold);width:16px;height:16px}
+
+/* Refined Finder flow typography and spacing */
+.finderFlow{max-width:980px;padding:48px 6vw 72px}
+.finderFlow h1{font-size:clamp(38px,4.6vw,56px);line-height:1;margin-bottom:16px}
+.finderFlow .eyebrow{font-size:9px;letter-spacing:2.2px}
+.finderJourney{padding:22px;min-height:138px}
+.finderJourney strong{font-size:22px;line-height:1.08}
+.finderChoice{background:#fffdf8}
+.finderResultHero{padding:54px 6vw 50px}
+.finderResultHero h1{font-size:clamp(42px,5vw,64px)}
+.finderResults{max-width:980px}
+.finderRole>h2,.finderAlt>h2,.finderEmpty h2,.finderCompare>h2{font-size:30px}
+
+@media(max-width:900px){
+  .finderHeroInner{grid-template-columns:1fr;gap:34px}
+  .finderHeroCopy{max-width:none}
+  .finderIntroCard{max-width:none}
+}
+@media(max-width:760px){
+  .finderLanding .finderHero{padding:34px 20px 42px}
+  .finderHeroInner{gap:28px}
+  .finderLanding .finderBack{margin-bottom:26px}
+  .finderLanding .finderHero h1{font-size:44px}
+  .finderHeroLead{font-size:12px}
+  .finderHeroActions{align-items:stretch;gap:10px}
+  .finderHeroActions .finderPrimary{width:100%}
+  .finderHeroActions small{width:100%}
+  .finderIntroCard{padding:24px 20px}
+  .finderIntroTitle{font-size:26px}
+  .finderFlow{padding:32px 20px 58px}
+  .finderFlow h1{font-size:40px}
+  .finderResultHero{padding:40px 20px 38px}
+  .finderResultHero h1{font-size:44px}
+}
+
+/* Unified editorial hero — match Knowledge Base header */
+.finderLanding .finderHero{
+  min-height:auto;
+  padding:48px 6vw 44px;
+  background:linear-gradient(125deg,var(--bbi-hero-1) 0%,var(--bbi-hero-2) 62%,var(--bbi-hero-3) 100%);
+  color:#fff;
+  border-bottom:0;
+}
+.finderLanding .finderHeroInner{
+  width:auto;
+  max-width:900px;
+  margin:0;
+  display:block;
+}
+.finderLanding .finderHeroCopy{max-width:900px}
+.finderLanding .finderBack{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  margin-bottom:28px;
+  color:#d7dde4;
+  font:400 var(--bbi-meta) var(--bbi-font-body);
+  letter-spacing:1.2px;
+  text-decoration:none;
+}
+.finderLanding .eyebrow{
+  color:#fff;
+  font-family:var(--bbi-font-heading);
+  font-size:18px;
+  font-weight:500;
+  line-height:1.2;
+  letter-spacing:.4px;
+  margin:0;
+}
+.finderLanding .finderHero h1{
+  max-width:900px;
+  margin:16px 0;
+  color:#fff;
+  font:500 clamp(48px,5.4vw,var(--bbi-hero-title))/1 var(--bbi-font-heading);
+  letter-spacing:0;
+}
+.finderLanding .finderHeroLead{
+  max-width:760px;
+  margin:0;
+  color:#dce3eb;
+  font:300 var(--bbi-intro)/1.9 var(--bbi-font-body);
+}
+.finderLanding .finderHeroActions{margin-top:22px}
+.finderLanding .finderPrimary{
+  background:transparent;
+  border:1px solid var(--bbi-gold);
+  color:#fff;
+}
+.finderLanding .finderPrimary:hover{background:#ffffff0d}
+.finderLanding .finderHeroActions small{color:#b9c3ce}
+.finderLanding .finderIntroCard{
+  max-width:760px;
+  margin-top:26px;
+  padding:20px 22px;
+  background:#ffffff0a;
+  border:1px solid #ffffff24;
+}
+.finderLanding .finderIntroTitle{
+  color:#fff;
+  font:500 22px/1.05 var(--bbi-font-heading);
+}
+.finderLanding .finderIntroCard li{border-top:1px solid #ffffff1f}
+.finderLanding .finderIntroCard li p{color:#dce3eb}
+.finderLanding .finderPrivacy{
+  border-top:1px solid #ffffff1f;
+  color:#b9c3ce;
+}
+@media(max-width:760px){
+  .finderLanding .finderHero{padding:42px 20px 38px}
+  .finderLanding .finderBack{margin-bottom:24px}
+  .finderLanding .eyebrow{font-size:17px;letter-spacing:.3px}
+  .finderLanding .finderHero h1{margin:14px 0;font-size:var(--bbi-hero-title)}
+  .finderLanding .finderHeroActions{align-items:flex-start}
+  .finderLanding .finderHeroActions .finderPrimary{width:auto}
+  .finderLanding .finderIntroCard{margin-top:22px;padding:18px 18px}
+}
+
+
+/* Final brand consistency: deep navy for primary interactive states */
+.finderFlow .finderPrimary,
+.finderResults .finderPrimary{
+  background:#09264a;
+  color:#fff;
+  border:1px solid #09264a;
+}
+.finderFlow .finderPrimary:hover,
+.finderResults .finderPrimary:hover{
+  background:#103a6a;
+  border-color:#103a6a;
+}
