@@ -4,56 +4,309 @@ import "./brandPages.css";
 
 const DOTERRA_SITE = "https://office.doterra.com/beautybyildy/#/";
 
-const FEATURED = [
-  ["Lavender / Levendula","SINGLE OIL",
-    "Lágy, virágos aromájú alapolaj esti és otthoni aromás rutinokhoz.",
-    "A soft, floral essential oil for evening and at-home aromatic routines.",
-    "Ein sanftes, blumiges ätherisches Öl für abendliche und aromatische Routinen zu Hause."],
-  ["Lemon / Citrom","SINGLE OIL",
-    "Friss, citrusos illatprofil a könnyed, tiszta hangulatú aromás rutinokhoz.",
-    "A bright citrus aroma for fresh, light-feeling aromatic routines.",
-    "Ein frisches Zitrusaroma für leichte, klare Duft-Routinen."],
-  ["Peppermint / Borsmenta","SINGLE OIL",
-    "Élénk, mentás aromájú klasszikus a frissítő illatélményhez.",
-    "A vivid mint aroma for a crisp, refreshing scent experience.",
-    "Ein lebendiges Minzaroma für ein klares, erfrischendes Dufterlebnis."],
-  ["Wild Orange / Vadnarancs","SINGLE OIL",
-    "Meleg, édes-citrusos illatprofil otthoni diffúzoros rutinokhoz.",
-    "A warm, sweet-citrus aroma for at-home diffuser routines.",
-    "Ein warmes, süß-zitrisches Aroma für Diffuser-Routinen zu Hause."],
-  ["Tea Tree / Teafa","SINGLE OIL",
-    "Karakteres, gyógynövényes illatú esszenciális olaj aromás és kozmetikai rutinokhoz.",
-    "A distinctive herbal essential oil for aromatic and cosmetic routines.",
-    "Ein markant kräuteriges ätherisches Öl für aromatische und kosmetische Routinen."],
-  ["Copaiba","SINGLE OIL",
-    "Meleg, fás-balzsamos aromájú olaj nyugodt hangulatú rituálékhoz.",
-    "A warm, woody-balsamic aroma for calm-feeling rituals.",
-    "Ein warmes, holzig-balsamisches Aroma für ruhige Rituale."],
-  ["dōTERRA Air™","BLEND",
-    "Friss, mentás-eukaliptuszos aromájú keverék könnyed otthoni illatélményhez.",
-    "A fresh mint-and-eucalyptus aromatic blend for a light at-home scent experience.",
-    "Eine frische Minz-Eukalyptus-Aromamischung für ein leichtes Dufterlebnis zu Hause."],
-  ["dōTERRA Serenity™","BLEND",
-    "Lágy, nyugodt hangulatú aromás keverék esti rutinokhoz.",
-    "A soft aromatic blend suited to calm-feeling evening routines.",
-    "Eine sanfte Aromamischung für ruhige Abendroutinen."],
-  ["On Guard™","BLEND",
-    "Meleg, fűszeres-citrusos illatú aromás keverék.",
-    "A warm, spicy-citrus aromatic blend.",
-    "Eine warme, würzig-zitrische Aromamischung."],
-  ["Deep Blue™ Rub","BODY CARE",
-    "Hűsítő érzetű masszázskrém testápolási és masszázsrutinokhoz.",
-    "A cooling-feel massage rub for body-care and massage routines.",
-    "Eine Massagecreme mit kühlendem Hautgefühl für Körperpflege- und Massageroutinen."],
-  ["Essential Skin Care Hydrating Cream","SKINCARE",
-    "Gazdagabb hidratálókrém a doTERRA Essential Skin Care termékcsaládból.",
-    "A richer moisturising cream from the doTERRA Essential Skin Care range.",
-    "Eine reichhaltigere Feuchtigkeitscreme aus der doTERRA Essential Skin Care Linie."],
-  ["Essential Skin Care Firming Serum","SKINCARE",
-    "Feszességfókuszú arcszérum az Essential Skin Care termékcsaládból.",
-    "A firming-focused facial serum from the Essential Skin Care range.",
-    "Ein auf Festigkeit ausgerichtetes Gesichtsserum aus der Essential Skin Care Linie."]
+const PRODUCTS = [
+  [
+    "Lavender / Levendula",
+    "SINGLE OIL",
+    "https://doterra.me/plmkGJ"
+  ],
+  [
+    "Lemon / Citrom",
+    "SINGLE OIL",
+    "https://doterra.me/1FfT19"
+  ],
+  [
+    "Peppermint / Borsmenta",
+    "SINGLE OIL",
+    "https://doterra.me/L1Z49P"
+  ],
+  [
+    "Wild Orange / Vadnarancs",
+    "SINGLE OIL",
+    "https://doterra.me/RxSoR_"
+  ],
+  [
+    "Tea Tree (Melaleuca) / Teafa",
+    "SINGLE OIL",
+    "https://doterra.me/8SH0An"
+  ],
+  [
+    "Copaiba",
+    "SINGLE OIL",
+    "https://doterra.me/0T6sfJ"
+  ],
+  [
+    "dōTERRA Air™",
+    "BLEND",
+    "https://doterra.me/NeInyo"
+  ],
+  [
+    "dōTERRA Serenity™",
+    "BLEND",
+    "https://doterra.me/hh0cjq"
+  ],
+  [
+    "On Guard™",
+    "BLEND",
+    "https://doterra.me/__dAa-"
+  ],
+  [
+    "Deep Blue™ Rub / enyhítő krém",
+    "BODY CARE",
+    "https://doterra.me/dKzfHf"
+  ],
+  [
+    "Frankincense / Tömjén",
+    "SINGLE OIL",
+    "https://doterra.me/OqsTf9"
+  ],
+  [
+    "Eucalyptus / Eukaliptusz",
+    "SINGLE OIL",
+    "https://doterra.me/kNx2_q"
+  ],
+  [
+    "Lemongrass / Indiai citromfű",
+    "SINGLE OIL",
+    "https://doterra.me/XUE-t7"
+  ],
+  [
+    "Basil / Bazsalikom / Tulsi",
+    "SINGLE OIL",
+    "https://doterra.me/0qtihq"
+  ],
+  [
+    "Bergamot / Bergamott",
+    "SINGLE OIL",
+    "https://doterra.me/6k6zqG"
+  ],
+  [
+    "Black Pepper / Fekete bors",
+    "SINGLE OIL",
+    "https://doterra.me/WAbfh6"
+  ],
+  [
+    "Black Spruce / Kanadai fekete luc",
+    "SINGLE OIL",
+    "https://doterra.me/FcxHN8"
+  ],
+  [
+    "Blue Lotus Touch / Kék Lótusz Touch",
+    "ROLL-ON / TOUCH",
+    "https://doterra.me/aFt3D3"
+  ],
+  [
+    "Blue Tansy / Kék varádics",
+    "SINGLE OIL",
+    "https://doterra.me/qZhaXK"
+  ],
+  [
+    "Cardamom / Kardamom",
+    "SINGLE OIL",
+    "https://doterra.me/zU6XAu"
+  ],
+  [
+    "Cassia / Kasszia",
+    "SINGLE OIL",
+    "https://doterra.me/1rv-JG"
+  ],
+  [
+    "Cedarwood / Vörös cédrus",
+    "SINGLE OIL",
+    "https://doterra.me/VKAA-n"
+  ],
+  [
+    "Celery Seed / Zellermag",
+    "SINGLE OIL",
+    "https://doterra.me/-jU_Qr"
+  ],
+  [
+    "Citronella",
+    "SINGLE OIL",
+    "https://doterra.me/ZPW4AF"
+  ],
+  [
+    "Air-X™",
+    "BLEND",
+    "https://doterra.me/J0Vk9U"
+  ],
+  [
+    "AromaTouch™",
+    "BLEND",
+    "https://doterra.me/ZzkLN6"
+  ],
+  [
+    "dōTERRA Brave™",
+    "BLEND",
+    "https://doterra.me/k9DtBy"
+  ],
+  [
+    "dōTERRA Calmer™",
+    "BLEND",
+    "https://doterra.me/UQjCI3"
+  ],
+  [
+    "dōTERRA Cheer™",
+    "BLEND",
+    "https://doterra.me/TgTV8B"
+  ],
+  [
+    "Citrus Bliss™",
+    "BLEND",
+    "https://doterra.me/2H03ok"
+  ],
+  [
+    "ClaryCalm™",
+    "BLEND",
+    "https://doterra.me/0Tnaas"
+  ],
+  [
+    "DDR Prime™",
+    "BLEND",
+    "https://doterra.me/CSk612"
+  ],
+  [
+    "DDR Prime™ lágyzselatin kapszula",
+    "SUPPLEMENT",
+    "https://doterra.me/MLuH7G"
+  ],
+  [
+    "Deep Blue™",
+    "BLEND",
+    "https://doterra.me/RaEmDM"
+  ],
+  [
+    "Deep Blue™ Touch",
+    "ROLL-ON / TOUCH",
+    "https://doterra.me/-TUFFd"
+  ],
+  [
+    "Deep Blue™ golyós kiszerelés",
+    "ROLL-ON / TOUCH",
+    "https://doterra.me/0tyohB"
+  ],
+  [
+    "dōTERRA Balance™",
+    "BLEND",
+    "https://doterra.me/8TU62c"
+  ],
+  [
+    "dōTERRA Anchor™",
+    "BLEND",
+    "https://doterra.me/pkKYwy"
+  ],
+  [
+    "Purify™",
+    "BLEND",
+    "https://doterra.me/9zAiyF"
+  ],
+  [
+    "ZenGest™",
+    "BLEND",
+    "https://doterra.me/kj3fxV"
+  ],
+  [
+    "MetaPWR™",
+    "BLEND",
+    "https://doterra.me/QjrueH"
+  ],
+  [
+    "Deep Blue™ enyhítő krém minta",
+    "BODY CARE",
+    "https://doterra.me/1945Gx"
+  ],
+  [
+    "dōTERRA Balance™ dezodor",
+    "PERSONAL CARE",
+    "https://doterra.me/uf3Wqp"
+  ],
+  [
+    "Citrus Bliss™ dezodor",
+    "PERSONAL CARE",
+    "https://doterra.me/5hyP4u"
+  ],
+  [
+    "Correct-X™",
+    "SKINCARE",
+    "https://doterra.me/dLmbaf"
+  ],
+  [
+    "dōTERRA dezodor duglászfenyő + görög narancs",
+    "PERSONAL CARE",
+    "https://doterra.me/D8m-V8"
+  ],
+  [
+    "Tömjén stift + Naiofa",
+    "SKINCARE",
+    "https://doterra.me/kpPYMQ"
+  ],
+  [
+    "Ajakbalzsam – Eredeti",
+    "PERSONAL CARE",
+    "https://doterra.me/0ko22w"
+  ],
+  [
+    "On Guard™ gyöngyöcskék",
+    "ON GUARD",
+    "https://doterra.me/41czPj"
+  ],
+  [
+    "On Guard™ cukorka",
+    "ON GUARD",
+    "https://doterra.me/_XzB6S"
+  ],
+  [
+    "On Guard™ szájvíz",
+    "ON GUARD",
+    "https://doterra.me/GabI_7"
+  ],
+  [
+    "On Guard™ Toothpaste",
+    "ON GUARD",
+    "https://doterra.me/t2E3KM"
+  ],
+  [
+    "CP+ lágyzselatin kapszula",
+    "SUPPLEMENT",
+    "https://doterra.me/dgY5fI"
+  ],
+  [
+    "PB Restore™",
+    "SUPPLEMENT",
+    "https://doterra.me/tYPPr3"
+  ],
+  [
+    "dōTERRA Rostkeverék",
+    "SUPPLEMENT",
+    "https://doterra.me/667p7M"
+  ],
+  [
+    "VMG+™",
+    "SUPPLEMENT",
+    "https://doterra.me/ZDwTZn"
+  ],
+  [
+    "Fractionated Coconut Oil",
+    "ACCESSORY",
+    "https://doterra.me/296_lO"
+  ],
+  [
+    "Yarrow|Pom testmegújító szérum",
+    "BODY CARE",
+    "https://doterra.me/-hTEoF"
+  ],
+  [
+    "Levendula Touch",
+    "ROLL-ON / TOUCH",
+    "https://doterra.me/fCQl7S"
+  ],
+  [
+    "Vietnámi eukaliptusz",
+    "SINGLE OIL",
+    "https://doterra.me/wwcycA"
+  ]
 ];
+
 
 const copy = {
   hu: {
@@ -64,9 +317,10 @@ const copy = {
     note: "A Beauty by Ildy független, többmárkás szerkesztőségi oldal. Nem a doTERRA hivatalos vállalati weboldala. A vásárlás és a rendelés kezelése a doTERRA hivatalos rendszerében történik.",
     shop: "FEDEZD FEL A TELJES DOTERRA KÍNÁLATOT",
     heading: "MIRE HASZNÁLNÁD?",
-    featured: "KIEMELT TERMÉKEK",
-    productCta: "TELJES KÍNÁLAT MEGNYITÁSA",
-    groupNames: {"SINGLE OIL":"EGYEDI ILLÓOLAJOK","BLEND":"OLAJKEVERÉKEK","BODY CARE":"TESTÁPOLÁS","SKINCARE":"BŐRÁPOLÁS"},
+    featured: "DOTERRA TERMÉKEK",
+    productCta: "TERMÉK MEGNYITÁSA",
+    productDesc: "Közvetlen doTERRA referral link a kiválasztott termékhez.",
+    groupNames: {"SINGLE OIL":"EGYEDI ILLÓOLAJOK","BLEND":"OLAJKEVERÉKEK","ROLL-ON / TOUCH":"TOUCH / GOLYÓS","BODY CARE":"TESTÁPOLÁS","SKINCARE":"BŐRÁPOLÁS","PERSONAL CARE":"SZEMÉLYES ÁPOLÁS","ON GUARD":"ON GUARD TERMÉKEK","SUPPLEMENT":"ÉTREND-KIEGÉSZÍTŐK","ACCESSORY":"KIEGÉSZÍTŐK"},
     cards: [
       ["AROMÁS RUTINOK", "Illatok és egyszerű otthoni rituálék relaxáló, frissítő vagy fókuszált hangulathoz."],
       ["DIFFÚZOR & OTTHON", "Diffúzorok és illatélmények a lakótér személyes hangulatának kialakításához."],
@@ -74,7 +328,7 @@ const copy = {
       ["NŐI WELLNESS", "Szerkesztői wellness-tartalmak és mindennapi rituálék túlzó egészségügyi ígéretek nélkül."]
     ],
     safety: "Használat előtt mindig kövesd a hivatalos termékcímke és a doTERRA használati útmutatójának előírásait; az illóolajok alkalmazása termékenként eltérhet.",
-    routeNote: "A vásárlási gombok a Beauty by Ildy saját, doTERRA által biztosított oldalára vezetnek. Ott a teljes aktuális kínálatból választhatsz."
+    routeNote: "A termékgombok az általad kiválasztott termékhez tartozó doTERRA referral linkre vezetnek. A teljes kínálat gomb továbbra is a doTERRA által biztosított saját oldaladra visz."
   },
   en: {
     back: "Back to home",
@@ -84,9 +338,10 @@ const copy = {
     note: "Beauty by Ildy is an independent multi-brand editorial website and is not an official doTERRA corporate website. Purchases and orders are completed in doTERRA’s official system.",
     shop: "EXPLORE THE FULL DOTERRA RANGE",
     heading: "WHAT ARE YOU LOOKING FOR?",
-    featured: "FEATURED PRODUCTS",
-    productCta: "OPEN FULL RANGE",
-    groupNames: {"SINGLE OIL":"SINGLE ESSENTIAL OILS","BLEND":"ESSENTIAL OIL BLENDS","BODY CARE":"BODY CARE","SKINCARE":"SKINCARE"},
+    featured: "DOTERRA PRODUCTS",
+    productCta: "OPEN PRODUCT",
+    productDesc: "Direct doTERRA referral link for the selected product.",
+    groupNames: {"SINGLE OIL":"SINGLE ESSENTIAL OILS","BLEND":"ESSENTIAL OIL BLENDS","ROLL-ON / TOUCH":"TOUCH / ROLL-ON","BODY CARE":"BODY CARE","SKINCARE":"SKINCARE","PERSONAL CARE":"PERSONAL CARE","ON GUARD":"ON GUARD PRODUCTS","SUPPLEMENT":"SUPPLEMENTS","ACCESSORY":"ACCESSORIES"},
     cards: [
       ["AROMATIC ROUTINES", "Scents and simple at-home rituals for a relaxing, refreshing or focused atmosphere."],
       ["DIFFUSERS & HOME", "Diffusers and aromatic experiences for shaping the mood of your space."],
@@ -94,7 +349,7 @@ const copy = {
       ["WOMEN'S WELLNESS", "Editorial wellbeing content and everyday rituals without exaggerated health claims."]
     ],
     safety: "Always follow the official product label and doTERRA directions for use; essential-oil use can differ by product.",
-    routeNote: "Purchase buttons open Beauty by Ildy’s doTERRA-provided replicated site, where visitors can choose from the current full range."
+    routeNote: "Product buttons use direct doTERRA referral links for the selected products. The full-range button still opens Beauty by Ildy’s doTERRA-provided replicated site."
   },
   de: {
     back: "Zurück zur Startseite",
@@ -104,9 +359,10 @@ const copy = {
     note: "Beauty by Ildy ist eine unabhängige, markenübergreifende redaktionelle Website und keine offizielle Unternehmenswebsite von doTERRA. Käufe und Bestellungen werden im offiziellen doTERRA-System abgeschlossen.",
     shop: "DAS GESAMTE DOTERRA-SORTIMENT ENTDECKEN",
     heading: "WONACH SUCHST DU?",
-    featured: "AUSGEWÄHLTE PRODUKTE",
-    productCta: "GESAMTES SORTIMENT ÖFFNEN",
-    groupNames: {"SINGLE OIL":"ÄTHERISCHE EINZELÖLE","BLEND":"ÖLMISCHUNGEN","BODY CARE":"KÖRPERPFLEGE","SKINCARE":"HAUTPFLEGE"},
+    featured: "DOTERRA PRODUKTE",
+    productCta: "PRODUKT ÖFFNEN",
+    productDesc: "Direkter doTERRA-Empfehlungslink zum ausgewählten Produkt.",
+    groupNames: {"SINGLE OIL":"ÄTHERISCHE EINZELÖLE","BLEND":"ÖLMISCHUNGEN","ROLL-ON / TOUCH":"TOUCH / ROLL-ON","BODY CARE":"KÖRPERPFLEGE","SKINCARE":"HAUTPFLEGE","PERSONAL CARE":"KÖRPER- & ALLTAGSPFLEGE","ON GUARD":"ON GUARD PRODUKTE","SUPPLEMENT":"NAHRUNGSERGÄNZUNG","ACCESSORY":"ZUBEHÖR"},
     cards: [
       ["AROMATISCHE ROUTINEN", "Düfte und einfache Rituale für zu Hause für eine entspannte, frische oder fokussierte Atmosphäre."],
       ["DIFFUSER & ZUHAUSE", "Diffuser und Dufterlebnisse für die persönliche Atmosphäre in deinen Räumen."],
@@ -114,7 +370,7 @@ const copy = {
       ["WELLNESS FÜR FRAUEN", "Redaktionelle Wellbeing-Inhalte und Alltagsrituale ohne übertriebene Gesundheitsversprechen."]
     ],
     safety: "Befolge immer das offizielle Produktetikett und die doTERRA-Anwendungshinweise; die Verwendung ätherischer Öle kann je nach Produkt unterschiedlich sein.",
-    routeNote: "Die Kaufbuttons öffnen die von doTERRA bereitgestellte Beauty-by-Ildy-Seite. Dort kann aus dem aktuellen Gesamtsortiment gewählt werden."
+    routeNote: "Die Produktbuttons verwenden direkte doTERRA-Empfehlungslinks. Der Button für das Gesamtsortiment öffnet weiterhin die von doTERRA bereitgestellte Beauty-by-Ildy-Seite."
   }
 };
 
@@ -151,29 +407,26 @@ export function DoterraPage({ lang = "hu" }) {
           ))}
         </div>
         <div className="brandGroup doterraFeatured">
-          <div className="brandGroupHead"><h2>{t.featured}</h2><span>{FEATURED.length}</span></div>
-          {[...new Set(FEATURED.map(([,group])=>group))].map(group => (
+          <div className="brandGroupHead"><h2>{t.featured}</h2><span>{PRODUCTS.length}</span></div>
+          {[...new Set(PRODUCTS.map(([,group])=>group))].map(group => (
             <section className="doterraGroup" key={group}>
               <div className="doterraGroupHead">
                 <h3>{t.groupNames[group] || group}</h3>
-                <span>{FEATURED.filter(([,g])=>g===group).length}</span>
+                <span>{PRODUCTS.filter(([,g])=>g===group).length}</span>
               </div>
               <div className="brandProductGrid">
-                {FEATURED.filter(([,g])=>g===group).map(([name,,huDesc,enDesc,deDesc]) => {
-                  const desc=lang==="de"?deDesc:lang==="en"?enDesc:huDesc;
-                  return (
-                    <article className="brandProductCard doterraCard isInfo" key={name}>
-                      <div className="brandCardTopline"><span>{t.groupNames[group] || group}</span><em>CURATED</em></div>
-                      <h2>{name}</h2>
-                      <p>{desc}</p>
-                      <div className="brandCardActions">
-                        <a href={DOTERRA_SITE} target="_blank" rel="sponsored noopener noreferrer">
-                          {t.productCta}<ExternalLink size={12}/>
-                        </a>
-                      </div>
-                    </article>
-                  );
-                })}
+                {PRODUCTS.filter(([,g])=>g===group).map(([name,,url]) => (
+                  <article className="brandProductCard doterraCard isInfo" key={name}>
+                    <div className="brandCardTopline"><span>{t.groupNames[group] || group}</span><em>DIRECT LINK</em></div>
+                    <h2>{name}</h2>
+                    <p>{t.productDesc}</p>
+                    <div className="brandCardActions">
+                      <a href={url} target="_blank" rel="sponsored noopener noreferrer">
+                        {t.productCta}<ExternalLink size={12}/>
+                      </a>
+                    </div>
+                  </article>
+                ))}
               </div>
             </section>
           ))}
