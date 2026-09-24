@@ -294,3 +294,24 @@
   .doterraCard .brandCardActions>a{min-height:36px;padding:0 11px}
   .brandShopBar a{min-height:36px;padding:0 12px}
 }
+
+
+/* doTERRA full-catalog CTA emphasis */
+.doterraFeatured + .brandPageNote{margin-top:18px}
+.brandShopBar a{
+  border-color:rgba(183,154,91,.72);
+  box-shadow:0 5px 16px rgba(7,23,44,.06);
+}
+.brandShopBar a:hover{
+  background:#103a6a;
+}
+.doterraCard .brandCardActions>a{
+  background:transparent;
+  color:#6f5a33;
+  border-color:rgba(138,120,84,.28);
+  box-shadow:none;
+}
+.doterraCard .brandCardActions>a:hover{
+  background:#f7f2e9;
+  border-color:var(--gold);
+}
