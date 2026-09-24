@@ -560,7 +560,7 @@ const copy = {
     title: "Illóolajok & aromás wellness",
     lead: "Illóolajok és aromás wellness-rutinok a Beauty by Ildy szerkesztői válogatásában. A kínálatban doTERRA termékekhez is adunk hivatalos vásárlási útvonalat.",
     note: "A Beauty by Ildy független, többmárkás szerkesztőségi oldal. Nem a doTERRA hivatalos vállalati weboldala. A vásárlás és a rendelés kezelése a doTERRA hivatalos rendszerében történik.",
-    shop: "FEDEZD FEL A TELJES DOTERRA KÍNÁLATOT",
+    shop: "BÖNGÉSSZ A DOTERRA TERMÉKEK KÖZÖTT",
     heading: "MIRE HASZNÁLNÁD?",
     featured: "DOTERRA TERMÉKEK",
     productCta: "TERMÉK MEGNYITÁSA",
@@ -573,7 +573,7 @@ const copy = {
       ["NŐI WELLNESS", "Szerkesztői wellness-tartalmak és mindennapi rituálék túlzó egészségügyi ígéretek nélkül."]
     ],
     safety: "Használat előtt mindig kövesd a hivatalos termékcímke és a doTERRA használati útmutatójának előírásait; az illóolajok alkalmazása termékenként eltérhet.",
-    routeNote: "A termékgombok az általad kiválasztott termékhez tartozó doTERRA referral linkre vezetnek. A teljes kínálat gomb továbbra is a doTERRA által biztosított saját oldaladra visz."
+    routeNote: "A felső böngészőgomb ezen az oldalon a doTERRA terméklistához görget. A konkrét termékgombok a kiválasztott termékhez tartozó doTERRA referral linkre vezetnek."
   },
   en: {
     back: "Back to home",
@@ -581,7 +581,7 @@ const copy = {
     title: "Essential oils & aromatic wellness",
     lead: "Essential oils and aromatherapy-inspired wellness routines in the Beauty by Ildy editorial edit, including an official purchase route for doTERRA products.",
     note: "Beauty by Ildy is an independent multi-brand editorial website and is not an official doTERRA corporate website. Purchases and orders are completed in doTERRA’s official system.",
-    shop: "EXPLORE THE FULL DOTERRA RANGE",
+    shop: "BROWSE DOTERRA PRODUCTS",
     heading: "WHAT ARE YOU LOOKING FOR?",
     featured: "DOTERRA PRODUCTS",
     productCta: "OPEN PRODUCT",
@@ -594,7 +594,7 @@ const copy = {
       ["WOMEN'S WELLNESS", "Editorial wellbeing content and everyday rituals without exaggerated health claims."]
     ],
     safety: "Always follow the official product label and doTERRA directions for use; essential-oil use can differ by product.",
-    routeNote: "Product buttons use direct doTERRA referral links for the selected products. The full-range button still opens Beauty by Ildy’s doTERRA-provided replicated site."
+    routeNote: "The browse button scrolls to the doTERRA product catalogue on this page. Individual product buttons use direct doTERRA referral links."
   },
   de: {
     back: "Zurück zur Startseite",
@@ -602,7 +602,7 @@ const copy = {
     title: "Ätherische Öle & aromatisches Wellness",
     lead: "Ätherische Öle und aromatherapeutisch inspirierte Wellness-Routinen in der redaktionellen Beauty-by-Ildy-Auswahl, einschließlich eines offiziellen Kaufwegs für doTERRA-Produkte.",
     note: "Beauty by Ildy ist eine unabhängige, markenübergreifende redaktionelle Website und keine offizielle Unternehmenswebsite von doTERRA. Käufe und Bestellungen werden im offiziellen doTERRA-System abgeschlossen.",
-    shop: "DAS GESAMTE DOTERRA-SORTIMENT ENTDECKEN",
+    shop: "DOTERRA-PRODUKTE DURCHSUCHEN",
     heading: "WONACH SUCHST DU?",
     featured: "DOTERRA PRODUKTE",
     productCta: "PRODUKT ÖFFNEN",
@@ -615,7 +615,7 @@ const copy = {
       ["WELLNESS FÜR FRAUEN", "Redaktionelle Wellbeing-Inhalte und Alltagsrituale ohne übertriebene Gesundheitsversprechen."]
     ],
     safety: "Befolge immer das offizielle Produktetikett und die doTERRA-Anwendungshinweise; die Verwendung ätherischer Öle kann je nach Produkt unterschiedlich sein.",
-    routeNote: "Die Produktbuttons verwenden direkte doTERRA-Empfehlungslinks. Der Button für das Gesamtsortiment öffnet weiterhin die von doTERRA bereitgestellte Beauty-by-Ildy-Seite."
+    routeNote: "Der obere Button führt auf dieser Seite zum doTERRA-Produktkatalog. Einzelne Produktbuttons verwenden direkte doTERRA-Empfehlungslinks."
   }
 };
 
@@ -633,8 +633,8 @@ export function DoterraPage({ lang = "hu" }) {
         </div>
       </section>
       <div className="brandShopBar">
-        <a href={DOTERRA_SITE} target="_blank" rel="sponsored noopener noreferrer">
-          {t.shop}<ExternalLink size={13}/>
+        <a href="#doterra-products">
+          {t.shop}
         </a>
       </div>
       <section className="brandPageBody">
@@ -646,12 +646,12 @@ export function DoterraPage({ lang = "hu" }) {
               <h2>{name}</h2>
               <p>{desc}</p>
               <div className="brandCardActions">
-                <a href={DOTERRA_SITE} target="_blank" rel="sponsored noopener noreferrer">{t.shop}<ExternalLink size={13}/></a>
+                <a href="#doterra-products">{t.shop}</a>
               </div>
             </article>
           ))}
         </div>
-        <div className="brandGroup doterraFeatured">
+        <div className="brandGroup doterraFeatured" id="doterra-products">
           <div className="brandGroupHead"><h2>{t.featured}</h2><span>{PRODUCTS.length}</span></div>
           {[...new Set(PRODUCTS.map(([,group])=>group))].map(group => (
             <section className="doterraGroup" key={group}>
