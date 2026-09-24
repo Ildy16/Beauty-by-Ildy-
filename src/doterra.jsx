@@ -766,7 +766,7 @@ const copy = {
     shop: "BÖNGÉSSZ A DOTERRA TERMÉKEK KÖZÖTT",
     heading: "MIRE HASZNÁLNÁD?",
     featured: "DOTERRA TERMÉKEK",
-    productCta: "TERMÉK MEGNYITÁSA",
+    productCta: "KOSÁRBA TESZEM",
     linkCheck: "LINK ELLENŐRZÉS ALATT",
     productDesc: "Közvetlen doTERRA referral link a kiválasztott termékhez.",
     infoLabels: ["MIRE VALÓ?", "FŐ ÖSSZETEVŐK / ÖSSZETÉTEL", "HASZNÁLAT"],
@@ -780,7 +780,7 @@ const copy = {
       ["NŐI WELLNESS", "Szerkesztői wellness-tartalmak és mindennapi rituálék túlzó egészségügyi ígéretek nélkül."]
     ],
     safety: "Használat előtt mindig kövesd a hivatalos termékcímke és a doTERRA használati útmutatójának előírásait; az illóolajok alkalmazása termékenként eltérhet.",
-    routeNote: "A felső böngészőgomb ezen az oldalon a doTERRA terméklistához görget. A konkrét termékgombok a kiválasztott termékhez tartozó doTERRA referral linkre vezetnek."
+    routeNote: "A doTERRA referral link a kiválasztott terméket a doTERRA kosarához adja. Ha a látogató korábban már tett más terméket a kosárba, az ott marad, ezért több egymás utáni kattintás több terméket eredményezhet. Ez a doTERRA kosárműködése, nem a Beauty by Ildy hibája."
   },
   en: {
     back: "Back to home",
@@ -791,7 +791,7 @@ const copy = {
     shop: "BROWSE DOTERRA PRODUCTS",
     heading: "WHAT ARE YOU LOOKING FOR?",
     featured: "DOTERRA PRODUCTS",
-    productCta: "OPEN PRODUCT",
+    productCta: "ADD TO CART",
     linkCheck: "LINK UNDER REVIEW",
     productDesc: "Direct doTERRA referral link for the selected product.",
     infoLabels: ["WHAT IS IT FOR?", "MAIN INGREDIENTS / COMPOSITION", "HOW TO USE"],
@@ -805,7 +805,7 @@ const copy = {
       ["WOMEN'S WELLNESS", "Editorial wellbeing content and everyday rituals without exaggerated health claims."]
     ],
     safety: "Always follow the official product label and doTERRA directions for use; essential-oil use can differ by product.",
-    routeNote: "The browse button scrolls to the doTERRA product catalogue on this page. Individual product buttons use direct doTERRA referral links."
+    routeNote: "A doTERRA referral link adds the selected product to the visitor’s doTERRA cart. Products already in that cart remain there, so consecutive clicks can result in multiple items. This is how the doTERRA cart works."
   },
   de: {
     back: "Zurück zur Startseite",
@@ -816,7 +816,7 @@ const copy = {
     shop: "DOTERRA-PRODUKTE DURCHSUCHEN",
     heading: "WONACH SUCHST DU?",
     featured: "DOTERRA PRODUKTE",
-    productCta: "PRODUKT ÖFFNEN",
+    productCta: "IN DEN WARENKORB",
     linkCheck: "LINK WIRD GEPRÜFT",
     productDesc: "Direkter doTERRA-Empfehlungslink zum ausgewählten Produkt.",
     infoLabels: ["WOFÜR?", "HAUPTINHALTSSTOFFE / ZUSAMMENSETZUNG", "ANWENDUNG"],
@@ -830,7 +830,7 @@ const copy = {
       ["WELLNESS FÜR FRAUEN", "Redaktionelle Wellbeing-Inhalte und Alltagsrituale ohne übertriebene Gesundheitsversprechen."]
     ],
     safety: "Befolge immer das offizielle Produktetikett und die doTERRA-Anwendungshinweise; die Verwendung ätherischer Öle kann je nach Produkt unterschiedlich sein.",
-    routeNote: "Der obere Button führt auf dieser Seite zum doTERRA-Produktkatalog. Einzelne Produktbuttons verwenden direkte doTERRA-Empfehlungslinks."
+    routeNote: "Ein doTERRA-Empfehlungslink legt das ausgewählte Produkt in den bestehenden doTERRA-Warenkorb. Bereits vorhandene Produkte bleiben dort, daher können mehrere Klicks mehrere Artikel im Warenkorb ergeben."
   }
 };
 
