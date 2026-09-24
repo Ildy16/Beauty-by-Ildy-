@@ -725,6 +725,33 @@ function getEditorialDescription(name, group, lang){
   return `${name}: ${info[0]} ${info[1]} Always follow the current product label and official doTERRA directions for use.`;
 }
 
+function getExtraProductNote(group, lang){
+  const notes={
+    hu:{
+      "SINGLE OIL":"Koncentrált esszenciális olaj: a hígítás, a bőrérzékenység és az adott olajra vonatkozó speciális előírások mindig számítanak.",
+      "BLEND":"A keverékek több olaj tulajdonságait és illatprofilját egyesítik; az alkalmazási mód termékenként eltérhet.",
+      "ROLL-ON / TOUCH":"A Touch/golyós forma kényelmes, célzott használatra készült; a szem és nyálkahártyák környékét kerülni kell.",
+      "BODY CARE":"Kozmetikai termék: külsőleges használatra, ép bőrfelületen, az egyéni bőrtoleranciát figyelembe véve.",
+      "SKINCARE":"Bőrápolásnál a teljes formula, a bőrtípus és az egyéni tolerancia fontosabb, mint egyetlen kiemelt összetevő.",
+      "PERSONAL CARE":"Mindennapi használatra készült, de irritáció esetén a használatot abba kell hagyni.",
+      "ON GUARD":"Az On Guard termékek eltérő formában és eltérő használati móddal készülnek, ezért mindig a konkrét kiszerelés útmutatója az irányadó.",
+      "SUPPLEMENT":"Étrend-kiegészítő: nem helyettesíti a változatos étrendet vagy az orvosi ellátást; az adagolást mindig a címke szerint kövesd.",
+      "KIDS":"Gyermekeknél különösen fontos az életkori ajánlás és a címkén jelzett használati mód pontos betartása.",
+      "KIDS & BABY":"Baba- és gyermekterméknél csak a megadott életkorban, a címkén jelzett módon használd.",
+      "KIDS SUPPLEMENT":"Gyermekeknek készült étrend-kiegészítőnél az életkor és az adagolás különösen fontos.",
+      "SUN CARE":"A napvédelem hatékonyságához megfelelő mennyiség és szükség szerinti újrakenés kell.",
+      "HAIR CARE":"A hajápoló kozmetikumok a haj és fejbőr komfortját támogatják; nem gyógyszeres hajhullás-kezelések.",
+      "WOMEN":"Női wellness-kiegészítőknél hormonérzékeny állapot, gyógyszerszedés vagy várandósság esetén szakemberrel való egyeztetés indokolt lehet.",
+      "TARGETED":"Célzott termék: a konkrét kiszerelés használati útmutatója és figyelmeztetései az irányadók.",
+      "DIFFUSER":"Párologtatót jól szellőző térben, a készülék útmutatója szerint használj.",
+      "ACCESSORY":"Kiegészítő termék; mindig az adott felhasználási célhoz illő, biztonságos módon használd."
+    },
+    en:{default:"Always follow the current label, age guidance and safety directions for the specific product."},
+    de:{default:"Bitte immer die aktuellen Etikett-, Alters- und Sicherheitshinweise des konkreten Produkts beachten."}
+  };
+  return notes[lang]?.[group] || notes[lang]?.default || notes.hu[group] || "";
+}
+
 
 
 const copy = {
@@ -741,6 +768,7 @@ const copy = {
     productDesc: "Közvetlen doTERRA referral link a kiválasztott termékhez.",
     infoLabels: ["MIRE VALÓ?", "FŐ ÖSSZETEVŐK / ÖSSZETÉTEL", "HASZNÁLAT"],
     descriptionLabel: "TERMÉKLEÍRÁS",
+    extraLabel: "AMIT ÉRDEMES TUDNI",
     groupNames: {"SINGLE OIL":"EGYEDI ILLÓOLAJOK","BLEND":"OLAJKEVERÉKEK","ROLL-ON / TOUCH":"TOUCH / GOLYÓS","BODY CARE":"TESTÁPOLÁS","SKINCARE":"BŐRÁPOLÁS","PERSONAL CARE":"SZEMÉLYES ÁPOLÁS","ON GUARD":"ON GUARD TERMÉKEK","SUPPLEMENT":"ÉTREND-KIEGÉSZÍTŐK","ACCESSORY":"KIEGÉSZÍTŐK","KIDS":"GYEREK TERMÉKEK","KIDS & BABY":"BABA & GYEREK","KIDS SUPPLEMENT":"GYEREK ÉTREND-KIEGÉSZÍTŐK","SUN CARE":"NAPVÉDELEM","HAIR CARE":"HAJÁPOLÁS","WOMEN":"NŐI WELLNESS","TARGETED":"CÉLZOTT TERMÉKEK","DIFFUSER":"PÁROLOGTATÓK"},
     cards: [
       ["AROMÁS RUTINOK", "Illatok és egyszerű otthoni rituálék relaxáló, frissítő vagy fókuszált hangulathoz."],
@@ -764,6 +792,7 @@ const copy = {
     productDesc: "Direct doTERRA referral link for the selected product.",
     infoLabels: ["WHAT IS IT FOR?", "MAIN INGREDIENTS / COMPOSITION", "HOW TO USE"],
     descriptionLabel: "PRODUCT DESCRIPTION",
+    extraLabel: "GOOD TO KNOW",
     groupNames: {"SINGLE OIL":"SINGLE ESSENTIAL OILS","BLEND":"ESSENTIAL OIL BLENDS","ROLL-ON / TOUCH":"TOUCH / ROLL-ON","BODY CARE":"BODY CARE","SKINCARE":"SKINCARE","PERSONAL CARE":"PERSONAL CARE","ON GUARD":"ON GUARD PRODUCTS","SUPPLEMENT":"SUPPLEMENTS","ACCESSORY":"ACCESSORIES","KIDS":"KIDS","KIDS & BABY":"BABY & KIDS","KIDS SUPPLEMENT":"KIDS SUPPLEMENTS","SUN CARE":"SUN CARE","HAIR CARE":"HAIR CARE","WOMEN":"WOMEN’S WELLNESS","TARGETED":"TARGETED PRODUCTS","DIFFUSER":"DIFFUSERS"},
     cards: [
       ["AROMATIC ROUTINES", "Scents and simple at-home rituals for a relaxing, refreshing or focused atmosphere."],
@@ -787,6 +816,7 @@ const copy = {
     productDesc: "Direkter doTERRA-Empfehlungslink zum ausgewählten Produkt.",
     infoLabels: ["WOFÜR?", "HAUPTINHALTSSTOFFE / ZUSAMMENSETZUNG", "ANWENDUNG"],
     descriptionLabel: "PRODUKTBESCHREIBUNG",
+    extraLabel: "GUT ZU WISSEN",
     groupNames: {"SINGLE OIL":"ÄTHERISCHE EINZELÖLE","BLEND":"ÖLMISCHUNGEN","ROLL-ON / TOUCH":"TOUCH / ROLL-ON","BODY CARE":"KÖRPERPFLEGE","SKINCARE":"HAUTPFLEGE","PERSONAL CARE":"KÖRPER- & ALLTAGSPFLEGE","ON GUARD":"ON GUARD PRODUKTE","SUPPLEMENT":"NAHRUNGSERGÄNZUNG","ACCESSORY":"ZUBEHÖR","KIDS":"KINDER","KIDS & BABY":"BABY & KINDER","KIDS SUPPLEMENT":"NAHRUNGSERGÄNZUNG FÜR KINDER","SUN CARE":"SONNENSCHUTZ","HAIR CARE":"HAARPFLEGE","WOMEN":"WELLNESS FÜR FRAUEN","TARGETED":"GEZIELTE PRODUKTE","DIFFUSER":"DIFFUSER"},
     cards: [
       ["AROMATISCHE ROUTINEN", "Düfte und einfache Rituale für zu Hause für eine entspannte, frische oder fokussierte Atmosphäre."],
@@ -855,6 +885,7 @@ export function DoterraPage({ lang = "hu" }) {
                           <p><strong>{t.infoLabels[0]}</strong>{info[0]}</p>
                           <p><strong>{t.infoLabels[1]}</strong>{info[1]}</p>
                           <p><strong>{t.infoLabels[2]}</strong>{info[2]}</p>
+                          <p className="doterraExtra"><strong>{t.extraLabel}</strong>{getExtraProductNote(group,lang)}</p>
                         </div>
                       </>;
                     })()}
