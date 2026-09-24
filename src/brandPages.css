@@ -522,3 +522,11 @@
     white-space:nowrap;
   }
 }
+
+
+/* doTERRA extended guidance */
+.doterraInfo .doterraExtra{
+  margin-top:2px;
+  padding-top:10px;
+  border-top:1px solid rgba(138,120,84,.14);
+}
