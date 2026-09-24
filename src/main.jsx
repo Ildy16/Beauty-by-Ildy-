@@ -36,7 +36,7 @@ const copy = {
       ["MAGAZIN", "magazine"],
     ],
     eyebrow: "BEAUTY • TECHNOLOGY • WELLNESS",
-    title: "A szépség új dimenziója.",
+    title: "A szépség új dimenziója / Megoldások",
     sub: "Bőrápolás, innovatív technológia és wellness – kívül-belül.",
     cta: "Fedezd fel a válogatást",
     finderCta: "PRÓBÁLD KI A BEAUTY ÚTVONALAT",
@@ -129,7 +129,7 @@ const copy = {
       ["MAGAZINE", "magazine"],
     ],
     eyebrow: "BEAUTY • TECHNOLOGY • WELLNESS",
-    title: "A new dimension of beauty.",
+    title: "A new dimension of beauty / Solutions",
     sub: "Skincare, innovative technology and wellness – inside and out.",
     cta: "Explore the edit",
     finderCta: "TRY THE BEAUTY FINDER",
@@ -222,7 +222,7 @@ const copy = {
       ["MAGAZIN", "magazine"],
     ],
     eyebrow: "BEAUTY • TECHNOLOGIE • WELLNESS",
-    title: "Eine neue Dimension der Schönheit.",
+    title: "Eine neue Dimension der Schönheit / Lösungen",
     sub: "Hautpflege, innovative Technologie und Wellness – von innen und außen.",
     cta: "Auswahl entdecken",
     finderCta: "BEAUTY FINDER TESTEN",
@@ -555,6 +555,10 @@ function App() {
           <div>
             <h2>{t.hairTitle}</h2>
             <p>{t.hairText}</p>
+            <a href="#products/hair">
+              {t.discover}
+              <ArrowRight size={14} />
+            </a>
           </div>
         </section>
         <section id="routines" className="routines">
