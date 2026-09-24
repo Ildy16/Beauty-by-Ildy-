@@ -371,3 +371,116 @@
   background:#f7f2e9;
   border-color:var(--gold);
 }
+
+
+/* doTERRA desktop catalogue redesign */
+.brandPageBody > .brandProductGrid{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:22px;
+  max-width:980px;
+  margin:0 auto;
+}
+.brandPageBody > .brandProductGrid .brandProductCard{
+  min-height:0;
+  padding:24px 24px 22px;
+}
+.brandPageBody > .brandProductGrid .brandProductCard h2{
+  font-size:26px;
+  margin-bottom:10px;
+}
+.brandPageBody > .brandProductGrid .brandCardActions button{
+  min-height:36px;
+  width:auto;
+  padding:0 15px;
+  white-space:nowrap;
+}
+
+.doterraFeatured{
+  margin-top:56px;
+}
+.doterraGroup{
+  margin-top:34px;
+}
+.doterraGroup .brandProductGrid{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:20px;
+}
+.doterraCard{
+  min-height:0;
+  padding:24px;
+}
+.doterraCard h2{
+  font-size:28px;
+  line-height:1.02;
+  margin:14px 0 12px;
+}
+.doterraDescription{
+  margin:0 0 16px;
+  padding:0 0 15px;
+  border-bottom:1px solid rgba(138,120,84,.16);
+}
+.doterraDescription>span{
+  display:block;
+  margin-bottom:7px;
+  color:#8a7854;
+  font:600 8px/1.3 Montserrat;
+  letter-spacing:.14em;
+}
+.doterraDescription p{
+  margin:0;
+  color:#4f5967;
+  font:400 11.5px/1.75 Montserrat;
+}
+.doterraInfo{
+  grid-template-columns:1fr;
+  gap:10px;
+  margin:0 0 16px;
+}
+.doterraInfo p{
+  padding:0;
+  font-size:10.5px;
+  line-height:1.65;
+}
+.doterraInfo strong{
+  margin-bottom:4px;
+}
+.doterraCard .brandCardActions{
+  margin-top:auto;
+}
+.doterraCard .brandCardActions>a{
+  min-height:36px;
+  padding:0 14px;
+  background:#09264a;
+  border-color:#b79a5b;
+  color:#fff;
+}
+.doterraCard .brandCardActions>a:hover{
+  background:#103a6a;
+  color:#fff;
+}
+
+@media(max-width:900px){
+  .brandPageBody > .brandProductGrid,
+  .doterraGroup .brandProductGrid{
+    grid-template-columns:1fr;
+  }
+}
+@media(max-width:620px){
+  .brandPageBody > .brandProductGrid{
+    gap:12px;
+  }
+  .brandPageBody > .brandProductGrid .brandProductCard{
+    padding:19px;
+  }
+  .brandPageBody > .brandProductGrid .brandCardActions button{
+    white-space:normal;
+    line-height:1.25;
+    min-height:38px;
+  }
+  .doterraFeatured{margin-top:38px}
+  .doterraGroup{margin-top:26px}
+  .doterraCard{padding:19px}
+  .doterraCard h2{font-size:25px}
+  .doterraDescription p{font-size:11px;line-height:1.68}
+  .doterraInfo p{font-size:10.5px}
+}
