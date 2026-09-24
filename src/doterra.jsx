@@ -428,7 +428,7 @@ const PRODUCTS = [
   [
     "Hidratálókrém",
     "SKINCARE",
-    "https://doterra.me/7wNnqs"
+    "https://doterra.me/1LtLR-"
   ],
   [
     "dōTERRA™ sun ajakbalzsam SPF 15",
