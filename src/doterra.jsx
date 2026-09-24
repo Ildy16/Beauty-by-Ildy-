@@ -598,7 +598,27 @@ const PRODUCT_INFO_HU = {
   "Esszenciális csont tápanyag komplex": ["Nők számára összeállított ásványianyag- és mikrotápanyag-kiegészítő.", "Csontanyagcserében szerepet játszó vitaminokat és ásványi anyagokat tartalmaz; pontos mennyiségek a címkén.", "A címke szerinti napi adagban."],
   "Esszenciális fitoösztrogén komplex": ["Női wellness célú növényi étrend-kiegészítő.", "Növényi eredetű fitoösztrogén-forrásokat és kiegészítő tápanyagokat tartalmaz; pontos összetétel a címkén.", "A címke szerinti adagban; hormonérzékeny állapot vagy gyógyszeres kezelés esetén orvossal egyeztetendő."],
   "Petal 2.0 párologtató": ["Ultrahangos illóolaj-párologtató otthoni aromás használathoz.", "Elektromos párologtató készülék víztartállyal.", "Víz és a címke szerint adagolt illóolaj használatával."],
-  "Lumo párologtató + dōTERRA Serenity™": ["Párologtató és Serenity aromás keverék egy csomagban.", "Lumo párologtató + Serenity esszenciális olajkeverék.", "Otthoni aromás használatra a készülék útmutatója szerint."]
+  "Lumo párologtató + dōTERRA Serenity™": ["Párologtató és Serenity aromás keverék egy csomagban.", "Lumo párologtató + Serenity esszenciális olajkeverék.", "Otthoni aromás használatra a készülék útmutatója szerint."],
+  "Basil / Bazsalikom / Tulsi": ["Fűszeres-zöld aromás rutinokhoz, diffúzorba vagy célzott külsőleges használatra.","Bazsalikom/Tulsi növényi forrásból származó esszenciális olaj.","Aromásan vagy erősen hígítva, a címke szerint."],
+  "Blue Lotus Touch / Kék Lótusz Touch": ["Virágos, prémium személyes illatrutinhoz és nyugodt aromás pillanatokhoz.","Kék lótusz aromás kivonata frakcionált kókuszolajban, golyós kiszerelésben.","Pulzuspontokra, külsőleg."],
+  "Celery Seed / Zellermag": ["Fűszeres, zöld aromás rutinokhoz.","Zellermagból nyert esszenciális olaj.","Aromásan vagy a címke szerint külsőleg."],
+  "Air-X™": ["Friss, tiszta, citrusos-mentás illatélményhez.","Több citrusos és friss aromájú esszenciális olaj keveréke; pontos összetétel a címkén.","Diffúzorban vagy a címke szerint külsőleg."],
+  "AromaTouch™": ["Masszázshoz és relaxáló testápolási rutinokhoz készült aromás keverék.","Több esszenciális olaj masszázscélú keveréke; pontos összetétel a címkén.","Hígítva, külsőleg, masszázshoz."],
+  "dōTERRA Brave™": ["Gyermekeknek is használható, bátorító hangulatú aromás keverék.","Enyhe, előre összeállított esszenciális olajkeverék hordozóolajjal.","Külsőleg, a gyermekekre vonatkozó címkeutasítás szerint."],
+  "dōTERRA Calmer™": ["Esti, megnyugtató gyermekrutinokhoz.","Gyermekbarát aromás keverék hordozóolajjal.","Külsőleg, a címke szerinti életkorban és módon."],
+  "dōTERRA Cheer™": ["Derűs, citrusos-fűszeres aromás hangulathoz.","Több citrusos és fűszeres esszenciális olaj keveréke; pontos összetétel a címkén.","Diffúzorban vagy a címke szerint külsőleg."],
+  "Citrus Bliss™": ["Vidám, édes-citrusos diffúzoros illatélményhez.","Több citrusos esszenciális olaj és aromás komponens keveréke.","Elsősorban aromásan; bőrön a citrusokra vonatkozó fényérzékenységi előírások szerint."],
+  "DDR Prime™": ["Komplex, meleg-fűszeres aromás keverék.","Több esszenciális olajból álló szabadalmazott keverék; pontos összetétel a címkén.","Aromásan vagy a címke szerint külsőleg."],
+  "DDR Prime™ lágyzselatin kapszula": ["A DDR Prime keverék belsőleges, kapszulás kiszerelése.","Esszenciális olajkeveréket tartalmazó lágyzselatin kapszula; pontos összetétel a címkén.","Kizárólag a címke szerinti adagolással."],
+  "dōTERRA Anchor™": ["Földelő, nyugodt hangulatú aromás rutinokhoz.","Több fás és aromás esszenciális olaj keveréke.","Aromásan vagy a címke szerint külsőleg."],
+  "Purify™": ["Friss, tiszta illatú otthoni és aromás rutinokhoz.","Tisztaságérzetet adó esszenciális olajkeverék; pontos összetétel a címkén.","Diffúzorban vagy a címke szerint külsőleg."],
+  "ZenGest™": ["Fűszeres-mentás aromás keverék, étkezés körüli wellness-rutinokhoz.","Több fűszeres és mentás esszenciális olaj keveréke; pontos összetétel a címkén.","Aromás vagy a konkrét kiszerelés címkéje szerinti használatra."],
+  "MetaPWR™": ["A MetaPWR életmódvonal aromás keveréke.","Citrusos és fűszeres esszenciális olajok keveréke; pontos összetétel a címkén.","A címke szerinti aromás/külsőleges használatra."],
+  "Deep Blue™ enyhítő krém minta": ["A Deep Blue Rub kipróbálására szolgáló mintakiszerelés.","Ugyanaz a Deep Blue krémformula kis adagban.","Csak külsőleg, célzott testápolási/masszázsrutinban."],
+  "dōTERRA Balance™ dezodor": ["Mindennapi dezodoráláshoz Balance aromaprofillal.","Dezodoralap Balance aromás keverékkel; teljes INCI a címkén.","Tiszta, száraz hónaljbőrre."],
+  "Citrus Bliss™ dezodor": ["Mindennapi dezodoráláshoz citrusos illattal.","Dezodoralap Citrus Bliss aromás keverékkel; teljes INCI a címkén.","Tiszta, száraz hónaljbőrre."],
+  "dōTERRA dezodor duglászfenyő + görög narancs": ["Mindennapi dezodoráláshoz friss, fás-citrusos illattal.","Dezodoralap duglászfenyő- és citrusos aromás összetevőkkel.","Tiszta, száraz hónaljbőrre."],
+  "Tömjén stift + Naiofa": ["Praktikus, célzott bőrápoláshoz stiftes kiszerelésben.","Tömjén- és naiofa aromás összetevőket tartalmazó kozmetikai stift.","Csak külsőleg, kis bőrfelületen."],
 };
 
 const CATEGORY_INFO = {
