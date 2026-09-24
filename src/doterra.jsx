@@ -759,9 +759,9 @@ export function DoterraPage({ lang = "hu" }) {
         </div>
       </section>
       <div className="brandShopBar">
-        <a href="#doterra-products">
+        <button type="button" onClick={() => document.getElementById("doterra-products")?.scrollIntoView({ behavior: "smooth", block: "start" })}>
           {t.shop}
-        </a>
+        </button>
       </div>
       <section className="brandPageBody">
         <div className="brandPageMeta"><span>{t.heading}</span><small>Independent wellness edit</small></div>
@@ -772,7 +772,7 @@ export function DoterraPage({ lang = "hu" }) {
               <h2>{name}</h2>
               <p>{desc}</p>
               <div className="brandCardActions">
-                <a href="#doterra-products">{t.shop}</a>
+                <button type="button" onClick={() => document.getElementById("doterra-products")?.scrollIntoView({ behavior: "smooth", block: "start" })}>{t.shop}</button>
               </div>
             </article>
           ))}
