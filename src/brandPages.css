@@ -568,3 +568,17 @@
     max-width:100%;
   }
 }
+
+
+/* doTERRA launch QA: duplicate-link safeguard */
+.doterraLinkCheck{
+  display:inline-flex;
+  align-items:center;
+  min-height:34px;
+  padding:0 12px;
+  border:1px solid rgba(138,120,84,.22);
+  background:#f7f2e9;
+  color:#7a6a4b;
+  font:600 7.5px/1 Montserrat;
+  letter-spacing:1px;
+}
