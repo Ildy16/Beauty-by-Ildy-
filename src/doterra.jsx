@@ -66,6 +66,7 @@ const copy = {
     heading: "MIRE HASZNÁLNÁD?",
     featured: "KIEMELT TERMÉKEK",
     productCta: "MEGNÉZEM A HIVATALOS KÍNÁLATBAN",
+    groupNames: {"SINGLE OIL":"EGYEDI ILLÓOLAJOK","BLEND":"OLAJKEVERÉKEK","BODY CARE":"TESTÁPOLÁS","SKINCARE":"BŐRÁPOLÁS"},
     cards: [
       ["AROMÁS RUTINOK", "Illatok és egyszerű otthoni rituálék relaxáló, frissítő vagy fókuszált hangulathoz."],
       ["DIFFÚZOR & OTTHON", "Diffúzorok és illatélmények a lakótér személyes hangulatának kialakításához."],
@@ -85,6 +86,7 @@ const copy = {
     heading: "WHAT ARE YOU LOOKING FOR?",
     featured: "FEATURED PRODUCTS",
     productCta: "VIEW IN THE OFFICIAL SHOP",
+    groupNames: {"SINGLE OIL":"SINGLE ESSENTIAL OILS","BLEND":"ESSENTIAL OIL BLENDS","BODY CARE":"BODY CARE","SKINCARE":"SKINCARE"},
     cards: [
       ["AROMATIC ROUTINES", "Scents and simple at-home rituals for a relaxing, refreshing or focused atmosphere."],
       ["DIFFUSERS & HOME", "Diffusers and aromatic experiences for shaping the mood of your space."],
@@ -104,6 +106,7 @@ const copy = {
     heading: "WONACH SUCHST DU?",
     featured: "AUSGEWÄHLTE PRODUKTE",
     productCta: "IM OFFIZIELLEN SHOP ANSEHEN",
+    groupNames: {"SINGLE OIL":"ÄTHERISCHE EINZELÖLE","BLEND":"ÖLMISCHUNGEN","BODY CARE":"KÖRPERPFLEGE","SKINCARE":"HAUTPFLEGE"},
     cards: [
       ["AROMATISCHE ROUTINEN", "Düfte und einfache Rituale für zu Hause für eine entspannte, frische oder fokussierte Atmosphäre."],
       ["DIFFUSER & ZUHAUSE", "Diffuser und Dufterlebnisse für die persönliche Atmosphäre in deinen Räumen."],
@@ -149,23 +152,31 @@ export function DoterraPage({ lang = "hu" }) {
         </div>
         <div className="brandGroup doterraFeatured">
           <div className="brandGroupHead"><h2>{t.featured}</h2><span>{FEATURED.length}</span></div>
-          <div className="brandProductGrid">
-            {FEATURED.map(([name, group, huDesc, enDesc, deDesc]) => {
-              const desc=lang==="de"?deDesc:lang==="en"?enDesc:huDesc;
-              return (
-              <article className="brandProductCard isInfo" key={name}>
-                <div className="brandCardTopline"><span>{group}</span><em>CURATED</em></div>
-                <h2>{name}</h2>
-                <p>{desc}</p>
-                <div className="brandCardActions">
-                  <a href={DOTERRA_SITE} target="_blank" rel="sponsored noopener noreferrer">
-                    {t.productCta}<ExternalLink size={13}/>
-                  </a>
-                </div>
-              </article>
-              );
-            })}
-          </div>
+          {[...new Set(FEATURED.map(([,group])=>group))].map(group => (
+            <section className="doterraGroup" key={group}>
+              <div className="doterraGroupHead">
+                <h3>{t.groupNames[group] || group}</h3>
+                <span>{FEATURED.filter(([,g])=>g===group).length}</span>
+              </div>
+              <div className="brandProductGrid">
+                {FEATURED.filter(([,g])=>g===group).map(([name,,huDesc,enDesc,deDesc]) => {
+                  const desc=lang==="de"?deDesc:lang==="en"?enDesc:huDesc;
+                  return (
+                    <article className="brandProductCard doterraCard isInfo" key={name}>
+                      <div className="brandCardTopline"><span>{t.groupNames[group] || group}</span><em>CURATED</em></div>
+                      <h2>{name}</h2>
+                      <p>{desc}</p>
+                      <div className="brandCardActions">
+                        <a href={DOTERRA_SITE} target="_blank" rel="sponsored noopener noreferrer">
+                          {t.productCta}<ExternalLink size={12}/>
+                        </a>
+                      </div>
+                    </article>
+                  );
+                })}
+              </div>
+            </section>
+          ))}
         </div>
         <p className="brandPageNote">{t.safety}</p>
         <p className="brandPageNote">{t.pending}</p>
