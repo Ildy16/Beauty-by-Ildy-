@@ -498,7 +498,7 @@ function App() {
           <div className="glow"></div>
           <div className="heroContent">
             <p className="eyebrow">{t.eyebrow}</p>
-            <h1>{t.title}</h1>
+            <h1><span className="heroTitleDesktop">{t.title}</span><span className="heroTitleMobile">{t.title.split(" / ").map((part,i)=><span key={i}>{part}</span>)}</span></h1>
             <p className="lead">{t.sub}</p>
             <div className="heroActions">
               <a className="primary" href="#products">
