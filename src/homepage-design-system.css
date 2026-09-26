@@ -430,6 +430,9 @@ main#top .magGrid p {
   }
 }
 
+
+main#top .heroTitleMobile { display: none; }
+
 @media (max-width: 620px) {
   main#top .hero {
     min-height: 400px;
@@ -440,6 +443,15 @@ main#top .magGrid p {
   }
   main#top .hero h1 {
     font-size: var(--bbi-hero-title);
+  }
+  main#top .heroTitleDesktop {
+    display: none;
+  }
+  main#top .heroTitleMobile {
+    display: block;
+  }
+  main#top .heroTitleMobile > span {
+    display: block;
   }
   main#top .hero .lead {
     font-size: var(--bbi-intro);
