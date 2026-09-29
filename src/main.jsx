@@ -103,9 +103,9 @@ const copy = {
       "Innováció, minőség és valódi hozzáadott érték alapján válogatott márkák.",
     magTitle: "MAGAZIN & ÚTMUTATÓK",
     magCards: [
-      ["Hőhullámok világszerte","2026. szeptemberi metaanalízis arról, mennyire gyakoriak a menopauzális vazomotoros tünetek."],
-      ["Exoszóma-hype után: minőségellenőrzés","Friss áttekintés arról, miért fontosabb a forrás és a standardizálás, mint maga az „exoszóma” szó."],
-      ["Otthoni beauty készülékek: hol a legerősebb evidencia?","A 2026-os GRADE-alapú áttekintés különbséget tesz lézer, LED, RF és más technológiák között."],
+      ["Mi az a skin longevity?","Mit jelent a skin longevity, és miben több, mint a hagyományos anti-aging szemlélet?"],
+      ["Menopauza és bőr","Mi változik 45–60 között, és hogyan érdemes átalakítani a bőrápolási rutint?"],
+      ["Melyik otthoni beauty-tech működik?","LED, RF, mikroáram és otthoni lézer: melyik technológia mögött van valódi bizonyíték?"],
     ],
     discover: "FEDEZD FEL",
     explore: "MEGNÉZEM",
