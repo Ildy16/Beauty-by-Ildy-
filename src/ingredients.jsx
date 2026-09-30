@@ -1,5 +1,6 @@
 import React,{useEffect,useRef} from 'react';
 import {ArrowLeft} from 'lucide-react';
+import {TopicHero} from './topicHero.jsx';
 
 const itemsHu=[
 ['Retinol & retinal','A-vitamin-származékok; a retinal egy átalakulási lépéssel közelebb van a retinsavhoz.','A retinoidok a photoaging legjobban kutatott kozmetikai hatóanyagcsoportjai közé tartoznak.','Koncentráció, stabilitás, csomagolás, irritáció és a teljes formula.','ERŐSEBB TUDOMÁNYOS HÁTTÉR'],
@@ -93,6 +94,15 @@ const copy={
 
 export function IngredientsPage({lang='hu'}){
  const t=copy[lang]||copy.hu; const items=mapItems(lang);
- const cards=useRef([]); useEffect(()=>{const target=window.location.hash.split('/')[1];const targets=['ingredient-retinol','ingredient-pdrn'];const index=targets.indexOf(target);if(index>=0)cards.current[index]?.scrollIntoView()},[]);
- return <main className="ingredientsPage"><section className="ingredientHero"><div><a className="guideBack" href="#top"><ArrowLeft size={14}/>{t.back}</a><p className="eyebrow">{t.eye}</p><h1>{t.title}</h1><p className="ingredientLead">{t.lead}</p><p className="reviewed">{t.updated}</p></div></section><section className="ingredientGrid">{items.map(([name,a,b,c,status],i)=><article className="ingredientCard" id={i===0?'ingredient-retinol':i===1?'ingredient-pdrn':undefined} ref={i<2?node=>cards.current[i]=node:undefined} key={name}><div className="ingredientTop"><h2>{name}</h2><span>{status}</span></div><h3>{t.labels[0]}</h3><p>{a}</p><h3>{t.labels[1]}</h3><p>{b}</p><h3>{t.labels[2]}</h3><p>{c}</p></article>)}</section></main>;
+ const cards=useRef([]); useEffect(()=>{const target=window.location.hash.split('/')[1];const targets=['ingredient-retinol','ingredient-pdrn','ingredient-ceramides','ingredient-niacinamide'];const index=targets.indexOf(target);if(index>=0)cards.current[index]?.scrollIntoView()},[]);
+ return <main className="ingredientsPage"><TopicHero eyebrow={t.eye} title={t.title} lead={t.lead} backLabel={t.back} images={[
+      'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9aa908?auto=format&fit=crop&w=2200&q=88',
+      'https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=2200&q=88',
+      'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=2200&q=88'
+    ]} items={[
+      {label:items[0][0],href:'#ingredients/ingredient-retinol'},
+      {label:items[1][0],href:'#ingredients/ingredient-pdrn'},
+      {label:items[2][0],href:'#ingredients/ingredient-ceramides'},
+      {label:items[4][0],href:'#ingredients/ingredient-niacinamide'}
+    ]}/><section className="ingredientGrid">{items.map(([name,a,b,c,status],i)=><article className="ingredientCard" id={i===0?'ingredient-retinol':i===1?'ingredient-pdrn':i===2?'ingredient-ceramides':i===4?'ingredient-niacinamide':undefined} ref={i<2?node=>cards.current[i]=node:undefined} key={name}><div className="ingredientTop"><h2>{name}</h2><span>{status}</span></div><h3>{t.labels[0]}</h3><p>{a}</p><h3>{t.labels[1]}</h3><p>{b}</p><h3>{t.labels[2]}</h3><p>{c}</p></article>)}</section></main>;
 }
