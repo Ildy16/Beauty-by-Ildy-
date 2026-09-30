@@ -379,6 +379,9 @@ function currentPage() {
     [
       "longevity",
       "wellness",
+      "wellness-women",
+      "wellness-menopause",
+      "wellness-healthy-aging",
       "beauty-tech-guide",
       "ingredients",
       "products",
@@ -479,6 +482,9 @@ function App() {
   if (legal) content = <LegalPage lang={lang} type={legal} />;
   else if (page === "longevity") content = <LongevityPage lang={lang} />;
   else if (page === "wellness") content = <WellnessPage lang={lang} />;
+  else if (page === "wellness-women") content = <WellnessPage lang={lang} topic="women" />;
+  else if (page === "wellness-menopause") content = <WellnessPage lang={lang} topic="menopause" />;
+  else if (page === "wellness-healthy-aging") content = <WellnessPage lang={lang} topic="healthy-aging" />;
   else if (page === "beauty-tech-guide")
     content = <BeautyTechPage lang={lang} />;
   else if (page === "ingredients") content = <IngredientsPage lang={lang} />;
