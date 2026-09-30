@@ -3,7 +3,6 @@ import { ArrowRight } from "lucide-react";
 import "./redesign-preview.css";
 
 const heroImages = [
-  "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1800&q=88",
   "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9aa908?auto=format&fit=crop&w=1800&q=88",
   "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=1800&q=88",
   "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=1800&q=88"
