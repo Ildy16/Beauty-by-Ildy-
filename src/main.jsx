@@ -19,6 +19,7 @@ import { BeautyFinder } from "./beautyFinder.jsx";
 import { NuSkinPage } from "./brandPages.jsx";
 import { DoterraPage } from "./doterra.jsx";
 import { MagazinePage } from "./magazine.jsx";
+import { RedesignPreview } from "./redesignPreview.jsx";
 import "./styles.css";
 
 const copy = {
@@ -387,6 +388,7 @@ function currentPage() {
       "doterra",
       "magazine",
       "product-medicube-pdrn",
+      "redesign-preview",
     ].includes(h)
   )
     return h;
@@ -487,6 +489,7 @@ function App() {
   else if (page === "nuskin") content = <NuSkinPage lang={lang} />;
   else if (page === "doterra") content = <DoterraPage lang={lang} />;
   else if (page === "magazine") content = <MagazinePage lang={lang} />;
+  else if (page === "redesign-preview") content = <RedesignPreview t={t} brands={brands[lang]} />;
   else if (page === "product-medicube-pdrn")
     content = <MedicubePdrnProduct lang={lang} />;
   else if (page && page.startsWith("product-"))
