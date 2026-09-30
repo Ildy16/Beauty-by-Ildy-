@@ -1,5 +1,5 @@
-import React from 'react';
-import {ArrowLeft} from 'lucide-react';
+import React, {useEffect,useState} from 'react';
+import {ArrowLeft,ArrowRight} from 'lucide-react';
 
 const content={
   hu:{back:'Vissza a főoldalra',eyebrow:'WELLNESS · EGYENSÚLY & ENERGIA',title:'Wellness, érthetően.',lead:'Táplálkozás, mikrotápanyagok és mindennapi szokások — túlzó ígéretek nélkül, átgondolt válogatással.',updated:'Tartalmi alapelvek szerint frissítve: 2026. szeptember',introTitle:'Mit jelent nálunk a wellness?',intro:'A wellness itt nem gyors megoldást vagy általános egészségígéretet jelent. Olyan, egymást kiegészítő szokásokat és termékeket vizsgálunk, amelyek reálisan támogathatják a mindennapi jóllétet, az energiaszintet és a hosszú távon fenntartható rutint.',areas:[['MINDENNAPI ENERGIA','A vitalitást befolyásoló alapok: táplálkozás, folyadékbevitel, mozgás, pihenés és következetes rutin.'],['MIKROTÁPANYAGOK','Vitaminok és ásványi anyagok szerepe, adagolása, forrása és az indokolatlan átfedések elkerülése.'],['ALVÁS & REGENERÁCIÓ','Az alvásminőség és a regeneráció helye a bőr, a közérzet és a mindennapi teljesítőképesség támogatásában.'],['STRESSZ & EGYENSÚLY','Fenntartható szokások, amelyek nem újabb terhet, hanem kiszámítható keretet adnak a hétköznapokhoz.']],standardsTitle:'Mire figyelünk?',standardsIntro:'Egy étrend-kiegészítő vagy wellness-termék nem attól értékes, hogy sok összetevőt sorol fel. A teljes formulát, a valós adagokat és a használat körülményeit együtt nézzük.',standards:[['ÖSSZETÉTEL','Pontosan mi van benne, milyen formában és mekkora napi adagban?'],['BIZONYÍTÉK','Van-e megfelelő humán kutatás az összetevőre és az alkalmazott mennyiségre?'],['BIZTONSÁG','Lehetséges kölcsönhatások, ellenjavallatok, felesleges duplázások és ésszerű használat.'],['VALÓDI ÉRTÉK','Minőség, átláthatóság, használhatóság és ár-érték arány — a partnerkapcsolatoktól függetlenül.']],topicsTitle:'Kiemelt területek',topics:[['ALAPVITAMINOK & ÁSVÁNYI ANYAGOK','A hiányállapotok és az egyéni szükséglet fontosabb, mint a minél hosszabb összetevőlista.'],['FEHÉRJE & KOLLAGÉN','Forrás, napi mennyiség, aminosavprofil és az, hogy mit támasztanak alá a vizsgálatok.'],['ANTIOXIDÁNSOK','Élelmiszerek, növényi kivonatok és kiegészítők — különválasztva az élettani szerepet a marketingtől.'],['ENERGIA & REGENERÁCIÓ','Komplex rutin, amelyben a kiegészítő csak egy elem az alvás, a táplálkozás és a mozgás mellett.']],brandsEyebrow:'VÁLOGATOTT PARTNER',brandsTitle:'Nu Skin & Pharmanex',brandsIntro:'A Beauty by Ildy külön Nu Skin márkaoldalon mutatja be a válogatott beauty- és wellness-termékeket. A bemutatás nem automatikus ajánlás: minden terméknél külön értékeljük az összetételt, a használati célt, a bizonyítékot és az ár-érték arányt.',brands:[['NU SKIN','A Nu Skin és Pharmanex válogatás elérhető. A közvetlenül vásárolható termékek a Beauty by Ildy My Site-on keresztül a Nu Skin hivatalos kosarába és fizetési rendszerébe vezetnek.']],partnerStatus:'HIVATALOS NU SKIN VÁSÁRLÁSI ÚTVONAL',partnerCta:'NU SKIN VÁLOGATÁS MEGNYITÁSA',noteTitle:'Fontos tudni',note:'Az étrend-kiegészítők nem helyettesítik a kiegyensúlyozott étrendet és az egészséges életmódot. Betegség, gyógyszerszedés, várandósság vagy tartós panasz esetén a használat előtt egészségügyi szakemberrel szükséges egyeztetni.'},
@@ -13,15 +13,102 @@ const focusContent={
   de:{eyebrow:'SCHWERPUNKTTHEMA',title:'Wohlbefinden von Frauen · Menopause · Healthy Aging',intro:'Veränderungen in der Lebensmitte werden nicht durch ein einzelnes Produkt gelöst. Wir erklären verständlich die Faktoren, die das Wohlbefinden prägen, und betrachten Gewohnheiten und Ergänzungen mit fachlich fundiertem Hintergrund.',areas:[['WOHLBEFINDEN VON FRAUEN','Zusammenhänge zwischen Schlaf, Stress, Stimmung, Knochen- und Muskelgesundheit sowie täglichem Wohlbefinden.'],['MENOPAUSE','Symptome, Lebensstiloptionen und Nahrungsergänzung — mit Blick auf Sicherheit und ohne übertriebene Versprechen.'],['HEALTHY AGING','Langfristige Unterstützung für Haut, Körper und Vitalität durch eine nachhaltige, evidenzbasierte Routine.']]}
 };
 
-export function WellnessPage({lang='hu'}){
+const wellnessHeroImages=[
+  'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2200&q=88',
+  'https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&w=2200&q=88',
+  'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=2200&q=88'
+];
+
+const topicRouteKeys=['women','menopause','healthy-aging'];
+const topicRoutes={
+  women:'#wellness-women',
+  menopause:'#wellness-menopause',
+  'healthy-aging':'#wellness-healthy-aging'
+};
+
+function WellnessVisualHero({t,focus,topic=null}){
+  const [active,setActive]=useState(0);
+  useEffect(()=>{
+    const id=window.setInterval(()=>setActive(v=>(v+1)%wellnessHeroImages.length),5200);
+    return()=>window.clearInterval(id);
+  },[]);
+
+  const focusIndex=topic?Math.max(0,topicRouteKeys.indexOf(topic)):null;
+  const title=topic?focus.areas[focusIndex][0]:t.title;
+  const lead=topic?focus.areas[focusIndex][1]:t.lead;
+
+  return <section className="wellnessVisualHero">
+    <div className="wellnessSlides" aria-hidden="true">
+      {wellnessHeroImages.map((src,i)=><div key={src} className={'wellnessSlide '+(i===active?'isActive':'')} style={{backgroundImage:`linear-gradient(90deg,rgba(6,24,49,.24),rgba(6,24,49,.05)),url("${src}")`}} />)}
+    </div>
+
+    <div className="wellnessTopicPanel">
+      <a className="wellnessBack" href={topic?'#wellness':'#top'}><ArrowLeft size={14}/>{topic?t.eyebrow:t.back}</a>
+      <p className="panelEyebrow">{topic?focus.eyebrow:t.eyebrow}</p>
+      <h1>{title}</h1>
+      <p className="panelLead">{lead}</p>
+
+      <nav className="wellnessTopicNav" aria-label="Wellness témák">
+        {focus.areas.map((area,i)=>{
+          const key=topicRouteKeys[i];
+          return <a key={area[0]} className={topic===key?'active':''} href={topicRoutes[key]}>
+            <span>{area[0]}</span><ArrowRight size={14}/>
+          </a>;
+        })}
+      </nav>
+    </div>
+
+    <div className="wellnessSlideDots" aria-hidden="true">
+      {wellnessHeroImages.map((_,i)=><span key={i} className={i===active?'isActive':''}/>)}
+    </div>
+  </section>
+}
+
+function WellnessTopicPage({t,focus,topic}){
+  const focusIndex=Math.max(0,topicRouteKeys.indexOf(topic));
+  const current=focus.areas[focusIndex];
+  return <main className="wellnessPage wellnessTopicPage">
+    <WellnessVisualHero t={t} focus={focus} topic={topic}/>
+    <section className="wellnessFocus topicIntro" id="topic-intro">
+      <div className="wellnessFocusHead">
+        <p className="eyebrow">{focus.eyebrow}</p>
+        <h2>{current[0]}</h2>
+        <p>{current[1]}</p>
+      </div>
+    </section>
+    <section className="wellnessIntro" id="topic-areas">
+      <h2>{t.introTitle}</h2>
+      <p>{t.intro}</p>
+      <div className="wellnessGrid">{t.areas.map((a,index)=><article id={'topic-area-'+index} key={a[0]}><h3>{a[0]}</h3><p>{a[1]}</p></article>)}</div>
+    </section>
+    <section className="wellnessStandards" id="topic-standards">
+      <h2>{t.standardsTitle}</h2>
+      <p className="sectionIntro">{t.standardsIntro}</p>
+      <div className="wellnessGrid">{t.standards.map(s=><article key={s[0]}><h3>{s[0]}</h3><p>{s[1]}</p></article>)}</div>
+    </section>
+    <section className="wellnessTopics" id="topic-focus">
+      <h2>{t.topicsTitle}</h2>
+      <div className="wellnessGrid">{t.topics.map(item=><article key={item[0]}><h3>{item[0]}</h3><p>{item[1]}</p></article>)}</div>
+    </section>
+    <section className="wellnessPartners" id="topic-shopping">
+      <div className="wellnessPartnerHead"><p className="eyebrow">{t.brandsEyebrow}</p><h2>{t.brandsTitle}</h2><p>{t.brandsIntro}</p></div>
+      <div className="wellnessPartnerGrid">{t.brands.map(brand=><article key={brand[0]}><h3>{brand[0]}</h3><p>{brand[1]}</p><small>{t.partnerStatus}</small><a className="wellnessPartnerCta" href="#nuskin">{t.partnerCta}</a></article>)}</div>
+    </section>
+    <section className="wellnessNote"><h2>{t.noteTitle}</h2><p>{t.note}</p></section>
+  </main>
+}
+
+export function WellnessPage({lang='hu',topic=null}){
   const t=content[lang]||content.hu;
   const focus=focusContent[lang]||focusContent.hu;
+  if(topic)return <WellnessTopicPage t={t} focus={focus} topic={topic}/>;
+
   return <main className="wellnessPage">
-    <section className="wellnessHero"><div className="wellnessHeroInner"><a className="wellnessBack" href="#top"><ArrowLeft size={14}/>{t.back}</a><p className="eyebrow">{t.eyebrow}</p><h1>{t.title}</h1><p className="wellnessLead">{t.lead}</p><p className="reviewed">{t.updated}</p></div></section>
-    <section className="wellnessFocus"><div className="wellnessFocusHead"><p className="eyebrow">{focus.eyebrow}</p><h2>{focus.title}</h2><p>{focus.intro}</p></div><div className="wellnessFocusGrid">{focus.areas.map(area=><article key={area[0]}><h3>{area[0]}</h3><p>{area[1]}</p></article>)}</div></section>
+    <WellnessVisualHero t={t} focus={focus}/>
+    <section className="wellnessFocus"><div className="wellnessFocusHead"><p className="eyebrow">{focus.eyebrow}</p><h2>{focus.title}</h2><p>{focus.intro}</p></div><div className="wellnessFocusGrid">{focus.areas.map((area,i)=><a className="wellnessFocusCard" href={topicRoutes[topicRouteKeys[i]]} key={area[0]}><h3>{area[0]}</h3><p>{area[1]}</p><span>{t.back==='Vissza a főoldalra'?'MEGNYITÁS':t.back==='Back to home'?'OPEN':'ÖFFNEN'} <ArrowRight size={13}/></span></a>)}</div></section>
     <section className="wellnessIntro"><h2>{t.introTitle}</h2><p>{t.intro}</p><div className="wellnessGrid">{t.areas.map(a=><article key={a[0]}><h3>{a[0]}</h3><p>{a[1]}</p></article>)}</div></section>
     <section className="wellnessStandards"><h2>{t.standardsTitle}</h2><p className="sectionIntro">{t.standardsIntro}</p><div className="wellnessGrid">{t.standards.map(s=><article key={s[0]}><h3>{s[0]}</h3><p>{s[1]}</p></article>)}</div></section>
-    <section className="wellnessTopics"><h2>{t.topicsTitle}</h2><div className="wellnessGrid">{t.topics.map(topic=><article key={topic[0]}><h3>{topic[0]}</h3><p>{topic[1]}</p></article>)}</div></section>
+    <section className="wellnessTopics"><h2>{t.topicsTitle}</h2><div className="wellnessGrid">{t.topics.map(item=><article key={item[0]}><h3>{item[0]}</h3><p>{item[1]}</p></article>)}</div></section>
     <section className="wellnessPartners"><div className="wellnessPartnerHead"><p className="eyebrow">{t.brandsEyebrow}</p><h2>{t.brandsTitle}</h2><p>{t.brandsIntro}</p></div><div className="wellnessPartnerGrid">{t.brands.map(brand=><article key={brand[0]}><h3>{brand[0]}</h3><p>{brand[1]}</p><small>{t.partnerStatus}</small><a className="wellnessPartnerCta" href="#nuskin">{t.partnerCta}</a></article>)}</div></section>
     <section className="wellnessNote"><h2>{t.noteTitle}</h2><p>{t.note}</p></section>
   </main>;
