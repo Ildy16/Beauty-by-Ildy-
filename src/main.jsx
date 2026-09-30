@@ -500,18 +500,8 @@ function App() {
   else
     content = (
       <main id="top">
-        <section className="hero pinterestHero">
-          <div className="pinterestHeroMedia" aria-hidden="true">
-            <iframe
-              src="https://assets.pinterest.com/ext/embed.html?id=425519864815263839"
-              title="Beauty by Ildy hero inspiration"
-              frameBorder="0"
-              scrolling="no"
-              loading="eager"
-              allow="autoplay; fullscreen"
-            />
-          </div>
-          <div className="pinterestHeroShade"></div>
+        <section className="hero">
+          <div className="glow"></div>
           <div className="heroContent">
             <p className="eyebrow">{t.eyebrow}</p>
             <h1><span className="heroTitleDesktop">{t.title}</span><span className="heroTitleMobile">{t.title.split(" / ").map((part,i)=><span key={i}>{part}</span>)}</span></h1>
