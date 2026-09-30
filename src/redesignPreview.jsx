@@ -48,26 +48,38 @@ export function RedesignPreview({ t, brands }) {
       </section>
 
       <section className="rpStatement">
-        <p className="rpKicker">{t.choose}</p>
+        <p className="rpKicker">{t.eyebrow}</p>
+        <h2>{t.sub}</h2>
+        <p className="rpStatementLabel">{t.choose}</p>
         <div className="rpNeeds">
           {t.needs.slice(0,4).map((n)=><a key={n} href="#products">{n}</a>)}
         </div>
       </section>
 
       <section className="rpStories">
-        {t.pillars.map((p, i) => (
-          <article key={p[0]} className={"rpStory rpStory"+i}>
-            <div className="rpStoryImage" style={{backgroundImage:`url("${sectionImages[i]}")`}} />
-            <div className="rpStoryCopy">
-              <p className="rpKicker">{p[0]}</p>
-              <h2>{p[1]}</h2>
-              <p>{p[2]}</p>
-              <a href={i===0?"#ingredients":i===1?"#beauty-tech-guide":"#wellness"}>
-                {t.discover}<ArrowRight size={14}/>
-              </a>
-            </div>
-          </article>
-        ))}
+        <article className="rpEditorial rpEditorialLead">
+          <div className="rpEditorialImage" style={{backgroundImage:`url("${sectionImages[0]}")`}} />
+          <div className="rpEditorialCard">
+            <p className="rpKicker">{t.pillars[0][0]}</p>
+            <h2>{t.pillars[0][1]}</h2>
+            <p>{t.pillars[0][2]}</p>
+            <a href="#ingredients">{t.discover}<ArrowRight size={14}/></a>
+          </div>
+        </article>
+
+        <div className="rpEditorialPair">
+          {t.pillars.slice(1).map((p, i) => (
+            <article key={p[0]} className={"rpEditorialSmall small"+i}>
+              <div className="rpEditorialImage" style={{backgroundImage:`url("${sectionImages[i+1]}")`}} />
+              <div className="rpEditorialText">
+                <p className="rpKicker">{p[0]}</p>
+                <h2>{p[1]}</h2>
+                <p>{p[2]}</p>
+                <a href={i===0?"#beauty-tech-guide":"#wellness"}>{t.discover}<ArrowRight size={14}/></a>
+              </div>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section className="rpNavy">
