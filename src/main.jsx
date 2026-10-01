@@ -24,11 +24,11 @@ import "./styles.css";
 const copy = {
   hu: {
     nav: [
-      ["KOZMETIKAI ÖSSZETEVŐK", "ingredients"],
+      ["MEGOLDÁSOK", "top"],
       ["SZÉPSÉGTECH", "beauty-tech-guide"],
       ["JÓLLÉT", "wellness"],
       ["HOSSZÚ ÉLET", "longevity"],
-      ["MEGOLDÁSOK", "top"],
+      ["HATÓANYAGOK", "ingredients"],
       ["TERMÉKEK", "products"],
       ["BEAUTY ÚTVONAL", "beauty-finder"],
       ["NU SKIN", "nuskin"],
