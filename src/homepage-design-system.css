@@ -639,22 +639,23 @@ main#top .featureBand a{
 }
 
 
-/* Full-bleed homepage video hero — asset: /public/videos/home/beauty-home.mp4 */
+/* Homepage video hero — show the supplied 16:9 video from farther away */
 main#top .hero.homeVideoHero{
-  min-height:720px;
-  height:calc(100vh - 84px);
-  max-height:920px;
+  min-height:620px;
+  height:min(72vh,760px);
+  max-height:760px;
   padding:0;
   display:block;
   background:var(--bbi-hero-1);
 }
 main#top .homeHeroVideo{
   position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:60% 50%;
+  top:6%;
+  left:6%;
+  width:88%;
+  height:88%;
+  object-fit:contain;
+  object-position:center;
   z-index:0;
 }
 main#top .homeHeroVideoShade{
@@ -662,26 +663,27 @@ main#top .homeHeroVideoShade{
   inset:0;
   z-index:1;
   pointer-events:none;
-  background:linear-gradient(90deg,rgba(9,38,74,.18) 0%,rgba(9,38,74,.05) 42%,rgba(9,38,74,0) 72%);
+  background:linear-gradient(90deg,rgba(9,38,74,.36) 0%,rgba(9,38,74,.12) 34%,rgba(9,38,74,0) 72%);
 }
 main#top .homeVideoHero .heroContent{
   position:relative;
   z-index:2;
-  width:min(390px,32vw);
-  min-width:330px;
-  height:100%;
-  margin-left:3vw;
-  padding:58px 34px 36px;
+  width:min(350px,29vw);
+  min-width:310px;
+  height:calc(100% - 72px);
+  margin-left:3.2vw;
+  top:36px;
+  padding:40px 30px 30px;
   display:flex;
   flex-direction:column;
   justify-content:center;
-  background:linear-gradient(180deg,rgba(9,38,74,.58),rgba(9,38,74,.72));
+  background:linear-gradient(180deg,rgba(9,38,74,.54),rgba(9,38,74,.68));
   border-left:1px solid rgba(183,154,91,.42);
   border-right:1px solid rgba(183,154,91,.42);
   backdrop-filter:blur(8px);
 }
 main#top .homeVideoHero .heroContent h1{
-  font-size:clamp(43px,4.25vw,68px);
+  font-size:clamp(40px,3.7vw,58px);
 }
 main#top .homeVideoHero .heroActions{
   display:flex;
@@ -690,27 +692,76 @@ main#top .homeVideoHero .heroActions{
   gap:8px;
 }
 @media(max-width:900px){
-  main#top .homeVideoHero .heroContent{
-    width:min(410px,48vw);
-    min-width:0;
-    margin-left:22px;
+  main#top .hero.homeVideoHero{
+    min-height:600px;
+    height:68vh;
   }
-  main#top .homeHeroVideo{object-position:62% 50%}
+  main#top .homeHeroVideo{
+    top:7%;
+    left:5%;
+    width:90%;
+    height:86%;
+  }
+  main#top .homeVideoHero .heroContent{
+    width:min(330px,42vw);
+    min-width:285px;
+    margin-left:20px;
+    padding:32px 26px 26px;
+  }
 }
 @media(max-width:620px){
   main#top .hero.homeVideoHero{
-    min-height:760px;
-    height:calc(100svh - 68px);
-    max-height:none;
-  }
-  main#top .homeHeroVideo{object-position:58% 50%}
-  main#top .homeVideoHero .heroContent{
-    position:absolute;
-    left:18px;
-    bottom:18px;
-    width:calc(100% - 36px);
+    min-height:0;
     height:auto;
-    margin:0;
-    padding:30px 24px 24px;
+    max-height:none;
+    padding:0 0 18px;
+    display:flex;
+    flex-direction:column;
+    background:var(--bbi-hero-1);
+  }
+  main#top .homeHeroVideo{
+    position:relative;
+    top:auto;
+    left:auto;
+    width:100%;
+    height:auto;
+    aspect-ratio:16/9;
+    object-fit:contain;
+    object-position:center;
+    display:block;
+    background:var(--bbi-hero-1);
+  }
+  main#top .homeHeroVideoShade{display:none}
+  main#top .homeVideoHero .heroContent{
+    position:relative;
+    top:auto;
+    left:auto;
+    bottom:auto;
+    width:calc(100% - 36px);
+    min-width:0;
+    height:auto;
+    margin:14px 18px 0;
+    padding:24px 22px 22px;
+    background:linear-gradient(180deg,rgba(9,38,74,.70),rgba(9,38,74,.82));
+    border:1px solid rgba(183,154,91,.36);
+    backdrop-filter:blur(6px);
+  }
+  main#top .homeVideoHero .heroContent h1{
+    font-size:36px;
+    line-height:.98;
+    margin:14px 0;
+  }
+  main#top .homeVideoHero .hero .lead,
+  main#top .homeVideoHero .lead{
+    font-size:11px;
+    line-height:1.65;
+  }
+  main#top .homeVideoHero .heroActions{
+    gap:6px;
+  }
+  main#top .homeVideoHero .primary{
+    width:100%;
+    justify-content:center;
+    margin-top:8px;
   }
 }
