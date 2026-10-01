@@ -190,7 +190,7 @@ export function BeautyFinder({lang='hu'}){
   if(a.journey==='wellness')return <main className="finderPage"><section className="finderResultHero"><p className="eyebrow">{t.eyebrow}</p><h1>{t.wellnessTitle}</h1><p>{t.wellnessText}</p><a className="finderPrimary" href="#wellness">{t.wellnessCta}<ArrowRight size={16}/></a><button className="finderGhost" onClick={restart}><RotateCcw size={15}/>{t.restart}</button></section></main>;
   return <main className="finderPage">
    <section className="finderResultHero"><p className="eyebrow">{t.eyebrow}</p><h1>{t.resultTitle}</h1><p>{t.resultLead}</p><button className="finderGhost" onClick={()=>{setShowResult(false);setStep(maxStep)}}><ArrowLeft size={15}/>{t.modify}</button><button className="finderGhost" onClick={restart}><RotateCcw size={15}/>{t.restart}</button></section>
-   <nav className="finderResultNav" aria-label={t.resultTitle}><a href="#finder-route">{t.resultNav.route}</a>{resultComparisonCount>=2&&<a href="#finder-compare">{t.resultNav.compare}</a>}{results?.whyNot?.length>0&&<a href="#finder-why-not">{t.resultNav.whyNot}</a>}</nav>
+   <nav className="finderResultNav" aria-label={t.resultTitle}><a href="#beauty-finder/finder-route">{t.resultNav.route}</a>{resultComparisonCount>=2&&<a href="#beauty-finder/finder-compare">{t.resultNav.compare}</a>}{results?.whyNot?.length>0&&<a href="#beauty-finder/finder-why-not">{t.resultNav.whyNot}</a>}</nav>
    <section className="finderResults" id="finder-route" aria-live="polite">
     <AnswerSummary a={a} t={t} lang={lang}/>
     {results?.education?.map(x=><div className="finderEducation" key={x}><Info size={18}/><span>{t.education[x]}</span></div>)}
