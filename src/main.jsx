@@ -24,7 +24,7 @@ import "./styles.css";
 const copy = {
   hu: {
     nav: [
-      ["MEGOLDÁSOK", "top"],
+      ["MEGOLDÁSOK", "solutions"],
       ["SZÉPSÉGTECH", "beauty-tech-guide"],
       ["JÓLLÉT", "wellness"],
       ["HOSSZÚ ÉLET", "longevity"],
@@ -121,7 +121,7 @@ const copy = {
       ["BEAUTY TECH", "beauty-tech-guide"],
       ["WELLNESS", "wellness"],
       ["LONGEVITY", "longevity"],
-      ["SOLUTIONS", "top"],
+      ["SOLUTIONS", "solutions"],
       ["PRODUCTS", "products"],
       ["BEAUTY FINDER", "beauty-finder"],
       ["NU SKIN", "nuskin"],
@@ -214,7 +214,7 @@ const copy = {
       ["BEAUTY TECH", "beauty-tech-guide"],
       ["WELLNESS", "wellness"],
       ["LONGEVITY", "longevity"],
-      ["LÖSUNGEN", "top"],
+      ["LÖSUNGEN", "solutions"],
       ["PRODUKTE", "products"],
       ["BEAUTY FINDER", "beauty-finder"],
       ["NU SKIN", "nuskin"],
@@ -467,15 +467,18 @@ function App() {
       setLegal(nextLegal);
       setPage(nextPage);
       setOpen(false);
-      if (nextLegal || nextPage || hash === "top") {
+      if (nextLegal || nextPage || hash === "top" || !hash) {
         window.scrollTo(0, 0);
         return;
       }
       requestAnimationFrame(() =>
-        document.getElementById(hash)?.scrollIntoView({ block: "start" }),
+        requestAnimationFrame(() =>
+          document.getElementById(hash)?.scrollIntoView({ block: "start" }),
+        ),
       );
     };
     window.addEventListener("hashchange", fn);
+    fn();
     return () => window.removeEventListener("hashchange", fn);
   }, []);
   let content;
