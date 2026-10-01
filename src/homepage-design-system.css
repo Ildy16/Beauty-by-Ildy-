@@ -898,3 +898,121 @@ main#top .homeVideoHero .heroActions .finderHeroCta{
     letter-spacing:1px;
   }
 }
+
+
+/* Mobile hero: restore the vertical translucent rail concept */
+@media(max-width:620px){
+  main#top .hero.homeVideoHero{
+    position:relative;
+    min-height:760px;
+    height:calc(100svh - 70px);
+    max-height:none;
+    padding:0;
+    overflow:hidden;
+  }
+
+  main#top .homeHeroVideo{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:58% 50%;
+  }
+
+  main#top .homeHeroVideoShade{
+    display:block;
+    background:linear-gradient(
+      90deg,
+      rgba(5,29,57,.10) 0%,
+      rgba(5,29,57,.03) 60%,
+      rgba(5,29,57,0) 100%
+    );
+  }
+
+  main#top .homeVideoHero .heroContent{
+    position:absolute;
+    top:0;
+    left:14px;
+    bottom:0;
+    right:auto;
+    width:min(66vw,300px);
+    min-width:0;
+    max-height:none;
+    height:100%;
+    margin:0;
+    padding:30px 18px 22px;
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+    background:linear-gradient(
+      180deg,
+      rgba(9,38,74,.34),
+      rgba(9,38,74,.48)
+    );
+    border-top:0;
+    border-bottom:0;
+    border-left:1px solid rgba(183,154,91,.30);
+    border-right:1px solid rgba(183,154,91,.30);
+    border-radius:0;
+    backdrop-filter:blur(3px);
+    -webkit-backdrop-filter:blur(3px);
+    box-sizing:border-box;
+  }
+
+  main#top .homeVideoHero .eyebrow{
+    margin:0 0 16px;
+    font-size:8px;
+    line-height:1.25;
+    letter-spacing:1.8px;
+  }
+
+  main#top .homeVideoHero .heroContent h1{
+    margin:0 0 14px;
+    font-size:clamp(34px,9vw,46px);
+    line-height:.96;
+  }
+
+  main#top .homeVideoHero .lead{
+    margin:0 0 14px;
+    font-size:10px;
+    line-height:1.55;
+  }
+
+  main#top .homeVideoHero .heroTopicNav{
+    display:flex;
+    flex-direction:column;
+    gap:7px;
+    margin:0;
+    padding:14px 0 0;
+    border-top:1px solid rgba(255,255,255,.16);
+  }
+
+  main#top .homeVideoHero .heroTopicNav a{
+    font-size:8px;
+    line-height:1.2;
+    letter-spacing:1.05px;
+  }
+
+  main#top .homeVideoHero .heroActions{
+    width:100%;
+    margin-top:auto;
+    padding-top:18px;
+    display:flex;
+    flex-direction:column;
+    gap:7px;
+  }
+
+  main#top .homeVideoHero .heroActions .primary,
+  main#top .homeVideoHero .heroActions .finderHeroCta{
+    width:100%;
+    max-width:none;
+    min-height:34px;
+    padding:0 9px;
+    font-size:7.4px;
+    line-height:1.2;
+    letter-spacing:.75px;
+    white-space:normal;
+    text-align:center;
+  }
+}
