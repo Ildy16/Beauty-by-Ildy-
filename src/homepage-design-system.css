@@ -865,3 +865,36 @@ main#top .homeVideoHero .homeHeroVideo{
     letter-spacing:1px;
   }
 }
+
+
+/* Force both homepage hero CTA buttons to identical typography and sizing */
+main#top .homeVideoHero .heroActions{
+  width:100%;
+}
+main#top .homeVideoHero .heroActions .primary,
+main#top .homeVideoHero .heroActions .finderHeroCta{
+  box-sizing:border-box;
+  width:100%;
+  max-width:none;
+  min-height:36px;
+  padding:0 14px;
+  justify-content:center;
+  font-family:Montserrat,Arial,sans-serif;
+  font-size:9px;
+  font-weight:500;
+  line-height:1.2;
+  letter-spacing:1.45px;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+@media(max-width:620px){
+  main#top .homeVideoHero .heroActions .primary,
+  main#top .homeVideoHero .heroActions .finderHeroCta{
+    width:100%;
+    max-width:none;
+    font-size:8px;
+    font-weight:500;
+    line-height:1.2;
+    letter-spacing:1px;
+  }
+}
