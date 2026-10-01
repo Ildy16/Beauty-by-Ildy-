@@ -24,7 +24,7 @@ import "./styles.css";
 const copy = {
   hu: {
     nav: [
-      ["SZÉPSÉG", "ingredients"],
+      ["KOZMETIKAI ÖSSZETEVŐK", "ingredients"],
       ["SZÉPSÉGTECH", "beauty-tech-guide"],
       ["JÓLLÉT", "wellness"],
       ["HOSSZÚ ÉLET", "longevity"],
@@ -117,7 +117,7 @@ const copy = {
   },
   en: {
     nav: [
-      ["BEAUTY", "ingredients"],
+      ["COSMETIC INGREDIENTS", "ingredients"],
       ["BEAUTY TECH", "beauty-tech-guide"],
       ["WELLNESS", "wellness"],
       ["LONGEVITY", "longevity"],
@@ -210,7 +210,7 @@ const copy = {
   },
   de: {
     nav: [
-      ["BEAUTY", "ingredients"],
+      ["KOSMETISCHE INHALTSSTOFFE", "ingredients"],
       ["BEAUTY TECH", "beauty-tech-guide"],
       ["WELLNESS", "wellness"],
       ["LONGEVITY", "longevity"],
