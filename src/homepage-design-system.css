@@ -673,7 +673,7 @@ main#top .homeHeroVideoShade{
   inset:0;
   z-index:2;
   pointer-events:none;
-  background:linear-gradient(90deg,rgba(5,29,57,.58) 0%,rgba(5,29,57,.26) 28%,rgba(5,29,57,.06) 58%,rgba(5,29,57,.10) 100%);
+  background:linear-gradient(90deg,rgba(5,29,57,.24) 0%,rgba(5,29,57,.10) 28%,rgba(5,29,57,.03) 58%,rgba(5,29,57,.06) 100%);
 }
 main#top .homeVideoHero .heroContent{
   position:relative;
@@ -686,10 +686,10 @@ main#top .homeVideoHero .heroContent{
   display:flex;
   flex-direction:column;
   justify-content:center;
-  background:linear-gradient(180deg,rgba(9,38,74,.56),rgba(9,38,74,.74));
+  background:linear-gradient(180deg,rgba(9,38,74,.34),rgba(9,38,74,.46));
   border-left:1px solid rgba(183,154,91,.42);
   border-right:1px solid rgba(183,154,91,.42);
-  backdrop-filter:blur(8px);
+  backdrop-filter:blur(4px);
   box-sizing:border-box;
 }
 main#top .homeVideoHero .heroContent h1{
@@ -742,9 +742,9 @@ main#top .homeVideoHero .heroActions{
     margin:0;
     padding:18px 20px 16px;
     display:block;
-    background:linear-gradient(180deg,rgba(9,38,74,.62),rgba(9,38,74,.78));
+    background:linear-gradient(180deg,rgba(9,38,74,.40),rgba(9,38,74,.54));
     border:1px solid rgba(183,154,91,.38);
-    backdrop-filter:blur(7px);
+    backdrop-filter:blur(4px);
   }
   main#top .homeVideoHero .heroContent h1{
     font-size:34px;
