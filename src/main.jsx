@@ -501,9 +501,6 @@ function App() {
     content = (
       <main id="top">
         <section className="hero homeVideoHero">
-          <video className="homeHeroBackdrop" autoPlay muted loop playsInline preload="metadata" aria-hidden="true">
-            <source src="/redhair-hero.mp4" type="video/mp4" />
-          </video>
           <video className="homeHeroVideo" autoPlay muted loop playsInline preload="metadata" aria-hidden="true">
             <source src="/redhair-hero.mp4" type="video/mp4" />
           </video>
