@@ -377,6 +377,7 @@ function currentPage() {
   const h = window.location.hash.replace("#", "").split("/")[0];
   if (
     [
+      "solutions",
       "longevity",
       "wellness",
       "wellness-women",
@@ -399,6 +400,7 @@ function currentPage() {
 const seoCopy={
   hu:{
     home:["Beauty by Ildy — Beauty, Technology & Wellness","Válogatott bőrápolás, beauty tech, wellness, longevity és bizonyítékokra épülő útmutatók."],
+    solutions:["Megoldások | Beauty by Ildy","Célzott szépség-, beauty tech- és wellness megoldások bőrre, hajra és jóllétre."],
     ingredients:["Kozmetikai összetevők | Beauty by Ildy","Retinol, PDRN, ceramidok, peptidek és más kozmetikai összetevők érthetően, bizonyítékokra építve."],
     "beauty-tech-guide":["Beauty Tech útmutató | Beauty by Ildy","RF, LED, lézer, mikroáram és más otthoni beauty technológiák előnyei, korlátai és biztonsági szempontjai."],
     wellness:["Wellness & női jóllét | Beauty by Ildy","Wellness, menopauza, healthy aging, mikrotápanyagok és mindennapi jóllét túlzó ígéretek nélkül."],
@@ -423,6 +425,7 @@ const seoCopy={
   },
   de:{
     home:["Beauty by Ildy — Beauty, Technology & Wellness","Kuratierte Hautpflege, Beauty Tech, Wellness, Longevity und evidenzbasierte Beauty-Guides."],
+    solutions:["Lösungen | Beauty by Ildy","Gezielte Beauty-, Beauty-Tech- und Wellness-Lösungen für Haut, Haar und Wohlbefinden."],
     ingredients:["Kosmetische Inhaltsstoffe | Beauty by Ildy","Retinol, PDRN, Ceramide, Peptide und weitere kosmetische Inhaltsstoffe verständlich und evidenzbasiert erklärt."],
     "beauty-tech-guide":["Beauty-Tech-Guide | Beauty by Ildy","RF, LED, Laser, Mikrostrom und weitere Home-Beauty-Technologien: Nutzen, Grenzen und Sicherheit."],
     wellness:["Wellness & Wohlbefinden von Frauen | Beauty by Ildy","Wellness, Menopause, Healthy Aging, Mikronährstoffe und tägliches Wohlbefinden ohne übertriebene Versprechen."],
@@ -487,6 +490,59 @@ function App() {
   }, []);
   let content;
   if (legal) content = <LegalPage lang={lang} type={legal} />;
+  else if (page === "solutions") content = (
+    <main className="solutionsPage">
+      <section className="needs">
+        <p>{t.choose}</p>
+        <div>
+          {t.needs.map((n, i) => (
+            <a className="needLink" href={`#solutions/${needTargets[i]}`} key={n}>{n}</a>
+          ))}
+        </div>
+      </section>
+      <section className="pillars">
+        <article id="beauty">
+          <p className="label">{t.pillars[0][0]}</p>
+          <h2>{t.pillars[0][1]}</h2>
+          <p>{t.pillars[0][2]}</p>
+          <a href="#ingredients">{t.discover}<ArrowRight size={15} /></a>
+        </article>
+        <article id="tech">
+          <p className="label">{t.pillars[1][0]}</p>
+          <h2>{t.pillars[1][1]}</h2>
+          <p>{t.pillars[1][2]}</p>
+          <a href="#beauty-tech-guide">{t.discover}<ArrowRight size={15} /></a>
+        </article>
+        <article id="wellness">
+          <p className="label">{t.pillars[2][0]}</p>
+          <h2>{t.pillars[2][1]}</h2>
+          <p>{t.pillars[2][2]}</p>
+          <a href="#wellness">{t.discover}<ArrowRight size={15} /></a>
+        </article>
+      </section>
+      <section id="hair" className="featureBand">
+        <div><h2>{t.hairTitle}</h2><p>{t.hairText}</p><a href="#products/hair">{t.discover}<ArrowRight size={14} /></a></div>
+      </section>
+      <section id="routines" className="routines">
+        <h2>{t.routines}</h2><p className="sectionIntro">{t.routineSub}</p>
+        <div className="routineGrid">{t.routineCards.map((r)=><article key={r[0]}><h3>{r[0]}</h3><p>{r[1]}</p><a href="#products">{t.explore}<ArrowRight size={14}/></a></article>)}</div>
+      </section>
+      <section className="standards">
+        <h2>{t.standards}</h2>
+        <div className="standardGrid">{t.standardCards.map((s)=><article key={s[0]}><h3>{s[0]}</h3><p>{s[1]}</p></article>)}</div>
+      </section>
+      <section id="brands" className="brands">
+        <h2>{t.brands}</h2><p className="brandIntro">{t.brandSub}</p>
+        <div className="brandGrid">
+          {brands[lang].map((b)=>{
+            const target=b[0]==="Nu Skin"?"#nuskin":b[0]==="doTERRA"?"#doterra":null;
+            const card=<><strong>{b[0]}</strong><small>{b[1]}</small><em>{b[2]}</em></>;
+            return target?<a className="brandCardLink" href={target} key={b[0]}>{card}</a>:<div key={b[0]}>{card}</div>;
+          })}
+        </div>
+      </section>
+    </main>
+  );
   else if (page === "longevity") content = <LongevityPage lang={lang} />;
   else if (page === "wellness") content = <WellnessPage lang={lang} />;
   else if (page === "wellness-women") content = <WellnessPage lang={lang} topic="women" />;
@@ -531,99 +587,6 @@ function App() {
                 <ArrowRight size={17} />
               </a>
             </div>
-          </div>
-        </section>
-        <section id="solutions" className="needs">
-          <p>{t.choose}</p>
-          <div>
-            {t.needs.map((n, i) => (
-              <a className="needLink" href={`#${needTargets[i]}`} key={n}>
-                {n}
-              </a>
-            ))}
-          </div>
-        </section>
-        <section className="pillars">
-          <article id="beauty">
-            <p className="label">{t.pillars[0][0]}</p>
-            <h2>{t.pillars[0][1]}</h2>
-            <p>{t.pillars[0][2]}</p>
-            <a href="#ingredients">
-              {t.discover}
-              <ArrowRight size={15} />
-            </a>
-          </article>
-          <article id="tech">
-            <p className="label">{t.pillars[1][0]}</p>
-            <h2>{t.pillars[1][1]}</h2>
-            <p>{t.pillars[1][2]}</p>
-            <a href="#beauty-tech-guide">
-              {t.discover}
-              <ArrowRight size={15} />
-            </a>
-          </article>
-          <article id="wellness">
-            <p className="label">{t.pillars[2][0]}</p>
-            <h2>{t.pillars[2][1]}</h2>
-            <p>{t.pillars[2][2]}</p>
-            <a href="#wellness">
-              {t.discover}
-              <ArrowRight size={15} />
-            </a>
-          </article>
-        </section>
-        <section id="hair" className="featureBand">
-          <div>
-            <h2>{t.hairTitle}</h2>
-            <p>{t.hairText}</p>
-            <a href="#products/hair">
-              {t.discover}
-              <ArrowRight size={14} />
-            </a>
-          </div>
-        </section>
-        <section id="routines" className="routines">
-          <h2>{t.routines}</h2>
-          <p className="sectionIntro">{t.routineSub}</p>
-          <div className="routineGrid">
-            {t.routineCards.map((r) => (
-              <article key={r[0]}>
-                <h3>{r[0]}</h3>
-                <p>{r[1]}</p>
-                <a href="#products">
-                  {t.explore}
-                  <ArrowRight size={14} />
-                </a>
-              </article>
-            ))}
-          </div>
-        </section>
-        <section className="standards">
-          <h2>{t.standards}</h2>
-          <div className="standardGrid">
-            {t.standardCards.map((s) => (
-              <article key={s[0]}>
-                <h3>{s[0]}</h3>
-                <p>{s[1]}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-        <section id="brands" className="brands">
-          <h2>{t.brands}</h2>
-          <p className="brandIntro">{t.brandSub}</p>
-          <div className="brandGrid">
-            {brands[lang].map((b) => {
-              const target=b[0]==="Nu Skin"?"#nuskin":b[0]==="doTERRA"?"#doterra":null;
-              const card=<>
-                <strong>{b[0]}</strong>
-                <small>{b[1]}</small>
-                <em>{b[2]}</em>
-              </>;
-              return target
-                ? <a className="brandCardLink" href={target} key={b[0]}>{card}</a>
-                : <div key={b[0]}>{card}</div>;
-            })}
           </div>
         </section>
         <section id="magazine" className="magazine">
