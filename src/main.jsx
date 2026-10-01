@@ -467,14 +467,18 @@ function App() {
       setLegal(nextLegal);
       setPage(nextPage);
       setOpen(false);
-      if (nextLegal || nextPage || hash === "top" || !hash) {
+      if (nextLegal || hash === "top" || !hash) {
         window.scrollTo(0, 0);
         return;
       }
+      const subTarget = nextPage && hash.includes("/") ? hash.split("/").slice(1).join("/") : null;
       requestAnimationFrame(() =>
-        requestAnimationFrame(() =>
-          document.getElementById(hash)?.scrollIntoView({ block: "start" }),
-        ),
+        requestAnimationFrame(() => {
+          const targetId = subTarget || hash;
+          const target = document.getElementById(targetId);
+          if (target) target.scrollIntoView({ block: "start" });
+          else if (nextPage) window.scrollTo(0, 0);
+        }),
       );
     };
     window.addEventListener("hashchange", fn);
