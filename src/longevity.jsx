@@ -31,7 +31,7 @@ export function LongevityPage({lang='hu'}){
       'https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&w=2200&q=88',
       'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2200&q=88',
       'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=2200&q=88'
-    ]} items={t.areas.map((a,i)=>({label:a[0],href:'#longevity-area-'+i}))}/>
+    ]} items={t.areas.map((a,i)=>({label:a[0],href:'#longevity/longevity-area-'+i}))}/>
     <section className="longevityIntro"><h2>{t.introTitle}</h2><p>{t.intro}</p><div className="longevityAreas">{t.areas.map((a,i)=><article id={'longevity-area-'+i} key={a[0]}><h3>{a[0]}</h3><p>{a[1]}</p></article>)}</div></section>
     <section className="evidenceBlock"><h2>{t.evidenceTitle}</h2><p className="sectionIntro">{t.evidenceIntro}</p><div className="evidenceGrid">{t.levels.map((l,i)=><article className={`evidenceLevel level${i+1}`} key={l[0]}><h3>{l[0]}</h3><p>{l[1]}</p></article>)}</div></section>
     <section className="researchBlock"><h2>{t.featuredTitle}</h2><div className="researchGrid">{t.studies.map(s=><article key={s[1]}><small>{s[0]}</small><h3>{s[1]}</h3><p>{s[2]}</p><a href={s[3]} target="_blank" rel="noopener noreferrer">{t.read}<ArrowRight size={14}/></a></article>)}</div></section>
