@@ -500,19 +500,8 @@ function App() {
   else
     content = (
       <main id="top">
-        <section className="hero homeVideoHero">
-          <video
-            className="homeHeroVideo"
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            aria-hidden="true"
-          >
-            <source src="/videos/home/beauty-home.mp4" type="video/mp4" />
-          </video>
-          <div className="homeHeroVideoShade"></div>
+        <section className="hero">
+          <div className="glow"></div>
           <div className="heroContent">
             <p className="eyebrow">{t.eyebrow}</p>
             <h1><span className="heroTitleDesktop">{t.title}</span><span className="heroTitleMobile">{t.title.split(" / ").map((part,i)=><span key={i}>{part}</span>)}</span></h1>
