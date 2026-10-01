@@ -509,6 +509,11 @@ function App() {
             <p className="eyebrow">{t.eyebrow}</p>
             <h1><span className="heroTitleDesktop">{t.title}</span><span className="heroTitleMobile">{t.title.split(" / ").map((part,i)=><span key={i}>{part}</span>)}</span></h1>
             <p className="lead">{t.sub}</p>
+            <nav className="heroTopicNav" aria-label="Fő témák">
+              {t.nav.map(([label,target]) => (
+                <a key={target} href={`#${target}`}>{label}</a>
+              ))}
+            </nav>
             <div className="heroActions">
               <a className="primary" href="#products">
                 {t.cta}
@@ -519,11 +524,6 @@ function App() {
                 <ArrowRight size={17} />
               </a>
             </div>
-            <nav className="heroTopicNav" aria-label="Fő témák">
-              {t.nav.map(([label,target]) => (
-                <a key={target} href={`#${target}`}>{label}</a>
-              ))}
-            </nav>
           </div>
         </section>
         <section id="solutions" className="needs">
