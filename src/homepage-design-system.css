@@ -637,3 +637,80 @@ main#top .featureBand a{
     letter-spacing:1.5px;
   }
 }
+
+
+/* Full-bleed homepage video hero — asset: /public/videos/home/beauty-home.mp4 */
+main#top .hero.homeVideoHero{
+  min-height:720px;
+  height:calc(100vh - 84px);
+  max-height:920px;
+  padding:0;
+  display:block;
+  background:var(--bbi-hero-1);
+}
+main#top .homeHeroVideo{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:60% 50%;
+  z-index:0;
+}
+main#top .homeHeroVideoShade{
+  position:absolute;
+  inset:0;
+  z-index:1;
+  pointer-events:none;
+  background:linear-gradient(90deg,rgba(9,38,74,.18) 0%,rgba(9,38,74,.05) 42%,rgba(9,38,74,0) 72%);
+}
+main#top .homeVideoHero .heroContent{
+  position:relative;
+  z-index:2;
+  width:min(390px,32vw);
+  min-width:330px;
+  height:100%;
+  margin-left:3vw;
+  padding:58px 34px 36px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  background:linear-gradient(180deg,rgba(9,38,74,.58),rgba(9,38,74,.72));
+  border-left:1px solid rgba(183,154,91,.42);
+  border-right:1px solid rgba(183,154,91,.42);
+  backdrop-filter:blur(8px);
+}
+main#top .homeVideoHero .heroContent h1{
+  font-size:clamp(43px,4.25vw,68px);
+}
+main#top .homeVideoHero .heroActions{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:8px;
+}
+@media(max-width:900px){
+  main#top .homeVideoHero .heroContent{
+    width:min(410px,48vw);
+    min-width:0;
+    margin-left:22px;
+  }
+  main#top .homeHeroVideo{object-position:62% 50%}
+}
+@media(max-width:620px){
+  main#top .hero.homeVideoHero{
+    min-height:760px;
+    height:calc(100svh - 68px);
+    max-height:none;
+  }
+  main#top .homeHeroVideo{object-position:58% 50%}
+  main#top .homeVideoHero .heroContent{
+    position:absolute;
+    left:18px;
+    bottom:18px;
+    width:calc(100% - 36px);
+    height:auto;
+    margin:0;
+    padding:30px 24px 24px;
+  }
+}
