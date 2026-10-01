@@ -639,7 +639,7 @@ main#top .featureBand a{
 }
 
 
-/* Homepage redhair video preview — full hero with restrained subject scale */
+/* Homepage redhair video preview — true full-bleed hero */
 main#top .hero.homeVideoHero{
   min-height:720px;
   height:calc(100svh - 84px);
@@ -648,36 +648,25 @@ main#top .hero.homeVideoHero{
   display:block;
   background:var(--bbi-hero-1);
 }
-main#top .homeHeroBackdrop{
-  position:absolute;
-  inset:-4%;
-  width:108%;
-  height:108%;
-  object-fit:cover;
-  object-position:center;
-  filter:blur(24px) brightness(.54) saturate(.92);
-  transform:scale(1.03);
-  z-index:0;
-}
 main#top .homeHeroVideo{
   position:absolute;
   inset:0;
   width:100%;
   height:100%;
-  object-fit:contain;
-  object-position:66% 50%;
-  z-index:1;
+  object-fit:cover;
+  object-position:58% 50%;
+  z-index:0;
 }
 main#top .homeHeroVideoShade{
   position:absolute;
   inset:0;
-  z-index:2;
+  z-index:1;
   pointer-events:none;
-  background:linear-gradient(90deg,rgba(5,29,57,.24) 0%,rgba(5,29,57,.10) 28%,rgba(5,29,57,.03) 58%,rgba(5,29,57,.06) 100%);
+  background:linear-gradient(90deg,rgba(5,29,57,.08) 0%,rgba(5,29,57,.03) 36%,rgba(5,29,57,0) 66%);
 }
 main#top .homeVideoHero .heroContent{
   position:relative;
-  z-index:3;
+  z-index:2;
   width:min(370px,31vw);
   min-width:330px;
   height:100%;
@@ -686,10 +675,10 @@ main#top .homeVideoHero .heroContent{
   display:flex;
   flex-direction:column;
   justify-content:center;
-  background:linear-gradient(180deg,rgba(9,38,74,.34),rgba(9,38,74,.46));
-  border-left:1px solid rgba(183,154,91,.42);
-  border-right:1px solid rgba(183,154,91,.42);
-  backdrop-filter:blur(4px);
+  background:linear-gradient(180deg,rgba(9,38,74,.20),rgba(9,38,74,.30));
+  border-left:1px solid rgba(183,154,91,.32);
+  border-right:1px solid rgba(183,154,91,.32);
+  backdrop-filter:blur(2px);
   box-sizing:border-box;
 }
 main#top .homeVideoHero .heroContent h1{
@@ -704,12 +693,15 @@ main#top .homeVideoHero .heroActions{
     min-height:680px;
     height:calc(100svh - 76px);
   }
-  main#top .homeHeroVideo{object-position:64% 50%}
+  main#top .homeHeroVideo{
+    object-position:56% 50%;
+  }
   main#top .homeVideoHero .heroContent{
     width:min(350px,43vw);
     min-width:300px;
     margin-left:20px;
     padding:44px 28px 34px;
+    background:linear-gradient(180deg,rgba(9,38,74,.22),rgba(9,38,74,.34));
   }
 }
 @media(max-width:620px){
@@ -718,18 +710,12 @@ main#top .homeVideoHero .heroActions{
     height:calc(100svh - 70px);
     max-height:760px;
   }
-  main#top .homeHeroBackdrop{
-    inset:-6%;
-    width:112%;
-    height:112%;
-    filter:blur(18px) brightness(.58) saturate(.94);
-  }
   main#top .homeHeroVideo{
-    object-fit:contain;
-    object-position:center 42%;
+    object-fit:cover;
+    object-position:54% 50%;
   }
   main#top .homeHeroVideoShade{
-    background:linear-gradient(180deg,rgba(5,29,57,.04) 0%,rgba(5,29,57,.10) 45%,rgba(5,29,57,.52) 100%);
+    background:linear-gradient(180deg,rgba(5,29,57,.02) 0%,rgba(5,29,57,.06) 44%,rgba(5,29,57,.24) 100%);
   }
   main#top .homeVideoHero .heroContent{
     position:absolute;
@@ -742,9 +728,9 @@ main#top .homeVideoHero .heroActions{
     margin:0;
     padding:18px 20px 16px;
     display:block;
-    background:linear-gradient(180deg,rgba(9,38,74,.40),rgba(9,38,74,.54));
-    border:1px solid rgba(183,154,91,.38);
-    backdrop-filter:blur(4px);
+    background:linear-gradient(180deg,rgba(9,38,74,.26),rgba(9,38,74,.38));
+    border:1px solid rgba(183,154,91,.30);
+    backdrop-filter:blur(2px);
   }
   main#top .homeVideoHero .heroContent h1{
     font-size:34px;
