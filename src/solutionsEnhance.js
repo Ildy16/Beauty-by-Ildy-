@@ -1,3 +1,5 @@
+import './solutionsEnhance.css';
+
 const assets={
   skincare:'https://d2ol7oe51mr4n9.cloudfront.net/user_3IAvy8LbGnFWbZ9I7IYXDS4wsOc/8f9395b6-86de-4be2-87a9-70ae2c61990c.jpg',
   tech:'https://d2ol7oe51mr4n9.cloudfront.net/user_3IAvy8LbGnFWbZ9I7IYXDS4wsOc/0203e2ce-86a7-4da2-b45f-b1fb12349321.jpg',
