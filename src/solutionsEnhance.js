@@ -31,10 +31,8 @@ const copy={
 let timer=null;
 let active=0;
 let lastLang='';
-let scrollTimer=null;
 
 function labelFor(lang){return lang==='de'?'ANSEHEN':lang==='en'?'EXPLORE':'MEGNÉZEM'}
-function isMobile(){return window.matchMedia('(max-width: 620px)').matches}
 
 function mount(){
   if(!location.hash.startsWith('#solutions'))return;
@@ -50,84 +48,35 @@ function mount(){
   const section=document.createElement('section');
   section.className='solutionsVisualNav';
   section.setAttribute('aria-label',lang==='de'?'Visuelle Navigation Lösungen':lang==='en'?'Solutions visual navigation':'Megoldások vizuális navigáció');
-
   const panels=document.createElement('div');
   panels.className='solutionsVisualPanels';
-
   items.forEach(([title,desc,href,image],i)=>{
     const a=document.createElement('a');
     a.href=href;
     a.className='solutionsVisualPanel'+(i===0?' isActive':'');
-    a.innerHTML=`
-      <span class="solutionsVisualImage" style="background-image:url(&quot;${image}&quot;)"><span class="solutionsVisualShade"></span></span>
-      <span class="solutionsVisualCaption">
-        <strong>${title}</strong>
-        <small>${desc}</small>
-        <span class="solutionsVisualLink">${labelFor(lang)} <span aria-hidden="true">→</span></span>
-      </span>`;
-    a.addEventListener('mouseenter',()=>{active=i;update(false);pause()});
-    a.addEventListener('focus',()=>{active=i;update(false);pause()});
+    a.style.backgroundImage=`url("${image}")`;
+    a.innerHTML=`<span class="solutionsVisualShade"></span><span class="solutionsVisualContent"><strong>${title}</strong><small>${desc}</small><span class="solutionsVisualLink">${labelFor(lang)} <span aria-hidden="true">→</span></span></span>`;
+    a.addEventListener('mouseenter',()=>{active=i;update();pause()});
+    a.addEventListener('focus',()=>{active=i;update();pause()});
     a.addEventListener('mouseleave',resume);
     a.addEventListener('blur',resume);
     panels.appendChild(a);
   });
-
-  const dots=document.createElement('div');
-  dots.className='solutionsVisualDots';
-  items.forEach((item,i)=>{
-    const b=document.createElement('button');
-    b.type='button';
-    b.className=i===0?'isActive':'';
-    b.setAttribute('aria-label',item[0]);
-    b.addEventListener('click',()=>{active=i;update(true);pause();setTimeout(resume,5000)});
-    dots.appendChild(b);
-  });
-
   section.appendChild(panels);
-  section.appendChild(dots);
   page.prepend(section);
-
-  function update(shouldScroll=true){
-    [...panels.children].forEach((el,i)=>el.classList.toggle('isActive',i===active));
-    [...dots.children].forEach((el,i)=>el.classList.toggle('isActive',i===active));
-    if(shouldScroll&&isMobile()){
-      const target=panels.children[active];
-      target?.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});
-    }
-  }
+  function update(){[...panels.children].forEach((el,i)=>el.classList.toggle('isActive',i===active))}
   function pause(){if(timer){clearInterval(timer);timer=null}}
-  function resume(){
-    if(timer)return;
-    timer=setInterval(()=>{active=(active+1)%items.length;update(true)},4800);
-  }
-
-  panels.addEventListener('scroll',()=>{
-    if(!isMobile())return;
-    pause();
-    clearTimeout(scrollTimer);
-    scrollTimer=setTimeout(()=>{
-      const rect=panels.getBoundingClientRect();
-      const center=rect.left+rect.width/2;
-      let best=0,bestDist=Infinity;
-      [...panels.children].forEach((el,i)=>{
-        const r=el.getBoundingClientRect();
-        const d=Math.abs((r.left+r.width/2)-center);
-        if(d<bestDist){bestDist=d;best=i}
-      });
-      active=best;update(false);resume();
-    },180);
-  },{passive:true});
-
+  function resume(){if(timer)return;timer=setInterval(()=>{active=(active+1)%items.length;update()},4300)}
+  window.__solutionsResume=resume;
+  window.__solutionsPause=pause;
   resume();
 }
 
 function cleanup(){
   if(timer){clearInterval(timer);timer=null}
-  if(scrollTimer){clearTimeout(scrollTimer);scrollTimer=null}
 }
 
 window.addEventListener('hashchange',()=>{cleanup();requestAnimationFrame(()=>requestAnimationFrame(mount))});
-window.addEventListener('resize',()=>requestAnimationFrame(mount));
 const observer=new MutationObserver(()=>requestAnimationFrame(mount));
 observer.observe(document.getElementById('root'),{childList:true,subtree:true});
 requestAnimationFrame(()=>requestAnimationFrame(mount));
