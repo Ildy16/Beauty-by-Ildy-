@@ -1,6 +1,7 @@
 import React,{useEffect,useRef} from 'react';
 import {ArrowLeft,ArrowRight} from 'lucide-react';
 import {TopicHero} from './topicHero.jsx';
+import {subpageMedia} from './subpage-media.js';
 
 const copy={
  hu:{back:'Vissza a főoldalra',eyebrow:'BEAUTY TECH • EVIDENCE GUIDE',title:'Beauty Tech – érthetően, bizonyítékokkal',lead:'Mit csinál valójában egy otthoni beauty készülék? Elmagyarázzuk a technológiát, a bizonyíték erősségét, a korlátokat és azt is, mit érdemes keresni egy konkrét eszköznél.',updated:'Utoljára szakmailag frissítve: 2026. szeptember',note:'A bizonyítéki szint a technológiára és a vizsgált alkalmazásra vonatkozik. Ettől egy konkrét készülék még nem válik automatikusan klinikailag bizonyítottá.',what:'Mit jelent?',how:'Hogyan működik?',use:'Mire vizsgálták?',evidence:'Mit mond a tudomány?',limits:'Fontos korlát',source:'TUDOMÁNYOS FORRÁS',items:[
@@ -14,7 +15,7 @@ const copy={
 };
 
 const techTargets=['tech-laser','tech-rf','tech-led-nir','tech-microcurrent'];
-export function BeautyTechPage({lang='hu'}){const t=copy[lang]||copy.hu;const cards=useRef([]);useEffect(()=>{const target=window.location.hash.split('/')[1];const index=techTargets.indexOf(target);if(index>=0)cards.current[index]?.scrollIntoView()},[]);return <main className="techGuidePage"><TopicHero eyebrow={t.eyebrow} title={t.title} lead={t.lead} backLabel={t.back} images={[
+export function BeautyTechPage({lang='hu'}){const t=copy[lang]||copy.hu;const cards=useRef([]);useEffect(()=>{const target=window.location.hash.split('/')[1];const index=techTargets.indexOf(target);if(index>=0)cards.current[index]?.scrollIntoView()},[]);return <main className="techGuidePage"><TopicHero eyebrow={t.eyebrow} title={t.title} lead={t.lead} backLabel={t.back} videoSrc={subpageMedia.beautytech.video} videoPoster={subpageMedia.beautytech.poster} images={[
     'https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=2200&q=88',
     'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=2200&q=88',
     'https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=2200&q=88'
