@@ -1,6 +1,7 @@
 import React from 'react';
 import {ArrowLeft,ArrowRight} from 'lucide-react';
 import {TopicHero} from './topicHero.jsx';
+import {subpageMedia} from './subpage-media.js';
 
 const content={
   hu:{
@@ -27,7 +28,7 @@ export function LongevityPage({lang='hu'}){
   const t=content[lang]||content.hu;
   const guideTargets=['beauty-tech-guide/tech-rf','beauty-tech-guide/tech-led-nir','beauty-tech-guide/tech-laser','beauty-tech-guide/tech-microcurrent','ingredients/ingredient-retinol','ingredients/ingredient-pdrn'];
   return <main className="longevityPage">
-    <TopicHero eyebrow={t.eyebrow} title={t.title} lead={t.lead} backLabel={t.back} images={[
+    <TopicHero eyebrow={t.eyebrow} title={t.title} lead={t.lead} backLabel={t.back} videoSrc={subpageMedia.longevity.video} videoPoster={subpageMedia.longevity.poster} images={[
       'https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&w=2200&q=88',
       'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2200&q=88',
       'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=2200&q=88'
