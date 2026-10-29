@@ -29,8 +29,23 @@ const topicRoutes={
 function WellnessVisualHero({t,focus,topic=null}){
   const [active,setActive]=useState(0);
   useEffect(()=>{
-    const id=window.setInterval(()=>setActive(v=>(v+1)%wellnessHeroImages.length),5200);
-    return()=>window.clearInterval(id);
+    const motion=window.matchMedia("(prefers-reduced-motion: reduce)");
+    let id;
+    const stop=()=>{if(id){window.clearInterval(id);id=undefined;}};
+    const sync=()=>{
+      stop();
+      if(!motion.matches && !document.hidden){
+        id=window.setInterval(()=>setActive(v=>(v+1)%wellnessHeroImages.length),6500);
+      }
+    };
+    sync();
+    document.addEventListener("visibilitychange",sync);
+    motion.addEventListener?.("change",sync);
+    return()=>{
+      stop();
+      document.removeEventListener("visibilitychange",sync);
+      motion.removeEventListener?.("change",sync);
+    };
   },[]);
 
   const focusIndex=topic?Math.max(0,topicRouteKeys.indexOf(topic)):null;
