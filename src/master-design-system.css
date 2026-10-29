@@ -357,3 +357,14 @@ article > a,
   font-size:13px;
   line-height:1.75;
 }
+
+/* Solutions: match need-filter label typography to the descriptive text in
+   the Beauty / Beauty Tech cards; both are precisely 13px Montserrat. */
+.solutionsPage .needs a.needLink,
+.solutionsPage .pillars article > p:not(.label){
+  font-family:var(--bbi-font-body);
+  font-size:13px;
+  font-weight:400;
+  letter-spacing:0;
+  line-height:1.75;
+}
