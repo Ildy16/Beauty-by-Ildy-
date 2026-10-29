@@ -1103,3 +1103,6 @@ main#top .brandGrid em{
   line-height:1.55;
   font-style:normal;
 }
+
+/* Approved exact body size: 13px on every viewport, no fluid sizing. */
+main#top .magGrid article p{font-size:13px;line-height:1.75}
