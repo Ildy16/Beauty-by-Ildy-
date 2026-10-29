@@ -1089,3 +1089,17 @@ main#top .magGrid article p{
   font-weight:400;
 }
 @media(max-width:620px){main#top .magGrid article p{font-size:13px;line-height:1.7}}
+
+/* Brand cards: proportional label and description sizes, capped at 13px. */
+main#top .brandGrid small{
+  font-family:var(--bbi-font-body);
+  font-size:11px;
+  line-height:1.45;
+  letter-spacing:1px;
+}
+main#top .brandGrid em{
+  font-family:var(--bbi-font-body);
+  font-size:13px;
+  line-height:1.55;
+  font-style:normal;
+}
