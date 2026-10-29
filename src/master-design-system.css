@@ -371,3 +371,18 @@ article > a,
 
 /* Unified editorial descriptions, including mobile: 13px exactly. */
 .bbiIntroText,.bbiBodyText,.bbiCardText{font-size:13px;line-height:1.75}
+
+/* Final shared readable-copy rules: specific page modules use these hooks. */
+.magPage .magDek,.magPage .magArticleText p,
+.magPage .magHero > div > p:last-child,
+.ingredientLead,.ingredientCard > p,.ingredientsHeroLead,
+.longevityLead,.longevityIntro,.longevityAreas article > p,.termCard > p,
+.wellnessLead,.wellnessIntro,.wellnessFocusCard p,.topicIntro p,
+.techGuidePage .techEvidenceDetails p,.techGuidePage .techCompare article p,
+.productsPage .productCard .productFocus,.productsPage .detailIntro p,
+.finderHeroLead,.finderSummary p,.finderIntroCard p,.finderResultCard p,
+.brandPageLead,.brandPageBody p,.brandProductCard p,.doterraDescription,
+.solutionsPage .pillars article > p:not(.label),
+.solutionsPage .routineGrid article > p,.solutionsPage .standardGrid article > p{
+ font-family:var(--bbi-font-body);font-size:13px;line-height:1.75;
+}
