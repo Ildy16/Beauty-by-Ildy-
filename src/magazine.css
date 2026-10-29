@@ -82,3 +82,8 @@
     font-size:7px;
   }
 }
+
+/* Magazine article text: exact 13px at all viewport widths. */
+.magHero > div > p:last-child,.magDek,.magArticleText p{font-size:13px;line-height:1.75}
+.magFilters button{font-size:10px;line-height:1.4}
+@media(max-width:620px){.magHero > div > p:last-child,.magDek,.magArticleText p{font-size:13px}.magFilters button{font-size:10px}}

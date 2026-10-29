@@ -12,10 +12,10 @@
   opacity:0;
   background-size:cover;
   background-position:center;
-  transform:scale(1.01);
-  transition:opacity 1s ease,transform 6.5s ease;
+  transform:none;
+  transition:opacity 1.4s ease;
 }
-.topicHeroSlide.isActive{opacity:1;transform:scale(1.055)}
+.topicHeroSlide.isActive{opacity:1}
 .topicHeroRail{
   position:relative;
   z-index:2;
@@ -120,3 +120,33 @@
   .topicHeroNav a{min-height:48px;font-size:16px}
   .topicHeroDots{top:22px;right:22px;bottom:auto}
 }
+
+/* Motion-safe editorial hero: no automatic zoom or camera movement. */
+@media (prefers-reduced-motion: reduce){
+  .topicHeroSlide{transition:none}
+  .topicHeroNav a{transition:none}
+}
+@media (max-width:620px){
+  .topicHeroRail{max-height:calc(100% - 32px);overflow-y:auto;overscroll-behavior:contain}
+  .topicHeroNav a{min-height:48px}
+}
+
+/* Readable, keyboard-accessible editorial navigation on small screens. */
+.topicHeroBack:focus-visible,.topicHeroNav a:focus-visible{
+  outline:2px solid var(--bbi-gold,#c7a96b);
+  outline-offset:4px;
+}
+@media (max-width:620px){
+  .topicHeroRail{box-sizing:border-box;padding:28px 22px 22px}
+  .topicHeroRail h1{font-size:clamp(34px,9vw,43px);line-height:1.02;overflow-wrap:break-word}
+  .topicHeroLead{font-size:12px;line-height:1.65}
+  .topicHeroNav a{font-size:clamp(14px,4vw,16px);line-height:1.2;padding-block:10px}
+  .topicHeroDots{pointer-events:none}
+}
+
+/* Shared hero typography guard: keep long translated titles inside the glass rail. */
+.topicHeroRail{box-sizing:border-box;min-width:0}
+.topicHeroRail h1{max-width:100%;min-width:0;font-size:clamp(35px,3vw,49px);line-height:1.04;overflow-wrap:break-word;hyphens:auto}
+.topicHeroNav a span{min-width:0;overflow-wrap:break-word}
+@media(max-width:900px){.topicHeroRail h1{font-size:clamp(32px,4.4vw,43px)}}
+@media(max-width:620px){.topicHeroRail h1{font-size:clamp(32px,8vw,40px);line-height:1.08}}

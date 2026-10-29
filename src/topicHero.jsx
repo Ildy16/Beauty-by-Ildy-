@@ -15,11 +15,26 @@ export function TopicHero({
   const [active,setActive]=useState(0);
   useEffect(()=>{
     if(images.length<2)return;
-    const id=window.setInterval(()=>setActive(v=>(v+1)%images.length),5200);
-    return()=>window.clearInterval(id);
+    const motion=window.matchMedia("(prefers-reduced-motion: reduce)");
+    let id;
+    const stop=()=>{if(id){window.clearInterval(id);id=undefined;}};
+    const sync=()=>{
+      stop();
+      if(!motion.matches && !document.hidden){
+        id=window.setInterval(()=>setActive(v=>(v+1)%images.length),6500);
+      }
+    };
+    sync();
+    document.addEventListener("visibilitychange",sync);
+    motion.addEventListener?.("change",sync);
+    return()=>{
+      stop();
+      document.removeEventListener("visibilitychange",sync);
+      motion.removeEventListener?.("change",sync);
+    };
   },[images.length]);
 
-  return <section className="topicHero">
+  return <section className="topicHero" aria-label={title}>
     <div className="topicHeroSlides" aria-hidden="true">
       {images.map((src,i)=><div
         key={src}
