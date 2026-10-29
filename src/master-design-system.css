@@ -308,3 +308,26 @@ article > a,
   font-size:var(--bbi-readable-copy);
   line-height:var(--bbi-readable-leading);
 }
+
+/* Content-area audit: selectors match actual page modules. */
+.ingredientsPage .ingredientLead,
+.ingredientsPage .ingredientCard p,
+.longevityPage .longevityLead,
+.longevityPage .longevityIntro,
+.longevityPage .termCard p,
+.wellnessPage .wellnessLead,
+.wellnessPage .wellnessIntro,
+.wellnessPage .wellnessFocusCard p,
+.wellnessPage .topicIntro p,
+.productsPage .productCardBody p,
+.magazinePage .magBody p,
+.magazinePage .magArticleText p,
+.beautyFinderPage .finderResultCard p,
+.beautyFinderPage .finderIntroCard p,
+.brandPageBody p,
+.brandProductCard p,
+.doterraDescription{
+  font-family:var(--bbi-font-body);
+  font-size:13px;
+  line-height:1.75;
+}
