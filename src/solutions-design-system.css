@@ -1,0 +1,1084 @@
+/* Restore approved homepage section styling on the dedicated Solutions route.
+   Scoped to .solutionsPage; homepage selectors remain unchanged. */
+/* BEAUTY BY ILDY — HOMEPAGE DESIGN SYSTEM v1
+   Scope: homepage only (.solutionsPage).
+   Locked brand rules:
+   - Cormorant Garamond = editorial headings
+   - Montserrat = body, labels, navigation
+   - No decorative technology/beauty icons inside homepage cards
+   - Card heights are content-led, not forced by arbitrary min-heights
+*/
+
+/* Homepage canvas */
+.solutionsPage {
+  background: var(--bbi-sand);
+  color: var(--bbi-ink);
+}
+.solutionsPage .hero {
+  background: linear-gradient(
+    125deg,
+    var(--bbi-hero-1) 0%,
+    var(--bbi-hero-2) 58%,
+    var(--bbi-hero-3) 100%
+  );
+  min-height: 430px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 48px 8vw;
+  position: relative;
+  overflow: hidden;
+}
+.solutionsPage .heroContent {
+  width: min(720px, 58%);
+  position: relative;
+  z-index: 2;
+}
+.solutionsPage .glow {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  right: 5%;
+  background: #4f91dc20;
+  filter: blur(45px);
+}
+
+/* Approved homepage typography */
+.solutionsPage .hero h1 {
+  font:
+    500 var(--bbi-hero-title) / 0.98 "Cormorant Garamond",
+    serif;
+  max-width: 680px;
+  margin: 20px 0;
+}
+.solutionsPage .eyebrow {
+  color: var(--bbi-gold);
+  letter-spacing: 3px;
+  font-size: 11px;
+  font-weight: 500;
+}
+.solutionsPage .hero .lead {
+  font:
+    300 var(--bbi-intro) / 1.8 Montserrat,
+    Arial,
+    sans-serif;
+  max-width: 620px;
+  color: #dce3eb;
+}
+.solutionsPage .primary {
+  margin-top: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 14px;
+  border: 1px solid var(--bbi-gold);
+  color: #fff;
+  text-decoration: none;
+  font-size: 11px;
+  letter-spacing: 1.2px;
+}
+.solutionsPage .routines h2,
+.solutionsPage .standards h2,
+.solutionsPage .brands h2,
+.solutionsPage .magazine h2 {
+  font:
+    500 var(--bbi-section-title) / 1.04 "Cormorant Garamond",
+    serif;
+  margin: 10px 0;
+}
+.solutionsPage .pillars h2,
+.solutionsPage .routineGrid h3,
+.solutionsPage .standardGrid h3,
+.solutionsPage .magGrid h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+}
+.solutionsPage .sectionIntro,
+.solutionsPage .brandIntro,
+.solutionsPage .featureBand p {
+  font:
+    400 var(--bbi-intro) / 1.8 Montserrat,
+    Arial,
+    sans-serif;
+  color: var(--bbi-muted);
+}
+.solutionsPage .sectionIntro,
+.solutionsPage .brandIntro {
+  max-width: 720px;
+  margin-bottom: 28px;
+}
+.solutionsPage .pillars article > p:not(.label),
+.solutionsPage .routineGrid p,
+.solutionsPage .standardGrid p,
+.solutionsPage .magGrid p {
+  font:
+    400 11px/1.7 Montserrat,
+    Arial,
+    sans-serif;
+  color: var(--bbi-muted);
+}
+.solutionsPage .pillars .label,
+.solutionsPage .routineGrid small,
+.solutionsPage .magGrid small,
+.solutionsPage .brandGrid small {
+  font-family: Montserrat, Arial, sans-serif;
+}
+.solutionsPage .brandGrid strong {
+  font:
+    500 22px/1.15 "Cormorant Garamond",
+    serif;
+  font-weight: 500;
+}
+.solutionsPage .brandGrid small {
+  font-size: 9px;
+}
+.solutionsPage .brandGrid em {
+  font:
+    400 10px/1.45 Montserrat,
+    Arial,
+    sans-serif;
+  font-style: normal;
+  color: #737f84;
+  margin-top: 7px;
+}
+
+/* Shared homepage surfaces */
+.solutionsPage .needs,
+.solutionsPage .pillars,
+.solutionsPage .featureBand,
+.solutionsPage .routines,
+.solutionsPage .standards,
+.solutionsPage .brands,
+.solutionsPage .magazine {
+  background: var(--bbi-sand);
+}
+.solutionsPage .pillars article,
+.solutionsPage .featureBand > div:first-child,
+.solutionsPage .routineGrid article,
+.solutionsPage .standardGrid article,
+.solutionsPage .brandGrid div,
+.solutionsPage .brandGrid .brandCardLink,
+.solutionsPage .magGrid article,
+.solutionsPage .needLink {
+  background: var(--bbi-ivory);
+  border: 1px solid var(--bbi-line);
+}
+
+/* Sections: one spacing system */
+.solutionsPage .pillars {
+  padding: 54px 6vw;
+}
+.solutionsPage .standards,
+.solutionsPage .brands,
+.solutionsPage .magazine {
+  padding: 38px 6vw;
+}
+.solutionsPage .routines {
+  padding: 48px 6vw;
+}
+.solutionsPage .featureBand {
+  padding: 30px 6vw;
+}
+.solutionsPage .needs {
+  padding: 38px 6vw;
+  border-bottom: 1px solid var(--bbi-line);
+}
+
+/* Need selector */
+.solutionsPage .needs > p {
+  margin: 0;
+  font:
+    500 10px/1.4 Montserrat,
+    Arial,
+    sans-serif;
+  letter-spacing: 2.6px;
+  color: #8b7b5b;
+}
+.solutionsPage .needs > div {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+.solutionsPage .needLink {
+  min-height: 31px;
+  padding: 6px 11px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font:
+    400 9px/1.2 Montserrat,
+    Arial,
+    sans-serif;
+  letter-spacing: .15px;
+  color: #5d686d;
+  text-decoration: none;
+  border-width: 1px;
+}
+
+/* Primary pillars = large information cards */
+.solutionsPage .pillars {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+.solutionsPage .pillars article {
+  min-height: 0;
+  padding: 26px;
+}
+.solutionsPage .pillars .label {
+  margin: 14px 0 0;
+}
+.solutionsPage .pillars h2,
+.solutionsPage .featureBand h2 {
+  font-size: var(--bbi-card-title);
+  line-height: 1.08;
+}
+.solutionsPage .pillars h2 {
+  margin: 10px 0 0;
+}
+.solutionsPage .pillars article > p:not(.label) {
+  margin: 10px 0 0;
+}
+.solutionsPage .pillars article > span,
+.solutionsPage .routineGrid small,
+.solutionsPage .magGrid small {
+  font:
+    400 30px "Cormorant Garamond",
+    serif;
+  color: var(--bbi-gold);
+}
+.solutionsPage .pillars a,
+.solutionsPage .routineGrid a,
+.solutionsPage .magGrid a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-size: 10px;
+  letter-spacing: 1.2px;
+}
+.solutionsPage .pillars a {
+  margin-top: 16px;
+}
+.solutionsPage .routineGrid a {
+  margin-top: 16px;
+}
+.solutionsPage .magGrid a {
+  margin-top: 16px;
+}
+
+/* Hair & scalp = one large information card */
+.solutionsPage .featureBand > div:first-child {
+  max-width: 620px;
+  padding: 26px;
+}
+.solutionsPage .featureBand h2 {
+  margin: 0;
+}
+.solutionsPage .featureBand p {
+  margin: 8px 0 0;
+}
+
+/* Routines = normal cards */
+.solutionsPage .routines > h2 {
+  margin: 0;
+}
+.solutionsPage .routines .sectionIntro {
+  margin: 8px 0 20px;
+}
+.solutionsPage .routineGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+.solutionsPage .routineGrid article {
+  min-height: 0;
+  padding: 24px;
+}
+.solutionsPage .routineGrid small {
+  display: block;
+  margin: 0;
+}
+.solutionsPage .routineGrid h3 {
+  font-size: 26px;
+  line-height: 1.08;
+  margin: 10px 0 0;
+}
+.solutionsPage .routineGrid p {
+  margin: 8px 0 0;
+}
+
+/* Standards = normal cards, no decorative icons */
+.solutionsPage .standards > h2 {
+  margin: 0;
+}
+.solutionsPage .standardGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+.solutionsPage .standardGrid article {
+  min-height: 0;
+  padding: 20px;
+}
+.solutionsPage .standardGrid article > svg {
+  display: none;
+}
+.solutionsPage .standardGrid article > span:first-child {
+  display: block;
+  margin: 0;
+}
+.solutionsPage .standardGrid h3 {
+  margin: 10px 0 0;
+  font-size: 26px;
+  line-height: 1.08;
+}
+.solutionsPage .standardGrid p {
+  margin: 8px 0 0;
+}
+
+/* Brand cards = compact cards */
+.solutionsPage .brands > h2 {
+  margin: 0;
+}
+.solutionsPage .brands .brandIntro {
+  margin: 8px 0 20px;
+}
+.solutionsPage .brandGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+.solutionsPage .brandGrid div,
+.solutionsPage .brandGrid .brandCardLink {
+  min-height: 0;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.solutionsPage .brandGrid .brandCardLink{
+  color:inherit;
+  text-decoration:none;
+  transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease;
+}
+.solutionsPage .brandGrid .brandCardLink:hover{
+  transform:translateY(-1px);
+  border-color:rgba(183,154,91,.52);
+  box-shadow:0 8px 20px rgba(7,23,44,.05);
+}
+.solutionsPage .brandGrid strong {
+  align-self: center;
+  white-space: nowrap;
+}
+.solutionsPage .brandGrid small {
+  letter-spacing: 1.4px;
+  color: var(--bbi-gold);
+  margin-top: 6px;
+}
+
+/* Magazine = normal cards */
+.solutionsPage .magazine > h2 {
+  margin: 0;
+  font-size: 30px;
+  line-height: 1;
+}
+.solutionsPage .magGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+.solutionsPage .magGrid article {
+  min-height: 0;
+  padding: 18px 20px;
+}
+.solutionsPage .magGrid article > small:first-child {
+  display: block;
+  margin: 0;
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: 9px;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+.solutionsPage .magGrid h3 {
+  font-size: 24px;
+  line-height: 1.08;
+  margin: 8px 0 0;
+  text-transform: none;
+}
+.solutionsPage .magGrid p {
+  margin: 8px 0 0;
+}
+
+@media (max-width: 1000px) {
+  .solutionsPage .pillars,
+  .solutionsPage .standardGrid,
+  .solutionsPage .magGrid {
+    grid-template-columns: 1fr;
+  }
+  .solutionsPage .routineGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .solutionsPage .brandGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+
+.solutionsPage .heroTitleMobile { display: none; }
+
+@media (max-width: 620px) {
+  .solutionsPage .hero {
+    min-height: 400px;
+    padding: 44px 24px;
+  }
+  .solutionsPage .heroContent {
+    width: 100%;
+  }
+  .solutionsPage .hero h1 {
+    font-size: var(--bbi-hero-title);
+  }
+  .solutionsPage .heroTitleDesktop {
+    display: none;
+  }
+  .solutionsPage .heroTitleMobile {
+    display: block;
+  }
+  .solutionsPage .heroTitleMobile > span {
+    display: block;
+  }
+  .solutionsPage .hero .lead {
+    font-size: var(--bbi-intro);
+  }
+  .solutionsPage .eyebrow {
+    font-size: 10px;
+    letter-spacing: 3.5px;
+  }
+  .solutionsPage .primary {
+    font-size: 10px;
+    letter-spacing: 1.4px;
+  }
+  .solutionsPage .needs > p {
+    font-size: 9px;
+    letter-spacing: 3px;
+  }
+  .solutionsPage .needLink {
+    min-height: 30px;
+    padding: 5px 10px;
+    font-size: 8.5px;
+  }
+  .solutionsPage .pillars .label {
+    font-size: 9px;
+    letter-spacing: 2.5px;
+  }
+  .solutionsPage .pillars a,
+  .solutionsPage .routineGrid a,
+  .solutionsPage .magGrid a {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+  }
+  .solutionsPage .routines h2,
+  .solutionsPage .standards h2,
+  .solutionsPage .brands h2,
+  .solutionsPage .magazine h2 {
+    font-size: var(--bbi-section-title);
+    line-height: 0.96;
+  }
+  .solutionsPage .pillars {
+    padding: 40px 20px;
+  }
+  .solutionsPage .standards,
+  .solutionsPage .brands,
+  .solutionsPage .magazine {
+    padding: 28px 20px;
+  }
+  .solutionsPage .magazine > h2 {
+    font-size: 28px;
+    line-height: 1;
+  }
+  .solutionsPage .magGrid {
+    gap: 12px;
+    margin-top: 16px;
+  }
+  .solutionsPage .magGrid article {
+    padding: 18px 20px;
+  }
+  .solutionsPage .magGrid article > small:first-child {
+    font-family: Montserrat, Arial, sans-serif;
+    font-size: 9px;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+  }
+  .solutionsPage .magGrid h3 {
+    margin-top: 8px;
+    font-size: 23px;
+    line-height: 1.08;
+    text-transform: none;
+  }
+  .solutionsPage .magGrid p {
+    margin-top: 7px;
+    font-size: 11px;
+  }
+  .solutionsPage .routines {
+    padding: 32px 20px;
+  }
+  .solutionsPage .featureBand {
+    padding: 24px 20px;
+  }
+  .solutionsPage .needs {
+    padding: 28px 20px;
+  }
+  .solutionsPage .pillars article {
+    min-height: 0;
+    padding: var(--bbi-card-pad-y) var(--bbi-card-pad-x);
+  }
+  .solutionsPage .routineGrid article {
+    min-height: 0;
+    padding: var(--bbi-card-pad-y) var(--bbi-card-pad-x);
+  }
+  .solutionsPage .magGrid article {
+    min-height: 0;
+    padding: var(--bbi-card-pad-y) var(--bbi-card-pad-x);
+  }
+  .solutionsPage .standardGrid article {
+    min-height: 0;
+    padding: var(--bbi-card-pad-y) var(--bbi-card-pad-x);
+  }
+  .solutionsPage .featureBand > div:first-child {
+    padding: var(--bbi-card-pad-y) var(--bbi-card-pad-x);
+  }
+  .solutionsPage .routineGrid,
+  .solutionsPage .standardGrid,
+  .solutionsPage .magGrid {
+    grid-template-columns: 1fr;
+  }
+  .solutionsPage .brandGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .solutionsPage .brandGrid div,
+  .solutionsPage .brandGrid .brandCardLink {
+    padding: 14px;
+  }
+  .solutionsPage .brandGrid small {
+    font-size: 7px;
+    letter-spacing: 1.8px;
+  }
+  .solutionsPage .brandGrid em {
+    font-size: 8px;
+    line-height: normal;
+    color: #8a9396;
+  }
+  .solutionsPage .pillars article > p:not(.label),
+  .solutionsPage .routineGrid p,
+  .solutionsPage .standardGrid p,
+  .solutionsPage .magGrid p {
+    font-size: 11px;
+  }
+  .solutionsPage .sectionIntro,
+  .solutionsPage .brandIntro,
+  .solutionsPage .featureBand p {
+    font-size: var(--bbi-intro);
+  }
+}
+
+.solutionsPage .heroActions{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:18px}
+.solutionsPage .heroActions .primary{
+  box-sizing:border-box;
+  width:218px;
+  min-height:34px;
+  justify-content:center;
+  gap:6px;
+  margin-top:0;
+  padding:0 12px;
+  font-size:8px;
+  font-weight:500;
+  letter-spacing:.9px;
+  line-height:1;
+  white-space:nowrap;
+  border-width:1px;
+}
+.solutionsPage .heroActions .primary svg{flex:0 0 auto;width:12px;height:12px;stroke-width:1.7}
+.solutionsPage .finderHeroCta{background:var(--bbi-gold);color:#07172c}
+.solutionsPage .finderHeroCta:hover{filter:brightness(1.03)}
+@media(max-width:700px){
+  .solutionsPage .heroActions{align-items:flex-start;flex-direction:column;gap:7px;margin-top:18px}
+  .solutionsPage .heroActions .primary{
+    width:218px;
+    max-width:100%;
+    min-height:34px;
+    padding:0 12px;
+    font-size:8px;
+    letter-spacing:.85px;
+  }
+}
+
+
+/* Homepage link typography alignment */
+.solutionsPage .featureBand a{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  margin-top:16px;
+  text-decoration:none;
+  font:500 10px/1 Montserrat, Arial, sans-serif;
+  letter-spacing:1.2px;
+}
+@media(max-width:620px){
+  .solutionsPage .featureBand a{
+    font-size:9px;
+    letter-spacing:1.5px;
+  }
+}
+
+
+/* Homepage redhair video preview — true full-bleed hero */
+.solutionsPage .hero.homeVideoHero{
+  min-height:720px;
+  height:calc(100svh - 84px);
+  max-height:900px;
+  padding:0;
+  display:block;
+  background:var(--bbi-hero-1);
+}
+.solutionsPage .homeHeroVideo{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:58% 50%;
+  z-index:0;
+}
+.solutionsPage .homeHeroVideoShade{
+  position:absolute;
+  inset:0;
+  z-index:1;
+  pointer-events:none;
+  background:linear-gradient(90deg,rgba(5,29,57,.08) 0%,rgba(5,29,57,.03) 36%,rgba(5,29,57,0) 66%);
+}
+.solutionsPage .homeVideoHero .heroContent{
+  position:relative;
+  z-index:2;
+  width:min(370px,31vw);
+  min-width:330px;
+  height:100%;
+  margin-left:3vw;
+  padding:58px 34px 42px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  background:linear-gradient(180deg,rgba(9,38,74,.20),rgba(9,38,74,.30));
+  border-left:1px solid rgba(183,154,91,.32);
+  border-right:1px solid rgba(183,154,91,.32);
+  backdrop-filter:blur(2px);
+  box-sizing:border-box;
+}
+.solutionsPage .homeVideoHero .heroContent h1{
+  font-size:clamp(42px,3.65vw,60px);
+}
+.solutionsPage .homeVideoHero .heroActions{
+  flex-direction:column;
+  align-items:flex-start;
+}
+@media(max-width:900px){
+  .solutionsPage .hero.homeVideoHero{
+    min-height:680px;
+    height:calc(100svh - 76px);
+  }
+  .solutionsPage .homeHeroVideo{
+    object-position:56% 50%;
+  }
+  .solutionsPage .homeVideoHero .heroContent{
+    width:min(350px,43vw);
+    min-width:300px;
+    margin-left:20px;
+    padding:44px 28px 34px;
+    background:linear-gradient(180deg,rgba(9,38,74,.22),rgba(9,38,74,.34));
+  }
+}
+@media(max-width:620px){
+  .solutionsPage .hero.homeVideoHero{
+    min-height:640px;
+    height:calc(100svh - 70px);
+    max-height:760px;
+  }
+  .solutionsPage .homeHeroVideo{
+    object-fit:cover;
+    object-position:54% 50%;
+  }
+  .solutionsPage .homeHeroVideoShade{
+    background:linear-gradient(180deg,rgba(5,29,57,.02) 0%,rgba(5,29,57,.06) 44%,rgba(5,29,57,.24) 100%);
+  }
+  .solutionsPage .homeVideoHero .heroContent{
+    position:absolute;
+    left:16px;
+    right:16px;
+    bottom:16px;
+    width:auto;
+    min-width:0;
+    height:auto;
+    margin:0;
+    padding:18px 20px 16px;
+    display:block;
+    background:linear-gradient(180deg,rgba(9,38,74,.26),rgba(9,38,74,.38));
+    border:1px solid rgba(183,154,91,.30);
+    backdrop-filter:blur(2px);
+  }
+  .solutionsPage .homeVideoHero .heroContent h1{
+    font-size:34px;
+    line-height:.98;
+    margin:10px 0;
+  }
+  .solutionsPage .homeVideoHero .eyebrow{
+    font-size:8.5px;
+    letter-spacing:2.2px;
+  }
+  .solutionsPage .homeVideoHero .lead{
+    font-size:10px;
+    line-height:1.55;
+    margin:0 0 8px;
+  }
+  .solutionsPage .homeVideoHero .heroActions{
+    flex-direction:row;
+    flex-wrap:wrap;
+    gap:6px;
+    margin-top:10px;
+  }
+  .solutionsPage .homeVideoHero .heroActions .primary{
+    width:auto;
+    min-width:0;
+    flex:1 1 46%;
+    max-width:none;
+    min-height:32px;
+    padding:0 9px;
+    font-size:7px;
+    letter-spacing:.55px;
+  }
+}
+
+
+/* Homepage hero topic navigation */
+.solutionsPage .homeVideoHero .heroContent{
+  justify-content:flex-start;
+  padding-top:48px;
+  padding-bottom:28px;
+}
+.solutionsPage .homeVideoHero .heroContent h1{
+  margin:16px 0 18px;
+}
+.solutionsPage .homeVideoHero .heroActions{
+  margin-top:20px;
+}
+.solutionsPage .heroTopicNav{
+  margin-top:26px;
+  padding-top:18px;
+  border-top:1px solid rgba(255,255,255,.18);
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.solutionsPage .heroTopicNav a{
+  color:rgba(255,255,255,.92);
+  text-decoration:none;
+  font:500 9px/1.2 Montserrat,Arial,sans-serif;
+  letter-spacing:1.45px;
+  text-transform:uppercase;
+  transition:color .18s ease, transform .18s ease;
+}
+.solutionsPage .heroTopicNav a:hover{
+  color:var(--bbi-gold);
+  transform:translateX(3px);
+}
+@media(max-width:900px){
+  .solutionsPage .homeVideoHero .heroContent{
+    padding-top:34px;
+    padding-bottom:24px;
+  }
+  .solutionsPage .heroTopicNav{
+    gap:7px;
+    margin-top:20px;
+  }
+}
+@media(max-width:620px){
+  .solutionsPage .homeVideoHero .heroContent{
+    left:14px;
+    right:14px;
+    bottom:14px;
+    padding:18px 18px 16px;
+    max-height:72%;
+    overflow:auto;
+  }
+  .solutionsPage .heroTopicNav{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px 14px;
+    margin-top:16px;
+    padding-top:14px;
+  }
+  .solutionsPage .heroTopicNav a{
+    font-size:8px;
+    letter-spacing:1px;
+  }
+}
+
+
+/* Hero rail order + typography refinement */
+.solutionsPage .homeVideoHero .heroContent{
+  display:flex;
+  flex-direction:column;
+}
+.solutionsPage .homeVideoHero .heroTopicNav{
+  order:3;
+  margin-top:22px;
+}
+.solutionsPage .homeVideoHero .heroActions{
+  order:4;
+  margin-top:auto;
+  padding-top:24px;
+}
+.solutionsPage .homeVideoHero .heroActions .primary{
+  font:500 9px/1.2 Montserrat,Arial,sans-serif;
+  letter-spacing:1.45px;
+  text-transform:uppercase;
+}
+.solutionsPage .homeVideoHero .homeHeroVideo{
+  filter:contrast(1.045) saturate(1.025);
+}
+@media(max-width:620px){
+  .solutionsPage .homeVideoHero .heroTopicNav{
+    margin-top:14px;
+  }
+  .solutionsPage .homeVideoHero .heroActions{
+    margin-top:16px;
+    padding-top:0;
+  }
+  .solutionsPage .homeVideoHero .heroActions .primary{
+    font-size:8px;
+    letter-spacing:1px;
+  }
+}
+
+
+/* Force both homepage hero CTA buttons to identical typography and sizing */
+.solutionsPage .homeVideoHero .heroActions{
+  width:100%;
+}
+.solutionsPage .homeVideoHero .heroActions .primary,
+.solutionsPage .homeVideoHero .heroActions .finderHeroCta{
+  box-sizing:border-box;
+  width:100%;
+  max-width:none;
+  min-height:36px;
+  padding:0 14px;
+  justify-content:center;
+  font-family:Montserrat,Arial,sans-serif;
+  font-size:9px;
+  font-weight:500;
+  line-height:1.2;
+  letter-spacing:1.45px;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+@media(max-width:620px){
+  .solutionsPage .homeVideoHero .heroActions .primary,
+  .solutionsPage .homeVideoHero .heroActions .finderHeroCta{
+    width:100%;
+    max-width:none;
+    font-size:8px;
+    font-weight:500;
+    line-height:1.2;
+    letter-spacing:1px;
+  }
+}
+
+
+/* Mobile hero: restore the vertical translucent rail concept */
+@media(max-width:620px){
+  .solutionsPage .hero.homeVideoHero{
+    position:relative;
+    min-height:760px;
+    height:calc(100svh - 70px);
+    max-height:none;
+    padding:0;
+    overflow:hidden;
+  }
+
+  .solutionsPage .homeHeroVideo{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:58% 50%;
+  }
+
+  .solutionsPage .homeHeroVideoShade{
+    display:block;
+    background:linear-gradient(
+      90deg,
+      rgba(5,29,57,.10) 0%,
+      rgba(5,29,57,.03) 60%,
+      rgba(5,29,57,0) 100%
+    );
+  }
+
+  .solutionsPage .homeVideoHero .heroContent{
+    position:absolute;
+    top:0;
+    left:14px;
+    bottom:0;
+    right:auto;
+    width:min(66vw,300px);
+    min-width:0;
+    max-height:none;
+    height:100%;
+    margin:0;
+    padding:30px 18px 22px;
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+    background:linear-gradient(
+      180deg,
+      rgba(9,38,74,.34),
+      rgba(9,38,74,.48)
+    );
+    border-top:0;
+    border-bottom:0;
+    border-left:1px solid rgba(183,154,91,.30);
+    border-right:1px solid rgba(183,154,91,.30);
+    border-radius:0;
+    backdrop-filter:blur(3px);
+    -webkit-backdrop-filter:blur(3px);
+    box-sizing:border-box;
+  }
+
+  .solutionsPage .homeVideoHero .eyebrow{
+    margin:0 0 16px;
+    font-size:8px;
+    line-height:1.25;
+    letter-spacing:1.8px;
+  }
+
+  .solutionsPage .homeVideoHero .heroContent h1{
+    margin:0 0 14px;
+    font-size:clamp(34px,9vw,46px);
+    line-height:.96;
+  }
+
+  .solutionsPage .homeVideoHero .lead{
+    margin:0 0 14px;
+    font-size:10px;
+    line-height:1.55;
+  }
+
+  .solutionsPage .homeVideoHero .heroTopicNav{
+    display:flex;
+    flex-direction:column;
+    gap:7px;
+    margin:0;
+    padding:14px 0 0;
+    border-top:1px solid rgba(255,255,255,.16);
+  }
+
+  .solutionsPage .homeVideoHero .heroTopicNav a{
+    font-size:8px;
+    line-height:1.2;
+    letter-spacing:1.05px;
+  }
+
+  .solutionsPage .homeVideoHero .heroActions{
+    width:100%;
+    margin-top:auto;
+    padding-top:18px;
+    display:flex;
+    flex-direction:column;
+    gap:7px;
+  }
+
+  .solutionsPage .homeVideoHero .heroActions .primary,
+  .solutionsPage .homeVideoHero .heroActions .finderHeroCta{
+    width:100%;
+    max-width:none;
+    min-height:34px;
+    padding:0 9px;
+    font-size:7.4px;
+    line-height:1.2;
+    letter-spacing:.75px;
+    white-space:normal;
+    text-align:center;
+  }
+}
+
+
+/* Mobile homepage hero v2: compact rail, all content visible */
+@media(max-width:620px){
+  .solutionsPage .hero.homeVideoHero{
+    min-height:720px;
+    height:calc(100svh - 70px);
+    overflow:hidden;
+  }
+
+  .solutionsPage .homeVideoHero .heroContent{
+    top:0;
+    left:14px;
+    bottom:0;
+    width:min(84vw,360px);
+    padding:24px 18px 18px;
+    overflow:visible;
+    background:linear-gradient(180deg,rgba(9,38,74,.34),rgba(9,38,74,.46));
+  }
+
+  .solutionsPage .homeVideoHero .heroContent h1{
+    display:block;
+    margin:0 0 12px;
+    font-size:clamp(31px,8.5vw,42px);
+    line-height:.98;
+  }
+
+  .solutionsPage .homeVideoHero .lead{
+    margin:0 0 12px;
+    font-size:10px;
+    line-height:1.45;
+  }
+
+  .solutionsPage .homeVideoHero .heroTopicNav{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px 14px;
+    padding-top:14px;
+  }
+
+  .solutionsPage .homeVideoHero .heroTopicNav a{
+    font-size:7.8px;
+    line-height:1.2;
+    letter-spacing:.9px;
+  }
+
+  .solutionsPage .homeVideoHero .heroActions{
+    display:flex;
+    flex-direction:column;
+    gap:7px;
+    margin-top:18px;
+    padding-top:0;
+  }
+
+  .solutionsPage .homeVideoHero .heroActions .primary,
+  .solutionsPage .homeVideoHero .heroActions .finderHeroCta{
+    width:100%;
+    min-height:34px;
+    padding:0 10px;
+    font-size:7.4px;
+    letter-spacing:.7px;
+    white-space:normal;
+  }
+}
