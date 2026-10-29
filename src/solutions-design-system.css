@@ -1082,3 +1082,16 @@
     white-space:normal;
   }
 }
+
+/* Approved readability baseline for Solutions need-selector labels. */
+.solutionsPage .needs .needLink{
+  font-family:var(--bbi-font-body);
+  font-size:13px;
+  font-weight:400;
+  line-height:1.45;
+  letter-spacing:0;
+  min-height:40px;
+  padding:10px 14px;
+  text-align:center;
+}
+@media(max-width:620px){.solutionsPage .needs .needLink{font-size:13px;min-height:42px;padding:10px 12px}}
