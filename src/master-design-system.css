@@ -20,8 +20,8 @@
   --bbi-card-title: 26px;
   --bbi-card-subtitle: 20px;
   --bbi-intro: 13px;
-  --bbi-body: 12px;
-  --bbi-card-body: 11px;
+  --bbi-body: 13px;
+  --bbi-card-body: 13px;
   --bbi-meta: 9px;
   --bbi-legal: 8px;
 
@@ -263,9 +263,9 @@ article > a,
     --bbi-section-title: 28px;
     --bbi-card-title: 26px;
     --bbi-card-subtitle: 19px;
-    --bbi-intro: 12px;
-    --bbi-body: 11px;
-    --bbi-card-body: 11px;
+    --bbi-intro: 13px;
+    --bbi-body: 13px;
+    --bbi-card-body: 13px;
     --bbi-section-pad-y: 40px;
     --bbi-section-pad-x: 20px;
     --bbi-card-pad-y: 20px;
@@ -368,3 +368,6 @@ article > a,
   letter-spacing:0;
   line-height:1.75;
 }
+
+/* Unified editorial descriptions, including mobile: 13px exactly. */
+.bbiIntroText,.bbiBodyText,.bbiCardText{font-size:13px;line-height:1.75}
