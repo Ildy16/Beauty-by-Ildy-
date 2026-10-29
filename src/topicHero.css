@@ -143,3 +143,10 @@
   .topicHeroNav a{font-size:clamp(14px,4vw,16px);line-height:1.2;padding-block:10px}
   .topicHeroDots{pointer-events:none}
 }
+
+/* Shared hero typography guard: keep long translated titles inside the glass rail. */
+.topicHeroRail{box-sizing:border-box;min-width:0}
+.topicHeroRail h1{max-width:100%;min-width:0;font-size:clamp(35px,3vw,49px);line-height:1.04;overflow-wrap:break-word;hyphens:auto}
+.topicHeroNav a span{min-width:0;overflow-wrap:break-word}
+@media(max-width:900px){.topicHeroRail h1{font-size:clamp(32px,4.4vw,43px)}}
+@media(max-width:620px){.topicHeroRail h1{font-size:clamp(32px,8vw,40px);line-height:1.08}}
