@@ -289,3 +289,22 @@ article > a,
     font-size: 10px;
   }
 }
+
+/* Cross-page editorial readability contract (approved magazine card reference).
+   Apply to descriptive copy, not headings, status labels or navigation. */
+:root{--bbi-readable-copy:13px;--bbi-readable-leading:1.75}
+.techGuidePage .techEvidenceDetails p,
+.techGuidePage .techCompare article p,
+.ingredientsPage .ingredientCard p,
+.longevityPage .longevityAreas article p,
+.wellnessPage .wellnessCard p,
+.productsPage .productCard p,
+.magazinePage .magCard p,
+.beautyFinderPage .finderCard p,
+.solutionsPage .pillars article > p:not(.label),
+.solutionsPage .routineGrid article p,
+.solutionsPage .standardGrid article p{
+  font-family:var(--bbi-font-body);
+  font-size:var(--bbi-readable-copy);
+  line-height:var(--bbi-readable-leading);
+}
