@@ -1080,3 +1080,12 @@ main#top .homeVideoHero .heroActions .finderHeroCta{
     white-space:normal;
   }
 }
+
+/* Editorial card readability trial: keep approved headings and palette unchanged. */
+main#top .magGrid article p{
+  font-family:var(--bbi-font-body);
+  font-size:clamp(13px,1vw,14px);
+  line-height:1.75;
+  font-weight:400;
+}
+@media(max-width:620px){main#top .magGrid article p{font-size:13px;line-height:1.7}}
