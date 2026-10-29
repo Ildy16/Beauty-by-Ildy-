@@ -130,3 +130,16 @@
   .topicHeroRail{max-height:calc(100% - 32px);overflow-y:auto;overscroll-behavior:contain}
   .topicHeroNav a{min-height:48px}
 }
+
+/* Readable, keyboard-accessible editorial navigation on small screens. */
+.topicHeroBack:focus-visible,.topicHeroNav a:focus-visible{
+  outline:2px solid var(--bbi-gold,#c7a96b);
+  outline-offset:4px;
+}
+@media (max-width:620px){
+  .topicHeroRail{box-sizing:border-box;padding:28px 22px 22px}
+  .topicHeroRail h1{font-size:clamp(34px,9vw,43px);line-height:1.02;overflow-wrap:break-word}
+  .topicHeroLead{font-size:12px;line-height:1.65}
+  .topicHeroNav a{font-size:clamp(14px,4vw,16px);line-height:1.2;padding-block:10px}
+  .topicHeroDots{pointer-events:none}
+}
