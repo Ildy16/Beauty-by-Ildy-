@@ -231,3 +231,22 @@
  .techGuidePage .techEvidenceTop h2{overflow-wrap:break-word}
  .techGuidePage .techEvidenceDetails p,.techGuidePage .techCompare article p{font-size:14px;line-height:1.75}
 }
+
+/* Consistent comparison headings: override inherited card-title variations. */
+.techGuidePage .techCompare > div article h3{
+  font-family:var(--bbi-font-heading);
+  font-size:clamp(20px,1.65vw,24px);
+  font-weight:500;
+  line-height:1.2;
+  letter-spacing:0;
+  overflow-wrap:break-word;
+  text-transform:uppercase;
+}
+.techGuidePage .techCompare > div article strong{
+  display:block;
+  margin-top:6px;
+  font-family:var(--bbi-font-body);
+  font-size:12px;
+  line-height:1.5;
+}
+@media(max-width:620px){.techGuidePage .techCompare > div article h3{font-size:21px}}
