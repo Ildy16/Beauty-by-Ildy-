@@ -12,10 +12,10 @@
   opacity:0;
   background-size:cover;
   background-position:center;
-  transform:scale(1.01);
-  transition:opacity 1s ease,transform 6.5s ease;
+  transform:none;
+  transition:opacity 1.4s ease;
 }
-.topicHeroSlide.isActive{opacity:1;transform:scale(1.055)}
+.topicHeroSlide.isActive{opacity:1}
 .topicHeroRail{
   position:relative;
   z-index:2;
@@ -119,4 +119,14 @@
   .topicHeroLead{font-size:10.5px;margin:14px 0 18px}
   .topicHeroNav a{min-height:48px;font-size:16px}
   .topicHeroDots{top:22px;right:22px;bottom:auto}
+}
+
+/* Motion-safe editorial hero: no automatic zoom or camera movement. */
+@media (prefers-reduced-motion: reduce){
+  .topicHeroSlide{transition:none}
+  .topicHeroNav a{transition:none}
+}
+@media (max-width:620px){
+  .topicHeroRail{max-height:calc(100% - 32px);overflow-y:auto;overscroll-behavior:contain}
+  .topicHeroNav a{min-height:48px}
 }
