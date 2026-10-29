@@ -292,6 +292,11 @@ main#top .routineGrid {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 16px;
 }
+@media (max-width: 1180px) {
+  main#top .routineGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
 main#top .routineGrid article {
   min-height: 0;
   padding: 24px;
@@ -421,9 +426,6 @@ main#top .magGrid p {
   main#top .standardGrid,
   main#top .magGrid {
     grid-template-columns: 1fr;
-  }
-  main#top .routineGrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   main#top .brandGrid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1081,28 +1083,17 @@ main#top .homeVideoHero .heroActions .finderHeroCta{
   }
 }
 
-/* Editorial card readability trial: keep approved headings and palette unchanged. */
-main#top .magGrid article p{
-  font-family:var(--bbi-font-body);
-  font-size:clamp(13px,1vw,14px);
-  line-height:1.75;
-  font-weight:400;
-}
-@media(max-width:620px){main#top .magGrid article p{font-size:13px;line-height:1.7}}
 
-/* Brand cards: proportional label and description sizes, capped at 13px. */
-main#top .brandGrid small{
-  font-family:var(--bbi-font-body);
-  font-size:11px;
-  line-height:1.45;
-  letter-spacing:1px;
-}
-main#top .brandGrid em{
-  font-family:var(--bbi-font-body);
-  font-size:13px;
-  line-height:1.55;
-  font-style:normal;
-}
+/* Mobile hero CTAs: keep both buttons stacked inside the rail and match desktop type size */
+@media(max-width:620px){
+  main#top .homeVideoHero .heroActions{
+    flex-wrap:nowrap;
+  }
 
-/* Approved exact body size: 13px on every viewport, no fluid sizing. */
-main#top .magGrid article p{font-size:13px;line-height:1.75}
+  main#top .homeVideoHero .heroActions .primary,
+  main#top .homeVideoHero .heroActions .finderHeroCta{
+    min-height:36px;
+    font-size:9px;
+    letter-spacing:1px;
+  }
+}
