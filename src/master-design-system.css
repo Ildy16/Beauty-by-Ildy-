@@ -331,3 +331,29 @@ article > a,
   font-size:13px;
   line-height:1.75;
 }
+
+/* Exact 13px body copy on content pages. Intentionally excludes headlines,
+   eyebrow labels, buttons, navigation and legal microcopy. */
+.techGuidePage .techEvidenceDetails p,
+.techGuidePage .techCompare article p,
+.ingredientsPage .ingredientLead,
+.ingredientsPage .ingredientCard p,
+.longevityPage .longevityLead,
+.longevityPage .longevityIntro,
+.longevityPage .termCard p,
+.wellnessPage .wellnessLead,
+.wellnessPage .wellnessIntro,
+.wellnessPage .wellnessFocusCard p,
+.productsPage .productCardBody p,
+.magazinePage .magBody p,
+.magazinePage .magArticleText p,
+.beautyFinderPage .finderResultCard p,
+.beautyFinderPage .finderIntroCard p,
+.brandPageBody p,
+.brandProductCard p,
+.solutionsPage .pillars article > p:not(.label),
+.solutionsPage .routineGrid article p,
+.solutionsPage .standardGrid article p{
+  font-size:13px;
+  line-height:1.75;
+}
