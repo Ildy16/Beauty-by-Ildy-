@@ -19,6 +19,7 @@ import { BeautyFinder } from "./beautyFinder.jsx";
 import { NuSkinPage } from "./brandPages.jsx";
 import { DoterraPage } from "./doterra.jsx";
 import { MagazinePage } from "./magazine.jsx";
+import { SolutionsVisualNav } from "./solutionsVisualNav.jsx";
 import "./styles.css";
 
 const copy = {
@@ -491,7 +492,8 @@ function App() {
   let content;
   if (legal) content = <LegalPage lang={lang} type={legal} />;
   else if (page === "solutions") content = (
-    <main className="solutionsPage">
+    <main id="top" className="solutionsPage">
+      <SolutionsVisualNav lang={lang} />
       <section className="needs">
         <p>{t.choose}</p>
         <div>
