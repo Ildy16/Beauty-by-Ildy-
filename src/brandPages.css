@@ -76,6 +76,30 @@
   height:1px;
   background:var(--gold);
 }
+.nuskinProductImage{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  aspect-ratio:4/3;
+  margin:0 0 18px;
+  border:1px solid rgba(138,120,84,.14);
+  background:#fffdfa;
+  overflow:hidden;
+}
+.nuskinProductImage img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  padding:14px;
+  box-sizing:border-box;
+}
+.nuskinProductImage>span{
+  color:rgba(138,120,84,.48);
+  font:500 10px/1 Montserrat;
+  letter-spacing:.22em;
+}
 .nuskinCard{
   position:relative;
   overflow:hidden;
@@ -163,6 +187,8 @@
     line-height:1.55;
   }
   .nuskinCard{min-height:0}
+  .nuskinProductImage{aspect-ratio:16/11;margin-bottom:16px}
+  .nuskinProductImage img{padding:12px}
   .brandCardTopline{align-items:flex-start}
   .brandCardTopline>em{font-size:6.5px}
   .nuskinCard h2{font-size:25px}
