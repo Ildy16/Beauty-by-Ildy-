@@ -206,12 +206,13 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  /* Same type as the card descriptions below (descriptive copy role). */
   font:
-    400 9px/1.2 Montserrat,
+    400 13px/1.75 Montserrat,
     Arial,
     sans-serif;
-  letter-spacing: .15px;
-  color: #5d686d;
+  letter-spacing: 0;
+  color: var(--bbi-muted);
   text-decoration: none;
   border-width: 1px;
 }
@@ -473,7 +474,6 @@
   :is(main#top, main#solutionsPage) .needLink {
     min-height: 30px;
     padding: 5px 10px;
-    font-size: 8.5px;
   }
   :is(main#top, main#solutionsPage) .pillars .label {
     font-size: 9px;
