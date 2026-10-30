@@ -213,7 +213,8 @@
 
 
 /* Premium editorial evidence cards: readable content on desktop and mobile. */
-.techGuidePage .techGuideList{max-width:1480px;margin-inline:auto}
+/* Evidence cards and the comparison share one content container. */
+.techGuidePage .techGuideList,.techGuidePage .techCompare{box-sizing:border-box;max-width:1480px;margin-inline:auto}
 .techGuidePage .techEvidenceCard{border-radius:2px;box-shadow:0 10px 32px rgba(7,27,51,.045)}
 .techGuidePage .techEvidenceDetails{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(20px,4vw,56px)}
 .techGuidePage .techEvidenceDetails > div{padding-block:18px}
@@ -221,7 +222,7 @@
 .techGuidePage .techEvidenceDetails p,.techGuidePage .techCompare article p{font-size:clamp(13px,1.05vw,15px);line-height:1.8}
 .techGuidePage .techEvidenceCard > a{min-height:44px;text-underline-offset:4px}
 .techGuidePage .techEvidenceCard > a:hover,.techGuidePage .techEvidenceCard > a:focus-visible{text-decoration:underline}
-.techGuidePage .techCompare > div{grid-template-columns:repeat(2,minmax(0,1fr));max-width:1380px}
+.techGuidePage .techCompare > div{grid-template-columns:repeat(2,minmax(0,1fr))}
 .techGuidePage .techCompare article{padding:clamp(20px,2.5vw,32px)}
 .techGuidePage .techCompare article h3{line-height:1.18}
 @media(max-width:620px){

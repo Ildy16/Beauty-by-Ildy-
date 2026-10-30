@@ -24,8 +24,8 @@ jobs:
           node-version: 20
       - name: Install dependencies
         run: npm install
-      - name: Finder tests
-        run: npm run test:finder
+      - name: Finder and layout tests
+        run: npm test
       - name: Production build
         run: npm run build
       - name: Upload preview artifact

@@ -4,6 +4,8 @@ import {products,localIngredient} from './products.jsx';
 import {goalLabels} from './finderData.js';
 import {recommend} from './finderEngine.js';
 import './beautyFinder.css';
+import {TopicHero} from './topicHero.jsx';
+import {subpageMedia} from './subpage-media.js';
 
 const C={
  hu:{
@@ -183,7 +185,7 @@ export function BeautyFinder({lang='hu'}){
  useEffect(()=>{if(started)window.scrollTo({top:0,behavior:'smooth'})},[step,showResult,started]);
  const restart=()=>{setStarted(false);setStep(0);setShowResult(false);setA({journey:null,primaryGoal:null,secondaryGoals:[],skinType:null,ageBand:null,routineLevel:'balanced',pricePreference:'best-match',currentRetinoid:false,sensitive:false,irritated:false,prescription:false,pregnancy:false,sunscreen:false,adult:null,medication:false,wellnessPregnancy:false,caffeineSensitive:false,hormonalConcern:false,eyeSensitive:false,multipleAcids:false})};
 
- if(!started)return <main className="finderPage finderLanding"><section className="finderHero"><div className="finderHeroInner"><div className="finderHeroCopy"><a href="#top" className="finderBack"><ArrowLeft size={14}/>{t.back}</a><p className="eyebrow">{t.eyebrow}</p><h1>{t.title}</h1><p className="finderHeroLead">{t.lead}</p><div className="finderHeroActions"><button className="finderPrimary" onClick={()=>setStarted(true)}>{t.start}<ArrowRight size={16}/></button><small>{t.note}</small></div></div><aside className="finderIntroCard"><p className="finderIntroTitle">{t.howTitle}</p><ol>{t.howSteps.map((item,i)=><li key={item}><span>{String(i+1).padStart(2,'0')}</span><p>{item}</p></li>)}</ol><div className="finderPrivacy"><ShieldCheck size={18}/><span>{t.privacy}</span></div></aside></div></section></main>;
+ if(!started)return <main className="finderPage finderLanding"><TopicHero eyebrow={t.eyebrow} title={t.title} lead={t.lead} backLabel={t.back} videoSrc={subpageMedia.beautyFinder.video} videoPoster={subpageMedia.beautyFinder.poster}><div className="finderRailActions"><button className="finderPrimary" onClick={()=>setStarted(true)}>{t.start}<ArrowRight size={16}/></button><small>{t.note}</small></div></TopicHero><section className="finderHowBand"><aside className="finderIntroCard"><p className="finderIntroTitle">{t.howTitle}</p><ol>{t.howSteps.map((item,i)=><li key={item}><span>{String(i+1).padStart(2,'0')}</span><p>{item}</p></li>)}</ol><div className="finderPrivacy"><ShieldCheck size={18}/><span>{t.privacy}</span></div></aside></section></main>;
 
  if(showResult){
   if(a.journey==='device')return <main className="finderPage"><section className="finderResultHero"><p className="eyebrow">{t.eyebrow}</p><h1>{t.deviceTitle}</h1><p>{t.deviceText}</p><a className="finderPrimary" href="#beauty-tech-guide">{t.deviceCta}<ArrowRight size={16}/></a><button className="finderGhost" onClick={restart}><RotateCcw size={15}/>{t.restart}</button></section></main>;

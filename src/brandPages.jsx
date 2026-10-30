@@ -1,6 +1,8 @@
 import React from "react";
-import { ArrowLeft, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import "./brandPages.css";
+import {TopicHero} from './topicHero.jsx';
+import {subpageMedia} from './subpage-media.js';
 
 const NUSKIN = [
   ["ageLOC LumiSpa iO System","BEAUTY TECH","Connected cleansing system designed to pair with the Nu Skin Vera app.","https://mysite.mynuskin.com/catalog/hu/hu/product/97139603?store=beautybyildy"],
@@ -216,20 +218,14 @@ const localizedNuSkinCta=(name,url,lang,t)=>{
   return t.official;
 };
 
-function BrandHero({title,lead,note,t}) {
-  return <section className="brandPageHero"><div>
-    <a className="brandPageBack" href="#top"><ArrowLeft size={14}/>{t.back}</a>
-    <p className="eyebrow">BEAUTY BY ILDY · BRAND EDIT</p>
-    <h1>{title}</h1>
-    <p className="brandPageLead">{lead}</p>
-    {note && <p className="brandPageNote">{note}</p>}
-  </div></section>;
+function BrandHero({title,lead,note,t,media}) {
+  return <TopicHero eyebrow="BEAUTY BY ILDY · BRAND EDIT" title={title} lead={lead} note={note} backLabel={t.back} videoSrc={media?.video} videoPoster={media?.poster}/>;
 }
 
 export function NuSkinPage({lang="hu"}) {
   const t=copy[lang]||copy.hu;
   return <main className="brandPage">
-    <BrandHero title={t.nuskinTitle} lead={t.nuskinLead} note={t.nuskinNote} t={t}/>
+    <BrandHero title={t.nuskinTitle} lead={t.nuskinLead} note={t.nuskinNote} t={t} media={subpageMedia.nuskin}/>
     <section className="brandPageBody">
       <div className="brandPageMeta"><span>{NUSKIN.length} {t.products}</span><small>{t.verified}</small></div><p className="brandPageNote">{t.localeNote}</p>
       <div className="brandGroups">

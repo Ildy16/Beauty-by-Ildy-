@@ -1,5 +1,5 @@
 /* BEAUTY BY ILDY — HOMEPAGE DESIGN SYSTEM v1
-   Scope: homepage only (main#top).
+   Scope: homepage (main#top) and the shared sections of the Solutions page (main#solutionsPage).
    Locked brand rules:
    - Cormorant Garamond = editorial headings
    - Montserrat = body, labels, navigation
@@ -8,11 +8,11 @@
 */
 
 /* Homepage canvas */
-main#top {
+:is(main#top, main#solutionsPage) {
   background: var(--bbi-sand);
   color: var(--bbi-ink);
 }
-main#top .hero {
+:is(main#top, main#solutionsPage) .hero {
   background: linear-gradient(
     125deg,
     var(--bbi-hero-1) 0%,
@@ -27,12 +27,12 @@ main#top .hero {
   position: relative;
   overflow: hidden;
 }
-main#top .heroContent {
+:is(main#top, main#solutionsPage) .heroContent {
   width: min(720px, 58%);
   position: relative;
   z-index: 2;
 }
-main#top .glow {
+:is(main#top, main#solutionsPage) .glow {
   position: absolute;
   width: 600px;
   height: 600px;
@@ -43,20 +43,20 @@ main#top .glow {
 }
 
 /* Approved homepage typography */
-main#top .hero h1 {
+:is(main#top, main#solutionsPage) .hero h1 {
   font:
     500 var(--bbi-hero-title) / 0.98 "Cormorant Garamond",
     serif;
   max-width: 680px;
   margin: 20px 0;
 }
-main#top .eyebrow {
+:is(main#top, main#solutionsPage) .eyebrow {
   color: var(--bbi-gold);
   letter-spacing: 3px;
   font-size: 11px;
   font-weight: 500;
 }
-main#top .hero .lead {
+:is(main#top, main#solutionsPage) .hero .lead {
   font:
     300 var(--bbi-intro) / 1.8 Montserrat,
     Arial,
@@ -64,7 +64,7 @@ main#top .hero .lead {
   max-width: 620px;
   color: #dce3eb;
 }
-main#top .primary {
+:is(main#top, main#solutionsPage) .primary {
   margin-top: 20px;
   display: inline-flex;
   align-items: center;
@@ -76,62 +76,62 @@ main#top .primary {
   font-size: 11px;
   letter-spacing: 1.2px;
 }
-main#top .routines h2,
-main#top .standards h2,
-main#top .brands h2,
-main#top .magazine h2 {
+:is(main#top, main#solutionsPage) .routines h2,
+:is(main#top, main#solutionsPage) .standards h2,
+:is(main#top, main#solutionsPage) .brands h2,
+:is(main#top, main#solutionsPage) .magazine h2 {
   font:
     500 var(--bbi-section-title) / 1.04 "Cormorant Garamond",
     serif;
   margin: 10px 0;
 }
-main#top .pillars h2,
-main#top .routineGrid h3,
-main#top .standardGrid h3,
-main#top .magGrid h3 {
+:is(main#top, main#solutionsPage) .pillars h2,
+:is(main#top, main#solutionsPage) .routineGrid h3,
+:is(main#top, main#solutionsPage) .standardGrid h3,
+:is(main#top, main#solutionsPage) .magGrid h3 {
   font-family: "Cormorant Garamond", serif;
   font-weight: 500;
 }
-main#top .sectionIntro,
-main#top .brandIntro,
-main#top .featureBand p {
+:is(main#top, main#solutionsPage) .sectionIntro,
+:is(main#top, main#solutionsPage) .brandIntro,
+:is(main#top, main#solutionsPage) .featureBand p {
   font:
     400 var(--bbi-intro) / 1.8 Montserrat,
     Arial,
     sans-serif;
   color: var(--bbi-muted);
 }
-main#top .sectionIntro,
-main#top .brandIntro {
+:is(main#top, main#solutionsPage) .sectionIntro,
+:is(main#top, main#solutionsPage) .brandIntro {
   max-width: 720px;
   margin-bottom: 28px;
 }
-main#top .pillars article > p:not(.label),
-main#top .routineGrid p,
-main#top .standardGrid p,
-main#top .magGrid p {
+:is(main#top, main#solutionsPage) .pillars article > p:not(.label),
+:is(main#top, main#solutionsPage) .routineGrid p,
+:is(main#top, main#solutionsPage) .standardGrid p,
+:is(main#top, main#solutionsPage) .magGrid p {
   font:
     400 11px/1.7 Montserrat,
     Arial,
     sans-serif;
   color: var(--bbi-muted);
 }
-main#top .pillars .label,
-main#top .routineGrid small,
-main#top .magGrid small,
-main#top .brandGrid small {
+:is(main#top, main#solutionsPage) .pillars .label,
+:is(main#top, main#solutionsPage) .routineGrid small,
+:is(main#top, main#solutionsPage) .magGrid small,
+:is(main#top, main#solutionsPage) .brandGrid small {
   font-family: Montserrat, Arial, sans-serif;
 }
-main#top .brandGrid strong {
+:is(main#top, main#solutionsPage) .brandGrid strong {
   font:
     500 22px/1.15 "Cormorant Garamond",
     serif;
   font-weight: 500;
 }
-main#top .brandGrid small {
+:is(main#top, main#solutionsPage) .brandGrid small {
   font-size: 9px;
 }
-main#top .brandGrid em {
+:is(main#top, main#solutionsPage) .brandGrid em {
   font:
     400 10px/1.45 Montserrat,
     Arial,
@@ -142,49 +142,49 @@ main#top .brandGrid em {
 }
 
 /* Shared homepage surfaces */
-main#top .needs,
-main#top .pillars,
-main#top .featureBand,
-main#top .routines,
-main#top .standards,
-main#top .brands,
-main#top .magazine {
+:is(main#top, main#solutionsPage) .needs,
+:is(main#top, main#solutionsPage) .pillars,
+:is(main#top, main#solutionsPage) .featureBand,
+:is(main#top, main#solutionsPage) .routines,
+:is(main#top, main#solutionsPage) .standards,
+:is(main#top, main#solutionsPage) .brands,
+:is(main#top, main#solutionsPage) .magazine {
   background: var(--bbi-sand);
 }
-main#top .pillars article,
-main#top .featureBand > div:first-child,
-main#top .routineGrid article,
-main#top .standardGrid article,
-main#top .brandGrid div,
-main#top .brandGrid .brandCardLink,
-main#top .magGrid article,
-main#top .needLink {
+:is(main#top, main#solutionsPage) .pillars article,
+:is(main#top, main#solutionsPage) .featureBand > div:first-child,
+:is(main#top, main#solutionsPage) .routineGrid article,
+:is(main#top, main#solutionsPage) .standardGrid article,
+:is(main#top, main#solutionsPage) .brandGrid div,
+:is(main#top, main#solutionsPage) .brandGrid .brandCardLink,
+:is(main#top, main#solutionsPage) .magGrid article,
+:is(main#top, main#solutionsPage) .needLink {
   background: var(--bbi-ivory);
   border: 1px solid var(--bbi-line);
 }
 
 /* Sections: one spacing system */
-main#top .pillars {
+:is(main#top, main#solutionsPage) .pillars {
   padding: 54px 6vw;
 }
-main#top .standards,
-main#top .brands,
-main#top .magazine {
+:is(main#top, main#solutionsPage) .standards,
+:is(main#top, main#solutionsPage) .brands,
+:is(main#top, main#solutionsPage) .magazine {
   padding: 38px 6vw;
 }
-main#top .routines {
+:is(main#top, main#solutionsPage) .routines {
   padding: 48px 6vw;
 }
-main#top .featureBand {
+:is(main#top, main#solutionsPage) .featureBand {
   padding: 30px 6vw;
 }
-main#top .needs {
+:is(main#top, main#solutionsPage) .needs {
   padding: 38px 6vw;
   border-bottom: 1px solid var(--bbi-line);
 }
 
 /* Need selector */
-main#top .needs > p {
+:is(main#top, main#solutionsPage) .needs > p {
   margin: 0;
   font:
     500 10px/1.4 Montserrat,
@@ -193,64 +193,65 @@ main#top .needs > p {
   letter-spacing: 2.6px;
   color: #8b7b5b;
 }
-main#top .needs > div {
+:is(main#top, main#solutionsPage) .needs > div {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 20px;
 }
-main#top .needLink {
+:is(main#top, main#solutionsPage) .needLink {
   min-height: 31px;
   padding: 6px 11px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  /* Same type as the card descriptions below (descriptive copy role). */
   font:
-    400 9px/1.2 Montserrat,
+    400 13px/1.75 Montserrat,
     Arial,
     sans-serif;
-  letter-spacing: .15px;
-  color: #5d686d;
+  letter-spacing: 0;
+  color: var(--bbi-muted);
   text-decoration: none;
   border-width: 1px;
 }
 
 /* Primary pillars = large information cards */
-main#top .pillars {
+:is(main#top, main#solutionsPage) .pillars {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
 }
-main#top .pillars article {
+:is(main#top, main#solutionsPage) .pillars article {
   min-height: 0;
   padding: 26px;
 }
-main#top .pillars .label {
+:is(main#top, main#solutionsPage) .pillars .label {
   margin: 14px 0 0;
 }
-main#top .pillars h2,
-main#top .featureBand h2 {
+:is(main#top, main#solutionsPage) .pillars h2,
+:is(main#top, main#solutionsPage) .featureBand h2 {
   font-size: var(--bbi-card-title);
   line-height: 1.08;
 }
-main#top .pillars h2 {
+:is(main#top, main#solutionsPage) .pillars h2 {
   margin: 10px 0 0;
 }
-main#top .pillars article > p:not(.label) {
+:is(main#top, main#solutionsPage) .pillars article > p:not(.label) {
   margin: 10px 0 0;
 }
-main#top .pillars article > span,
-main#top .routineGrid small,
-main#top .magGrid small {
+:is(main#top, main#solutionsPage) .pillars article > span,
+:is(main#top, main#solutionsPage) .routineGrid small,
+:is(main#top, main#solutionsPage) .magGrid small {
   font:
     400 30px "Cormorant Garamond",
     serif;
   color: var(--bbi-gold);
 }
-main#top .pillars a,
-main#top .routineGrid a,
-main#top .magGrid a {
+:is(main#top, main#solutionsPage) .pillars a,
+:is(main#top, main#solutionsPage) .routineGrid a,
+:is(main#top, main#solutionsPage) .magGrid a {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -258,101 +259,106 @@ main#top .magGrid a {
   font-size: 10px;
   letter-spacing: 1.2px;
 }
-main#top .pillars a {
+:is(main#top, main#solutionsPage) .pillars a {
   margin-top: 16px;
 }
-main#top .routineGrid a {
+:is(main#top, main#solutionsPage) .routineGrid a {
   margin-top: 16px;
 }
-main#top .magGrid a {
+:is(main#top, main#solutionsPage) .magGrid a {
   margin-top: 16px;
 }
 
 /* Hair & scalp = one large information card */
-main#top .featureBand > div:first-child {
+:is(main#top, main#solutionsPage) .featureBand > div:first-child {
   max-width: 620px;
   padding: 26px;
 }
-main#top .featureBand h2 {
+:is(main#top, main#solutionsPage) .featureBand h2 {
   margin: 0;
 }
-main#top .featureBand p {
+:is(main#top, main#solutionsPage) .featureBand p {
   margin: 8px 0 0;
 }
 
 /* Routines = normal cards */
-main#top .routines > h2 {
+:is(main#top, main#solutionsPage) .routines > h2 {
   margin: 0;
 }
-main#top .routines .sectionIntro {
+:is(main#top, main#solutionsPage) .routines .sectionIntro {
   margin: 8px 0 20px;
 }
-main#top .routineGrid {
+:is(main#top, main#solutionsPage) .routineGrid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 16px;
 }
-main#top .routineGrid article {
+@media (max-width: 1180px) {
+  :is(main#top, main#solutionsPage) .routineGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+:is(main#top, main#solutionsPage) .routineGrid article {
   min-height: 0;
   padding: 24px;
 }
-main#top .routineGrid small {
+:is(main#top, main#solutionsPage) .routineGrid small {
   display: block;
   margin: 0;
 }
-main#top .routineGrid h3 {
+:is(main#top, main#solutionsPage) .routineGrid h3 {
   font-size: 26px;
   line-height: 1.08;
   margin: 10px 0 0;
 }
-main#top .routineGrid p {
+:is(main#top, main#solutionsPage) .routineGrid p {
   margin: 8px 0 0;
 }
 
 /* Standards = normal cards, no decorative icons */
-main#top .standards > h2 {
+:is(main#top, main#solutionsPage) .standards > h2 {
   margin: 0;
 }
-main#top .standardGrid {
+:is(main#top, main#solutionsPage) .standardGrid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
   margin-top: 20px;
 }
-main#top .standardGrid article {
+:is(main#top, main#solutionsPage) .standardGrid article {
   min-height: 0;
   padding: 20px;
 }
-main#top .standardGrid article > svg {
+:is(main#top, main#solutionsPage) .standardGrid article > svg {
   display: none;
 }
-main#top .standardGrid article > span:first-child {
+:is(main#top, main#solutionsPage) .standardGrid article > span:first-child {
   display: block;
   margin: 0;
 }
-main#top .standardGrid h3 {
+:is(main#top, main#solutionsPage) .standardGrid h3 {
   margin: 10px 0 0;
   font-size: 26px;
   line-height: 1.08;
 }
-main#top .standardGrid p {
+:is(main#top, main#solutionsPage) .standardGrid p {
   margin: 8px 0 0;
 }
 
 /* Brand cards = compact cards */
-main#top .brands > h2 {
+:is(main#top, main#solutionsPage) .brands > h2 {
   margin: 0;
 }
-main#top .brands .brandIntro {
+:is(main#top, main#solutionsPage) .brands .brandIntro {
   margin: 8px 0 20px;
 }
-main#top .brandGrid {
+:is(main#top, main#solutionsPage) .brandGrid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 12px;
 }
-main#top .brandGrid div,
-main#top .brandGrid .brandCardLink {
+:is(main#top, main#solutionsPage) .brandGrid div,
+:is(main#top, main#solutionsPage) .brandGrid .brandCardLink {
   min-height: 0;
   padding: 14px;
   display: flex;
@@ -360,43 +366,43 @@ main#top .brandGrid .brandCardLink {
   justify-content: center;
   text-align: center;
 }
-main#top .brandGrid .brandCardLink{
+:is(main#top, main#solutionsPage) .brandGrid .brandCardLink{
   color:inherit;
   text-decoration:none;
   transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease;
 }
-main#top .brandGrid .brandCardLink:hover{
+:is(main#top, main#solutionsPage) .brandGrid .brandCardLink:hover{
   transform:translateY(-1px);
   border-color:rgba(183,154,91,.52);
   box-shadow:0 8px 20px rgba(7,23,44,.05);
 }
-main#top .brandGrid strong {
+:is(main#top, main#solutionsPage) .brandGrid strong {
   align-self: center;
   white-space: nowrap;
 }
-main#top .brandGrid small {
+:is(main#top, main#solutionsPage) .brandGrid small {
   letter-spacing: 1.4px;
   color: var(--bbi-gold);
   margin-top: 6px;
 }
 
 /* Magazine = normal cards */
-main#top .magazine > h2 {
+:is(main#top, main#solutionsPage) .magazine > h2 {
   margin: 0;
   font-size: 30px;
   line-height: 1;
 }
-main#top .magGrid {
+:is(main#top, main#solutionsPage) .magGrid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
   margin-top: 20px;
 }
-main#top .magGrid article {
+:is(main#top, main#solutionsPage) .magGrid article {
   min-height: 0;
   padding: 18px 20px;
 }
-main#top .magGrid article > small:first-child {
+:is(main#top, main#solutionsPage) .magGrid article > small:first-child {
   display: block;
   margin: 0;
   font-family: Montserrat, Arial, sans-serif;
@@ -406,110 +412,106 @@ main#top .magGrid article > small:first-child {
   letter-spacing: 1.4px;
   text-transform: uppercase;
 }
-main#top .magGrid h3 {
+:is(main#top, main#solutionsPage) .magGrid h3 {
   font-size: 24px;
   line-height: 1.08;
   margin: 8px 0 0;
   text-transform: none;
 }
-main#top .magGrid p {
+:is(main#top, main#solutionsPage) .magGrid p {
   margin: 8px 0 0;
 }
 
 @media (max-width: 1000px) {
-  main#top .pillars,
-  main#top .standardGrid,
-  main#top .magGrid {
+  :is(main#top, main#solutionsPage) .pillars,
+  :is(main#top, main#solutionsPage) .standardGrid,
+  :is(main#top, main#solutionsPage) .magGrid {
     grid-template-columns: 1fr;
   }
-  main#top .routineGrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  main#top .brandGrid {
+  :is(main#top, main#solutionsPage) .brandGrid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
 
-main#top .heroTitleMobile { display: none; }
+:is(main#top, main#solutionsPage) .heroTitleMobile { display: none; }
 
 @media (max-width: 620px) {
-  main#top .hero {
+  :is(main#top, main#solutionsPage) .hero {
     min-height: 400px;
     padding: 44px 24px;
   }
-  main#top .heroContent {
+  :is(main#top, main#solutionsPage) .heroContent {
     width: 100%;
   }
-  main#top .hero h1 {
+  :is(main#top, main#solutionsPage) .hero h1 {
     font-size: var(--bbi-hero-title);
   }
-  main#top .heroTitleDesktop {
+  :is(main#top, main#solutionsPage) .heroTitleDesktop {
     display: none;
   }
-  main#top .heroTitleMobile {
+  :is(main#top, main#solutionsPage) .heroTitleMobile {
     display: block;
   }
-  main#top .heroTitleMobile > span {
+  :is(main#top, main#solutionsPage) .heroTitleMobile > span {
     display: block;
   }
-  main#top .hero .lead {
+  :is(main#top, main#solutionsPage) .hero .lead {
     font-size: var(--bbi-intro);
   }
-  main#top .eyebrow {
+  :is(main#top, main#solutionsPage) .eyebrow {
     font-size: 10px;
     letter-spacing: 3.5px;
   }
-  main#top .primary {
+  :is(main#top, main#solutionsPage) .primary {
     font-size: 10px;
     letter-spacing: 1.4px;
   }
-  main#top .needs > p {
+  :is(main#top, main#solutionsPage) .needs > p {
     font-size: 9px;
     letter-spacing: 3px;
   }
-  main#top .needLink {
+  :is(main#top, main#solutionsPage) .needLink {
     min-height: 30px;
     padding: 5px 10px;
-    font-size: 8.5px;
   }
-  main#top .pillars .label {
+  :is(main#top, main#solutionsPage) .pillars .label {
     font-size: 9px;
     letter-spacing: 2.5px;
   }
-  main#top .pillars a,
-  main#top .routineGrid a,
-  main#top .magGrid a {
+  :is(main#top, main#solutionsPage) .pillars a,
+  :is(main#top, main#solutionsPage) .routineGrid a,
+  :is(main#top, main#solutionsPage) .magGrid a {
     font-size: 9px;
     letter-spacing: 1.5px;
   }
-  main#top .routines h2,
-  main#top .standards h2,
-  main#top .brands h2,
-  main#top .magazine h2 {
+  :is(main#top, main#solutionsPage) .routines h2,
+  :is(main#top, main#solutionsPage) .standards h2,
+  :is(main#top, main#solutionsPage) .brands h2,
+  :is(main#top, main#solutionsPage) .magazine h2 {
     font-size: var(--bbi-section-title);
     line-height: 0.96;
   }
-  main#top .pillars {
+  :is(main#top, main#solutionsPage) .pillars {
     padding: 40px 20px;
   }
-  main#top .standards,
-  main#top .brands,
-  main#top .magazine {
+  :is(main#top, main#solutionsPage) .standards,
+  :is(main#top, main#solutionsPage) .brands,
+  :is(main#top, main#solutionsPage) .magazine {
     padding: 28px 20px;
   }
-  main#top .magazine > h2 {
+  :is(main#top, main#solutionsPage) .magazine > h2 {
     font-size: 28px;
     line-height: 1;
   }
-  main#top .magGrid {
+  :is(main#top, main#solutionsPage) .magGrid {
     gap: 12px;
     margin-top: 16px;
   }
-  main#top .magGrid article {
+  :is(main#top, main#solutionsPage) .magGrid article {
     padding: 18px 20px;
   }
-  main#top .magGrid article > small:first-child {
+  :is(main#top, main#solutionsPage) .magGrid article > small:first-child {
     font-family: Montserrat, Arial, sans-serif;
     font-size: 9px;
     font-weight: 500;
@@ -517,80 +519,80 @@ main#top .heroTitleMobile { display: none; }
     letter-spacing: 1.4px;
     text-transform: uppercase;
   }
-  main#top .magGrid h3 {
+  :is(main#top, main#solutionsPage) .magGrid h3 {
     margin-top: 8px;
     font-size: 23px;
     line-height: 1.08;
     text-transform: none;
   }
-  main#top .magGrid p {
+  :is(main#top, main#solutionsPage) .magGrid p {
     margin-top: 7px;
     font-size: 11px;
   }
-  main#top .routines {
+  :is(main#top, main#solutionsPage) .routines {
     padding: 32px 20px;
   }
-  main#top .featureBand {
+  :is(main#top, main#solutionsPage) .featureBand {
     padding: 24px 20px;
   }
-  main#top .needs {
+  :is(main#top, main#solutionsPage) .needs {
     padding: 28px 20px;
   }
-  main#top .pillars article {
+  :is(main#top, main#solutionsPage) .pillars article {
     min-height: 0;
     padding: var(--bbi-card-pad-y) var(--bbi-card-pad-x);
   }
-  main#top .routineGrid article {
+  :is(main#top, main#solutionsPage) .routineGrid article {
     min-height: 0;
     padding: var(--bbi-card-pad-y) var(--bbi-card-pad-x);
   }
-  main#top .magGrid article {
+  :is(main#top, main#solutionsPage) .magGrid article {
     min-height: 0;
     padding: var(--bbi-card-pad-y) var(--bbi-card-pad-x);
   }
-  main#top .standardGrid article {
+  :is(main#top, main#solutionsPage) .standardGrid article {
     min-height: 0;
     padding: var(--bbi-card-pad-y) var(--bbi-card-pad-x);
   }
-  main#top .featureBand > div:first-child {
+  :is(main#top, main#solutionsPage) .featureBand > div:first-child {
     padding: var(--bbi-card-pad-y) var(--bbi-card-pad-x);
   }
-  main#top .routineGrid,
-  main#top .standardGrid,
-  main#top .magGrid {
+  :is(main#top, main#solutionsPage) .routineGrid,
+  :is(main#top, main#solutionsPage) .standardGrid,
+  :is(main#top, main#solutionsPage) .magGrid {
     grid-template-columns: 1fr;
   }
-  main#top .brandGrid {
+  :is(main#top, main#solutionsPage) .brandGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  main#top .brandGrid div,
-  main#top .brandGrid .brandCardLink {
+  :is(main#top, main#solutionsPage) .brandGrid div,
+  :is(main#top, main#solutionsPage) .brandGrid .brandCardLink {
     padding: 14px;
   }
-  main#top .brandGrid small {
+  :is(main#top, main#solutionsPage) .brandGrid small {
     font-size: 7px;
     letter-spacing: 1.8px;
   }
-  main#top .brandGrid em {
+  :is(main#top, main#solutionsPage) .brandGrid em {
     font-size: 8px;
     line-height: normal;
     color: #8a9396;
   }
-  main#top .pillars article > p:not(.label),
-  main#top .routineGrid p,
-  main#top .standardGrid p,
-  main#top .magGrid p {
+  :is(main#top, main#solutionsPage) .pillars article > p:not(.label),
+  :is(main#top, main#solutionsPage) .routineGrid p,
+  :is(main#top, main#solutionsPage) .standardGrid p,
+  :is(main#top, main#solutionsPage) .magGrid p {
     font-size: 11px;
   }
-  main#top .sectionIntro,
-  main#top .brandIntro,
-  main#top .featureBand p {
+  :is(main#top, main#solutionsPage) .sectionIntro,
+  :is(main#top, main#solutionsPage) .brandIntro,
+  :is(main#top, main#solutionsPage) .featureBand p {
     font-size: var(--bbi-intro);
   }
 }
 
-main#top .heroActions{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:18px}
-main#top .heroActions .primary{
+:is(main#top, main#solutionsPage) .heroActions{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:18px}
+:is(main#top, main#solutionsPage) .heroActions .primary{
   box-sizing:border-box;
   width:218px;
   min-height:34px;
@@ -605,12 +607,12 @@ main#top .heroActions .primary{
   white-space:nowrap;
   border-width:1px;
 }
-main#top .heroActions .primary svg{flex:0 0 auto;width:12px;height:12px;stroke-width:1.7}
-main#top .finderHeroCta{background:var(--bbi-gold);color:#07172c}
-main#top .finderHeroCta:hover{filter:brightness(1.03)}
+:is(main#top, main#solutionsPage) .heroActions .primary svg{flex:0 0 auto;width:12px;height:12px;stroke-width:1.7}
+:is(main#top, main#solutionsPage) .finderHeroCta{background:var(--bbi-gold);color:#07172c}
+:is(main#top, main#solutionsPage) .finderHeroCta:hover{filter:brightness(1.03)}
 @media(max-width:700px){
-  main#top .heroActions{align-items:flex-start;flex-direction:column;gap:7px;margin-top:18px}
-  main#top .heroActions .primary{
+  :is(main#top, main#solutionsPage) .heroActions{align-items:flex-start;flex-direction:column;gap:7px;margin-top:18px}
+  :is(main#top, main#solutionsPage) .heroActions .primary{
     width:218px;
     max-width:100%;
     min-height:34px;
@@ -622,7 +624,7 @@ main#top .finderHeroCta:hover{filter:brightness(1.03)}
 
 
 /* Homepage link typography alignment */
-main#top .featureBand a{
+:is(main#top, main#solutionsPage) .featureBand a{
   display:inline-flex;
   align-items:center;
   gap:10px;
@@ -632,7 +634,7 @@ main#top .featureBand a{
   letter-spacing:1.2px;
 }
 @media(max-width:620px){
-  main#top .featureBand a{
+  :is(main#top, main#solutionsPage) .featureBand a{
     font-size:9px;
     letter-spacing:1.5px;
   }
@@ -640,7 +642,7 @@ main#top .featureBand a{
 
 
 /* Homepage redhair video preview — true full-bleed hero */
-main#top .hero.homeVideoHero{
+:is(main#top, main#solutionsPage) .hero.homeVideoHero{
   min-height:720px;
   height:calc(100svh - 84px);
   max-height:900px;
@@ -648,7 +650,7 @@ main#top .hero.homeVideoHero{
   display:block;
   background:var(--bbi-hero-1);
 }
-main#top .homeHeroVideo{
+:is(main#top, main#solutionsPage) .homeHeroVideo{
   position:absolute;
   inset:0;
   width:100%;
@@ -657,14 +659,14 @@ main#top .homeHeroVideo{
   object-position:58% 50%;
   z-index:0;
 }
-main#top .homeHeroVideoShade{
+:is(main#top, main#solutionsPage) .homeHeroVideoShade{
   position:absolute;
   inset:0;
   z-index:1;
   pointer-events:none;
   background:linear-gradient(90deg,rgba(5,29,57,.08) 0%,rgba(5,29,57,.03) 36%,rgba(5,29,57,0) 66%);
 }
-main#top .homeVideoHero .heroContent{
+:is(main#top, main#solutionsPage) .homeVideoHero .heroContent{
   position:relative;
   z-index:2;
   width:min(370px,31vw);
@@ -681,22 +683,22 @@ main#top .homeVideoHero .heroContent{
   backdrop-filter:blur(2px);
   box-sizing:border-box;
 }
-main#top .homeVideoHero .heroContent h1{
+:is(main#top, main#solutionsPage) .homeVideoHero .heroContent h1{
   font-size:clamp(42px,3.65vw,60px);
 }
-main#top .homeVideoHero .heroActions{
+:is(main#top, main#solutionsPage) .homeVideoHero .heroActions{
   flex-direction:column;
   align-items:flex-start;
 }
 @media(max-width:900px){
-  main#top .hero.homeVideoHero{
+  :is(main#top, main#solutionsPage) .hero.homeVideoHero{
     min-height:680px;
     height:calc(100svh - 76px);
   }
-  main#top .homeHeroVideo{
+  :is(main#top, main#solutionsPage) .homeHeroVideo{
     object-position:56% 50%;
   }
-  main#top .homeVideoHero .heroContent{
+  :is(main#top, main#solutionsPage) .homeVideoHero .heroContent{
     width:min(350px,43vw);
     min-width:300px;
     margin-left:20px;
@@ -705,19 +707,19 @@ main#top .homeVideoHero .heroActions{
   }
 }
 @media(max-width:620px){
-  main#top .hero.homeVideoHero{
+  :is(main#top, main#solutionsPage) .hero.homeVideoHero{
     min-height:640px;
     height:calc(100svh - 70px);
     max-height:760px;
   }
-  main#top .homeHeroVideo{
+  :is(main#top, main#solutionsPage) .homeHeroVideo{
     object-fit:cover;
     object-position:54% 50%;
   }
-  main#top .homeHeroVideoShade{
+  :is(main#top, main#solutionsPage) .homeHeroVideoShade{
     background:linear-gradient(180deg,rgba(5,29,57,.02) 0%,rgba(5,29,57,.06) 44%,rgba(5,29,57,.24) 100%);
   }
-  main#top .homeVideoHero .heroContent{
+  :is(main#top, main#solutionsPage) .homeVideoHero .heroContent{
     position:absolute;
     left:16px;
     right:16px;
@@ -732,27 +734,27 @@ main#top .homeVideoHero .heroActions{
     border:1px solid rgba(183,154,91,.30);
     backdrop-filter:blur(2px);
   }
-  main#top .homeVideoHero .heroContent h1{
+  :is(main#top, main#solutionsPage) .homeVideoHero .heroContent h1{
     font-size:34px;
     line-height:.98;
     margin:10px 0;
   }
-  main#top .homeVideoHero .eyebrow{
+  :is(main#top, main#solutionsPage) .homeVideoHero .eyebrow{
     font-size:8.5px;
     letter-spacing:2.2px;
   }
-  main#top .homeVideoHero .lead{
+  :is(main#top, main#solutionsPage) .homeVideoHero .lead{
     font-size:10px;
     line-height:1.55;
     margin:0 0 8px;
   }
-  main#top .homeVideoHero .heroActions{
+  :is(main#top, main#solutionsPage) .homeVideoHero .heroActions{
     flex-direction:row;
     flex-wrap:wrap;
     gap:6px;
     margin-top:10px;
   }
-  main#top .homeVideoHero .heroActions .primary{
+  :is(main#top, main#solutionsPage) .homeVideoHero .heroActions .primary{
     width:auto;
     min-width:0;
     flex:1 1 46%;
@@ -766,18 +768,18 @@ main#top .homeVideoHero .heroActions{
 
 
 /* Homepage hero topic navigation */
-main#top .homeVideoHero .heroContent{
+:is(main#top, main#solutionsPage) .homeVideoHero .heroContent{
   justify-content:flex-start;
   padding-top:48px;
   padding-bottom:28px;
 }
-main#top .homeVideoHero .heroContent h1{
+:is(main#top, main#solutionsPage) .homeVideoHero .heroContent h1{
   margin:16px 0 18px;
 }
-main#top .homeVideoHero .heroActions{
+:is(main#top, main#solutionsPage) .homeVideoHero .heroActions{
   margin-top:20px;
 }
-main#top .heroTopicNav{
+:is(main#top, main#solutionsPage) .heroTopicNav{
   margin-top:26px;
   padding-top:18px;
   border-top:1px solid rgba(255,255,255,.18);
@@ -785,7 +787,7 @@ main#top .heroTopicNav{
   flex-direction:column;
   gap:8px;
 }
-main#top .heroTopicNav a{
+:is(main#top, main#solutionsPage) .heroTopicNav a{
   color:rgba(255,255,255,.92);
   text-decoration:none;
   font:500 9px/1.2 Montserrat,Arial,sans-serif;
@@ -793,22 +795,22 @@ main#top .heroTopicNav a{
   text-transform:uppercase;
   transition:color .18s ease, transform .18s ease;
 }
-main#top .heroTopicNav a:hover{
+:is(main#top, main#solutionsPage) .heroTopicNav a:hover{
   color:var(--bbi-gold);
   transform:translateX(3px);
 }
 @media(max-width:900px){
-  main#top .homeVideoHero .heroContent{
+  :is(main#top, main#solutionsPage) .homeVideoHero .heroContent{
     padding-top:34px;
     padding-bottom:24px;
   }
-  main#top .heroTopicNav{
+  :is(main#top, main#solutionsPage) .heroTopicNav{
     gap:7px;
     margin-top:20px;
   }
 }
 @media(max-width:620px){
-  main#top .homeVideoHero .heroContent{
+  :is(main#top, main#solutionsPage) .homeVideoHero .heroContent{
     left:14px;
     right:14px;
     bottom:14px;
@@ -816,14 +818,14 @@ main#top .heroTopicNav a:hover{
     max-height:72%;
     overflow:auto;
   }
-  main#top .heroTopicNav{
+  :is(main#top, main#solutionsPage) .heroTopicNav{
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:8px 14px;
     margin-top:16px;
     padding-top:14px;
   }
-  main#top .heroTopicNav a{
+  :is(main#top, main#solutionsPage) .heroTopicNav a{
     font-size:8px;
     letter-spacing:1px;
   }
@@ -831,36 +833,36 @@ main#top .heroTopicNav a:hover{
 
 
 /* Hero rail order + typography refinement */
-main#top .homeVideoHero .heroContent{
+:is(main#top, main#solutionsPage) .homeVideoHero .heroContent{
   display:flex;
   flex-direction:column;
 }
-main#top .homeVideoHero .heroTopicNav{
+:is(main#top, main#solutionsPage) .homeVideoHero .heroTopicNav{
   order:3;
   margin-top:22px;
 }
-main#top .homeVideoHero .heroActions{
+:is(main#top, main#solutionsPage) .homeVideoHero .heroActions{
   order:4;
   margin-top:auto;
   padding-top:24px;
 }
-main#top .homeVideoHero .heroActions .primary{
+:is(main#top, main#solutionsPage) .homeVideoHero .heroActions .primary{
   font:500 9px/1.2 Montserrat,Arial,sans-serif;
   letter-spacing:1.45px;
   text-transform:uppercase;
 }
-main#top .homeVideoHero .homeHeroVideo{
+:is(main#top, main#solutionsPage) .homeVideoHero .homeHeroVideo{
   filter:contrast(1.045) saturate(1.025);
 }
 @media(max-width:620px){
-  main#top .homeVideoHero .heroTopicNav{
+  :is(main#top, main#solutionsPage) .homeVideoHero .heroTopicNav{
     margin-top:14px;
   }
-  main#top .homeVideoHero .heroActions{
+  :is(main#top, main#solutionsPage) .homeVideoHero .heroActions{
     margin-top:16px;
     padding-top:0;
   }
-  main#top .homeVideoHero .heroActions .primary{
+  :is(main#top, main#solutionsPage) .homeVideoHero .heroActions .primary{
     font-size:8px;
     letter-spacing:1px;
   }
@@ -868,11 +870,11 @@ main#top .homeVideoHero .homeHeroVideo{
 
 
 /* Force both homepage hero CTA buttons to identical typography and sizing */
-main#top .homeVideoHero .heroActions{
+:is(main#top, main#solutionsPage) .homeVideoHero .heroActions{
   width:100%;
 }
-main#top .homeVideoHero .heroActions .primary,
-main#top .homeVideoHero .heroActions .finderHeroCta{
+:is(main#top, main#solutionsPage) .homeVideoHero .heroActions .primary,
+:is(main#top, main#solutionsPage) .homeVideoHero .heroActions .finderHeroCta{
   box-sizing:border-box;
   width:100%;
   max-width:none;
@@ -888,8 +890,8 @@ main#top .homeVideoHero .heroActions .finderHeroCta{
   white-space:nowrap;
 }
 @media(max-width:620px){
-  main#top .homeVideoHero .heroActions .primary,
-  main#top .homeVideoHero .heroActions .finderHeroCta{
+  :is(main#top, main#solutionsPage) .homeVideoHero .heroActions .primary,
+  :is(main#top, main#solutionsPage) .homeVideoHero .heroActions .finderHeroCta{
     width:100%;
     max-width:none;
     font-size:8px;
@@ -902,7 +904,7 @@ main#top .homeVideoHero .heroActions .finderHeroCta{
 
 /* Mobile hero: restore the vertical translucent rail concept */
 @media(max-width:620px){
-  main#top .hero.homeVideoHero{
+  :is(main#top, main#solutionsPage) .hero.homeVideoHero{
     position:relative;
     min-height:760px;
     height:calc(100svh - 70px);
@@ -911,7 +913,7 @@ main#top .homeVideoHero .heroActions .finderHeroCta{
     overflow:hidden;
   }
 
-  main#top .homeHeroVideo{
+  :is(main#top, main#solutionsPage) .homeHeroVideo{
     position:absolute;
     inset:0;
     width:100%;
@@ -920,7 +922,7 @@ main#top .homeVideoHero .heroActions .finderHeroCta{
     object-position:58% 50%;
   }
 
-  main#top .homeHeroVideoShade{
+  :is(main#top, main#solutionsPage) .homeHeroVideoShade{
     display:block;
     background:linear-gradient(
       90deg,
@@ -930,7 +932,7 @@ main#top .homeVideoHero .heroActions .finderHeroCta{
     );
   }
 
-  main#top .homeVideoHero .heroContent{
+  :is(main#top, main#solutionsPage) .homeVideoHero .heroContent{
     position:absolute;
     top:0;
     left:14px;
@@ -960,26 +962,26 @@ main#top .homeVideoHero .heroActions .finderHeroCta{
     box-sizing:border-box;
   }
 
-  main#top .homeVideoHero .eyebrow{
+  :is(main#top, main#solutionsPage) .homeVideoHero .eyebrow{
     margin:0 0 16px;
     font-size:8px;
     line-height:1.25;
     letter-spacing:1.8px;
   }
 
-  main#top .homeVideoHero .heroContent h1{
+  :is(main#top, main#solutionsPage) .homeVideoHero .heroContent h1{
     margin:0 0 14px;
     font-size:clamp(34px,9vw,46px);
     line-height:.96;
   }
 
-  main#top .homeVideoHero .lead{
+  :is(main#top, main#solutionsPage) .homeVideoHero .lead{
     margin:0 0 14px;
     font-size:10px;
     line-height:1.55;
   }
 
-  main#top .homeVideoHero .heroTopicNav{
+  :is(main#top, main#solutionsPage) .homeVideoHero .heroTopicNav{
     display:flex;
     flex-direction:column;
     gap:7px;
@@ -988,13 +990,13 @@ main#top .homeVideoHero .heroActions .finderHeroCta{
     border-top:1px solid rgba(255,255,255,.16);
   }
 
-  main#top .homeVideoHero .heroTopicNav a{
+  :is(main#top, main#solutionsPage) .homeVideoHero .heroTopicNav a{
     font-size:8px;
     line-height:1.2;
     letter-spacing:1.05px;
   }
 
-  main#top .homeVideoHero .heroActions{
+  :is(main#top, main#solutionsPage) .homeVideoHero .heroActions{
     width:100%;
     margin-top:auto;
     padding-top:18px;
@@ -1003,8 +1005,8 @@ main#top .homeVideoHero .heroActions .finderHeroCta{
     gap:7px;
   }
 
-  main#top .homeVideoHero .heroActions .primary,
-  main#top .homeVideoHero .heroActions .finderHeroCta{
+  :is(main#top, main#solutionsPage) .homeVideoHero .heroActions .primary,
+  :is(main#top, main#solutionsPage) .homeVideoHero .heroActions .finderHeroCta{
     width:100%;
     max-width:none;
     min-height:34px;
@@ -1020,13 +1022,13 @@ main#top .homeVideoHero .heroActions .finderHeroCta{
 
 /* Mobile homepage hero v2: compact rail, all content visible */
 @media(max-width:620px){
-  main#top .hero.homeVideoHero{
+  :is(main#top, main#solutionsPage) .hero.homeVideoHero{
     min-height:720px;
     height:calc(100svh - 70px);
     overflow:hidden;
   }
 
-  main#top .homeVideoHero .heroContent{
+  :is(main#top, main#solutionsPage) .homeVideoHero .heroContent{
     top:0;
     left:14px;
     bottom:0;
@@ -1036,33 +1038,33 @@ main#top .homeVideoHero .heroActions .finderHeroCta{
     background:linear-gradient(180deg,rgba(9,38,74,.34),rgba(9,38,74,.46));
   }
 
-  main#top .homeVideoHero .heroContent h1{
+  :is(main#top, main#solutionsPage) .homeVideoHero .heroContent h1{
     display:block;
     margin:0 0 12px;
     font-size:clamp(31px,8.5vw,42px);
     line-height:.98;
   }
 
-  main#top .homeVideoHero .lead{
+  :is(main#top, main#solutionsPage) .homeVideoHero .lead{
     margin:0 0 12px;
     font-size:10px;
     line-height:1.45;
   }
 
-  main#top .homeVideoHero .heroTopicNav{
+  :is(main#top, main#solutionsPage) .homeVideoHero .heroTopicNav{
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:8px 14px;
     padding-top:14px;
   }
 
-  main#top .homeVideoHero .heroTopicNav a{
+  :is(main#top, main#solutionsPage) .homeVideoHero .heroTopicNav a{
     font-size:7.8px;
     line-height:1.2;
     letter-spacing:.9px;
   }
 
-  main#top .homeVideoHero .heroActions{
+  :is(main#top, main#solutionsPage) .homeVideoHero .heroActions{
     display:flex;
     flex-direction:column;
     gap:7px;
@@ -1070,8 +1072,8 @@ main#top .homeVideoHero .heroActions .finderHeroCta{
     padding-top:0;
   }
 
-  main#top .homeVideoHero .heroActions .primary,
-  main#top .homeVideoHero .heroActions .finderHeroCta{
+  :is(main#top, main#solutionsPage) .homeVideoHero .heroActions .primary,
+  :is(main#top, main#solutionsPage) .homeVideoHero .heroActions .finderHeroCta{
     width:100%;
     min-height:34px;
     padding:0 10px;
@@ -1081,28 +1083,17 @@ main#top .homeVideoHero .heroActions .finderHeroCta{
   }
 }
 
-/* Editorial card readability trial: keep approved headings and palette unchanged. */
-main#top .magGrid article p{
-  font-family:var(--bbi-font-body);
-  font-size:clamp(13px,1vw,14px);
-  line-height:1.75;
-  font-weight:400;
-}
-@media(max-width:620px){main#top .magGrid article p{font-size:13px;line-height:1.7}}
 
-/* Brand cards: proportional label and description sizes, capped at 13px. */
-main#top .brandGrid small{
-  font-family:var(--bbi-font-body);
-  font-size:11px;
-  line-height:1.45;
-  letter-spacing:1px;
-}
-main#top .brandGrid em{
-  font-family:var(--bbi-font-body);
-  font-size:13px;
-  line-height:1.55;
-  font-style:normal;
-}
+/* Mobile hero CTAs: keep both buttons stacked inside the rail and match desktop type size */
+@media(max-width:620px){
+  :is(main#top, main#solutionsPage) .homeVideoHero .heroActions{
+    flex-wrap:nowrap;
+  }
 
-/* Approved exact body size: 13px on every viewport, no fluid sizing. */
-main#top .magGrid article p{font-size:13px;line-height:1.75}
+  :is(main#top, main#solutionsPage) .homeVideoHero .heroActions .primary,
+  :is(main#top, main#solutionsPage) .homeVideoHero .heroActions .finderHeroCta{
+    min-height:36px;
+    font-size:9px;
+    letter-spacing:1px;
+  }
+}

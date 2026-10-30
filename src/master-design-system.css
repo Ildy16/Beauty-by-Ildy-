@@ -92,7 +92,6 @@ section > h2,
 .longevityHero h1,
 .techGuideHero h1,
 .ingredientHero h1,
-.productsHero h1,
 .detailHero h1,
 .productHero h1 {
   text-transform: none;
@@ -290,99 +289,157 @@ article > a,
   }
 }
 
-/* Cross-page editorial readability contract (approved magazine card reference).
-   Apply to descriptive copy, not headings, status labels or navigation. */
-:root{--bbi-readable-copy:13px;--bbi-readable-leading:1.75}
-.techGuidePage .techEvidenceDetails p,
-.techGuidePage .techCompare article p,
-.ingredientsPage .ingredientCard p,
-.longevityPage .longevityAreas article p,
-.wellnessPage .wellnessCard p,
-.productsPage .productCard p,
-.magazinePage .magCard p,
-.beautyFinderPage .finderCard p,
-.solutionsPage .pillars article > p:not(.label),
-.solutionsPage .routineGrid article p,
-.solutionsPage .standardGrid article p{
-  font-family:var(--bbi-font-body);
-  font-size:var(--bbi-readable-copy);
-  line-height:var(--bbi-readable-leading);
+/* ------------------------------------------------------------------
+   TYPOGRAPHY ROLES — single authority for copy, labels and actions.
+   Owner-approved reference: homepage magazine card.
+     gold category label  Montserrat  9px
+     card title           Cormorant   24px (desktop)
+     descriptive copy     Montserrat  13px / 400, every viewport
+     card action link     Montserrat  10px
+     brand status label   Montserrat  11px
+     brand description    Montserrat  13px
+   The #root prefix gives these rules priority over page-module styles,
+   so new page-specific font sizes are not needed. Headings, hero
+   eyebrows, navigation and legal fine print are deliberately excluded.
+   ------------------------------------------------------------------ */
+
+/* Long single words in titles (DE/EN/HU) wrap with a hyphen instead of
+   spilling out of narrow cards or glass panels. */
+#root main :is(h1, h2, h3, h4) {
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
-/* Content-area audit: selectors match actual page modules. */
-.ingredientsPage .ingredientLead,
-.ingredientsPage .ingredientCard p,
-.longevityPage .longevityLead,
-.longevityPage .longevityIntro,
-.longevityPage .termCard p,
-.wellnessPage .wellnessLead,
-.wellnessPage .wellnessIntro,
-.wellnessPage .wellnessFocusCard p,
-.wellnessPage .topicIntro p,
-.productsPage .productCardBody p,
-.magazinePage .magBody p,
-.magazinePage .magArticleText p,
-.beautyFinderPage .finderResultCard p,
-.beautyFinderPage .finderIntroCard p,
-.brandPageBody p,
-.brandProductCard p,
-.doterraDescription{
-  font-family:var(--bbi-font-body);
-  font-size:13px;
-  line-height:1.75;
+/* Descriptive copy: exactly 13px on every viewport. */
+#root main :is(
+  .magGrid article > p,
+  .pillars article > p:not(.label),
+  .featureBand p,
+  .routineGrid article > p,
+  .standardGrid article > p,
+  .needs a.needLink,
+  .ingredientCard > p,
+  .techEvidenceDetails p,
+  .techCompare article p,
+  .longevityAreas article > p,
+  .evidenceGrid article > p,
+  .researchGrid article > p,
+  .termCard > p,
+  .wellnessIntro p,
+  .wellnessFocusCard p,
+  .topicIntro p,
+  .wellnessPartnerHead > p,
+  .wellnessPartnerGrid article > p,
+  .productCard .productFocus,
+  .hubiCard p,
+  .hubiCard li,
+  .hubiStep p,
+  .hubiSectionHead > p,
+  .hubiInci,
+  .formulaCards article p,
+  .productSection > p,
+  .productScience p,
+  .productBuy > p,
+  .finderIntroCard li > p,
+  .finderJourney > span,
+  .finderResultCard .finderWhy,
+  .finderNoExtra p,
+  .finderCompare > p,
+  .brandProductCard > p,
+  .doterraDescription p,
+  .doterraInfo p,
+  .magDek,
+  .magArticleText p,
+  .legalSections section > div
+) {
+  font-family: var(--bbi-font-body);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.75;
+  letter-spacing: 0;
 }
 
-/* Exact 13px body copy on content pages. Intentionally excludes headlines,
-   eyebrow labels, buttons, navigation and legal microcopy. */
-.techGuidePage .techEvidenceDetails p,
-.techGuidePage .techCompare article p,
-.ingredientsPage .ingredientLead,
-.ingredientsPage .ingredientCard p,
-.longevityPage .longevityLead,
-.longevityPage .longevityIntro,
-.longevityPage .termCard p,
-.wellnessPage .wellnessLead,
-.wellnessPage .wellnessIntro,
-.wellnessPage .wellnessFocusCard p,
-.productsPage .productCardBody p,
-.magazinePage .magBody p,
-.magazinePage .magArticleText p,
-.beautyFinderPage .finderResultCard p,
-.beautyFinderPage .finderIntroCard p,
-.brandPageBody p,
-.brandProductCard p,
-.solutionsPage .pillars article > p:not(.label),
-.solutionsPage .routineGrid article p,
-.solutionsPage .standardGrid article p{
-  font-size:13px;
-  line-height:1.75;
+/* Introductory lead copy under page titles: 13px, light weight. */
+#root main :is(
+  .heroContent .lead,
+  .topicHeroLead,
+  .panelLead,
+  .finderHeroLead,
+  .productLead,
+  .hubiHeroLead
+) {
+  font-family: var(--bbi-font-body);
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.75;
 }
 
-/* Solutions: match need-filter label typography to the descriptive text in
-   the Beauty / Beauty Tech cards; both are precisely 13px Montserrat. */
-.solutionsPage .needs a.needLink,
-.solutionsPage .pillars article > p:not(.label){
-  font-family:var(--bbi-font-body);
-  font-size:13px;
-  font-weight:400;
-  letter-spacing:0;
-  line-height:1.75;
+/* Gold category labels and card status markers: 9px. */
+#root main :is(
+  .pillars .label,
+  .wellnessFocusHead > .eyebrow,
+  .wellnessPartnerHead > .eyebrow,
+  .magArticleHead > span,
+  .productMeta span,
+  .productMeta em,
+  .brandGroupHead > span,
+  .doterraGroupHead > span,
+  .brandCardTopline span,
+  .brandCardTopline em,
+  .doterraDescription > span,
+  .brandPageMeta small,
+  .hubiFact small,
+  .hubiNote,
+  .hubiTube small
+) {
+  font-family: var(--bbi-font-body);
+  font-size: 9px;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 1.4;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+#root main :is(.pillars .label, .wellnessFocusHead > .eyebrow, .wellnessPartnerHead > .eyebrow) {
+  color: var(--bbi-gold);
+  letter-spacing: 2.2px;
+}
+#root main .productCard .productBrand {
+  font-size: 9px;
 }
 
-/* Unified editorial descriptions, including mobile: 13px exactly. */
-.bbiIntroText,.bbiBodyText,.bbiCardText{font-size:13px;line-height:1.75}
-
-/* Final shared readable-copy rules: specific page modules use these hooks. */
-.magPage .magDek,.magPage .magArticleText p,
-.magPage .magHero > div > p:last-child,
-.ingredientLead,.ingredientCard > p,.ingredientsHeroLead,
-.longevityLead,.longevityIntro,.longevityAreas article > p,.termCard > p,
-.wellnessLead,.wellnessIntro,.wellnessFocusCard p,.topicIntro p,
-.techGuidePage .techEvidenceDetails p,.techGuidePage .techCompare article p,
-.productsPage .productCard .productFocus,.productsPage .detailIntro p,
-.finderHeroLead,.finderSummary p,.finderIntroCard p,.finderResultCard p,
-.brandPageLead,.brandPageBody p,.brandProductCard p,.doterraDescription,
-.solutionsPage .pillars article > p:not(.label),
-.solutionsPage .routineGrid article > p,.solutionsPage .standardGrid article > p{
- font-family:var(--bbi-font-body);font-size:13px;line-height:1.75;
+/* Card actions, source links and filters: 10px. */
+#root main :is(
+  .magGrid article > a,
+  .pillars article > a,
+  .featureBand a,
+  .routineGrid article > a,
+  .researchGrid article > a,
+  .productCard a,
+  .brandCardActions a,
+  .wellnessPartnerCta,
+  .magSource,
+  .productFilters button,
+  .magFilters button
+) {
+  font-family: var(--bbi-font-body);
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 1.4px;
 }
+
+/* Curated brand cards (Solutions): gold status 11px, description 13px. */
+#root main .brandGrid small {
+  font-family: var(--bbi-font-body);
+  font-size: 11px;
+  line-height: 1.45;
+  letter-spacing: 1px;
+}
+#root main .brandGrid em {
+  font-family: var(--bbi-font-body);
+  font-size: 13px;
+  font-style: normal;
+  line-height: 1.55;
+}
+
