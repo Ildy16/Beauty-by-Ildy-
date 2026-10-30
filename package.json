@@ -8,7 +8,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "test:finder": "node --test src/finderEngine.test.js src/finderUiStructure.test.js src/complianceGate.test.js",
-    "test": "npm run test:finder"
+    "test": "npm run test:finder && npm run test:layout",
+    "test:layout": "node --test src/layoutGuards.test.js"
   },
   "dependencies": {
     "@vitejs/plugin-react": "6.1.2",
