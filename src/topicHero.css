@@ -1,3 +1,8 @@
+/* Shared subpage hero: full-bleed media (image slides or looping video) with
+   a translucent navy rail holding back link, eyebrow, title, lead and the
+   page's own navigation. One rule set per breakpoint; extend here rather
+   than appending overrides. */
+
 .topicHero{
   position:relative;
   min-height:720px;
@@ -7,20 +12,38 @@
   background:var(--bbi-hero-1);
   color:#fff;
 }
+
+/* Media layer — replaceable per page via src/subpage-media.js. */
 .topicHeroSlides,.topicHeroSlide{position:absolute;inset:0}
 .topicHeroSlide{
   opacity:0;
   background-size:cover;
   background-position:center;
-  transform:none;
   transition:opacity 1.4s ease;
 }
 .topicHeroSlide.isActive{opacity:1}
+.topicHeroVideo{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+}
+.topicHeroVideoShade{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:linear-gradient(90deg,rgba(6,24,49,.18),rgba(6,24,49,.04));
+}
+
+/* Translucent rail. */
 .topicHeroRail{
   position:relative;
   z-index:2;
+  box-sizing:border-box;
   width:min(390px,34vw);
-  min-width:330px;
+  min-width:0;
   height:100%;
   margin-left:3vw;
   padding:58px 34px 36px;
@@ -50,14 +73,25 @@
   text-transform:uppercase;
 }
 .topicHeroRail h1{
+  max-width:100%;
+  min-width:0;
   margin:0;
   color:#fff;
-  font:500 clamp(43px,4.3vw,68px)/.94 var(--bbi-font-heading);
+  font:500 clamp(35px,3vw,49px)/1.04 var(--bbi-font-heading);
+  overflow-wrap:break-word;
+  hyphens:auto;
 }
 .topicHeroLead{
   margin:18px 0 26px;
   color:#e0e6ed;
-  font:300 12px/1.85 var(--bbi-font-body);
+  font:300 13px/1.75 var(--bbi-font-body);
+}
+.topicHeroNote{
+  margin:-8px 0 24px;
+  padding-top:14px;
+  border-top:1px solid rgba(183,154,91,.32);
+  color:#cfd8e2;
+  font:400 13px/1.75 var(--bbi-font-body);
 }
 .topicHeroNav{
   margin-top:10px;
@@ -77,9 +111,16 @@
   text-transform:uppercase;
   transition:padding .2s ease,color .2s ease;
 }
+.topicHeroNav a span{min-width:0;overflow-wrap:break-word}
+/* Longer lists (6+ rows) keep the same row language at a tighter rhythm. */
+.topicHeroNav.isCompact a{min-height:40px;font-size:15px}
 .topicHeroNav a:hover,.topicHeroNav a:focus-visible{
   padding-left:8px;
   color:var(--bbi-gold);
+}
+.topicHeroBack:focus-visible,.topicHeroNav a:focus-visible{
+  outline:2px solid var(--bbi-gold,#c7a96b);
+  outline-offset:4px;
 }
 .topicHeroDots{
   position:absolute;
@@ -98,55 +139,38 @@
 
 @media(max-width:900px){
   .topicHero{height:auto;min-height:760px}
-  .topicHeroRail{width:min(420px,52vw);min-width:0;margin-left:24px}
+  .topicHeroRail{width:min(420px,52vw);margin-left:24px}
+  .topicHeroRail h1{font-size:clamp(32px,4.4vw,43px)}
 }
+
 @media(max-width:620px){
   .topicHero{min-height:760px;height:calc(100svh - 68px);max-height:none}
   .topicHeroSlide{background-position:64% center}
+  .topicHeroVideo{object-position:64% center}
   .topicHeroRail{
-    width:calc(100% - 36px);
-    height:auto;
-    margin:0 18px 18px;
-    padding:34px 24px 24px;
     position:absolute;
     left:0;
     bottom:0;
+    width:calc(100% - 36px);
+    height:auto;
+    max-height:calc(100% - 32px);
+    margin:0 18px 18px;
+    padding:28px 22px 22px;
     justify-content:flex-start;
+    overflow-y:auto;
+    overscroll-behavior:contain;
     background:linear-gradient(180deg,rgba(9,38,74,.60),rgba(9,38,74,.76));
   }
   .topicHeroBack{margin-bottom:22px}
-  .topicHeroRail h1{font-size:43px}
-  .topicHeroLead{font-size:10.5px;margin:14px 0 18px}
-  .topicHeroNav a{min-height:48px;font-size:16px}
-  .topicHeroDots{top:22px;right:22px;bottom:auto}
+  .topicHeroRail h1{font-size:clamp(32px,8vw,40px);line-height:1.08}
+  .topicHeroLead{margin:14px 0 18px}
+  .topicHeroNav a{min-height:48px;padding-block:10px;font-size:clamp(14px,4vw,16px);line-height:1.2}
+  .topicHeroNav.isCompact a{min-height:40px;padding-block:8px;font-size:14px}
+  .topicHeroDots{top:22px;right:22px;bottom:auto;pointer-events:none}
 }
 
-/* Motion-safe editorial hero: no automatic zoom or camera movement. */
+/* Motion-safe: no automatic zoom; no crossfade for reduced motion. */
 @media (prefers-reduced-motion: reduce){
   .topicHeroSlide{transition:none}
   .topicHeroNav a{transition:none}
 }
-@media (max-width:620px){
-  .topicHeroRail{max-height:calc(100% - 32px);overflow-y:auto;overscroll-behavior:contain}
-  .topicHeroNav a{min-height:48px}
-}
-
-/* Readable, keyboard-accessible editorial navigation on small screens. */
-.topicHeroBack:focus-visible,.topicHeroNav a:focus-visible{
-  outline:2px solid var(--bbi-gold,#c7a96b);
-  outline-offset:4px;
-}
-@media (max-width:620px){
-  .topicHeroRail{box-sizing:border-box;padding:28px 22px 22px}
-  .topicHeroRail h1{font-size:clamp(34px,9vw,43px);line-height:1.02;overflow-wrap:break-word}
-  .topicHeroLead{font-size:12px;line-height:1.65}
-  .topicHeroNav a{font-size:clamp(14px,4vw,16px);line-height:1.2;padding-block:10px}
-  .topicHeroDots{pointer-events:none}
-}
-
-/* Shared hero typography guard: keep long translated titles inside the glass rail. */
-.topicHeroRail{box-sizing:border-box;min-width:0}
-.topicHeroRail h1{max-width:100%;min-width:0;font-size:clamp(35px,3vw,49px);line-height:1.04;overflow-wrap:break-word;hyphens:auto}
-.topicHeroNav a span{min-width:0;overflow-wrap:break-word}
-@media(max-width:900px){.topicHeroRail h1{font-size:clamp(32px,4.4vw,43px)}}
-@media(max-width:620px){.topicHeroRail h1{font-size:clamp(32px,8vw,40px);line-height:1.08}}

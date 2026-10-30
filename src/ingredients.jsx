@@ -1,5 +1,7 @@
 import React,{useEffect,useRef} from 'react';
 import {ArrowLeft,ArrowRight} from 'lucide-react';
+import {TopicHero} from './topicHero.jsx';
+import {subpageMedia} from './subpage-media.js';
 
 const itemsHu=[
 ['Retinol & retinal','A-vitamin-származékok; a retinal egy átalakulási lépéssel közelebb van a retinsavhoz.','A retinoidok a photoaging legjobban kutatott kozmetikai hatóanyagcsoportjai közé tartoznak.','Koncentráció, stabilitás, csomagolás, irritáció és a teljes formula.','ERŐSEBB TUDOMÁNYOS HÁTTÉR'],
@@ -114,26 +116,20 @@ export function IngredientsPage({lang='hu'}){
  },[]);
 
  return <main className="ingredientsPage">
-   <section className="ingredientsVideoHero">
-     <video className="ingredientsHeroVideo" autoPlay muted loop playsInline preload="metadata" aria-hidden="true">
-       <source src="https://d2ol7oe51mr4n9.cloudfront.net/user_3IAvy8LbGnFWbZ9I7IYXDS4wsOc/371a20fb-4453-4d2f-8256-952842b2db99.mp4" type="video/mp4"/>
-     </video>
-     <div className="ingredientsHeroShade"></div>
-     <div className="ingredientsHeroRail">
-       <a className="ingredientsHeroBack" href="#top"><ArrowLeft size={14}/>{t.back}</a>
-       <p className="ingredientsHeroEyebrow">{t.eye}</p>
-       <h1>{t.title}</h1>
-       <p className="ingredientsHeroLead">{t.lead}</p>
-       <nav className="ingredientsHeroNav" aria-label={lang==='hu'?'Hatóanyagok':lang==='de'?'Inhaltsstoffe':'Ingredients'}>
-         {ingredientHeroNavIndexes.map(i=><a key={ingredientSlugs[i]} href={'#ingredients/'+ingredientSlugs[i]}>
-           <span>{items[i][0]}</span><ArrowRight size={13}/>
-         </a>)}
-         <a className="ingredientsHeroAll" href="#ingredients/all">
-           <span>{lang==='hu'?'ÖSSZES HATÓANYAG':lang==='de'?'ALLE INHALTSSTOFFE':'ALL INGREDIENTS'}</span><ArrowRight size={13}/>
-         </a>
-       </nav>
-     </div>
-   </section>
+   <TopicHero
+     eyebrow={t.eye}
+     title={t.title}
+     lead={t.lead}
+     backLabel={t.back}
+     videoSrc={subpageMedia.ingredients.video}
+     videoPoster={subpageMedia.ingredients.poster}
+     navSize="compact"
+     ariaLabel={lang==='hu'?'Hatóanyagok':lang==='de'?'Inhaltsstoffe':'Ingredients'}
+     items={[
+       ...ingredientHeroNavIndexes.map(i=>({label:items[i][0],href:'#ingredients/'+ingredientSlugs[i]})),
+       {label:lang==='hu'?'ÖSSZES HATÓANYAG':lang==='de'?'ALLE INHALTSSTOFFE':'ALL INGREDIENTS',href:'#ingredients/all'}
+     ]}
+   />
 
    <section className="ingredientGrid" id="all">
      {items.map(([name,a,b,c,status],i)=><article

@@ -364,7 +364,6 @@ article > a,
 /* Introductory lead copy under page titles: 13px, light weight. */
 #root main :is(
   .heroContent .lead,
-  .ingredientsHeroLead,
   .topicHeroLead,
   .panelLead,
   .finderHeroLead,
