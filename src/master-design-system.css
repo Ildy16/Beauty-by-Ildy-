@@ -92,7 +92,6 @@ section > h2,
 .longevityHero h1,
 .techGuideHero h1,
 .ingredientHero h1,
-.productsHero h1,
 .detailHero h1,
 .productHero h1 {
   text-transform: none;
@@ -346,7 +345,6 @@ article > a,
   .finderResultCard .finderWhy,
   .finderNoExtra p,
   .finderCompare > p,
-  .brandPageHero .brandPageNote,
   .brandProductCard > p,
   .doterraDescription p,
   .doterraInfo p,
@@ -367,11 +365,8 @@ article > a,
   .topicHeroLead,
   .panelLead,
   .finderHeroLead,
-  .brandPageLead,
   .productLead,
-  .hubiHeroLead,
-  .productsHero > div > p:not(.eyebrow),
-  .magHero > div > p:last-child
+  .hubiHeroLead
 ) {
   font-family: var(--bbi-font-body);
   font-size: 13px;

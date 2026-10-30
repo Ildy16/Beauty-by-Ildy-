@@ -1,5 +1,4 @@
 import React,{useEffect,useRef} from 'react';
-import {ArrowLeft,ArrowRight} from 'lucide-react';
 import {TopicHero} from './topicHero.jsx';
 import {subpageMedia} from './subpage-media.js';
 

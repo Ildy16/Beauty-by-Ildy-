@@ -52,7 +52,8 @@ export function TopicHero({
     };
   },[images.length,showVideo,reduceMotion]);
 
-  return <section className="topicHero" aria-label={title}>
+  const medialess=!showVideo&&images.length===0;
+  return <section className={"topicHero"+(medialess?" isMedialess":"")} aria-label={title}>
     {showVideo&&<>
       <video className="topicHeroVideo" autoPlay muted loop playsInline preload="metadata" poster={videoPoster||images[0]||undefined} aria-hidden="true" onError={()=>setVideoFailed(true)}>
         <source src={videoSrc} type="video/mp4" onError={()=>setVideoFailed(true)}/>
@@ -74,7 +75,7 @@ export function TopicHero({
       {lead&&<p className="topicHeroLead">{lead}</p>}
       {note&&<p className="topicHeroNote">{note}</p>}
       {items.length>0&&<nav className={"topicHeroNav"+(navSize==="compact"?" isCompact":"")} aria-label={ariaLabel}>
-        {items.map(item=><a key={item.href} href={item.href} onClick={item.onClick}>
+        {items.map(item=><a key={item.href} href={item.href}>
           <span>{item.label}</span><ArrowRight size={14}/>
         </a>)}
       </nav>}
