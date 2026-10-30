@@ -84,6 +84,7 @@ const NUSKIN = [
 const NUSKIN_IMAGES = Object.freeze({
   "ageLOC Boost System": "https://media.nuskin.com/transform/3bed53e9-71cf-4b11-8c2c-4ade2a1c32d1/nu-skin-ageloc-boost-system-world-1-brand-beauty-device-packshot-image.webp?io=transform%3Afit%2Cwidth%3A600%2Cheight%3A600&quality=95",
   "ageLOC Galvanic Spa": "https://media.nuskin.com/transform/16e4cf9c-599f-4264-b742-e7255c9473cc/ageLOC_galvanic_spa_device_EU_PDP_slide_01.webp?io=transform%3Afit%2Cwidth%3A980%2Cheight%3A980&quality=95",
+  "ageLOC Tru Face Line Corrector": "https://media.nuskin.com/transform/7d867497-dae2-452c-a3f4-0870c182d0e5/ageLOC_TruFace_Line_Corrector_PDP_carrousel_img-1.webp?io=transform%3Afit%2Cwidth%3A980%2Cheight%3A980&quality=95",
   "ageLOC Nutriol Intensive Scalp & Hair Serum": "https://media.nuskin.com/m/772409f6975a069d/webimage-nu-skin-ageloc-nutriol-scalp-and-hair-serum-packshot.png",
   "Nutricentials Ceramides + Postbiotics Pump": "https://media.nuskin.com/m/2d951c10d3f919f6/webimage-nu-skin-nutricentials-ceramides-and-postbiotics-pump-packshot-image.png",
   "Nu Colour Lash + Brow Serum": "https://media.nuskin.com/m/d0b12220f9d53ad/webimage-nu-colour-lash-brow-serum-main.png",
