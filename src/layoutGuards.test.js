@@ -24,3 +24,10 @@ test('Solutions sections share the approved homepage section styles',async()=>{
   assert.ok(homepageCss.includes(`:is(main#top, main#solutionsPage) ${section}`),section);
  }
 });
+
+test('Solutions page has one semantic h1 in every language',()=>{
+ const solutionsBranch=mainSource.slice(mainSource.indexOf('page === "solutions"'),mainSource.indexOf('page === "longevity"'));
+ assert.equal(solutionsBranch.match(/<h1 /g)?.length,1);
+ assert.ok(solutionsBranch.includes('<h1 className="visuallyHidden">{t.solutionsTitle}</h1>'));
+ assert.equal(mainSource.match(/solutionsTitle: "/g)?.length,3);
+});

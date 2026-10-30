@@ -41,6 +41,7 @@ const copy = {
     sub: "Bőrápolás, innovatív technológia és wellness – kívül-belül.",
     cta: "Fedezd fel a válogatást",
     finderCta: "PRÓBÁLD KI A BEAUTY ÚTVONALAT",
+    solutionsTitle: "Megoldások",
     choose: "MIRE VAN SZÜKSÉGED?",
     needs: [
       "Ráncok & feszesség",
@@ -134,6 +135,7 @@ const copy = {
     sub: "Skincare, innovative technology and wellness – inside and out.",
     cta: "Explore the edit",
     finderCta: "TRY THE BEAUTY FINDER",
+    solutionsTitle: "Solutions",
     choose: "WHAT DO YOU NEED?",
     needs: [
       "Wrinkles & firmness",
@@ -227,6 +229,7 @@ const copy = {
     sub: "Hautpflege, innovative Technologie und Wellness – von innen und außen.",
     cta: "Auswahl entdecken",
     finderCta: "BEAUTY FINDER TESTEN",
+    solutionsTitle: "Lösungen",
     choose: "WAS BRAUCHST DU?",
     needs: [
       "Falten & Festigkeit",
@@ -493,6 +496,7 @@ function App() {
   if (legal) content = <LegalPage lang={lang} type={legal} />;
   else if (page === "solutions") content = (
     <main id="solutionsPage" className="solutionsPage">
+      <h1 className="visuallyHidden">{t.solutionsTitle}</h1>
       <SolutionsVisualNav lang={lang} />
       <section className="needs">
         <p>{t.choose}</p>
