@@ -492,7 +492,7 @@ function App() {
   let content;
   if (legal) content = <LegalPage lang={lang} type={legal} />;
   else if (page === "solutions") content = (
-    <main id="top" className="solutionsPage">
+    <main id="solutionsPage" className="solutionsPage">
       <SolutionsVisualNav lang={lang} />
       <section className="needs">
         <p>{t.choose}</p>
