@@ -37,17 +37,10 @@
   background:linear-gradient(90deg,rgba(6,24,49,.18),rgba(6,24,49,.04));
 }
 
-/* No media yet (or video unavailable): keep the navy page gradient and let
-   the rail size the hero instead of leaving an empty full-height frame. */
+/* No media yet (or video unavailable): same size and rail as every other
+   hero, with the navy page gradient where the image or video will go. */
 .topicHero.isMedialess{
-  height:auto;
-  min-height:0;
-  max-height:none;
   background:linear-gradient(125deg,#06172d 0%,#09264a 62%,#103a6a 100%);
-}
-.topicHero.isMedialess .topicHeroRail{
-  height:auto;
-  min-height:560px;
 }
 
 /* Translucent rail. */
@@ -187,13 +180,6 @@
   .topicHeroNav a{min-height:48px;padding-block:10px;font-size:clamp(14px,4vw,16px);line-height:1.2}
   .topicHeroNav.isCompact a{min-height:40px;padding-block:8px;font-size:14px}
   .topicHeroDots{top:22px;right:22px;bottom:auto;pointer-events:none}
-  .topicHero.isMedialess .topicHeroRail{
-    position:relative;
-    min-height:0;
-    max-height:none;
-    margin:18px;
-    overflow:visible;
-  }
 }
 
 /* Motion-safe: no automatic zoom; no crossfade for reduced motion. */
