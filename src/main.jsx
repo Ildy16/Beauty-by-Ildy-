@@ -104,7 +104,7 @@ const copy = {
       "Innováció, minőség és valódi hozzáadott érték alapján válogatott márkák.",
     magTitle: "MAGAZIN & ÚTMUTATÓK",
     magCards: [
-      ["Hőhullámok világszerte","2026. szeptemberi metaanalízis arról, mennyire gyakoriak a menopauzális vazomotoros tünetek."],
+      ["A menopauzás hőhullámok gyakorisága","2026. szeptemberi metaanalízis arról, mennyire gyakoriak a menopauzális vazomotoros tünetek."],
       ["Exoszóma-hype után: minőségellenőrzés","Friss áttekintés arról, miért fontosabb a forrás és a standardizálás, mint maga az „exoszóma” szó."],
       ["Otthoni beauty készülékek: hol a legerősebb evidencia?","A 2026-os GRADE-alapú áttekintés különbséget tesz lézer, LED, RF és más technológiák között."],
     ],
@@ -197,7 +197,7 @@ const copy = {
       "Brands selected for innovation, quality and meaningful added value.",
     magTitle: "MAGAZINE & GUIDES",
     magCards: [
-      ["Hot flushes worldwide","A September 2026 meta-analysis maps the global prevalence of menopausal vasomotor symptoms."],
+      ["How common are menopausal hot flashes?","A September 2026 meta-analysis maps the global prevalence of menopausal vasomotor symptoms."],
       ["After the exosome hype: quality control","A fresh review asks why source, characterisation and standardisation matter more than the fashionable keyword itself."],
       ["At-home beauty devices: where is the evidence strongest?","A 2026 GRADE-based review distinguishes laser, LED, RF and other technologies by evidence level."],
     ],
@@ -296,7 +296,7 @@ const copy = {
       "Ausgewählte Marken mit Fokus auf Innovation, Qualität und echten Mehrwert.",
     magTitle: "MAGAZIN & GUIDES",
     magCards: [
-      ["Hitzewallungen weltweit","Eine Metaanalyse vom September 2026 untersucht die globale Häufigkeit menopausaler vasomotorischer Symptome."],
+      ["Wie häufig sind Hitzewallungen in den Wechseljahren?","Eine Metaanalyse vom September 2026 untersucht die globale Häufigkeit menopausaler vasomotorischer Symptome."],
       ["Nach dem Exosomen-Hype: Qualitätskontrolle","Ein aktueller Review zeigt, warum Quelle, Charakterisierung und Standardisierung wichtiger sind als das Trendwort allein."],
       ["Home-Beauty-Geräte: Wo ist die Evidenz am stärksten?","Ein GRADE-basierter Review von 2026 unterscheidet Laser, LED, RF und weitere Technologien nach Evidenzniveau."],
     ],
