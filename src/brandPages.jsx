@@ -5,36 +5,36 @@ import {TopicHero} from './topicHero.jsx';
 import {subpageMedia} from './subpage-media.js';
 
 const NUSKIN = [
-  ["ageLOC LumiSpa iO System","BEAUTY TECH","Connected cleansing system designed to pair with the Nu Skin Vera app.","https://mysite.mynuskin.com/catalog/hu/hu/product/97139603?store=beautybyildy"],
-  ["ageLOC WellSpa iO System","BEAUTY TECH","Nu Skin beauty and wellness device system.","https://mysite.mynuskin.com/catalog/hu/hu/product/97139757?store=beautybyildy"],
-  ["ageLOC Boost System","BEAUTY TECH","At-home skin-vitalising device system.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001951?store=beautybyildy"],
-  ["ageLOC Galvanic Spa","BEAUTY TECH","Galvanic at-home beauty device with face, body and scalp applications.","https://mysite.mynuskin.com/catalog/hu/hu/product/97310060?store=beautybyildy"],
-  ["Galvanic Spa Facial Gels with ageLOC","SKINCARE","Facial gels developed for use with the Galvanic Spa facial conductor.","https://mysite.mynuskin.com/catalog/hu/hu/product/97004433?store=beautybyildy"],
-  ["ageLOC Tru Face Future Serum","TRU FACE","Premium age-well serum focused on firmness, smoothness, tone and hydration.","https://mysite.mynuskin.com/catalog/hu/hu/product/97004260?store=beautybyildy"],
-  ["ageLOC Tru Face Line Corrector","TRU FACE","Targeted care for the appearance of fine lines, especially around the mouth and eyes.","https://mysite.mynuskin.com/catalog/hu/hu/product/97004263?store=beautybyildy"],
-  ["ageLOC Tru Face Radiant Day","TRU FACE","Daytime moisturising care focused on radiance and uneven-looking tone.","https://mysite.mynuskin.com/catalog/hu/hu/product/97004268?store=beautybyildy"],
-  ["ageLOC Tru Face Transforming Gel Cream","TRU FACE","Gel-cream moisturiser focused on hydration, smoothness and visible pores.","https://mysite.mynuskin.com/catalog/hu/hu/product/97004266?store=beautybyildy"],
-  ["ageLOC Tru Face Uplifting Rich Cream","TRU FACE","Rich moisturising cream focused on firmness and visible lines.","https://mysite.mynuskin.com/catalog/hu/hu/product/97004291?store=beautybyildy"],
-  ["ageLOC Tru Face Refining Toner","TRU FACE","Preparatory toner designed to support the next steps of the skincare routine.","https://mysite.mynuskin.com/catalog/hu/hu/product/97004294?store=beautybyildy"],
-  ["ageLOC Tru Face Peptide Retinol Complex","TRU FACE","Retinol and peptide-focused age-well serum.","https://mysite.mynuskin.com/catalog/hu/hu/product/97004312?store=beautybyildy"],
-  ["ageLOC Tru Face Essence Ultra","TRU FACE","Firming-focused treatment for a more defined-looking facial contour.","https://mysite.mynuskin.com/catalog/hu/hu/product/97004293?store=beautybyildy"],
-  ["Nutricentials Pumps Vitamin C + Collagen","NUTRICENTIALS","Current Nutricentials supplement-style beauty product listed in the Hungarian range.","https://mysite.mynuskin.com/catalog/hu/hu/product/97002527?store=beautybyildy"],
-  ["HydraClean Creamy Cleansing Lotion","NUTRICENTIALS","Creamy facial cleanser.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001780?store=beautybyildy"],
-  ["To Be Clear Pure Cleansing Gel","NUTRICENTIALS","Gel facial cleanser.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001781?store=beautybyildy"],
-  ["Nutricentials Here You Glow","NUTRICENTIALS","Current Nutricentials exfoliating/renewal product in the Hungarian range.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001783?store=beautybyildy"],
+  ["ageLOC LumiSpa iO System","BEAUTY TECH","A Nu Skin Vera alkalmazással összekapcsolható, személyre szabható arctisztító és bőrápoló rendszer.","https://mysite.mynuskin.com/catalog/hu/hu/product/97139603?store=beautybyildy"],
+  ["ageLOC WellSpa iO System","BEAUTY TECH","Otthoni szépség- és wellnesskészülék a testápolási rutin támogatására.","https://mysite.mynuskin.com/catalog/hu/hu/product/97139757?store=beautybyildy"],
+  ["ageLOC Boost System","BEAUTY TECH","Otthoni készülékrendszer, amely a hozzá tartozó aktiváló szérummal együtt használható.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001951?store=beautybyildy"],
+  ["ageLOC Galvanic Spa","BEAUTY TECH","Galvánáramos otthoni szépségápolási készülék arc-, test- és fejbőrápolási alkalmazásokhoz.","https://mysite.mynuskin.com/catalog/hu/hu/product/97310060?store=beautybyildy"],
+  ["Galvanic Spa Facial Gels with ageLOC","SKINCARE","A Galvanic Spa arckezelő fejével történő használatra kifejlesztett kétlépéses arcápoló gél.","https://mysite.mynuskin.com/catalog/hu/hu/product/97004433?store=beautybyildy"],
+  ["ageLOC Tru Face Future Serum","TRU FACE","Prémium arcápoló szérum a bőr feszesebb, simább és egységesebb megjelenésének támogatására.","https://mysite.mynuskin.com/catalog/hu/hu/product/97004260?store=beautybyildy"],
+  ["ageLOC Tru Face Line Corrector","TRU FACE","Célzott arcápoló a finom vonalak megjelenésére, különösen a szem és a száj környékén.","https://mysite.mynuskin.com/catalog/hu/hu/product/97004263?store=beautybyildy"],
+  ["ageLOC Tru Face Radiant Day","TRU FACE","Nappali hidratáló ápolás a ragyogóbb és egységesebb megjelenésű bőrért.","https://mysite.mynuskin.com/catalog/hu/hu/product/97004268?store=beautybyildy"],
+  ["ageLOC Tru Face Transforming Gel Cream","TRU FACE","Könnyű gélkrém hidratálásra, simább bőrképre és a pórusok láthatóságának finomítására.","https://mysite.mynuskin.com/catalog/hu/hu/product/97004266?store=beautybyildy"],
+  ["ageLOC Tru Face Uplifting Rich Cream","TRU FACE","Gazdag hidratálókrém a feszesebb bőrérzet és a látható vonalak ápolására.","https://mysite.mynuskin.com/catalog/hu/hu/product/97004291?store=beautybyildy"],
+  ["ageLOC Tru Face Refining Toner","TRU FACE","Előkészítő arctonik, amely tisztítás után támogatja a bőrápolási rutin következő lépéseit.","https://mysite.mynuskin.com/catalog/hu/hu/product/97004294?store=beautybyildy"],
+  ["ageLOC Tru Face Peptide Retinol Complex","TRU FACE","Retinolkomplexet és peptidet tartalmazó, többfunkciós arcápoló szérum.","https://mysite.mynuskin.com/catalog/hu/hu/product/97004312?store=beautybyildy"],
+  ["ageLOC Tru Face Essence Ultra","TRU FACE","Feszesítő fókuszú arcápoló a határozottabbnak tűnő arckontúrért.","https://mysite.mynuskin.com/catalog/hu/hu/product/97004293?store=beautybyildy"],
+  ["Nutricentials Pumps Vitamin C + Collagen","NUTRICENTIALS","C-vitamin- és kollagénfókuszú Nutricentials Pumps termék a jelenlegi magyar kínálatból.","https://mysite.mynuskin.com/catalog/hu/hu/product/97002527?store=beautybyildy"],
+  ["HydraClean Creamy Cleansing Lotion","NUTRICENTIALS","Krémes arctisztító a bőr kíméletes megtisztítására.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001780?store=beautybyildy"],
+  ["To Be Clear Pure Cleansing Gel","NUTRICENTIALS","Frissítő gél állagú arctisztító.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001781?store=beautybyildy"],
+  ["Nutricentials Here You Glow","NUTRICENTIALS","Hámlasztó és bőrmegújító fókuszú Nutricentials termék a jelenlegi magyar kínálatból.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001783?store=beautybyildy"],
   ["In Balance pH Balance Toner","NUTRICENTIALS","pH-kiegyensúlyozó arctonik a jelenlegi magyar Nutricentials kínálatból.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001784?store=beautybyildy"],
   ["Nutricentials Eye Love Bright Eyes Illuminating Eye Cream","NUTRICENTIALS","Szemkörnyékápoló krém a jelenlegi magyar Nutricentials kínálatból.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001795?store=beautybyildy"],
   ["Nutricentials Ceramides + Postbiotics Pump","NUTRICENTIALS","Ceramid- és posztbiotikum-fókuszú booster a jelenlegi magyar Nutricentials kínálatból.","https://mysite.mynuskin.com/catalog/hu/hu/product/97002405?store=beautybyildy"],
   ["Nutricentials Celltrex Always Right Recovery Fluid","NUTRICENTIALS","Regeneráló szérum/folyadék a jelenlegi magyar Nutricentials kínálatból.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001791?store=beautybyildy"],
-  ["Day Dream Protective Cream SPF 30","NUTRICENTIALS","Creamy daytime moisturiser with SPF 30.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001785?store=beautybyildy"],
-  ["Day Dream Protective Lotion SPF 30","NUTRICENTIALS","Lightweight daytime moisturiser with SPF 30.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001786?store=beautybyildy"],
-  ["Thirst Fix Hydrating Gel Cream","NUTRICENTIALS","Light hydrating gel cream.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001787?store=beautybyildy"],
-  ["Moisturize Me Intense Hydrating Cream","NUTRICENTIALS","Rich moisturising cream.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001793?store=beautybyildy"],
-  ["Nutricentials Dew All Day Moisture Restore Cream","NUTRICENTIALS","Moisture-restoring facial cream.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001788?store=beautybyildy"],
-  ["Pillow Glow Sleeping Mask","NUTRICENTIALS","Overnight moisturising mask.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001796?store=beautybyildy"],
-  ["Brighter Day Exfoliant Scrub","NUTRICENTIALS","Exfoliating facial scrub.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001789?store=beautybyildy"],
-  ["Spa Day Creamy Hydrating Masque","NUTRICENTIALS","Creamy hydrating facial mask.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001790?store=beautybyildy"],
-  ["ageLOC Nutriol Scalp & Hair System","HAIR & SCALP","Scalp and hair care system in the ageLOC range.","https://mysite.mynuskin.com/catalog/hu/hu/product/97139428?store=beautybyildy"],
+  ["Day Dream Protective Cream SPF 30","NUTRICENTIALS","Krémes nappali hidratáló SPF 30 fényvédelemmel.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001785?store=beautybyildy"],
+  ["Day Dream Protective Lotion SPF 30","NUTRICENTIALS","Könnyű nappali hidratáló SPF 30 fényvédelemmel.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001786?store=beautybyildy"],
+  ["Thirst Fix Hydrating Gel Cream","NUTRICENTIALS","Könnyű, hidratáló gélkrém.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001787?store=beautybyildy"],
+  ["Moisturize Me Intense Hydrating Cream","NUTRICENTIALS","Gazdag, intenzíven hidratáló arckrém.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001793?store=beautybyildy"],
+  ["Nutricentials Dew All Day Moisture Restore Cream","NUTRICENTIALS","A bőr hidratáltságát támogató arcápoló krém.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001788?store=beautybyildy"],
+  ["Pillow Glow Sleeping Mask","NUTRICENTIALS","Éjszakai hidratáló arcmaszk.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001796?store=beautybyildy"],
+  ["Brighter Day Exfoliant Scrub","NUTRICENTIALS","Arcradír a bőr kíméletes hámlasztására.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001789?store=beautybyildy"],
+  ["Spa Day Creamy Hydrating Masque","NUTRICENTIALS","Krémes, hidratáló arcmaszk.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001790?store=beautybyildy"],
+  ["ageLOC Nutriol Scalp & Hair System","HAIR & SCALP","Komplex fejbőr- és hajápoló rendszer az ageLOC termékcsaládból.","https://mysite.mynuskin.com/catalog/hu/hu/product/97139428?store=beautybyildy"],
   ["ageLOC Nutriol Scalp & Hair Shampoo","HAIR & SCALP","Sampon vékony szálú, sérült és öregedő hajra és fejbőrre.","https://mysite.mynuskin.com/catalog/hu/hu/product/97002106?store=beautybyildy"],
   ["ageLOC Nutriol Scalp & Hair Conditioner","HAIR & SCALP","Fejbőr- és hajápoló kondicionáló az ageLOC Nutriol rendszerből.","https://mysite.mynuskin.com/catalog/hu/hu/product/97002107?store=beautybyildy"],
   ["ageLOC Nutriol Intensive Scalp & Hair Serum","HAIR & SCALP","Intenzív fejbőr- és hajszérum az ageLOC Nutriol rendszerből.","https://mysite.mynuskin.com/catalog/hu/hu/product/97002149?store=beautybyildy"],
@@ -77,8 +77,15 @@ const NUSKIN = [
   ["TRME M-Bar","TRME · BODY BALANCE","A TRME rendszerhez tartozó étkezéshelyettesítő szelet.","https://mysite.mynuskin.com/catalog/hu/hu/product/97139726?store=beautybyildy"],
   ["TRME Weight Management Kit","TRME · BODY BALANCE","InnerNU, MyEDGE, MyGOAL és REALMe termékeket tartalmazó hivatalos TRME csomag.","https://mysite.mynuskin.com/catalog/hu/hu/product/97139798?store=beautybyildy"],
   ["ageLOC TRMe","WELLNESS","A Nu Skin magyar oldalán bemutatott, személyre szabható Body Balance rendszer, amely a MyGOAL, InnerNU, REALMe, MyEDGE és M-Bar termékeket, valamint TRME csomagokat foglalja össze.","https://www.nuskin.com/hu/hu/site/product/eua-ageloc-trme-landing-page"],
+  ["Nu Colour Lash + Brow Serum","NU COLOUR","Szempilla- és szemöldökápoló szérum, amely kondicionálja, hidratálja és erősebb megjelenésűvé teszi a szálakat.","https://mysite.mynuskin.com/catalog/hu/hu/product/97002663?store=beautybyildy"],
   ["Prysm iO","WELLNESS TECH","A Nu Skin magyar oldalán bemutatott, nem invazív wellness mérőeszköz, amely 15 másodperc alatt követi a bőr karotinoidszintjét és Prysm-pontszámot ad.","https://www.nuskin.com/hu/hu/site/product/eua-meet-prysm-io-the-future-of-measurable-nutritional-wellness"],
 ];
+
+const NUSKIN_IMAGES = Object.freeze({
+  "ageLOC Nutriol Intensive Scalp & Hair Serum": "https://media.nuskin.com/m/772409f6975a069d/webimage-nu-skin-ageloc-nutriol-scalp-and-hair-serum-packshot.png",
+  "Nutricentials Ceramides + Postbiotics Pump": "https://media.nuskin.com/m/2d951c10d3f919f6/webimage-nu-skin-nutricentials-ceramides-and-postbiotics-pump-packshot-image.png",
+  "Nu Colour Lash + Brow Serum": "https://media.nuskin.com/m/d0b12220f9d53ad/webimage-nu-colour-lash-brow-serum-main.png",
+});
 
 const copy = {
   hu: {
@@ -235,9 +242,12 @@ export function NuSkinPage({lang="hu"}) {
             {NUSKIN.filter(([,g])=>g===group).map(([name,,desc,url])=>{
               const direct=url.includes("mysite.mynuskin.com");
               const special=archivedNuSkin.has(name)||name==="ageLOC TRMe"||!direct;
+              const image=NUSKIN_IMAGES[name];
+              const productDescription=lang==="hu"?desc:(localGroupDescription(group,lang)||desc);
               return <article className={`brandProductCard nuskinCard ${direct&&!special?"isPurchasable":"isInfo"}`} key={name}>
+                <div className="nuskinProductImage">{image?<img src={image} alt={name} loading="lazy" decoding="async"/>:<span aria-hidden="true">NU SKIN</span>}</div>
                 <div className="brandCardTopline"><span>{localGroup(group,lang)}</span><em>{direct&&!special?t.available:t.infoOnly}</em></div>
-                <h2>{name}</h2><p>{localGroupDescription(group,lang)||desc}</p>
+                <h2>{name}</h2><p>{productDescription}</p>
                 <div className="brandCardActions">
                   <a className={direct&&!special?"brandShopLink":""} href={localizedNuSkinUrl(url,lang)} target="_blank" rel={direct&&!special?"sponsored noopener noreferrer":"noopener noreferrer"}>{localizedNuSkinCta(name,url,lang,t)}<ExternalLink size={13}/></a>
                 </div>
