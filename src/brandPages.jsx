@@ -7,8 +7,8 @@ import {subpageMedia} from './subpage-media.js';
 const NUSKIN = [
   ["ageLOC LumiSpa iO System","BEAUTY TECH","A Nu Skin Vera alkalmazással összekapcsolható, személyre szabható arctisztító és bőrápoló rendszer.","https://mysite.mynuskin.com/catalog/hu/hu/product/97139603?store=beautybyildy"],
   ["ageLOC WellSpa iO System","BEAUTY TECH","Otthoni szépség- és wellnesskészülék a testápolási rutin támogatására.","https://mysite.mynuskin.com/catalog/hu/hu/product/97139757?store=beautybyildy"],
-  ["ageLOC Boost System","BEAUTY TECH","Otthoni készülékrendszer, amely a hozzá tartozó aktiváló szérummal együtt használható.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001951?store=beautybyildy"],
-  ["ageLOC Galvanic Spa","BEAUTY TECH","Galvánáramos otthoni szépségápolási készülék arc-, test- és fejbőrápolási alkalmazásokhoz.","https://mysite.mynuskin.com/catalog/hu/hu/product/97310060?store=beautybyildy"],
+  ["ageLOC Boost System","BEAUTY TECH","Váltakozó pulzáló mikroáram-technológiát és Activating Serumot egyesítő, napi kétperces arcápoló rendszer a ragyogóbb, teltebb és rugalmasabb megjelenésű bőrért.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001951?store=beautybyildy"],
+  ["ageLOC Galvanic Spa","BEAUTY TECH","Galvánáramos otthoni készülékrendszer arc-, test- és fejbőrápolási alkalmazásokhoz, a hozzá kifejlesztett Nu Skin termékekkel használva.","https://mysite.mynuskin.com/catalog/hu/hu/product/97310060?store=beautybyildy"],
   ["Galvanic Spa Facial Gels with ageLOC","SKINCARE","A Galvanic Spa arckezelő fejével történő használatra kifejlesztett kétlépéses arcápoló gél.","https://mysite.mynuskin.com/catalog/hu/hu/product/97004433?store=beautybyildy"],
   ["ageLOC Tru Face Future Serum","TRU FACE","Prémium arcápoló szérum a bőr feszesebb, simább és egységesebb megjelenésének támogatására.","https://mysite.mynuskin.com/catalog/hu/hu/product/97004260?store=beautybyildy"],
   ["ageLOC Tru Face Line Corrector","TRU FACE","Célzott arcápoló a finom vonalak megjelenésére, különösen a szem és a száj környékén.","https://mysite.mynuskin.com/catalog/hu/hu/product/97004263?store=beautybyildy"],
@@ -82,6 +82,8 @@ const NUSKIN = [
 ];
 
 const NUSKIN_IMAGES = Object.freeze({
+  "ageLOC Boost System": "https://media.nuskin.com/transform/3bed53e9-71cf-4b11-8c2c-4ade2a1c32d1/nu-skin-ageloc-boost-system-world-1-brand-beauty-device-packshot-image.webp?io=transform%3Afit%2Cwidth%3A600%2Cheight%3A600&quality=95",
+  "ageLOC Galvanic Spa": "https://media.nuskin.com/transform/16e4cf9c-599f-4264-b742-e7255c9473cc/ageLOC_galvanic_spa_device_EU_PDP_slide_01.webp?io=transform%3Afit%2Cwidth%3A980%2Cheight%3A980&quality=95",
   "ageLOC Nutriol Intensive Scalp & Hair Serum": "https://media.nuskin.com/m/772409f6975a069d/webimage-nu-skin-ageloc-nutriol-scalp-and-hair-serum-packshot.png",
   "Nutricentials Ceramides + Postbiotics Pump": "https://media.nuskin.com/m/2d951c10d3f919f6/webimage-nu-skin-nutricentials-ceramides-and-postbiotics-pump-packshot-image.png",
   "Nu Colour Lash + Brow Serum": "https://media.nuskin.com/m/d0b12220f9d53ad/webimage-nu-colour-lash-brow-serum-main.png",
@@ -245,7 +247,7 @@ export function NuSkinPage({lang="hu"}) {
               const image=NUSKIN_IMAGES[name];
               const productDescription=lang==="hu"?desc:(localGroupDescription(group,lang)||desc);
               return <article className={`brandProductCard nuskinCard ${direct&&!special?"isPurchasable":"isInfo"}`} key={name}>
-                <div className="nuskinProductImage">{image?<img src={image} alt={name} loading="lazy" decoding="async"/>:<span aria-hidden="true">NU SKIN</span>}</div>
+                <div className="nuskinProductImage">{image?<><img src={image} alt={name} loading="lazy" decoding="async" onError={event=>{event.currentTarget.hidden=true;event.currentTarget.nextElementSibling.hidden=false}}/><span hidden aria-hidden="true">NU SKIN</span></>:<span aria-hidden="true">NU SKIN</span>}</div>
                 <div className="brandCardTopline"><span>{localGroup(group,lang)}</span><em>{direct&&!special?t.available:t.infoOnly}</em></div>
                 <h2>{name}</h2><p>{productDescription}</p>
                 <div className="brandCardActions">
