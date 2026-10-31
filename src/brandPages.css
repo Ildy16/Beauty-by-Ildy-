@@ -582,3 +582,6 @@
   font:600 7.5px/1 Montserrat;
   letter-spacing:1px;
 }
+
+/* Official Nu Skin product photography: display only after EMEA usage rights are verified. */
+.brandProductImage{display:block;width:100%;aspect-ratio:4/3;object-fit:contain;background:#fff;border:1px solid var(--line);margin:0 0 14px;padding:12px}
