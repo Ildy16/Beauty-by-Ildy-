@@ -4,6 +4,8 @@ import "./brandPages.css";
 import {TopicHero} from './topicHero.jsx';
 import {subpageMedia} from './subpage-media.js';
 
+const NUSKIN_PERSONAL_SHOP = "https://nskn.co/VJrwVF";
+
 const NUSKIN = [
   ["ageLOC LumiSpa iO System","BEAUTY TECH","A Nu Skin Vera alkalmazással összekapcsolható, személyre szabható arctisztító és bőrápoló rendszer.","https://mysite.mynuskin.com/catalog/hu/hu/product/97139603?store=beautybyildy"],
   ["ageLOC WellSpa iO System","BEAUTY TECH","Otthoni szépség- és wellnesskészülék a testápolási rutin támogatására.","https://mysite.mynuskin.com/catalog/hu/hu/product/97139757?store=beautybyildy"],
@@ -303,9 +305,7 @@ const localGroupDescription=(group,lang)=>(groupDescriptions[lang]||groupDescrip
 // Purchase-route audit: 2026-09-23. Direct My Site links are retained only for current products; known discontinued/unstable routes are information-only.
 const localizedNuSkinUrl=(url,lang)=>{
   if(!url.includes("mysite.mynuskin.com")) return url;
-  if(lang==="de") return url.replace("/catalog/hu/hu/","/catalog/at/de/");
-  if(lang==="en") return url.replace("/catalog/hu/hu/","/catalog/ie/en/");
-  return url;
+  return NUSKIN_PERSONAL_SHOP;
 };
 const localizedNuSkinCta=(name,url,lang,t)=>{
   if(archivedNuSkin.has(name)) return t.archive;
