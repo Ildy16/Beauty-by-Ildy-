@@ -82,6 +82,13 @@ const NUSKIN = [
 ];
 
 const NUSKIN_IMAGES = Object.freeze({
+  "Day Dream Protective Cream SPF 30": "https://media.nuskin.com/m/2dd688298f6da037/webimage-nu-skin-nutricentials-day-dream-protective-cream-creamy-moisturizer-packshot-image.png?width=",
+  "Nutricentials Dew All Day Moisture Restore Cream": "https://media.nuskin.com/m/240b0f77c9b61615/webimage-nu-skin-nutricentials-product-images-51-jpg.png?width=",
+  "Spa Day Creamy Hydrating Masque": "https://media.nuskin.com/m/157eca5c180b8b5/webimage-nu-skin-nutricentials-spa-day-creamy-hydrating-masque-packshot-pdp-1.png?width=",
+  "Epoch Glacial Marine Mud": "https://media.nuskin.com/transform/98e7da6d-5857-42d8-8a01-ab8aa336c047/Epoch_Glacial_Marine_Mud_PDP_slide-1-20260326-105556.webp?quality=95&io=transform:fit,width:600,height:600&width=",
+  "Epoch Polishing Bar": "https://media.nuskin.com/transform/cc98bd67-ea09-4c8b-b437-abcef1cb5448/epoch-polishing-bar-new-packshot.webp?quality=95&io=transform:fit,width:600,height:600&width=",
+  "Epoch Sole Solution": "https://media.nuskin.com/transform/1789433b-6078-4049-8606-cf4934d38a50/Epoch-Sole-Solution.webp?quality=95&io=transform:fit,width:980,height:980&width=",
+  "ReNu Hair Mask": "https://media.nuskin.com/transform/2990b1a9-3ce8-4b9c-8a3f-540dde5a7271/IMG25072300115-Renu-Hair-Mask-Silo-2K.webp?quality=95&io=transform:fit,width:980,height:980&width=",
   "ageLOC LumiSpa iO System": "https://media.nuskin.com/transform/e4d01ed0-4ced-44be-a2b1-b0e2386bbf02/lumispa_io_blue_device-only_EU_PDP_slide_01.webp?quality=95&io=transform:fit,width:980,height:980&width=",
   "ageLOC WellSpa iO System": "https://media.nuskin.com/transform/15d54d04-292f-408b-abbb-a11c64efdd7c/wellspa_io_device-only-EU-PDP-slide-01.webp?quality=95&io=transform:fit,width:980,height:980&width=",
   "ageLOC Boost System": "https://media.nuskin.com/transform/3bed53e9-71cf-4b11-8c2c-4ade2a1c32d1/nu-skin-ageloc-boost-system-world-1-brand-beauty-device-packshot-image.webp?quality=95&io=transform:fit,width:600,height:600&width=",
