@@ -3,7 +3,7 @@ import { ArrowLeft, ExternalLink } from "lucide-react";
 import "./brandPages.css";
 
 const NUSKIN = [
-  ["ageLOC LumiSpa iO System","BEAUTY TECH","Connected cleansing system designed to pair with the Nu Skin Vera app.","https://mysite.mynuskin.com/catalog/hu/hu/product/97139603?store=beautybyildy"],
+  ["ageLOC LumiSpa iO Cleansing Kit – Normal Skin","BEAUTY TECH","ageLOC LumiSpa iO arctisztító készlet normál bőrre, a Nu Skin Vera alkalmazással használható okoseszközzel.","https://mysite.mynuskin.com/catalog/hu/hu/product/97139603?store=beautybyildy"],
   ["ageLOC WellSpa iO System","BEAUTY TECH","Nu Skin beauty and wellness device system.","https://mysite.mynuskin.com/catalog/hu/hu/product/97139757?store=beautybyildy"],
   ["ageLOC Boost System","BEAUTY TECH","At-home skin-vitalising device system.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001951?store=beautybyildy"],
   ["ageLOC Galvanic Spa","BEAUTY TECH","Galvanic at-home beauty device with face, body and scalp applications.","https://mysite.mynuskin.com/catalog/hu/hu/product/97310060?store=beautybyildy"],
@@ -77,6 +77,23 @@ const NUSKIN = [
   ["ageLOC TRMe","WELLNESS","A Nu Skin magyar oldalán bemutatott, személyre szabható Body Balance rendszer, amely a MyGOAL, InnerNU, REALMe, MyEDGE és M-Bar termékeket, valamint TRME csomagokat foglalja össze.","https://www.nuskin.com/hu/hu/site/product/eua-ageloc-trme-landing-page"],
   ["Prysm iO","WELLNESS TECH","A Nu Skin magyar oldalán bemutatott, nem invazív wellness mérőeszköz, amely 15 másodperc alatt követi a bőr karotinoidszintjét és Prysm-pontszámot ad.","https://www.nuskin.com/hu/hu/site/product/eua-meet-prysm-io-the-future-of-measurable-nutritional-wellness"],
 ];
+
+// Approved, locally hosted product images can be added by SKU after the Nu Skin EMEA
+// web-use license has been checked. Never scrape US press-kit images into EU sales pages.
+// Image entries stay empty until their source and permission are documented.
+const nuskinMediaBySku = {
+  // "97139603": { src: "/images/nuskin/97139603.webp", source: "...", license: "..." },
+};
+const nuskinPilotDetails = {
+  "97139603": {
+    hu: "Normál bőrtípushoz készült LumiSpa iO arctisztító készlet. A készülék a hozzá tartozó arctisztítóval használható, és párosítható a Nu Skin Vera alkalmazással, amely segíti a bőrápolási rutin követését.",
+    en: "A LumiSpa iO cleansing kit for normal skin. The device works with its matching cleanser and can connect to the Nu Skin Vera app for routine guidance and tracking.",
+    de: "Ein LumiSpa-iO-Reinigungsset für normale Haut. Das Gerät wird mit dem passenden Reiniger verwendet und kann mit der Nu Skin Vera App zur Begleitung der Pflegeroutine verbunden werden.",
+  },
+};
+const getNuSkinSku = (url) => url.match(/\\/product\\/(\\d+)/)?.[1] || "";
+const nuskinDescription = (url, lang, fallback) =>
+  nuskinPilotDetails[getNuSkinSku(url)]?.[lang] || fallback;
 
 const copy = {
   hu: {
@@ -241,7 +258,8 @@ export function NuSkinPage({lang="hu"}) {
               const special=archivedNuSkin.has(name)||name==="ageLOC TRMe"||!direct;
               return <article className={`brandProductCard nuskinCard ${direct&&!special?"isPurchasable":"isInfo"}`} key={name}>
                 <div className="brandCardTopline"><span>{localGroup(group,lang)}</span><em>{direct&&!special?t.available:t.infoOnly}</em></div>
-                <h2>{name}</h2><p>{localGroupDescription(group,lang)||desc}</p>
+                {nuskinMediaBySku[getNuSkinSku(url)]?.src && <img className="brandProductImage" src={nuskinMediaBySku[getNuSkinSku(url)].src} alt={name} loading="lazy" decoding="async"/>}
+                <h2>{name}</h2><p>{nuskinDescription(url,lang,localGroupDescription(group,lang)||desc)}</p>
                 <div className="brandCardActions">
                   <a className={direct&&!special?"brandShopLink":""} href={localizedNuSkinUrl(url,lang)} target="_blank" rel={direct&&!special?"sponsored noopener noreferrer":"noopener noreferrer"}>{localizedNuSkinCta(name,url,lang,t)}<ExternalLink size={13}/></a>
                 </div>
