@@ -38,7 +38,7 @@ const NUSKIN = [
   ["ageLOC Nutriol Scalp & Hair Shampoo","HAIR & SCALP","Sampon vékony szálú, sérült és öregedő hajra és fejbőrre.","https://mysite.mynuskin.com/catalog/hu/hu/product/97002106?store=beautybyildy"],
   ["ageLOC Nutriol Scalp & Hair Conditioner","HAIR & SCALP","Fejbőr- és hajápoló kondicionáló az ageLOC Nutriol rendszerből.","https://mysite.mynuskin.com/catalog/hu/hu/product/97002107?store=beautybyildy"],
   ["ageLOC Nutriol Intensive Scalp & Hair Serum","HAIR & SCALP","Intenzív fejbőr- és hajszérum az ageLOC Nutriol rendszerből.","https://mysite.mynuskin.com/catalog/hu/hu/product/97002149?store=beautybyildy"],
-  ["Nu Skin 180° Anti-Aging Skin Therapy System","NU SKIN 180°","Korábbi, több lépéses Nu Skin 180° arcápolási rendszer; az EU-ban 2024 októberében kivezetésre került.","https://www.nuskin.com/content/dam/eu-library/office/documents/product-discontinuation-overview/nu-skin-product-discontinuation-overview-2024-q4.pdf"],
+  ["Nu Skin 180º AHA Facial Peel and Neutraliser","NU SKIN 180°","10% tejsavat tartalmazó, kétlépéses AHA hámlasztó és neutralizáló arcápoló.","https://www.nuskin.com/hu/hu/product/180-aha-facial-peel-neutralizer-hu"],
   ["Epoch Glacial Marine Mud","EPOCH","Etnobotanikai ihletésű iszappakolás.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001987?store=beautybyildy"],
   ["Epoch Baobab Body Butter","EPOCH","Gazdag, baobabfókuszú testvaj.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001985?store=beautybyildy"],
   ["Epoch IceDancer","EPOCH","Frissítő lábápoló zselé.","https://www.nuskin.com/content/products/02/10/28/02102803/en.html"],
@@ -53,7 +53,7 @@ const NUSKIN = [
   ["NaPCA Moisture Mist","BODY CARE","Hidratáló permet arcra és testre.","https://mysite.mynuskin.com/catalog/hu/hu/product/97138860?store=beautybyildy"],
   ["ageLOC Body Shaping Gel","BODY CARE","Testápoló gél az ageLOC testápolási rendszerhez.","https://mysite.mynuskin.com/catalog/hu/hu/product/97003902?store=beautybyildy"],
   ["ageLOC Dermatic Effects","BODY CARE","Hidratáló testápoló az ageLOC testápolási rendszerhez.","https://mysite.mynuskin.com/catalog/hu/hu/product/97003903?store=beautybyildy"],
-  ["ReNu Hair Mask","HAIR CARE","Korábbi intenzív hajpakolás. A Nu Skin terméktörzse a magyar piacon kivezetett státuszt jelez a ReNu Hair Mask EU-változatára.","https://www.nuskin.com/products/97/10/13/97101356.html"],
+  ["Hair Mask","HAIR CARE","Intenzív hajpakolás, amely simítja és regenerálja a töredezett hajvégeket, és támogatja a haj kezelhetőségét.","https://www.nuskin.com/hu/hu/product/hair-mask"],
   ["AP 24 Whitening Fluoride Toothpaste","ORAL CARE","Fluoridos fogkrém fehérítő fókuszú formulával.","https://mysite.mynuskin.com/catalog/hu/hu/product/97001647?store=beautybyildy"],
   ["AP 24 Anti-Plaque Fluoride Toothpaste","ORAL CARE","Korábbi, lepedék elleni fluoridos fogkrém; a magyar piacon már kivezetett státuszú.","https://www.nuskin.com/content/products/97/00/16/97001648/hu.html"],
   ["Pharmanex LifePak+","PHARMANEX · VITAMINOK","Komplex étrend-kiegészítő 13 vitaminnal, 9 ásványi anyaggal és növényi kivonatokkal.","https://mysite.mynuskin.com/catalog/hu/hu/product/85433743?store=beautybyildy"],
@@ -82,13 +82,25 @@ const NUSKIN = [
 ];
 
 const NUSKIN_IMAGES = Object.freeze({
+  "Day Dream Protective Lotion SPF 30": "https://media.nuskin.com/m/54598521ff23cb1/webimage-nu-skin-nutricentials-day-dream-protective-lotion-lightweight-moisturizer-packshot-image.png?width=",
+  "ageLOC Nutriol Scalp & Hair Shampoo": "https://media.nuskin.com/m/514be8989a6edfdf/webimage-nu-skin-ageloc-nutriol-scalp-and-hair-shampoo-packshot.png?width=",
+  "Nu Skin 180º AHA Facial Peel and Neutraliser": "https://media.nuskin.com/m/e13cac3c9f7bca7/webimage-nu-skin-180-product-pictures-12-jpg.png?width=",
+  "Epoch Baobab Body Butter": "https://media.nuskin.com/m/f9e8f2e5366a47b/webimage-epoch-baobab-body-butter-1.png?width=",
+  "Sunright Insta Glow": "https://media.nuskin.com/transform/66af696f-ac20-4307-bd6b-1656a1154bc4/nu-skin-sunright-insta-glow-self-tanning-gel-packshot-pdp-1-jpg.webp?quality=95&io=transform:fit,width:980,height:980&width=",
+  "Perennial Body Lotion": "https://media.nuskin.com/transform/1110644e-0a92-4e99-b449-5682b3ba0f0e/nu-skin-body-lotion-perennial-jpg.webp?quality=95&io=transform:fit,width:980,height:980&width=",
+  "Pharmanex LifePak+": "https://media.nuskin.com/transform/5323dcd1-601d-4e2a-a03f-87ab07b83bca/nu-skin-pharmanex-nutritionals-lifepak-product-packshot.webp?quality=95&io=transform:fit,width:980,height:980&width=",
+  "LifePak+ & Marine Omega ADR-csomag": "https://media.nuskin.com/transform/d2c0765b-10fb-4a09-bcdc-2490b1e7a83a/lifepak_marineomega_ADR_package_packshot.webp?quality=95&io=transform:fit,width:600,height:600&width=",
+  "Pharmanex Tēgreen": "https://media.nuskin.com/m/2940384fdde6b2d8/webimage-fullImage-imgw-1280-1280.png?width=",
+  "TRME MyGOAL": "https://media.nuskin.com/m/5d23b9234fe8ddcb/webimage-trme-my-goal-eu-1.png?width=",
+  "TRME MyEDGE": "https://media.nuskin.com/m/7ade170ad04d12c9/webimage-trme-edge-eu-1.png?width=",
+  "TRME M-Bar": "https://media.nuskin.com/m/1d6929986444b40b/webimage-trme-m-bars-chocolate-crips.png?width=",
   "Day Dream Protective Cream SPF 30": "https://media.nuskin.com/m/2dd688298f6da037/webimage-nu-skin-nutricentials-day-dream-protective-cream-creamy-moisturizer-packshot-image.png?width=",
   "Nutricentials Dew All Day Moisture Restore Cream": "https://media.nuskin.com/m/240b0f77c9b61615/webimage-nu-skin-nutricentials-product-images-51-jpg.png?width=",
   "Spa Day Creamy Hydrating Masque": "https://media.nuskin.com/m/157eca5c180b8b5/webimage-nu-skin-nutricentials-spa-day-creamy-hydrating-masque-packshot-pdp-1.png?width=",
   "Epoch Glacial Marine Mud": "https://media.nuskin.com/transform/98e7da6d-5857-42d8-8a01-ab8aa336c047/Epoch_Glacial_Marine_Mud_PDP_slide-1-20260326-105556.webp?quality=95&io=transform:fit,width:600,height:600&width=",
   "Epoch Polishing Bar": "https://media.nuskin.com/transform/cc98bd67-ea09-4c8b-b437-abcef1cb5448/epoch-polishing-bar-new-packshot.webp?quality=95&io=transform:fit,width:600,height:600&width=",
   "Epoch Sole Solution": "https://media.nuskin.com/transform/1789433b-6078-4049-8606-cf4934d38a50/Epoch-Sole-Solution.webp?quality=95&io=transform:fit,width:980,height:980&width=",
-  "ReNu Hair Mask": "https://media.nuskin.com/transform/2990b1a9-3ce8-4b9c-8a3f-540dde5a7271/IMG25072300115-Renu-Hair-Mask-Silo-2K.webp?quality=95&io=transform:fit,width:980,height:980&width=",
+  "Hair Mask": "https://media.nuskin.com/transform/2990b1a9-3ce8-4b9c-8a3f-540dde5a7271/IMG25072300115-Renu-Hair-Mask-Silo-2K.webp?quality=95&io=transform:fit,width:980,height:980&width=",
   "ageLOC LumiSpa iO System": "https://media.nuskin.com/transform/e4d01ed0-4ced-44be-a2b1-b0e2386bbf02/lumispa_io_blue_device-only_EU_PDP_slide_01.webp?quality=95&io=transform:fit,width:980,height:980&width=",
   "ageLOC WellSpa iO System": "https://media.nuskin.com/transform/15d54d04-292f-408b-abbb-a11c64efdd7c/wellspa_io_device-only-EU-PDP-slide-01.webp?quality=95&io=transform:fit,width:980,height:980&width=",
   "ageLOC Boost System": "https://media.nuskin.com/transform/3bed53e9-71cf-4b11-8c2c-4ade2a1c32d1/nu-skin-ageloc-boost-system-world-1-brand-beauty-device-packshot-image.webp?quality=95&io=transform:fit,width:600,height:600&width=",
@@ -253,7 +265,7 @@ const groupDescriptions={
   }
 };
 const localGroup=(group,lang)=>(groupLabels[lang]||groupLabels.hu)[group]||group;
-const archivedNuSkin=new Set(["Nu Skin 180° Anti-Aging Skin Therapy System","Epoch Hand Cream","Epoch IceDancer","Epoch Ava Puhi Moni Shampoo","Epoch Ava Puhi Moni Light Conditioner","Liquid Body Lufra","ReNu Hair Mask","AP 24 Anti-Plaque Fluoride Toothpaste","R² Day + Night","CordyMax CS-4","Pro-B","LifePak+ & Marine Omega ADR-csomag"]);
+const archivedNuSkin=new Set(["Epoch Hand Cream","Epoch IceDancer","Epoch Ava Puhi Moni Shampoo","Epoch Ava Puhi Moni Light Conditioner","Liquid Body Lufra","AP 24 Anti-Plaque Fluoride Toothpaste","R² Day + Night","ageLOC Vitality","CordyMax CS-4","Pro-B","NaPCA Moisture Mist"]);
 const localGroupDescription=(group,lang)=>(groupDescriptions[lang]||groupDescriptions.hu)[group]||"";
 // Purchase-route audit: 2026-09-23. Direct My Site links are retained only for current products; known discontinued/unstable routes are information-only.
 const localizedNuSkinUrl=(url,lang)=>{
@@ -303,3 +315,4 @@ export function NuSkinPage({lang="hu"}) {
     </section>
   </main>;
 }
+
