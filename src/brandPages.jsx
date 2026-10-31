@@ -303,9 +303,10 @@ const localGroupDescription=(group,lang)=>(groupDescriptions[lang]||groupDescrip
 // Purchase-route audit: 2026-09-23. Direct My Site links are retained only for current products; known discontinued/unstable routes are information-only.
 const localizedNuSkinUrl=(url,lang)=>{
   if(!url.includes("mysite.mynuskin.com")) return url;
-  if(lang==="de") return url.replace("/catalog/hu/hu/","/catalog/at/de/");
-  if(lang==="en") return url.replace("/catalog/hu/hu/","/catalog/ie/en/");
-  return url;
+  const sku=url.match(/\/product\/([^?]+)/)?.[1];
+  if(!sku) return url;
+  const market=lang==="de"?"at/de":lang==="en"?"ie/en":"hu/hu";
+  return `https://www.nuskin.com/${market}/mysite/beautybyildy/search/${sku}`;
 };
 const localizedNuSkinCta=(name,url,lang,t)=>{
   if(archivedNuSkin.has(name)) return t.archive;
