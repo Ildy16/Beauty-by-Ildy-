@@ -180,15 +180,15 @@ const copy = {
   hu: {
     back:"Vissza a főoldalra",
     nuskinTitle:"NU SKIN",
-    nuskinLead:"Külön Nu Skin válogatás: beauty tech, bőrápolás, hajápolás, vitaminok és Pharmanex wellness egy helyen. A termékadatokat a hivatalos magyar és EMEA Nu Skin források alapján építjük fel.",
-    nuskinNote:"A vásárlás minden esetben a Nu Skin hivatalos rendszerében történik. A vásárolható termékek közvetlenül a megfelelő Nu Skin termékoldalra vezetnek; a rendszer-, információs vagy már nem forgalmazott tételeknél külön jelöljük, ha nincs közvetlen vásárlás.",
+    nuskinLead:"Fedezd fel a Nu Skin innovatív szépségápolási technológiáit, prémium bőrápolási termékeit, valamint a hajápolás és a jóllét világát.",
+    nuskinNote:"",
     official:"HIVATALOS TERMÉKOLDAL",
     buyOfficial:"VÁSÁRLÁS A NU SKIN OLDALÁN",
     system:"RENDSZER MEGTEKINTÉSE",
     archive:"HIVATALOS INFORMÁCIÓ",
     details:"RÉSZLETES ADATLAP",
     verified:"Hivatalos termékforrások alapján · folyamatosan frissítve",
-    localeNote:"HU · Magyarország · HUF  |  DE · Ausztria · EUR  |  EN · Írország · EUR",
+    localeNote:"A vásárlás a Nu Skin hivatalos magyar webáruházában történik.",
     products:"termék",
     available:"KÖZVETLEN VÁSÁRLÁS",
     infoOnly:"INFORMÁCIÓ",
@@ -196,15 +196,15 @@ const copy = {
   en: {
     back:"Back to home",
     nuskinTitle:"NU SKIN",
-    nuskinLead:"A dedicated Nu Skin edit covering beauty tech, skincare, haircare, vitamins and Pharmanex wellness, built from current official Hungarian and EMEA Nu Skin sources.",
-    nuskinNote:"Purchases are completed entirely within Nu Skin’s official system. Products available for purchase open the relevant Nu Skin product page directly; system, informational or discontinued items are clearly marked when direct purchase is not available.",
+    nuskinLead:"Discover Nu Skin’s innovative beauty technologies, premium skincare products, and the world of haircare and wellbeing.",
+    nuskinNote:"",
     official:"OFFICIAL PRODUCT PAGE",
     buyOfficial:"SHOP ON NU SKIN",
     system:"VIEW SYSTEM",
     archive:"OFFICIAL INFORMATION",
     details:"DETAILED PROFILE",
     verified:"Based on official product sources · continuously updated",
-    localeNote:"HU · Hungary · HUF  |  DE · Austria · EUR  |  EN · Ireland · EUR",
+    localeNote:"Purchases are completed through Nu Skin’s official Hungarian online store.",
     products:"products",
     available:"DIRECT PURCHASE",
     infoOnly:"INFORMATION",
@@ -212,15 +212,15 @@ const copy = {
   de: {
     back:"Zurück zur Startseite",
     nuskinTitle:"NU SKIN",
-    nuskinLead:"Eine eigene Nu-Skin-Auswahl mit Beauty Tech, Hautpflege, Haarpflege, Vitaminen und Pharmanex-Wellness auf Basis aktueller offizieller ungarischer und EMEA-Nu-Skin-Quellen.",
-    nuskinNote:"Der Kauf erfolgt vollständig im offiziellen Nu-Skin-System. Kaufbare Produkte führen direkt zur jeweiligen Nu-Skin-Produktseite; System-, Informations- oder nicht mehr verfügbare Artikel werden klar gekennzeichnet, wenn kein direkter Kauf möglich ist.",
+    nuskinLead:"Entdecke innovative Beauty-Technologien und hochwertige Hautpflegeprodukte von Nu Skin sowie die Welt der Haarpflege und des Wohlbefindens.",
+    nuskinNote:"",
     official:"OFFIZIELLE PRODUKTSEITE",
     buyOfficial:"BEI NU SKIN KAUFEN",
     system:"SYSTEM ANSEHEN",
     archive:"OFFIZIELLE INFORMATION",
     details:"DETAILPROFIL",
     verified:"Auf Basis offizieller Produktquellen · laufend aktualisiert",
-    localeNote:"HU · Ungarn · HUF  |  DE · Österreich · EUR  |  EN · Irland · EUR",
+    localeNote:"Der Kauf erfolgt über den offiziellen ungarischen Nu-Skin-Onlineshop.",
     products:"Produkte",
     available:"DIREKT KAUFEN",
     infoOnly:"INFORMATION",
@@ -316,7 +316,7 @@ const localizedNuSkinCta=(name,url,lang,t)=>{
 };
 
 function BrandHero({title,lead,note,t,media}) {
-  return <TopicHero eyebrow="BEAUTY BY ILDY · BRAND EDIT" title={title} lead={lead} note={note} backLabel={t.back} videoSrc={media?.video} videoPoster={media?.poster}/>;
+  return <TopicHero eyebrow="BEAUTY BY ILDY · MÁRKAVILÁG" title={title} lead={lead} note={note} backLabel={t.back} videoSrc={media?.video} videoPoster={media?.poster}/>;
 }
 
 export function NuSkinPage({lang="hu"}) {
