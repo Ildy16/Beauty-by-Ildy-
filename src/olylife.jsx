@@ -1,5 +1,6 @@
 import React from "react";
 import "./olylife.css";
+import { olyDetails } from "./olylifeDetails.js";
 
 const products = [
   {name:"OlyLife THZ Tera-P90+",image:"https://www.olylifeint.com/Res/img/product/OLY-HCA002A.png",category:"wellness",tech:"PEMF · terahertz · RF · EMS · TENS",desc:{hu:"Komplex készülékrendszer főegységgel, Frost Age szépségápolási fejjel és Revitaluxe masszírozóval.",en:"Multi-device system with a main unit, Frost Age beauty attachment and Revitaluxe massager.",de:"Gerätesystem mit Haupteinheit, Frost-Age-Beauty-Aufsatz und Revitaluxe-Massagegerät."}},
@@ -22,7 +23,11 @@ export function OlyLifePage({lang="hu"}){
   <div className="olyContent"><p className="olyNotice">{t.notice}</p>
    <div className="olyGrid">{products.map((p)=><article className="olyCard" key={p.name}>
     <div className="olyVisual">{p.image?<img src={p.image} alt={p.name} loading="lazy" decoding="async" onError={(event)=>{event.currentTarget.hidden=true;event.currentTarget.nextElementSibling.hidden=false}}/>:null}<div className="olyVisualFallback" hidden={Boolean(p.image)} aria-hidden="true"><span>OLYLIFE</span><strong>{p.name}</strong></div></div>
-    <div className="olyCardBody"><small>{t.categories[p.category]}</small><h2>{p.name}</h2><p>{p.desc[lang]||p.desc.hu}</p><p className="olyTech">{p.tech}</p><span className="olyDisabled">{t.button}</span></div>
+    <div className="olyCardBody"><small>{t.categories[p.category]}</small><h2>{p.name}</h2><p>{p.desc[lang]||p.desc.hu}</p><p className="olyTech">{p.tech}</p>
+    <details className="olyDetails"><summary>{lang==="hu"?"Részletes termékismertető":lang==="de"?"Ausführliche Produktinformationen":"Detailed product information"}</summary>
+    {lang==="hu"?<><p>{olyDetails[p.name].intro}</p><h3>Technológiák és működés</h3><p>{olyDetails[p.name].technology}</p><h3>Funkciók és kialakítás</h3><p>{olyDetails[p.name].features}</p><h3>A gyártó által kommunikált előnyök</h3><p>{olyDetails[p.name].claims}</p></>:<><p>{p.desc[lang]}</p><p>{lang==="de"?"Ausführliche technische Informationen derzeit auf Ungarisch verfügbar.":"Detailed technical information currently available in Hungarian."}</p></>}
+    <a href={olyDetails[p.name].source} target="_blank" rel="noopener noreferrer">{lang==="hu"?"Hivatalos gyártói termékadatlap":lang==="de"?"Offizielle Herstellerseite":"Official manufacturer page"} ↗</a>
+    </details><span className="olyDisabled">{t.button}</span></div>
    </article>)}</div>
    <p className="olyDisclaimer">{t.disclaimer}</p>
    <a className="olySource" href="https://www.olylifeint.com/Main/En/products.php" target="_blank" rel="noopener noreferrer">{t.source} ↗</a>
