@@ -17,6 +17,7 @@ import { MedicubePdrnProduct } from "./product.jsx";
 import { ProductsPage, ProductDetail } from "./products.jsx";
 import { BeautyFinder } from "./beautyFinder.jsx";
 import { NuSkinPage } from "./brandPages.jsx";
+import { OlyLifePage } from "./olylife.jsx";
 import { DoterraPage } from "./doterra.jsx";
 import { MagazinePage } from "./magazine.jsx";
 import { SolutionsVisualNav } from "./solutionsVisualNav.jsx";
@@ -31,6 +32,7 @@ const copy = {
       ["HOSSZÚ ÉLET", "longevity"],
       ["HATÓANYAGOK", "ingredients"],
       ["TERMÉKEK", "products"],
+      ["OLYLIFE", "olylife"],
       ["BEAUTY ÚTVONAL", "beauty-finder"],
       ["NU SKIN", "nuskin"],
       ["ILLÓOLAJOK", "doterra"],
@@ -125,6 +127,7 @@ const copy = {
       ["LONGEVITY", "longevity"],
       ["SOLUTIONS", "solutions"],
       ["PRODUCTS", "products"],
+      ["OLYLIFE", "olylife"],
       ["BEAUTY FINDER", "beauty-finder"],
       ["NU SKIN", "nuskin"],
       ["ESSENTIAL OILS", "doterra"],
@@ -219,6 +222,7 @@ const copy = {
       ["LONGEVITY", "longevity"],
       ["LÖSUNGEN", "solutions"],
       ["PRODUKTE", "products"],
+      ["OLYLIFE", "olylife"],
       ["BEAUTY FINDER", "beauty-finder"],
       ["NU SKIN", "nuskin"],
       ["ÄTHERISCHE ÖLE", "doterra"],
@@ -316,6 +320,7 @@ const copy = {
 const brands = {
   hu: [
     ["Nu Skin", "MÁR ELÉRHETŐ", "Beauty tech + bőrápolás + wellness"],
+    ["OlyLife", "BEMUTATÓ", "Wellness- és beauty készülékek"],
     ["doTERRA", "MÁR ELÉRHETŐ", "Illóolajok + aromás wellness"],
     ["HubisLab", "VÁLOGATOTT", "Professzionális K-beauty"],
     ["Biodance", "VÁLOGATOTT", "K-beauty + PDRN"],
@@ -329,6 +334,7 @@ const brands = {
   ],
   en: [
     ["Nu Skin", "AVAILABLE NOW", "Beauty tech + skincare + wellness"],
+    ["OlyLife", "PREVIEW", "Wellness and beauty devices"],
     ["doTERRA", "AVAILABLE NOW", "Essential oils + aromatic wellness"],
     ["HubisLab", "CURATED", "Professional K-beauty"],
     ["Biodance", "CURATED", "K-beauty + PDRN"],
@@ -342,6 +348,7 @@ const brands = {
   ],
   de: [
     ["Nu Skin", "JETZT VERFÜGBAR", "Beauty Tech + Hautpflege + Wellness"],
+    ["OlyLife", "VORSCHAU", "Wellness- und Beauty-Geräte"],
     ["doTERRA", "JETZT VERFÜGBAR", "Ätherische Öle + aromatisches Wellness"],
     ["HubisLab", "AUSGEWÄHLT", "Professionelle K-Beauty"],
     ["Biodance", "AUSGEWÄHLT", "K-Beauty + PDRN"],
@@ -392,6 +399,7 @@ function currentPage() {
       "products",
       "beauty-finder",
       "nuskin",
+      "olylife",
       "doterra",
       "magazine",
       "product-medicube-pdrn",
@@ -411,6 +419,7 @@ const seoCopy={
     longevity:["Longevity | Beauty by Ildy","Longevity, skin longevity és healthy aging témák tudományos háttérrel és reális értelmezéssel."],
     products:["Válogatott termékek | Beauty by Ildy","Gondosan válogatott bőrápolási, hajápolási és beauty termékek formula- és evidenciaszemlélettel."],
     "beauty-finder":["Beauty Útvonal | Beauty by Ildy","Személyre szabott Beauty Útvonal bőrápolási, hajápolási és beauty tech lehetőségek áttekintéséhez."],
+    olylife:["OlyLife készülékek | Beauty by Ildy","OlyLife wellness- és szépségápolási készülékek, vásárlás később a hivatalos partneri rendszerben."],
     nuskin:["Nu Skin válogatás | Beauty by Ildy","Beauty by Ildy Nu Skin és Pharmanex válogatás közvetlen hivatalos My Site vásárlási útvonalakkal."],
     doterra:["Illóolajok & aromás wellness | Beauty by Ildy","Illóolajok, aromás wellness és otthoni rituálék független szerkesztői válogatásban, hivatalos partneri vásárlási útvonallal."],
     magazine:["Beauty Magazin | Beauty by Ildy","Friss beauty, beauty tech, menopauza és longevity kutatások értelmezve, forrásokkal."]
@@ -423,6 +432,7 @@ const seoCopy={
     longevity:["Longevity | Beauty by Ildy","Longevity, skin longevity and healthy aging with scientific context and realistic interpretation."],
     products:["Curated Products | Beauty by Ildy","Curated skincare, haircare and beauty products reviewed through formulation and evidence."],
     "beauty-finder":["Beauty Finder | Beauty by Ildy","A personalised Beauty Finder for organising relevant skincare, haircare and beauty-tech options."],
+    olylife:["OlyLife Devices | Beauty by Ildy","OlyLife wellness and beauty devices; partner checkout to be confirmed."],
     nuskin:["Nu Skin Edit | Beauty by Ildy","Beauty by Ildy Nu Skin and Pharmanex edit with direct official My Site purchase routes."],
     doterra:["Essential Oils & Aromatic Wellness | Beauty by Ildy","An independent editorial edit of essential oils, aromatic wellness and at-home rituals with an official partner purchase route."],
     magazine:["Beauty Magazine | Beauty by Ildy","Fresh beauty, beauty-tech, menopause and longevity research interpreted with sources."]
@@ -436,6 +446,7 @@ const seoCopy={
     longevity:["Longevity | Beauty by Ildy","Longevity, Skin Longevity und Healthy Aging mit wissenschaftlichem Kontext und realistischer Einordnung."],
     products:["Ausgewählte Produkte | Beauty by Ildy","Kuratierte Hautpflege-, Haarpflege- und Beauty-Produkte mit Fokus auf Formulierung und Evidenz."],
     "beauty-finder":["Beauty Finder | Beauty by Ildy","Ein personalisierter Beauty Finder zur Orientierung bei Hautpflege, Haarpflege und Beauty Tech."],
+    olylife:["OlyLife Geräte | Beauty by Ildy","OlyLife Wellness- und Beauty-Geräte; Partnerkauf noch in Vorbereitung."],
     nuskin:["Nu Skin Auswahl | Beauty by Ildy","Beauty by Ildy Nu Skin und Pharmanex Auswahl mit direkten offiziellen My-Site-Kaufwegen."],
     doterra:["Ätherische Öle & aromatisches Wellness | Beauty by Ildy","Eine unabhängige redaktionelle Auswahl zu ätherischen Ölen, aromatischem Wellness und Ritualen für zu Hause mit offiziellem Partner-Kaufweg."],
     magazine:["Beauty Magazin | Beauty by Ildy","Aktuelle Beauty-, Beauty-Tech-, Menopause- und Longevity-Forschung eingeordnet und mit Quellen."]
@@ -541,7 +552,7 @@ function App() {
         <h2>{t.brands}</h2><p className="brandIntro">{t.brandSub}</p>
         <div className="brandGrid">
           {brands[lang].map((b)=>{
-            const target=b[0]==="Nu Skin"?"#nuskin":b[0]==="doTERRA"?"#doterra":null;
+            const target=b[0]==="Nu Skin"?"#nuskin":b[0]==="OlyLife"?"#olylife":b[0]==="doTERRA"?"#doterra":null;
             const card=<><strong>{b[0]}</strong><small>{b[1]}</small><em>{b[2]}</em></>;
             return target?<a className="brandCardLink" href={target} key={b[0]}>{card}</a>:<div key={b[0]}>{card}</div>;
           })}
@@ -560,6 +571,7 @@ function App() {
   else if (page === "products") content = <ProductsPage lang={lang} />;
   else if (page === "beauty-finder") content = <BeautyFinder lang={lang} />;
   else if (page === "nuskin") content = <NuSkinPage lang={lang} />;
+  else if (page === "olylife") content = <OlyLifePage lang={lang} />;
   else if (page === "doterra") content = <DoterraPage lang={lang} />;
   else if (page === "magazine") content = <MagazinePage lang={lang} />;
   else if (page === "product-medicube-pdrn")
