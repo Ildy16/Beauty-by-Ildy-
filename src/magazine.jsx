@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import { ArrowLeft, ArrowRight, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import "./magazine.css";
+import {TopicHero} from "./topicHero.jsx";
+import {subpageMedia} from "./subpage-media.js";
 
 const ARTICLES = {
   hu: [
@@ -404,14 +406,7 @@ export function MagazinePage({lang="hu"}){
     .map((a,i)=>({...a,_cat:CATEGORY_BY_INDEX[i]||"TREND RADAR"}))
     .filter(a=>active==="ALL"||a._cat===active);
   return <main className="magPage">
-    <section className="magHero">
-      <div>
-        <a className="magBack" href="#top"><ArrowLeft size={14}/>{t.back}</a>
-        <p className="eyebrow">{t.eyebrow}</p>
-        <h1>{t.title}</h1>
-        <p>{t.lead}</p>
-      </div>
-    </section>
+    <TopicHero eyebrow={t.eyebrow} title={t.title} lead={t.lead} backLabel={t.back} videoSrc={subpageMedia.magazine.video} videoPoster={subpageMedia.magazine.poster}/>
     <nav className="magFilters" aria-label="Magazine categories">
       <button className={active==="ALL"?"active":""} onClick={()=>setActive("ALL")}>{t.all}</button>
       {t.cats.map((label,i)=>{

@@ -17,29 +17,33 @@ import { MedicubePdrnProduct } from "./product.jsx";
 import { ProductsPage, ProductDetail } from "./products.jsx";
 import { BeautyFinder } from "./beautyFinder.jsx";
 import { NuSkinPage } from "./brandPages.jsx";
+import { OlyLifePage } from "./olylife.jsx";
 import { DoterraPage } from "./doterra.jsx";
 import { MagazinePage } from "./magazine.jsx";
+import { SolutionsVisualNav } from "./solutionsVisualNav.jsx";
 import "./styles.css";
 
 const copy = {
   hu: {
     nav: [
-      ["SZÉPSÉG", "ingredients"],
+      ["MEGOLDÁSOK", "solutions"],
       ["SZÉPSÉGTECH", "beauty-tech-guide"],
       ["JÓLLÉT", "wellness"],
       ["HOSSZÚ ÉLET", "longevity"],
-      ["MEGOLDÁSOK", "top"],
+      ["HATÓANYAGOK", "ingredients"],
       ["TERMÉKEK", "products"],
+      ["OLYLIFE", "olylife"],
       ["BEAUTY ÚTVONAL", "beauty-finder"],
       ["NU SKIN", "nuskin"],
       ["ILLÓOLAJOK", "doterra"],
       ["MAGAZIN", "magazine"],
     ],
     eyebrow: "BEAUTY • TECHNOLOGY • WELLNESS",
-    title: "A szépség új dimenziója / Megoldások",
+    title: "A szépség új dimenziója",
     sub: "Bőrápolás, innovatív technológia és wellness – kívül-belül.",
     cta: "Fedezd fel a válogatást",
     finderCta: "PRÓBÁLD KI A BEAUTY ÚTVONALAT",
+    solutionsTitle: "Megoldások",
     choose: "MIRE VAN SZÜKSÉGED?",
     needs: [
       "Ráncok & feszesség",
@@ -103,7 +107,7 @@ const copy = {
       "Innováció, minőség és valódi hozzáadott érték alapján válogatott márkák.",
     magTitle: "MAGAZIN & ÚTMUTATÓK",
     magCards: [
-      ["Hőhullámok világszerte","2026. szeptemberi metaanalízis arról, mennyire gyakoriak a menopauzális vazomotoros tünetek."],
+      ["A menopauzás hőhullámok gyakorisága","2026. szeptemberi metaanalízis arról, mennyire gyakoriak a menopauzális vazomotoros tünetek."],
       ["Exoszóma-hype után: minőségellenőrzés","Friss áttekintés arról, miért fontosabb a forrás és a standardizálás, mint maga az „exoszóma” szó."],
       ["Otthoni beauty készülékek: hol a legerősebb evidencia?","A 2026-os GRADE-alapú áttekintés különbséget tesz lézer, LED, RF és más technológiák között."],
     ],
@@ -117,22 +121,24 @@ const copy = {
   },
   en: {
     nav: [
-      ["BEAUTY", "ingredients"],
+      ["COSMETIC INGREDIENTS", "ingredients"],
       ["BEAUTY TECH", "beauty-tech-guide"],
       ["WELLNESS", "wellness"],
       ["LONGEVITY", "longevity"],
-      ["SOLUTIONS", "top"],
+      ["SOLUTIONS", "solutions"],
       ["PRODUCTS", "products"],
+      ["OLYLIFE", "olylife"],
       ["BEAUTY FINDER", "beauty-finder"],
       ["NU SKIN", "nuskin"],
       ["ESSENTIAL OILS", "doterra"],
       ["MAGAZINE", "magazine"],
     ],
     eyebrow: "BEAUTY • TECHNOLOGY • WELLNESS",
-    title: "A new dimension of beauty / Solutions",
+    title: "A new dimension of beauty",
     sub: "Skincare, innovative technology and wellness – inside and out.",
     cta: "Explore the edit",
     finderCta: "TRY THE BEAUTY FINDER",
+    solutionsTitle: "Solutions",
     choose: "WHAT DO YOU NEED?",
     needs: [
       "Wrinkles & firmness",
@@ -196,7 +202,7 @@ const copy = {
       "Brands selected for innovation, quality and meaningful added value.",
     magTitle: "MAGAZINE & GUIDES",
     magCards: [
-      ["Hot flushes worldwide","A September 2026 meta-analysis maps the global prevalence of menopausal vasomotor symptoms."],
+      ["How common are menopausal hot flashes?","A September 2026 meta-analysis maps the global prevalence of menopausal vasomotor symptoms."],
       ["After the exosome hype: quality control","A fresh review asks why source, characterisation and standardisation matter more than the fashionable keyword itself."],
       ["At-home beauty devices: where is the evidence strongest?","A 2026 GRADE-based review distinguishes laser, LED, RF and other technologies by evidence level."],
     ],
@@ -210,22 +216,24 @@ const copy = {
   },
   de: {
     nav: [
-      ["BEAUTY", "ingredients"],
+      ["KOSMETISCHE INHALTSSTOFFE", "ingredients"],
       ["BEAUTY TECH", "beauty-tech-guide"],
       ["WELLNESS", "wellness"],
       ["LONGEVITY", "longevity"],
-      ["LÖSUNGEN", "top"],
+      ["LÖSUNGEN", "solutions"],
       ["PRODUKTE", "products"],
+      ["OLYLIFE", "olylife"],
       ["BEAUTY FINDER", "beauty-finder"],
       ["NU SKIN", "nuskin"],
       ["ÄTHERISCHE ÖLE", "doterra"],
       ["MAGAZIN", "magazine"],
     ],
     eyebrow: "BEAUTY • TECHNOLOGIE • WELLNESS",
-    title: "Eine neue Dimension der Schönheit / Lösungen",
+    title: "Eine neue Dimension der Schönheit",
     sub: "Hautpflege, innovative Technologie und Wellness – von innen und außen.",
     cta: "Auswahl entdecken",
     finderCta: "BEAUTY FINDER TESTEN",
+    solutionsTitle: "Lösungen",
     choose: "WAS BRAUCHST DU?",
     needs: [
       "Falten & Festigkeit",
@@ -295,7 +303,7 @@ const copy = {
       "Ausgewählte Marken mit Fokus auf Innovation, Qualität und echten Mehrwert.",
     magTitle: "MAGAZIN & GUIDES",
     magCards: [
-      ["Hitzewallungen weltweit","Eine Metaanalyse vom September 2026 untersucht die globale Häufigkeit menopausaler vasomotorischer Symptome."],
+      ["Wie häufig sind Hitzewallungen in den Wechseljahren?","Eine Metaanalyse vom September 2026 untersucht die globale Häufigkeit menopausaler vasomotorischer Symptome."],
       ["Nach dem Exosomen-Hype: Qualitätskontrolle","Ein aktueller Review zeigt, warum Quelle, Charakterisierung und Standardisierung wichtiger sind als das Trendwort allein."],
       ["Home-Beauty-Geräte: Wo ist die Evidenz am stärksten?","Ein GRADE-basierter Review von 2026 unterscheidet Laser, LED, RF und weitere Technologien nach Evidenzniveau."],
     ],
@@ -312,6 +320,7 @@ const copy = {
 const brands = {
   hu: [
     ["Nu Skin", "MÁR ELÉRHETŐ", "Beauty tech + bőrápolás + wellness"],
+    ["OlyLife", "BEMUTATÓ", "Wellness- és beauty készülékek"],
     ["doTERRA", "MÁR ELÉRHETŐ", "Illóolajok + aromás wellness"],
     ["HubisLab", "VÁLOGATOTT", "Professzionális K-beauty"],
     ["Biodance", "VÁLOGATOTT", "K-beauty + PDRN"],
@@ -325,6 +334,7 @@ const brands = {
   ],
   en: [
     ["Nu Skin", "AVAILABLE NOW", "Beauty tech + skincare + wellness"],
+    ["OlyLife", "PREVIEW", "Wellness and beauty devices"],
     ["doTERRA", "AVAILABLE NOW", "Essential oils + aromatic wellness"],
     ["HubisLab", "CURATED", "Professional K-beauty"],
     ["Biodance", "CURATED", "K-beauty + PDRN"],
@@ -338,6 +348,7 @@ const brands = {
   ],
   de: [
     ["Nu Skin", "JETZT VERFÜGBAR", "Beauty Tech + Hautpflege + Wellness"],
+    ["OlyLife", "VORSCHAU", "Wellness- und Beauty-Geräte"],
     ["doTERRA", "JETZT VERFÜGBAR", "Ätherische Öle + aromatisches Wellness"],
     ["HubisLab", "AUSGEWÄHLT", "Professionelle K-Beauty"],
     ["Biodance", "AUSGEWÄHLT", "K-Beauty + PDRN"],
@@ -377,13 +388,18 @@ function currentPage() {
   const h = window.location.hash.replace("#", "").split("/")[0];
   if (
     [
+      "solutions",
       "longevity",
       "wellness",
+      "wellness-women",
+      "wellness-menopause",
+      "wellness-healthy-aging",
       "beauty-tech-guide",
       "ingredients",
       "products",
       "beauty-finder",
       "nuskin",
+      "olylife",
       "doterra",
       "magazine",
       "product-medicube-pdrn",
@@ -396,12 +412,14 @@ function currentPage() {
 const seoCopy={
   hu:{
     home:["Beauty by Ildy — Beauty, Technology & Wellness","Válogatott bőrápolás, beauty tech, wellness, longevity és bizonyítékokra épülő útmutatók."],
+    solutions:["Megoldások | Beauty by Ildy","Célzott szépség-, beauty tech- és wellness megoldások bőrre, hajra és jóllétre."],
     ingredients:["Kozmetikai összetevők | Beauty by Ildy","Retinol, PDRN, ceramidok, peptidek és más kozmetikai összetevők érthetően, bizonyítékokra építve."],
     "beauty-tech-guide":["Beauty Tech útmutató | Beauty by Ildy","RF, LED, lézer, mikroáram és más otthoni beauty technológiák előnyei, korlátai és biztonsági szempontjai."],
     wellness:["Wellness & női jóllét | Beauty by Ildy","Wellness, menopauza, healthy aging, mikrotápanyagok és mindennapi jóllét túlzó ígéretek nélkül."],
     longevity:["Longevity | Beauty by Ildy","Longevity, skin longevity és healthy aging témák tudományos háttérrel és reális értelmezéssel."],
     products:["Válogatott termékek | Beauty by Ildy","Gondosan válogatott bőrápolási, hajápolási és beauty termékek formula- és evidenciaszemlélettel."],
     "beauty-finder":["Beauty Útvonal | Beauty by Ildy","Személyre szabott Beauty Útvonal bőrápolási, hajápolási és beauty tech lehetőségek áttekintéséhez."],
+    olylife:["OlyLife készülékek | Beauty by Ildy","OlyLife wellness- és szépségápolási készülékek, vásárlás később a hivatalos partneri rendszerben."],
     nuskin:["Nu Skin válogatás | Beauty by Ildy","Beauty by Ildy Nu Skin és Pharmanex válogatás közvetlen hivatalos My Site vásárlási útvonalakkal."],
     doterra:["Illóolajok & aromás wellness | Beauty by Ildy","Illóolajok, aromás wellness és otthoni rituálék független szerkesztői válogatásban, hivatalos partneri vásárlási útvonallal."],
     magazine:["Beauty Magazin | Beauty by Ildy","Friss beauty, beauty tech, menopauza és longevity kutatások értelmezve, forrásokkal."]
@@ -414,18 +432,21 @@ const seoCopy={
     longevity:["Longevity | Beauty by Ildy","Longevity, skin longevity and healthy aging with scientific context and realistic interpretation."],
     products:["Curated Products | Beauty by Ildy","Curated skincare, haircare and beauty products reviewed through formulation and evidence."],
     "beauty-finder":["Beauty Finder | Beauty by Ildy","A personalised Beauty Finder for organising relevant skincare, haircare and beauty-tech options."],
+    olylife:["OlyLife Devices | Beauty by Ildy","OlyLife wellness and beauty devices; partner checkout to be confirmed."],
     nuskin:["Nu Skin Edit | Beauty by Ildy","Beauty by Ildy Nu Skin and Pharmanex edit with direct official My Site purchase routes."],
     doterra:["Essential Oils & Aromatic Wellness | Beauty by Ildy","An independent editorial edit of essential oils, aromatic wellness and at-home rituals with an official partner purchase route."],
     magazine:["Beauty Magazine | Beauty by Ildy","Fresh beauty, beauty-tech, menopause and longevity research interpreted with sources."]
   },
   de:{
     home:["Beauty by Ildy — Beauty, Technology & Wellness","Kuratierte Hautpflege, Beauty Tech, Wellness, Longevity und evidenzbasierte Beauty-Guides."],
+    solutions:["Lösungen | Beauty by Ildy","Gezielte Beauty-, Beauty-Tech- und Wellness-Lösungen für Haut, Haar und Wohlbefinden."],
     ingredients:["Kosmetische Inhaltsstoffe | Beauty by Ildy","Retinol, PDRN, Ceramide, Peptide und weitere kosmetische Inhaltsstoffe verständlich und evidenzbasiert erklärt."],
     "beauty-tech-guide":["Beauty-Tech-Guide | Beauty by Ildy","RF, LED, Laser, Mikrostrom und weitere Home-Beauty-Technologien: Nutzen, Grenzen und Sicherheit."],
     wellness:["Wellness & Wohlbefinden von Frauen | Beauty by Ildy","Wellness, Menopause, Healthy Aging, Mikronährstoffe und tägliches Wohlbefinden ohne übertriebene Versprechen."],
     longevity:["Longevity | Beauty by Ildy","Longevity, Skin Longevity und Healthy Aging mit wissenschaftlichem Kontext und realistischer Einordnung."],
     products:["Ausgewählte Produkte | Beauty by Ildy","Kuratierte Hautpflege-, Haarpflege- und Beauty-Produkte mit Fokus auf Formulierung und Evidenz."],
     "beauty-finder":["Beauty Finder | Beauty by Ildy","Ein personalisierter Beauty Finder zur Orientierung bei Hautpflege, Haarpflege und Beauty Tech."],
+    olylife:["OlyLife Geräte | Beauty by Ildy","OlyLife Wellness- und Beauty-Geräte; Partnerkauf noch in Vorbereitung."],
     nuskin:["Nu Skin Auswahl | Beauty by Ildy","Beauty by Ildy Nu Skin und Pharmanex Auswahl mit direkten offiziellen My-Site-Kaufwegen."],
     doterra:["Ätherische Öle & aromatisches Wellness | Beauty by Ildy","Eine unabhängige redaktionelle Auswahl zu ätherischen Ölen, aromatischem Wellness und Ritualen für zu Hause mit offiziellem Partner-Kaufweg."],
     magazine:["Beauty Magazin | Beauty by Ildy","Aktuelle Beauty-, Beauty-Tech-, Menopause- und Longevity-Forschung eingeordnet und mit Quellen."]
@@ -464,27 +485,93 @@ function App() {
       setLegal(nextLegal);
       setPage(nextPage);
       setOpen(false);
-      if (nextLegal || nextPage || hash === "top") {
+      if (nextLegal || hash === "top" || !hash) {
         window.scrollTo(0, 0);
         return;
       }
+      const subTarget = nextPage && hash.includes("/") ? hash.split("/").slice(1).join("/") : null;
       requestAnimationFrame(() =>
-        document.getElementById(hash)?.scrollIntoView({ block: "start" }),
+        requestAnimationFrame(() => {
+          const targetId = subTarget || hash;
+          const target = document.getElementById(targetId);
+          if (target) target.scrollIntoView({ block: "start" });
+          else if (nextPage) window.scrollTo(0, 0);
+        }),
       );
     };
     window.addEventListener("hashchange", fn);
+    fn();
     return () => window.removeEventListener("hashchange", fn);
   }, []);
   let content;
   if (legal) content = <LegalPage lang={lang} type={legal} />;
+  else if (page === "solutions") content = (
+    <main id="solutionsPage" className="solutionsPage">
+      <h1 className="visuallyHidden">{t.solutionsTitle}</h1>
+      <SolutionsVisualNav lang={lang} />
+      <section className="needs">
+        <p>{t.choose}</p>
+        <div>
+          {t.needs.map((n, i) => (
+            <a className="needLink" href={`#solutions/${needTargets[i]}`} key={n}>{n}</a>
+          ))}
+        </div>
+      </section>
+      <section className="pillars">
+        <article id="beauty">
+          <p className="label">{t.pillars[0][0]}</p>
+          <h2>{t.pillars[0][1]}</h2>
+          <p>{t.pillars[0][2]}</p>
+          <a href="#ingredients">{t.discover}<ArrowRight size={15} /></a>
+        </article>
+        <article id="tech">
+          <p className="label">{t.pillars[1][0]}</p>
+          <h2>{t.pillars[1][1]}</h2>
+          <p>{t.pillars[1][2]}</p>
+          <a href="#beauty-tech-guide">{t.discover}<ArrowRight size={15} /></a>
+        </article>
+        <article id="wellness">
+          <p className="label">{t.pillars[2][0]}</p>
+          <h2>{t.pillars[2][1]}</h2>
+          <p>{t.pillars[2][2]}</p>
+          <a href="#wellness">{t.discover}<ArrowRight size={15} /></a>
+        </article>
+      </section>
+      <section id="hair" className="featureBand">
+        <div><h2>{t.hairTitle}</h2><p>{t.hairText}</p><a href="#products/hair">{t.discover}<ArrowRight size={14} /></a></div>
+      </section>
+      <section id="routines" className="routines">
+        <h2>{t.routines}</h2><p className="sectionIntro">{t.routineSub}</p>
+        <div className="routineGrid">{t.routineCards.map((r)=><article key={r[0]}><h3>{r[0]}</h3><p>{r[1]}</p><a href="#products">{t.explore}<ArrowRight size={14}/></a></article>)}</div>
+      </section>
+      <section className="standards">
+        <h2>{t.standards}</h2>
+        <div className="standardGrid">{t.standardCards.map((s)=><article key={s[0]}><h3>{s[0]}</h3><p>{s[1]}</p></article>)}</div>
+      </section>
+      <section id="brands" className="brands">
+        <h2>{t.brands}</h2><p className="brandIntro">{t.brandSub}</p>
+        <div className="brandGrid">
+          {brands[lang].map((b)=>{
+            const target=b[0]==="Nu Skin"?"#nuskin":b[0]==="OlyLife"?"#olylife":b[0]==="doTERRA"?"#doterra":null;
+            const card=<><strong>{b[0]}</strong><small>{b[1]}</small><em>{b[2]}</em></>;
+            return target?<a className="brandCardLink" href={target} key={b[0]}>{card}</a>:<div key={b[0]}>{card}</div>;
+          })}
+        </div>
+      </section>
+    </main>
+  );
   else if (page === "longevity") content = <LongevityPage lang={lang} />;
   else if (page === "wellness") content = <WellnessPage lang={lang} />;
+  else if (page === "wellness-women") content = <WellnessPage lang={lang} topic="women" />;
+  else if (page === "wellness-menopause") content = <WellnessPage lang={lang} topic="menopause" />;
+  else if (page === "wellness-healthy-aging") content = <WellnessPage lang={lang} topic="healthy-aging" />;
   else if (page === "beauty-tech-guide")
     content = <BeautyTechPage lang={lang} />;
   else if (page === "ingredients") content = <IngredientsPage lang={lang} />;
   else if (page === "products") content = <ProductsPage lang={lang} />;
   else if (page === "beauty-finder") content = <BeautyFinder lang={lang} />;
   else if (page === "nuskin") content = <NuSkinPage lang={lang} />;
+  else if (page === "olylife") content = <OlyLifePage lang={lang} />;
   else if (page === "doterra") content = <DoterraPage lang={lang} />;
   else if (page === "magazine") content = <MagazinePage lang={lang} />;
   else if (page === "product-medicube-pdrn")
@@ -494,12 +581,20 @@ function App() {
   else
     content = (
       <main id="top">
-        <section className="hero">
-          <div className="glow"></div>
+        <section className="hero homeVideoHero">
+          <video className="homeHeroVideo" autoPlay muted loop playsInline preload="metadata" aria-hidden="true">
+            <source src="/redhair-hero.mp4" type="video/mp4" />
+          </video>
+          <div className="homeHeroVideoShade"></div>
           <div className="heroContent">
             <p className="eyebrow">{t.eyebrow}</p>
             <h1><span className="heroTitleDesktop">{t.title}</span><span className="heroTitleMobile">{t.title.split(" / ").map((part,i)=><span key={i}>{part}</span>)}</span></h1>
             <p className="lead">{t.sub}</p>
+            <nav className="heroTopicNav" aria-label="Fő témák">
+              {t.nav.map(([label,target]) => (
+                <a key={target} href={`#${target}`}>{label}</a>
+              ))}
+            </nav>
             <div className="heroActions">
               <a className="primary" href="#products">
                 {t.cta}
@@ -510,99 +605,6 @@ function App() {
                 <ArrowRight size={17} />
               </a>
             </div>
-          </div>
-        </section>
-        <section id="solutions" className="needs">
-          <p>{t.choose}</p>
-          <div>
-            {t.needs.map((n, i) => (
-              <a className="needLink" href={`#${needTargets[i]}`} key={n}>
-                {n}
-              </a>
-            ))}
-          </div>
-        </section>
-        <section className="pillars">
-          <article id="beauty">
-            <p className="label">{t.pillars[0][0]}</p>
-            <h2>{t.pillars[0][1]}</h2>
-            <p>{t.pillars[0][2]}</p>
-            <a href="#ingredients">
-              {t.discover}
-              <ArrowRight size={15} />
-            </a>
-          </article>
-          <article id="tech">
-            <p className="label">{t.pillars[1][0]}</p>
-            <h2>{t.pillars[1][1]}</h2>
-            <p>{t.pillars[1][2]}</p>
-            <a href="#beauty-tech-guide">
-              {t.discover}
-              <ArrowRight size={15} />
-            </a>
-          </article>
-          <article id="wellness">
-            <p className="label">{t.pillars[2][0]}</p>
-            <h2>{t.pillars[2][1]}</h2>
-            <p>{t.pillars[2][2]}</p>
-            <a href="#wellness">
-              {t.discover}
-              <ArrowRight size={15} />
-            </a>
-          </article>
-        </section>
-        <section id="hair" className="featureBand">
-          <div>
-            <h2>{t.hairTitle}</h2>
-            <p>{t.hairText}</p>
-            <a href="#products/hair">
-              {t.discover}
-              <ArrowRight size={14} />
-            </a>
-          </div>
-        </section>
-        <section id="routines" className="routines">
-          <h2>{t.routines}</h2>
-          <p className="sectionIntro">{t.routineSub}</p>
-          <div className="routineGrid">
-            {t.routineCards.map((r) => (
-              <article key={r[0]}>
-                <h3>{r[0]}</h3>
-                <p>{r[1]}</p>
-                <a href="#products">
-                  {t.explore}
-                  <ArrowRight size={14} />
-                </a>
-              </article>
-            ))}
-          </div>
-        </section>
-        <section className="standards">
-          <h2>{t.standards}</h2>
-          <div className="standardGrid">
-            {t.standardCards.map((s) => (
-              <article key={s[0]}>
-                <h3>{s[0]}</h3>
-                <p>{s[1]}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-        <section id="brands" className="brands">
-          <h2>{t.brands}</h2>
-          <p className="brandIntro">{t.brandSub}</p>
-          <div className="brandGrid">
-            {brands[lang].map((b) => {
-              const target=b[0]==="Nu Skin"?"#nuskin":b[0]==="doTERRA"?"#doterra":null;
-              const card=<>
-                <strong>{b[0]}</strong>
-                <small>{b[1]}</small>
-                <em>{b[2]}</em>
-              </>;
-              return target
-                ? <a className="brandCardLink" href={target} key={b[0]}>{card}</a>
-                : <div key={b[0]}>{card}</div>;
-            })}
           </div>
         </section>
         <section id="magazine" className="magazine">

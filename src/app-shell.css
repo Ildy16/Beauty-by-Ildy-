@@ -314,3 +314,10 @@ footer > div:first-child {
   .topbar nav a{font-size:9px;letter-spacing:.55px}
   .langs button{padding-left:3px;padding-right:3px}
 }
+/* German labels are longer: between the compact header (<=1240px) and wide
+   screens they ran into the language switcher (5px at 1440px) and wrapped
+   below 1400px. Tighten spacing for German only; size stays 10px. */
+@media (min-width:1241px) and (max-width:1500px){
+  html[lang="de"] .topbar nav{gap:12px}
+  html[lang="de"] .topbar nav a{letter-spacing:.5px}
+}

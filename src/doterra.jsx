@@ -1,5 +1,7 @@
 import React from "react";
-import { ArrowLeft, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
+import { TopicHero } from "./topicHero.jsx";
+import { subpageMedia } from "./subpage-media.js";
 import "./brandPages.css";
 
 const DOTERRA_SITE = "https://office.doterra.com/beautybyildy/#/";
@@ -838,15 +840,15 @@ export function DoterraPage({ lang = "hu" }) {
   const t = copy[lang] || copy.hu;
   return (
     <main className="brandPage">
-      <section className="brandPageHero">
-        <div>
-          <a className="brandPageBack" href="#top"><ArrowLeft size={14}/>{t.back}</a>
-          <p className="eyebrow">{t.eyebrow}</p>
-          <h1>{t.title}</h1>
-          <p className="brandPageLead">{t.lead}</p>
-          <p className="brandPageNote">{t.note}</p>
-        </div>
-      </section>
+      <TopicHero
+        eyebrow={t.eyebrow}
+        title={t.title}
+        lead={t.lead}
+        note={t.note}
+        backLabel={t.back}
+        videoSrc={subpageMedia.doterra.video}
+        videoPoster={subpageMedia.doterra.poster}
+      />
       <section className="brandPageBody">
         <div className="brandPageMeta"><span>{t.heading}</span><small>Independent wellness edit</small></div>
         <div className="brandProductGrid">
