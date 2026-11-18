@@ -2,6 +2,22 @@ import React from "react";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import "./brandPages.css";
 
+// Official Nu Skin product photo references. Publish only when asset reuse is
+// confirmed for this independent Brand Affiliate website and target market.
+// Match by exact product SKU to avoid displaying a different kit or variant.
+const NUSKIN_IMAGE_CANDIDATES = {
+  "97139603": {
+    src: "https://media.nuskin.com/transform/4db2bf87-7e30-4606-8510-27ff4345c3e7/LumiSpa-iO-Cleansing-Kits-Blue-Normal-1.webp?io=transform%3Afit%2Cwidth%3A600%2Cheight%3A600&quality=95",
+    source: "https://www.nuskin.com/hu/hu/product/ageloc-lumi-io-clean-kit-normal-HU",
+    rightsConfirmed: false,
+  },
+};
+const getApprovedNuSkinImage = (url) => {
+  const sku = url.match(/\\/product\\/(\\d+)/)?.[1];
+  const asset = sku && NUSKIN_IMAGE_CANDIDATES[sku];
+  return asset?.rightsConfirmed ? asset.src : null;
+};
+
 const NUSKIN = [
   ["ageLOC LumiSpa iO System","BEAUTY TECH","Connected cleansing system designed to pair with the Nu Skin Vera app.","https://mysite.mynuskin.com/catalog/hu/hu/product/97139603?store=beautybyildy"],
   ["ageLOC WellSpa iO System","BEAUTY TECH","Nu Skin beauty and wellness device system.","https://mysite.mynuskin.com/catalog/hu/hu/product/97139757?store=beautybyildy"],
@@ -241,6 +257,7 @@ export function NuSkinPage({lang="hu"}) {
               const special=archivedNuSkin.has(name)||name==="ageLOC TRMe"||!direct;
               return <article className={`brandProductCard nuskinCard ${direct&&!special?"isPurchasable":"isInfo"}`} key={name}>
                 <div className="brandCardTopline"><span>{localGroup(group,lang)}</span><em>{direct&&!special?t.available:t.infoOnly}</em></div>
+                {getApprovedNuSkinImage(url) && <div className="nuskinProductImage"><img src={getApprovedNuSkinImage(url)} alt={name} loading="lazy" decoding="async" referrerPolicy="no-referrer" /></div>}
                 <h2>{name}</h2><p>{localGroupDescription(group,lang)||desc}</p>
                 <div className="brandCardActions">
                   <a className={direct&&!special?"brandShopLink":""} href={localizedNuSkinUrl(url,lang)} target="_blank" rel={direct&&!special?"sponsored noopener noreferrer":"noopener noreferrer"}>{localizedNuSkinCta(name,url,lang,t)}<ExternalLink size={13}/></a>
