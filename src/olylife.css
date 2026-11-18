@@ -13,3 +13,16 @@
 .olyPage .olyCard .olyCardBody>p{position:static;display:block;margin:0 0 16px;line-height:1.7}
 .olyPage .olyCard .olyCardBody .olyTech{margin:16px 0 20px}
 @media(max-width:600px){.olyPage .olyCard .olyVisual{aspect-ratio:4/3}.olyPage .olyCard .olyCardBody{padding:22px 20px}.olyPage .olyCard .olyCardBody h2{font-size:31px}}
+
+/* Editorial OlyLife brand story */
+.olyPage .olyStory{max-width:1000px;margin:0 auto 62px;padding:0 8px;color:#14283c}
+.olyPage .olyStoryKicker{font:500 11px/1.6 Montserrat,sans-serif;letter-spacing:.22em;color:#a58a58;text-align:center;margin:0 0 16px}
+.olyPage .olyStory>h2{font:400 clamp(34px,5vw,60px)/1.13 'Cormorant Garamond',serif;text-align:center;margin:0 auto 15px;max-width:850px}
+.olyPage .olyStoryTagline{font:500 clamp(13px,1.7vw,16px)/1.7 Montserrat,sans-serif;color:#a18559;text-align:center;margin:0 auto 42px}
+.olyPage .olyStorySections{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:50px;row-gap:32px}
+.olyPage .olyStorySection{min-width:0;border-top:1px solid #d9c9ad;padding-top:18px}
+.olyPage .olyStorySection h3{font:400 clamp(25px,3vw,34px)/1.18 'Cormorant Garamond',serif;margin:0 0 14px}
+.olyPage .olyStorySection p{font:400 13px/1.85 Montserrat,sans-serif;color:#4e5963;margin:0 0 13px}
+.olyPage .olyStoryClosing{font:500 15px/1.7 Montserrat,sans-serif;color:#92754a;text-align:center;margin:38px auto 0;max-width:680px}
+.olyPage .olyCollectionTitle{font:400 clamp(34px,5vw,52px)/1.2 'Cormorant Garamond',serif;text-align:center;margin:0 0 34px}
+@media(max-width:650px){.olyPage .olyStory{margin-bottom:46px;padding:0}.olyPage .olyStorySections{grid-template-columns:1fr;row-gap:23px}.olyPage .olyStoryTagline{margin-bottom:32px}.olyPage .olyStorySection p{font-size:13px}}
