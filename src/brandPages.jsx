@@ -2,6 +2,76 @@ import React from "react";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import "./brandPages.css";
 
+// Reviewed, product-specific copy; remaining catalogue entries retain their original
+// descriptions until individually translated and verified.
+const NUSKIN_LOCALIZED_DESCRIPTIONS = {
+  "ageLOC LumiSpa iO System": {
+    "hu": "A Nu Skin Vera alkalmazással összekapcsolható, otthoni arctisztító készülékrendszer. A készülék és a hozzá tartozó tisztítótermék együtt használható.",
+    "en": "A connected facial cleansing system designed for home use with the Nu Skin Vera app and a compatible cleanser.",
+    "de": "Ein vernetztes Gesichtsreinigungssystem für zu Hause, das mit der Nu Skin Vera App und einem passenden Reinigungsprodukt verwendet wird."
+  },
+  "ageLOC WellSpa iO System": {
+    "hu": "Otthoni testápolásra és wellnessrutinra tervezett, alkalmazással összekapcsolható Nu Skin készülékrendszer.",
+    "en": "A connected Nu Skin device system designed for at-home body care and wellness routines.",
+    "de": "Ein vernetztes Nu-Skin-Gerätesystem für die Körperpflege und Wellnessroutine zu Hause."
+  },
+  "ageLOC Boost System": {
+    "hu": "Otthoni arcápoló készülék és a hozzá tartozó bőrápolási rutin; a gyártó a bőr megjelenésének támogatására ajánlja.",
+    "en": "An at-home facial care device system intended to complement a skincare routine and support the appearance of the skin.",
+    "de": "Ein Gesichtspflegesystem für zu Hause, das die tägliche Pflegeroutine ergänzt und das Hautbild unterstützen soll."
+  },
+  "ageLOC Galvanic Spa": {
+    "hu": "Otthoni galvanikus szépségápolási készülék, amely különböző kezelőfejekkel arc-, test- és fejbőrápolási rutinokhoz használható.",
+    "en": "An at-home galvanic beauty device with attachments for facial, body and scalp care routines.",
+    "de": "Ein galvanisches Beauty-Gerät für zu Hause mit Aufsätzen für Gesichts-, Körper- und Kopfhautpflege."
+  },
+  "Galvanic Spa Facial Gels with ageLOC": {
+    "hu": "A Galvanic Spa arckezelő fejéhez készült, egymást követő lépésekben alkalmazható arczselék.",
+    "en": "Facial gels designed for sequential use with the Galvanic Spa facial attachment.",
+    "de": "Gesichtsgele, die in aufeinanderfolgenden Schritten mit dem Gesichtsaufsatz des Galvanic Spa verwendet werden."
+  },
+  "ageLOC Tru Face Future Serum": {
+    "hu": "Prémium arcszérum, amelynek célja a hidratáltabb, simább és feszesebbnek látszó bőr megjelenésének támogatása.",
+    "en": "A premium facial serum formulated to support the appearance of smoother, firmer-looking and hydrated skin.",
+    "de": "Ein hochwertiges Gesichtsserum zur Pflege eines glatter, straffer und hydratisierter wirkenden Hautbilds."
+  },
+  "ageLOC Tru Face Line Corrector": {
+    "hu": "Célzott arcápoló a finom vonalak megjelenésére, különösen a száj és a szem körüli területeken.",
+    "en": "Targeted skincare for the appearance of fine lines, especially around the mouth and eyes.",
+    "de": "Gezielte Pflege für das Erscheinungsbild feiner Linien, insbesondere im Mund- und Augenbereich."
+  },
+  "ageLOC Tru Face Radiant Day": {
+    "hu": "Nappali arcápoló a hidratáltabb, ragyogóbb és egyenletesebbnek látszó bőrképért.",
+    "en": "A daytime facial moisturiser focused on radiance, hydration and a more even-looking complexion.",
+    "de": "Eine Tagespflege für Feuchtigkeit, Ausstrahlung und ein ebenmäßiger wirkendes Hautbild."
+  },
+  "ageLOC Tru Face Transforming Gel Cream": {
+    "hu": "Könnyű gélkrém az arc hidratálására, a bőr simább megjelenésének és a pórusok kevésbé feltűnő látványának támogatására.",
+    "en": "A lightweight gel cream focused on hydration, smoother-looking skin and the appearance of pores.",
+    "de": "Eine leichte Gelcreme für Feuchtigkeit, ein glatter wirkendes Hautbild und optisch weniger auffällige Poren."
+  },
+  "ageLOC Tru Face Uplifting Rich Cream": {
+    "hu": "Gazdag textúrájú arckrém a szárazabb bőr hidratálására, valamint a feszesebbnek látszó arckontúrok támogatására.",
+    "en": "A rich facial cream for moisturising dry-feeling skin and supporting firmer-looking facial contours.",
+    "de": "Eine reichhaltige Gesichtscreme zur Feuchtigkeitspflege und für straffer wirkende Gesichtskonturen."
+  },
+  "ageLOC Tru Face Refining Toner": {
+    "hu": "Arcápoló tonik, amely a tisztítás után előkészíti a bőrt a következő ápolási lépésekre.",
+    "en": "A facial toner intended to prepare the skin for the next steps after cleansing.",
+    "de": "Ein Gesichtstoner, der die Haut nach der Reinigung auf die nächsten Pflegeschritte vorbereitet."
+  },
+  "ageLOC Tru Face Peptide Retinol Complex": {
+    "hu": "Peptideket és retinolt tartalmazó, az öregedés látható jeleire összpontosító arcápoló. Retinolos terméknél a használati útmutatót és a fényvédelmet is figyelembe kell venni.",
+    "en": "A peptide- and retinol-focused facial treatment for visible signs of skin ageing. Follow the product directions and consider sun protection when using retinol.",
+    "de": "Eine Gesichtspflege mit Peptiden und Retinol für sichtbare Zeichen der Hautalterung. Anwendungshinweise und Sonnenschutz bei Retinol beachten."
+  },
+  "ageLOC Tru Face Essence Ultra": {
+    "hu": "Az arckontúrok és a feszesebbnek látszó bőr megjelenésére összpontosító célzott arcápoló.",
+    "en": "A targeted facial treatment focused on firmer-looking skin and more defined-looking facial contours.",
+    "de": "Eine gezielte Gesichtspflege für straffer wirkende Haut und definierter erscheinende Gesichtskonturen."
+  }
+};
+
 const NUSKIN = [
   ["ageLOC LumiSpa iO System","BEAUTY TECH","Connected cleansing system designed to pair with the Nu Skin Vera app.","https://mysite.mynuskin.com/catalog/hu/hu/product/97139603?store=beautybyildy"],
   ["ageLOC WellSpa iO System","BEAUTY TECH","Nu Skin beauty and wellness device system.","https://mysite.mynuskin.com/catalog/hu/hu/product/97139757?store=beautybyildy"],
@@ -241,7 +311,7 @@ export function NuSkinPage({lang="hu"}) {
               const special=archivedNuSkin.has(name)||name==="ageLOC TRMe"||!direct;
               return <article className={`brandProductCard nuskinCard ${direct&&!special?"isPurchasable":"isInfo"}`} key={name}>
                 <div className="brandCardTopline"><span>{localGroup(group,lang)}</span><em>{direct&&!special?t.available:t.infoOnly}</em></div>
-                <h2>{name}</h2><p>{localGroupDescription(group,lang)||desc}</p>
+                <h2>{name}</h2><p>{NUSKIN_LOCALIZED_DESCRIPTIONS[name]?.[lang] || (lang==="en" ? desc : localGroupDescription(group,lang))}</p>
                 <div className="brandCardActions">
                   <a className={direct&&!special?"brandShopLink":""} href={localizedNuSkinUrl(url,lang)} target="_blank" rel={direct&&!special?"sponsored noopener noreferrer":"noopener noreferrer"}>{localizedNuSkinCta(name,url,lang,t)}<ExternalLink size={13}/></a>
                 </div>
