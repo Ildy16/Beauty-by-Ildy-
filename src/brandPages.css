@@ -582,3 +582,12 @@
   font:600 7.5px/1 Montserrat;
   letter-spacing:1px;
 }
+
+/* Nu Skin expandable multilingual product guidance */
+.nuskinProductDetails{margin:15px 0 4px;padding:12px 0;border-top:1px solid rgba(138,120,84,.18);border-bottom:1px solid rgba(138,120,84,.18)}
+.nuskinProductDetails summary{cursor:pointer;font:600 10px/1.5 Montserrat,sans-serif;letter-spacing:.8px;color:#80653c;list-style-position:inside}
+.nuskinProductDetails[open] summary{margin-bottom:12px}
+.nuskinProductDetails h3{font:600 12px/1.5 Montserrat,sans-serif;margin:8px 0;color:#20364a}
+.nuskinProductDetails p{font:400 12px/1.75 Montserrat,sans-serif;margin:0 0 12px}
+.nuskinProductDetails a{display:inline-flex;align-items:center;gap:5px;font:600 10px/1.5 Montserrat,sans-serif;color:#80653c;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+@media(max-width:620px){.nuskinProductDetails p{font-size:12px;line-height:1.7}.nuskinProductDetails summary{font-size:11px}}

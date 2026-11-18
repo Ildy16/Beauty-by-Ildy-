@@ -346,6 +346,48 @@ const localizedNuSkinCta=(name,url,lang,t)=>{
   return t.official;
 };
 
+
+// Supplementary guidance is deliberately category-specific, not a substitute for
+// manufacturer-verified INCI, dosage, contraindications or clinical evidence.
+const nuskinGuidance=(group,name,lang)=>{
+  const archived=archivedNuSkin.has(name);
+  const supplement=group.startsWith("PHARMANEX")||group.startsWith("TRME")||name==="ageLOC TRMe";
+  const device=group==="BEAUTY TECH"||group==="WELLNESS TECH";
+  const sun=group==="SUNRIGHT"||name.includes("SPF 30");
+  const oral=group==="ORAL CARE";
+  const translations={
+    hu:{
+      archive:"Korábbi vagy tájékoztató termék: vásárlás előtt ellenőrizd a hivatalos forgalmazási státuszt.",
+      supplement:"Étrend-kiegészítő: az összetevőket, napi adagot, allergéneket és ellenjavallatokat a termék aktuális hivatalos címkéje alapján ellenőrizd. Nem helyettesíti a változatos étrendet.",
+      device:"Készülék: az alkalmazás módját, a kompatibilis tartozékokat és az ellenjavallatokat a hivatalos használati útmutató határozza meg. A kozmetikai ígéretek nem jelentenek igazolt gyógyhatást.",
+      sun:"Napfényhez kapcsolódó termék: az önbarnító nem fényvédő. SPF-terméknél kövesd a megfelelő felvitelre és újrakenésre vonatkozó útmutatót.",
+      oral:"Szájápoló termék: a használat és az életkori ajánlás a hivatalos termékcímke szerint követendő.",
+      cosmetic:"Kozmetikai termék: az aktuális összetevőlistát, használati módot és az esetleges érzékenységet a hivatalos termékoldalon vagy a csomagoláson ellenőrizd.",
+      title:"Használat és fontos tudnivalók",source:"Összetétel, alkalmazás és hivatalos termékadatok"
+    },
+    en:{
+      archive:"Former or information-only product: check its current market status with Nu Skin before considering a purchase.",
+      supplement:"Food supplement: check ingredients, daily serving, allergens and precautions on the current official label. Not a substitute for a varied diet.",
+      device:"Device: consult the official instructions for use, compatible attachments and contraindications. Cosmetic marketing claims do not establish medical efficacy.",
+      sun:"Sun-related product: self-tanner does not provide sun protection. For SPF products, follow the directions for adequate application and reapplication.",
+      oral:"Oral-care product: follow the official label for directions and age guidance.",
+      cosmetic:"Cosmetic product: check the current ingredient list, directions and potential sensitivities on the official product page or packaging.",
+      title:"Use and important information",source:"Ingredients, directions and official product information"
+    },
+    de:{
+      archive:"Früheres oder rein informatives Produkt: vor einem Kauf den aktuellen Vertriebsstatus bei Nu Skin prüfen.",
+      supplement:"Nahrungsergänzungsmittel: Inhaltsstoffe, Tagesportion, Allergene und Vorsichtsmaßnahmen anhand des aktuellen offiziellen Etiketts prüfen. Kein Ersatz für eine abwechslungsreiche Ernährung.",
+      device:"Gerät: Anwendung, kompatible Aufsätze und Gegenanzeigen stehen in der offiziellen Gebrauchsanweisung. Kosmetische Werbeaussagen belegen keine medizinische Wirksamkeit.",
+      sun:"Produkt rund um Bräunung und Sonne: Selbstbräuner bieten keinen Sonnenschutz. Bei LSF-Produkten die Hinweise zum ausreichenden Auftragen und Nachcremen beachten.",
+      oral:"Mundpflegeprodukt: Anwendung und Altersempfehlung gemäß offiziellem Etikett beachten.",
+      cosmetic:"Kosmetisches Produkt: aktuelle Inhaltsstoffe, Anwendung und mögliche Unverträglichkeiten auf der offiziellen Produktseite oder Verpackung prüfen.",
+      title:"Anwendung und wichtige Hinweise",source:"Inhaltsstoffe, Anwendung und offizielle Produktangaben"
+    }
+  };
+  const t=translations[lang]||translations.hu;
+  return {title:t.title,source:t.source,note:archived?t.archive:supplement?t.supplement:device?t.device:sun?t.sun:oral?t.oral:t.cosmetic};
+};
+
 function BrandHero({title,lead,note,t}) {
   return <section className="brandPageHero"><div>
     <a className="brandPageBack" href="#top"><ArrowLeft size={14}/>{t.back}</a>
@@ -372,6 +414,12 @@ export function NuSkinPage({lang="hu"}) {
               return <article className={`brandProductCard nuskinCard ${direct&&!special?"isPurchasable":"isInfo"}`} key={name}>
                 <div className="brandCardTopline"><span>{localGroup(group,lang)}</span><em>{direct&&!special?t.available:t.infoOnly}</em></div>
                 <h2>{name}</h2><p>{NUSKIN_LOCALIZED_DESCRIPTIONS[name]?.[lang] || (lang==="en" ? desc : localGroupDescription(group,lang))}</p>
+                <details className="nuskinProductDetails">
+                  <summary>{t.details}</summary>
+                  <h3>{nuskinGuidance(group,name,lang).title}</h3>
+                  <p>{nuskinGuidance(group,name,lang).note}</p>
+                  <a href={localizedNuSkinUrl(url,lang)} target="_blank" rel="noopener noreferrer">{nuskinGuidance(group,name,lang).source}<ExternalLink size={12}/></a>
+                </details>
                 <div className="brandCardActions">
                   <a className={direct&&!special?"brandShopLink":""} href={localizedNuSkinUrl(url,lang)} target="_blank" rel={direct&&!special?"sponsored noopener noreferrer":"noopener noreferrer"}>{localizedNuSkinCta(name,url,lang,t)}<ExternalLink size={13}/></a>
                 </div>
