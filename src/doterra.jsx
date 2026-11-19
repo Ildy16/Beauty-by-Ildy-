@@ -956,7 +956,7 @@ const copy = {
       ["TESTÁPOLÁS & MASSZÁZS", "Kozmetikai és masszázsrutinokhoz illeszthető, megfelelően hígított aromás megoldások."],
       ["NŐI WELLNESS", "Szerkesztői wellness-tartalmak és mindennapi rituálék túlzó egészségügyi ígéretek nélkül."]
     ],
-    safety: "Használat előtt mindig kövesd a hivatalos termékcímke és a doTERRA használati útmutatójának előírásait; az illóolajok alkalmazása termékenként eltérhet.",
+    safety: "Az EU-ban az illóolajok termékenként eltérő rendeltetésűek lehetnek (például kozmetikum, aromaanyag vagy párologtatásra szánt termék). Csak a konkrét termék magyarországi címkéjén engedélyezett módon használd. Bőrön a szükséges hígításra, citrusolajoknál a fényérzékenységre, gyermekeknél az életkori előírásokra is figyelj. Ne használd szemre, nyálkahártyára vagy sérült bőrre.",
     routeNote: "A doTERRA referral link a kiválasztott terméket a doTERRA kosarához adja. Ha a látogató korábban már tett más terméket a kosárba, az ott marad, ezért több egymás utáni kattintás több terméket eredményezhet. Ez a doTERRA kosárműködése, nem a Beauty by Ildy hibája."
   },
   en: {
@@ -981,7 +981,7 @@ const copy = {
       ["BODY CARE & MASSAGE", "Aromatic options suitable for cosmetic and massage routines when used as directed and appropriately diluted."],
       ["WOMEN'S WELLNESS", "Editorial wellbeing content and everyday rituals without exaggerated health claims."]
     ],
-    safety: "Always follow the official product label and doTERRA directions for use; essential-oil use can differ by product.",
+    safety: "EU essential oils may be classified for different uses (such as cosmetics, flavouring or diffusion). Only use each product as permitted on its local EU label. Check dilution, citrus-oil photosensitivity, age restrictions and contraindications. Avoid eyes, mucous membranes and broken skin.",
     routeNote: "A doTERRA referral link adds the selected product to the visitor’s doTERRA cart. Products already in that cart remain there, so consecutive clicks can result in multiple items. This is how the doTERRA cart works."
   },
   de: {
@@ -1006,7 +1006,7 @@ const copy = {
       ["KÖRPERPFLEGE & MASSAGE", "Aromatische Optionen für Kosmetik- und Massageroutinen bei sachgemäßer Anwendung und Verdünnung."],
       ["WELLNESS FÜR FRAUEN", "Redaktionelle Wellbeing-Inhalte und Alltagsrituale ohne übertriebene Gesundheitsversprechen."]
     ],
-    safety: "Befolge immer das offizielle Produktetikett und die doTERRA-Anwendungshinweise; die Verwendung ätherischer Öle kann je nach Produkt unterschiedlich sein.",
+    safety: "Ätherische Öle können in der EU je nach Produkt unterschiedlich eingestuft sein (etwa als Kosmetikum, Aroma oder für die Diffusion). Nur gemäß dem jeweiligen lokalen EU-Etikett anwenden. Verdünnung, Lichtempfindlichkeit bei Zitrusölen, Altersgrenzen und Gegenanzeigen beachten. Augen, Schleimhäute und verletzte Haut aussparen.",
     routeNote: "Ein doTERRA-Empfehlungslink legt das ausgewählte Produkt in den bestehenden doTERRA-Warenkorb. Bereits vorhandene Produkte bleiben dort, daher können mehrere Klicks mehrere Artikel im Warenkorb ergeben."
   }
 };
