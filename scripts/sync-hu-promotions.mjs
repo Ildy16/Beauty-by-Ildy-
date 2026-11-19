@@ -4,7 +4,7 @@ const data=JSON.parse(await readFile(file,'utf8'));
 const now=Date.now(), checkedAt=new Date(now).toISOString();
 const HOUR=3600000;
 const sources=[
- {brand:'Nu Skin',url:'https://www.nuskin.com/hu/hu/black-friday-2026'},
+ {brand:'Nu Skin',url:'https://www.nuskin.com/hu/hu/product/ageloc-galvanic-spa'},
  {brand:'doTERRA',url:'https://shop.doterra.com/HU/hu_HU/shop/special-offer'}
 ];
 const status=[];
@@ -24,7 +24,7 @@ for(const source of sources){
    // Publish the Nu Skin promotion landing page only if the official Hungarian page explicitly says Black Friday and 2026.
    if(!/Black Friday/i.test(plain)||!/2026/.test(plain))throw Error('No verified current HU campaign');
    // No discount percentage or date is inferred from a general landing page.
-   discovered.push({id:'nuskin-hu-official-campaign',brand:'Nu Skin',market:'HU',verified:true,sourceUrl:source.url,start:checkedAt,end:future(6),title:{hu:'Nu Skin – hivatalos magyar akciók',en:'Nu Skin – official Hungarian offers',de:'Nu Skin – offizielle Angebote für Ungarn'},description:{hu:'A Nu Skin magyar kampányoldalán elérhető ajánlatok. A konkrét kedvezményeket és feltételeket a hivatalos oldalon ellenőrizd.',en:'Offers on the official Nu Skin Hungarian campaign page. Verify individual discounts and terms on the official website.',de:'Angebote auf der offiziellen ungarischen Nu-Skin-Aktionsseite. Rabatte und Bedingungen auf der offiziellen Website prüfen.'}});
+   discovered.push({id:'nuskin-hu-official-campaign',brand:'Nu Skin',market:'HU',verified:true,sourceUrl:source.url,start:checkedAt,end:future(6),title:{hu:'Nu Skin – hivatalos magyar Black Friday ajánlat',en:'Nu Skin – official Hungarian Black Friday offer',de:'Nu Skin – offizielles Black-Friday-Angebot für Ungarn'},description:{hu:'A Nu Skin magyar kampányoldalán elérhető ajánlatok. A konkrét kedvezményeket és feltételeket a hivatalos oldalon ellenőrizd.',en:'Offers on the official Nu Skin Hungarian campaign page. Verify individual discounts and terms on the official website.',de:'Angebote auf der offiziellen ungarischen Nu-Skin-Aktionsseite. Rabatte und Bedingungen auf der offiziellen Website prüfen.'}});
   }
   status.push({brand:source.brand,sourceUrl:source.url,reachable:true,verified:true,checkedAt});
  }catch(error){status.push({brand:source.brand,sourceUrl:source.url,reachable:false,verified:false,error:String(error.message),checkedAt});}
