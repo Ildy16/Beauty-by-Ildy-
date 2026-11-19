@@ -1,23 +1,27 @@
 {
-  "updatedAt": "2026-11-19T00:00:00Z",
+  "updatedAt": "2026-11-19T18:19:11.788Z",
   "offers": [
     {
-      "id": "nuskin-hu-galvanic-black-friday-2026",
+      "id": "nuskin-hu-black-friday-97310060",
       "brand": "Nu Skin",
       "market": "HU",
       "verified": true,
       "sourceUrl": "https://www.nuskin.com/hu/hu/product/ageloc-galvanic-spa",
-      "start": "2026-11-18T09:00:00Z",
-      "end": "2026-11-20T22:59:00Z",
+      "start": "2026-11-19T18:19:11.788Z",
+      "end": "2026-11-20T00:19:11.788Z",
+      "expiryType": "verification-ttl",
+      "sku": "97310060",
+      "discountPercent": 30,
+      "priceText": "136,730.00 Ft",
       "title": {
         "hu": "ageLOC Galvanic Spa – Black Friday",
         "en": "ageLOC Galvanic Spa – Black Friday",
         "de": "ageLOC Galvanic Spa – Black Friday"
       },
       "description": {
-        "hu": "A hivatalos magyar Nu Skin termékoldalon 30%-os Black Friday kedvezmény szerepel. A készlet és a feltételek változhatnak.",
-        "en": "The official Hungarian Nu Skin product page lists a 30% Black Friday discount. Subject to stock and terms.",
-        "de": "Auf der offiziellen ungarischen Nu-Skin-Produktseite wird ein Black-Friday-Rabatt von 30 % genannt. Solange der Vorrat reicht."
+        "hu": "30% Black Friday kedvezmény a hivatalos magyar Nu Skin termékoldalon. Akciós ár: 136,730.00 Ft. A készlet erejéig, a hivatalos feltételekkel.",
+        "en": "30% Black Friday discount on the official Hungarian Nu Skin product page. Subject to stock and terms.",
+        "de": "30 % Black-Friday-Rabatt auf der offiziellen ungarischen Nu-Skin-Produktseite. Solange der Vorrat reicht."
       }
     }
   ]

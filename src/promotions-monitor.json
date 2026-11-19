@@ -1,4 +1,38 @@
 {
-  "checkedAt": null,
-  "sources": []
+  "checkedAt": "2026-11-19T18:19:11.788Z",
+  "sources": [
+    {
+      "brand": "Nu Skin",
+      "sourceUrl": "https://www.nuskin.com/hu/hu/product/ageloc-galvanic-spa",
+      "reachable": true,
+      "verified": true,
+      "checkedAt": "2026-11-19T18:19:11.788Z",
+      "note": "Individual product offer verified"
+    },
+    {
+      "brand": "Nu Skin",
+      "sourceUrl": "https://www.nuskin.com/content/nuskin/hu_HU/products/nu-skin-offers/nu-skin-special-offers.html",
+      "reachable": false,
+      "verified": false,
+      "error": "HTTP 404",
+      "checkedAt": "2026-11-19T18:19:11.788Z"
+    },
+    {
+      "brand": "doTERRA",
+      "sourceUrl": "https://www.doterra.com/ME/hu_ME/promotions-monthly-promo",
+      "reachable": true,
+      "verified": true,
+      "checkedAt": "2026-11-19T18:19:11.788Z",
+      "note": "Current month mentioned; individual offer extraction not verified"
+    },
+    {
+      "brand": "doTERRA",
+      "sourceUrl": "https://www.doterra.com/ME/hu_ME/promotions",
+      "reachable": true,
+      "verified": false,
+      "checkedAt": "2026-11-19T18:19:11.788Z",
+      "note": "Current month/year not verified; no offer published"
+    }
+  ],
+  "offerCount": 1
 }
