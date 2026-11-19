@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 const doterra=await readFile(new URL('./doterra.jsx',import.meta.url),'utf8');
 const nuskin=await readFile(new URL('./brandPages.jsx',import.meta.url),'utf8');
-const parse=(src,start,end)=>{const i=src.indexOf(start);assert.ok(i>=0,start);const j=src.indexOf(end,i+start.length);assert.ok(j>i,end);return JSON.parse(src.slice(i+start.length,j));};
+const parse=(src,start,end)=>{const i=src.indexOf(start);assert.ok(i>=0,start);const j=src.indexOf(end,i+start.length);assert.ok(j>i,end);return JSON.parse(src.slice(i+start.length,j).replace(/,\\s*([\\]}])/g,'$1'));};
 const d= parse(doterra,'const PRODUCTS = ',';\n\nconst DUPLICATE_PRODUCT_URLS');
 const t= parse(doterra,'const CATEGORY_INFO_TRANSLATED = ',';\n\nfunction getProductInfo');
 const n= parse(nuskin,'const NUSKIN_LOCALIZED_DESCRIPTIONS = ',';\n\nconst NUSKIN = [');
