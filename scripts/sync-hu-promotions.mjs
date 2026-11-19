@@ -17,14 +17,14 @@ for(const source of sources){
   const html=await fetchHtml(source.url),plain=clean(html);
   if(source.brand==='doTERRA'){
    // The live Hungarian special-offers catalogue is the authority; never infer a discount from retail/wholesale prices.
-   const hasOffers=/Különleges ajánlatok/i.test(plain)&&/Hozzáadás a kosárhoz/i.test(plain);
+   const hasOffers=/Különleges ajánlatok/i.test(plain)&&/Hozzáadás a kosárhoz/i.test(plain)&&/Exkluzív.{0,60}(ajánlatok|csomag)/i.test(plain);
    if(!hasOffers)throw Error('No verifiable Hungarian offer catalogue');
    discovered.push({id:'doterra-hu-official-special-offers',brand:'doTERRA',market:'HU',verified:true,sourceUrl:source.url,start:checkedAt,end:future(6),title:{hu:'doTERRA – aktuális különleges ajánlatok',en:'doTERRA – current special offers',de:'doTERRA – aktuelle Sonderangebote'},description:{hu:'A hivatalos magyar doTERRA áruház aktuális különleges ajánlatai. Az egyes termékek árát és feltételeit a hivatalos oldalon ellenőrizheted.',en:'Current special offers in the official Hungarian doTERRA shop. Check product prices and conditions on the official website.',de:'Aktuelle Sonderangebote im offiziellen ungarischen doTERRA-Shop. Preise und Bedingungen bitte auf der offiziellen Website prüfen.'}});
   }else{
    // Publish the Nu Skin promotion landing page only if the official Hungarian page explicitly says Black Friday and 2026.
-   if(!/Black Friday/i.test(plain)||!/2026/.test(plain))throw Error('No verified current HU campaign');
+   if(!/30%\s*Black Friday\s*Discount/i.test(plain)||!/2026\. november 18/i.test(plain)||!/2026\. november 20/i.test(plain))throw Error('No verified current HU campaign');
    // No discount percentage or date is inferred from a general landing page.
-   discovered.push({id:'nuskin-hu-official-campaign',brand:'Nu Skin',market:'HU',verified:true,sourceUrl:source.url,start:checkedAt,end:future(6),title:{hu:'Nu Skin – hivatalos magyar Black Friday ajánlat',en:'Nu Skin – official Hungarian Black Friday offer',de:'Nu Skin – offizielles Black-Friday-Angebot für Ungarn'},description:{hu:'A Nu Skin magyar kampányoldalán elérhető ajánlatok. A konkrét kedvezményeket és feltételeket a hivatalos oldalon ellenőrizd.',en:'Offers on the official Nu Skin Hungarian campaign page. Verify individual discounts and terms on the official website.',de:'Angebote auf der offiziellen ungarischen Nu-Skin-Aktionsseite. Rabatte und Bedingungen auf der offiziellen Website prüfen.'}});
+   discovered.push({id:'nuskin-hu-official-campaign',brand:'Nu Skin',market:'HU',verified:true,sourceUrl:source.url,start:checkedAt,end:'2026-11-20T22:59:00Z',title:{hu:'Nu Skin – hivatalos magyar Black Friday ajánlat',en:'Nu Skin – official Hungarian Black Friday offer',de:'Nu Skin – offizielles Black-Friday-Angebot für Ungarn'},description:{hu:'A Nu Skin magyar kampányoldalán elérhető ajánlatok. A konkrét kedvezményeket és feltételeket a hivatalos oldalon ellenőrizd.',en:'Offers on the official Nu Skin Hungarian campaign page. Verify individual discounts and terms on the official website.',de:'Angebote auf der offiziellen ungarischen Nu-Skin-Aktionsseite. Rabatte und Bedingungen auf der offiziellen Website prüfen.'}});
   }
   status.push({brand:source.brand,sourceUrl:source.url,reachable:true,verified:true,checkedAt});
  }catch(error){status.push({brand:source.brand,sourceUrl:source.url,reachable:false,verified:false,error:String(error.message),checkedAt});}
