@@ -18,19 +18,18 @@ const months=['január','február','március','április','május','június','jú
 const budapestParts=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Budapest',year:'numeric',month:'numeric'}).formatToParts(now);
 const month=Number(budapestParts.find(x=>x.type==='month').value)-1, year=Number(budapestParts.find(x=>x.type==='year').value);
 const currentMonth=new RegExp(months[month]+'(?:i|ban|ben)?','i');
-const isoEnd=(y,m,d,h=23,min=59)=>new Date(Date.UTC(y,m-1,d,h-1,min)).toISOString(); // CET campaign date; never use for summer offers
-const nuSkinEnd=text=>{const m=text.match(/(?:2026\.|2026)\s*november\s*20/i);return m?'2026-11-20T22:59:00Z':null};
+const temporaryExpiry=()=>new Date(nowMs+6*3600000).toISOString(); // freshness TTL, NOT the campaign's official end date
 const extractNuSkin=(html,url)=>{
  const text=clean(html);
- if(!/30%\s*Black Friday\s*Discount/i.test(text)||!/2026\.\s*november\s*18/i.test(text)||!/2026\.\s*november\s*20/i.test(text))return null;
- const end=nuSkinEnd(text);if(!end||Date.parse(end)<=nowMs)return null;
+ if(!/30%\s*Black Friday\s*Discount/i.test(text))return null;
+ const end=temporaryExpiry();
  const sku=text.match(/SKU\s*:\s*(\d{5,})/i)?.[1];
  const heading=clean(html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i)?.[1]||'').slice(0,110);
  if(!sku||!heading)return null;
- const price=text.match(/Akciós ár\s*([\d\s.,]+)\s*Ft/i)?.[1]?.trim();
- const id='nuskin-hu-black-friday-2026-'+sku;
+ const price=text.match(/Akciós ár\s*Ft\s*([\d\s.,]+)/i)?.[1]?.trim();
+ const id='nuskin-hu-black-friday-'+sku;
  const detail=price?' Akciós ár: '+price+' Ft.':'';
- return {id,brand:'Nu Skin',market:'HU',verified:true,sourceUrl:url,start:'2026-11-18T09:00:00Z',end,sku,discountPercent:30,...(price?{priceText:price+' Ft'}:{}),title:{hu:heading+' – Black Friday',en:heading+' – Black Friday',de:heading+' – Black Friday'},description:{hu:'30% Black Friday kedvezmény a hivatalos magyar Nu Skin termékoldalon.'+detail+' A készlet erejéig, a hivatalos feltételekkel.',en:'30% Black Friday discount on the official Hungarian Nu Skin product page. Subject to stock and terms.',de:'30 % Black-Friday-Rabatt auf der offiziellen ungarischen Nu-Skin-Produktseite. Solange der Vorrat reicht.'}};
+ return {id,brand:'Nu Skin',market:'HU',verified:true,sourceUrl:url,start:checkedAt,end,expiryType:'verification-ttl',sku,discountPercent:30,...(price?{priceText:price+' Ft'}:{}),title:{hu:heading+' – Black Friday',en:heading+' – Black Friday',de:heading+' – Black Friday'},description:{hu:'30% Black Friday kedvezmény a hivatalos magyar Nu Skin termékoldalon.'+detail+' A készlet erejéig, a hivatalos feltételekkel.',en:'30% Black Friday discount on the official Hungarian Nu Skin product page. Subject to stock and terms.',de:'30 % Black-Friday-Rabatt auf der offiziellen ungarischen Nu-Skin-Produktseite. Solange der Vorrat reicht.'}};
 };
 const seen=new Set();
 for(const source of sources){
