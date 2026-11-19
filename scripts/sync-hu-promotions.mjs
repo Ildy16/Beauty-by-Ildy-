@@ -9,7 +9,7 @@ const sources=[
 ];
 const status=[];
 const fetchHtml=async url=>{const r=await fetch(url,{headers:{'User-Agent':'Mozilla/5.0 (compatible; BeautyByIldyPromotions/1.0)'},signal:AbortSignal.timeout(18000)});if(!r.ok)throw Error('HTTP '+r.status);const html=await r.text();if(html.length<500)throw Error('empty or blocked page');return html;};
-const clean=s=>s.replace(/<script\\b[^>]*>[\\s\\S]*?<\\/script>/gi,' ').replace(/<style\\b[^>]*>[\\s\\S]*?<\\/style>/gi,' ').replace(/<[^>]+>/g,' ').replace(/&nbsp;|&#160;/g,' ').replace(/&amp;/g,'&').replace(/\\s+/g,' ').trim();
+const clean=s=>s.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi,' ').replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi,' ').replace(/<[^>]+>/g,' ').replace(/&nbsp;|&#160;/g,' ').replace(/&amp;/g,'&').replace(/\s+/g,' ').trim();
 const future=hours=>new Date(now+hours*HOUR).toISOString();
 const discovered=[];
 for(const source of sources){
@@ -34,15 +34,15 @@ const existing=(data.offers||[]).filter(o=>o.id!=='doterra-hu-official-special-o
 const verifiedExisting=[];
 for(const offer of existing){
  try{
-  if(!/^https:\\/\\/(www\\.nuskin\\.com|shop\\.doterra\\.com)\\//.test(offer.sourceUrl))continue;
+  if(!/^https:\/\/(www\.nuskin\.com|shop\.doterra\.com)\//.test(offer.sourceUrl))continue;
   const page=clean(await fetchHtml(offer.sourceUrl));
   if(offer.id==='nuskin-hu-galvanic-black-friday-2026'){
-   if(!/30%\\s*Black Friday/i.test(page)&&!/Black Friday.{0,180}30%/i.test(page))continue;
+   if(!/30%\s*Black Friday/i.test(page)&&!/Black Friday.{0,180}30%/i.test(page))continue;
   }else continue; // No general automatic trust of previously hand-entered offers.
   verifiedExisting.push(offer);
  }catch(error){status.push({brand:offer.brand,sourceUrl:offer.sourceUrl,reachable:false,verified:false,error:String(error.message),checkedAt});}
 }
 data.offers=[...verifiedExisting,...discovered];data.updatedAt=checkedAt;
-await writeFile(file,JSON.stringify(data,null,2)+'\\n');
-await writeFile(new URL('../src/promotions-monitor.json',import.meta.url),JSON.stringify({checkedAt,sources:status},null,2)+'\\n');
+await writeFile(file,JSON.stringify(data,null,2)+'\n');
+await writeFile(new URL('../src/promotions-monitor.json',import.meta.url),JSON.stringify({checkedAt,sources:status},null,2)+'\n');
 console.log('Hungarian verified promotions:',data.offers.length,JSON.stringify(status));
