@@ -19,6 +19,7 @@ import { BeautyFinder } from "./beautyFinder.jsx";
 import { NuSkinPage } from "./brandPages.jsx";
 import { OlyLifePage } from "./olylife.jsx";
 import { DoterraPage } from "./doterra.jsx";
+import { Promotions } from "./promotions.jsx";
 import { MagazinePage } from "./magazine.jsx";
 import "./styles.css";
 
@@ -36,6 +37,7 @@ const copy = {
       ["NU SKIN", "nuskin"],
       ["ILLÓOLAJOK", "doterra"],
       ["MAGAZIN", "magazine"],
+      ["AKCIÓK", "promotions"],
     ],
     eyebrow: "BEAUTY • TECHNOLOGY • WELLNESS",
     title: "A szépség új dimenziója / Megoldások",
@@ -130,6 +132,7 @@ const copy = {
       ["NU SKIN", "nuskin"],
       ["ESSENTIAL OILS", "doterra"],
       ["MAGAZINE", "magazine"],
+      ["OFFERS", "promotions"],
     ],
     eyebrow: "BEAUTY • TECHNOLOGY • WELLNESS",
     title: "A new dimension of beauty / Solutions",
@@ -224,6 +227,7 @@ const copy = {
       ["NU SKIN", "nuskin"],
       ["ÄTHERISCHE ÖLE", "doterra"],
       ["MAGAZIN", "magazine"],
+      ["ANGEBOTE", "promotions"],
     ],
     eyebrow: "BEAUTY • TECHNOLOGIE • WELLNESS",
     title: "Eine neue Dimension der Schönheit / Lösungen",
@@ -394,6 +398,7 @@ function currentPage() {
       "olylife",
       "doterra",
       "magazine",
+      "promotions",
       "product-medicube-pdrn",
     ].includes(h)
   )
@@ -499,6 +504,7 @@ function App() {
   else if (page === "olylife") content = <OlyLifePage lang={lang} />;
   else if (page === "doterra") content = <DoterraPage lang={lang} />;
   else if (page === "magazine") content = <MagazinePage lang={lang} />;
+  else if (page === "promotions") content = <Promotions lang={lang} />;
   else if (page === "product-medicube-pdrn")
     content = <MedicubePdrnProduct lang={lang} />;
   else if (page && page.startsWith("product-"))
@@ -524,6 +530,7 @@ function App() {
             </div>
           </div>
         </section>
+        <Promotions lang={lang} compact />
         <section id="solutions" className="needs">
           <p>{t.choose}</p>
           <div>
