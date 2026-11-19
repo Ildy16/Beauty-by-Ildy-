@@ -1,0 +1,22 @@
+name: Monitor Hungarian Nu Skin and doTERRA promotions
+on:
+  schedule:
+    - cron: "17 */3 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - run: node scripts/sync-hu-promotions.mjs
+      - name: Commit updated offers and source status
+        run: |
+          git config user.name "beauty-promotions-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/promotions-data.json src/promotions-monitor.json
+          if ! git diff --cached --quiet; then git commit -m "chore: refresh Hungarian promotions status"; git push; fi
