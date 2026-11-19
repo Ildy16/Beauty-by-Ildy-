@@ -13,7 +13,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
-      - run: node scripts/sync-hu-promotions.mjs
+      - name: Validate collector syntax
+        run: node --check scripts/sync-hu-promotions.mjs
+      - name: Collect verified public offers
+        run: node scripts/sync-hu-promotions.mjs
+      - name: Validate offer JSON
+        run: node -e "const d=require('./src/promotions-data.json'); if(!Array.isArray(d.offers)||d.offers.some(o=>!o.verified||o.market!=='HU'||!o.end||!o.sourceUrl))process.exit(1)"
       - name: Commit updated offers and source status
         run: |
           git config user.name "beauty-promotions-bot"
