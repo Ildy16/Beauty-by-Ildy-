@@ -5,7 +5,7 @@ const now=Date.now(), checkedAt=new Date(now).toISOString();
 const HOUR=3600000;
 const sources=[
  {brand:'Nu Skin',url:'https://www.nuskin.com/hu/hu/product/ageloc-galvanic-spa'},
- {brand:'doTERRA',url:'https://shop.doterra.com/HU/hu_HU/shop/special-offer'}
+ {brand:'doTERRA',url:'https://www.doterra.com/ME/hu_ME/promotions-monthly-promo'}
 ];
 const status=[];
 const fetchHtml=async url=>{const r=await fetch(url,{headers:{'User-Agent':'Mozilla/5.0 (compatible; BeautyByIldyPromotions/1.0)'},signal:AbortSignal.timeout(18000)});if(!r.ok)throw Error('HTTP '+r.status);const html=await r.text();if(html.length<500)throw Error('empty or blocked page');return html;};
@@ -17,7 +17,9 @@ for(const source of sources){
   const html=await fetchHtml(source.url),plain=clean(html);
   if(source.brand==='doTERRA'){
    // The live Hungarian special-offers catalogue is the authority; never infer a discount from retail/wholesale prices.
-   const hasOffers=/Különleges ajánlatok/i.test(plain)&&/Hozzáadás a kosárhoz/i.test(plain)&&/Exkluzív.{0,60}(ajánlatok|csomag)/i.test(plain);
+   const monthNames=['januári','februári','márciusi','áprilisi','májusi','júniusi','júliusi','augusztusi','szeptemberi','októberi','novemberi','decemberi'];
+   const month=monthNames[new Date(now).getUTCMonth()];
+   const hasOffers=plain.toLocaleLowerCase('hu-HU').includes(month)&&plain.includes(String(new Date(now).getUTCFullYear()))&&/promóció|ajánlat/i.test(plain);
    if(!hasOffers)throw Error('No verifiable Hungarian offer catalogue');
    discovered.push({id:'doterra-hu-official-special-offers',brand:'doTERRA',market:'HU',verified:true,sourceUrl:source.url,start:checkedAt,end:future(6),title:{hu:'doTERRA – aktuális különleges ajánlatok',en:'doTERRA – current special offers',de:'doTERRA – aktuelle Sonderangebote'},description:{hu:'A hivatalos magyar doTERRA áruház aktuális különleges ajánlatai. Az egyes termékek árát és feltételeit a hivatalos oldalon ellenőrizheted.',en:'Current special offers in the official Hungarian doTERRA shop. Check product prices and conditions on the official website.',de:'Aktuelle Sonderangebote im offiziellen ungarischen doTERRA-Shop. Preise und Bedingungen bitte auf der offiziellen Website prüfen.'}});
   }else{
@@ -34,7 +36,7 @@ const existing=(data.offers||[]).filter(o=>o.id!=='doterra-hu-official-special-o
 const verifiedExisting=[];
 for(const offer of existing){
  try{
-  if(!/^https:\/\/(www\.nuskin\.com|shop\.doterra\.com)\//.test(offer.sourceUrl))continue;
+  if(!/^https:\/\/(www\.nuskin\.com|www\.doterra\.com)\//.test(offer.sourceUrl))continue;
   const page=clean(await fetchHtml(offer.sourceUrl));
   if(offer.id==='nuskin-hu-galvanic-black-friday-2026'){
    if(!/30%\s*Black Friday/i.test(page)&&!/Black Friday.{0,180}30%/i.test(page))continue;
