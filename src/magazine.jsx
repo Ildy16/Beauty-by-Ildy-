@@ -5,6 +5,22 @@ import "./magazine.css";
 const ARTICLES = {
   hu: [
     {
+        "tag": "MENOPAUZA 40+/50+ · 2026. NOVEMBER 18.",
+        "title": "Menopauza hormonok nélkül: mit ajánl az új európai szakmai állásfoglalás?",
+        "dek": "A European Society of Gynecology 2026. november 18-án közzétett konszenzusdokumentuma értékeli a hőhullámok, az alvási és hangulati panaszok, valamint a hüvelyi és húgyúti tünetek hormonmentes kezelési lehetőségeit.",
+        "body": [
+            "A menopauza nem egyetlen tünetet jelent. A hőhullámok és az éjszakai izzadás mellett a közérzet, az alvás és a hüvelyi-húgyúti egészség is érintett lehet. A hormonkezelés sok nőnél hatékony, de ellenjavallat, egyéni kockázat vagy személyes döntés miatt nem mindenki számára megfelelő. Az új európai szakmai állásfoglalás ezért azt vizsgálja, mely hormonmentes megoldások mögött áll érdemi klinikai bizonyíték.",
+            "A hőhullámok gyógyszeres kezelésében a neurokininreceptor-antagonisták — köztük a fezolinetant és az elinzanetant — a legjobban alátámasztott hormonmentes lehetőségek közé tartoznak. Bizonyos antidepresszánsok és más gyógyszerek szintén segíthetnek, de a hatás, az ellenjavallatok és a mellékhatások eltérők. Ezek vényköteles orvosi kezelések, nem kozmetikumok vagy általános wellness-termékek; az európai engedélyezést és a magyarországi elérhetőséget készítményenként kell ellenőrizni.",
+            "A kognitív viselkedésterápia és a klinikai hipnózis a hőhullámokhoz kapcsolódó megterhelést, az alvást és az életminőséget javíthatja. Ez nem feltétlenül jelenti azt, hogy maguk a hőhullámok ugyanilyen mértékben ritkulnak. Az étrend, a rendszeres mozgás és az életmódi támogatás az általános egészség része, de nem helyettesítik a célzott tünetkezelést.",
+            "A fitoösztrogének, növényi kivonatok, akupunktúra és más kiegészítő eljárások bizonyítékai változóak vagy korlátozottak. Egy készítmény természetes eredete önmagában nem igazolja sem a hatásosságát, sem a biztonságát. Különösen fontos a gyógyszerkölcsönhatások és az egyéni betegségek figyelembevétele.",
+            "A menopauzához társuló hüvelyszárazság és egyéb urogenitális panaszok esetén a síkosítók, hidratálók, egyes hialuronsavas készítmények és a medencefenék-terápia tüneti segítséget adhatnak. Az állásfoglalás szerint a hüvelyi lézerkezelés rutinszerű alkalmazását a jelenlegi bizonyítékok nem támasztják alá. Egy eszköz technológiai újdonsága vagy CE-jelzése nem bizonyítja a klinikai eredményességét.",
+            "A dokumentum szakértői konszenzus, amely szakirodalmi áttekintésre, klinikai irányelvekre és humán vizsgálatokra épül; nem új, egyetlen készüléken vagy készterméken végzett klinikai kísérlet. Nem közölhető belőle minden kezelésre egységes százalékos javulás. A választásnál a tünetek súlyossága, a kórtörténet, a mellékhatások és a helyi gyógyszerengedélyezés számít.",
+            "A Beauty by Ildy álláspontja: a hormonmentes kezelés nem egyetlen csodatermék. A legjobb megoldás személyre szabott, bizonyítékokon alapuló orvosi és életmódi döntés. Tartós vagy súlyos panaszoknál nőgyógyásszal vagy menopauza-szakrendeléssel érdemes egyeztetni. Ez a cikk tájékoztatás, nem személyes kezelési javaslat."
+        ],
+        "source": "European Society of Gynecology · Gynecological Endocrinology · 2026.11.18",
+        "url": "https://doi.org/10.1080/09513590.2026.2751783"
+    },
+    {
       tag:"MENOPAUZA 40+/50+ · 2026. SZEPTEMBER",
       title:"Hőhullámok világszerte: egy új metaanalízis megmutatja, mennyire gyakoriak valójában",
       dek:"A Climacteric folyóiratban 2026. szeptember 16-án megjelent szisztematikus áttekintés és metaanalízis a menopauzális vazomotoros tünetek globális előfordulását vizsgálta.",
@@ -129,6 +145,21 @@ const ARTICLES = {
   ],
   en: [
     {
+        "tag": "MENOPAUSE 40+/50+ · 18 NOVEMBER 2026",
+        "title": "Menopause without hormones: what does the new European consensus recommend?",
+        "dek": "A European Society of Gynecology statement published on 18 November 2026 reviews evidence-based non-hormonal approaches to hot flushes, sleep and mood symptoms, and genitourinary symptoms.",
+        "body": [
+            "Menopause can affect vasomotor symptoms, sleep, mood and genitourinary health. Hormone therapy remains effective for many people, but contraindications, personal risk or preference can make non-hormonal options important.",
+            "For hot flushes, neurokinin receptor antagonists including fezolinetant and elinzanetant are among the most strongly supported non-hormonal medicines. Some antidepressants and other prescription medicines can also help, with different adverse effects and contraindications. Regulatory approval and availability must be checked country by country.",
+            "Cognitive behavioural therapy and clinical hypnosis can reduce symptom-related distress and improve sleep and quality of life; this is not identical to demonstrating a reduction in the frequency of hot flushes. Lifestyle measures support overall health but may not replace targeted treatment.",
+            "Evidence for phytoestrogens, botanical supplements, acupuncture and other complementary approaches ranges from moderate to limited. Natural does not automatically mean effective or safe.",
+            "For genitourinary symptoms, lubricants, moisturisers, some hyaluronic-acid preparations and pelvic-floor training may offer symptomatic benefit. Current evidence does not support routine vaginal laser therapy.",
+            "This is a professional consensus based on a structured review of clinical evidence, not a new trial of a specific product or device. Treatment choice should consider symptoms, medical history, adverse effects and local authorisation. This article is informational and not individual medical advice."
+        ],
+        "source": "European Society of Gynecology · Gynecological Endocrinology · 2026.11.18",
+        "url": "https://doi.org/10.1080/09513590.2026.2751783"
+    },
+    {
       tag:"MENOPAUSE 40+/50+ · SEPTEMBER 2026",
       title:"Hot flushes worldwide: a new meta-analysis maps how common vasomotor symptoms really are",
       dek:"A systematic review and meta-analysis published in Climacteric on September 16, 2026 examined the global prevalence of menopausal vasomotor symptoms.",
@@ -252,6 +283,21 @@ const ARTICLES = {
     }
   ],
   de: [
+    {
+        "tag": "MENOPAUSE 40+/50+ · 18. NOVEMBER 2026",
+        "title": "Menopause ohne Hormone: Was empfiehlt die neue europäische Stellungnahme?",
+        "dek": "Die European Society of Gynecology bewertet in ihrer am 18. November 2026 veröffentlichten Stellungnahme nicht hormonelle Behandlungen von Hitzewallungen, Schlaf- und Stimmungssymptomen sowie urogenitalen Beschwerden.",
+        "body": [
+            "Die Menopause kann Hitzewallungen, Schlaf, Stimmung und die urogenitale Gesundheit beeinflussen. Eine Hormontherapie ist für viele Frauen wirksam, kommt aber wegen Gegenanzeigen, individuellen Risiken oder persönlicher Präferenzen nicht immer infrage.",
+            "Zu den am besten belegten nicht hormonellen Arzneimitteln gegen Hitzewallungen gehören Neurokininrezeptor-Antagonisten wie Fezolinetant und Elinzanetant. Auch bestimmte Antidepressiva und weitere verschreibungspflichtige Medikamente können helfen. Nebenwirkungen, Gegenanzeigen, Zulassung und Verfügbarkeit sind individuell zu prüfen.",
+            "Kognitive Verhaltenstherapie und klinische Hypnose können die Belastung durch Beschwerden verringern und Schlaf sowie Lebensqualität verbessern. Das ist nicht gleichbedeutend mit einer nachgewiesenen gleich großen Abnahme der Hitzewallungen. Lebensstilmaßnahmen fördern die allgemeine Gesundheit, ersetzen aber nicht jede gezielte Behandlung.",
+            "Für Phytoöstrogene, pflanzliche Präparate, Akupunktur und weitere ergänzende Methoden ist die Evidenz unterschiedlich stark oder begrenzt. Natürlich bedeutet nicht automatisch wirksam oder sicher.",
+            "Bei urogenitalen Beschwerden können Gleitmittel, Feuchtigkeitspräparate, bestimmte Hyaluronsäureprodukte und Beckenbodentraining Symptome lindern. Die routinemäßige vaginale Lasertherapie wird durch die derzeitige Evidenz nicht gestützt.",
+            "Es handelt sich um einen fachlichen Konsens auf Grundlage einer strukturierten Literaturauswertung, nicht um eine neue klinische Prüfung eines bestimmten Produkts oder Geräts. Entscheidungen sollten Beschwerden, Krankengeschichte, Risiken und lokale Zulassungen berücksichtigen. Dieser Beitrag ersetzt keine individuelle ärztliche Beratung."
+        ],
+        "source": "European Society of Gynecology · Gynecological Endocrinology · 2026.11.18",
+        "url": "https://doi.org/10.1080/09513590.2026.2751783"
+    },
     {
       tag:"MENOPAUSE 40+/50+ · SEPTEMBER 2026",
       title:"Hitzewallungen weltweit: Eine neue Metaanalyse zeigt, wie häufig vasomotorische Symptome wirklich sind",
@@ -384,6 +430,7 @@ const COPY={
 };
 
 const CATEGORY_BY_INDEX=[
+  "MENOPAUSE 40+/50+", // 2026 ESG consensus
   "MENOPAUSE 40+/50+", // global vasomotor symptoms meta-analysis
   "NEW SCIENCE",      // exosome
   "TREND RADAR",      // Prysm iO
