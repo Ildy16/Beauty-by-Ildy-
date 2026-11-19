@@ -694,9 +694,186 @@ const CATEGORY_INFO = {
   }
 };
 
+const CATEGORY_INFO_TRANSLATED = {
+  "en": {
+    "SINGLE OIL": [
+      "For an aromatic routine featuring a single essential oil.",
+      "A concentrated botanical essential oil; check the specific plant and label.",
+      "Use only as permitted by the current EU product label; dilute for topical use when indicated."
+    ],
+    "BLEND": [
+      "An aromatic blend for a fragrance or wellbeing routine.",
+      "A blend of essential oils; the exact constituents vary by product.",
+      "Follow the specific label for diffusion or topical use and any dilution requirements."
+    ],
+    "ROLL-ON / TOUCH": [
+      "A convenient pre-blended roll-on for a personal fragrance routine.",
+      "Essential oils in a carrier oil; see the exact ingredients on the label.",
+      "Apply externally as directed; avoid eyes and sensitive areas."
+    ],
+    "BODY CARE": [
+      "For daily body care or a massage routine.",
+      "A finished body-care formula; check the full ingredient list.",
+      "Use externally as instructed and discontinue if irritation develops."
+    ],
+    "SKINCARE": [
+      "For a facial skincare routine.",
+      "A finished cosmetic formula; the full INCI list is on the packaging.",
+      "Follow directions and check suitability for your skin."
+    ],
+    "PERSONAL CARE": [
+      "For everyday personal care.",
+      "A finished personal-care formula; ingredients depend on the product.",
+      "Use according to the current product instructions."
+    ],
+    "ON GUARD": [
+      "Part of the On Guard range for a product-specific routine.",
+      "Ingredients differ across On Guard oils, cleaners and personal-care products.",
+      "Follow the exact label; do not assume all On Guard products have the same use."
+    ],
+    "SUPPLEMENT": [
+      "A food supplement for a nutritional routine.",
+      "Nutrients or botanical ingredients; verify the exact amounts on the official label.",
+      "Follow the recommended serving, allergen information and precautions."
+    ],
+    "KIDS": [
+      "An aromatic product designed for a child-focused routine.",
+      "A product-specific essential oil blend; check the full formula.",
+      "Respect the stated minimum age, supervision and dilution requirements."
+    ],
+    "KIDS & BABY": [
+      "A baby or child-care product for an age-appropriate routine.",
+      "A finished child-care formula; verify ingredients on the label.",
+      "Use only for the age and application stated by the manufacturer."
+    ],
+    "KIDS SUPPLEMENT": [
+      "A food supplement formulated for children.",
+      "Nutrients and other ingredients listed on the specific label.",
+      "Follow age limits and recommended daily serving; consult a professional when needed."
+    ],
+    "SUN CARE": [
+      "For a sun-care or lip-care routine.",
+      "A finished sun or lip-care product; see the current ingredient list.",
+      "For SPF products apply adequately and reapply as directed."
+    ],
+    "HAIR CARE": [
+      "For hair and scalp care.",
+      "A hair-care formula; ingredients vary by product.",
+      "Follow the instructions and avoid eye contact."
+    ],
+    "WOMEN": [
+      "For a women-focused wellness routine.",
+      "A product-specific supplement or personal-care formula.",
+      "Check the label, contraindications and interactions, especially during pregnancy or medication use."
+    ],
+    "TARGETED": [
+      "A product for a specific everyday care need.",
+      "Product-specific ingredients and formulation.",
+      "Follow the intended use and warnings on the current label."
+    ],
+    "DIFFUSER": [
+      "A diffuser or kit for home fragrance.",
+      "An electrical diffuser and/or accompanying aromatic product.",
+      "Follow the device manual, ventilation and cleaning instructions."
+    ],
+    "ACCESSORY": [
+      "An accessory for an essential-oil or care routine.",
+      "A product-specific accessory or tool.",
+      "Use and maintain it according to its instructions."
+    ]
+  },
+  "de": {
+    "SINGLE OIL": [
+      "Für eine Aromaroutine mit einem einzelnen ätherischen Öl.",
+      "Konzentriertes ätherisches Pflanzenöl; Pflanzenart und Etikett prüfen.",
+      "Nur gemäß aktueller EU-Produktkennzeichnung verwenden; bei Hautanwendung gegebenenfalls verdünnen."
+    ],
+    "BLEND": [
+      "Eine Duftmischung für eine aromatische Alltagsroutine.",
+      "Mischung ätherischer Öle; die genaue Zusammensetzung ist produktspezifisch.",
+      "Hinweise zu Diffusion, Hautanwendung und Verdünnung auf dem Etikett beachten."
+    ],
+    "ROLL-ON / TOUCH": [
+      "Ein praktischer Roll-on für eine persönliche Duftroutine.",
+      "Ätherische Öle in einem Trägeröl; genaue Inhaltsstoffe siehe Etikett.",
+      "Äußerlich nach Anleitung verwenden; Augen und empfindliche Stellen aussparen."
+    ],
+    "BODY CARE": [
+      "Für die tägliche Körperpflege oder Massage.",
+      "Fertige Körperpflegeformel; vollständige Inhaltsstoffe prüfen.",
+      "Äußerlich nach Anleitung verwenden und bei Reizung absetzen."
+    ],
+    "SKINCARE": [
+      "Für die tägliche Gesichtspflege.",
+      "Fertige Kosmetikformel; vollständige INCI-Liste auf der Verpackung.",
+      "Anwendungshinweise und Hautverträglichkeit beachten."
+    ],
+    "PERSONAL CARE": [
+      "Für die tägliche persönliche Pflege.",
+      "Fertige Pflegeformel mit produktspezifischen Inhaltsstoffen.",
+      "Gemäß den aktuellen Produktanweisungen verwenden."
+    ],
+    "ON GUARD": [
+      "Ein Produkt der On-Guard-Reihe für eine bestimmte Anwendung.",
+      "Zusammensetzung von Ölen, Reinigungs- und Pflegeprodukten unterscheidet sich.",
+      "Das jeweilige Etikett beachten; nicht alle On-Guard-Produkte gleich anwenden."
+    ],
+    "SUPPLEMENT": [
+      "Ein Nahrungsergänzungsmittel für die tägliche Ernährung.",
+      "Nährstoffe oder Pflanzenbestandteile; genaue Mengen stehen auf dem Etikett.",
+      "Tagesportion, Allergene und Vorsichtsmaßnahmen beachten."
+    ],
+    "KIDS": [
+      "Ein Aromaprodukt für eine kindgerechte Routine.",
+      "Produktspezifische ätherische Ölmischung; vollständige Zusammensetzung prüfen.",
+      "Altersgrenzen, Aufsicht und Verdünnungsvorgaben einhalten."
+    ],
+    "KIDS & BABY": [
+      "Ein Pflegeprodukt für Babys oder Kinder.",
+      "Fertige Kinderpflegeformel; Inhaltsstoffe auf dem Etikett prüfen.",
+      "Nur für das angegebene Alter und die vorgesehene Anwendung verwenden."
+    ],
+    "KIDS SUPPLEMENT": [
+      "Ein Nahrungsergänzungsmittel für Kinder.",
+      "Nährstoffe und weitere Inhaltsstoffe laut Produktetikett.",
+      "Altersgrenzen und Tagesportion beachten; bei Bedarf Fachpersonal fragen."
+    ],
+    "SUN CARE": [
+      "Für Sonnen- oder Lippenpflege.",
+      "Fertiges Sonnen- oder Lippenpflegeprodukt; Inhaltsstoffe prüfen.",
+      "LSF-Produkte ausreichend auftragen und nach Anleitung erneuern."
+    ],
+    "HAIR CARE": [
+      "Für die Haar- und Kopfhautpflege.",
+      "Haarpflegeformel mit produktspezifischen Inhaltsstoffen.",
+      "Anwendungshinweise befolgen und Augenkontakt vermeiden."
+    ],
+    "WOMEN": [
+      "Für eine auf Frauen ausgerichtete Wellnessroutine.",
+      "Produktspezifisches Nahrungsergänzungs- oder Pflegeprodukt.",
+      "Etikett, Gegenanzeigen und Wechselwirkungen prüfen, besonders bei Schwangerschaft oder Medikamenteneinnahme."
+    ],
+    "TARGETED": [
+      "Für einen bestimmten Pflegebedarf im Alltag.",
+      "Produktspezifische Inhaltsstoffe und Formulierung.",
+      "Vorgesehene Anwendung und Warnhinweise beachten."
+    ],
+    "DIFFUSER": [
+      "Ein Diffusor oder Set für Raumdüfte.",
+      "Elektrischer Diffusor und/oder aromatische Produkte.",
+      "Geräteanleitung, Belüftung und Reinigung beachten."
+    ],
+    "ACCESSORY": [
+      "Zubehör für eine Aroma- oder Pflegeroutine.",
+      "Produktspezifisches Zubehör oder Hilfsmittel.",
+      "Nach der Anleitung verwenden und pflegen."
+    ]
+  }
+};
+
 function getProductInfo(name, group, lang){
   if(lang==="hu") return PRODUCT_INFO_HU[name] || CATEGORY_INFO.hu[group] || CATEGORY_INFO.hu["TARGETED"];
-  return CATEGORY_INFO[lang]?.default || CATEGORY_INFO.en.default;
+  return CATEGORY_INFO_TRANSLATED[lang]?.[group] || CATEGORY_INFO[lang]?.default || CATEGORY_INFO.en.default;
 }
 
 function getEditorialDescription(name, group, lang){
