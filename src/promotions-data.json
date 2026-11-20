@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T02:21:25.939Z",
+  "updatedAt": "2026-11-20T11:44:02.867Z",
   "offers": [
     {
       "id": "nuskin-hu-black-friday-97310060",
@@ -7,8 +7,8 @@
       "market": "HU",
       "verified": true,
       "sourceUrl": "https://www.nuskin.com/hu/hu/product/ageloc-galvanic-spa",
-      "start": "2026-11-20T02:21:25.939Z",
-      "end": "2026-11-20T08:21:25.939Z",
+      "start": "2026-11-20T11:44:02.867Z",
+      "end": "2026-11-20T17:44:02.867Z",
       "expiryType": "verification-ttl",
       "sku": "97310060",
       "discountPercent": 30,
