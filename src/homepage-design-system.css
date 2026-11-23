@@ -909,7 +909,8 @@
   :is(main#top, main#solutionsPage) .hero.homeVideoHero{
     position:relative;
     min-height:0;
-    height:clamp(440px,62svh,540px);
+    height:auto;
+    min-height:clamp(440px,62svh,540px);
     max-height:none;
     padding:0;
     overflow:hidden;
@@ -927,17 +928,19 @@
     background:linear-gradient(90deg,rgba(5,29,57,.10) 0%,rgba(5,29,57,.03) 60%,rgba(5,29,57,0) 100%);
   }
   :is(main#top, main#solutionsPage) .homeVideoHero .heroContent{
-    position:absolute;
-    top:0;
-    bottom:0;
-    left:14px;
+    position:relative;
+    z-index:2;
+    top:auto;
+    bottom:auto;
+    left:auto;
     right:auto;
     box-sizing:border-box;
-    width:min(60vw,250px);
+    width:min(64vw,260px);
     min-width:0;
-    height:100%;
+    height:auto;
+    min-height:clamp(440px,62svh,540px);
     max-height:none;
-    margin:0;
+    margin:0 0 0 26px;
     padding:26px 16px 20px;
     display:flex;
     flex-direction:column;
@@ -968,7 +971,15 @@
     font-size:12px;
     line-height:1.55;
   }
-  :is(main#top, main#solutionsPage) .homeVideoHero .heroTopicNav{display:none}
+  :is(main#top, main#solutionsPage) .homeVideoHero .heroTopicNav{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:7px;
+    margin:14px 0 0;
+    padding-top:12px;
+    border-top:1px solid rgba(255,255,255,.16);
+  }
+  :is(main#top, main#solutionsPage) .homeVideoHero .heroTopicNav a{font-size:8px;letter-spacing:1px}
   :is(main#top, main#solutionsPage) .homeVideoHero .heroActions{
     width:100%;
     margin-top:auto;

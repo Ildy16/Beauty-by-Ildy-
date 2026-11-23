@@ -205,35 +205,27 @@
     margin-left:24px;
   }
 }
-/* Phones: same pattern as the shared TopicHero — lower image band, narrow
-   left strip with the title, lead and topic list below on navy. */
+/* Phones: same narrow inset strip as the shared TopicHero. */
 @media(max-width:620px){
-  .wellnessVisualHero{--wellnessMediaH:clamp(380px,56svh,470px);height:auto;min-height:0;max-height:none}
-  .wellnessSlides{bottom:auto;height:var(--wellnessMediaH)}
+  .wellnessVisualHero{height:auto;min-height:440px;max-height:none}
   .wellnessSlide{background-position:64% center}
-  .wellnessTopicPanel{display:contents}
-  .wellnessPanelHead{
-    position:relative;
-    z-index:2;
+  .wellnessTopicPanel{
     box-sizing:border-box;
-    width:min(60vw,250px);
-    height:var(--wellnessMediaH);
-    margin-left:14px;
-    padding:24px 16px;
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-end;
-    background:linear-gradient(180deg,rgba(9,38,74,.40),rgba(9,38,74,.62));
-    border-left:1px solid rgba(183,154,91,.36);
-    border-right:1px solid rgba(183,154,91,.36);
+    width:min(64vw,260px);
+    min-width:0;
+    height:auto;
+    min-height:440px;
+    margin-left:26px;
+    padding:22px 16px;
+    justify-content:flex-start;
+    background:linear-gradient(180deg,rgba(9,38,74,.46),rgba(9,38,74,.64));
     backdrop-filter:blur(2px);
   }
-  .wellnessTopicPanel .wellnessBack{margin:0 0 auto;font-size:9px;letter-spacing:.8px}
+  .wellnessTopicPanel .wellnessBack{margin-bottom:18px;font-size:9px;letter-spacing:.8px}
   .wellnessTopicPanel .panelEyebrow{margin-bottom:10px;font-size:8px;letter-spacing:1.4px}
   .wellnessTopicPanel h1{font-size:clamp(24px,7vw,30px);line-height:1.08}
-  .wellnessPanelBody{position:relative;z-index:2;padding:24px 20px 30px}
-  .wellnessTopicPanel .panelLead{margin:0 0 18px;font-size:12px;line-height:1.65}
-  .wellnessTopicNav a{min-height:48px;font-size:clamp(14px,4vw,17px);line-height:1.2;padding-block:10px}
+  .wellnessTopicPanel .panelLead{margin:12px 0 14px;font-size:12px;line-height:1.6}
+  .wellnessTopicNav a{min-height:38px;padding-block:7px;gap:10px;font-size:13px;line-height:1.2}
   .wellnessSlideDots{top:18px;right:18px;bottom:auto;pointer-events:none}
   .wellnessFocusCard{padding:var(--bbi-card-pad-y) var(--bbi-card-pad-x)}
 }
