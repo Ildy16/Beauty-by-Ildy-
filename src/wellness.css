@@ -205,50 +205,43 @@
     margin-left:24px;
   }
 }
+/* Phones: same pattern as the shared TopicHero — lower image band, narrow
+   left strip with the title, lead and topic list below on navy. */
 @media(max-width:620px){
-  .wellnessVisualHero{
-    min-height:760px;
-    height:calc(100svh - 68px);
-    max-height:none;
-  }
+  .wellnessVisualHero{--wellnessMediaH:clamp(380px,56svh,470px);height:auto;min-height:0;max-height:none}
+  .wellnessSlides{bottom:auto;height:var(--wellnessMediaH)}
   .wellnessSlide{background-position:64% center}
-  .wellnessTopicPanel{
-    width:calc(100% - 36px);
-    height:auto;
-    min-height:0;
-    margin:0 18px 18px;
-    padding:34px 24px 24px;
-    position:absolute;
-    left:0;
-    bottom:0;
-    justify-content:flex-start;
-    background:linear-gradient(180deg,rgba(9,38,74,.60),rgba(9,38,74,.76));
+  .wellnessTopicPanel{display:contents}
+  .wellnessPanelHead{
+    position:relative;
+    z-index:2;
+    box-sizing:border-box;
+    width:min(60vw,250px);
+    height:var(--wellnessMediaH);
+    margin-left:14px;
+    padding:24px 16px;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    background:linear-gradient(180deg,rgba(9,38,74,.40),rgba(9,38,74,.62));
+    border-left:1px solid rgba(183,154,91,.36);
+    border-right:1px solid rgba(183,154,91,.36);
+    backdrop-filter:blur(2px);
   }
-  .wellnessTopicPanel .wellnessBack{margin-bottom:22px}
-  .wellnessTopicPanel h1{font-size:43px}
-  .wellnessTopicPanel .panelLead{font-size:10.5px;margin:14px 0 18px}
-  .wellnessTopicNav a{min-height:48px;font-size:17px}
-  .wellnessSlideDots{
-    top:22px;
-    right:22px;
-    bottom:auto;
-  }
-  .wellnessFocusCard{
-    padding:var(--bbi-card-pad-y) var(--bbi-card-pad-x);
-  }
+  .wellnessTopicPanel .wellnessBack{margin:0 0 auto;font-size:9px;letter-spacing:.8px}
+  .wellnessTopicPanel .panelEyebrow{margin-bottom:10px;font-size:8px;letter-spacing:1.4px}
+  .wellnessTopicPanel h1{font-size:clamp(24px,7vw,30px);line-height:1.08}
+  .wellnessPanelBody{position:relative;z-index:2;padding:24px 20px 30px}
+  .wellnessTopicPanel .panelLead{margin:0 0 18px;font-size:12px;line-height:1.65}
+  .wellnessTopicNav a{min-height:48px;font-size:clamp(14px,4vw,17px);line-height:1.2;padding-block:10px}
+  .wellnessSlideDots{top:18px;right:18px;bottom:auto;pointer-events:none}
+  .wellnessFocusCard{padding:var(--bbi-card-pad-y) var(--bbi-card-pad-x)}
 }
 
 /* Keep wellness imagery still; use only soft opacity dissolves. */
 .wellnessSlide,.wellnessSlide.isActive{transform:none;transition:opacity 1.5s ease}
 .wellnessTopicPanel .wellnessBack:focus-visible,.wellnessTopicNav a:focus-visible{
   outline:2px solid var(--bbi-gold,#c7a96b);outline-offset:4px
-}
-@media(max-width:620px){
-  .wellnessTopicPanel{box-sizing:border-box;max-height:calc(100% - 32px);overflow-y:auto;overscroll-behavior:contain;padding:28px 22px 22px}
-  .wellnessTopicPanel h1{font-size:clamp(34px,9vw,43px);line-height:1.02;overflow-wrap:break-word}
-  .wellnessTopicPanel .panelLead{font-size:12px;line-height:1.65}
-  .wellnessTopicNav a{font-size:clamp(14px,4vw,17px);line-height:1.2;padding-block:10px}
-  .wellnessSlideDots{pointer-events:none}
 }
 @media(prefers-reduced-motion:reduce){
   .wellnessSlide,.wellnessTopicNav a{transition:none}

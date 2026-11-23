@@ -156,30 +156,40 @@
   .topicHeroRail h1{font-size:clamp(32px,4.4vw,43px)}
 }
 
+/* Phones: a lower media band with a narrow translucent strip on the left
+   holding only back link, eyebrow and title, so the image or video stays
+   visible. Lead, note, topic list and actions follow below on navy. */
 @media(max-width:620px){
-  .topicHero{min-height:760px;height:calc(100svh - 68px);max-height:none}
+  .topicHero{--topicHeroMediaH:clamp(380px,56svh,470px);height:auto;min-height:0;max-height:none}
+  .topicHeroVideo,.topicHeroVideoShade,.topicHeroSlides{bottom:auto;height:var(--topicHeroMediaH)}
   .topicHeroSlide{background-position:64% center}
   .topicHeroVideo{object-position:64% center}
-  .topicHeroRail{
-    position:absolute;
-    left:0;
-    bottom:0;
-    width:calc(100% - 36px);
-    height:auto;
-    max-height:calc(100% - 32px);
-    margin:0 18px 18px;
-    padding:28px 22px 22px;
-    justify-content:flex-start;
-    overflow-y:auto;
-    overscroll-behavior:contain;
-    background:linear-gradient(180deg,rgba(9,38,74,.60),rgba(9,38,74,.76));
+  .topicHeroRail{display:contents}
+  .topicHeroHead{
+    position:relative;
+    z-index:2;
+    box-sizing:border-box;
+    width:min(60vw,250px);
+    height:var(--topicHeroMediaH);
+    margin-left:14px;
+    padding:24px 16px 24px;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    background:linear-gradient(180deg,rgba(9,38,74,.40),rgba(9,38,74,.62));
+    border-left:1px solid rgba(183,154,91,.36);
+    border-right:1px solid rgba(183,154,91,.36);
+    backdrop-filter:blur(2px);
   }
-  .topicHeroBack{margin-bottom:22px}
-  .topicHeroRail h1{font-size:clamp(32px,8vw,40px);line-height:1.08}
-  .topicHeroLead{margin:14px 0 18px}
+  .topicHeroBack{margin:0 0 auto;font-size:9px;letter-spacing:.8px}
+  .topicHeroEyebrow{margin-bottom:10px;font-size:8px;letter-spacing:1.4px}
+  .topicHeroRail h1{font-size:clamp(24px,7vw,30px);line-height:1.08}
+  .topicHeroBody{position:relative;z-index:2;padding:24px 20px 30px}
+  .topicHeroLead{margin:0 0 18px}
+  .topicHeroNote{margin:0 0 20px}
   .topicHeroNav a{min-height:48px;padding-block:10px;font-size:clamp(14px,4vw,16px);line-height:1.2}
   .topicHeroNav.isCompact a{min-height:40px;padding-block:8px;font-size:14px}
-  .topicHeroDots{top:22px;right:22px;bottom:auto;pointer-events:none}
+  .topicHeroDots{top:18px;right:18px;bottom:auto;pointer-events:none}
 }
 
 /* Motion-safe: no automatic zoom; no crossfade for reduced motion. */

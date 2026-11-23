@@ -58,9 +58,12 @@ function WellnessVisualHero({t,focus,topic=null}){
     </div>
 
     <div className="wellnessTopicPanel">
-      <a className="wellnessBack" href={topic?'#wellness':'#top'}><ArrowLeft size={14}/>{topic?t.eyebrow:t.back}</a>
-      <p className="panelEyebrow">{topic?focus.eyebrow:t.eyebrow}</p>
-      <h1>{title}</h1>
+      <div className="wellnessPanelHead">
+        <a className="wellnessBack" href={topic?'#wellness':'#top'}><ArrowLeft size={14}/>{topic?t.eyebrow:t.back}</a>
+        <p className="panelEyebrow">{topic?focus.eyebrow:t.eyebrow}</p>
+        <h1>{title}</h1>
+      </div>
+      <div className="wellnessPanelBody">
       <p className="panelLead">{lead}</p>
 
       <nav className="wellnessTopicNav" aria-label="Wellness témák">
@@ -71,6 +74,7 @@ function WellnessVisualHero({t,focus,topic=null}){
           </a>;
         })}
       </nav>
+      </div>
     </div>
 
     <div className="wellnessSlideDots" aria-hidden="true">

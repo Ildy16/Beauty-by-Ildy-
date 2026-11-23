@@ -69,17 +69,22 @@ export function TopicHero({
     </div>}
 
     <div className="topicHeroRail">
-      <a className="topicHeroBack" href={backHref}><ArrowLeft size={14}/>{backLabel}</a>
-      <p className="topicHeroEyebrow">{eyebrow}</p>
-      <h1>{title}</h1>
-      {lead&&<p className="topicHeroLead">{lead}</p>}
-      {note&&<p className="topicHeroNote">{note}</p>}
-      {items.length>0&&<nav className={"topicHeroNav"+(navSize==="compact"?" isCompact":"")} aria-label={ariaLabel}>
-        {items.map(item=><a key={item.href} href={item.href}>
-          <span>{item.label}</span><ArrowRight size={14}/>
-        </a>)}
-      </nav>}
-      {children}
+      {/* Head sits on the media; on phones the body drops below it. */}
+      <div className="topicHeroHead">
+        <a className="topicHeroBack" href={backHref}><ArrowLeft size={14}/>{backLabel}</a>
+        <p className="topicHeroEyebrow">{eyebrow}</p>
+        <h1>{title}</h1>
+      </div>
+      <div className="topicHeroBody">
+        {lead&&<p className="topicHeroLead">{lead}</p>}
+        {note&&<p className="topicHeroNote">{note}</p>}
+        {items.length>0&&<nav className={"topicHeroNav"+(navSize==="compact"?" isCompact":"")} aria-label={ariaLabel}>
+          {items.map(item=><a key={item.href} href={item.href}>
+            <span>{item.label}</span><ArrowRight size={14}/>
+          </a>)}
+        </nav>}
+        {children}
+      </div>
     </div>
 
     {!showVideo&&images.length>1&&<div className="topicHeroDots" aria-hidden="true">
