@@ -44,3 +44,8 @@
     margin:24px auto 0;
   }
 }
+
+/* Product video inside the detailed description: portrait 9:16, framed,
+   full width on phones, capped and centred on larger screens. */
+.olyVideo{margin:6px auto 18px;max-width:360px}
+.olyVideo video{display:block;width:100%;aspect-ratio:9/16;height:auto;background:#071b33;border:1px solid #e4d7c1;border-radius:2px;object-fit:cover}
