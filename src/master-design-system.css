@@ -350,7 +350,15 @@ article > a,
   .doterraInfo p,
   .magDek,
   .magArticleText p,
-  .legalSections section > div
+  .legalSections section > div,
+  .huPromotionsHeading > p:not(.eyebrow),
+  .huPromotionCard > p:not(.huPromotionDate),
+  .olyStoryTagline,
+  .olyStorySection p,
+  .olyStoryClosing,
+  .olyCardBody > p,
+  .olyDetails p,
+  .olyDetails li
 ) {
   font-family: var(--bbi-font-body);
   font-size: 13px;
@@ -443,3 +451,31 @@ article > a,
   line-height: 1.55;
 }
 
+/* Titles, matched to the owner-approved homepage magazine card.
+   Section titles: Cormorant 500, --bbi-section-title (30px / 28px phone).
+   Card titles: Cormorant 500, 24px on every viewport.
+   Nu Skin cards are intentionally not listed (handled on a separate branch). */
+#root main :is(
+  .huPromotionsHeading > h2,
+  .olyStory > h2,
+  .olyCollectionTitle
+) {
+  font-family: var(--bbi-font-heading);
+  font-size: var(--bbi-section-title);
+  font-weight: 500;
+  line-height: 1.1;
+}
+#root main :is(
+  .magGrid article h3,
+  .huPromotionCard > h3,
+  .olyCardBody > h2,
+  .olyStorySection h3,
+  .doterraCard h2,
+  .brandProductCard.isInfo:not(.nuskinCard) h2,
+  .productsPage .productCard h2
+) {
+  font-family: var(--bbi-font-heading);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.12;
+}
