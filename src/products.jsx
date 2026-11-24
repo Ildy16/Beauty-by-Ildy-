@@ -1,6 +1,8 @@
 import React,{useMemo,useState} from 'react';
 import {ArrowLeft,ArrowRight,CheckCircle2,FlaskConical,Info,Layers3,Search} from 'lucide-react';
 import './products.css';
+import {TopicHero} from './topicHero.jsx';
+import {subpageMedia} from './subpage-media.js';
 
 const P=(slug,brand,name,category,ingredients,badge,forWhom,why,watch,buyUrl=null,imageUrl=null)=>({slug,brand,name,category,ingredients,badge,forWhom,why,watch,buyUrl,imageUrl});
 
@@ -56,7 +58,7 @@ export function ProductsPage({lang='hu'}){
  const availableCategories=useMemo(()=>categoryOrder.filter(c=>products.some(p=>p.category===c)),[]);
  const filtered=useMemo(()=>products.filter(p=>(cat==='all'||p.category===cat)&&(`${p.brand} ${p.name}`.toLowerCase().includes(q.trim().toLowerCase()))),[cat,q]);
  const groups=availableCategories.map(c=>[c,filtered.filter(p=>p.category===c)]).filter(([,arr])=>arr.length);
- return <main className="productsPage"><section className="productsHero"><div><a className="productBack" href="#top"><ArrowLeft size={14}/>{t.back}</a><p className="eyebrow">BEAUTY BY ILDY</p><h1>{t.title}</h1><p>{t.lead}</p><span>{products.length} {t.count}</span></div></section><div className="productToolbar"><div className="productSearch"><Search size={15}/><input value={q} onChange={e=>setQ(e.target.value)} placeholder={t.search} aria-label={t.search}/></div><div className="productFilters"><button className={cat==='all'?'active':''} onClick={()=>setCat('all')}>{t.all}</button>{availableCategories.map(c=><button key={c} className={cat===c?'active':''} onClick={()=>setCat(c)}>{t.categories[c]}</button>)}</div></div><div className="productCategoryWrap">{groups.map(([c,arr])=><section className="productCategory" key={c}><div className="productCategoryHead"><h2>{t.categories[c]}</h2><span>{arr.length}</span></div><div className="productGrid">{arr.map(p=><ProductCard key={p.slug} p={p} t={t} lang={lang}/>)}</div></section>)}</div></main>
+ return <main className="productsPage"><TopicHero eyebrow="BEAUTY BY ILDY" title={t.title} lead={t.lead} backLabel={t.back} videoSrc={subpageMedia.products.video} videoPoster={subpageMedia.products.poster}><p className="topicHeroMeta">{products.length} {t.count}</p></TopicHero><div className="productToolbar"><div className="productSearch"><Search size={15}/><input value={q} onChange={e=>setQ(e.target.value)} placeholder={t.search} aria-label={t.search}/></div><div className="productFilters"><button className={cat==='all'?'active':''} onClick={()=>setCat('all')}>{t.all}</button>{availableCategories.map(c=><button key={c} className={cat===c?'active':''} onClick={()=>setCat(c)}>{t.categories[c]}</button>)}</div></div><div className="productCategoryWrap">{groups.map(([c,arr])=><section className="productCategory" key={c}><div className="productCategoryHead"><h2>{t.categories[c]}</h2><span>{arr.length}</span></div><div className="productGrid">{arr.map(p=><ProductCard key={p.slug} p={p} t={t} lang={lang}/>)}</div></section>)}</div></main>
 }
 
 function ProductCard({p,t,lang}){return <article className="productCard"><div className="productMonogram">{p.brand.slice(0,2)}</div><div className="productCardBody"><div className="productMeta"><span>{t.categories[p.category]}</span><em>{t.badges[p.badge]}</em></div><p className="productBrand">{p.brand}</p><h2>{p.name}</h2><p className="productFocus">{p.ingredients.slice(0,4).map(i=>localIngredient(i,lang)).join(' · ')}</p><a href={`#product-${p.slug}`}>{t.open}<ArrowRight size={14}/></a></div></article>}

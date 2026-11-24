@@ -200,7 +200,8 @@ footer > div:first-child {
   color: #9ca8b1;
 }
 
-@media (max-width: 1000px) {
+/* Twelve menu items do not fit inline below 1300px: use the menu button. */
+@media (max-width: 1300px) {
   .topbar nav {
     display: none;
   }
@@ -308,9 +309,17 @@ footer > div:first-child {
   }
 }
 
-@media (min-width:1001px) and (max-width:1240px){
+/* 1001-1300px uses the menu button like tablets: keep the language
+   switcher next to it instead of in the middle of the header. */
+@media (min-width:1001px) and (max-width:1300px){
+  .langs{margin-left:auto;margin-right:20px}
+}
+
+/* Between 1301 and 1700px keep all twelve items on one line in HU/EN/DE:
+   slightly smaller type and tighter spacing (measured gaps at 1366px:
+   HU 71, EN 45, DE 20px). */
+@media (min-width:1301px) and (max-width:1700px){
   .topbar{padding-left:3vw;padding-right:3vw}
-  .topbar nav{gap:11px}
-  .topbar nav a{font-size:9px;letter-spacing:.55px}
-  .langs button{padding-left:3px;padding-right:3px}
+  .topbar nav{gap:10px}
+  .topbar nav a{font-size:9.5px;letter-spacing:.4px}
 }
