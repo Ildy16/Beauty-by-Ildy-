@@ -84,9 +84,9 @@ const products = [
   {name:"OlyLife Galaxy G1-MAX",category:"beauty",tech:"Szemkörnyéki készülék",upcoming:{hu:"Hamarosan · Érkezés: 2027 január",en:"Coming soon · Arriving January 2027",de:"Demnächst · Ab Januar 2027"},video:{src:"/media/olylife/olylife-new-glasses.mp4",poster:"/media/olylife/olylife-new-glasses-poster.jpg"},desc:{hu:"Az OlyLife új szemkörnyéki készüléke, amely 2027 januárjában érkezik. A pontos műszaki adatokat és a magyarországi árat a megjelenéskor tesszük közzé.",en:"OlyLife's new eye-area device, arriving in January 2027. Full specifications and the Hungarian price will be published at launch.",de:"Das neue Augengerät von OlyLife erscheint im Januar 2027. Technische Daten und den Preis für Ungarn veröffentlichen wir zur Markteinführung."}},
 ];
 const labels={
-  hu:{eyebrow:"BEAUTY BY ILDY · KÉSZÜLÉKEK",lead:"Innovatív beauty és wellness technológiák az OlyLife kínálatából.",notice:"Fedezd fel az OlyLife különleges wellness- és szépségápolási készülékeit, technológiáit és felhasználási lehetőségeit.",button:"Vásárlás hamarosan",source:"Hivatalos OlyLife terméklista",disclaimer:"A bemutatott technológiák leírása nem igazolja az egyes egészségügyi vagy fogyasztó hatásokat. A használati útmutató, ellenjavallatok és az EU-s megfelelőség ellenőrzése folyamatban van.",categories:{beauty:"Szépségápolás",wellness:"Wellness",home:"Otthoni környezet"}},
-  en:{eyebrow:"BEAUTY BY ILDY · DEVICES",lead:"Discover OlyLife's beauty and wellness technologies.",notice:"Explore OlyLife wellness and beauty devices, their technologies and everyday applications.",button:"Purchasing coming soon",source:"Official OlyLife product list",disclaimer:"Technology descriptions do not substantiate medical or weight-loss claims. Instructions, contraindications and EU compliance remain under review.",categories:{beauty:"Beauty",wellness:"Wellness",home:"Home environment"}},
-  de:{eyebrow:"BEAUTY BY ILDY · GERÄTE",lead:"Entdecke Beauty- und Wellness-Technologien von OlyLife.",notice:"Entdecke OlyLife Wellness- und Beauty-Geräte, ihre Technologien und Anwendungsmöglichkeiten.",button:"Kauf bald verfügbar",source:"Offizielle OlyLife-Produktliste",disclaimer:"Die Technologiebeschreibungen belegen keine medizinischen oder gewichtsreduzierenden Wirkungen. Anleitung, Gegenanzeigen und EU-Konformität werden noch geprüft.",categories:{beauty:"Beauty",wellness:"Wellness",home:"Wohnumfeld"}}
+  hu:{eyebrow:"BEAUTY BY ILDY · KÉSZÜLÉKEK",lead:"Innovatív beauty és wellness technológiák az OlyLife kínálatából.",notice:"Fedezd fel az OlyLife különleges wellness- és szépségápolási készülékeit, technológiáit és felhasználási lehetőségeit.",button:"Vásárlás hamarosan",source:"Hivatalos OlyLife terméklista",categories:{beauty:"Szépségápolás",wellness:"Wellness",home:"Otthoni környezet"}},
+  en:{eyebrow:"BEAUTY BY ILDY · DEVICES",lead:"Discover OlyLife's beauty and wellness technologies.",notice:"Explore OlyLife wellness and beauty devices, their technologies and everyday applications.",button:"Purchasing coming soon",source:"Official OlyLife product list",categories:{beauty:"Beauty",wellness:"Wellness",home:"Home environment"}},
+  de:{eyebrow:"BEAUTY BY ILDY · GERÄTE",lead:"Entdecke Beauty- und Wellness-Technologien von OlyLife.",notice:"Entdecke OlyLife Wellness- und Beauty-Geräte, ihre Technologien und Anwendungsmöglichkeiten.",button:"Kauf bald verfügbar",source:"Offizielle OlyLife-Produktliste",categories:{beauty:"Beauty",wellness:"Wellness",home:"Wohnumfeld"}}
 };
 const brandStory = {
  hu:{
@@ -119,7 +119,6 @@ export function OlyLifePage({lang="hu"}){
     <a href={olyDetails[p.name].source} target="_blank" rel="noopener noreferrer">{lang==="hu"?"Hivatalos gyártói termékadatlap":lang==="de"?"Offizielle Herstellerseite":"Official manufacturer page"} ↗</a>
     </details>}<span className="olyDisabled">{t.button}</span></div>
    </article>)}</div>
-   <p className="olyDisclaimer">{t.disclaimer}</p>
    <a className="olySource" href="https://www.olylifeint.com/Main/En/products.php" target="_blank" rel="noopener noreferrer">{t.source} ↗</a>
   </div>
  </main>;
